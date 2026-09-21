@@ -1,0 +1,91 @@
+# Decoder routing table.
+
+decoders:
+  - platform_type: ARVOR_D
+    decoder_version: "5.67"
+    decoder_id: 221
+    platform_family: FLOAT_DEEP
+    transmission: IRIDIUM_SBD
+    frame_length: 31
+    profile_class: null
+    sensors: [CTD_PRES, CTD_TEMP, CTD_CNDC, OPTODE_DOXY]
+    notes: Arvor Deep 5.67 (demo WMO 6902892)
+
+  - platform_type: ARVOR
+    decoder_version: "5.45"
+    decoder_id: 212
+    platform_family: FLOAT
+    transmission: IRIDIUM_SBD
+    frame_length: 31
+    profile_class: null
+    sensors: [CTD_PRES, CTD_TEMP, CTD_CNDC]
+    notes: Arvor 5.45 (demo WMO 6903014)
+
+  - platform_type: ARVOR
+    decoder_version: "5900A05"
+    decoder_id: 222
+    platform_family: FLOAT
+    transmission: IRIDIUM_SBD
+    frame_length: 100
+    profile_class: arvor_i_sbe41cp
+    sensors: [CTD_PRES, CTD_TEMP, CTD_CNDC]
+    notes: >-
+      Arvor-I SBE41CP, engine 5900A05 (Tech#1 firmware checksum 11415 ->
+      family {222, 223, 225}); registered float 6990711. SBD frames are the
+      100-byte rows of decode_sbd_file.m. Dedicated plugin pending; the
+      NKE demo decoder must not claim this profile class.
+
+  - platform_type: ARVOR
+    decoder_version: "5900A05B"
+    decoder_id: 232
+    platform_family: FLOAT
+    transmission: IRIDIUM_SBD
+    frame_length: 100
+    profile_class: arvor_i_sbe41cp
+    sensors: [CTD_PRES, CTD_TEMP, CTD_CNDC]
+    notes: >-
+      Arvor-I SBE41CP, engine 5900A05B (Tech#1 firmware checksum 13872 ->
+      232); floats 7902408, 1902844, 2904082 (checksums verified
+      2026-09-04). SBD frames are the 100-byte rows of decode_sbd_file.m.
+      Dedicated plugin pending; the NKE demo decoder must not claim this
+      profile class.
+
+  - platform_type: APEX
+    decoder_version: "61810"
+    decoder_id: 1005
+    platform_family: FLOAT
+    transmission: ARGOS
+    frame_length: 31
+    profile_class: apf9_ctd_23
+    sensors: [CTD_PRES, CTD_TEMP, CTD_CNDC]
+    notes: WRC APEX ARGOS APF9 CTD, MATLAB decoder 1005 / firmware 061810 (WMO 2901339)
+
+  - platform_type: APEX
+    decoder_version: "091515"
+    decoder_id: 1010
+    platform_family: FLOAT
+    transmission: ARGOS
+    frame_length: 31
+    profile_class: apf9_ctd_19
+    sensors: [CTD_PRES, CTD_TEMP, CTD_CNDC]
+    notes: WRC APEX ARGOS APF9 CTD, MATLAB decoder 1010 / firmware 091515 (WMO 2902201)
+
+  - platform_type: APEX
+    decoder_version: "091615"
+    decoder_id: 1010
+    platform_family: FLOAT
+    transmission: ARGOS
+    frame_length: 31
+    profile_class: apf9_ctd_19
+    sensors: [CTD_PRES, CTD_TEMP, CTD_CNDC]
+    notes: WRC APEX ARGOS APF9 CTD, MATLAB decoder 1010 / firmware 091615 (WMOs 2902222/2902223)
+
+  - platform_type: APEX
+    decoder_version: "2.8.0.A"
+    decoder_id: 1021
+    platform_family: FLOAT
+    transmission: ARGOS
+    frame_length: 31
+    profile_class: apf11_ctd_24
+    sensors: [CTD_PRES, CTD_TEMP, CTD_CNDC]
+    notes: WRC APEX ARGOS APF11 CTD, MATLAB decoder 1021 (future coverage)

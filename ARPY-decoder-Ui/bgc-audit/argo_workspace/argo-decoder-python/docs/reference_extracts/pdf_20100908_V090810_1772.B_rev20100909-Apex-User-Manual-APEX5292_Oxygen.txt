@@ -1,0 +1,1355 @@
+
+===== PAGE 1 =====
+TELEDYNE WEBB RESEARCH
+A Teledyne Instruments, Inc. Company
+82 Technology Park Drive
+E. Falmouth, Massachusetts 02536
+Phone: 508.548.2077
+Fax: 508.540.1686
+Email: dwebb@webbresearch.com
+APEX PROFILER USER MANUAL
+Applies to Serial Numbers: 5292 Revision Date: 09/09/10
+Customer Name: Lomini
+Job Number: 1772.B
+Firmware Revision APF9A F/W 090810
+Features:
+APF9A Controller
+Flash Depth Table 86 Park and Profile
+Aanderaa Oxygen Sensor (Optode) Deep Profile First (DPF)
+Air pump energy consumption limit
+Time of Day profile control
+Non-modal behavior
+r, .
+===== PAGE 2 =====
+I. Alkaline Battery Warning ________________________ 3
+II. APF9 Operations Warning for APF8 Operators 4
+III. Maximum Operating Pressure _____________________ 5
+IV. Evaluating the Float and Starting the Mission 6
+A. Manual Deployment with the Reset Tool 7
+B. Pressure Activation Deployment 8
+c.
+Mission Activation and Mission Prelude ARGOS Transmissions 8
+D. Mission Activation and Operator Float Function Check 9
+E. Notes and Caveats 12
+v.
+Deploying the Float 13
+VI. Park and Profile 14
+A.
+Profile Ascent Timing------------------------ 14
+B. Profile and Profile Cycle Schematics 15
+VII. Deep Profile First (DPF) 16
+VIII. Optional Sensors 17
+A. Aanderaa Oxygen Sensor 17
+B. Testing the optional sensors 17
+IX. ARGOSData 18
+A. SERVICE ARGOS Parameters 18
+B. Test Messages-28-bit ARGOS ID- Mission Prelude 19
+c. Data Messages- 28-bit ARGOS ID 21
+D. Conversion from Hexadecimal to Physical Units _______________ 25
+E. Depth Table 86 for PTS Samples 28
+F. Telemetry Error Checking (CRC) 29
+Appendix A: Surface Arrival Time and Total Surface Time 30
+Appendix B: Argos 1D formats, 28-bit and 20-bit 31
+Appendix C: Storage conditions 31
+Appendix D: Connecting a Terminal 32
+Appendix E: APF9A Command Summary 33
+Appendix F: Returning APEXjloatsfor factory repair or refurbishment 37
+Appendix G: Missions 38
+2 of38
+===== PAGE 3 =====
+r
+I. Alkaline Battery Warning
+The profiler contains batteries comprised of alkaline manganese dioxide "D" cells.
+There is a small but finite possibility that batteries of alkaline cells will release a combustible gas
+mixture. This gas release generally is not evident when batteries are exposed to the atmosphere,
+as the gases are dispersed and diluted to a safe level. When the batteries are confined in a sealed
+instrument mechanism, the gases can accumulate and an explosion is possible.
+Teledyne Webb Research has added a catalyst inside of these instruments to recombine hydrogen
+and oxygen into H 0, and the instrument has been designed to relieve excessive internal pressure
+2
+buildup by having the upper end cap release.
+Teledyne Webb Research knows of no way to completely eliminate this hazard. The user is
+warned, and must accept and deal with this risk in order to use this instrument safely as so
+provided. Personnel with knowledge and training to deal with this risk should seal or operate the
+instrument.
+Teledyne Webb Research disclaims liability for any consequences of combustion or explosion.
+3 of38
+===== PAGE 4 =====
+II. APF9 Operations Warning for APF8 Operators
+This APEX manual describes floats using a new controller design. The new design is designated
+APF9. The prior design, which is still in production and widely used, is designated APF8.
+The operator interface and behavior of the APF9 are similar to, but not identical to, the operator
+interface and behavior ofthe APF8. If you are an experienced APF8 user, please observe
+appropriate cautions and do not assume an expected behavior. Several important differences
+are listed below. These points should also be helpful to those without an APF8 background.
+• The serial baud rate for communications is 22Q_Q, with 8 data bits, no parity, and 1 stop bit.
+(The APF8 baud rate is 1200.)
+• APF9 floats using this non-modal version of firmware are shipped in Pressure Activation
+mode. The Reset Tool can then be useq to toggle between Pressure Activation mode, and
+starting a new mission.
+• Ifthe APF9 is performing some task (e.g., self tests), it is not listenin!Ulnd cannot be laced in
+G_om~d Mode with either th~Reset Tool or a 1<eystroke ~t t!_le ter...rriJna_l._ _ --
+o There is one exception. If the piston is moving, the Reset Tool (but not a
+keystroke) can be used to terminate the move. The APF9 will transition to its next
+state or task. Typically this will be eitper Command Mode or Sleep, so try a
+keystroke or a second application of the Reset Tool after the piston stops to
+confirm or trigger the transition to Command Mode.
+• If the APF9 is not responding, it is probably busy with some task. Be patient and occasionally
+try to get the attention of the float with either the Reset Tool or a keystroke.
+• The logging verbosity of the APF9 can be adjusted by the operator. The level, Parameter D,
+Logging verbosity [0-5], adjusts the amount of information provided in diagnostic messages
+from the float, with 5 being the highest level. A logging verbosity of 2 is the default. Only
+level 2 has been thoroughly tested in simulation, so this parameter should be set to 2 for
+all deployments. Higher levels are suitable during testing as an aid to float assessment.
+4 of38
+===== PAGE 5 =====
+Ill. Maximum Operating Pressure
+APEX profilers have a maximum operating pressure of 2000 dbar (2900 psi). However, for
+shallower applications, thinner walled pressure cylinders can be used. These cylinders have a
+reduced pressure rating, but less mass, which allows them to carry a larger battery payload.
+Three cylinder pressure ratings are available:
+• 2000 dbar maximum pressure rating
+• 1500 dbar battery payload typically 14% greater than with 2000 dbar cylinder
+• 1200 dbar battery payload typically 28% greater than with 2000 dbar cylinder
+For example, if an APEX pro filer is specified by the customer for 1400 dbar maximum (profile)
+depth, then the 1500 dbar cylinder would normally be used.
+CAUTION:
+lfyou will be:
+• Exposing floats to significant hydrostatic pressure during ballasting or testing
+• Re-ballasting and re-programming floats for a depth greater than the original specification
+Please contact Teledyne Webb Research to confirm the pressure rating of specific floats.
+Do not exceed the rated pressure, or the hull may collapse.
+5 of38
+===== PAGE 6 =====
+IV. Evaluating the Float and Starting the Mission
+APF9A profilers use either modal or non-modal controllers. Since the type of controller
+determines the behavior of the Reset Tool, it is extremely important to determine which type of
+controller is loaded on the profiler. The controller described in this manual i~non-modqk ~
+meaning that the float will be shipped in Pre ·vation mode and the Reset Tool can b~
+use to to le the float etwee · · de and ing a new mission. This
+contrasts with modal floats, in which the Reset Tool is always used to start a mission (and not to
+put the float in Pressure Activation mode).
+Th~g non-modal co trollers is to reduce the risk of launchin floats that do
+not start missions. For non-modal controllers, the float will always run a mission when launched:
+either because of Pressure Activation, ~r becaliSethe float is already runnmg a mission. This is
+~ for 'modal' contr~llers, which co~ld be launche~out eitherPressure.Activation, or
+without a mission running. From this point on, this manual describes only non-modal behavior.
+If physically connected to the float (using a communication cable between a PC and the float, as
+described in the section "Connecting a Terminal" at the end ofthi,s manual) it is also possible to
+put the float into an 'inactive' state; Once connected, the i.f.(freeze command) immediately
+makes the float hibernate, powering it down and placing it in an 'inactive' state. The .l.:_.L
+command also places the float in an 'inactive' state, although the float will remain awake and
+communicating. Entering ajtcommand (or not communicating for ... minutes) will then place
+the float into Pressure Activation mode. Either way, the easiest way to determine the state of the
+Q '
+connected float is via the command, which gives the state as well as any mission time.
+Another non-modal float behavior is that if any corrupted or ill-formed data is_rece.i-¥.ed-from-the
+CTD sensor, then the mission is automatically started (if not already running). This ensures that
+the user will be notified of the problem. However, this presents another risk when leaving a float
+in the lab, connected to a power-source, but with no pressure sensor or piston-position sensor
+attached. If the float wakes (on the two hourly interval) and detects no CTD data, a mission is
+automatically started. This extends the piston, but with no piston-position sensor attached there is
+a risk of extending the piston too far.
+The following sections, "Manual Deployment with the Reset Tool" and "Pressure Activation
+Deployment", provide operat~onal summaries for the two possible deployment scenarios. Both
+sections refer to self tests conducted by the float and the float function checks performed by the
+operator.
+Teledyne Webb Research
+strongly recommends testing all APEX Profilers
+on receipt by the customer and before deployment
+to ensure no damage has occurred during shipping.
+6 of38
+===== PAGE 7 =====
+A. Manual Deployment with the Reset Tool
+Since the Reset Tool toggles between Pressure Activation mode and starting a new mission, start
+a new mission by first en · gJh&ilie float is in Pressure Activation mode rndlh.en..holdJhe
+Reset Tool over the marked location on the pressure case-fOLap . 1ately 3 seconds. Remove
+~Tool only aft~r y~u hear the air pump activate. ~
+The float will run a brief self test and place itself in a state of maximum buoyancy. This is the
+Mission Activation phas.e. During this time the operator should verify proper function of the
+float (see "Mission Activation and Operator Float Function Check"). The float will tel~meter its
+GPS location and the mission parameters during the Mission Prelude phase. Six hours is typical;
+the duration of the Mission Prelude can be set by the operator.. T~ piston will be fully extended
+a~ladder will be fully inflated during the Mission Activation phas.e. At the conclusion
+~the Missionftelude_the...floaLwi-l.l--Ft€.ract the_piston, deflate the air bladder, and begin its pre
+programmed mission.
+Manual Deployment Summary:
+• Ensure that the float is in Pressure Activation mode before toggling
+• Toggle to stmi a new mission by holding the Reset Tool over the RESET label
+® h
+• Mission Activation
+o Air pump runs once
+o Self test conducted (see below for verification procedure)
+• Internal tests run (~an be monitored if communication cable is connect~d,
+see "Connecting a Terminal")
+• 6 ARGOS transmissions
+o Piston ExTEi\JDED fully
+• Mission Prelude
+o Test transmissions at the programmed rep~tition rate
+o Mission Prelude duration is typically 6 hours
+o Air pump run during transmissions until air bladder is full inflated
+The float can be deployed after the Mission Activation phase and confirmation of}lli2Qe oat
+function ]]ave b~n suc~sfully completed. We advise waiting until the aiLbladdet.is fully
+--
+m---f-l-a-t-e.d durin the first dozen or so test transmissions of the Mission Prelude before deploying
+the float. ~
+If the float fails the self tests the piston will not extend and the air bladder will not inflate.
+The float should not be deployed.
+7 of38
+===== PAGE 8 =====
+B. Pressure Activation Deployment
+Jcll.98-modal floats are shipped in Pressure Activation mode, so no operator action is required to
+~et this mode. In this mode, the float checks the pressure every two hours. If the me.asured
+pressure is greater than 25dbar the float starts its mission. Otherwise, the float moves the pi:;ton
+to the position indicated by mission parameter 'P-As:tivation piston positjon' (if not already there)
+and goes to sleep for another two hours.
+Note that this behavior does present some risk. For example, if 'P-Activation piston position'
+was set to a value that wouJd mak~ the float bouyant at the surface (e.g. around 10 0) then a float
+launched in this mode would never sink, ~nd would never activate (starO its mission. For this
+reason, 'P-Activation piston position' is typically set to around 16. A! this setting the float
+would sink below 25dbar, and consequently start its mission.
+Pressure Activation Deployment Summary:
+• Deploy the float (no toggling is required since the float is delivered in Pressure Activation
+mode)
+• Pressure Activation
+o Pressure is measured every 2 hours
+o Pressure in excess of 25 dbar triggers
+• Full piston extension
+• Transition to Mission Prelude
+• Mission Prelude
+o Test transmissions (6 hours t~pical)
+o Air pump run during transmissions until air bladder is fully inflated
+C. Mission Activation and Mission Prelude ARGOS Transmissions
+The six ARGOS transmissions during Mission Activation and the transmissions during the
+Mission Prelude contain data_about the inst!Jd!!l_ent. The information needed to decode these
+messages is provided in the "ARGOS Data" section of this manual.
+8 of38
+===== PAGE 9 =====
+D. Mission Activation and Operator Float Function Check
+1) Secure the float in a horizontal position using the foam cradles from the shipping crate.
+2) The minimum internal temperature ofthe float is -2.0°C. If necessary, allow the float to
+warm up indoors before proceeding.
+3) Remove the plastic bag and thretj))_pju s from the CTD sensor as shown in the two
+images below. '"
+4) Carefully remove the black rubber plug from the bottom center of the Y-ellow cowling as
+shown in the image below. This will allow you to verify air bladder inflation in the steps
+below. ~se only your fingers to t:e.move
+the plug. Tools may puncture or
+otherwise harm the bladder. Be sure to
+replace the plug before deployment!
+Note: It can be difficult to replace the plug
+when the air bladder is fully inflated. We
+suggest that you reinsert the plug_bclore
+the bladder is fully inflated. The plug
+prevents the entry of silt into the cowling
+in the event the float contacts the sea floor.
+9 of38
+===== PAGE 10 =====
+5) Start a Manual or Pressure Activated Deployment as described above in the "Manual
+Deployment with the Reset Tool" and "Pressure Activation Deployment" sections. This
+will trigger the Mission Activation self tests. Where applicable, the description below
+indicates where the two versions of the self tests differ.
+f~pproximately ~
+Verify by ear that the air pump is activated 1 second.
+DO NOT DEPLOY THE FLOAT IF IT DOES NOT BEHAVE AS DESCRIBED
+BELOW. FLOATS THAT DO NOT PASS THE SELF TESTS SHOULD NOT BE
+DEPLOYED. CONTACT Teledyne Webb Research FOR ASSISTANCE.
+J
+6) The float will conduct self tests for approximately 5 seconds. Progress and diagnostic
+messages will be displayed if a terminal is connected to the float (see "Connecting a
+Terminal" for additional information).
+7) If the float passes the self tests,
+it will make 6 ARGOS
+transmissions with a 6 second
+interval. You can detect these
+transmiss~ons using the "eat's
+meow" sensor as shown in the
+image at right. Hold the sensor
+parallel to and within 15 em
+(6 inches) of the float's antenna.
+The eat's meow will beep during
+each ARGOS transmission. Do
+not deploy the float if you do not
+detect the six (6) ARGOS
+transmissions.
+8) Manual Deployment: If not
+already fully extended, the float Float Antenna "Cal's Meow"
+Transmission detector
+will fully extend the.piston.
+This process may require up to
+22._m inutes.. The oil bladder will expand during this time.
+Pressure Activated Deployment: If not already fully retracted, the float will fully re~ract the
+piston. Thls process may require up to 25 minutes. The oil bladder will deflate during this
+time.
+The volume of oil in the bladder is difficult to detect by l1and. You may be able to hear the
+pum by__Qlacing your ear against the hull.
+10 of38
+===== PAGE 11 =====
+9) Manual Deployment: Once the piston is fully ext~~d the float enters the Mission Prelude
+phase. During this phase it will transmit test messa es at the operator s12ecified ARGOS
+repetitiOn period. Th,nsmissions can be detected with the Cat's Meow~ The float will
+run the aif'"liillp for 6 se_con_ds during each test transmission until the air bladder is fully
+inflated. Inflating the air bladder typically requires 8 to 10 repetitions. Check for air
+bladder inflation by sticking your finger (not a tool!) through the hole in the bottom of the
+yellow cowling as described in Step (4) above. Don't forget to replace the plug before
+deploying the float.
+The duration of the Mission Prelude is set by the operator. 6 hours is typical. At the end of
+the Mission Prelude the ARGOS test transmissions will cease, the float will deflate the air
+bladder and retract the piston, and the first descent of the programmed mission will begin.
+Pressure Activated Deployment: Once the piston is fully retracted the float will enter the
+Pressure Activation phase. During this phase it will check the pressure every two hours,
+hibernating in between. The float will not enter the Mission Prelude phase until it detects a
+pressure in excess of 25 dbar. There will be no test transmissions nor inflation of the air
+bladder until the Mission Prelude phase begins.
+When the trigger pressure is detected the float will extend the piston and begin the Mission
+Prelude, making ARGOS test transmissions at the specified repetition rate and also running
+the air pump to inflate the air bladder (see above). The duration of the Mission Prelude is
+set by the operator. 6 hours is typical. At the end of the Mission Prelude the ARGOS test
+transmissions will cease, the float will deflate the air bladder and retract the piston, and the
+first descent of the programmed mission will begin
+10) The float is ready to deploy.
+11 of 38
+===== PAGE 12 =====
+E. Notes and Caveats
+Self Tests: During the selftests the float checks:
+• The internal vacuum
+• Communication with the CTD
+• The internal alarm timer settings
+If any of the self tests fail the float will abort the mission. The clearest indication to the operator
+that this has occurred is the failure of the float to make the initial 6 ARGOS transmissions at
+6 second intervals.
+If you do not detect these Mission Activation transmissions with the Cat's Meow,
+DO NOT DEPLOY THE FLOAT!
+Manual Deployment: In the case of a Manual deployment, if the float is not deployed before the
+completion ofthe Mission Prelude phase,
+RESET the float again and wait for it to complete the Mission Activation phase and begin
+the Mission Prelude before you deploy it.
+Pressure Activated Deployment: In the case of a Pressure Activated Deployment, the operator is
+necessarily absent when the float begins the Mission Prelude. This means the operator does not
+have the opportunity to check the air bladder for leaks that a Manual Deployment offers.
+For this reason we strongly recommend that you manually inflate and check the bladder
+before starting a Pressure Activated Deployment.
+12 of38
+===== PAGE 13 =====
+V. Deploying the Float
+1) Pass a rope through the hole in the plastic
+damper plate, which is shown in the image at
+right. The rope should fit easily through the hole
+and be capable of supporting 50 kg (1 00 lb ).
+2) Holding both ends of the rope bight, carefully
+lower the float into water. The damper plate is
+amply strong enough to support the weight of
+the float. However, do not let rope slide rapidly
+through the hole as this may cut the plastic disk and release the float prematurely.
+3) Take care not to damage the CTD or the ARGOS antenna against the side of the ship while
+lowering the float.
+4) Do not leave the rope with the instrument. Once the float is in the water, let go of the
+lower end of the rope and pull on the top end slowly and carefully until the rope clears the
+hole and the float is released.
+It may take several minutes for the cowling to fully flood with water and the float may drift
+at an angle or even rest on its side during this period. This is normal behavior and not a
+cause for concern.
+5) Manual Deployment: The float will remain on surface for the duration of the Mission
+Prelude.
+Pressure Activated Deployment: The float will sink immediately. It will return to the
+surface within 3 hours and begin the Mission Prelude after detecting a pressure in excess of
+25 dbar.
+13 of 38
+===== PAGE 14 =====
+r
+VI. Park and Profile
+The APF9A float can be set to profile from a maximum depth (Profile Depth) after a
+programmable number (N) of profiles from a shallower depth (Park Depth). Special cases are
+conducting all profiles from either the Profile Depth or the Park Depth. The latter is an important
+special case that can be selected by setting N = 234. This will cause all profiles start at the Park
+Depth; the programmed Profile Depth is ignored. Between profiles the float drifts at the Park
+Depth.
+Terminology:
+• Park Depth Intermediate depth at which the float drifts between profiles and from
+which the float profiles in cycles not evenly divisible by N.
+• Profile Depth Maximum depth to which the float descends from the Park Depth
+every Nth cycle and from which each Nth profile is conducted.
+• Down Time Programmed time-limit for descending from the surface and drifting
+at the Park Depth. Down Time is commonly set to 10 days or to
+10 days less the Up Time.
+• Up Time Programmed time-limit for ascending from the Park or the Profile
+Depth and drifting at the surface while transmitting the data acquired
+during the profile. Up Time is typically set between 12 hours and
+20 hours, increasing with the amount of data to be transmitted per
+profile. The latitude of the deployment also matters; ARGOS
+satellites are in polar orbits, so the number of satellite passes per day
+increases with latitude.
+• Ascent Rate The ascent rate of the float is maintained at or above 8 cm/s. The
+float extends the piston by a user specified amount to add buoyancy
+when the ascent rate falls below this threshold.
+A. Profile Ascent Timing
+Profiles from the Park Depth begin when the operator programmed Down Time expires. The
+float extends the piston by an operator programmed initial amount and begins the ascent. A PTS
+sample is collected at the end of the Park phase.
+When a profile is to begin from the Profile Depth, the float will retract the piston and descend
+from the Park Depth an operator programmed interval before the expiration of the Down Time.
+This interval, Parameter Mtj, Deep-profile descent time in hours, provides the additional time
+needed to descend to and profile from the Profile Depth without losing significant surface time,
+the period when data from the profile are transmitted. . A PTS sample is collected at the
+beginning of the Profile phase at the achieved profile depth. Subsequent PTS samples are
+collected during profile ascent per the programmed depth table.
+14 of38
+===== PAGE 15 =====
+B. Profile and Profile Cycle Schematics
+I< >I
+Down Time >1~ Up Time
+Surtace ~· ----------~.---
+Park Depth--+~-----------
+Profile Depth --M-------------------------·I
+Time ~
+N=1
+Deep Profile every cycle
+N=3
+Deep Profile every third cycle
+Time
+15 of 38
+===== PAGE 16 =====
+VII. Deep Profile First (DPF)
+Independent of the Park and Profile cycle length, the first profile is always a Deep Profile that
+begins at the Profile Depth. This means the float returns a CTD profile relatively soon, typically
+less than a day, after the float is deployed. This feature supports comparison of the initial float
+profile with a conventional CTD cast from the ship.
+The first descent begins at the end of the Mission Prelude. A schematic representation ofDPF
+with a Park and Profile parameter N = 2 is shown below.
+N = 2 and Deep Profile First (DPF)
+Deep Profile on first cycle and every second cycle
+Time
+Note: For maximum battery life in ARGO applications, Teledyne Webb Research recommends
+use of PD > one, with park depth :S 1500 db.
+16of38
+===== PAGE 17 =====
+VIII. Optional Sensors
+A. Aanderaa Oxygen Sensor
+In addition to SeaBird model 41 CTD sensor, these APEX carry the (optional) Aanderaa Oxygen
+optode 3830. The oxygen sensor communicates with the APEX controller via RS-232C
+interface, and provides bphase and Optode temperature via the Argos data stream. From a
+terminal optode Oxygen in O).lM, temperature, Bphase and Raw Temperature are provided.
+The Optode manufacturer's initial reason for including Raw data was mainly to have the
+possibility to quality check the internal calculations of the instrument. The optode measures and
+presents data in micromole dissolved oxygen per liter (J..tmol/1). This unit is often also called
+micromolar (J.lM). The optode is sampled at the same time as the other sensors, per the depth
+table. In the case of high density CP profiling this sensor is still sampled per the depth table (see
+page 28). Bphase is the phase obtained with blue light excitation, which is used to calculate
+Dphase. 02 concentration can be calculated in micro molar, ).1M, using the equations found in the
+Aanderaa users manual (presently chapter 4 pages 31-33).
+NOTE regarding handling: do not lift or pull on the oxygen optode.
+NOTE regarding optode salinity: The Apf 9 controller has and will configure the optode for an
+internal salinity setting of 0.
+B. Testing the optional sensors
+Sensors can be tested by connecting a terminal, with the provided interface cable, as described in
+the APEX Final Test Procedure.
+Below is an example of output from the Aanderaa oxygen sensor and menu:
+>o?
+Menu of optode functions.
+? Print this menu.
+Oc Configure the optode.
+Od Display the optode configuration.
+On Display optode model and serial number.
+Op Measure optode power consumption.
+Os Get an oxygen sample.
+> o s Optode O,T,BPhase,RawTemp: 259.0uM 23.02C 24.30 144.5
+17 of 38
+===== PAGE 18 =====
+IX. ARGOS Data
+A. SERVICE ARGOS Parameters
+Each float operator must specify various options to Service ARGOS. These choices depend on
+how the user plans to receive and process data. Typical Service ARGOS Parameters are:
+• Standard location
+• Processing: Type A2 Binary input, hexadecimal output
+• Result (output) format: DS All results from each satellite pass
+• Compression: None Uncompressed
+• Distribution strategy: Scheduled All results every 24 hours
+• Number of bytes transmitted: 31 per message 1
+1 When using a 28-bit ARGOS ID, 31 data bytes are transmitted in each message. 32 data bytes are transmitted in
+each message when using a 20-bit ARGOS ID.
+18 of 38
+===== PAGE 19 =====
+B. Test Messages- 28-bit ARGOS ID- Mission Prelude
+The test message block is comprised of two messages. Each of the 6 messages sent during the
+Mission Activation phase is a Test Message 1. During the Mission Prelude the two test messages
+alternate, with one sent during each ARGOS transmission. The formats of the two test messages
+are show in the tables below:
+Test Message 1 - 28-bit ARGOS ID
+Byte(s) Mnemonic Description
+0 CRC Message CRC
+1 MSG Message ID- 1 for Test Message 1
+2 BLK Message block ID - increments with each transmitted message
+block and wraps at OxFF
+3 MON F/ W Revision - Month
+4 DAY F/W Revision- Day
+5 YR F/W Revision- Year (2-digit)
+6-7 FLT Float ID (hull number)
+8-9 SEC Time since the start ofthe Mission Prelude [seconds]
+10- 11 STATUS Float status word - 16 bits, see below
+12- 13 p Pressure measured once for each test message block [c entibars]
+14 VAC Vacuum measured during self tests [counts]
+15 ABP Air bladder pressure measured once for each test message block
+[counts]
+16 BAT Quiescent battery voltage measured once for each test message
+block [counts]
+17 UP Up time [hours]
+18- 19 DOWN Down time [hours]
+20-21 PRKP Park pressure [d ecibars]
+22 ppp Park piston position [counts]
+23 NUDGE Buoyancy nudge during ascent [counts]
+24 OK Internal vacuum threshold [counts]
+25 ASCEND Ascent time-out [hours]
+26 TBP Maximum air bladder pressure [counts]
+27-28 TP Profile pressure [d ecibars]
+29 TPP Profile piston position [counts]
+30 N Park and profile cycle length
+31 Not used -only exists for a float with a 20-bit ARGOS ID
+19 of38
+===== PAGE 20 =====
+Test Message 2 - 28-bit ARGOS ID
+Byte(s) Mnemonic Description
+0 CRC Message CRC
+1 MSG Message ID- 2 for Test Message 2
+2 BLK Message block ID - increments with each transmitted message
+block and wraps at OxFF
+3 MON F /W Revision - Month
+4 DAY F/ W Revision - Day
+5 YR F/ W Revision - Year (2-digit)
+6 FEXT Piston full extension [counts]
+7 FRET Piston full retraction [counts]
+8 IBN Initial buoyancy nudge (starts profile) [counts]
+9 CHR Compensator hyper-retraction [counts]
+10 PACT Pressure-activation piston position [counts]
+11 DPDP Deep profile descent period [hours]
+12 PDP Park descent period [hours]
+13 PRE Mission prelude period [hours]
+14 REP ARGOS transmission repetition period [seconds]
+15-16 SBESN Seabird SBE41 serial number (encoded as a hex integer, e.g.,
+SIN 8413 is encoded as Ox20DD)
+17- 18 SBEFW Seabird SBE41 F /W Revision (encoded as a hex integer after
+multiplication by 100, e.g., F/W 2.6-----+ 260-----+ Ox0104)
+19-20 OPTSN Serial number of the optode oxygen sensor.
+21-24 EPOCH Current UNIT epoch (GMT) of Apf9a RTC (little endian order)
+25-26 TOD Minutes past midnight when down-time will expire. IfToD
+feature disabled, bytes = Oxfffe.
+27-28 DEBUG Debugging Verbosity for generating engineering log entries.
+29-31 Not used [OxFF]
+The SBE41 biographical data transmitted in this firmware revision is the SBE41 's serial number
+(2 bytes) and the SBE41 's firmware revision (2 bytes). The serial number is encoded as a hex
+integer. For example, serial number 1500 would be encoded and transmitted as Ox05DC. The
+firmware revision is multiplied by 100 before being encoded as a hex integer. For example,
+FwRev 2.6 will be multiplied by 100 to get 260 before being encoded as OxO 104.
+The optode biographical data transmitted in this firmware revision is just the serial number (2
+bytes) encoded as a hex integer.
+20 of38
+===== PAGE 21 =====
+C. Data Messages - 28-bit ARGOS ID
+The number of data messages depends on the number of measurements made during the profile.
+The formats of the data messages are shown in the tables below. Data Message 1 contains float,
+profile, and engineering data.
+Data Message 1 -28-bit ARGOS ID
+Byte(s) Mnemonic Description
+0 CRC Message CRC
+1 MSG Message ID - each data message block is comprised of multiple
+messages, this will be a 1 for Data Message 1
+2 BLK Message block ID - increments with each transmitted message block
+and wraps at OxFF
+3-4 FLT Float ID (apf9a controller serial number)
+5 PRF Profile number (wraps to 0 from 255)
+6 LEN Number of TSP samples in this message block
+7-8 STATUS Same as the Test Message 1 Status word (see above)
+9- IO SP Surface pressure at end of Up Time [centibars]
+II CP The current pressure [c entibars] as recorded during the creation of
+each argos message block. Each distinct copy of argos message #I
+contains a new pressure measurement.
+12 SPP Piston position when surface detected [counts]
+13 PPP2 Piston position at end of Park phase [counts]
+14 ppp Piston position at end of last Deep descent phase [counts]
+15-16 SBE41 SBE4I status word - I6 bits, see below
+This byte records the state of the 8 status bits specifically related to
+I7 OPTODE the optode. Individual bits can be accessed with an appropriate bit
+mask.
+18- 19 PMT Cumulative piston on time during ascent [seconds]
+20 VQ Battery voltage at end of Park phase [counts]
+2I IQ Battery current at end of Park phase [counts]
+22 VSBE Battery voltage while SBE4I sampling at end of Park phase [counts]
+23 ISBE Battery current while SBE41 sampling at end of Park phase [counts]
+24 VHPP Battery voltage measured just before the end of the initial piston
+extension beginning Profile phase [counts]
+25 IHPP Battery current measured just before the end of the initial piston
+extension beginning Profile phase [counts]
+26 YAP Battery voltage while air pump running [counts]
+27 lAP Battery current while air pump running [counts]
+28 PAP The number of 6-second pulses of the air pump required
+29-30 VSAP Integrated Measure of (Volt-Sec) of volume of air pumped during
+telemetry cycle.
+31 Not used - only exists for a float with a 20-bit ARGOS ID
+21 of 38
+===== PAGE 22 =====
+The definition ofthe STATUS bits in the engineering data above is shown below.
+Test Message 1- Status Word
+Bit Mnemonic Description
+OxOOO 1 DeepPrf Current profile is a Deep Profile
+Ox0002 ShallowWaterTrap Shallow water trap detected
+Ox0004 Obs25Min Sample time-out (25 minutes) expired
+Ox0008 PistonFullExt Piston fully extended before surface detected
+Ox0010 AscentTimeOut Ascent time-out expired
+Ox0020 TestMsg Current message is a test message
+Ox0040 PreludeMsg Current messaged transmitted during Mission Prelude
+Ox0080 P ActMsg Current message is a Pressure Activation test message
+OxO 10 0 BadSeqPnt Invalid sequence point detected
+Ox0200 Sbe41 Exception SBE41 exception detected.
+Ox0400 Sbe41 Unreliable SBE41 (P) unreliable.
+Ox0800 Not used yet.
+OxlOOO Not used yet.
+Ox2000 AirSysBypass Air inflation system bypassed; excessive energy consumption.
+Ox4000 WatchDogAlarm Wake-up by watchdog alarm
+Ox8000 PrfldOverFlow 8-bit profile counter overflowed [255 ~ 0]
+The definition of the SBE41 status bits in the engineering data above is shown in the table below.
+SBE41 Status Word
+Bit Mnemonic Description
+Ox0001 Sbe41 PedanticExceptn An exception was detected while parsing the P-only
+pedantic regular expression
+Ox0002 Sbe41 PedanticFail The SBE41 response to P-only measurement failed the
+pedantic regular expression
+Ox0004 Sbe41 RegexFail The SBE41 response to P-only measurement failed the
+non-pedantic regular expression
+Ox0008 Sbe41 PNullArg NULL argument detected during P-only measurement
+OxOOlO Sbe41 PRegExceptn An exception was detected while parsing the P-only
+non-pedantic regular expression
+Ox0020 Sbe41 PNoResponse No response detected from SBE41 for P-only request
+Ox0040 Sbe41 PUncaughtExceptn An uncaught exception was detected for p-only request.
+Ox0080 Sbe41PDivPts Abnormal P-PT(S) divergence detected for p-only
+request.
+OxOlOO Sbe41 PtPedanticExceptn An exception was detected while parsing the PTS
+22 of 38
+===== PAGE 23 =====
+pedantic regular expression
+Ox0200 Sbe41 PtPedanticFail The SBE41 response to PT sample-request failed the
+pedantic regex.
+Ox0400 Sbe41 PtRegexFail The SBE41 response to PTS measurement failed the
+pedantic regular expression
+Ox0800 Sbe41 PtNullArg NULL argument detected during PTS measurement
+Ox1000 Sbe41 PtRegExceptn An exception was detected while parsing the PTS non
+pedantic regular expression
+Ox2000 Sbe41 PtN oResponse No response detected from SBE41 for PTS request
+Ox4000 Sbe41 PtUncaughtExceptn An uncaught exception was detected for PT request
+Ox8100 Sbe41 PtsPedanitcExceptn An exception was detected while parsing the PTS
+Ox8200 Sbe41 PtsPedanticFail The SBE41 response to PTS sample-request failed the
+pedantic regex
+Ox8400 S be41 PtsRegexF ail The SBE41 response to PTS sample-request failed the
+nonpedantic regex
+Ox8800 S be41 PtsNu llArg NULL argument detected during PTS sample-request
+Ox9000 Sbe41 PtsRegExceptn An exception was detected while parsing the PTS
+nonpedantic regex
+OxaOOO Sbe41 PtsN oResponse No response detected from SBE41 for PTS request
+OxcOOO Sbe41 PtsUncaughtExceptn An uncaught exception was detected for PTS request
+The definition of the OPTODE status bits in the engineering data above is shown below.
+Optode- Status Word
+Bit Mnemonic Description
+Ox01 OptodeFail Nonmatching response received
+Ox02 OptodeNullArg Null function argument.
+Ox04 OptodeNoResponse No response received from optode.
+Ox08 OptodeUncaughtExceptn An uncaught exception was detected for an optode sample.
+r
+Message 2 continues with miscellaneous engineering data plus eleven statistics of temperature
+and pressure collected hourly during the park phase: Number of samples, mean temperature,
+mean pressure, standard deviation of temperature, standard deviation of pressure, minimum
+temperature, pressure associated with minimum temperature, maximum temperature, pressure
+associated with maximum temperature, minimum pressure, and maximum pressure. Each of
+these 11 statistics consumes 2 bytes.
+23 of38
+===== PAGE 24 =====
+Data Message 2 - 28-bit ARGOS ID
+Byte(s) Mnemonic Description
+0 CRC Message CRC
+MSG Message ID - each data message block is comprised of multiple
+messages, this will be a 2 for Data Message 2
+2-5 EPOCH Unix epoch when down time expired (Apf9a RTC)
+6-7 TIN IT Time (minutes) when telemetry phase was initiated relative to
+EPOCH. (2's compliment signed integer)
+8 NADJ Number of active-ballast adjustments made during the park phase
+9- 10 PRKN Number of hourly park-level PT samples.
+11 - 12 TMEAN Mean temperature of park-level PT samples.
+13- 14 PMEAN Mean pressure of park-level PT samples.
+15 - 16 SDT Standard deviation oftemperature of park-level PT samples.
+17- 18 SDP Standard deviation ofpressure of park-level PT samples.
+19-20 TMIN Minimum temperature of park-level PT samples.
+21-22 TMINP Pressure associated with Tmin ofpark-level PT samples.
+23-24 TMAX Maximum temperature of park-level PT samples.
+25-26 TMAXP Pressure associated with Tmax of park-level PT samples.
+27-28 PMIN Minimum pressure of park-level PT samples.
+29-30 PMAX Maximum pressure of park-level PT samples.
+31 NA Not used (Oxff). Present only if a 20-bit argos id is used.
+Message 3 starts with the surface optode measurement together with an associated pressure
+measurement.
+Optode- Status Word
+Bit Mnemonic Description
+0 CRC Message CRC computed with BathySystem's CRC generator.
+1 MSG Message id.
+The air bladder pressure [counts] recorded just after each argos
+2 ABP
+transmission.
+3-4 SRFP Surface pressure to complement surface optode data.
+5-7 SOPT Surface optode BPhase and temperature data.
+Next, the hydrographic data are transmitted in messages 3-N in the order that they were collected.
+The sample taken at the end of the park phase will be transmitted followed by the samples
+collected during the profile phase. Each sample consists of 9 bytes in order ofT (2 bytes), S (2
+bytes), P (2 bytes), BPhase (3 nibbles), T2 (3 nibbles). The parameters T, S, & P were collected
+by the SBE41 while BPhase & T2 were measured by the optode. Each sample contains two
+optode measurements that are packed into 3 bytes. The parameters T, S, & P were collected by
+the SBE41 while BPhase & T2 were measured by the optode. Refer to the comment section of
+OptodeEncode() for details of the encoding scheme for optode data.
+24 of38
+===== PAGE 25 =====
+The last message is filled out with auxiliary engineering data. This is engineering data that is of
+a lower priority that the engineering data transmitted in message 1. The amount of engineering
+data will be variable and only enough to complete the last message (at most). The auxiliary
+engineering data will never cause an additional message to be generated. If the auxiliary
+engineering data are not sufficient to complete the last message then the remaining unused bytes
+will be set to Oxff. Auxiliary engineering data are included in the order presented below:
+The maximum (in absolute value) divergence between pressures from closely-spaced (ie., a few
+seconds apart in time) P-only sample requests and PT or PTS sample requests. The divergence is
+measured as the P-only sample minus the pressure from the PTS (or PT) sample. The difference
+is measured in centibars and encoded using EncodeP() as shown in the C-source code below.
+Time of profile initiation: The time difference (ie., minutes) between the start of the profile and
+the end ofthe down-time. This is a 2-byte signed integer (expressed in 2's-complement form)
+where positive values indicate profile initiation after the down-time expired and negative values
+indicate profile initiation before the down-time expired.
+V AC: The internal vacuum [counts] recorded when the park phase of the mission cycle
+terminated.
+Descent pressure marks: During the park-descent phase, the pressure is measured just after the
+piston has been retracted; this is the first descent mark. In addition, at hourly intervals after
+initiation of the park-descent phase, the pressure is measured. These measurements mark the
+descent and can be used to determine the descent rate as a function of time.
+The first byte beyond the end of the hydrographic data is the count of the number of descent
+pressure marks. This byte is followed by 1-byte pressures (bars) marking the descent phase.
+D. Conversion from Hexadecimal to Physical Units
+The temperature, salinity, pressure, voltage, and current values measured by the float are encoded
+in the Data Messages as hex integers. This compression reduces the number of bytes in the
+ARGOS transmissions. The resolution of the encoded hydrographic values is shown in the table
+below:
+Measurement Resolution Range Data Format Conversion
+Temperature 0.001 oc -4.095 octo 16-bit unsigned T = Traw I 1000
+61.439 oc with 2's complement
+Salinity 0.001 psu -4.095 psu to 16-bit unsigned S= Sraw I 10 00
+61.439 psu with 2' s complement
+Pressure 0.1 dbar -3276.7 dbar 16-bit unsigned P= Praw /10
+to 3276.7 dbar with 2' s complement
+Volts v 8 bits unsigned V = (Vraw * 0.077 + 0.486
+Current MA 8 bits unsigned I= Oraw * 4.052)- 3.606
+Vacuum InHg 8 bits unsigned V = (Vraw * 0.293) -29.767
+25 of38
+===== PAGE 26 =====
+To convert the hex values in an ARGOS message back to physical units, proceed as described in
+the table below. The initial conversion from Hexadecimal to Decimal should assume the hex
+value is an unsigned integer with a range of 0 to 65535 for temperature, salinity, and pressure
+measurements, a range of 0 to 255 for voltage and current measurements and a range of 0 to 4095
+for optode measurements. If temperature, salinity or pressure raw values are above the maximum
+unisigned value listed, a 2's complement conversion should be applied to obtain a signed
+(negative) value. This allows for representation of a full range ofvalues.
+Decimal and Physical
+Measurement Hexadecimal
+Conversion Steps Result
+Temperature 2: 0 Ox3EA6 (<OxEFFF) Traw = 16038
+~
+T = T raw I 1000 ~ 16.038 oc
+Traw = 62859
+Temperature< 0 OxF58B (2: OxF001) ~
+T2sComplement=Traw-65536=-2677
+-2.677 oc
+T= T 2sComplement I 10 00 ~
+Salinity Ox8FDD ( <OxEFFF) ~ Sraw = 36829
+S= Sraw I 1000 ~ 36.829 psu
+Sraw = 61443
+OxF003 (2: OxFOO 1)
+~
+Salinity S2sComplement=Sraw-65 53 6= -4093
+-4.093 psu
+S= S2sCompement I 10 00 ~
+Pressure 2: 0 Ox 1D 4C ( < Ox8000) ~ Praw = 7500
+P = Praw I 10 ~ 750.0 dbar
+Praw = 65530
+Pressure< 0 OxFFF A (2: Ox8000) ~
+P2sCompliment = Praw- 65536 = -6
+-0.6 dbar
+P = P2sCompliment I 10 ~
+Volts OxBB~ Vraw = 187
+r--
+V= (Vraw *0.077) + 0.486 ~ 14.9 v
+Current OxOA~ I raw= 10
+I= (Iraw * 4.052) -3.606 ~ 36.9 rnA
+Vacuum Ox56 ~ Vraw = 86
+V = (Vraw* 0.293) -29.767 ~ -4.5 inHg
+Conversion Notes:
+The temperature range is -4.095 octo 61.439 °C. Hex values OxFOOO (nonfinite), OxF001
+26 of38
+===== PAGE 27 =====
+(:S -4.095), OxEFFF (2: 61.439), and OxFFFF (missing data) are used to flag out-of-range
+oc
+measurements or are otherwise reserved. Temperatures in the range -0.0015 to -0.0005 °C are
+mapped to OxFFFE.
+The salinity range is -4.095 psu to 61.439 psu. Hex values OxFOOO (nonfinite ), OxFOO 1
+(:S -4.095), OxEFFF (2: 61.439), and OxFFFF (missing data) are used to flag out-of-range
+measurements or are otherwise reserved. Salinities in the range -0.0015 psu to -0.0005 psu are
+mapped to OxFFFE.
+The pressure range is -3276.7 dbar to 3276.7 dbar. Hex values Ox8000 (nonfinite), Ox8001
+(:S -3276.7), Ox7FFF (2: 32767.7), and OxFFFF (missing data) are used to flag out-of-range
+measurements or are otherwise reserved. Pressures in the range -0.15 dbar to -0.05 dbar are
+mapped to OxFFFE.
+27 of 38
+===== PAGE 28 =====
+E. Depth Table 86 for PTS Samples
+Depth Table 86, below, with values expressed in decibars (dbar), defines where PTS
+measurements are acquired during a profile.
+1500 1400 1300 1200 1100 1000 900 800
+700 650 600 550 500 480 460 440
+420 400 380 360 350 340 330 320
+310 300 290 280 270 260 250 240
+230 220 210 200 195 190 185 180
+175 170 165 160 155 150 145 140
+135 130 125 120 115 110 105 100
+95 90 85 80 75 70 65 60
+55 50 45 40 35 30 25 20
+15 10 5
+Depth Table 86
+To prevent fouling of the CTD by surface and near-surface contaminants, the shallowest PTS
+sample is taken when the pressure is between 6 dbar and 4 dbar.
+28 of38
+===== PAGE 29 =====
+F. Telemetry Error Checking {CRC)
+ARGOS messages can contain transmission errors. For this reason the first element of each
+message is a CRC (Cyclic Redundancy Check) byte. The value is calculated by the float, not by
+ARGOS, from the remaining bytes of that message. A bad CRC generally means a corrupted
+message. It is worth noting that a good CRC is a good indicator that the message is OK, but it is
+possible to have a good CRC even when the message is corrupt. This is particularly true for a
+short CRC - this one is only 8 bits long. Comparing multiple realizations of each ARGOS
+message (e.g., all received versions of Data Message 3 for some particular profile) to identify
+uncorrupted versions of the message is strongly recommended.
+A sample code fragment in C that can be used to calculate CRC values is shown below. This
+code was written by Dana Swift of the University of Washington. The original algorithm was
+developed in the 1970s by AI Bradley and Don Dorson of the Woods Hole Oceanographic
+Institution. The algorithm attempts to distribute the space of possible CRC values evenly across
+the range of single byte values, 0 to 255. Sample programs inC, Matlab, FORTRAN, and
+BASIC can be provided by Teledyne Webb Research on request. The Matlab version provides
+the user with a GUI interface into which individual ARGOS messages can be entered by cutting
+and pasting with a mouse.
+static unsigned char crcoorson(const unsigned char *msg,
+unsigned int n) {
+unsigned char i ,crc=Crcscrambler(msg[1]);
+for (i =2; i <n; i ++) {
+ere/\= msg[i];
+ere = crcscrambler(crc);
+}
+return ere;
+}
+static unsigned char crcscrambler(unsigned char byte) {
+unsigned char sum=O,tst;
+if (!byte) byte = Oxff;
+tst = byte; if (tst % 2) sum++;
+tst >>= 2; if (tst% 2) sum++;
+tst >>= 1; if (tst % 2) sum++;
+tst >>= 1; if (tst % 2) sum++;
+sum%= 2;
+return (byte>>1) + (sum<<7);
+}
+29 of38
+===== PAGE 30 =====
+Appendix A: Surface Arrival Time and Total Surface Time
+Calculating surface drift vectors may require that you estimate the surface arrival time. Although
+each message is time stamped by ARGOS, there may not be a satellite in view at the time the
+float surfaces. In this case the initial messages are not received.
+ARGOS telemetry begins when the float detects the surface. The messages are transmitted in
+numerical order starting with Message 1. When all of the messages in the block have been
+transmitted the cycle repeats. Transmissions continue at the programmed repetition rate until the
+Up Time expires.
+The elapsed time since surfacing can be estimated using the message block number (m), the
+number of messages in the block (n), and the programmed ARGOS repetition period (p).
+Te = (m- 1) x n x p
+The block number (BLK) is included in each ARGOS message set.
+The total number of messages can be determined from the information in Data Message 1, which
+includes the number of PTS measurements made during the profile (LEN). Note that this value
+may not be the same as the number of entries in the depth table. For example, a float may drift
+into shallow water and not be able to reach the some depths. The total number of messages will
+include message 1 and message 2 plus the number of messages needed for the PTS data.
+The repetition period is known a priori or can be determined form the ARGOS time stamps on
+sequential messages.
+Subtracting the Te calculated from a particular Message 1 from the message's time stamp
+produces an estimate of the time at which the float surfaced. An example is shown below
+Example Message 1
+DS format
+r Block Number
+2001-11-02 22:47:54 1
+Byte 2 = Ox05 m = 5
+CF 01 05 02
+Number of PTS measurements
+AF 02 47 00
+Byte 6 = Ox47-----+ 71
+85 01 01 01
+16 92 17 19 71 x 6 = 426 bytes
+9E 94 01 AD Number of Msgs for data
+85 09 1F 48 = 426 bytes I 28 bytes per msg = 16
+97 9B 00 46
+Total messages= Msgl + Msg2 +Data Msgs
+62 24 OE
+=1+1+16 n=18
+Repetition Period p = 46 seconds
+30 of38
+===== PAGE 31 =====
+Calculate the elapsed time on the surface:
+Te = (m- 1) x n x p =(5-1) x 18 x 46 = 3312 = OOh 55m 12s
+Subtracting this from the time stamp of the ARGOS message yields the approximate time of
+arrival at the surface:
+22:47:54-00:55:12 = 20:52:42
+The total time spent at the surface can now be calculated by subtracting Te from the known
+expiration of the Up Time.
+Appendix 8: Argos ID formats, 28-bit and 20-bit
+In 2002 Service Argos notified its users there were a limited number of 20-bit Ids available and
+to begin preparing for a transition to 28-bit IDs. The 28 bit-IDs reduced from 32 to 31 the
+number of data bytes in each message. Data provided by Argos will consist of 31 hex bytes per
+message. Data acquired by use of an uplink receiver will consist of 32 hex bytes per message.
+The first byte, when using an uplink receiver, is a 28-bit ID identifier used by Argos and is not
+represented in the Apex Data formats included in this manual.
+Appendix C: Storage conditions
+For optimum battery life, floats should be stored in a controlled environment in which the
+temperature is restricted to the range + 10 °C to + 25 °C. When activated, the floats should be
+equilibrated at a temperature between -2 °C and +54 °C before proceeding with a deployment.
+If the optional VOS or aircraft deployment containers are used, they must be kept dry, and should
+only be stored indoors.
+31 of 38
+===== PAGE 32 =====
+Appendix D: Connecting a Terminal
+The float can be programmed and tested by an operator using a 20 rnA current loop and a
+terminal program. The current loop has no polarity. Connections should be made through the
+hull ground and a connector or fitting that is electrically isolated from the hull. This is shown in
+the image below. In this case one side of the current loop is clipped to the zinc anode and the
+other is clipped to the pressure port.
+The communications cables and clamps are included in the float shipment. An RS-232 to
+current-loop converter is provided with the communications cables. This converter requires a 12
+VDC supply.
+The RS-232 communications cable should be
+' connected to the COM port of a PC. Run a
+communications program such as ProComm or
+HyperTerminal on the PC. Both programs can
+be downloaded from various Internet sites.
+HyperTerminal is generally included with
+distributions ofthe Windows Operating System.
+COM Port Settings: 9600, 8, N, 1
+• 9600 baud
+• 8 data bits
+• No parity
+• 1 stop bit
+• no flow control I no handshaking
+• full duplex
+Teledyne Webb Research recommends the practice of capturing and archiving a log file of all
+communications with each float. If in doubt about a test, email the log file to your chief scientist
+and/or to Teledyne Webb Research.
+Once you have started the communications program and completed the connections described
+above, press [ENTER] to wake the float from Hibernate mode. The float will respond that it has
+detected an "asynchronous wake-up" and will enter Command mode. Press [ENTER] in
+Command mode to display the main menu. Menu selections are not case sensitive. See "APF9A
+Command Summary" for a complete list of available commands.
+32 of38
+===== PAGE 33 =====
+Appendix E: APF9A Command Summary
+Uppercase commands are used here for clarity; however, APF9A commands are not case
+sensitive. The menus presented below were copied verbatim from a terminal session with an
+APF9A controller. ">"is the APF9A prompt for operator input. The first menu is displayed in
+response to either a question mark("?") or the [ENTER] when no preceding command is entered.
+IMPORTA NT: Piston full extension, set with menu parameter Ff, is calibrated and set at
+the factory. Do not alter the value of Ff shown in the "Missions" appendix. Using a value
+larger than the factory setting may result in severe damage to the pump.
+Main Menu
+> ?
+Menu selections are not case sensitive.
+? Print this help menu.
+Initiate pressure-activation of mission.
+A
+c calibrate: battery volts, current, & vacuum.
+D Set logging verbosity. [0-5]
+Execute (activate) mission.
+E
+Diagnostics agent.
+I
+I? Diagnostics menu.
+K Kill (deactivate) mission.
+List mission parameters.
+L
+Mission programming agent.
+M
+M? Mission programming menu.
+p Display the pressure table.
+Exit command mode.
+Q
+s seabird CTD agent.
+s? seabird CTD menu.
+T Get/Set RTC time. (format 'mm/dd/yyyy:hh:mm:ss')
+Diagnostics Menu
+> I ?
+Menu of dia9nostics.
+? Print th1s menu.
+a Run air pump for 6 seconds.
+b Move piston to the piston storage position.
+c close air valve.
+d Display piston position
+e Extend the piston 4 counts.
+g Goto a specified position. [1-234] (counts)
+o open air valve.
+r Retract the piston 4 counts.
+t Argos PTT test.
+z calculate ToD down-time expiration.
+1 Run air pump for 6 seconds (deprecated).
+33 of38
+===== PAGE 34 =====
+2 Argos PTT test (deprecated).
+5 Retract the piston 4 counts (deprecated).
+6 Extend the piston 4 counts (deprecated).
+7 Display piston position (deprecated).
+8 open air valve (deprecated).
+9 close air valve (deprecated).
+34 of38
+===== PAGE 35 =====
+Deployment Parameter Menu
+> L
+APEX version 013108 sn 0000
+551D479 28-bit hex Argos id. Ma
+060 Argos repetition period (seconds) Mr
+INACTV ToD for down-time expiration (Minutes) Mtc
+240 Down time. (Hours) Mtd
+013 up time. (Hours) Mtu
+009 Ascent time-out. (Hours) Mta
+006 Deep-profile descent time. (Hours) Mtj
+006 Park descent time. (Hours) Mtk
+006 Mission prelude. (Hours) Mtp
+1000 Park pressure. (Decibars) Mk
+2000 Deep-profile pressure. (Decibars) Mj
+066 Park piston position. (Counts) Mbp
+000 compensator hyper-retractin (Counts) Mbh
+016 Deep-profile piston position. (Counts) Mbj
+010 Ascent buoyancy nudge. (Counts) Mbn
+022 Initial buoyancy nudge. (Counts) Mbi
+004 Park-n-profile cycle length. Mn
+120 Maximum air bladder pressure. (Counts) Fb
+096 OK vacuum threshold. (Counts) Fv
+227 Piston full extension. (Counts) Ff
+016 Piston storage position. (Counts) FS
+2 Logging verbosity. [0-5]
+D
+0002 DebugBltS
+D
+c745 Miss1on signature (hex).
+> ?
+Menu selections are not case sensitive.
+? Print this help menu.
+A Enter ARGOS ID in HEX.
+B Buoyancy control agent.
+Bh compensator hyper-retraction for park descent.[0-234] (counts)
+Bi Ascent initiation buoyancy nudge. [25-234] (piston counts)
+Bj Deep-profile piston position. L1-234] (counts)
+Bn Ascent maintenance buoyancy nudge. [5-234] (piston counts)
+Bp Park piston position [1-234] (counts)
+F Float vitals agent.
+Fb Maximum air-bladder pressure. [1-234] (counts)
+Ff Piston full extension. [1-234] (counts)
+Fn Display float serial number.
+Fs Storage Piston Position. [1-234] (counts)
+Fv OK vacuum threshold. [1-254] (counts)
+L List mission parameters.
+N Park and profile cycle length. [1-234]
+J Deep-profile Pressure. (0-2000] (decibars)
+K Park Pressure. (0-2000] (decibars)
+Q Quit the mission programming agent.
+R Repetition period for Argos transmissions [30-120] (sec).
+T Mission Timing Agent
+Ta Ascent time-out period. [1-10 hours] (Hours)
+35 of38
+===== PAGE 36 =====
+Td Down time (0-336 hours] (Hours).
+TTj Deep-profile descent time. [0-6 hours] (Hours) .
+k Park descent time. (0-6 hours] (Hours).
+Tp Mission prelude. (0-6 hours] (Hours).
+Tu up time (0-24 hours] (Hours).
+z Analyze the current mission programming
+Buoyancy Parameter Menu
+> B ?
+Menu of buoyancy control parameters.
+? Print this menu.
+Bh compensator hyper-retraction for park descent. [0-234] (counts)
+Bi Ascent initiation buoyancy nudge. [25-234] (piston counts)
+Bj Deep-profile piston position. L1-234] (counts)
+Bn Ascent maintenance buoyancy nudge. [5-234] (piston counts)
+Bp Park piston position [1-234] (counts)
+Timing Parameter Menu
+> T ?
+Menu of mission timing parameters.
+? Print this menu.
+Ta Ascent time-out period. [1-10 hours] (Hours)
+Td Down time (0-336 hours] (Hours).
+Tj Deep-profile descent time. [0-6 hours] (Hours) .
+Tk Park descent time. (0-6 hours] (Hours).
+Tp Mission prelude. (0-6 hours] (Hours).
+Tu up time (0-24 hours] (Hours).
+SBE41 Menu
+> s ?
+Menu of SBE41 functions.
+? Print this menu.
+sc Display the SBE41 calibration coefficients.
+sf Display SBE41 firmware revision.
+sm Measure power consumption by SBE41.
+sn Display SBE41 serial number.
+Sp Get SBE41 P.
+Ss Get SBE41 P T & S.
+St Get SBE41 P & T (low-power).
+Float Vitals Menu
+> F ?
+? Print this menu.
+Fb Maximum air-bladder pressure. [1-254] (counts)
+Ff Piston full extension. [1-234] (counts)
+Fn Display float serial number.
+Fs Storage Piston Position. [1-234] (counts)
+Fv OK vacuum threshold. [1-254] (counts)
+36 of 38
+===== PAGE 37 =====
+Appendix F: Returning APEX floats for factory repair or refurbishment
+Contact Teledyne Webb Research before returning APEX floats for repair or refurbishment. All
+returns from outside USA, please specify our import broker:
+Consignee: Teledyne Webb Research
+82 Technology Park Drive
+East Falmouth, MA 02536
+Notify: DHL-Danzas Freight Forwarding Agents
+Attn: Ellis Hall, Import Broker
+Phone (617) 886-6665, FAX (617) 242-1470
+500 Rutherford A venue
+Charlestown, MA 02129
+Note on shipping documents: US MADE GOODS
+CAUTION: If the float was recovered from the ocean, it may contain water, which presents a
+safety hazard due to possible chemical reaction of batteries in water. The reaction may generate
+explosive gases (see "Alkaline Battery Warning" at the beginning of this manual). In this case,
+be sure to remove the seal plug to ventilate the instrument before shipping. Do this is a well
+ventilated location and do not lean over the seal plug while loosening it. Use a 3116 inch hex
+wrench (provided), or pliers, to rotate the plug counter-clockwise.
+Seal Plug
+37 of38
+===== PAGE 38 =====
+Appendix G: Missions
+This section lists the parameters for each float covered by this manual.
+To display the parameter list, connect a communications cable to the float, press <ENTER> to
+wake the float from hibernate and start command mode, and press 'I' or 'L' to list the parameters.
+See "Connecting a Terminal" and "APF9A Command Summary" for more information.
+Instrument # 5292
+APEX version 090810 sn 7248
+A82E1BE 28-bit hex Argos id. Ma
+046 Argos repetition period (Seconds) Mr
+INACTV ToD for down-time expiration. (Minutes) Mtc
+10 4 Down time. (Hours) Mtd
+016 Up time. (Hours) Mtu
+009 Ascent time-out. (Hours) Mta
+005 Deep-profile descent time. (Hours) Mtj
+005 Park descent time. (Hours) Mtk
+006 Mission prelude. (Hours) Mtp
+0750 Park pressure. (Decibars) Mk
+1500 Deep-profile pressure. (Decibars) Mj
+054 Park piston position. (Counts) Mbp
+000 Compensator hyper-retraction. (Counts) Mbh
+016 Deep-profile piston position. (Counts) Mbj
+0 I 0 Ascent buoyancy nudge. (Counts) Mbn
+022 Initial buoyancy nudge. (Counts) Mbi
+005 Park-n-profile cycle length. Mn
+120 Maximum air bladder pressure. (Counts) Mfb
+096 OK vacuum threshold. (Counts) Mfv
+226 Piston full extension. (Counts) Mff
+016 P-Activation piston position. (Counts) Mfs
+2 Logging verbosity. [0-5] D
+0002 DebugBits. D
+f639 Mission signature (hex).
+38 of38
+===== PAGE 39 =====
+) ) ) )
+1772
+LOMINI
+S W 5 e 2 r o i 9 a b 0 l b , _ A d 1 r e 0 o c 3 o i 2 m s 4 i a 1 O l A A 8 ro 2 ' E o " s 1 i 9 D 8 d 1 o d 5 o B 0 l 0 h 7 l . o 0 c m 0 0 o 0 salinitv densitv Uo batteries S s 5 e 1 o r 7 ia 1 ~ l # 10 s d 1 h 2 a i 1 t p e 1 1 0 2 l " 9 a o " ti 5 t " u 7 " d '5 e ' 3 s 0 v o 6 e ft 1 r w s 8 i a o 1 r n 0 e d " o. . . " ~. . . " h " ' 4 ' 2 " ' p n 1 t u t 1 s m 4 e 9 e r 8 i r a 1 # l w la m y b e o l A O an o N d d A e o r a # a production notes
+5291 103242 A82EIAD 1500 7.0000 0-Pack UTHIC+D StrillQ ALK 5172 10/21110 30o0(Y00 061810 44 114923 y NA
+5292 103243 A82E1BE 1500 7.0000 16 0-Pack UTH/C+D Strii'IQ ALK SBE41 v3.0 5213 10121/10 28o15'00 090810 46 750 Standard 110946 y 1305 T--A~Octode 3830 ONLY Customer suollied
+===== PAGE 40 =====
+081 BALLASTING
+FLOAT: 5292 Regression Output:
+DATE: 10/21/2010 Constant -7.470345068
+TEMP: 21.6 c R Squared 0.9 99651863
+TARGET DEPTH: 1500 db No. of Observations 11
+IN SITU PTANK: 1.004591 g/cm3 X Coefficient(s) 0.019680724
+INITIAL CHAIN: 0 inches
+AIR WT. INST: 24650 grams
+EXTERNAL WT: 175.5 grams Number of 13.5g external washers
+BALLAST WT: 728.5 grams
+PSI Inches #Obs.
+794.406 8.234 1
+30
+998.835 12.06 2
+1200.978 16.264 3
+25
+1398.3 20.031 4
+1597.81 24.265 5
+1794.945 27.798 6 20
+1692.907 25.784 7
+1495.58 21.871 8
+1291.063 17.87 9
+1096.474 14.016 10
+10
+894.163 10.191 11
+12
+5
+0
++-----------~----------~--------~---
+0 500 1000 1500
+PSI
+2 CHAINS stainless steel
+@ (.91g/in WET) EACH
+target 32.5 grams
+MISSION PARAMETERS:
+LOCATION: 28o15'00 CYCLE: 5 days
+DEPTH: 1500 db TRANSMISSION: 16 hrs
+TEMPERATURE: 7C PTT ID: 103243 A82E1BE
+SALINITY: 23 pss
+IN SITU DENSITY: 1.024885757 g/cm3
+10/21/2010 1:43PM 1772A+B WORKBOOK.XLS BALLAST 5292
+===== PAGE 41 =====
+SEA-BIRD ELECTRONICS, INC.
+13431 NE 20th Street, Bellevue, Washington, 98005-2010 USA
+Phone: (425) 643- 9866 Fax (425) 643 - 9954 Email: seabird@seabird.com
+SENSOR SERIAL NUMBER: 5213 SBE 41 TEMPERATURE CALIBRATION DATA
+CALIBRATION DATE: 17-0ct-10 ITS-90 TEMPERATURE SCALE
+JTS-90 COEFFICIENTS
+aO 2.005027e-005
+a1 2.811329e-004
+a2 -2.976911e-006
+a3 1.653038e-007
+BATH TEMP INSTRUMENT INSTTEMP RESIDUAL
+(ITS-90) OUTPUT (TTS-90) (JTS-90)
+1.0000 653676.8 1.0000 - 0.0000
+4.5000 557754.5 4.5000 0.0000
+15.0000 353380.1 15.0000 0.0000
+18.5000 305418.1 18.5000 -0.0000
+23.9940 244374.1 23.9941 0.0001
+29.0000 200671.1 29.0000 -0.0000
+32.5001 175431.4 32.5001 0.0000
+2 3
+Temperature ITS-90 = 11{ aO + al [ln(n)] + a2[ln (n)] + a3[ln (n)J) -273.15 (0C)
+Residual =instrument temperature- bath temperature
+Date, Delta T (mdeg C)
+0.02 00 17-0ct-1 0 -0.00
+0.01
+-
+(.)
+en
+(1)
+(1)
+......
+Ol
+0 (1 ) 0.00 • ...
+ro
+:::::l
+"0
+"iii
+(1)
+cr:
+-0.01
+-0.02 I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I
+-5 0 5 10 15 20 25 30 35
+Temperature, Degrees C
+Document Date: Monday, October 18,2010
+===== PAGE 42 =====
+SEA-BIRD ELECTRONICS, INC.
+13431 NE 20th Street, Bellevue, Washington, 98005-201 0 USA
+Phone: (425) 643- 9866 Fax (425) 643- 9954 Email: seabird@seabird.com
+SENSOR SERIAL NUMBER: 5213 SBE 41 CONDUCTIVITY CALIBRATION DATA
+CALIBRATION DATE: 17-0ct-1 0 PSS 1978: C(35, 15,0) = 4.2914 Siemens/meter
+COEFFICIENTS:
+g -1.053674e+OOO CPcor - 9.5700e-008
+h 1.530532e-001 CTcor 3.2500e-006
+i -3.608349e-004 WBOTC 1.1409e-007
+j 4.861030e-005
+BATH TEMP BATH SAL BATHCOND INSTFREO INSTCOND RESIDUAL
+(ITS-90) (PSU) (Siemens/m) (Hz) (Siemens/m) (Siemens/m)
+22.0000 0.0000 0.00000 2629.07 0.00000 0.00000
+1.0000 34.7109 2. 96781 5135.52 2.96782 0.00000
+4.5000 34.6916 3.27412 5327.03 3.27411 -0.00000
+15.0000 34.6499 4.25335 5897.04 4.25336 0.00000
+18.5000 34.6412 4.59764 6084.52 4.59764 0.00000
+23.9940 34 .6318 5.15359 6375.34 5.15359 - 0.00000
+29.0000 34 .6271 5. 67481 6636.12 5.67481 - 0.00000
+32.5001 34.6252 6.04643 6815.78 6.04644 0.00000
+f = INST FREQ * sqrt( 1.0 + WBOTC * t) I I 000.0
+2 3 4
+Conductivity= (g + hf + if + jf ) I (1 + Ot + Ep) Siemens/meter
+o
+t = temperature[0C)]; p = pressure[decibars]; = CTcor; £ = CPcor;
+Residual= instrument conductivity- bath conductivity
+Date, Slope Correction
+0.002
+li i 17-0ct-10 1.0000000
+0.001
+........
+..E._
+- (/) ·· ·-·
+• • •
+cti 0.000 - ·················-······ ... .. ..........
+:::l
+:Q
+(/)
+aQ:)
+-0.001
+-0.002 I I I I I I I I I I I I I I I I I I I I I I I I I I I I
+0 2 3 4 5 6 7
+Conductivity (Siemens/m)
+Document Date: Monday, October 18,2010
+===== PAGE 43 =====
+SEA-BIRD ELECTRONICS, INC.
+13431 NE 20th Street, Bellevue, Washington, 98005-2010 USA
+Phone: (425) 643- 9866 Fax (425) 643 -9954 Email: seabird@seabird.com
+SENSOR SERIAL NUMBER: 5213 SBE 41 PRESSURE CALIBRATION DATA
+CALIBRATION DATE: 11-0ct-10 2900 psia SIN 3166854
+COEFFICIENTS:
+PAO 6.209173e-001 PTCAO 4.423282e+001
+PAl = 1.412754e-001 PI CAl 3.122581e-001
+PA2 = -4.417035e-008 PTCA2 -5.027 611e-003
+PTHAO -7.674460e+001 PTCBO 2. 515062e+001
+PI HAl 4.779298e-002 PTCBl - 6.750000e-004
+PTHA2 -9.011654e-008 PTCB2 O.OOOOOOe+OOO
+PRESSURE SPAN CALTBRA TION THERMAL CORRECTION
+PRESSURE JNST THERMISTOR COMPUTED ERROR TEMP PRESS JNST
+PSIA OUTPUT OUTPUT PRESSURE %FSR JTS90 TEMP OUTPUT
+14.83 149.6 2064 .3 14.89 0.00 32.50 2295.60 154.21
+592.20 4239.2 2065.2 592.21 0.00 2 9. 00 2221.90 154.04
+1169.46 8340.4 2066.2 1169.68 0.01 23.99 2116.60 153.88
+1746.75 12450 .4 2067 .5 1746.90 0.01 18.50 2000.50 153.39
+2324 .05 16570.6 2068 .2 2324.06 0.00 15.00 1926.00 152.82
+2901.11 20700 .8 2069.3 2901 .11 0.00 4.50 1706.00 150.72
+2324.01 16569.9 2068 .8 2323.96 -0 .00 1. 00 1631.40 149.52
+1747.12 12451 .1 2068 .4 1747.00 -0.00
+1169.74 8340.1 2068.0 1169.64 -0.00 TEMP (ITS90) SPAN (mV)
+592.29 4238 .2 2067.6 592.07 -0.01 -5.00 25.15
+14.83 149.3 2067 .3 14.85 0.00 35.00 25.13
+y =thermistor output; t = PTHAO + PTHAI * y + PTHA2 * /
+x =pressure output-PTCAO-PTCAI * t-PTCA2 * t 2
+11 = x * PTCBO I (PTCBO + PTCBI * t + PTCB2 * t 2 )
+pressure (psia) = PAO +PAl * 11 + PA2 * 11 2
+Date, A vg Delta P %FS
+0.50
+~ 11-0ct-10 -0.00
+0.25
+E2
+(/)
+l.L ..
+...
+rJ2. ,, -· -·
+-:; 0.00 ···=•····· ....... ·······-··------·
+ro
+:::l
+"0
+"iii
+a<:ll
+-0.25
+-0.50 I I I I I I I I I I I I I I I I I I I I I I I I I
+0 500 1000 1500 2000 2500 3000
+Pressure (PSIA)
+Document Date: Monday, October 18,2010

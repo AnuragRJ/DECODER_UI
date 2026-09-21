@@ -1,0 +1,25 @@
+........................................................................ [ 28%]
+........................................................................ [ 57%]
+........................................................................ [ 85%]
+....................................                                     [100%]
+=============================== warnings summary ===============================
+../../../.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /home/user/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+decoder-ui/tests/test_fleet_status.py: 7 warnings
+decoder-ui/tests/test_fleet_status_audit.py: 19 warnings
+decoder-ui/tests/test_profile_recency.py: 11 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/tests/test_fleet_status.py:129: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    ds.createVariable("PLATFORM_NUMBER", "S1", ("N_PROF", "STRING8"))[:] = np.frombuffer(
+
+decoder-ui/tests/test_fleet_status_audit.py: 9 warnings
+decoder-ui/tests/test_profile_recency.py: 8 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/tests/test_fleet_status_audit.py:57: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    pn[i, :] = np.frombuffer(b"2909999 ", dtype="S1")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--- generated xml file: /home/user/profile-recency-update/backend-tests.xml ----
+252 passed, 55 warnings in 3.81s

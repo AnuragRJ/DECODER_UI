@@ -1,0 +1,193 @@
+{
+  "base": "http://127.0.0.1:3000",
+  "options": [
+    "WMO 1902844 (ARVOR / IRIDIUM_SBD)",
+    "WMO 2901304 (APEX / ARGOS)",
+    "WMO 2902086 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902087 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902088 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902092 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902093 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902114 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902115 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902118 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902130 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902131 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902201 (APEX / ARGOS)",
+    "WMO 2902203 (APEX / ARGOS)",
+    "WMO 2902206 (APEX / ARGOS)",
+    "WMO 2902222 (APEX / ARGOS)",
+    "WMO 2902223 (APEX / ARGOS)",
+    "WMO 2904082 (ARVOR / IRIDIUM_SBD)",
+    "WMO 6990711 (ARVOR / IRIDIUM_SBD)",
+    "WMO 7902408 (ARVOR / IRIDIUM_SBD)",
+    "WMO 2901305 (APEX / ARGOS)",
+    "WMO 2901328 (APEX / ARGOS)",
+    "WMO 2901339 (APEX / ARGOS)",
+    "WMO 2901350 (APEX / ARGOS)",
+    "WMO 2902089 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902090 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902091 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902113 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902120 (PROVOR_III / IRIDIUM_SBD)",
+    "WMO 2902224 (APEX / ARGOS)"
+  ],
+  "rows": [
+    "2901304",
+    "2901305",
+    "2901328",
+    "2902091",
+    "2902090",
+    "2902089",
+    "2902113",
+    "2902086",
+    "2902087",
+    "2902131",
+    "2902092",
+    "2902114",
+    "2902130",
+    "2902088",
+    "2902093",
+    "2901350",
+    "2902115",
+    "2901339",
+    "2902118",
+    "2902120",
+    "6990711",
+    "2902201",
+    "2902206",
+    "2902203",
+    "2902222",
+    "2902224",
+    "2902223",
+    "1902844",
+    "2904082",
+    "7902408"
+  ],
+  "metrics": [
+    "30",
+    "",
+    "TOTAL FLOATS",
+    "",
+    "4",
+    "",
+    "RECENT PROFILE",
+    "",
+    "2",
+    "",
+    "PROFILE OVERDUE",
+    "",
+    "24",
+    "",
+    "NO RECENT 60+ DAYS",
+    "",
+    "0",
+    "",
+    "NO DATA",
+    "",
+    "7344",
+    "",
+    "APPROX. PROFILES MISSED",
+    "",
+    "5628",
+    "",
+    "PROFILE CYCLES"
+  ],
+  "results": [
+    {
+      "name": "float selector rendered",
+      "pass": true,
+      "extra": "30 options"
+    },
+    {
+      "name": "selector has 30 floats",
+      "pass": true,
+      "extra": "got 30"
+    },
+    {
+      "name": "removed float 6902892 absent from selector",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "removed float 6903014 absent from selector",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "no Coriolis/ARVOR_D demo entry remains",
+      "pass": true,
+      "extra": "WMO 1902844 (ARVOR / IRIDIUM_SBD) / WMO 2901304 (APEX / ARGOS) / WMO 2902086 (PROVOR_III / IRIDIUM_SBD)"
+    },
+    {
+      "name": "a remaining float is selected by default",
+      "pass": true,
+      "extra": "WMO 2901304 (APEX / ARGOS)"
+    },
+    {
+      "name": "no decArgo_demo path anywhere on the page",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "no Coriolis-container path anywhere on the page",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "no removed WMO rendered on the decoder view",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "Float Status renders 30 rows",
+      "pass": true,
+      "extra": "got 30"
+    },
+    {
+      "name": "6902892 row absent",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "6903014 row absent",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "metrics page has no removed WMO",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "API summary reports 30 floats and 0 NO DATA",
+      "pass": true,
+      "extra": "{\"total\":30,\"recent_profile\":4,\"profile_overdue\":2,\"no_recent_profile_60\":24,\"no_data\":0,\"approx_profiles_missed_total\":7344,\"profile_dates_known\":30,\"total_pro"
+    },
+    {
+      "name": "removed WMOs absent from Float Status page",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "banned wording still absent",
+      "pass": true,
+      "extra": ""
+    },
+    {
+      "name": "searching 6902892 yields zero rows",
+      "pass": true,
+      "extra": "0 rows"
+    },
+    {
+      "name": "searching a remaining float still works",
+      "pass": true,
+      "extra": "1 rows"
+    },
+    {
+      "name": "no page errors",
+      "pass": true,
+      "extra": ""
+    }
+  ]
+}

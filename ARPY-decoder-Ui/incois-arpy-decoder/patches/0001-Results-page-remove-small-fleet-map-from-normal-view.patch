@@ -1,0 +1,93 @@
+From bc7abf25c086f8df63a1414acc493f65090d8166 Mon Sep 17 00:00:00 2001
+From: Arena AI Agent <agent@arena.local>
+Date: Thu, 10 Sep 2026 11:45:56 +0000
+Subject: [PATCH] Results page: remove small fleet map from normal view; table
+ becomes primary fleet overview
+
+- Small FleetOceanMap (and its legend) no longer rendered on the normal
+  Results page; the fleet table now fills the full width and vertical
+  space of the left Fleet section.
+- Real interactive world map (markers, trajectories, controls, legend)
+  is preserved exactly, accessible only via the existing Expand Fleet /
+  Full Screen view.
+- No changes to backend, decoder, batch logic, run history, map data
+  logic, dynamic float discovery, table data, or any hardcoded values.
+---
+ .../src/components/ResultsWorkspace.tsx       | 46 +++++++++++--------
+ 1 file changed, 26 insertions(+), 20 deletions(-)
+
+diff --git a/decoder-ui/frontend/src/components/ResultsWorkspace.tsx b/decoder-ui/frontend/src/components/ResultsWorkspace.tsx
+index 37a2fb4d..c2c56168 100644
+--- a/decoder-ui/frontend/src/components/ResultsWorkspace.tsx
++++ b/decoder-ui/frontend/src/components/ResultsWorkspace.tsx
+@@ -632,10 +632,14 @@ export const ResultsWorkspace: React.FC = () => {
+ 
+           {/* ===================== Workspace split ===================== */}
+           <div className="flex-1 flex overflow-hidden">
+-            {/* ---- LEFT: Fleet map + fleet table ----
++            {/* ---- LEFT: Fleet section ----
+                  Normal: 46% column with the profile panel beside it.
+-                 Full-screen: takes the whole viewport width (scientific
+-                 panel hidden) and the map grows to fill the space. */}
++                 The fleet table is the primary fleet overview — the small
++                 map (and its legend) is NOT shown on the normal Results
++                 page; the table takes the full width and vertical space
++                 of this section. Full-screen (Expand Fleet): takes the
++                 whole viewport width (scientific panel hidden) and the
++                 real world map grows to fill the space above the table. */}
+             <div
+               className={`flex flex-col bg-white overflow-hidden ${
+                 fleetFullScreen
+@@ -643,21 +647,20 @@ export const ResultsWorkspace: React.FC = () => {
+                   : "w-[46%] border-r border-slate-200 shrink-0 min-w-[420px]"
+               }`}
+             >
+-              <div
+-                className={`flex flex-col ${
+-                  fleetFullScreen
+-                    ? "flex-[5] min-h-[260px]"
+-                    : "h-[38%] min-h-[210px] shrink-0"
+-                }`}
+-              >
+-                <FleetOceanMap
+-                  positions={fleetPositions}
+-                  trajectory={trajectoryPoints}
+-                  selectedWmo={activeWmo}
+-                  onSelect={(wmo) => setSelectedResultWmo(wmo)}
+-                  fill={fleetFullScreen}
+-                />
+-              </div>
++              {/* Real geographic world map — ONLY in Expand Fleet /
++                  full-screen mode (map + controls + legend stay exactly
++                  as before). The normal Results page is table-first. */}
++              {fleetFullScreen && (
++                <div className="flex flex-col flex-[5] min-h-[260px]">
++                  <FleetOceanMap
++                    positions={fleetPositions}
++                    trajectory={trajectoryPoints}
++                    selectedWmo={activeWmo}
++                    onSelect={(wmo) => setSelectedResultWmo(wmo)}
++                    fill
++                  />
++                </div>
++              )}
+ 
+               {/* Filter & search */}
+               <div className="p-3 bg-slate-50 border-y border-slate-200 flex items-center justify-between gap-2 shrink-0 font-mono text-[13px]">
+@@ -695,8 +698,11 @@ export const ResultsWorkspace: React.FC = () => {
+                 </div>
+               </div>
+ 
+-              {/* Fleet table — full-screen uses the remaining space and
+-                  keeps its own scrolling/filters/search */}
++              {/* Fleet table — primary fleet overview. On the normal
++                  Results page it fills the full width and vertical space
++                  of the left Fleet section (no small map above it); in
++                  full-screen it keeps its own scrolling/filters/search
++                  beneath the world map. */}
+               <div
+                 className={`overflow-y-auto p-2.5 select-text font-mono text-[13px] ${
+                   fleetFullScreen ? "flex-[3] min-h-[160px]" : "flex-1"
+-- 
+2.47.3
+

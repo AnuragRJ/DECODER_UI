@@ -1,0 +1,3936 @@
+diff --git a/incois-arpy-decoder/decoder-ui/FLEET_STATUS.md b/incois-arpy-decoder/decoder-ui/FLEET_STATUS.md
+index 1d559e5..0c65e6f 100644
+--- a/incois-arpy-decoder/decoder-ui/FLEET_STATUS.md
++++ b/incois-arpy-decoder/decoder-ui/FLEET_STATUS.md
+@@ -1,156 +1,199 @@
+-# Float Status — upstream communication monitoring (decoder-ui only)
+-
+-Fleet-level oceanographic communication monitoring for the INCOIS float fleet,
+-driven exclusively by authoritative Ifremer/Argo GDAC upstream data. No local
+-decoder timestamp (run time, processing time, profile JULD, file arrival) is
+-ever substituted for communication data.
+-
+-## 1. Upstream source (verified 2026-09-17, not guessed)
+-
+-| Item | Value |
+-|---|---|
+-| Host | `ftp.ifremer.fr:21` (anonymous FTP; HTTPS mirror `https://data-argo.ifremer.fr/` holds identical bytes but FTP is primary) |
+-| Root | `/ifremer/argo` |
+-| DAC directory | `/ifremer/argo/dac/incois/` (627 float dirs at verification time) |
+-| Trajectory product | `/ifremer/argo/dac/incois/<wmo>/<wmo>_Rtraj.nc` (Argo trajectory, format 3.1) |
+-| Profile listing | `/ifremer/argo/dac/incois/<wmo>/profiles/` (FTP LIST; server has no MLSD) |
+-| Latest profile file | `<PREFIX><wmo>_<ccc>.nc` in `profiles/`, prefix preference R > D > BR > BD > SR > SD |
+-
+-**Communication timestamp field** (per-cycle, `N_CYCLE` dimension of `*_Rtraj.nc`):
+-
+-1. `JULD_LAST_MESSAGE` — long_name *"Date of latest float message received"*,
+-   days since 1950-01-01 00:00:00 UTC. Canonical **Last Transmission** =
+-   maximum valid value over all cycle slots (order-independent).
+-2. Fallback `JULD_TRANSMISSION_END` — long_name *"Transmission end date"* —
+-   only when `JULD_LAST_MESSAGE` is entirely fill. The field actually used is
+-   recorded per float (`last_tx_field`).
+-3. Tertiary fallback `JULD (measurement max)` — maximum valid
+-   `N_MEASUREMENT`-row JULD under the same guard — only when both per-cycle
+-   fields are absent or entirely fill. Needed for vintage (2012-era) Rtraj
+-   files whose per-cycle message variables do not exist (live: 2901305,
+-   2901328); still genuine upstream float-activity evidence, with the field
+-   used recorded per float — never a silent substitution.
+-
+-Validity guard (documented, principled): finite, `< 90000`, and `≤ now + 1 day`.
+-Rationale: future-dated rows were observed in `N_MEASUREMENT` space (predicted
+-cycle events, e.g. 2028 dates in 1902844); a message receipt in the future is
+-impossible, so the same guard applies to the per-cycle fields.
+-
+-**Ruled out by inspection:**
+-- `*_tech.nc` carries no per-cycle timestamps (only global DATE_CREATION /
+-  DATE_UPDATE) — it cannot provide last communication.
+-- Raw `max(JULD)` over `N_MEASUREMENT` rows is wrong (future predicted events).
+-- Profile-file mtimes reflect DAC sync/reprocessing (whole-directory
+-  same-timestamp touches observed) — used only for change fingerprints, never
+-  displayed as communication data.
+-- Upstream profile JULD is shown only as labeled corroborating evidence
+-  ("profile measurement time"), never as the transmission.
+-
+-## 2. Per-float signals
+-
+-| Signal | Source | Semantics |
++# Float Status — field contract and verification
++
++Float Status displays **recorded upstream observations**, not decoder activity or a
++physical diagnosis of a float. Identity comes from the existing local fleet;
++communication and positions come only from the configured Ifremer GDAC source.
++All changes for this audit are confined to `decoder-ui`.
++
++## 1. Source scope
++
++- Anonymous FTP: `ftp.ifremer.fr:21`, root `/ifremer/argo`.
++- Configured DAC: **`dac/incois`**. Fleet membership is the existing local preset
++  list; an unrelated cached WMO cannot silently extend that list.
++- Communication: `dac/incois/<wmo>/<wmo>_Rtraj.nc`.
++- Position history: the trajectory above and `dac/incois/<wmo>/<wmo>_prof.nc`.
++- Profile inventory: `dac/incois/<wmo>/profiles/`.
++- Latest individual profile: a recognized file at the highest published cycle
++  in that inventory. Delayed core is preferred to real-time core on a tie,
++  followed by delayed/real-time B and S products.
++- Public HTTPS mirror used for independent audit checks:
++  `https://data-argo.ifremer.fr/` (FTP and HTTPS bytes were hash-compared).
++
++**Scope is not global unavailability.** Existing WMOs 6902892 and 6903014 are
++absent from `dac/incois`, but public `_Rtraj.nc` files were confirmed under
++`dac/coriolis` during the 2026-09-21 IST audit. The source-scope clarification
++was skipped, so the existing INCOIS-only policy was retained, not silently
++expanded. They display `NO DATA` **in the configured DAC**, with that reason
++shown. No additional floats or operational identities are introduced.
++
++## 2. Exact displayed-field lineage
++
++All rows are delivered through `GET /api/fleet-status`, the
++`useFleetStatusStore` store, and `FloatStatusPage.tsx`.
++
++| Field | Source and transformation | Missing / display behavior |
+ |---|---|---|
+-| WMO | app presets ∩ live `dac/incois` membership | floats absent from `dac/incois` (e.g. US-DAC 6902892/6903014) get an explicit unavailable state, never fabricated data |
+-| Internal ID | app registries (PTT, else IMEI) | identity only, not a comms signal; the 301/CTS4 reference carries no PTT/IMEI (staged SBD IMEIs are redacted), so those floats honestly show "—" |
+-| Float Type | app preset `platform_type` | same label as the rest of the UI |
+-| Prof# | max cycle `ccc` across `profiles/` filenames (R/D/BR/BD/SR/SD union) | filename-based, no download |
+-| # Profs Missing | gaps in cycle sequence 1..Prof# (cycle 0 excluded) | e.g. 1902844 → {22} = 1 |
+-| Lon / Lat | latest upstream profile LATITUDE/LONGITUDE (POSITION_QC recorded, ranges validated); fallback = trajectory last valid fix (max-JULD non-fill position row); else unavailable | freshest honest upstream position drives table + map; both shown in detail |
+-| Last Transmission | §1 field, ISO UTC | minute-display precision |
+-| No Transmission | `(now − last_tx)` in days (float; UI shows floored `Nd`) | recomputed at serve time — always fresh without re-sync |
+-| Expected Next | last_tx + 10 days | |
+-| Trajectory-behind-profiles | latest profile JULD newer than traj last-tx | honest DAC-lag indicator (observed on 1902844: traj May 2026, profiles Sep 2026); both timestamps shown |
+-
+-Known upstream realities handled, not hidden: WMO reuse across missions
+-(1902844, 2902086) is resolved by JULD ordering (newest mission wins for
+-position/last-tx); a mission missing upstream entirely (new 2902086-class
+-redeployments not yet submitted) surfaces as the old mission's last-tx with
+-the profile evidence beside it.
+-
+-## 3. Status rules
+-
+-Computed backend-side at serve time from cached last-tx + wall clock:
+-
+-- `ACTIVE` — within the expected 10-day window (`days_since ≤ 10`)
+-- `OVERDUE` — expected date passed, under 60 days (`10 < days_since < 60`)
+-- `NO COMMUNICATION 60+ DAYS` — `days_since ≥ 60` (never labeled "dead")
+-- `NO DATA` — no usable upstream timestamp (not in `dac/incois`, missing or
+-  unparseable Rtraj, all timestamp fields fill)
+-
+-## 4. Synchronization
+-
+-- Backend-driven, periodic: default every **6 h** (`FLEET_SYNC_INTERVAL_S`,
+-  min 5 min sanity floor inherited from the poll pattern), anonymous FTP in a
+-  worker thread; immediate first sync on service start; manual
+-  `POST /api/fleet-status/sync`.
+-- Per cycle: one FTP session; `dac/incois` NLIST (membership); per float
+-  Rtraj MDTM+SIZE and `profiles/` listing fingerprint (sorted
+-  name:size:mtime sha1); download + parse only on change; parsed rows cached,
+-  bytes discarded.
+-- Cache: `decoder-ui/data/fleet_status/cache.json` (atomic tmp+rename, same
+-  pattern as `ingestion.json`); survives restarts and FTP outages.
+-- Failure semantics: transport/float errors never break the page — last valid
+-  rows are retained, `sync.status` becomes `degraded`/`error`, the UI shows
+-  last successful sync time + error + stale banner. Per-float errors are kept
+-  beside the retained row.
+-- Disable switch: `FLEET_SYNC_ENABLED=0` (serve cache only; status `disabled`).
+-- Host/root/timeout env-overridable (`FLEET_FTP_HOST/PORT/ROOT/TIMEOUT_S`) —
+-  also used by tests to simulate FTP failure.
+-
+-## 5. API
+-
+-- `GET /api/fleet-status` → `{generated_at, sync, summary, floats[]}` (cache
+-  served immediately; derived fields computed at serve time).
+-- `POST /api/fleet-status/sync` → starts a background cycle (409-style
+-  `already-running` if one is in flight).
+-
+-## 6. UI
+-
+-- Route: `activeView === "fleet-status"` (state-routed like `"results"`; NOT a
+-  top-level nav item — `Header.tsx` untouched).
+-- Entry: one `[ Float Status ]` button in the View Result header action area
+-  (`ResultsWorkspace.tsx` — the only change to that file); back button returns
+-  to View Result. View Result is otherwise byte-identical in behavior.
+-- Page reuses: Results header/summary/table styling, `FleetOceanMap` (separate
+-  instance; only additive optional caption props `title`/`subtitleNoun`/
+-  `footerNote` whose defaults keep Fleet Map byte-identical — markers are
+-  status-agnostic amber, tooltip uppercases unknown statuses), slide-over
+-  detail pattern, zustand patterns.
+-- Client-side search (WMO / internal ID), float-type + status filters, sorting
+-  (Last Transmission, No Transmission, Prof#, # Profs Missing), pager, detail
+-  drawer, sync banner. No browser→FTP traffic.
+-
+-## 7. Files
+-
+-Backend (`decoder-ui/service/`): new `fleet_status.py`; routes in `api.py`;
+-lifespan hook in `main.py`; additive `build_wmo_identity_map()` in
+-`datasources/local.py`. Frontend: new `store/useFleetStatusStore.ts`,
+-`utils/fleetStatus.ts`, `components/FloatStatusPage.tsx`; types appended in
+-`types/index.ts`; union widened in `store/useDecoderStore.ts`; branch in
+-`App.tsx`; one button in `components/ResultsWorkspace.tsx`; optional caption
+-props in `components/FleetOceanMap.tsx` (defaults preserve Fleet Map).
+-Tests: `decoder-ui/tests/test_fleet_status.py` (26), `utils/fleetStatus.test.ts`
+-(7), `e2e/fleetStatus.e2e.mjs` (19 checks; `npm run test:fleet`).
+-`src/argo_decoder/` untouched.
+-
+-## 8. Live verification (2026-09-17, Ifremer GDAC)
+-
+-- Initial sync: 30/32 refreshed in ~7 min (111 MB Rtraj); 2 vintage files
+-  failed → `degraded`. Tertiary `JULD (measurement max)` fallback added for
+-  the 2012-era shape; re-sync: `ok`, 2 updated / 30 unchanged (fingerprint
+-  skip, ~1 min). Steady-state cycle: `ok`, 0/32/0.
+-- Final fleet: 1 ACTIVE (2902223, 5 d), 1 OVERDUE (2902222, 36 d),
+-  28 NO COMMUNICATION 60+ DAYS, 2 NO DATA (6902892/6903014 not in
+-  dac/incois). 5,647 upstream profiles, 22 missing-file gaps.
+-- One-WMO check (independent ftplib script, no service code): 2902223
+-  LAST_MESSAGE max `2026-09-12T06:10:30Z`, prof# 353, missing
+-  [158, 161, 345], R353 fix (−45.723, 7.971); 1902844 May-04 traj vs Sep-08
+-  R025 profile (lag flag) with missing [22] — all match the API exactly.
+-- Suites: backend 80/80, frontend 90/90, `test:fleet` 19/19. `test:e2e`
+-  (fleet map) cannot run in this workspace: `data/runs/` is empty so its
+-  precondition (a completed batch with positions) is unmet — pre-existing
+-  data state, unrelated to this feature; Fleet Map rendering is preserved
+-  by identical caption defaults plus the `test:fleet` intactness checks.
+-- Cache outage behavior is unit-verified (FakeFTP): failed cycles keep
+-  serving last-valid rows with the error recorded; no live outage was
+-  induced on the production cache.
++| WMO ID | `path_resolver.build_dynamic_float_presets()[].wmo`; csv4 `meta.csv` → `WMO id`, registry CSV → `wmo`, or CTS4 reference → `wmo`. Upstream `PLATFORM_NUMBER` must agree before parsing observations. | Configured WMOs remain visible even if their configured DAC has no data. |
++| Internal ID | `datasources.local.build_wmo_identity_map()`: csv4 `load_info().ptt` (`meta.csv: Argos number`, else `sensor-info.csv: Comms ID`) and `load_meta().IMEI`; single-file registry `ptt` / `imei` fill gaps. Display PTT, else IMEI. | `null` / `—` when absent or redacted. No recovery from sanitized filenames, sensor serials or upstream identities. Local registry agreement is not private operational verification. |
++| Float Type | Preset `platform_type`. csv4 loader maps canonical manufacturer NKE to ARVOR, otherwise APEX; registry CSV provides `platform_type`; CTS4 discovery supplies `PROVOR_III`. | Preserve the existing application family labels. Audit cross-checked all 30 INCOIS types against public `_meta.nc: PLATFORM_TYPE`. |
++| Latitude / Longitude | Paired `LATITUDE[i]` / `LONGITUDE[i]`, accepted `POSITION_QC[i]` and location time from the **same observation row**. Select the newest usable position among trajectory, complete profile history and the latest individual profile. | Neither coordinate is manufactured from another row or local telemetry. Invalid, fill, future or unapproved-QC candidates are excluded. Table and map receive the same pair. Three decimals and explicit N/S/E/W in the table. |
++| Last Transmission | Maximum valid `JULD_LAST_MESSAGE[N_CYCLE]`; use `JULD_TRANSMISSION_END[N_CYCLE]` only if no valid last-message value exists. Source field, array index, cycle and status flag are retained. | No qualifying last-message/end value → `null` / `—`, independently of available profiles or positions. |
++| Expected Next Communication | Last Transmission + **10 exact UTC days**. | Null if Last Transmission is unavailable. Shown in the detail drawer and transmission tooltip. |
++| No Communication / days | `(generated_at UTC − Last Transmission UTC) / 86400`. Do not round before status calculation or integer-day display. | Table: completed days (`floor`); drawer: three decimals. Null is `—`, not zero. |
++| Communication Status | Approved 10/60-day rules in §4. | `NO DATA` if no valid qualifying communication timestamp. |
++| Prof# | Highest cycle in recognized upstream profile filenames, **not** a profile count. | `—` when no highest cycle can be established. |
++| Available profile count | `profile_count`: count of distinct positive published cycles, deduplicated across R/D/BR/BD/SR/SD families and ascent/descent files. Summary and map tooltip use this, not Prof#. | Known empty listing → zero available cycles; unavailable listing → null. Summary totals only known listings, with coverage in the tooltip. |
++| Profiles Missing | Cycles absent from the union of recognized filenames in **1..Prof#**. Cycle 0 is excluded. | Unknown inventory → `—`, not zero. These are file-cycle gaps, not failed decodes, missing BGC sensor grids, missing communications, or inferred future cycles. |
++
++Local source files are read only. For the current fleet: 15 WMOs come from the
++four-CSV metadata set, 2 from the single-file registries, and 15 from the CTS4
++reference. Seventeen Internal IDs are locally supplied; the 15 CTS4 Internal
++IDs remain unavailable/sanitized.
++
++## 3. Time and position validity
++
++### Communication
++
++The actual GDAC fields identify their semantics as:
++
++- `JULD_LAST_MESSAGE`: **Date of latest float message received**.
++- `JULD_TRANSMISSION_END`: **Transmission end date**.
++
++Their units must be the Argo epoch, days since 1950-01-01 00:00:00 UTC, with a
++supported Gregorian calendar. Parsing validates the per-cycle dimension and
++WMO. Masked/fill, nonfinite, negative and future dates are rejected. ISO output
++is timezone-qualified UTC. Sub-millisecond floating-point noise around a
++whole second is normalized to avoid displaying a spurious preceding minute.
++RT19 flags are recorded as supplied; upstream estimates are not promoted to
++independent proof of physical float activity.
++
++**Never substitute:** measurement `JULD`, profile `JULD`, `JULD_LOCATION`,
++`DATE_CREATION`, `DATE_UPDATE`, FTP mtime, local processing time, file arrival,
++or a decoder run time.
++
++Legacy WMOs **2901305 and 2901328** have format-2.2 trajectories without a
++last-message/end field. Their estimated `JULD_START_TRANSMISSION` values are
++**start** estimates, not the latest received message or transmission end.
++They are not relabeled Last Transmission. The old generic measurement-JULD
++fallback is removed, including when serving an old cache. These floats may
++still have valid upstream coordinates and profile inventories while their
++communication status is `NO DATA`.
++
++### Position
++
++- Trajectory position time: `JULD[N_MEASUREMENT]`.
++- Profile position time: **`JULD_LOCATION[N_PROF]`**, not profile measurement
++  `JULD`.
++- Require finite paired coordinates, latitude within ±90°, longitude within
++  ±180°, and `POSITION_QC` **1 (good) or 2 (probably good)**.
++- Do not claim unassessed, interpolated, probably-bad, bad or missing locations
++  are verified fixes. Exclusion is explained in the detail view.
++- Read the full `_prof.nc` history so an earlier cycle can supply the newest
++  good position, including after a cycle reset or a bad latest profile.
++- Include the highest-cycle individual profile in the comparison in case the
++  aggregate product lags. Break equal-time ties in favor of a trajectory fix.
++- If the full-history product is absent, state the restricted position-search
++  scope. A formerly valid full-history block is not erased on a failed stat
++  or download.
++- Publish the selected position's time, file, time field and QC. A recently
++  checked historical position is not described as a new observation.
++
++A newer profile measurement than the recorded transmission is shown as
++**recency disagreement between upstream products**. It does not prove a
++specific DAC failure, and does not change the communication timestamp/status.
++
++## 4. Approved communication policy
++
++Computed backend-side at serve time, using unrounded elapsed days:
++
++- **ACTIVE:** `0 ≤ days ≤ 10`.
++- **OVERDUE:** `10 < days < 60`.
++- **NO COMMUNICATION 60+ DAYS:** `days ≥ 60`.
++- **NO DATA:** no valid qualifying upstream communication timestamp.
++
++The application does not label floats “dead.” Profile gaps have no role in
++this classification. Cache freshness is a separate indicator, not a fifth
++communication state.
++
++## 5. Synchronization, migration and failure behavior
++
++- Immediate scheduled cycle on backend startup, then a start-to-start interval
++  of six hours by default (`FLEET_SYNC_INTERVAL_S`, minimum 300 seconds).
++  Worker-thread sync never blocks the cache API. Cycles cannot overlap.
++- Manual refresh: `POST /api/fleet-status/sync`; an existing cycle returns
++  `already-running`. No browser-to-FTP traffic.
++- Use DAC membership, Rtraj/full-profile MDTM+size, and profile-listing
++  fingerprints. Download changed products only. Filenames, hashes, sizes and
++  mtimes are provenance/change evidence, never communication time.
++- `checked_at` advances on a successful upstream check even if data is
++  unchanged. `updated_at` identifies when the contents were read/assembled.
++- `last_success_at` means a **fully successful, persisted** fleet cycle.
++  A partial failure updates `last_completed_at`, not the full-success time.
++- Cache writes use a temporary file + atomic replace, with JSON nonfinite
++  values prohibited. Persistence errors are visible; the previous disk cache
++  remains valid. A failed refresh retains valid observations and their old
++  verification timestamps.
++- Invalid/empty DAC responses and malformed profile listings are errors, not
++  permission to erase a fleet or replace an inventory with zero.
++- Version-1 caches remain readable, but unsupported communication timestamps
++  are immediately withheld. Legacy profile positions without a verified
++  location time are not treated as current. Parser/inventory revision guards
++  force source revalidation even if upstream fingerprints did not change.
++- Cache data path: `$ARGO_UI_DATA_DIR/fleet_status/cache.json`, normally
++  `decoder-ui/data/fleet_status/cache.json`. The **checked-in cache is not
++  rewritten by the audit**; live runs use an isolated external runtime.
++- Disable: `FLEET_SYNC_ENABLED=0`. Disabled does not mean fresh. Old checks,
++  incomplete sync, errors and invalidated legacy records remain visibly stale.
++- Configurable transport: `FLEET_FTP_HOST`, `FLEET_FTP_PORT`, `FLEET_FTP_ROOT`,
++  `FLEET_FTP_TIMEOUT_S`. Anonymous credentials only.
++
++The UI polls the cache every 60 seconds. A hung GET is aborted after 15 seconds
++so subsequent refreshes remain possible. Failed fetches retain the previous
++payload with an explicit warning. A frozen API snapshot also expires visually;
++its old status calculation is not presented as a new verification.
++
++## 6. Current audit observations (2026-09-21 IST)
++
++Independent public HTTPS retrieval covered 30 INCOIS Rtraj files, 30 metadata
++files, all 32 configured-DAC membership cases, profile directory inventories,
++latest profile families and all 30 full-profile history files. Live anonymous
++FTP synchronization was exercised separately, including recurring scheduled
++cycles. Selected source files were hash-compared across both transports.
++
++At the audit snapshot the corrected configured-DAC fleet has **32 floats**:
++**1 ACTIVE, 1 OVERDUE, 26 NO COMMUNICATION 60+ DAYS and 4 NO DATA**.
++There are **5,625 available positive profile cycles** and **22 file-cycle gaps**
++across the 30 available inventories. The previous 5,647 “total profiles” was the
++sum of highest cycle numbers, not the number available.
++
++The complete A–I audit report, 32-WMO field ledger, captured browser evidence,
++source manifests and reproducibility scripts are delivered separately. Claims
++of unavailable communication refer to the specified source/field policy, not
++to a universal absence of data or proof that a float has stopped operating.
++
++## 7. Tests and reproducibility
++
++```bash
++# decoder-ui; tests use temporary state and no live FTP
++PYTHONPATH=service:../src python -m pytest tests -q
++
++# frontend; unit tests and standalone type check
++npm test
++npx tsc --noEmit
++
++# Browser audit against the running API + Vite (or built app)
++FLEET_E2E_BASE=http://127.0.0.1:3000 npm run test:fleet
++```
++
++`tests/test_fleet_status_audit.py` checks all 32 existing cache records plus
++boundary/timezone/null handling, source guards, coordinate coherence, bad QC,
++full-history chronology, profile-cycle semantics, old-cache revalidation,
++unchanged checks, scheduler cadence, outages and atomic persistence failure.
++Synthetic edge cases are explicitly test-only and never enter operational data.
++
++The browser audit checks all displayed fields for every row, actual ArcGIS
++marker geometries, search/type/status filters, all sortable columns in both
++directions, pagination, drawer calculations and UTC presentation in two browser
++timezones. Optional `FLEET_E2E_EXPECTED`, `FLEET_E2E_OUTAGE` and
++`FLEET_E2E_REQUIRE_FRESH` enable independent-source and controlled-outage checks.
++A cached/disabled smoke test is never called a completed live synchronization.
+diff --git a/incois-arpy-decoder/decoder-ui/frontend/e2e/fleetStatus.e2e.mjs b/incois-arpy-decoder/decoder-ui/frontend/e2e/fleetStatus.e2e.mjs
+index ee5e565..b869656 100644
+--- a/incois-arpy-decoder/decoder-ui/frontend/e2e/fleetStatus.e2e.mjs
++++ b/incois-arpy-decoder/decoder-ui/frontend/e2e/fleetStatus.e2e.mjs
+@@ -1,141 +1,257 @@
+-// Float Status E2E — drives the REAL built app through headless Chromium
+-// against a live backend and verifies the upstream communication monitor:
+-// View Result button, dedicated page, table/map/detail interactions, and
+-// that View Result is otherwise intact.
+-//
+-// Usage:
+-//   npm run build && npm run test:fleet
+-// Env:
+-//   FLEET_E2E_BASE   backend URL          (default http://127.0.0.1:8000)
+-//   FLEET_E2E_SHOTS  screenshot output dir (default /tmp/fleetshots)
+-// Requires: `npx playwright install chromium` once, a live backend, and a
+-// completed (or completable) Ifremer sync — the script waits for it.
++// Read-only browser audit of the actual Float Status page and ArcGIS renderer.
++// FLEET_E2E_BASE=http://127.0.0.1:3000 npm run test:fleet
++// Optional: FLEET_E2E_EXPECTED=<independent upstream oracle JSON>
++//           FLEET_E2E_OUTAGE=<captured controlled FTP-failure payload JSON>
++//           FLEET_E2E_REQUIRE_FRESH=1 (reject disabled/stale caches)
++//           FLEET_E2E_SHOTS=<artifact directory>
++// Never triggers decoding, sends email, or writes operational source files.
+ import { chromium } from 'playwright';
+-import fs from 'fs';
++import fs from 'node:fs';
++import path from 'node:path';
+ 
+ const BASE = process.env.FLEET_E2E_BASE || 'http://127.0.0.1:8000';
+ const SHOTS = process.env.FLEET_E2E_SHOTS || '/tmp/fleetshots';
+ fs.mkdirSync(SHOTS, { recursive: true });
+-
+-const results = [];
+-const ok = (name, cond, extra = '') => {
+-  results.push([cond ? 'PASS' : 'FAIL', name, extra]);
+-  console.log((cond ? 'PASS  ' : 'FAIL  ') + name + (extra ? '   ' + extra : ''));
++const oracle = process.env.FLEET_E2E_EXPECTED
++  ? new Map(JSON.parse(fs.readFileSync(process.env.FLEET_E2E_EXPECTED)).floats.map(r => [r.wmo, r])) : null;
++const results = [], uiRows = [];
++const check = (name, condition, details = '') => {
++  results.push({ name, passed: Boolean(condition), details });
++  console.log(`${condition ? 'PASS' : 'FAIL'}  ${name}${details ? '  ' + details : ''}`);
++  if (!condition) throw new Error(name + ': ' + details);
+ };
+-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+-
+-async function api(p, method = 'GET') {
+-  const r = await fetch(BASE + '/api' + p, { method });
+-  if (!r.ok) throw new Error(p + ' -> ' + r.status);
+-  return r.json();
+-}
+-
++const utc = value => value ? new Date(value).toISOString().slice(0, 16).replace('T', ' ') + ' UTC' : '—';
++const coord = (value, kind) => value == null ? '—' : Math.abs(value).toFixed(3) + '°' +
++  (kind === 'lon' ? value < 0 ? 'W' : 'E' : value < 0 ? 'S' : 'N');
++const statusAt = (tx, asOf) => {
++  if (!tx) return 'NO DATA';
++  const days = (Date.parse(asOf) - Date.parse(tx)) / 86400000;
++  return days <= 10 ? 'ACTIVE' : days < 60 ? 'OVERDUE' : 'NO COMMUNICATION 60+ DAYS';
++};
++const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+ const browser = await chromium.launch();
+-const page = await browser.newPage({ viewport: { width: 1600, height: 900 } });
+-const consoleErrors = [];
+-page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + e.message));
+-page.on('console', (m) => {
+-  if (m.type() === 'error') consoleErrors.push('console: ' + m.text().slice(0, 200));
++const context = await browser.newContext({ viewport: { width: 1720, height: 1000 }, timezoneId: 'Asia/Kolkata' });
++const page = await context.newPage();
++page.setDefaultTimeout(15000);
++const pageErrors = [];
++page.on('pageerror', error => pageErrors.push(error.message));
++let displayedPayload = null;
++page.on('response', async response => {
++  if (response.url().endsWith('/api/fleet-status') && response.status() === 200) {
++    displayedPayload = await response.json().catch(() => displayedPayload);
++  }
+ });
++const tableRows = () => page.locator('[data-testid^="fleet-row-"]');
++const ids = () => tableRows().evaluateAll(rows => rows.map(row => Number(row.dataset.testid.replace('fleet-row-', ''))));
++async function clear() {
++  const button = page.getByRole('button', { name: 'Clear', exact: true });
++  if (await button.count()) await button.click();
++}
++async function collectPages() {
++  let values = await ids();
++  const next = page.getByTitle('Next page', { exact: true });
++  while (await next.isEnabled()) {
++    const first = (await ids())[0];
++    await next.click();
++    await page.waitForFunction(previous => {
++      const el = document.querySelector('[data-testid^="fleet-row-"]');
++      return el && Number(el.dataset.testid.replace('fleet-row-', '')) !== previous;
++    }, first);
++    values.push(...await ids());
++  }
++  return values;
++}
++async function openStatus(targetPage) {
++  await targetPage.goto(BASE, { waitUntil: 'domcontentloaded' });
++  await targetPage.getByTitle('Open Dedicated Results & Oceanographic Analysis Workspace').click();
++  await targetPage.getByRole('button', { name: '[ Float Status ]', exact: true }).click();
++  await targetPage.getByTestId('float-status-page').waitFor();
++  await targetPage.locator('[data-testid^="fleet-row-"]').first().waitFor();
++}
+ 
+ try {
+-  // ---- backend ground truth: wait for a finished sync cycle ---------------
+-  let payload = null;
+-  for (let i = 0; i < 60; i++) {
+-    payload = await api('/fleet-status');
+-    if (!payload.sync.running && payload.sync.last_success_at) break;
+-    await sleep(10000);
++  let payload;
++  for (let attempt = 0; attempt < 60; attempt++) {
++    payload = await (await fetch(BASE + '/api/fleet-status')).json();
++    if (!payload.sync.running && payload.floats.length &&
++        (!process.env.FLEET_E2E_REQUIRE_FRESH || (!payload.sync.stale && payload.sync.status === 'ok'))) break;
++    await delay(5000);
+   }
+-  ok('sync cycle completed', !!payload.sync.last_success_at, payload.sync.status);
+-  const truthRows = payload.floats.filter((f) => f.status !== 'NO DATA').length;
+-  ok('upstream rows present', truthRows > 0, `${truthRows}/${payload.floats.length} with timestamps`);
+-
+-  // ---- View Result page + the ONE new button ------------------------------
+-  await page.goto(BASE, { waitUntil: 'networkidle' });
+-  await sleep(1500);
+-  // Open View Result via the existing top-nav button.
+-  const resultsBtn = page.getByTitle('Open Dedicated Results & Oceanographic Analysis Workspace');
+-  ok('top-nav View Results entry exists', await resultsBtn.count() === 1);
+-  await resultsBtn.click();
+-  await sleep(1200);
+-  ok('View Result renders', await page.getByText('DECODER RESULTS').count() === 1);
+-  await page.screenshot({ path: SHOTS + '/01-results.png' });
+-
+-  const fsBtn = page.getByRole('button', { name: '[ Float Status ]' });
+-  ok('Float Status button on View Result', await fsBtn.count() === 1);
+-  // View Result otherwise intact: header actions + (batch views or honest empty state).
+-  const backBtn = page.getByRole('button', { name: '[ Back to Decoder ]' });
+-  ok('View Result keeps Back to Decoder', await backBtn.count() >= 1);
+-  const hasMetrics = await page.getByTestId('fleet-status-panel').count();
+-  const hasEmpty = await page.getByText('Results Summary View Cleared').count();
+-  ok('View Result body intact (metrics or empty state)', hasMetrics + hasEmpty >= 1);
+-
+-  // ---- Float Status page ---------------------------------------------------
+-  await fsBtn.click();
+-  await sleep(1500);
+-  ok('Float Status page opens', await page.getByTestId('float-status-page').count() === 1);
+-  ok('sync pill visible', await page.getByTestId('fleet-sync-pill').count() === 1);
+-  ok('summary metrics visible', await page.getByTestId('fleet-status-metrics').count() === 1);
+-  ok('map mounted', await page.locator('[data-testid="float-status-page"] svg[role="img"]').count() >= 1);
+-  await page.screenshot({ path: SHOTS + '/02-float-status.png' });
++  check('cache endpoint serves the configured fleet', payload.floats.length > 0, `${payload.floats.length} floats; sync=${payload.sync.status}`);
++  if (process.env.FLEET_E2E_REQUIRE_FRESH) {
++    check('live verification is fresh, not disabled or stale', payload.sync.status === 'ok' && !payload.sync.stale && !payload.sync.running);
++  }
++  await openStatus(page);
++  check('Float Status entry and page preserved', await page.getByTestId('float-status-page').count() === 1);
++  check('sync and summary metrics visible', await page.getByTestId('fleet-sync-pill').count() === 1 && await page.getByTestId('fleet-status-metrics').count() === 1);
++  await page.waitForFunction(() => document.querySelector('[data-testid="esri-map-view"]')?.__fleetMapView?.view?.ready, null, { timeout: 90000 });
++  check('actual ArcGIS map is ready (not obsolete SVG assertion)', await page.getByTestId('esri-map-view').locator('canvas').count() > 0);
++  await page.waitForFunction(() => {
++    const view = document.querySelector('[data-testid="esri-map-view"]')?.__fleetMapView?.view;
++    return view?.ready && view.stationary && !view.updating;
++  }, null, { timeout: 90000 });
++  check('map basemap layers have loaded before visual evidence', await page.getByTestId('esri-map-view').evaluate(el =>
++    el.__fleetMapView.view.map.basemap.baseLayers.toArray().every(layer => layer.loadStatus === 'loaded')));
++  await page.screenshot({ path: path.join(SHOTS, '01-float-status.png') });
++  payload = displayedPayload || payload;
+ 
+-  // Table rows render from the same payload the API served.
+-  const firstWmo = payload.floats[0].wmo;
+-  const firstRow = page.getByTestId(`fleet-row-${firstWmo}`);
+-  // The first payload row may sit on page 2 (default worst-first sort) —
+-  // search it instead of assuming page 1.
+-  await page.getByPlaceholder('Search WMO / internal ID…').fill(String(firstWmo));
+-  await sleep(400);
+-  ok('search narrows to the WMO', await firstRow.count() === 1);
+-  await page.screenshot({ path: SHOTS + '/03-search.png' });
++  // Verify the renderer's actual marker graphics, not only input props.
++  const graphics = await page.getByTestId('esri-map-view').evaluate(el =>
++    el.__fleetMapView.view.map.allLayers.toArray().flatMap(layer => layer.graphics?.toArray() || [])
++      .filter(g => g.attributes?.kind === 'marker' && g.symbol?.type === 'simple-marker')
++      .map(g => ({ wmo: g.attributes.wmo, lat: g.geometry.latitude, lon: g.geometry.longitude })));
++  const plotted = payload.floats.filter(r => r.lat != null && r.lon != null);
++  check('all and only positioned floats have actual map markers', graphics.length === plotted.length, `${graphics.length} markers`);
++  for (const r of plotted) {
++    const g = graphics.find(g => g.wmo === r.wmo);
++    check(`WMO ${r.wmo}: marker/API coordinates agree`, g && Math.abs(g.lat-r.lat) < 1e-9 && Math.abs(g.lon-r.lon) < 1e-9);
++  }
+ 
+-  // Detail drawer opens from the row and closes.
+-  await firstRow.click();
+-  await sleep(600);
+-  const drawerTitle = page.getByText(`WMO ${firstWmo}`, { exact: false });
+-  ok('detail drawer opens on row click', await drawerTitle.count() >= 1);
+-  await page.screenshot({ path: SHOTS + '/04-detail.png' });
+-  await page.keyboard.press('Escape');
+-  // (drawer has no Esc handler by design; close via button)
+-  const closeBtn = page.getByTitle('Close detail');
+-  if (await closeBtn.count()) await closeBtn.click();
+-  await sleep(400);
+-  ok('Detail drawer closes', await page.getByTitle('Close detail').count() === 0);
++  // Every row, all 11 requested fields. Expected Next is in the detail drawer.
++  for (const original of payload.floats) {
++    const wmo = original.wmo;
++    await page.getByPlaceholder('Search WMO / internal ID…').fill(String(wmo));
++    const row = page.getByTestId(`fleet-row-${wmo}`);
++    await row.waitFor();
++    check(`WMO ${wmo}: search selects exactly one row`, await tableRows().count() === 1);
++    const r = (displayedPayload || payload).floats.find(r => r.wmo === wmo);
++    const cells = await row.evaluate(el => Object.fromEntries([...el.querySelectorAll('[data-field]')].map(x => [x.dataset.field, x.textContent.trim()])));
++    const wanted = {
++      wmo: String(wmo), internal_id: r.internal_id || '—', prof_num: r.prof_num == null ? '—' : String(r.prof_num),
++      lon: coord(r.lon, 'lon'), lat: coord(r.lat, 'lat'), float_type: r.float_type, status: r.status,
++      days_since_last_tx: r.days_since_last_tx == null ? '—' : Math.floor(r.days_since_last_tx) + ' d',
++      profiles_missing: r.profiles_missing == null ? '—' : String(r.profiles_missing),
++    };
++    const differences = Object.entries(wanted).filter(([key, value]) =>
++      key === 'wmo' ? !cells[key].startsWith(value) : cells[key] !== value);
++    check(`WMO ${wmo}: table fields match API`, differences.length === 0, JSON.stringify(differences));
++    check(`WMO ${wmo}: Last Transmission is UTC`, cells.last_tx_iso.startsWith(utc(r.last_tx_iso)));
++    check(`WMO ${wmo}: status follows exact 10/60-day policy`, r.status === statusAt(r.last_tx_iso, (displayedPayload || payload).generated_at));
++    await row.click();
++    const drawer = page.getByTestId('fleet-detail');
++    await drawer.waitFor();
++    const expectedText = await drawer.locator('[data-detail-label="Expected next (+10 days)"] > span').last().textContent();
++    const expected = r.last_tx_iso ? new Date(Date.parse(r.last_tx_iso) + 10 * 86400000).toISOString() : null;
++    check(`WMO ${wmo}: Expected Next = upstream Last Transmission +10 days`, expectedText === utc(expected));
++    if (oracle) {
++      const truth = oracle.get(wmo);
++      check(`WMO ${wmo}: API agrees with independent upstream/registry evidence`, !!truth &&
++        r.internal_id === truth.internal_id && r.float_type === truth.float_type &&
++        r.prof_num === truth.prof_num && r.profile_count === truth.profile_count &&
++        r.profiles_missing === truth.profiles_missing && r.last_tx_field === truth.last_tx_field &&
++        (r.last_tx_iso == null ? truth.last_tx_iso == null : Math.abs(Date.parse(r.last_tx_iso) - Date.parse(truth.last_tx_iso)) <= 1) &&
++        (r.lat == null ? truth.lat == null : Math.abs(r.lat-truth.lat) < 1e-9) &&
++        (r.lon == null ? truth.lon == null : Math.abs(r.lon-truth.lon) < 1e-9));
++    }
++    uiRows.push({ wmo, cells, expected_next: expectedText, api: r, generated_at: (displayedPayload || payload).generated_at });
++    if ([2902223, 2902222, 1902844, 2902086, 2901305, 6902892].includes(wmo)) {
++      await page.screenshot({ path: path.join(SHOTS, `detail-${wmo}.png`) });
++    }
++    await page.getByTitle('Close detail', { exact: true }).click();
++  }
+ 
+-  // Clear restores the full set; status filter narrows it.
+-  await page.getByRole('button', { name: 'Clear' }).click();
+-  await sleep(400);
+-  const rowsAfterClear = await page.locator('[data-testid^="fleet-row-"]').count();
+-  ok('Clear restores rows', rowsAfterClear > 1, `${rowsAfterClear} rows`);
+-  const statusSel = page.getByTitle('Filter by communication status');
+-  const nActive = payload.summary.active;
+-  if (nActive > 0) {
+-    await statusSel.selectOption('ACTIVE');
+-    await sleep(400);
+-    const nShown = await page.locator('[data-testid^="fleet-row-"]').count();
+-    ok('status filter narrows rows', nShown >= 1 && nShown <= nActive, `${nShown}/${nActive}`);
+-  } else {
+-    ok('status filter narrows rows', true, 'SKIP — no ACTIVE floats upstream');
++  await clear();
++  await page.getByPlaceholder('Search WMO / internal ID…').fill('2902223');
++  await page.waitForFunction(() => document.querySelector('[data-testid="esri-map-view"]')?.__fleetMapData?.markers?.length === 1);
++  // Filtering intentionally preserves an operator's camera. Use the existing
++  // FIT control before asking the browser to click a geographic point.
++  await page.getByRole('button', { name: 'FIT', exact: true }).click();
++  await page.waitForFunction(() => {
++    const el = document.querySelector('[data-testid="esri-map-view"]');
++    const view = el?.__fleetMapView?.view;
++    if (!view?.stationary || view.updating) return false;
++    const graphic = view.map.allLayers.toArray().flatMap(layer => layer.graphics?.toArray() || [])
++      .find(g => g.attributes?.kind === 'marker' && g.attributes?.wmo === 2902223 && g.symbol?.type === 'simple-marker');
++    if (!graphic) return false;
++    const point = view.toScreen(graphic.geometry);
++    return point && point.x > 0 && point.y > 0 && point.x < el.clientWidth && point.y < el.clientHeight;
++  }, null, { timeout: 60000 });
++  const screen = await page.getByTestId('esri-map-view').evaluate(el => {
++    const view = el.__fleetMapView.view;
++    const graphic = view.map.allLayers.toArray().flatMap(layer => layer.graphics?.toArray() || [])
++      .find(g => g.attributes?.kind === 'marker' && g.attributes?.wmo === 2902223 && g.symbol?.type === 'simple-marker');
++    const point = view.toScreen(graphic.geometry);
++    return { x: point.x, y: point.y };
++  });
++  await page.getByTestId('esri-map-view').click({ position: screen });
++  await page.getByTestId('fleet-detail').waitFor();
++  check('clicking the real map marker opens the matching WMO detail', (await page.getByTestId('fleet-detail').textContent()).includes('WMO 2902223'));
++  await page.getByTitle('Close detail', { exact: true }).click();
++  await clear();
++  check('pagination covers all configured WMOs exactly once', new Set(await collectPages()).size === payload.floats.length);
++  await page.getByTitle('Previous page', { exact: true }).click();
++  const identityRow = payload.floats.find(r => r.internal_id);
++  await page.getByPlaceholder('Search WMO / internal ID…').fill(identityRow.internal_id);
++  check('search by Internal ID works', await page.getByTestId(`fleet-row-${identityRow.wmo}`).count() === 1);
++  await clear();
++  for (const type of [...new Set(payload.floats.map(r => r.float_type))]) {
++    await page.getByTitle('Filter by float type', { exact: true }).selectOption(type);
++    const shown = await collectPages();
++    const expected = payload.floats.filter(r => r.float_type === type).map(r => r.wmo).sort();
++    check(`float-type filter ${type}`, JSON.stringify(shown.sort()) === JSON.stringify(expected));
++  }
++  await clear();
++  for (const status of ['ACTIVE', 'OVERDUE', 'NO COMMUNICATION 60+ DAYS', 'NO DATA']) {
++    await page.getByTitle('Filter by communication status', { exact: true }).selectOption(status);
++    const shown = await collectPages();
++    const expected = payload.floats.filter(r => r.status === status).map(r => r.wmo).sort();
++    check(`communication filter ${status}`, JSON.stringify(shown.sort()) === JSON.stringify(expected));
++  }
++  await clear();
++  const sorts = [
++    ['WMO ID', r => r.wmo, 'asc'], ['Last Transmission', r => r.last_tx_iso ? Date.parse(r.last_tx_iso) : null, 'desc'],
++    ['No Communication', r => r.days_since_last_tx, 'desc'], ['Prof#', r => r.prof_num, 'desc'],
++    ['# Profs Missing', r => r.profiles_missing, 'desc'],
++  ];
++  for (const [label, value, firstDirection] of sorts) {
++    for (const direction of [firstDirection, firstDirection === 'asc' ? 'desc' : 'asc']) {
++      await page.getByTitle(new RegExp('^Sort by ' + label)).click();
++      const actual = await collectPages();
++      const expected = [...payload.floats].sort((a, b) => {
++        const av=value(a), bv=value(b);
++        return av == null ? bv == null ? a.wmo-b.wmo : 1 : bv == null ? -1 :
++          (direction === 'asc' ? av-bv : bv-av) || a.wmo-b.wmo;
++      }).map(r => r.wmo);
++      check(`sort ${label} ${direction}, nulls last, across pages`, JSON.stringify(actual) === JSON.stringify(expected));
++    }
+   }
++  await clear();
++  await page.getByPlaceholder('Search WMO / internal ID…').fill('no-such-float');
++  check('empty search is honest, no fabricated rows', await tableRows().count() === 0);
++  await clear();
+ 
+-  // ---- back navigation ------------------------------------------------------
+-  await page.getByRole('button', { name: '[ Back to Results ]' }).click();
+-  await sleep(800);
+-  ok('Back returns to View Result', await page.getByText('DECODER RESULTS').count() === 1);
+-  ok(
+-    'no top-level Float Status nav item',
+-    await page.getByRole('button', { name: '[ Float Status ]' }).count() === 1
+-  );
++  if (process.env.FLEET_E2E_OUTAGE) {
++    const outage = JSON.parse(fs.readFileSync(process.env.FLEET_E2E_OUTAGE));
++    await page.route('**/api/fleet-status', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify(outage) }));
++    await page.getByRole('button', { name: '[ Back to Results ]', exact: true }).click();
++    await page.getByRole('button', { name: '[ Float Status ]', exact: true }).click();
++    await page.getByTestId('fleet-freshness-notice').waitFor();
++    check('controlled FTP-failure payload shows visible stale cache notice', (await page.getByTestId('fleet-sync-pill').textContent()).includes('Stale cache'));
++    await page.getByPlaceholder('Search WMO / internal ID…').fill('2902223');
++    check('failed sync retains the real last valid communication value', (await page.getByTestId('fleet-row-2902223').locator('[data-field="last_tx_iso"]').textContent()).startsWith(utc(oracle?.get(2902223)?.last_tx_iso || payload.floats.find(r => r.wmo === 2902223).last_tx_iso)));
++    await page.screenshot({ path: path.join(SHOTS, 'controlled-ftp-failure-stale-cache.png') });
++    await page.unroute('**/api/fleet-status');
++  }
++  await page.getByRole('button', { name: '[ Back to Results ]', exact: true }).click();
++  check('Back returns to Results without redesigning navigation', await page.getByText('DECODER RESULTS', { exact: true }).count() === 1);
++  check('no runtime page errors', pageErrors.length === 0, pageErrors.join(' | '));
+ 
+-  ok('no console/page errors', consoleErrors.length === 0, consoleErrors.slice(0, 3).join(' | '));
+-} catch (e) {
+-  ok('e2e completed without exception', false, String(e).slice(0, 300));
+-  try {
+-    await page.screenshot({ path: SHOTS + '/FAIL.png' });
+-  } catch {}
++  // A second browser timezone must not change the displayed UTC transmission.
++  const otherContext = await browser.newContext({ viewport: { width: 1440, height: 900 }, timezoneId: 'America/Los_Angeles' });
++  const other = await otherContext.newPage();
++  await openStatus(other);
++  await other.getByPlaceholder('Search WMO / internal ID…').fill('2902223');
++  const text = await other.getByTestId('fleet-row-2902223').locator('[data-field="last_tx_iso"]').textContent();
++  check('UTC presentation is identical in Kolkata and Los Angeles', text.startsWith(utc(payload.floats.find(r => r.wmo === 2902223).last_tx_iso)));
++  await otherContext.close();
++} catch (error) {
++  results.push({ name: 'E2E completed', passed: false, details: String(error) });
++  console.error(error);
++  await page.screenshot({ path: path.join(SHOTS, 'FAIL.png') }).catch(() => {});
++} finally {
++  await browser.close();
+ }
+-
+-await browser.close();
+-const fails = results.filter(([s]) => s === 'FAIL').length;
+-console.log(`\n${results.length - fails}/${results.length} checks passed`);
+-process.exit(fails ? 1 : 0);
++fs.writeFileSync(path.join(SHOTS, 'verification.json'), JSON.stringify({ results, uiRows, pageErrors }, null, 2));
++const failures = results.filter(r => !r.passed).length;
++console.log(`\n${results.length-failures}/${results.length} checks passed; ${uiRows.length} floats field-checked`);
++process.exitCode = failures ? 1 : 0;
+diff --git a/incois-arpy-decoder/decoder-ui/frontend/src/components/FloatStatusPage.tsx b/incois-arpy-decoder/decoder-ui/frontend/src/components/FloatStatusPage.tsx
+index 29b344f..96b214a 100644
+--- a/incois-arpy-decoder/decoder-ui/frontend/src/components/FloatStatusPage.tsx
++++ b/incois-arpy-decoder/decoder-ui/frontend/src/components/FloatStatusPage.tsx
+@@ -26,6 +26,9 @@ import {
+   formatCoord,
+   formatDays,
+   formatUTC,
++  formatSyncInterval,
++  fleetCacheIsStale,
++  hasFleetPosition,
+   paginateRows,
+   sortFleetRows,
+ } from "../utils/fleetStatus";
+@@ -33,7 +36,8 @@ import {
+ /**
+  * FloatStatusPage — fleet-level upstream communication monitoring.
+  *
+- * Every timestamp/status shown here is authoritative Ifremer/Argo GDAC data
++ * Observation timestamps come from verified Ifremer/Argo GDAC fields; communication
++ * status and expected-next time are derived from those observations. Data is
+  * served from the backend sync cache (/api/fleet-status); the page never
+  * touches FTP and never substitutes local decoder timestamps. Styling
+  * mirrors the Results workspace (header, summary metrics, fleet table);
+@@ -105,14 +109,14 @@ export const FloatStatusPage: React.FC = () => {
+   const mapFloats: FleetMapFloat[] = useMemo(
+     () =>
+       filtered
+-        .filter((r) => r.lat !== null && r.lon !== null)
++        .filter(hasFleetPosition)
+         .map((r) => ({
+           wmo: r.wmo,
+           platform: r.float_type,
+           status: r.status,
+           lat: r.lat as number,
+           lon: r.lon as number,
+-          cyclesCount: r.prof_num || 0,
++          cyclesCount: r.profile_count ?? 0,
+         })),
+     [filtered]
+   );
+@@ -148,7 +152,7 @@ export const FloatStatusPage: React.FC = () => {
+ 
+   const syncState = sync?.status || "never-synced";
+   const syncing = sync?.running || false;
+-  const stale = syncState === "degraded" || syncState === "error";
++  const stale = Boolean(fetchError) || fleetCacheIsStale(payload);
+   const progress = sync?.progress || { done: 0, total: 0 };
+ 
+   return (
+@@ -190,7 +194,7 @@ export const FloatStatusPage: React.FC = () => {
+           <div
+             className="flex items-center space-x-1.5 px-3 py-1.5 bg-white/10 border border-white/20 rounded font-mono text-[12px]"
+             title={
+-              sync?.error ||
++              fetchError || sync?.stale_reason || sync?.error ||
+               (sync?.last_success_at
+                 ? `Last successful sync ${formatUTC(sync.last_success_at)}`
+                 : "No successful sync yet")
+@@ -207,7 +211,7 @@ export const FloatStatusPage: React.FC = () => {
+             ) : stale ? (
+               <>
+                 <AlertTriangle className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+-                <span className="text-amber-200 font-bold">Stale upstream</span>
++                <span className="text-amber-200 font-bold">Stale cache{syncState === "disabled" ? " · sync disabled" : ""}</span>
+               </>
+             ) : syncState === "ok" ? (
+               <>
+@@ -246,10 +250,10 @@ export const FloatStatusPage: React.FC = () => {
+           {" "}· field {source?.field || "JULD_LAST_MESSAGE"}
+         </span>
+         <span className="whitespace-nowrap">
+-          last success: {sync?.last_success_at ? formatUTC(sync.last_success_at) : "—"}
++          last full sync: {sync?.last_success_at ? formatUTC(sync.last_success_at) : "—"}
+         </span>
+         <span className="whitespace-nowrap">
+-          interval: {sync ? `${Math.round(sync.interval_s / 3600)} h` : "—"}
++          interval: {formatSyncInterval(sync?.interval_s ?? null)}
+         </span>
+         {sync?.error && (
+           <span className="text-amber-700 truncate" title={sync.error}>
+@@ -258,11 +262,19 @@ export const FloatStatusPage: React.FC = () => {
+         )}
+         {fetchError && (
+           <span className="text-rose-700 truncate" title={fetchError}>
+-            ⚠ backend unreachable: {fetchError}
++            ⚠ backend request failed: {fetchError}
+           </span>
+         )}
+       </div>
+ 
++      {(stale || syncing) && payload && (
++        <div data-testid="fleet-freshness-notice" className="px-4 py-1.5 bg-amber-50 border-b border-amber-200 text-amber-900 font-mono text-[11.5px] shrink-0">
++          {stale ? "Cached observations — current upstream state is not fully verified. " : "Checking upstream; showing the last verified snapshot. "}
++          {fetchError || sync?.stale_reason || ""}
++          {" "}Status evaluated at {formatUTC(payload.generated_at)}. A new API response is not a new float transmission.
++        </div>
++      )}
++
+       {/* ===================== Summary metrics ===================== */}
+       <section
+         className="bg-[#f5f8fb] border-b border-slate-200 px-4 sm:px-8 lg:px-10 py-4 shrink-0"
+@@ -279,9 +291,9 @@ export const FloatStatusPage: React.FC = () => {
+           <CommDivider />
+           <CommMetric label="NO DATA" value={String(summary?.no_data ?? "—")} valueClass="text-slate-500" barClass="bg-slate-400/60" />
+           <CommDivider />
+-          <CommMetric label="PROFILES MISSING" value={String(summary?.profiles_missing_total ?? "—")} valueClass="text-[#276095]" barClass="bg-[#276095]/60" />
++          <CommMetric label="PROFILES MISSING" value={String(summary?.profiles_missing_total ?? "—")} valueClass="text-[#276095]" barClass="bg-[#276095]/60" title={`File-cycle gaps in 1..Prof#, not communication gaps. Listings available for ${summary?.profile_records_known ?? 0}/${summary?.total ?? 0} floats.`} />
+           <CommDivider />
+-          <CommMetric label="TOTAL PROFILES" value={String(summary?.total_profiles ?? "—")} valueClass="text-[#1d547d]" barClass="bg-[#1d547d]/60" />
++          <CommMetric label="PROFILE CYCLES" value={String(summary?.total_profiles ?? "—")} valueClass="text-[#1d547d]" barClass="bg-[#1d547d]/60" title={`Available unique positive cycles, not the sum of Prof# or BGC sensor grids. Listings available for ${summary?.profile_records_known ?? 0}/${summary?.total ?? 0} floats.`} />
+         </div>
+       </section>
+ 
+@@ -350,7 +362,7 @@ export const FloatStatusPage: React.FC = () => {
+               dataKey={sync?.last_success_at || "fleet-status"}
+               title="Fleet positions — latest upstream GDAC fixes"
+               subtitleNoun="with upstream positions"
+-              footerNote="positions from Ifremer GDAC upstream (latest profile, else traj fix)"
++              footerNote="newest verified QC 1/2 upstream position · source/time in detail"
+             />
+           </div>
+           <div className="px-3 py-1 bg-slate-50 border-t border-slate-200 font-mono text-[11px] text-slate-500 shrink-0">
+@@ -378,12 +390,12 @@ export const FloatStatusPage: React.FC = () => {
+                   <tr>
+                     <SortTh label="WMO ID" k="wmo" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="py-2.5 px-2.5" />
+                     <th className="py-2.5 px-2 font-bold">Internal ID</th>
+-                    <SortTh label="Prof#" k="prof" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="py-2.5 px-2 text-center" center />
+-                    <th className="py-2.5 px-2 text-right font-bold">Lon (E)</th>
+-                    <th className="py-2.5 px-2 text-right font-bold">Lat (N)</th>
++                    <SortTh label="Prof#" help="Highest upstream published cycle, not available profile count" k="prof" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="py-2.5 px-2 text-center" center />
++                    <th className="py-2.5 px-2 text-right font-bold">Longitude</th>
++                    <th className="py-2.5 px-2 text-right font-bold">Latitude</th>
+                     <SortTh label="Last Transmission" k="last_tx" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="py-2.5 px-2" />
+-                    <SortTh label="No Transmission" k="days" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="py-2.5 px-2 text-right" center={false} right />
+-                    <SortTh label="# Profs Missing" k="missing" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="py-2.5 px-2 text-center" center />
++                    <SortTh label="No Communication" help="Completed days since the verified upstream transmission" k="days" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="py-2.5 px-2 text-right" center={false} right />
++                    <SortTh label="# Profs Missing" help="Missing file cycles in 1..Prof# across upstream R/D/B/S families, not missed transmissions" k="missing" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="py-2.5 px-2 text-center" center />
+                     <th className="py-2.5 px-2 font-bold">Float Type</th>
+                     <th className="py-2.5 px-2 font-bold">Status</th>
+                   </tr>
+@@ -403,25 +415,29 @@ export const FloatStatusPage: React.FC = () => {
+                             : "hover:bg-slate-50"
+                         }`}
+                       >
+-                        <td className="py-2.5 px-2.5 font-bold text-[#276095] tabular-nums">{r.wmo}</td>
+-                        <td className="py-2.5 px-2 text-slate-600 text-[12.5px] tabular-nums">
++                        <td className="py-2.5 px-2.5 font-bold text-[#276095] tabular-nums" data-field="wmo">
++                          {r.wmo}
++                          {r.stale && <span data-testid={`fleet-stale-${r.wmo}`} title={r.stale_reason || "Cached observation needs re-verification"} className="block text-[9px] text-amber-700">STALE CACHE</span>}
++                        </td>
++                        <td className="py-2.5 px-2 text-slate-600 text-[12.5px] tabular-nums" data-field="internal_id">
+                           {r.internal_id || <span className="text-slate-300">—</span>}
+                         </td>
+-                        <td className="py-2.5 px-2 text-center text-slate-700 font-semibold tabular-nums">
++                        <td className="py-2.5 px-2 text-center text-slate-700 font-semibold tabular-nums" data-field="prof_num" title="Highest published cycle; see detail for available count">
+                           {r.prof_num ?? <span className="text-slate-300">—</span>}
+                         </td>
+-                        <td className="py-2.5 px-2 text-right text-slate-700 tabular-nums whitespace-nowrap">
++                        <td className="py-2.5 px-2 text-right text-slate-700 tabular-nums whitespace-nowrap" data-field="lon" title={`${r.position_file || "No verified position"} · ${formatUTC(r.position_iso || null)}`}>
+                           {r.lon !== null ? formatCoord(r.lon, "lon") : <span className="text-slate-300">—</span>}
+                         </td>
+-                        <td className="py-2.5 px-2 text-right text-slate-700 tabular-nums whitespace-nowrap">
++                        <td className="py-2.5 px-2 text-right text-slate-700 tabular-nums whitespace-nowrap" data-field="lat" title={`${r.position_file || "No verified position"} · ${formatUTC(r.position_iso || null)}`}>
+                           {r.lat !== null ? formatCoord(r.lat, "lat") : <span className="text-slate-300">—</span>}
+                         </td>
+                         <td
+                           className="py-2.5 px-2 text-slate-700 text-[12.5px] whitespace-nowrap tabular-nums"
++                          data-field="last_tx_iso"
+                           title={
+                             r.last_tx_iso
+                               ? `Field ${r.last_tx_field} · expected next ${formatUTC(r.expected_next_iso)}`
+-                              : r.error || "No upstream timestamp"
++                              : r.communication_error || r.error || "No upstream timestamp"
+                           }
+                         >
+                           {r.last_tx_iso ? (
+@@ -430,7 +446,7 @@ export const FloatStatusPage: React.FC = () => {
+                               {r.traj_lagging_profiles && (
+                                 <span
+                                   className="ml-1.5 px-1.5 py-0.5 rounded bg-amber-100 border border-amber-300 text-amber-800 text-[10px] font-bold"
+-                                  title="Trajectory last message is older than the latest upstream profile — DAC trajectory lag (see detail)"
++                                  title="A newer profile measurement exists; it is not a substitute for a communication timestamp (see detail)"
+                                 >
+                                   TRAJ LAG
+                                 </span>
+@@ -440,7 +456,7 @@ export const FloatStatusPage: React.FC = () => {
+                             <span className="text-slate-300">—</span>
+                           )}
+                         </td>
+-                        <td className="py-2.5 px-2 text-right font-bold tabular-nums whitespace-nowrap">
++                        <td className="py-2.5 px-2 text-right font-bold tabular-nums whitespace-nowrap" data-field="days_since_last_tx" title={`Elapsed days; evaluated at ${formatUTC(payload?.generated_at || null)}`}>
+                           {r.days_since_last_tx !== null ? (
+                             <span className={r.status === "ACTIVE" ? "text-emerald-700" : r.status === "OVERDUE" ? "text-amber-700" : "text-rose-700"}>
+                               {formatDays(r.days_since_last_tx)}
+@@ -451,6 +467,7 @@ export const FloatStatusPage: React.FC = () => {
+                         </td>
+                         <td
+                           className="py-2.5 px-2 text-center font-bold tabular-nums"
++                          data-field="profiles_missing"
+                           title={
+                             r.profiles_missing_list.length > 0
+                               ? `Missing cycles: ${r.profiles_missing_list.join(", ")}`
+@@ -465,11 +482,11 @@ export const FloatStatusPage: React.FC = () => {
+                             <span className="text-slate-300 font-medium">—</span>
+                           )}
+                         </td>
+-                        <td className="py-2.5 px-2 text-slate-600 text-[12.5px]">{r.float_type}</td>
+-                        <td className="py-2 px-2">
++                        <td className="py-2.5 px-2 text-slate-600 text-[12.5px]" data-field="float_type">{r.float_type}</td>
++                        <td className="py-2 px-2" data-field="status">
+                           <span
+                             className={`px-2 py-1 border rounded text-[11px] font-bold whitespace-nowrap ${meta.pill}`}
+-                            title={r.error || undefined}
++                            title={r.communication_error || r.error || undefined}
+                           >
+                             {r.status}
+                           </span>
+@@ -518,7 +535,7 @@ export const FloatStatusPage: React.FC = () => {
+             className="fixed inset-0 z-40 bg-slate-950/40"
+             onClick={() => setDrawerOpen(false)}
+           />
+-          <aside className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl border-l border-slate-200 z-50 flex flex-col font-mono animate-in slide-in-from-right duration-150">
++          <aside data-testid="fleet-detail" className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl border-l border-slate-200 z-50 flex flex-col font-mono animate-in slide-in-from-right duration-150">
+             <div className="h-16 bg-[#163857] text-white px-4 flex items-center justify-between shrink-0">
+               <div className="min-w-0">
+                 <div className="flex items-center space-x-2">
+@@ -543,7 +560,7 @@ export const FloatStatusPage: React.FC = () => {
+             </div>
+             <div className="flex-1 overflow-y-auto p-4 space-y-3 text-[12.5px] select-text">
+               <DetailSection title="Identity">
+-                <DetailRow label="Internal ID" value={selected.internal_id || "— (none on record)"} />
++                <DetailRow label="Internal ID (local)" value={selected.internal_id || "— (unavailable / sanitized)"} />
+                 {selected.ptt && <DetailRow label="PTT" value={selected.ptt} />}
+                 {selected.imei && <DetailRow label="IMEI" value={selected.imei} />}
+                 <DetailRow
+@@ -558,17 +575,20 @@ export const FloatStatusPage: React.FC = () => {
+                 />
+               </DetailSection>
+               <DetailSection title="Communication (Ifremer GDAC)">
++                <DetailRow label="Product" value={`dac/${source?.dac || "incois"}/${selected.wmo}/${selected.wmo}_Rtraj.nc`} />
+                 <DetailRow label="Last transmission" value={formatUTC(selected.last_tx_iso)} strong />
+                 <DetailRow label="Timestamp field" value={selected.last_tx_field || "—"} />
+                 {selected.last_tx_status_rt19 && (
+                   <DetailRow label="Field status (RT19)" value={selected.last_tx_status_rt19} />
+                 )}
+-                <DetailRow label="Expected next" value={formatUTC(selected.expected_next_iso)} />
++                <DetailRow label="Expected next (+10 days)" value={formatUTC(selected.expected_next_iso)} />
++                {selected.communication_error && <p className="text-amber-800 text-[11.5px]">{selected.communication_error}</p>}
++                {selected.last_tx_index != null && <DetailRow label="Source cycle / array index" value={`${selected.last_tx_cycle ?? "—"} / ${selected.last_tx_index} (0-based)`} />}
+                 <DetailRow
+-                  label="No transmission"
++                  label="No communication"
+                   value={
+                     selected.days_since_last_tx !== null
+-                      ? `${selected.days_since_last_tx.toFixed(1)} days`
++                      ? `${selected.days_since_last_tx.toFixed(3)} days`
+                       : "—"
+                   }
+                 />
+@@ -587,17 +607,22 @@ export const FloatStatusPage: React.FC = () => {
+                     label="Position source"
+                     value={
+                       selected.pos_source === "profile"
+-                        ? "latest upstream profile"
+-                        : "trajectory last fix"
++                        ? "upstream profile (newer valid position)"
++                        : "trajectory latest valid fix"
+                     }
+                   />
+                 )}
+                 {selected.pos_qc && <DetailRow label="Position QC" value={selected.pos_qc} />}
++                <DetailRow label="Position observed" value={formatUTC(selected.position_iso || null)} />
++                <DetailRow label="Position time field" value={selected.position_time_field || "—"} />
++                <DetailRow label="Position file" value={selected.position_file || "—"} />
++                {selected.position_error && <p className="text-amber-800 text-[11.5px]">{selected.position_error}</p>}
+               </DetailSection>
+               <DetailSection title="Profiles (upstream)">
++                <DetailRow label="Available profile cycles" value={selected.profile_count != null ? String(selected.profile_count) : "—"} />
+                 <DetailRow label="Latest profile cycle (Prof#)" value={selected.prof_num !== null ? String(selected.prof_num) : "—"} />
+                 <DetailRow
+-                  label="Missing profiles"
++                  label="Missing file cycles"
+                   value={
+                     selected.profiles_missing !== null
+                       ? selected.profiles_missing_list.length > 0
+@@ -620,8 +645,8 @@ export const FloatStatusPage: React.FC = () => {
+                 )}
+                 {selected.traj_lagging_profiles && (
+                   <div className="px-2.5 py-2 bg-amber-50 border border-amber-300 rounded text-amber-900 text-[12px]">
+-                    ⚠ Trajectory is behind the profiles: the latest upstream profile was measured
+-                    after the trajectory's last recorded message (DAC trajectory lag).
++                    ⚠ A profile measurement is newer than the recorded communication. Upstream products
++                    disagree in recency; profile time is not substituted for Last Transmission.
+                   </div>
+                 )}
+               </DetailSection>
+@@ -638,11 +663,13 @@ export const FloatStatusPage: React.FC = () => {
+                 </DetailSection>
+               )}
+               <DetailSection title="Sync">
+-                <DetailRow label="Row refreshed" value={formatUTC(selected.updated_at)} />
++                <DetailRow label="Upstream checked" value={formatUTC(selected.checked_at || null)} />
++                <DetailRow label="Row assembled" value={formatUTC(selected.updated_at)} />
++                <DetailRow label="Cache freshness" value={selected.stale ? selected.stale_reason || "Stale" : "Verified within sync interval"} />
+                 {selected.rtraj_mdtm && <DetailRow label="Upstream Rtraj MDTM" value={selected.rtraj_mdtm} />}
+                 {selected.error && (
+                   <div className="px-2.5 py-2 bg-rose-50 border border-rose-200 rounded text-rose-900 text-[12px] break-words">
+-                    ⚠ {selected.error} (last valid row retained)
++                    ⚠ {selected.error} (any previously validated observations are retained)
+                   </div>
+                 )}
+               </DetailSection>
+@@ -672,14 +699,16 @@ function CommMetric({
+   value,
+   valueClass,
+   barClass,
++  title,
+ }: {
+   label: string;
+   value: string;
+   valueClass: string;
+   barClass: string;
++  title?: string;
+ }) {
+   return (
+-    <div className="flex-1 basis-0 min-w-[92px] text-center px-1.5 sm:px-3">
++    <div className="flex-1 basis-0 min-w-[92px] text-center px-1.5 sm:px-3" title={title}>
+       <p
+         className={`text-[26px] sm:text-[32px] md:text-[36px] leading-none font-black tabular-nums tracking-tight ${valueClass}`}
+       >
+@@ -698,6 +727,7 @@ function CommMetric({
+ 
+ function SortTh({
+   label,
++  help,
+   k,
+   sortKey,
+   sortDir,
+@@ -707,6 +737,7 @@ function SortTh({
+   right,
+ }: {
+   label: string;
++  help?: string;
+   k: FleetSortKey;
+   sortKey: FleetSortKey | null;
+   sortDir: SortDir;
+@@ -720,7 +751,7 @@ function SortTh({
+     <th className={className || ""}>
+       <button
+         onClick={() => onSort(k)}
+-        title={`Sort by ${label}`}
++        title={`Sort by ${label}${help ? ` — ${help}` : ""}`}
+         className={`font-bold uppercase tracking-wider hover:text-[#276095] cursor-pointer ${
+           center ? "mx-auto" : right ? "ml-auto" : ""
+         } flex items-center gap-1`}
+@@ -761,7 +792,7 @@ function DetailRow({
+   strong?: boolean;
+ }) {
+   return (
+-    <div className="flex items-start justify-between gap-3">
++    <div className="flex items-start justify-between gap-3" data-detail-label={label}>
+       <span className="text-slate-500 shrink-0">{label}</span>
+       <span
+         className={`text-right break-words ${strong ? "font-bold text-slate-900" : "text-slate-700"}`}
+diff --git a/incois-arpy-decoder/decoder-ui/frontend/src/store/useFleetStatusStore.ts b/incois-arpy-decoder/decoder-ui/frontend/src/store/useFleetStatusStore.ts
+index 7016ff9..41ea368 100644
+--- a/incois-arpy-decoder/decoder-ui/frontend/src/store/useFleetStatusStore.ts
++++ b/incois-arpy-decoder/decoder-ui/frontend/src/store/useFleetStatusStore.ts
+@@ -28,8 +28,10 @@ export const useFleetStatusStore = create<FleetStatusState>()((set, get) => ({
+     // no reason to stack requests while a sync-heavy backend is busy.
+     if (get().loading) return;
+     set({ loading: true });
++    const controller = new AbortController();
++    const timeout = setTimeout(() => controller.abort(), 15000);
+     try {
+-      const res = await fetch("/api/fleet-status");
++      const res = await fetch("/api/fleet-status", { signal: controller.signal });
+       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+       const data: FleetStatusPayload = await res.json();
+       set({ payload: data, fetchError: null });
+@@ -39,6 +41,7 @@ export const useFleetStatusStore = create<FleetStatusState>()((set, get) => ({
+           err instanceof Error ? err.message : "fleet-status fetch failed",
+       });
+     } finally {
++      clearTimeout(timeout);
+       set({ loading: false });
+     }
+   },
+diff --git a/incois-arpy-decoder/decoder-ui/frontend/src/types/index.ts b/incois-arpy-decoder/decoder-ui/frontend/src/types/index.ts
+index 6a0d558..d94f394 100644
+--- a/incois-arpy-decoder/decoder-ui/frontend/src/types/index.ts
++++ b/incois-arpy-decoder/decoder-ui/frontend/src/types/index.ts
+@@ -318,6 +318,8 @@ export interface FleetLatestProfile {
+   lon: number | null;
+   pos_qc: string | null;
+   cycle_mismatch: boolean;
++  position_iso?: string | null;
++  position_error?: string | null;
+ }
+ 
+ export interface FleetTrajFix {
+@@ -337,16 +339,25 @@ export interface FleetStatusRow {
+   float_type: string;
+   transmission_type: string;
+   in_incois_dac: boolean | null;
++  /** Highest published cycle number, not the count of available cycles. */
+   prof_num: number | null;
++  profile_count?: number | null;
+   profiles_missing: number | null;
+   profiles_missing_list: number[];
+   lon: number | null;
+   lat: number | null;
+   pos_source: "profile" | "traj" | null;
+   pos_qc: string | null;
++  position_iso?: string | null;
++  position_time_field?: string | null;
++  position_file?: string | null;
++  position_error?: string | null;
+   last_tx_iso: string | null;
+   last_tx_field: string | null;
+   last_tx_status_rt19: string | null;
++  last_tx_index?: number | null;
++  last_tx_cycle?: number | null;
++  communication_error?: string | null;
+   days_since_last_tx: number | null;
+   expected_next_iso: string | null;
+   status: FleetCommStatus;
+@@ -357,6 +368,10 @@ export interface FleetStatusRow {
+   rtraj_mdtm: string | null;
+   error: string | null;
+   updated_at: string | null;
++  checked_at?: string | null;
++  stale?: boolean;
++  stale_reason?: string | null;
++  cache_age_seconds?: number | null;
+ }
+ 
+ export interface FleetSyncState {
+@@ -365,6 +380,11 @@ export interface FleetSyncState {
+   progress: { done: number; total: number };
+   last_attempt_at: string | null;
+   last_success_at: string | null;
++  last_completed_at?: string | null;
++  persistence_error?: string | null;
++  stale?: boolean;
++  stale_reason?: string | null;
++  age_seconds?: number | null;
+   interval_s: number;
+   error: string | null;
+   counts: { total: number; updated: number; unchanged: number; failed: number } | Record<string, never>;
+@@ -378,6 +398,8 @@ export interface FleetStatusSummary {
+   no_data: number;
+   profiles_missing_total: number;
+   total_profiles: number;
++  profile_records_known?: number;
++  stale_rows?: number;
+ }
+ 
+ export interface FleetStatusSource {
+diff --git a/incois-arpy-decoder/decoder-ui/frontend/src/utils/fleetStatus.test.ts b/incois-arpy-decoder/decoder-ui/frontend/src/utils/fleetStatus.test.ts
+index de72958..0478970 100644
+--- a/incois-arpy-decoder/decoder-ui/frontend/src/utils/fleetStatus.test.ts
++++ b/incois-arpy-decoder/decoder-ui/frontend/src/utils/fleetStatus.test.ts
+@@ -1,11 +1,14 @@
+ import { describe, expect, it } from "vitest";
+-import type { FleetStatusRow } from "../types";
++import type { FleetStatusPayload, FleetStatusRow } from "../types";
+ import {
+   applyFleetFilters,
+   defaultSortRows,
+   formatCoord,
+   formatDays,
+   formatUTC,
++  formatSyncInterval,
++  fleetCacheIsStale,
++  hasFleetPosition,
+   paginateRows,
+   sortFleetRows,
+ } from "./fleetStatus";
+@@ -111,3 +114,79 @@ describe("fleetStatus helpers", () => {
+     expect(formatCoord(null, "lon")).toBe("—");
+   });
+ });
++
++
++describe("Float Status correctness guards", () => {
++  const asOf = Date.parse("2026-09-21T00:00:00Z");
++  const payload = (over: Partial<FleetStatusPayload["sync"]> = {}): FleetStatusPayload => ({
++    generated_at: "2026-09-21T00:00:00Z",
++    floats: [],
++    source: { host: "ftp.ifremer.fr", port: 21, root: "/ifremer/argo", dac: "incois", product: "Rtraj", field: "JULD_LAST_MESSAGE", interval_s: 21600 },
++    summary: { total: 0, active: 0, overdue: 0, no_comm_60: 0, no_data: 0, profiles_missing_total: 0, total_profiles: 0 },
++    sync: { status: "ok", running: false, progress: { done: 0, total: 0 }, last_attempt_at: null,
++      last_success_at: "2026-09-20T23:00:00Z", interval_s: 21600, error: null, counts: {}, ...over },
++  });
++
++  it("expires old success even when status still says ok or disabled", () => {
++    for (const status of ["ok", "disabled"] as const) {
++      expect(fleetCacheIsStale(payload({ status, last_success_at: "2026-09-20T00:00:00Z" }), asOf)).toBe(true);
++    }
++    expect(fleetCacheIsStale(payload(), asOf)).toBe(false);
++  });
++
++  it("marks a frozen API payload stale without changing its status badges", () => {
++    const p = payload();
++    p.floats = [row({ wmo: 2902223, status: "ACTIVE" })];
++    expect(fleetCacheIsStale(p, asOf + 121000)).toBe(true);
++    expect(p.floats[0].status).toBe("ACTIVE");
++  });
++
++  it("honours server row-validation freshness and incomplete-sync states", () => {
++    expect(fleetCacheIsStale(payload({ stale: true }), asOf)).toBe(true);
++    expect(fleetCacheIsStale(payload({ status: "degraded" }), asOf)).toBe(true);
++    expect(fleetCacheIsStale(payload({ last_success_at: null }), asOf)).toBe(true);
++    expect(fleetCacheIsStale(null, asOf)).toBe(false);
++  });
++
++  it("never formats NaN, infinity or invalid coordinates as observations", () => {
++    for (const n of [NaN, Infinity, -Infinity]) {
++      expect(formatDays(n)).toBe("—");
++      expect(formatCoord(n, "lon")).toBe("—");
++    }
++    expect(formatDays(-0.5)).toBe("—");
++    expect(formatCoord(91, "lat")).toBe("—");
++    expect(formatCoord(-181, "lon")).toBe("—");
++    expect(formatCoord(0, "lat")).toBe("0.000°N");
++  });
++
++  it("keeps unrounded elapsed days below a whole-day boundary", () => {
++    expect(formatDays(59.999999)).toBe("59 d");
++    expect(formatDays(10.000001)).toBe("10 d");
++  });
++
++  it("UTC formatting is independent of client timezone and explicit offsets", () => {
++    expect(formatUTC("2026-09-21T05:30:00+05:30")).toBe("2026-09-21 00:00 UTC");
++    expect(formatUTC("2026-09-20T17:00:00-07:00")).toBe("2026-09-21 00:00 UTC");
++  });
++
++  it("uses one valid paired coordinate predicate for table/map data", () => {
++    expect(hasFleetPosition({ lat: 0, lon: 0 })).toBe(true);
++    expect(hasFleetPosition({ lat: -45.719, lon: 8.043 })).toBe(true);
++    expect(hasFleetPosition({ lat: null, lon: 8.043 })).toBe(false);
++    expect(hasFleetPosition({ lat: 92, lon: 8.043 })).toBe(false);
++    expect(hasFleetPosition({ lat: 12, lon: Infinity })).toBe(false);
++  });
++
++  it("sorts malformed/missing dates last in both directions", () => {
++    const r = [row({ wmo: 1, last_tx_iso: "bad" }), row({ wmo: 2, last_tx_iso: "2026-09-20T00:00:00Z" })];
++    expect(sortFleetRows(r, "last_tx", "asc").map(x => x.wmo)).toEqual([2, 1]);
++    expect(sortFleetRows(r, "last_tx", "desc").map(x => x.wmo)).toEqual([2, 1]);
++  });
++});
++
++it("labels the effective synchronization cadence in correct units", () => {
++  expect(formatSyncInterval(21600)).toBe("6 h");
++  expect(formatSyncInterval(300)).toBe("5 min");
++  expect(formatSyncInterval(900)).toBe("15 min");
++  expect(formatSyncInterval(null)).toBe("—");
++});
+diff --git a/incois-arpy-decoder/decoder-ui/frontend/src/utils/fleetStatus.ts b/incois-arpy-decoder/decoder-ui/frontend/src/utils/fleetStatus.ts
+index 5a32f4e..87b1dc4 100644
+--- a/incois-arpy-decoder/decoder-ui/frontend/src/utils/fleetStatus.ts
++++ b/incois-arpy-decoder/decoder-ui/frontend/src/utils/fleetStatus.ts
+@@ -1,4 +1,4 @@
+-import type { FleetCommStatus, FleetStatusRow } from "../types";
++import type { FleetCommStatus, FleetStatusPayload, FleetStatusRow } from "../types";
+ 
+ /** Filter/sort/paginate/format helpers for the Float Status page. Pure and
+  *  unit-tested; all communication truth comes from the backend payload. */
+@@ -53,9 +53,11 @@ function cmpNullsLast(
+   b: number | null,
+   dir: SortDir
+ ): number {
+-  if (a === null && b === null) return 0;
+-  if (a === null) return 1;
+-  if (b === null) return -1;
++  const missingA = a == null || !Number.isFinite(a);
++  const missingB = b == null || !Number.isFinite(b);
++  if (missingA && missingB) return 0;
++  if (missingA) return 1;
++  if (missingB) return -1;
+   return dir === "asc" ? a - b : b - a;
+ }
+ 
+@@ -99,8 +101,8 @@ export function paginateRows<T>(
+ }
+ 
+ export function formatDays(days: number | null): string {
+-  if (days === null || days === undefined || Number.isNaN(days)) return "—";
+-  return `${Math.max(0, Math.floor(days))} d`;
++  if (days == null || !Number.isFinite(days) || days < 0) return "—";
++  return `${Math.floor(days)} d`;
+ }
+ 
+ /** "2026-09-08T14:04:11+00:00" -> "2026-09-08 14:04 UTC" (minute precision). */
+@@ -119,7 +121,7 @@ export function formatCoord(
+   v: number | null,
+   kind: "lon" | "lat"
+ ): string {
+-  if (v === null || v === undefined || Number.isNaN(v)) return "—";
++  if (v == null || !Number.isFinite(v) || Math.abs(v) > (kind === "lon" ? 180 : 90)) return "—";
+   const hemi = kind === "lon" ? (v < 0 ? "W" : "E") : v < 0 ? "S" : "N";
+   return `${Math.abs(v).toFixed(3)}°${hemi}`;
+ }
+@@ -146,3 +148,32 @@ export const FLEET_STATUS_META: Record<
+     dot: "bg-slate-400",
+   },
+ };
++
++/** Do not leave an old successful snapshot green when the API is offline or
++ * the sync is disabled. Server freshness is authoritative; wall-clock expiry
++ * is an additional guard between payload refreshes. Never changes comm status.
++ */
++export function fleetCacheIsStale(payload: FleetStatusPayload | null, nowMs = Date.now()): boolean {
++  if (!payload) return false;
++  const sync = payload.sync;
++  if (sync.stale || sync.status === "error" || sync.status === "degraded") return true;
++  const checked = sync.last_success_at ? Date.parse(sync.last_success_at) : NaN;
++  const generated = Date.parse(payload.generated_at);
++  return !Number.isFinite(checked) || !Number.isFinite(generated) ||
++    checked > nowMs || nowMs - checked > sync.interval_s * 1000 ||
++    nowMs - generated > 120000;
++}
++
++/** This same paired-coordinate predicate feeds the table/map contract. */
++export function hasFleetPosition(row: Pick<FleetStatusRow, "lat" | "lon">): boolean {
++  return row.lat != null && row.lon != null && Number.isFinite(row.lat) &&
++    Number.isFinite(row.lon) && Math.abs(row.lat) <= 90 && Math.abs(row.lon) <= 180;
++}
++
++/** Exact cadence labels: sub-hour schedules must not read as "0 h". */
++export function formatSyncInterval(seconds: number | null): string {
++  if (seconds == null || !Number.isFinite(seconds) || seconds <= 0) return "—";
++  if (seconds % 3600 === 0) return `${seconds / 3600} h`;
++  if (seconds % 60 === 0) return `${seconds / 60} min`;
++  return `${seconds} s`;
++}
+diff --git a/incois-arpy-decoder/decoder-ui/service/fleet_status.py b/incois-arpy-decoder/decoder-ui/service/fleet_status.py
+index 2656e46..78e1845 100644
+--- a/incois-arpy-decoder/decoder-ui/service/fleet_status.py
++++ b/incois-arpy-decoder/decoder-ui/service/fleet_status.py
+@@ -1,66 +1,46 @@
+-"""Float communication monitoring — Ifremer/Argo GDAC synchronization.
+-
+-Fleet-level upstream communication truth for the INCOIS float fleet. Every
+-communication timestamp comes from the authoritative Ifremer GDAC over
+-anonymous FTP; no local decoder timestamp (run time, processing time,
+-profile JULD, file arrival) is ever substituted.
+-
+-Source contract (verified against live GDAC 2026-09-17 — see
+-decoder-ui/FLEET_STATUS.md, never guessed):
+-  host ................ ftp.ifremer.fr:21 (anonymous; env-overridable)
+-  root ................ /ifremer/argo
+-  fleet membership .... /ifremer/argo/dac/incois/<wmo>/ exists
+-  trajectory .......... /ifremer/argo/dac/incois/<wmo>/<wmo>_Rtraj.nc
+-  Last Transmission ... max valid per-cycle JULD_LAST_MESSAGE
+-                        ("Date of latest float message received"),
+-                        fallback JULD_TRANSMISSION_END
+-                        ("Transmission end date"), then — for vintage
+-                        files whose per-cycle fields are absent/fill —
+-                        max valid measurement-row JULD; the field
+-                        actually used is recorded per float
+-  Prof# / missing ..... max cycle + gaps over profiles/ filenames
+-                        (R/D/BR/BD/SR/SD union; cycle 0 excluded)
+-  Lon/Lat ............. latest upstream profile LATITUDE/LONGITUDE,
+-                        fallback = trajectory last valid fix
+-
+-Design mirrors ingestion.py: JSON cache with atomic writes, a background
+-asyncio poll loop delegating to a worker thread, start/stop lifecycle, and
+-a module singleton. Sync NEVER raises to callers — failures are recorded in
+-the sync/float status and the last valid cache keeps serving.
++"""Float Status: cached, verifiable Ifremer/Argo GDAC observations.
++
++Communication: per-cycle JULD_LAST_MESSAGE, else JULD_TRANSMISSION_END only.
++Location: newest QC 1/2 position across trajectory fixes (JULD), full profile
++history and the latest file (JULD_LOCATION); source and position time exposed.
++Prof#: highest published cycle. Available profiles: distinct positive cycles.
++Missing profiles: directory gaps 1..Prof#, not communication or decoder errors.
++Freshness is separate from float communication status. A successful check of
++unchanged files renews checked_at, never the observation's timestamp.
++See decoder-ui/FLEET_STATUS.md for the field contract and limitations.
+ """
+ 
+ from __future__ import annotations
+ 
+ import asyncio
++import copy
+ import ftplib
+ import hashlib
+ import json
++import math
+ import os
+ import re
+ import threading
+ import time
+-from datetime import datetime, timedelta, timezone
++from collections.abc import Callable
++from datetime import UTC, datetime, timedelta
+ from io import BytesIO
+ from pathlib import Path
+-from typing import Any, Callable, Optional
++from typing import Any
+ 
+ import netCDF4
+ import numpy as np
+-
+ from event_bus import DATA_DIR
+ 
+ # ---------------------------------------------------------------------------
+ # Constants
+ # ---------------------------------------------------------------------------
+ 
+-JULD_EPOCH = datetime(1950, 1, 1, tzinfo=timezone.utc)
++JULD_EPOCH = datetime(1950, 1, 1, tzinfo=UTC)
+ #: JULD values at/above this are fill (covers the writer 90000 convention and
+ #: the files' 999999 _FillValue).
+ FILL_JULD = 90000.0
+-#: A "message received" timestamp more than this far in the future is
+-#: impossible (predicted cycle events exist in N_MEASUREMENT space) and is
+-#: rejected wherever it appears.
+-FUTURE_SKEW_DAYS = 1.0
++# Future observations are rejected, including predicted trajectory events.
+ 
+ STATUS_ACTIVE = "ACTIVE"
+ STATUS_OVERDUE = "OVERDUE"
+@@ -74,19 +54,27 @@ SYNC_NEVER = "never-synced"
+ SYNC_DISABLED = "disabled"
+ SYNC_RUNNING = "running"
+ 
+-STATE_VERSION = 1
++STATE_VERSION = 2
++PARSER_VERSION = 2
++COMMUNICATION_FIELDS = ("JULD_LAST_MESSAGE", "JULD_TRANSMISSION_END")
++# Deliberately do not promote unassessed, bad or interpolated positions to a
++# verified latest fix. RT2: 1 = good, 2 = probably good.
++POSITION_QC_ACCEPTED = {"1", "2"}
+ 
+ #: Latest-profile preference when several families share the max cycle.
+-PROFILE_PREFIX_PRIORITY = ["R", "D", "BR", "BD", "SR", "SD"]
++PROFILE_PREFIX_PRIORITY = ["D", "R", "BD", "BR", "SD", "SR"]
+ 
+ _LIST_RE = re.compile(
+     r"^([bcdlps-][rwxstST-]{9})\s+\d+\s+\S+\s+\S+\s+(\d+)\s+"
+     r"([A-Z][a-z]{2})\s+(\d{1,2})\s+(\d{4}|\d{1,2}:\d{2})\s+(\S.*?)\s*$"
+ )
+-_PROFILE_RE = re.compile(r"^([A-Z]+)(\d{7})_(\d{3})\.nc$")
+-_MONTHS = {m: i + 1 for i, m in enumerate(
+-    ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+-     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])}
++_PROFILE_RE = re.compile(r"^(BD|BR|SD|SR|D|R)(\d{7})_(\d{3,4})(D?)\.nc$")
++_MONTHS = {
++    m: i + 1
++    for i, m in enumerate(
++        ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
++    )
++}
+ 
+ 
+ class FloatSyncError(Exception):
+@@ -97,37 +85,56 @@ class FloatSyncError(Exception):
+ # Pure helpers (unit-tested)
+ # ---------------------------------------------------------------------------
+ 
++
+ def _utcnow() -> datetime:
+-    return datetime.now(timezone.utc)
++    return datetime.now(UTC)
+ 
+ 
+ def juld_to_datetime(juld: float) -> datetime:
+-    """JULD (days since 1950-01-01 UTC) -> aware UTC datetime."""
+-    return JULD_EPOCH + timedelta(days=float(juld))
++    """Argo JULD -> aware UTC, removing <1 ms floating-point second jitter."""
++    seconds = float(juld) * 86400.0
++    if abs(seconds - round(seconds)) < 0.001:
++        seconds = float(round(seconds))
++    return JULD_EPOCH + timedelta(seconds=seconds)
+ 
+ 
+ def juld_to_iso(juld: float) -> str:
+     return juld_to_datetime(juld).isoformat()
+ 
+ 
+-def _valid_juld(value: Any, now: datetime) -> Optional[float]:
+-    """A JULD value usable as communication evidence, else None."""
++def _parse_utc(value: Any) -> datetime | None:
++    """Never interpret an unqualified cache timestamp in the server's timezone."""
++    if not isinstance(value, str):
++        return None
+     try:
+-        v = float(value)
+-    except (TypeError, ValueError):
++        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
++        return dt.astimezone(UTC) if dt.tzinfo is not None else None
++    except (ValueError, TypeError, OverflowError):
+         return None
+-    if not np.isfinite(v) or v >= FILL_JULD:
++
++
++def _age_seconds(value: Any, now: datetime) -> float | None:
++    dt = _parse_utc(value)
++    if dt is None or dt > now:
+         return None
+-    if v > (now - JULD_EPOCH).total_seconds() / 86400.0 + FUTURE_SKEW_DAYS:
++    return (now - dt).total_seconds()
++
++
++def _valid_juld(value: Any, now: datetime) -> float | None:
++    try:
++        v = float(value)
++        if not np.isfinite(v) or not 0 <= v < FILL_JULD:
++            return None
++        if juld_to_datetime(v) > now:
++            return None
++        return v
++    except (TypeError, ValueError, OverflowError):
+         return None
+-    return v
+ 
+ 
+-def comm_status(days_since: Optional[float]) -> str:
+-    """§6 status rule. Boundaries: ACTIVE while the 10-day window has not
+-    passed (days<=10); OVERDUE once it has and under 60 days; NO-COMM at 60+;
+-    NO DATA without a timestamp (never labeled dead)."""
+-    if days_since is None:
++def comm_status(days_since: float | None) -> str:
++    """Approved policy, on unrounded elapsed days; unavailable != inactive."""
++    if days_since is None or not math.isfinite(days_since) or days_since < 0:
+         return STATUS_NO_DATA
+     if days_since <= 10:
+         return STATUS_ACTIVE
+@@ -136,7 +143,7 @@ def comm_status(days_since: Optional[float]) -> str:
+     return STATUS_NO_COMM_60
+ 
+ 
+-def parse_list_line(line: str, now: Optional[datetime] = None) -> Optional[tuple[str, int, float, bool]]:
++def parse_list_line(line: str, now: datetime | None = None) -> tuple[str, int, float, bool] | None:
+     """Parse one Unix-style FTP LIST line -> (name, size, mtime_epoch, is_dir).
+ 
+     The mtime is used ONLY for change fingerprints, never displayed as data.
+@@ -156,18 +163,18 @@ def parse_list_line(line: str, now: Optional[datetime] = None) -> Optional[tuple
+     if ":" in year_or_time:
+         hh, mm = year_or_time.split(":")
+         try:
+-            dt = datetime(now.year, month, day, int(hh), int(mm), tzinfo=timezone.utc)
++            dt = datetime(now.year, month, day, int(hh), int(mm), tzinfo=UTC)
+         except ValueError:
+             return None
+         if dt > now + timedelta(days=1):
+             # Recent-mtime form with an implied year belongs to last year.
+             try:
+-                dt = datetime(now.year - 1, month, day, int(hh), int(mm), tzinfo=timezone.utc)
++                dt = datetime(now.year - 1, month, day, int(hh), int(mm), tzinfo=UTC)
+             except ValueError:
+                 return None
+     else:
+         try:
+-            dt = datetime(int(year_or_time), month, day, tzinfo=timezone.utc)
++            dt = datetime(int(year_or_time), month, day, tzinfo=UTC)
+         except ValueError:
+             return None
+     return (name, size, dt.timestamp(), perms[0] == "d")
+@@ -183,80 +190,146 @@ def listing_fingerprint(entries: list[tuple[str, int, float]]) -> str:
+ 
+ 
+ def summarize_profiles(filenames: list[str], wmo: int) -> dict[str, Any]:
+-    """Prof# / gaps / latest-file choice from profiles/ filenames only.
++    """Prof# is the highest published cycle, NOT the available-profile count.
+ 
+-    Union over R/D/BR/BD/SR/SD families; cycle 0 excluded from gap math
+-    (launch-cycle profiles are rare and must not read as missing).
++    Count distinct positive cycles across only official R/D/BR/BD/SR/SD
++    families, including descent suffix D and four-digit cycles. A BGC sensor
++    grid or an additional family/direction is not another missing/present
++    cycle. Gaps mean absent files in 1..max, not missing communications or
++    failed decoder jobs. No later cycles are invented from trajectory data.
+     """
+-    cycles: dict[int, list[str]] = {}
++    cycles: dict[int, list[tuple[str, str]]] = {}
+     n_files = 0
+-    for fn in filenames:
+-        m = _PROFILE_RE.match(fn)
++    for fn in sorted(set(filenames)):
++        m = _PROFILE_RE.fullmatch(fn)
+         if not m or int(m.group(2)) != int(wmo):
+             continue
+         n_files += 1
+-        cycles.setdefault(int(m.group(3)), []).append(m.group(1))
++        cycles.setdefault(int(m.group(3)), []).append((m.group(1), fn))
+     if not cycles:
+-        return {"max_cycle": None, "missing": [], "n_files": n_files,
+-                "latest": None, "listing_cycles": 0}
++        return {
++            "max_cycle": None,
++            "missing": [],
++            "n_files": n_files,
++            "latest": None,
++            "listing_cycles": 0,
++            "available_cycles": 0,
++        }
+     max_cycle = max(cycles)
+     missing = [c for c in range(1, max_cycle + 1) if c not in cycles]
+-    prefs = cycles[max_cycle]
+-    prefs.sort(key=lambda p: PROFILE_PREFIX_PRIORITY.index(p)
+-               if p in PROFILE_PREFIX_PRIORITY else len(PROFILE_PREFIX_PRIORITY))
+-    latest_prefix = prefs[0]
++    # Preserve the actual filename (padding and descent suffix included).
++    prefix, filename = min(
++        cycles[max_cycle],
++        key=lambda x: (PROFILE_PREFIX_PRIORITY.index(x[0]), x[1].endswith("D.nc"), x[1]),
++    )
+     return {
+         "max_cycle": max_cycle,
+         "missing": missing,
+         "n_files": n_files,
+         "listing_cycles": len(cycles),
+-        "latest": {"prefix": latest_prefix, "cycle": max_cycle,
+-                   "file": f"{latest_prefix}{wmo}_{max_cycle:03d}.nc"},
++        "available_cycles": sum(c > 0 for c in cycles),
++        "latest": {"prefix": prefix, "cycle": max_cycle, "file": filename},
+     }
+ 
+ 
+ # -- netCDF4 reading ---------------------------------------------------------
+ 
++
+ def _farr(var: Any) -> np.ndarray:
+-    """Float array with masked/fill entries as NaN (never raises)."""
+-    try:
+-        raw = var[:]
+-    except Exception:
+-        return np.array([], dtype=float)
++    """Preserve masks even on integer variables before converting fill to NaN."""
+     try:
+-        if np.ma.isMaskedArray(raw):
+-            raw = raw.filled(np.nan)
+-        return np.asarray(raw, dtype=float)
+-    except Exception:
++        return np.ma.asarray(var[:], dtype=float).filled(np.nan).ravel()
++    except (ValueError, TypeError, IndexError):
+         return np.array([], dtype=float)
+ 
+ 
+ def _char_at(var: Any, i: int) -> str:
+-    """Single character (RT19 STATUS / QC flags) as a stripped string."""
+     try:
+         v = var[i]
+         if np.ma.is_masked(v):
+             return ""
+-        if isinstance(v, bytes):
+-            return v.decode(errors="replace").strip()
+-        return np.asarray(v).tobytes().decode(errors="replace").strip("\x00").strip()
+-    except Exception:
++        item = np.asarray(v).ravel()[0].item()
++        return (
++            item.decode(errors="replace").strip() if isinstance(item, bytes) else str(item).strip()
++        )
++    except (ValueError, TypeError, IndexError):
+         return ""
+ 
+ 
++def _flags(ds: netCDF4.Dataset, name: str) -> np.ndarray:
++    if name not in ds.variables:
++        return np.array([], dtype="U1")
++    return np.ma.filled(ds.variables[name][:], b" ").astype("U1").ravel()
++
++
++def _texts(ds: netCDF4.Dataset, name: str) -> list[str]:
++    if name not in ds.variables:
++        return []
++    a = np.ma.asarray(ds.variables[name][:])
++    if a.dtype.kind == "S" and a.dtype.itemsize == 1:
++        a = np.ma.filled(a, b" ")
++        rows = a.reshape((-1, a.shape[-1])) if a.ndim > 1 else [a]
++        return [np.asarray(row).tobytes().decode(errors="replace").strip(" \x00") for row in rows]
++    return [str(v).strip(" \x00") for v in np.ma.filled(a, "").ravel()]
++
++
+ def _scalar_text(ds: netCDF4.Dataset, name: str) -> str:
+-    try:
+-        return np.asarray(ds.variables[name][:]).tobytes().decode(errors="replace").strip("\x00").strip()
+-    except Exception:
+-        return ""
++    return next(iter(_texts(ds, name)), "")
++
++
++def _check_platform(ds: netCDF4.Dataset, wmo: int, product: str) -> None:
++    values = _texts(ds, "PLATFORM_NUMBER")
++    if not values or any(value != str(wmo) for value in values):
++        raise FloatSyncError(f"{product} PLATFORM_NUMBER missing or does not match WMO {wmo}")
++
++
++def _julds(ds: netCDF4.Dataset, name: str) -> np.ndarray:
++    if name not in ds.variables:
++        return np.array([], dtype=float)
++    var = ds.variables[name]
++    units = " ".join(str(getattr(var, "units", "")).lower().split())
++    # Argo's documented epoch; do not silently interpret a foreign time axis.
++    valid_units = {
++        "days since 1950-01-01 00:00:00 utc",
++        "days since 1950-01-01 00:00:00",
++        "days since 1950-01-01",
++        "days since 1950-01-01 00:00:00z",
++    }
++    if units not in valid_units:
++        raise FloatSyncError(f"{name} has absent/unsupported time units: {units!r}")
++    if str(getattr(var, "calendar", "standard")).lower() not in {
++        "standard",
++        "gregorian",
++        "proleptic_gregorian",
++    }:
++        raise FloatSyncError(f"{name} has an unsupported calendar")
++    return _farr(var)
++
++
++def _int_at(values: np.ndarray, i: int) -> int | None:
++    if i < values.size and np.isfinite(values[i]) and 0 <= values[i] < 99999:
++        return int(values[i]) if values[i] == int(values[i]) else None
++    return None
+ 
+ 
+-def parse_rtraj(raw: bytes, wmo: int, now: Optional[datetime] = None) -> dict[str, Any]:
+-    """Extract communication evidence from a GDAC *_Rtraj.nc image.
++def _position_ok(lat: Any, lon: Any, qc: Any) -> bool:
++    try:
++        return (
++            qc in POSITION_QC_ACCEPTED
++            and np.isfinite(float(lat))
++            and np.isfinite(float(lon))
++            and abs(float(lat)) <= 90
++            and abs(float(lon)) <= 180
++        )
++    except (TypeError, ValueError):
++        return False
++
+ 
+-    Returns last-tx (field + value + RT19 status code), trajectory max cycle
+-    and last valid fix. Raises FloatSyncError when the file carries no usable
+-    communication timestamp at all.
++def parse_rtraj(raw: bytes, wmo: int, now: datetime | None = None) -> dict[str, Any]:
++    """Parse only genuine per-cycle communication fields; retain independent
++    position data even when no communication evidence exists (legacy files).
++    Measurement JULD, profile time, mtime and processing time are NEVER used
++    as last transmission. Missing communication is NO DATA, not a sync error.
+     """
+     now = now or _utcnow()
+     try:
+@@ -264,107 +337,104 @@ def parse_rtraj(raw: bytes, wmo: int, now: Optional[datetime] = None) -> dict[st
+     except Exception as exc:
+         raise FloatSyncError(f"Rtraj unreadable: {exc}") from exc
+     try:
+-        platform = _scalar_text(ds, "PLATFORM_NUMBER")
+-        if platform and platform != str(wmo):
+-            raise FloatSyncError(f"Rtraj PLATFORM_NUMBER {platform!r} != {wmo}")
+-        out: dict[str, Any] = {"platform_number": platform or str(wmo)}
+-        # Per-cycle communication fields (order-independent max).
+-        last_tx: Optional[float] = None
+-        last_tx_field: Optional[str] = None
+-        last_tx_status = ""
+-        for field in ("JULD_LAST_MESSAGE", "JULD_TRANSMISSION_END"):
++        _check_platform(ds, wmo, "Rtraj")
++        out: dict[str, Any] = {
++            "platform_number": str(wmo),
++            "last_tx_juld": None,
++            "last_tx_iso": None,
++            "last_tx_field": None,
++            "last_tx_status_rt19": "",
++            "last_tx_index": None,
++            "last_tx_cycle": None,
++            "communication_error": None,
++        }
++        cycle_index = (
++            _farr(ds.variables["CYCLE_NUMBER_INDEX"])
++            if "CYCLE_NUMBER_INDEX" in ds.variables
++            else np.array([])
++        )
++        for field in COMMUNICATION_FIELDS:
+             if field not in ds.variables:
+                 continue
+-            arr = _farr(ds.variables[field])
+-            best = -1
+-            best_v: Optional[float] = None
+-            for i, v in enumerate(arr.tolist()):
+-                vv = _valid_juld(v, now)
+-                if vv is not None and (best_v is None or vv > best_v):
+-                    best_v = vv
+-                    best = i
+-            if best_v is not None:
+-                last_tx, last_tx_field = best_v, field
+-                status_var = f"{field}_STATUS"
+-                if status_var in ds.variables:
+-                    last_tx_status = _char_at(ds.variables[status_var], best)
+-                break
+-        if last_tx is None or last_tx_field is None:
+-            # Tertiary fallback for vintage files whose per-cycle message
+-            # fields are absent or entirely fill (observed: 2012-era Rtraj):
+-            # the latest valid measurement-row JULD is still genuine upstream
+-            # evidence of float activity. Same future-guard applies, and the
+-            # field actually used is recorded (never silently substituted).
+-            if "JULD" in ds.variables:
+-                for v in _farr(ds.variables["JULD"]).ravel().tolist():
+-                    vv = _valid_juld(v, now)
+-                    if vv is not None and (last_tx is None or vv > last_tx):
+-                        last_tx, last_tx_field = vv, "JULD (measurement max)"
+-            if last_tx is None or last_tx_field is None:
+-                raise FloatSyncError(
+-                    "Rtraj has no usable JULD_LAST_MESSAGE / JULD_TRANSMISSION_END / JULD")
+-        out["last_tx_juld"] = last_tx
+-        out["last_tx_iso"] = juld_to_iso(last_tx)
+-        out["last_tx_field"] = last_tx_field
+-        out["last_tx_status_rt19"] = last_tx_status
+-        # Trajectory cycle span (context for the detail view).
+-        traj_max: Optional[int] = None
++            if ds.variables[field].dimensions != ("N_CYCLE",):
++                raise FloatSyncError(f"{field} is not a per-cycle communication field")
++            arr = _julds(ds, field)
++            valid = [(i, float(v)) for i, v in enumerate(arr) if _valid_juld(v, now) is not None]
++            if not valid:
++                continue
++            i, value = max(valid, key=lambda item: item[1])
++            status_var = ds.variables.get(f"{field}_STATUS")
++            out.update(
++                last_tx_juld=value,
++                last_tx_iso=juld_to_iso(value),
++                last_tx_field=field,
++                last_tx_index=i,
++                last_tx_cycle=_int_at(cycle_index, i),
++                last_tx_status_rt19=_char_at(status_var, i) if status_var is not None else "",
++                last_tx_units=str(ds.variables[field].units),
++                last_tx_long_name=str(getattr(ds.variables[field], "long_name", "")),
++            )
++            break
++        if out["last_tx_iso"] is None:
++            out["communication_error"] = (
++                "No valid JULD_LAST_MESSAGE or JULD_TRANSMISSION_END in upstream Rtraj; "
++                "measurement/profile JULD is not communication evidence."
++            )
++        nums: list[int] = []
+         for name in ("CYCLE_NUMBER_INDEX", "CYCLE_NUMBER"):
+             if name in ds.variables:
+-                try:
+-                    vals = np.asarray(ds.variables[name][:]).ravel().tolist()
+-                    nums = [int(v) for v in vals
+-                            if not np.ma.is_masked(v) and int(v) not in (99999,)]
+-                    if nums:
+-                        traj_max = max(nums) if traj_max is None else max(traj_max, max(nums))
+-                except Exception:
+-                    continue
+-        out["traj_max_cycle"] = traj_max
+-        # Last valid fix: max-JULD measurement row with a valid position.
++                nums.extend(
++                    int(v)
++                    for v in _farr(ds.variables[name])
++                    if np.isfinite(v) and 0 <= v < 99999 and v == int(v)
++                )
++        out["traj_max_cycle"] = max(nums) if nums else None
+         out["last_fix"] = None
+-        try:
+-            juld = _farr(ds.variables["JULD"])
+-            lat = _farr(ds.variables["LATITUDE"])
+-            lon = _farr(ds.variables["LONGITUDE"])
+-        except KeyError:
+-            juld, lat, lon = np.array([]), np.array([]), np.array([])
+-        n = min(juld.size, lat.size, lon.size)
+-        cyc = np.asarray(ds.variables["CYCLE_NUMBER"][:]).ravel() if "CYCLE_NUMBER" in ds.variables else None
+-        mc = np.asarray(ds.variables["MEASUREMENT_CODE"][:]).ravel() if "MEASUREMENT_CODE" in ds.variables else None
+-        best_fix: Optional[dict[str, Any]] = None
+-        best_j = -1.0
+-        for i in range(n):
+-            vv = _valid_juld(juld[i], now)
+-            if vv is None or vv <= best_j:
++        juld = _julds(ds, "JULD")
++        lat = _farr(ds.variables["LATITUDE"]) if "LATITUDE" in ds.variables else np.array([])
++        lon = _farr(ds.variables["LONGITUDE"]) if "LONGITUDE" in ds.variables else np.array([])
++        cyc = (
++            _farr(ds.variables["CYCLE_NUMBER"]) if "CYCLE_NUMBER" in ds.variables else np.array([])
++        )
++        mc = (
++            _farr(ds.variables["MEASUREMENT_CODE"])
++            if "MEASUREMENT_CODE" in ds.variables
++            else np.array([])
++        )
++        qc_values = _flags(ds, "POSITION_QC")
++        for i in range(min(juld.size, lat.size, lon.size)):
++            value = _valid_juld(juld[i], now)
++            qc = str(qc_values[i]) if i < qc_values.size else ""
++            if value is None or not _position_ok(lat[i], lon[i], qc):
+                 continue
+-            la, lo = float(lat[i]), float(lon[i])
+-            if not (np.isfinite(la) and np.isfinite(lo) and abs(la) <= 90 and abs(lo) <= 180):
++            if out["last_fix"] is not None and value <= out["last_fix"]["juld"]:
+                 continue
+-            best_j = vv
+-            best_fix = {
+-                "juld": vv,
+-                "juld_iso": juld_to_iso(vv),
+-                "lat": la,
+-                "lon": lo,
+-                "cycle": (int(cyc[i]) if cyc is not None and i < cyc.size and not np.ma.is_masked(cyc[i]) else None),
+-                "mc": (int(mc[i]) if mc is not None and i < mc.size and not np.ma.is_masked(mc[i]) else None),
+-                "pos_qc": (_char_at(ds.variables["POSITION_QC"], i) if "POSITION_QC" in ds.variables else ""),
++            out["last_fix"] = {
++                "juld": value,
++                "juld_iso": juld_to_iso(value),
++                "lat": float(lat[i]),
++                "lon": float(lon[i]),
++                "cycle": _int_at(cyc, i),
++                "mc": _int_at(mc, i),
++                "pos_qc": qc,
++                "index": i,
++                "time_field": "JULD",
+             }
+-        out["last_fix"] = best_fix
+         return out
+     finally:
+-        try:
+-            ds.close()
+-        except Exception:
+-            pass
++        ds.close()
+ 
+ 
+-def parse_profile(raw: bytes, wmo: int, filename_cycle: int,
+-                  now: Optional[datetime] = None) -> dict[str, Any]:
+-    """JULD + position from the latest upstream profile file image.
++def parse_profile(
++    raw: bytes, wmo: int, filename_cycle: int | None, now: datetime | None = None
++) -> dict[str, Any]:
++    """Coherent N_PROF row: position uses JULD_LOCATION, not profile JULD.
+ 
+-    Missing variables degrade to None fields (never fatal): the trajectory
+-    fix remains as the position fallback.
++    filename_cycle=None reads the full <wmo>_prof.nc history without assuming
++    cycle numbers are chronological (resets and repeated sensor rows exist).
++    Profile JULD remains separate measurement evidence only. Never assemble
++    a coordinate pair from different rows, accept bad QC, or trust a foreign
++    WMO. A missing location timestamp cannot establish the latest position.
+     """
+     now = now or _utcnow()
+     try:
+@@ -372,48 +442,88 @@ def parse_profile(raw: bytes, wmo: int, filename_cycle: int,
+     except Exception as exc:
+         raise FloatSyncError(f"profile file unreadable: {exc}") from exc
+     try:
+-        out: dict[str, Any] = {"juld": None, "juld_iso": None, "lat": None,
+-                               "lon": None, "pos_qc": "", "cycle": None,
+-                               "cycle_mismatch": False}
+-        if "JULD" in ds.variables:
+-            for v in _farr(ds.variables["JULD"]).ravel().tolist():
+-                vv = _valid_juld(v, now)
+-                if vv is not None:
+-                    out["juld"], out["juld_iso"] = vv, juld_to_iso(vv)
+-                    break
+-        for name, key in (("LATITUDE", "lat"), ("LONGITUDE", "lon")):
+-            if name in ds.variables:
+-                arr = _farr(ds.variables[name]).ravel().tolist()
+-                lim = 90 if key == "lat" else 180
+-                for v in arr:
+-                    if np.isfinite(v) and abs(v) <= lim:
+-                        out[key] = float(v)
+-                        break
+-        if "POSITION_QC" in ds.variables:
+-            try:
+-                out["pos_qc"] = _scalar_text(ds, "POSITION_QC")[:8]
+-            except Exception:
+-                out["pos_qc"] = ""
+-        if "CYCLE_NUMBER" in ds.variables:
+-            try:
+-                c = int(np.asarray(ds.variables["CYCLE_NUMBER"][:]).ravel().tolist()[0])
+-                out["cycle"] = None if c in (99999,) else c
+-                if out["cycle"] is not None and out["cycle"] != int(filename_cycle):
+-                    out["cycle_mismatch"] = True
+-            except Exception:
+-                pass
++        _check_platform(ds, wmo, "profile")
++        out: dict[str, Any] = {
++            "platform_number": str(wmo),
++            "juld": None,
++            "juld_iso": None,
++            "lat": None,
++            "lon": None,
++            "pos_qc": "",
++            "cycle": None,
++            "cycle_mismatch": False,
++            "position_juld": None,
++            "position_iso": None,
++            "position_time_field": "JULD_LOCATION",
++            "position_index": None,
++            "position_error": None,
++        }
++        j = _julds(ds, "JULD")
++        loc = _julds(ds, "JULD_LOCATION")
++        lat = _farr(ds.variables["LATITUDE"]) if "LATITUDE" in ds.variables else np.array([])
++        lon = _farr(ds.variables["LONGITUDE"]) if "LONGITUDE" in ds.variables else np.array([])
++        cyc = (
++            _farr(ds.variables["CYCLE_NUMBER"]) if "CYCLE_NUMBER" in ds.variables else np.array([])
++        )
++        qc_values = _flags(ds, "POSITION_QC")
++        valid_j = [(i, float(v)) for i, v in enumerate(j) if _valid_juld(v, now) is not None]
++        measured = max(valid_j, key=lambda item: item[1]) if valid_j else None
++        known_cycles = [int(v) for v in cyc if np.isfinite(v) and 0 <= v < 99999]
++        out["cycle"] = _int_at(cyc, 0)
++        out["cycle_mismatch"] = filename_cycle is not None and any(
++            c != filename_cycle for c in known_cycles
++        )
++        candidates = []
++        for i in range(min(loc.size, lat.size, lon.size)):
++            value = _valid_juld(loc[i], now)
++            qc = str(qc_values[i]) if i < qc_values.size else ""
++            if (
++                value is not None
++                and not out["cycle_mismatch"]
++                and _position_ok(lat[i], lon[i], qc)
++                and _int_at(cyc, i) is not None
++                and (filename_cycle is None or _int_at(cyc, i) == filename_cycle)
++            ):
++                candidates.append((i, value, qc))
++        if candidates:
++            i, value, qc = max(candidates, key=lambda item: item[1])
++            out.update(
++                lat=float(lat[i]),
++                lon=float(lon[i]),
++                pos_qc=qc,
++                position_juld=value,
++                position_iso=juld_to_iso(value),
++                position_index=i,
++                cycle=_int_at(cyc, i),
++            )
++        else:
++            flags = sorted(set(qc_values.tolist()))
++            out["position_qc_observed"] = flags
++            out["position_error"] = (
++                "Profile position unavailable: require a matching cycle, "
++                "paired finite coordinates, POSITION_QC 1/2 and a valid JULD_LOCATION "
++                f"(QC present: {','.join(flags) or 'none'})."
++            )
++        if measured:
++            i, value = measured
++            out.update(
++                juld=value,
++                juld_iso=juld_to_iso(value),
++                measurement_index=i,
++                measurement_cycle=_int_at(cyc, i),
++            )
++            if out["cycle"] is None:
++                out["cycle"] = _int_at(cyc, i)
+         return out
+     finally:
+-        try:
+-            ds.close()
+-        except Exception:
+-            pass
++        ds.close()
+ 
+ 
+ # ---------------------------------------------------------------------------
+ # FTP layer (anonymous; no credentials anywhere)
+ # ---------------------------------------------------------------------------
+ 
++
+ def ftp_membership(ftp: ftplib.FTP, dac_dir: str) -> set[str]:
+     """WMO directory names present under the DAC dir (single NLIST)."""
+     try:
+@@ -425,17 +535,22 @@ def ftp_membership(ftp: ftplib.FTP, dac_dir: str) -> set[str]:
+         base = n.rsplit("/", 1)[-1].strip()
+         if base and base not in (".", ".."):
+             out.add(base)
+-    return out
++    members = {n for n in out if re.fullmatch(r"\d{7}", n)}
++    if not members:
++        raise FloatSyncError(
++            "DAC listing contains no valid WMO directories; membership is unverified"
++        )
++    return members
+ 
+ 
+-def ftp_file_stat(ftp: ftplib.FTP, path: str) -> tuple[Optional[int], Optional[str]]:
++def ftp_file_stat(ftp: ftplib.FTP, path: str) -> tuple[int | None, str | None]:
+     """(size, MDTM 'YYYYMMDDHHMMSS') — each None-tolerant."""
+-    size: Optional[int] = None
++    size: int | None = None
+     try:
+         size = ftp.size(path)
+     except Exception:
+         pass
+-    mdtm: Optional[str] = None
++    mdtm: str | None = None
+     try:
+         resp = ftp.sendcmd(f"MDTM {path}")
+         if resp.startswith("213"):
+@@ -454,6 +569,10 @@ def ftp_list_entries(ftp: ftplib.FTP, path: str) -> list[tuple[str, int, float]]
+     for ln in lines:
+         parsed = parse_list_line(ln, now)
+         if parsed is None:
++            if ln.strip() and not re.fullmatch(r"total\s+\d+", ln.strip()):
++                raise FloatSyncError(
++                    "Unparseable profiles LIST response; refusing an incomplete inventory"
++                )
+             continue
+         name, size, mtime, is_dir = parsed
+         if not is_dir:
+@@ -485,14 +604,14 @@ class FleetSyncRegistry:
+ 
+     def __init__(
+         self,
+-        state_path: Optional[Path] = None,
+-        fleet_fn: Optional[FleetFn] = None,
+-        host: Optional[str] = None,
+-        port: Optional[int] = None,
+-        root: Optional[str] = None,
+-        timeout_s: Optional[float] = None,
+-        interval_s: Optional[float] = None,
+-        enabled: Optional[bool] = None,
++        state_path: Path | None = None,
++        fleet_fn: FleetFn | None = None,
++        host: str | None = None,
++        port: int | None = None,
++        root: str | None = None,
++        timeout_s: float | None = None,
++        interval_s: float | None = None,
++        enabled: bool | None = None,
+     ) -> None:
+         self._state_path = state_path or (DATA_DIR / "fleet_status" / "cache.json")
+         self._fleet_fn = fleet_fn or _default_fleet
+@@ -500,17 +619,34 @@ class FleetSyncRegistry:
+         self._port = port or int(os.environ.get("FLEET_FTP_PORT", "21"))
+         self._root = (root or os.environ.get("FLEET_FTP_ROOT", "/ifremer/argo")).rstrip("/") or "/"
+         self._timeout = timeout_s or float(os.environ.get("FLEET_FTP_TIMEOUT_S", "30"))
+-        self._interval = interval_s or float(os.environ.get("FLEET_SYNC_INTERVAL_S", "21600"))
+-        self._enabled = (os.environ.get("FLEET_SYNC_ENABLED", "1") != "0") if enabled is None else enabled
++        requested_interval = (
++            interval_s
++            if interval_s is not None
++            else float(os.environ.get("FLEET_SYNC_INTERVAL_S", "21600"))
++        )
++        self._interval = (
++            max(float(requested_interval), 300.0)
++            if math.isfinite(float(requested_interval))
++            else 21600.0
++        )
++        self._enabled = (
++            (os.environ.get("FLEET_SYNC_ENABLED", "1") != "0") if enabled is None else enabled
++        )
+         self._rows: dict[str, dict[str, Any]] = {}
+         self._sync: dict[str, Any] = {
+-            "status": SYNC_NEVER, "last_attempt_at": None, "last_success_at": None,
+-            "error": None, "counts": {}, "duration_s": None,
++            "status": SYNC_NEVER,
++            "last_attempt_at": None,
++            "last_success_at": None,
++            "error": None,
++            "counts": {},
++            "duration_s": None,
++            "last_completed_at": None,
++            "persistence_error": None,
+         }
+         self._lock = threading.Lock()
+         self._running = False
+         self._progress = {"done": 0, "total": 0}
+-        self._poll_task: Optional[asyncio.Task] = None
++        self._poll_task: asyncio.Task | None = None
+         self._load()
+ 
+     # -- config surface -------------------------------------------------
+@@ -534,8 +670,15 @@ class FleetSyncRegistry:
+             "root": self._root,
+             "dac": "incois",
+             "product": "dac/incois/<wmo>/<wmo>_Rtraj.nc",
+-            "field": ("JULD_LAST_MESSAGE (fallback JULD_TRANSMISSION_END, "
+-                      "then JULD measurement max for vintage files)"),
++            "field": "JULD_LAST_MESSAGE (JULD_TRANSMISSION_END only if unavailable)",
++            "position_policy": (
++                "Newest QC 1/2 trajectory JULD fix or JULD_LOCATION in full _prof.nc "
++                "history / latest profile file; no local coordinates"
++            ),
++            "profile_policy": (
++                "Prof# = highest published cycle; available = distinct positive cycles; "
++                "missing = gaps in 1..Prof#"
++            ),
+             "interval_s": self._interval,
+         }
+ 
+@@ -549,14 +692,26 @@ class FleetSyncRegistry:
+             if not self._state_path.is_file():
+                 return
+             data = json.loads(self._state_path.read_text(encoding="utf-8"))
+-            if not isinstance(data, dict) or int(data.get("version") or 0) != STATE_VERSION:
++            if not isinstance(data, dict) or int(data.get("version") or 0) not in (
++                1,
++                STATE_VERSION,
++            ):
+                 return
+             rows = data.get("rows")
+             if isinstance(rows, dict):
+                 self._rows = {str(k): v for k, v in rows.items() if isinstance(v, dict)}
+             sync = data.get("sync")
+             if isinstance(sync, dict):
+-                for k in ("status", "last_attempt_at", "last_success_at", "error", "counts", "duration_s"):
++                for k in (
++                    "status",
++                    "last_attempt_at",
++                    "last_success_at",
++                    "last_completed_at",
++                    "error",
++                    "counts",
++                    "duration_s",
++                    "persistence_error",
++                ):
+                     if k in sync:
+                         self._sync[k] = sync[k]
+                 if self._sync.get("status") == SYNC_RUNNING:
+@@ -565,16 +720,31 @@ class FleetSyncRegistry:
+         except Exception:
+             self._rows, self._sync["status"] = {}, SYNC_NEVER
+ 
+-    def _save(self) -> None:
++    def _save(self) -> bool:
++        """Atomic cache commit. Never call an unpersisted refresh successful."""
++        tmp = self._state_path.with_suffix(".json.tmp")
+         try:
+             self._state_path.parent.mkdir(parents=True, exist_ok=True)
+-            tmp = self._state_path.with_suffix(".json.tmp")
+             with self._lock:
+-                payload = {"version": STATE_VERSION, "rows": self._rows, "sync": dict(self._sync)}
+-            tmp.write_text(json.dumps(payload), encoding="utf-8")
++                self._sync["persistence_error"] = None
++                payload = {
++                    "version": STATE_VERSION,
++                    "rows": copy.deepcopy(self._rows),
++                    "sync": dict(self._sync),
++                }
++            tmp.write_text(json.dumps(payload, allow_nan=False), encoding="utf-8")
+             tmp.replace(self._state_path)
+-        except Exception:
+-            pass
++            return True
++        except Exception as exc:
++            with self._lock:
++                self._sync["persistence_error"] = (
++                    f"Cache persistence failed: {type(exc).__name__}: {exc}"
++                )
++            try:
++                tmp.unlink(missing_ok=True)
++            except OSError:
++                pass
++            return False
+ 
+     # -- sync -----------------------------------------------------------
+     def _begin(self) -> bool:
+@@ -630,6 +800,8 @@ class FleetSyncRegistry:
+         try:
+             fleet = self._fleet_fn()
+             wmos = sorted({int(f["wmo"]) for f in fleet if str(f.get("wmo", "")).isdigit()})
++            if not wmos:
++                raise FloatSyncError("local fleet is empty; no upstream records were checked")
+         except Exception as exc:
+             return self._fail(f"fleet list unavailable: {exc}", t0)
+         with self._lock:
+@@ -653,26 +825,52 @@ class FleetSyncRegistry:
+                         unchanged += 1
+                 except FloatSyncError as exc:
+                     failed += 1
+-                    self._record_float_error(wmo, str(exc) or "sync failed",
+-                                             in_dac=(str(wmo) in members or wmo in members))
++                    self._record_float_error(
++                        wmo,
++                        str(exc) or "sync failed",
++                        in_dac=(str(wmo) in members or wmo in members),
++                    )
+                 except Exception as exc:  # never let one float kill the cycle
+                     failed += 1
+-                    self._record_float_error(wmo, f"{type(exc).__name__}: {exc}",
+-                                             in_dac=(str(wmo) in members or wmo in members))
++                    self._record_float_error(
++                        wmo,
++                        f"{type(exc).__name__}: {exc}",
++                        in_dac=(str(wmo) in members or wmo in members),
++                    )
+                 with self._lock:
+                     self._progress["done"] += 1
+             now_iso = _utcnow().isoformat()
+             with self._lock:
+-                self._sync.update({
+-                    "status": SYNC_OK if failed == 0 else SYNC_DEGRADED,
+-                    "last_success_at": now_iso,
+-                    "error": None if failed == 0 else f"{failed} float(s) failed refresh (kept last valid rows)",
+-                    "counts": {"total": len(wmos), "updated": updated,
+-                               "unchanged": unchanged, "failed": failed},
+-                    "duration_s": round(time.time() - t0, 1),
+-                })
+-            self._save()
+-            return {"accepted": True, "status": self._sync["status"], "counts": dict(self._sync["counts"])}
++                previous_success = self._sync.get("last_success_at")
++                self._sync.update(
++                    {
++                        "status": SYNC_OK if failed == 0 else SYNC_DEGRADED,
++                        "last_completed_at": now_iso,
++                        "last_success_at": now_iso if failed == 0 else previous_success,
++                        "error": None
++                        if failed == 0
++                        else f"{failed} float(s) failed refresh (kept last valid rows)",
++                        "counts": {
++                            "total": len(wmos),
++                            "updated": updated,
++                            "unchanged": unchanged,
++                            "failed": failed,
++                        },
++                        "duration_s": round(time.time() - t0, 1),
++                    }
++                )
++            if not self._save():
++                with self._lock:
++                    self._sync.update(
++                        status=SYNC_DEGRADED,
++                        last_success_at=previous_success,
++                        error=self._sync["persistence_error"],
++                    )
++            return {
++                "accepted": True,
++                "status": self._sync["status"],
++                "counts": dict(self._sync["counts"]),
++            }
+         finally:
+             try:
+                 ftp.quit()
+@@ -684,18 +882,23 @@ class FleetSyncRegistry:
+ 
+     def _fail(self, error: str, t0: float) -> dict[str, Any]:
+         with self._lock:
+-            self._sync.update({"status": SYNC_ERROR, "error": error,
+-                               "duration_s": round(time.time() - t0, 1)})
++            self._sync.update(
++                {"status": SYNC_ERROR, "error": error, "duration_s": round(time.time() - t0, 1)}
++            )
+         self._save()
+         return {"accepted": True, "status": SYNC_ERROR, "error": error}
+ 
+-    def _record_float_error(self, wmo: int, error: str, in_dac: Optional[bool] = None) -> None:
++    def _record_float_error(self, wmo: int, error: str, in_dac: bool | None = None) -> None:
+         with self._lock:
+             row = self._rows.get(str(wmo))
+             if row is None:
+                 self._rows[str(wmo)] = {
+-                    "wmo": wmo, "in_incois_dac": in_dac, "rtraj": None,
+-                    "profiles": None, "error": error, "updated_at": None,
++                    "wmo": wmo,
++                    "in_incois_dac": in_dac,
++                    "rtraj": None,
++                    "profiles": None,
++                    "error": error,
++                    "updated_at": None,
+                 }
+             else:
+                 row["error"] = error
+@@ -703,24 +906,33 @@ class FleetSyncRegistry:
+                     row["in_incois_dac"] = in_dac
+ 
+     def _refresh_float(self, ftp: ftplib.FTP, wmo: int, members: set[str]) -> bool:
+-        """Refresh one float's cached upstream snapshot. Returns True when
+-        anything was re-fetched. Raises FloatSyncError (row untouched)."""
++        """Commit only a complete, validated row. Errors retain old data and
++        old checked_at. Parser revisions force re-reading unchanged products.
++        """
+         key = str(wmo)
+         with self._lock:
+-            old = self._rows.get(key)
++            old = copy.deepcopy(self._rows.get(key))
++        now = _utcnow()
+         if key not in members and wmo not in members:
+-            row = {"wmo": wmo, "in_incois_dac": False, "rtraj": None,
+-                   "profiles": None, "error": None, "updated_at": _utcnow().isoformat(),
+-                   "reason": "no record in Ifremer dac/incois"}
++            row = {
++                "wmo": wmo,
++                "in_incois_dac": False,
++                "rtraj": None,
++                "profiles": None,
++                "error": None,
++                "updated_at": now.isoformat(),
++                "checked_at": now.isoformat(),
++                "parser_version": PARSER_VERSION,
++                "reason": (
++                    "Outside configured DAC: no record in Ifremer dac/incois "
++                    "(other DACs are not searched)"
++                ),
++            }
+             with self._lock:
+-                prev = self._rows.get(key)
+                 self._rows[key] = row
+-            return not (isinstance(prev, dict) and prev.get("in_incois_dac") is False)
++            return not (isinstance(old, dict) and old.get("in_incois_dac") is False)
+         base = f"{self._root}/dac/incois/{wmo}"
+-        try:
+-            size, mdtm = ftp_file_stat(ftp, f"{base}/{wmo}_Rtraj.nc")
+-        except Exception as exc:
+-            raise FloatSyncError(f"Rtraj stat failed: {exc}") from exc
++        size, mdtm = ftp_file_stat(ftp, f"{base}/{wmo}_Rtraj.nc")
+         if size is None and mdtm is None:
+             raise FloatSyncError("Rtraj absent upstream")
+         rtraj_fp = f"{mdtm}|{size}"
+@@ -729,15 +941,35 @@ class FleetSyncRegistry:
+         except Exception as exc:
+             raise FloatSyncError(f"profiles listing failed: {exc}") from exc
+         prof_fp = listing_fingerprint(entries)
++        aggregate_name = f"{wmo}_prof.nc"
++        aggregate_size, aggregate_mdtm = ftp_file_stat(ftp, f"{base}/{aggregate_name}")
++        aggregate_fp = (
++            f"{aggregate_mdtm}|{aggregate_size}"
++            if aggregate_mdtm is not None or aggregate_size is not None
++            else None
++        )
++        if aggregate_fp is None and (old or {}).get("profile_aggregate"):
++            raise FloatSyncError(
++                "Full profile history unavailable; retained previously verified row"
++            )
+         old_rtraj_fp = (old or {}).get("rtraj_fp")
+         old_prof_fp = (old or {}).get("profiles_fp")
+-        if old and old.get("in_incois_dac") and old_rtraj_fp == rtraj_fp \
+-                and old_prof_fp == prof_fp and not old.get("error") \
+-                and (old.get("rtraj") or {}).get("last_tx_iso"):
+-            return False  # unchanged upstream — no download
+-        now = _utcnow()
+-        # Trajectory block (reused when its own fingerprint is unchanged).
+-        if old and old.get("rtraj") and old_rtraj_fp == rtraj_fp:
++        current_parser = (old or {}).get("parser_version") == PARSER_VERSION
++        if (
++            old
++            and old.get("in_incois_dac")
++            and current_parser
++            and old_rtraj_fp == rtraj_fp
++            and old_prof_fp == prof_fp
++            and not old.get("error")
++            and "profile_aggregate_fp" in old
++            and old.get("profile_aggregate_fp") == aggregate_fp
++        ):
++            old["checked_at"] = _utcnow().isoformat()
++            with self._lock:
++                self._rows[key] = old
++            return False
++        if current_parser and old and old.get("rtraj") and old_rtraj_fp == rtraj_fp:
+             rtraj_block = old["rtraj"]
+         else:
+             try:
+@@ -745,12 +977,13 @@ class FleetSyncRegistry:
+             except Exception as exc:
+                 raise FloatSyncError(f"Rtraj download failed: {exc}") from exc
+             rtraj_block = parse_rtraj(raw, wmo, now)
+-            rtraj_block["mdtm"] = mdtm
+-            rtraj_block["size"] = size
+-        # Profiles block (listing always re-summarized; file fetched on change).
++            rtraj_block.update(mdtm=mdtm, size=size, sha256=hashlib.sha256(raw).hexdigest())
+         summary = summarize_profiles([n for (n, _s, _m) in entries], wmo)
+-        latest_parse = (old.get("profiles") or {}).get("latest_parse") \
+-            if old and old_prof_fp == prof_fp else None
++        latest_parse = (
++            (old.get("profiles") or {}).get("latest_parse")
++            if current_parser and old and old_prof_fp == prof_fp
++            else None
++        )
+         latest = summary.get("latest")
+         if latest and latest_parse is None:
+             try:
+@@ -758,26 +991,52 @@ class FleetSyncRegistry:
+             except Exception as exc:
+                 raise FloatSyncError(f"latest profile download failed: {exc}") from exc
+             latest_parse = parse_profile(praw, wmo, latest["cycle"], now)
+-        profiles_block = dict(summary)
+-        profiles_block["latest_parse"] = latest_parse
+-        row = {"wmo": wmo, "in_incois_dac": True, "rtraj": rtraj_block,
+-               "profiles": profiles_block, "rtraj_fp": rtraj_fp,
+-               "profiles_fp": prof_fp, "error": None,
+-               "updated_at": now.isoformat()}
++            latest_parse["sha256"] = hashlib.sha256(praw).hexdigest()
++        profiles_block = dict(summary, latest_parse=latest_parse)
++        aggregate = (
++            (old or {}).get("profile_aggregate")
++            if current_parser and (old or {}).get("profile_aggregate_fp") == aggregate_fp
++            else None
++        )
++        if aggregate_fp is not None and aggregate is None:
++            try:
++                araw = ftp_retrieve(ftp, f"{base}/{aggregate_name}")
++            except Exception as exc:
++                raise FloatSyncError(f"Full profile history download failed: {exc}") from exc
++            aggregate = parse_profile(araw, wmo, None, now)
++            aggregate.update(
++                file=aggregate_name,
++                mdtm=aggregate_mdtm,
++                size=aggregate_size,
++                sha256=hashlib.sha256(araw).hexdigest(),
++            )
++        row = {
++            "wmo": wmo,
++            "in_incois_dac": True,
++            "rtraj": rtraj_block,
++            "profiles": profiles_block,
++            "rtraj_fp": rtraj_fp,
++            "profiles_fp": prof_fp,
++            "profile_aggregate": aggregate,
++            "profile_aggregate_fp": aggregate_fp,
++            "error": None,
++            "updated_at": now.isoformat(),
++            "checked_at": _utcnow().isoformat(),
++            "parser_version": PARSER_VERSION,
++        }
+         with self._lock:
+             self._rows[key] = row
+         return True
+ 
+     # -- serve ----------------------------------------------------------
+     def payload(self) -> dict[str, Any]:
+-        """Full Float Status payload; derived fields computed from cached
+-        last-tx + wall clock so status is always fresh without re-sync."""
+-        now = _utcnow()
++        """Observation age and cache freshness are distinct dimensions."""
++        fleet_error = None
+         try:
+-            fleet = self._fleet_fn()
+-            meta = {int(f["wmo"]): f for f in fleet if str(f.get("wmo", "")).isdigit()}
+-        except Exception:
+-            meta = {}
++            meta = {int(f["wmo"]): f for f in self._fleet_fn() if str(f.get("wmo", "")).isdigit()}
++        except Exception as exc:
++            meta = None
++            fleet_error = f"Local fleet unavailable; displaying cached membership: {exc}"
+         try:
+             from datasources.local import build_wmo_identity_map
+ 
+@@ -785,123 +1044,301 @@ class FleetSyncRegistry:
+         except Exception:
+             identities = {}
+         with self._lock:
+-            rows = dict(self._rows)
++            rows = copy.deepcopy(self._rows)
+             sync = dict(self._sync)
+             running = self._running
+             progress = dict(self._progress)
+-        wmos = sorted(set(meta) | {int(k) for k in rows if str(k).isdigit()})
+-        floats = [self._serve_row(w, rows.get(str(w)), meta.get(w),
+-                                  identities.get(w, {}), now) for w in wmos]
++        # Take the derivation clock after the snapshot: a worker may have
++        # verified rows while local preset discovery was running.
++        now = _utcnow()
++        # An old cache must not silently add removed floats to the current fleet.
++        wmos = sorted(meta if meta is not None else {int(k) for k in rows if str(k).isdigit()})
++        floats = [
++            self._serve_row(
++                w, rows.get(str(w)), (meta or {}).get(w), identities.get(w, {}), now, self._interval
++            )
++            for w in wmos
++        ]
+         summary = {
+             "total": len(floats),
+-            "active": sum(1 for f in floats if f["status"] == STATUS_ACTIVE),
+-            "overdue": sum(1 for f in floats if f["status"] == STATUS_OVERDUE),
+-            "no_comm_60": sum(1 for f in floats if f["status"] == STATUS_NO_COMM_60),
+-            "no_data": sum(1 for f in floats if f["status"] == STATUS_NO_DATA),
++            "active": sum(f["status"] == STATUS_ACTIVE for f in floats),
++            "overdue": sum(f["status"] == STATUS_OVERDUE for f in floats),
++            "no_comm_60": sum(f["status"] == STATUS_NO_COMM_60 for f in floats),
++            "no_data": sum(f["status"] == STATUS_NO_DATA for f in floats),
+             "profiles_missing_total": sum(f["profiles_missing"] or 0 for f in floats),
+-            "total_profiles": sum(f["prof_num"] or 0 for f in floats),
++            "total_profiles": sum(f["profile_count"] or 0 for f in floats),
++            "profile_records_known": sum(f["profile_count"] is not None for f in floats),
++            "stale_rows": sum(f["stale"] for f in floats),
++        }
++        age = _age_seconds(sync.get("last_success_at"), now)
++        stale = (
++            age is None
++            or age > self._interval
++            or summary["stale_rows"] > 0
++            or sync.get("status") in (SYNC_ERROR, SYNC_DEGRADED)
++            or bool(sync.get("persistence_error"))
++            or bool(fleet_error)
++        )
++        sync.update(
++            running=running,
++            progress=progress,
++            interval_s=self._interval,
++            stale=stale,
++            age_seconds=age,
++            stale_reason=(
++                fleet_error
++                or sync.get("error")
++                or sync.get("persistence_error")
++                or (
++                    "No fully successful synchronization"
++                    if age is None
++                    else "Cached observations need re-verification"
++                    if stale
++                    else None
++                )
++            ),
++            status=SYNC_DISABLED
++            if not self._enabled
++            else (SYNC_RUNNING if running else sync.get("status")),
++        )
++        return {
++            "generated_at": now.isoformat(),
++            "sync": sync,
++            "summary": summary,
++            "floats": floats,
++            "source": self.source_info,
+         }
+-        sync_out = dict(sync)
+-        sync_out.update({"running": running, "progress": progress,
+-                         "interval_s": self._interval,
+-                         "status": SYNC_DISABLED if not self._enabled else
+-                         (SYNC_RUNNING if running and sync.get("status") == SYNC_RUNNING
+-                          else sync.get("status"))})
+-        return {"generated_at": now.isoformat(), "sync": sync_out,
+-                "summary": summary, "floats": floats,
+-                "source": self.source_info}
+ 
+     @staticmethod
+-    def _serve_row(wmo: int, row: Optional[dict[str, Any]],
+-                   preset: Optional[dict[str, Any]],
+-                   identity: dict[str, str], now: datetime) -> dict[str, Any]:
+-        ptt = (identity.get("ptt") or "").strip()
+-        imei = (identity.get("imei") or "").strip()
++    def _serve_row(
++        wmo: int,
++        row: dict[str, Any] | None,
++        preset: dict[str, Any] | None,
++        identity: dict[str, str],
++        now: datetime,
++        interval_s: float = 21600.0,
++    ) -> dict[str, Any]:
++        def identity_value(value: Any) -> str | None:
++            text = str(value or "").strip()
++            if (
++                text.lower() in {"", "n/a", "nan", "none", "null", "redacted", "sanitized"}
++                or "redacted" in text.lower()
++                or "*" in text
++            ):
++                return None
++            return text
++
++        ptt, imei = identity_value(identity.get("ptt")), identity_value(identity.get("imei"))
+         out: dict[str, Any] = {
+             "wmo": wmo,
+-            "internal_id": ptt or imei or None,
+-            "ptt": ptt or None,
+-            "imei": imei or None,
++            "internal_id": ptt or imei,
++            "ptt": ptt,
++            "imei": imei,
+             "float_type": (preset or {}).get("platform_type") or "—",
+             "transmission_type": (preset or {}).get("transmission_type") or "—",
+             "in_incois_dac": (row or {}).get("in_incois_dac"),
+-            "prof_num": None, "profiles_missing": None, "profiles_missing_list": [],
+-            "lon": None, "lat": None, "pos_source": None, "pos_qc": None,
+-            "last_tx_iso": None, "last_tx_field": None, "last_tx_status_rt19": None,
+-            "days_since_last_tx": None, "expected_next_iso": None, "status": STATUS_NO_DATA,
+-            "traj_max_cycle": None, "latest_profile": None, "traj_last_fix": None,
+-            "traj_lagging_profiles": None, "rtraj_mdtm": None,
+-            "error": None, "updated_at": None,
++            "prof_num": None,
++            "profile_count": None,
++            "profiles_missing": None,
++            "profiles_missing_list": [],
++            "lon": None,
++            "lat": None,
++            "pos_source": None,
++            "pos_qc": None,
++            "position_iso": None,
++            "position_time_field": None,
++            "position_file": None,
++            "position_error": None,
++            "last_tx_iso": None,
++            "last_tx_field": None,
++            "last_tx_status_rt19": None,
++            "last_tx_index": None,
++            "last_tx_cycle": None,
++            "communication_error": None,
++            "days_since_last_tx": None,
++            "expected_next_iso": None,
++            "status": STATUS_NO_DATA,
++            "traj_max_cycle": None,
++            "latest_profile": None,
++            "traj_last_fix": None,
++            "traj_lagging_profiles": None,
++            "rtraj_mdtm": None,
++            "error": None,
++            "updated_at": None,
++            "checked_at": None,
++            "stale": True,
++            "stale_reason": "Awaiting first upstream verification",
++            "cache_age_seconds": None,
+         }
+         if not row:
+             out["error"] = "awaiting first synchronization"
+             return out
+-        out["error"] = row.get("error")
+-        out["updated_at"] = row.get("updated_at")
++        out.update(
++            error=row.get("error"),
++            updated_at=row.get("updated_at"),
++            checked_at=row.get("checked_at"),
++        )
++        age = _age_seconds(row.get("checked_at"), now)
++        old_parser = row.get("parser_version") != PARSER_VERSION
++        position_inventory_pending = (
++            row.get("in_incois_dac") is not False and "profile_aggregate_fp" not in row
++        )
++        out["cache_age_seconds"] = age
++        out["stale"] = bool(
++            old_parser
++            or position_inventory_pending
++            or row.get("error")
++            or age is None
++            or age > interval_s
++        )
++        out["stale_reason"] = row.get("error") or (
++            "Legacy cache needs source re-validation"
++            if old_parser
++            else "Full profile position inventory needs verification"
++            if position_inventory_pending
++            else "No verified upstream check time"
++            if age is None
++            else "Upstream check older than the sync interval"
++            if age > interval_s
++            else None
++        )
+         if row.get("in_incois_dac") is False:
+-            out["error"] = out["error"] or row.get("reason") or "no record in Ifremer dac/incois"
++            out["communication_error"] = row.get("reason") or "no record in Ifremer dac/incois"
+             return out
+-        rtraj = row.get("rtraj") or {}
+-        profs = row.get("profiles") or {}
+-        out["traj_max_cycle"] = rtraj.get("traj_max_cycle")
+-        out["rtraj_mdtm"] = rtraj.get("mdtm")
+-        out["traj_last_fix"] = rtraj.get("last_fix")
+-        out["prof_num"] = profs.get("max_cycle")
+-        missing = profs.get("missing") or []
++        rtraj, profs = row.get("rtraj") or {}, row.get("profiles") or {}
++        out.update(
++            traj_max_cycle=rtraj.get("traj_max_cycle"),
++            rtraj_mdtm=rtraj.get("mdtm"),
++            prof_num=profs.get("max_cycle"),
++        )
++        missing = sorted(set(profs.get("missing") or []))
+         out["profiles_missing_list"] = missing
+         out["profiles_missing"] = len(missing) if profs.get("max_cycle") is not None else None
+-        latest = profs.get("latest")
+-        parsed = profs.get("latest_parse") or {}
++        # Version-1 profiles lacked available_cycles; max minus observed gaps
++        # is sufficient for positive-cycle availability (never invent a file).
++        if "available_cycles" in profs:
++            out["profile_count"] = profs["available_cycles"]
++        elif profs.get("max_cycle") is not None:
++            out["profile_count"] = max(0, profs["max_cycle"] - len(missing))
++        latest, parsed = profs.get("latest"), profs.get("latest_parse") or {}
+         if latest:
+             out["latest_profile"] = {
+-                "file": latest.get("file"), "prefix": latest.get("prefix"),
+-                "cycle": latest.get("cycle"), "juld_iso": parsed.get("juld_iso"),
+-                "lat": parsed.get("lat"), "lon": parsed.get("lon"),
++                "file": latest.get("file"),
++                "prefix": latest.get("prefix"),
++                "cycle": latest.get("cycle"),
++                "juld_iso": parsed.get("juld_iso"),
++                "lat": parsed.get("lat"),
++                "lon": parsed.get("lon"),
+                 "pos_qc": parsed.get("pos_qc") or None,
+                 "cycle_mismatch": bool(parsed.get("cycle_mismatch")),
++                "position_iso": parsed.get("position_iso"),
++                "position_error": parsed.get("position_error"),
+             }
+-        # Freshest honest upstream position: latest profile, else traj fix.
+-        if parsed.get("lat") is not None and parsed.get("lon") is not None:
+-            out["lat"], out["lon"] = parsed["lat"], parsed["lon"]
+-            out["pos_source"] = "profile"
+-            out["pos_qc"] = parsed.get("pos_qc") or None
+-        elif (rtraj.get("last_fix") or {}).get("lat") is not None:
+-            fix = rtraj["last_fix"]
+-            out["lat"], out["lon"] = fix["lat"], fix["lon"]
+-            out["pos_source"] = "traj"
+-            out["pos_qc"] = fix.get("pos_qc") or None
+-        last_iso = rtraj.get("last_tx_iso")
+-        if last_iso:
+-            try:
+-                last_tx = datetime.fromisoformat(last_iso)
+-                days = (now - last_tx).total_seconds() / 86400.0
+-            except (ValueError, TypeError):
+-                days = None
+-            out["last_tx_iso"] = last_iso
+-            out["last_tx_field"] = rtraj.get("last_tx_field")
+-            out["last_tx_status_rt19"] = rtraj.get("last_tx_status_rt19") or None
+-            if days is not None:
+-                out["days_since_last_tx"] = round(days, 3)
+-                out["expected_next_iso"] = (last_tx + timedelta(days=10)).isoformat()
+-                out["status"] = comm_status(days)
+-        # DAC-lag evidence: profile measurement newer than traj last message.
+-        if last_iso and parsed.get("juld_iso"):
+-            try:
+-                out["traj_lagging_profiles"] = (
+-                    datetime.fromisoformat(parsed["juld_iso"]) >
+-                    datetime.fromisoformat(last_iso) + timedelta(hours=12))
+-            except (ValueError, TypeError):
+-                out["traj_lagging_profiles"] = None
++        candidates = []
++        fix = rtraj.get("last_fix") or {}
++        fix_time = _parse_utc(fix.get("juld_iso"))
++        if (
++            fix_time is not None
++            and fix_time <= now
++            and _position_ok(fix.get("lat"), fix.get("lon"), fix.get("pos_qc"))
++        ):
++            out["traj_last_fix"] = fix
++            candidates.append((fix_time, "traj", fix, "JULD", f"{wmo}_Rtraj.nc"))
++        profile_time = _parse_utc(parsed.get("position_iso"))
++        if (
++            not old_parser
++            and profile_time is not None
++            and profile_time <= now
++            and not parsed.get("cycle_mismatch")
++            and parsed.get("platform_number") == str(wmo)
++            and _position_ok(parsed.get("lat"), parsed.get("lon"), parsed.get("pos_qc"))
++        ):
++            candidates.append(
++                (profile_time, "profile", parsed, "JULD_LOCATION", (latest or {}).get("file"))
++            )
++        aggregate = row.get("profile_aggregate") or {}
++        aggregate_time = _parse_utc(aggregate.get("position_iso"))
++        if (
++            not old_parser
++            and aggregate_time is not None
++            and aggregate_time <= now
++            and aggregate.get("platform_number") == str(wmo)
++            and _position_ok(aggregate.get("lat"), aggregate.get("lon"), aggregate.get("pos_qc"))
++        ):
++            candidates.append(
++                (aggregate_time, "profile", aggregate, "JULD_LOCATION", aggregate.get("file"))
++            )
++        out["position_error"] = (
++            "Legacy profile cache has no verified location time; refresh required"
++            if old_parser and latest
++            else parsed.get("position_error")
++        )
++        if not aggregate and not old_parser:
++            note = (
++                "Full profile history unavailable; position search limited to trajectory "
++                "and highest published cycle."
++            )
++            out["position_error"] = (
++                f"{out['position_error']} {note}" if out["position_error"] else note
++            )
++        if candidates:
++            # Prefer the direct trajectory fix when observation times tie.
++            dt, source, pos, field, filename = max(candidates, key=lambda c: (c[0], c[1] == "traj"))
++            out.update(
++                lat=pos["lat"],
++                lon=pos["lon"],
++                pos_source=source,
++                pos_qc=pos["pos_qc"],
++                position_iso=dt.isoformat(),
++                position_time_field=field,
++                position_file=filename,
++            )
++        elif out["position_error"] is None:
++            out["position_error"] = "No timestamped QC 1/2 upstream position available"
++        field = rtraj.get("last_tx_field")
++        last_tx = _parse_utc(rtraj.get("last_tx_iso"))
++        if field in COMMUNICATION_FIELDS and last_tx is not None and last_tx <= now:
++            raw_juld = _valid_juld(rtraj.get("last_tx_juld"), now)
++            if raw_juld is not None:
++                last_tx = juld_to_datetime(raw_juld)
++            days = (now - last_tx).total_seconds() / 86400.0
++            out.update(
++                last_tx_iso=last_tx.isoformat(),
++                last_tx_field=field,
++                last_tx_status_rt19=rtraj.get("last_tx_status_rt19") or None,
++                last_tx_index=rtraj.get("last_tx_index"),
++                last_tx_cycle=rtraj.get("last_tx_cycle"),
++                days_since_last_tx=days,
++                expected_next_iso=(last_tx + timedelta(days=10)).isoformat(),
++                status=comm_status(days),
++            )
++        else:
++            out["communication_error"] = rtraj.get("communication_error") or (
++                "Cached measurement JULD is not an authoritative communication timestamp"
++                if field and field not in COMMUNICATION_FIELDS
++                else "No valid upstream communication timestamp"
++            )
++        measurements = [
++            dt
++            for dt in (_parse_utc(parsed.get("juld_iso")), _parse_utc(aggregate.get("juld_iso")))
++            if dt is not None
++        ]
++        measurement = max(measurements) if measurements else None
++        if out["last_tx_iso"] and measurement:
++            out["traj_lagging_profiles"] = measurement > last_tx + timedelta(hours=12)
+         return out
+ 
+     # -- background polling (mirrors ingestion) --------------------------
+     async def _poll_loop(self) -> None:
+         while True:
++            started = time.monotonic()
+             try:
+                 await asyncio.to_thread(self.sync_now)
+-            except Exception:
+-                pass
+-            await asyncio.sleep(max(self._interval, 300.0))
++            except Exception as exc:
++                self._fail(f"Scheduled sync failed: {type(exc).__name__}: {exc}", time.time())
++            # Start-to-start cadence, not interval plus a potentially long
++            # download. Do not overlap cycles or spin if a cycle overruns.
++            await asyncio.sleep(max(1.0, self._interval - (time.monotonic() - started)))
+ 
+     def start(self) -> None:
+         if self._poll_task is None and self._enabled:
+diff --git a/incois-arpy-decoder/decoder-ui/tests/test_fleet_status.py b/incois-arpy-decoder/decoder-ui/tests/test_fleet_status.py
+index 6f426a1..593a9c1 100644
+--- a/incois-arpy-decoder/decoder-ui/tests/test_fleet_status.py
++++ b/incois-arpy-decoder/decoder-ui/tests/test_fleet_status.py
+@@ -24,10 +24,9 @@ No test touches the network. Run with:
+ from __future__ import annotations
+ 
+ import ftplib
+-import json
+ import os
+ import tempfile
+-from datetime import datetime, timedelta, timezone
++from datetime import UTC, datetime, timedelta
+ from pathlib import Path
+ 
+ import pytest
+@@ -35,15 +34,13 @@ import pytest
+ _TMP = tempfile.mkdtemp(prefix="decoder-ui-fleet-test-")
+ os.environ["ARGO_UI_DATA_DIR"] = _TMP
+ 
++import fleet_status as fs  # noqa: E402
+ import netCDF4  # noqa: E402
+ import numpy as np  # noqa: E402
+-
+-import fleet_status as fs  # noqa: E402
+ from fleet_status import FleetSyncRegistry, FloatSyncError  # noqa: E402
+ 
+-
+-NOW = datetime.now(timezone.utc)
+-EPOCH = datetime(1950, 1, 1, tzinfo=timezone.utc)
++NOW = datetime.now(UTC)
++EPOCH = datetime(1950, 1, 1, tzinfo=UTC)
+ 
+ 
+ def _juld(dt: datetime) -> float:
+@@ -54,11 +51,16 @@ def _juld(dt: datetime) -> float:
+ # Synthetic NetCDF builders (real Argo shapes, tiny)
+ # ---------------------------------------------------------------------------
+ 
+-def _write_rtraj(path: Path, wmo: int, last_messages: list,
+-                 tx_ends: list | None = None,
+-                 statuses: list | None = None,
+-                 meas: list | None = None,
+-                 omit_cycle_msgs: bool = False) -> bytes:
++
++def _write_rtraj(
++    path: Path,
++    wmo: int,
++    last_messages: list,
++    tx_ends: list | None = None,
++    statuses: list | None = None,
++    meas: list | None = None,
++    omit_cycle_msgs: bool = False,
++) -> bytes:
+     """N_CYCLE=len(last_messages); meas rows = (juld, lat, lon, cyc, mc, qc).
+ 
+     omit_cycle_msgs reproduces vintage files whose per-cycle JULD message
+@@ -82,31 +84,59 @@ def _write_rtraj(path: Path, wmo: int, last_messages: list,
+         ci = ds.createVariable("CYCLE_NUMBER_INDEX", "i4", ("N_CYCLE",))
+         ci[:] = np.arange(n_cyc, dtype=np.int32)
+         if meas:
+-            ds.createVariable("JULD", "f8", ("N_MEASUREMENT",), fill_value=999999.0)[:] = \
+-                np.array([m[0] for m in meas], dtype=float)
+-            ds.createVariable("LATITUDE", "f8", ("N_MEASUREMENT",), fill_value=99999.0)[:] = \
++            ds.createVariable("JULD", "f8", ("N_MEASUREMENT",), fill_value=999999.0)[:] = np.array(
++                [m[0] for m in meas], dtype=float
++            )
++            ds.createVariable("LATITUDE", "f8", ("N_MEASUREMENT",), fill_value=99999.0)[:] = (
+                 np.array([m[1] for m in meas], dtype=float)
+-            ds.createVariable("LONGITUDE", "f8", ("N_MEASUREMENT",), fill_value=99999.0)[:] = \
++            )
++            ds.createVariable("LONGITUDE", "f8", ("N_MEASUREMENT",), fill_value=99999.0)[:] = (
+                 np.array([m[2] for m in meas], dtype=float)
+-            ds.createVariable("CYCLE_NUMBER", "i4", ("N_MEASUREMENT",))[:] = \
+-                np.array([m[3] for m in meas], dtype=np.int32)
+-            ds.createVariable("MEASUREMENT_CODE", "i4", ("N_MEASUREMENT",))[:] = \
+-                np.array([m[4] for m in meas], dtype=np.int32)
+-            ds.createVariable("POSITION_QC", "S1", ("N_MEASUREMENT",))[:] = \
+-                np.array([m[5] for m in meas], dtype="S1")
++            )
++            ds.createVariable("CYCLE_NUMBER", "i4", ("N_MEASUREMENT",))[:] = np.array(
++                [m[3] for m in meas], dtype=np.int32
++            )
++            ds.createVariable("MEASUREMENT_CODE", "i4", ("N_MEASUREMENT",))[:] = np.array(
++                [m[4] for m in meas], dtype=np.int32
++            )
++            ds.createVariable("POSITION_QC", "S1", ("N_MEASUREMENT",))[:] = np.array(
++                [m[5] for m in meas], dtype="S1"
++            )
++        for name, var in ds.variables.items():
++            if name.startswith("JULD") and var.dtype.kind == "f":
++                var.units = "days since 1950-01-01 00:00:00 UTC"
+     finally:
+         ds.close()
+     return path.read_bytes()
+ 
+ 
+-def _write_profile(path: Path, juld=None, lat=None, lon=None, qc="1",
+-                   cycle=7, with_pos=True, with_juld=True) -> bytes:
++def _write_profile(
++    path: Path,
++    juld=None,
++    lat=None,
++    lon=None,
++    qc="1",
++    cycle=7,
++    with_pos=True,
++    with_juld=True,
++    with_location=True,
++    wmo=2909999,
++) -> bytes:
+     ds = netCDF4.Dataset(str(path), "w", format="NETCDF4")
+     try:
+         ds.createDimension("N_PROF", 1)
++        ds.createDimension("STRING8", 8)
++        ds.createVariable("PLATFORM_NUMBER", "S1", ("N_PROF", "STRING8"))[:] = np.frombuffer(
++            f"{wmo:<8}".encode(), dtype="S1"
++        ).reshape(1, 8)
+         if with_juld:
+             v = ds.createVariable("JULD", "f8", ("N_PROF",), fill_value=999999.0)
+             v[0] = 999999.0 if juld is None else float(juld)
++            v.units = "days since 1950-01-01 00:00:00 UTC"
++        if with_location:
++            v = ds.createVariable("JULD_LOCATION", "f8", ("N_PROF",), fill_value=999999.0)
++            v[0] = 999999.0 if juld is None else float(juld)
++            v.units = "days since 1950-01-01 00:00:00 UTC"
+         if with_pos:
+             la = ds.createVariable("LATITUDE", "f8", ("N_PROF",), fill_value=99999.0)
+             lo = ds.createVariable("LONGITUDE", "f8", ("N_PROF",), fill_value=99999.0)
+@@ -123,6 +153,7 @@ def _write_profile(path: Path, juld=None, lat=None, lon=None, qc="1",
+ # 1. Status rule + JULD math
+ # ---------------------------------------------------------------------------
+ 
++
+ def test_status_boundaries():
+     assert fs.comm_status(None) == "NO DATA"
+     assert fs.comm_status(0) == "ACTIVE"
+@@ -135,9 +166,9 @@ def test_status_boundaries():
+ 
+ 
+ def test_juld_anchors():
+-    assert fs.juld_to_datetime(0.0) == datetime(1950, 1, 1, tzinfo=timezone.utc)
+-    assert fs.juld_to_datetime(1.5) == datetime(1950, 1, 2, 12, 0, tzinfo=timezone.utc)
+-    iso = fs.juld_to_iso(_juld(datetime(2026, 5, 4, 12, 0, tzinfo=timezone.utc)))
++    assert fs.juld_to_datetime(0.0) == datetime(1950, 1, 1, tzinfo=UTC)
++    assert fs.juld_to_datetime(1.5) == datetime(1950, 1, 2, 12, 0, tzinfo=UTC)
++    iso = fs.juld_to_iso(_juld(datetime(2026, 5, 4, 12, 0, tzinfo=UTC)))
+     assert iso.startswith("2026-05-04T12:00")
+ 
+ 
+@@ -145,13 +176,18 @@ def test_juld_anchors():
+ # 2. LIST parsing + fingerprints
+ # ---------------------------------------------------------------------------
+ 
++
+ def test_parse_list_line_shapes():
+     # Captured shapes from ftp.ifremer.fr (mtime year vs. time forms).
+-    a = fs.parse_list_line("-rw-r--r--    1 ftp      ftp        210112 Jun 16 14:14 1902844_Rtraj.nc", NOW)
++    a = fs.parse_list_line(
++        "-rw-r--r--    1 ftp      ftp        210112 Jun 16 14:14 1902844_Rtraj.nc", NOW
++    )
+     assert a is not None and a[0] == "1902844_Rtraj.nc" and a[1] == 210112 and a[3] is False
+-    b = fs.parse_list_line("-rw-r--r--    1 ftp      ftp         22192 Feb 04  2026 R1902844_001.nc", NOW)
++    b = fs.parse_list_line(
++        "-rw-r--r--    1 ftp      ftp         22192 Feb 04  2026 R1902844_001.nc", NOW
++    )
+     assert b is not None and b[0] == "R1902844_001.nc"
+-    assert datetime.fromtimestamp(b[2], tz=timezone.utc).year == 2026
++    assert datetime.fromtimestamp(b[2], tz=UTC).year == 2026
+     d = fs.parse_list_line("drwxr-sr-x    3 ftp      ftp          4096 Sep 15 06:49 1902669", NOW)
+     assert d is not None and d[3] is True
+     assert fs.parse_list_line("total 1234", NOW) is None
+@@ -164,13 +200,16 @@ def test_listing_fingerprint_stable_and_sensitive():
+     e2 = [("b.nc", 20, 200.0), ("a.nc", 10, 100.0)]
+     assert fs.listing_fingerprint(e1) == fs.listing_fingerprint(e2)
+     assert fs.listing_fingerprint(e1) != fs.listing_fingerprint([("a.nc", 10, 100.0)])
+-    assert fs.listing_fingerprint(e1) != fs.listing_fingerprint([("a.nc", 11, 100.0), ("b.nc", 20, 200.0)])
++    assert fs.listing_fingerprint(e1) != fs.listing_fingerprint(
++        [("a.nc", 11, 100.0), ("b.nc", 20, 200.0)]
++    )
+ 
+ 
+ # ---------------------------------------------------------------------------
+ # 3. Profile summary from filenames
+ # ---------------------------------------------------------------------------
+ 
++
+ def test_summarize_profiles_gap_and_latest():
+     files = [f"R1902844_{c:03d}.nc" for c in range(1, 26) if c != 22]
+     s = fs.summarize_profiles(files, 1902844)
+@@ -180,16 +219,25 @@ def test_summarize_profiles_gap_and_latest():
+     assert s["n_files"] == 24
+ 
+ 
+-def test_summarize_profiles_prefers_realtime_family():
+-    files = ["R2909999_010.nc", "D2909999_010.nc", "BR2909999_010.nc",
+-             "BD2909999_010.nc", "SR2909999_010.nc", "SD2909999_010.nc",
+-             "R2909999_001.nc", "ZZZ2909999_010.nc", "R1234567_010.nc"]
++def test_summarize_profiles_prefers_delayed_core_and_rejects_foreign_families():
++    files = [
++        "R2909999_010.nc",
++        "D2909999_010.nc",
++        "BR2909999_010.nc",
++        "BD2909999_010.nc",
++        "SR2909999_010.nc",
++        "SD2909999_010.nc",
++        "R2909999_001.nc",
++        "ZZZ2909999_010.nc",
++        "R1234567_010.nc",
++    ]
+     s = fs.summarize_profiles(files, 2909999)
+     assert s["max_cycle"] == 10
+     assert s["missing"] == list(range(2, 10))
+-    assert s["latest"]["prefix"] == "R"
+-    # foreign-WMO file ignored
+-    assert s["n_files"] == 8
++    assert s["latest"]["prefix"] == "D"
++    # Foreign-WMO and non-Argo-family files are ignored.
++    assert s["n_files"] == 7
++    assert s["available_cycles"] == 2
+ 
+ 
+ def test_summarize_profiles_empty():
+@@ -201,9 +249,11 @@ def test_summarize_profiles_empty():
+ # 4. Rtraj parsing
+ # ---------------------------------------------------------------------------
+ 
++
+ def test_parse_rtraj_selects_max_valid_last_message(tmp_path):
+     raw = _write_rtraj(
+-        tmp_path / "t.nc", 2909999,
++        tmp_path / "t.nc",
++        2909999,
+         last_messages=[999999.0, _juld(NOW - timedelta(days=30)), _juld(NOW + timedelta(days=30))],
+         statuses=[" ", "2", "1"],
+         meas=[(_juld(NOW - timedelta(days=30)), 10.0, 65.0, 5, 703, "1")],
+@@ -218,7 +268,8 @@ def test_parse_rtraj_selects_max_valid_last_message(tmp_path):
+ 
+ def test_parse_rtraj_falls_back_to_transmission_end(tmp_path):
+     raw = _write_rtraj(
+-        tmp_path / "t.nc", 2909999,
++        tmp_path / "t.nc",
++        2909999,
+         last_messages=[999999.0, 999999.0],
+         tx_ends=[999999.0, _juld(NOW - timedelta(days=5))],
+         meas=[],
+@@ -228,42 +279,52 @@ def test_parse_rtraj_falls_back_to_transmission_end(tmp_path):
+     assert out["last_fix"] is None
+ 
+ 
+-def test_parse_rtraj_falls_back_to_measurement_max(tmp_path):
++def test_parse_rtraj_never_substitutes_measurement_max(tmp_path):
+     now_j = _juld(NOW)
+     raw = _write_rtraj(
+-        tmp_path / "t.nc", 2909999,
+-        last_messages=[999999.0, now_j + 30.0],   # fill + future: unusable
++        tmp_path / "t.nc",
++        2909999,
++        last_messages=[999999.0, now_j + 30.0],  # fill + future: unusable
+         tx_ends=[999999.0, 999999.0],
+         meas=[
+             (now_j - 4000.0, 10.0, 65.0, 3, 703, "1"),
+-            (now_j - 3900.0, 10.5, 65.5, 4, 703, "1"),   # winner
+-            (now_j + 30.0, 10.5, 65.5, 5, 703, "1"),     # future: excluded
++            (now_j - 3900.0, 10.5, 65.5, 4, 703, "1"),  # winner
++            (now_j + 30.0, 10.5, 65.5, 5, 703, "1"),  # future: excluded
+         ],
+     )
+     out = fs.parse_rtraj(raw, 2909999, NOW)
+-    assert out["last_tx_field"] == "JULD (measurement max)"
+-    assert out["last_tx_juld"] == pytest.approx(now_j - 3900.0)
++    assert out["last_tx_field"] is None
++    assert out["last_tx_juld"] is None
++    assert "not communication evidence" in out["communication_error"]
++    assert out["last_fix"]["juld"] == pytest.approx(now_j - 3900.0)
+ 
+ 
+ def test_parse_rtraj_vintage_file_without_cycle_msgs(tmp_path):
+     # 2012-era shape: per-cycle message variables absent entirely.
+     now_j = _juld(NOW)
+     raw = _write_rtraj(
+-        tmp_path / "t.nc", 2909999, last_messages=[100.0],
++        tmp_path / "t.nc",
++        2909999,
++        last_messages=[100.0],
+         meas=[(now_j - 5000.0, -20.0, 70.0, 12, 703, "1")],
+         omit_cycle_msgs=True,
+     )
+     out = fs.parse_rtraj(raw, 2909999, NOW)
+-    assert out["last_tx_field"] == "JULD (measurement max)"
++    assert out["last_tx_field"] is None
++    assert out["last_tx_iso"] is None
+     assert out["last_fix"]["lat"] == -20.0
+ 
+ 
+ def test_parse_rtraj_rejects_unusable(tmp_path):
+-    raw = _write_rtraj(tmp_path / "t.nc", 2909999,
+-                       last_messages=[999999.0, _juld(NOW + timedelta(days=30))],
+-                       tx_ends=[999999.0, 999999.0])
+-    with pytest.raises(FloatSyncError):
+-        fs.parse_rtraj(raw, 2909999, NOW)
++    raw = _write_rtraj(
++        tmp_path / "t.nc",
++        2909999,
++        last_messages=[999999.0, _juld(NOW + timedelta(days=30))],
++        tx_ends=[999999.0, 999999.0],
++    )
++    parsed = fs.parse_rtraj(raw, 2909999, NOW)
++    assert parsed["last_tx_iso"] is None
++    assert parsed["communication_error"]
+ 
+ 
+ def test_parse_rtraj_platform_guard(tmp_path):
+@@ -275,27 +336,31 @@ def test_parse_rtraj_platform_guard(tmp_path):
+ def test_parse_rtraj_last_fix_skips_bad_positions(tmp_path):
+     now_j = _juld(NOW)
+     raw = _write_rtraj(
+-        tmp_path / "t.nc", 2909999,
++        tmp_path / "t.nc",
++        2909999,
+         last_messages=[now_j - 9],
+         meas=[
+-            (now_j - 9, 99999.0, 99999.0, 9, 703, "1"),   # fill position
+-            (now_j - 8, 95.0, 10.0, 9, 703, "1"),         # impossible latitude
+-            (now_j - 7, 9.0, 66.0, 9, 703, "4"),          # winner
+-            (now_j + 30, 9.0, 66.0, 9, 703, "1"),         # future JULD
++            (now_j - 10, 8.0, 65.0, 8, 703, "1"),  # latest usable fix
++            (now_j - 9, 99999.0, 99999.0, 9, 703, "1"),  # fill position
++            (now_j - 8, 95.0, 10.0, 9, 703, "1"),  # impossible latitude
++            (now_j - 7, 9.0, 66.0, 9, 703, "4"),  # bad QC: excluded
++            (now_j + 30, 9.0, 66.0, 9, 703, "1"),  # future JULD
+         ],
+     )
+     out = fs.parse_rtraj(raw, 2909999, NOW)
+-    assert out["last_fix"]["lat"] == 9.0
+-    assert out["last_fix"]["pos_qc"] == "4"
++    assert out["last_fix"]["lat"] == 8.0
++    assert out["last_fix"]["pos_qc"] == "1"
+ 
+ 
+ # ---------------------------------------------------------------------------
+ # 5. Profile parsing
+ # ---------------------------------------------------------------------------
+ 
++
+ def test_parse_profile_values(tmp_path):
+-    raw = _write_profile(tmp_path / "p.nc", juld=_juld(NOW - timedelta(days=2)),
+-                         lat=9.85, lon=66.0, qc="1", cycle=25)
++    raw = _write_profile(
++        tmp_path / "p.nc", juld=_juld(NOW - timedelta(days=2)), lat=9.85, lon=66.0, qc="1", cycle=25
++    )
+     out = fs.parse_profile(raw, 2909999, 25, NOW)
+     assert out["lat"] == 9.85 and out["lon"] == 66.0
+     assert out["pos_qc"] == "1" and out["cycle"] == 25
+@@ -319,15 +384,16 @@ def test_parse_profile_cycle_mismatch_flagged(tmp_path):
+ # 6. Registry end-to-end against a fake GDAC (no network)
+ # ---------------------------------------------------------------------------
+ 
++
+ class FakeFTP:
+     """Minimal ftplib-compatible GDAC double."""
+ 
+     def __init__(self, members, rtraj, profiles_lists, profile_files, mdtms):
+         self.members = members
+-        self.rtraj = rtraj                      # wmo -> bytes
+-        self.profiles_lists = profiles_lists    # wmo -> [LIST lines]
+-        self.profile_files = profile_files      # filename -> bytes
+-        self.mdtms = mdtms                      # path suffix -> mdtm str
++        self.rtraj = rtraj  # wmo -> bytes
++        self.profiles_lists = profiles_lists  # wmo -> [LIST lines]
++        self.profile_files = profile_files  # filename -> bytes
++        self.mdtms = mdtms  # path suffix -> mdtm str
+         self.downloads = []
+ 
+     def nlst(self, path):
+@@ -392,15 +458,18 @@ def _reg(tmp_path, **kw):
+ 
+ def _fake_gdac(tmp_path, last_tx_days_ago=3):
+     rtraj = _write_rtraj(
+-        tmp_path / "r.nc", 2909999,
++        tmp_path / "r.nc",
++        2909999,
+         last_messages=[_juld(NOW - timedelta(days=last_tx_days_ago))],
+         meas=[(_juld(NOW - timedelta(days=last_tx_days_ago)), 10.0, 65.0, 9, 703, "1")],
+     )
+-    prof = _write_profile(tmp_path / "p.nc", juld=_juld(NOW - timedelta(days=2)),
+-                          lat=9.85, lon=66.0, cycle=25)
++    prof = _write_profile(
++        tmp_path / "p.nc", juld=_juld(NOW - timedelta(days=2)), lat=9.85, lon=66.0, cycle=25
++    )
+     lines = ["total 24"] + [
+         f"-rw-r--r--    1 ftp      ftp         22228 Sep 09 06:14 R2909999_{c:03d}.nc"
+-        for c in range(1, 26) if c != 22
++        for c in range(1, 26)
++        if c != 22
+     ]
+     return FakeFTP(
+         members=["2909999"],
+@@ -415,7 +484,9 @@ def test_sync_initial_cycle_populates_rows(tmp_path, monkeypatch):
+     fake = _fake_gdac(tmp_path)
+     reg = _reg(tmp_path)
+     monkeypatch.setattr(reg, "_connect", lambda: fake)
+-    monkeypatch.setattr("datasources.local.build_wmo_identity_map", lambda: {2909999: {"ptt": "10255", "imei": ""}})
++    monkeypatch.setattr(
++        "datasources.local.build_wmo_identity_map", lambda: {2909999: {"ptt": "10255", "imei": ""}}
++    )
+     res = reg.sync_now()
+     assert res["accepted"] is True and res["status"] == "ok"
+     assert fake.downloads == ["2909999_Rtraj.nc", "R2909999_025.nc"]
+@@ -514,11 +585,22 @@ def test_sync_guard_rejects_concurrent_cycle(tmp_path):
+ 
+ 
+ def test_serve_row_status_matrix():
+-    base = {"wmo": 1, "in_incois_dac": True, "rtraj": {}, "profiles": {},
+-            "error": None, "updated_at": None}
++    base = {
++        "wmo": 1,
++        "in_incois_dac": True,
++        "rtraj": {},
++        "profiles": {},
++        "error": None,
++        "updated_at": None,
++    }
+     for days, want in [(3, "ACTIVE"), (30, "OVERDUE"), (200, "NO COMMUNICATION 60+ DAYS")]:
+-        row = dict(base, rtraj={"last_tx_iso": (NOW - timedelta(days=days)).isoformat(),
+-                                "last_tx_field": "JULD_LAST_MESSAGE"})
++        row = dict(
++            base,
++            rtraj={
++                "last_tx_iso": (NOW - timedelta(days=days)).isoformat(),
++                "last_tx_field": "JULD_LAST_MESSAGE",
++            },
++        )
+         got = FleetSyncRegistry._serve_row(1, row, {"platform_type": "APEX"}, {}, NOW)
+         assert got["status"] == want, (days, got)
+         assert got["expected_next_iso"] is not None
+@@ -530,6 +612,7 @@ def test_serve_row_status_matrix():
+ # 7. Identity map from real registries
+ # ---------------------------------------------------------------------------
+ 
++
+ def test_build_wmo_identity_map_reads_real_registries():
+     from datasources.local import build_wmo_identity_map
+ 
+diff --git a/incois-arpy-decoder/decoder-ui/frontend/src/store/useFleetStatusStore.test.ts b/incois-arpy-decoder/decoder-ui/frontend/src/store/useFleetStatusStore.test.ts
+new file mode 100644
+index 0000000..50d1823
+--- /dev/null
++++ b/incois-arpy-decoder/decoder-ui/frontend/src/store/useFleetStatusStore.test.ts
+@@ -0,0 +1,52 @@
++import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
++import type { FleetStatusPayload } from "../types";
++import { useFleetStatusStore } from "./useFleetStatusStore";
++
++// Transport-only test double; deliberately no operational float observations.
++const snapshot = { generated_at: "2026-09-21T00:00:00Z", floats: [] } as unknown as FleetStatusPayload;
++
++describe("Float Status transport/cache behavior", () => {
++  beforeEach(() => {
++    useFleetStatusStore.setState({ payload: snapshot, loading: false, fetchError: null, syncStarting: false });
++  });
++  afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
++
++  it("retains the last payload when fetching fails", async () => {
++    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("network unavailable")));
++    await useFleetStatusStore.getState().fetchFleetStatus();
++    expect(useFleetStatusStore.getState().payload).toBe(snapshot);
++    expect(useFleetStatusStore.getState().fetchError).toContain("network unavailable");
++    expect(useFleetStatusStore.getState().loading).toBe(false);
++  });
++
++  it("times out a hung fetch and permits later refreshes", async () => {
++    vi.useFakeTimers();
++    vi.stubGlobal("fetch", vi.fn((_url, opts) => new Promise((_resolve, reject) => {
++      opts.signal.addEventListener("abort", () => reject(new Error("request aborted")));
++    })));
++    const task = useFleetStatusStore.getState().fetchFleetStatus();
++    expect(useFleetStatusStore.getState().loading).toBe(true);
++    await vi.advanceTimersByTimeAsync(15000);
++    await task;
++    expect(useFleetStatusStore.getState().payload).toBe(snapshot);
++    expect(useFleetStatusStore.getState().loading).toBe(false);
++    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => snapshot }));
++    await useFleetStatusStore.getState().fetchFleetStatus();
++    expect(useFleetStatusStore.getState().fetchError).toBeNull();
++  });
++
++  it("does not issue overlapping cache fetches", async () => {
++    useFleetStatusStore.setState({ loading: true });
++    const fetch = vi.fn(); vi.stubGlobal("fetch", fetch);
++    await useFleetStatusStore.getState().fetchFleetStatus();
++    expect(fetch).not.toHaveBeenCalled();
++  });
++
++  it("reports a failed sync trigger without dropping valid data", async () => {
++    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 503 }));
++    expect(await useFleetStatusStore.getState().triggerSync()).toBe("error");
++    expect(useFleetStatusStore.getState().payload).toBe(snapshot);
++    expect(useFleetStatusStore.getState().fetchError).toContain("503");
++    expect(useFleetStatusStore.getState().syncStarting).toBe(false);
++  });
++});
+diff --git a/incois-arpy-decoder/decoder-ui/tests/test_fleet_status_audit.py b/incois-arpy-decoder/decoder-ui/tests/test_fleet_status_audit.py
+new file mode 100644
+index 0000000..a5396da
+--- /dev/null
++++ b/incois-arpy-decoder/decoder-ui/tests/test_fleet_status_audit.py
+@@ -0,0 +1,470 @@
++"""Float Status correctness regressions.
++
++The 32-record tests read the repository's existing, unmodified cache; they do
++not claim it is a live upstream check. Edge-case NetCDF files below are small,
++explicitly synthetic test inputs, written only to pytest temporary directories.
++Live 2026-09-21 verification and its independent evidence are in the audit report.
++"""
++
++from __future__ import annotations
++
++import asyncio
++import copy
++import json
++from datetime import UTC, datetime, timedelta
++from pathlib import Path
++
++import fleet_status as fs
++import netCDF4
++import numpy as np
++import pytest
++from test_fleet_status import NOW, _fake_gdac, _juld, _reg, _write_profile, _write_rtraj
++
++CACHE = json.loads(
++    (Path(__file__).resolve().parents[1] / "data/fleet_status/cache.json").read_text()
++)
++AS_OF = datetime(2026, 9, 21, tzinfo=UTC)
++UNITS = "days since 1950-01-01 00:00:00 UTC"
++
++
++def _row(rtraj=None, profile=None, now=NOW):
++    return {
++        "wmo": 2909999,
++        "in_incois_dac": True,
++        "parser_version": fs.PARSER_VERSION,
++        "checked_at": now.isoformat(),
++        "updated_at": now.isoformat(),
++        "rtraj": rtraj or {},
++        "profiles": {
++            "max_cycle": 25,
++            "missing": [22],
++            "available_cycles": 24,
++            "latest": {"file": "R2909999_025.nc", "prefix": "R", "cycle": 25},
++            "latest_parse": profile,
++        },
++    }
++
++
++def _multi_profile(path, lat, lon, loc, juld=None, qc=None, cycles=None):
++    n = len(lat)
++    with netCDF4.Dataset(path, "w") as d:
++        d.createDimension("N_PROF", n)
++        d.createDimension("STRING8", 8)
++        pn = d.createVariable("PLATFORM_NUMBER", "S1", ("N_PROF", "STRING8"))
++        for i in range(n):
++            pn[i, :] = np.frombuffer(b"2909999 ", dtype="S1")
++        for name, values in {
++            "JULD": juld or loc,
++            "JULD_LOCATION": loc,
++            "LATITUDE": lat,
++            "LONGITUDE": lon,
++        }.items():
++            v = d.createVariable(name, "f8", ("N_PROF",), fill_value=999999.0)
++            v[:] = values
++            if name.startswith("JULD"):
++                v.units = UNITS
++        d.createVariable("POSITION_QC", "S1", ("N_PROF",))[:] = np.array(
++            qc or ["1"] * n, dtype="S1"
++        )
++        d.createVariable("CYCLE_NUMBER", "i4", ("N_PROF",))[:] = cycles or [25] * n
++    return path.read_bytes()
++
++
++@pytest.mark.parametrize("wmo", sorted(CACHE["rows"], key=int))
++def test_all_32_existing_float_cache_records(wmo):
++    """Availability and identity remain honest even before a live re-check."""
++    r = CACHE["rows"][wmo]
++    got = fs.FleetSyncRegistry._serve_row(int(wmo), r, {}, {}, AS_OF)
++    assert got["wmo"] == int(wmo)
++    assert got["stale"]  # Version 1 cannot masquerade as a new verified sync.
++    if (
++        r.get("in_incois_dac") is False
++        or (r.get("rtraj") or {}).get("last_tx_field") not in fs.COMMUNICATION_FIELDS
++    ):
++        assert got["status"] == "NO DATA"
++        for key in ("last_tx_iso", "expected_next_iso", "days_since_last_tx"):
++            assert got[key] is None
++        assert got["communication_error"]
++    else:
++        tx = datetime.fromisoformat(got["last_tx_iso"])
++        assert datetime.fromisoformat(got["expected_next_iso"]) - tx == timedelta(days=10)
++        days = (AS_OF - tx).total_seconds() / 86400
++        assert got["days_since_last_tx"] == days
++        want = "ACTIVE" if days <= 10 else "OVERDUE" if days < 60 else "NO COMMUNICATION 60+ DAYS"
++        assert got["status"] == want
++    p = r.get("profiles")
++    if p and p.get("max_cycle") is not None:
++        assert got["prof_num"] == p["max_cycle"]
++        assert got["profiles_missing_list"] == p["missing"]
++        assert got["profile_count"] == p["max_cycle"] - len(p["missing"])
++    else:
++        assert got["profile_count"] is None
++        assert got["profiles_missing"] is None
++
++
++def test_actual_cache_total_is_available_cycles_not_sum_of_maxima():
++    rows = [
++        fs.FleetSyncRegistry._serve_row(int(w), r, {}, {}, AS_OF) for w, r in CACHE["rows"].items()
++    ]
++    assert sum(r["profile_count"] or 0 for r in rows) == 5625
++    assert sum(r["prof_num"] or 0 for r in rows) == 5647
++    assert sum(r["profiles_missing"] or 0 for r in rows) == 22
++    assert sum(r["status"] == "NO DATA" for r in rows) == 4
++
++
++@pytest.mark.parametrize("wmo", [2901304, 2901305, 2902086, 2902222, 2902223, 2902224])
++def test_actual_cache_does_not_override_good_traj_with_older_or_bad_profile(wmo):
++    row = CACHE["rows"][str(wmo)]
++    got = fs.FleetSyncRegistry._serve_row(wmo, row, {}, {}, AS_OF)
++    fix = row["rtraj"]["last_fix"]
++    assert (got["lat"], got["lon"]) == (fix["lat"], fix["lon"])
++    assert got["pos_source"] == "traj"
++    assert got["stale"]
++
++
++@pytest.mark.parametrize("value", [float("nan"), float("inf"), -1.0, -0.00001])
++def test_nonfinite_and_negative_elapsed_days_are_not_active(value):
++    assert fs.comm_status(value) == "NO DATA"
++
++
++@pytest.mark.parametrize(
++    "days,want",
++    [
++        (9.999999, "ACTIVE"),
++        (10, "ACTIVE"),
++        (10.000001, "OVERDUE"),
++        (59.999999, "OVERDUE"),
++        (60, "NO COMMUNICATION 60+ DAYS"),
++    ],
++)
++def test_status_boundaries_and_elapsed_days_do_not_round_early(days, want):
++    tx = AS_OF - timedelta(days=days)
++    r = _row({"last_tx_field": "JULD_LAST_MESSAGE", "last_tx_iso": tx.isoformat()}, now=AS_OF)
++    got = fs.FleetSyncRegistry._serve_row(2909999, r, {}, {}, AS_OF)
++    assert got["status"] == want
++    assert got["days_since_last_tx"] == pytest.approx(days, abs=1e-11)
++
++
++@pytest.mark.parametrize("iso", [None, "bad", "2026-09-01T00:00:00", "2026-09-21T00:00:01+00:00"])
++def test_bad_naive_and_future_cache_timestamps_are_unavailable(iso):
++    got = fs.FleetSyncRegistry._serve_row(
++        2909999, _row({"last_tx_field": "JULD_LAST_MESSAGE", "last_tx_iso": iso}), {}, {}, AS_OF
++    )
++    assert got["last_tx_iso"] is None and got["status"] == "NO DATA"
++
++
++def test_timezone_offsets_are_normalized_to_utc():
++    got = fs.FleetSyncRegistry._serve_row(
++        2909999,
++        _row({"last_tx_field": "JULD_LAST_MESSAGE", "last_tx_iso": "2026-09-11T05:30:00+05:30"}),
++        {},
++        {},
++        AS_OF,
++    )
++    assert got["last_tx_iso"] == "2026-09-11T00:00:00+00:00"
++    assert got["expected_next_iso"] == AS_OF.isoformat()
++    assert got["status"] == "ACTIVE"
++
++
++def test_floating_juld_roundoff_does_not_shift_a_utc_minute():
++    value = _juld(datetime(2026, 9, 1, 12, 30, tzinfo=UTC)) - 1e-10
++    assert fs.juld_to_iso(value) == "2026-09-01T12:30:00+00:00"
++
++
++def test_future_communication_within_old_one_day_grace_is_rejected(tmp_path):
++    raw = _write_rtraj(tmp_path / "future.nc", 2909999, [_juld(NOW + timedelta(hours=1))])
++    assert fs.parse_rtraj(raw, 2909999, NOW)["last_tx_iso"] is None
++
++
++def test_communication_units_and_dimension_are_verified(tmp_path):
++    file = tmp_path / "units.nc"
++    _write_rtraj(file, 2909999, [_juld(NOW - timedelta(days=1))])
++    with netCDF4.Dataset(file, "a") as d:
++        d["JULD_LAST_MESSAGE"].units = "hours since 1970-01-01"
++    with pytest.raises(fs.FloatSyncError, match="time units"):
++        fs.parse_rtraj(file.read_bytes(), 2909999, NOW)
++    _write_rtraj(file, 2909999, [_juld(NOW - timedelta(days=1))])
++    with netCDF4.Dataset(file, "a") as d:
++        d.renameDimension("N_CYCLE", "not_cycle")
++    with pytest.raises(fs.FloatSyncError, match="per-cycle"):
++        fs.parse_rtraj(file.read_bytes(), 2909999, NOW)
++
++
++def test_masked_integer_cycles_do_not_drop_good_values_or_promote_fill(tmp_path):
++    file = tmp_path / "mask.nc"
++    _write_rtraj(file, 2909999, [_juld(NOW - timedelta(days=2)), _juld(NOW - timedelta(days=1))])
++    with netCDF4.Dataset(file, "a") as d:
++        d["CYCLE_NUMBER_INDEX"].missing_value = 99999
++        d["CYCLE_NUMBER_INDEX"][:] = [7, 99999]
++    got = fs.parse_rtraj(file.read_bytes(), 2909999, NOW)
++    assert got["traj_max_cycle"] == 7
++    assert got["last_tx_cycle"] is None
++
++
++def test_profile_foreign_wmo_is_rejected(tmp_path):
++    raw = _write_profile(tmp_path / "foreign.nc", wmo=1900000)
++    with pytest.raises(fs.FloatSyncError, match="PLATFORM_NUMBER"):
++        fs.parse_profile(raw, 2909999, 7, NOW)
++
++
++def test_profile_position_never_combines_separate_n_prof_rows(tmp_path):
++    j = _juld(NOW)
++    raw = _multi_profile(
++        tmp_path / "multi.nc", [1, 999999, 3], [999999, 2, 4], [j - 3, j - 2, j - 1]
++    )
++    got = fs.parse_profile(raw, 2909999, 25, NOW)
++    assert (got["lat"], got["lon"], got["position_index"]) == (3, 4, 2)
++    assert got["pos_qc"] == "1"  # Not the concatenation "111".
++
++
++def test_location_time_is_not_profile_measurement_time(tmp_path):
++    j = _juld(NOW)
++    raw = _multi_profile(tmp_path / "loc.nc", [8], [65], [j - 1], juld=[j - 30])
++    profile = fs.parse_profile(raw, 2909999, 25, NOW)
++    traj = {
++        "last_tx_field": "JULD_LAST_MESSAGE",
++        "last_tx_iso": (NOW - timedelta(days=5)).isoformat(),
++        "last_fix": {
++            "juld_iso": (NOW - timedelta(days=2)).isoformat(),
++            "lat": 7,
++            "lon": 64,
++            "pos_qc": "1",
++        },
++    }
++    got = fs.FleetSyncRegistry._serve_row(2909999, _row(traj, profile), {}, {}, NOW)
++    assert got["pos_source"] == "profile"
++    assert got["position_time_field"] == "JULD_LOCATION"
++    assert got["days_since_last_tx"] == 5  # Neither location nor profile time substituted.
++    assert datetime.fromisoformat(profile["juld_iso"]) < datetime.fromisoformat(got["position_iso"])
++
++
++@pytest.mark.parametrize("qc", ["0", "3", "4", "8", "9", " "])
++def test_nonapproved_profile_position_qc_not_plotted(tmp_path, qc):
++    raw = _write_profile(
++        tmp_path / "qc.nc", juld=_juld(NOW - timedelta(days=1)), lat=10, lon=65, qc=qc
++    )
++    got = fs.parse_profile(raw, 2909999, 7, NOW)
++    assert got["lat"] is None and got["lon"] is None
++    assert got["juld_iso"] is not None
++    assert got["position_error"]
++
++
++def test_profile_measurement_cannot_stand_in_for_missing_juld_location(tmp_path):
++    raw = _write_profile(
++        tmp_path / "loc.nc",
++        juld=_juld(NOW - timedelta(days=1)),
++        lat=10,
++        lon=65,
++        with_location=False,
++    )
++    got = fs.parse_profile(raw, 2909999, 7, NOW)
++    assert got["position_iso"] is None and got["lat"] is None
++    assert got["juld_iso"] is not None
++
++
++def test_profile_cycles_include_descent_four_digits_and_deduplicate_families():
++    files = [
++        "D2909999_000.nc",
++        "R2909999_001D.nc",
++        "BD2909999_001.nc",
++        "R2909999_1000D.nc",
++        "ZZ2909999_999.nc",
++    ]
++    got = fs.summarize_profiles(files + files, 2909999)
++    assert got["max_cycle"] == 1000 and got["available_cycles"] == 2
++    assert len(got["missing"]) == 998 and 0 not in got["missing"]
++    assert got["latest"]["file"] == "R2909999_1000D.nc"
++    assert got["n_files"] == 4
++
++
++def test_unchanged_upstream_renews_check_time_without_observation_changes(tmp_path, monkeypatch):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    monkeypatch.setattr(fs, "_utcnow", lambda: NOW)
++    reg.sync_now()
++    old = copy.deepcopy(reg._rows["2909999"])
++    monkeypatch.setattr(fs, "_utcnow", lambda: NOW + timedelta(hours=1))
++    fake.downloads.clear()
++    result = reg.sync_now()
++    new = reg._rows["2909999"]
++    assert result["counts"]["unchanged"] == 2 and fake.downloads == []
++    assert new["checked_at"] != old["checked_at"]
++    assert new["updated_at"] == old["updated_at"]
++    assert new["rtraj"] == old["rtraj"]
++    assert reg.payload()["sync"]["stale"] is False
++
++
++def test_parser_revision_forces_revalidation_of_same_fingerprints(tmp_path, monkeypatch):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    reg.sync_now()
++    reg._rows["2909999"]["parser_version"] = 1
++    reg._rows["2909999"]["rtraj"]["last_tx_field"] = "JULD (measurement max)"
++    fake.downloads.clear()
++    reg.sync_now()
++    assert fake.downloads == ["2909999_Rtraj.nc", "R2909999_025.nc"]
++    assert reg._rows["2909999"]["parser_version"] == fs.PARSER_VERSION
++    assert reg._rows["2909999"]["rtraj"]["last_tx_field"] == "JULD_LAST_MESSAGE"
++
++
++def test_no_comms_is_valid_cached_data_not_endless_failed_download(tmp_path, monkeypatch):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    fake.rtraj[2909999] = _write_rtraj(tmp_path / "vintage.nc", 2909999, [999999.0])
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    assert reg.sync_now()["status"] == "ok"
++    fake.downloads.clear()
++    assert reg.sync_now()["counts"]["unchanged"] == 2
++    assert fake.downloads == []
++    row = next(r for r in reg.payload()["floats"] if r["wmo"] == 2909999)
++    assert row["status"] == "NO DATA" and row["profile_count"] == 24
++    assert row["stale"] is False
++
++
++def test_failed_partial_refresh_does_not_advance_last_success(tmp_path, monkeypatch):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    reg.sync_now()
++    old, success = copy.deepcopy(reg._rows["2909999"]), reg.payload()["sync"]["last_success_at"]
++    fake.profiles_lists = {}
++    assert reg.sync_now()["status"] == "degraded"
++    assert reg.payload()["sync"]["last_success_at"] == success
++    assert reg._rows["2909999"]["checked_at"] == old["checked_at"]
++    assert reg._rows["2909999"]["rtraj"] == old["rtraj"]
++    assert reg._rows["2909999"]["profiles"] == old["profiles"]
++    assert reg.payload()["sync"]["stale"] is True
++
++
++@pytest.mark.parametrize("bad_members", [[], ["unexpected-response"]])
++def test_empty_or_malformed_dac_membership_cannot_erase_valid_rows(
++    tmp_path, monkeypatch, bad_members
++):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    reg.sync_now()
++    old = copy.deepcopy(reg._rows)
++    fake.members = bad_members
++    assert reg.sync_now()["status"] == "error"
++    assert reg._rows == old
++
++
++def test_unparsed_profile_listing_cannot_turn_available_profiles_into_missing(
++    tmp_path, monkeypatch
++):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    reg.sync_now()
++    old = copy.deepcopy(reg._rows["2909999"]["profiles"])
++    fake.profiles_lists[2909999] = ["not a valid FTP listing"]
++    assert reg.sync_now()["status"] == "degraded"
++    assert reg._rows["2909999"]["profiles"] == old
++
++
++def test_atomic_write_failure_is_visible_and_keeps_previous_disk_cache(tmp_path, monkeypatch):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    reg.sync_now()
++    before = reg.state_path.read_bytes()
++    success = reg.payload()["sync"]["last_success_at"]
++    original = Path.replace
++
++    def fail_cache_replace(path, target):
++        if path.name == "cache.json.tmp":
++            raise PermissionError("simulated cache commit failure")
++        return original(path, target)
++
++    monkeypatch.setattr(Path, "replace", fail_cache_replace)
++    assert reg.sync_now()["status"] == "degraded"
++    assert reg.state_path.read_bytes() == before
++    assert reg.payload()["sync"]["last_success_at"] == success
++    assert "commit failure" in reg.payload()["sync"]["persistence_error"]
++
++
++def test_old_success_and_disabled_sync_do_not_look_fresh(tmp_path, monkeypatch):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    monkeypatch.setattr(fs, "_utcnow", lambda: NOW)
++    reg.sync_now()
++    monkeypatch.setattr(fs, "_utcnow", lambda: NOW + timedelta(hours=7))
++    assert reg.payload()["sync"]["status"] == "ok"
++    assert reg.payload()["sync"]["stale"] is True
++    reg._enabled = False
++    assert reg.payload()["sync"]["status"] == "disabled"
++    assert reg.payload()["sync"]["stale"] is True
++
++
++def test_scheduler_immediate_and_next_cycle_persist_and_use_effective_interval(
++    tmp_path, monkeypatch
++):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path, interval_s=1)
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    sleeps = []
++    clock = [NOW]
++    monkeypatch.setattr(fs, "_utcnow", lambda: clock[0])
++
++    async def virtual_sleep(seconds):
++        sleeps.append(seconds)
++        if len(sleeps) == 2:
++            raise asyncio.CancelledError
++        clock[0] += timedelta(seconds=seconds)
++
++    monkeypatch.setattr(asyncio, "sleep", virtual_sleep)
++    with pytest.raises(asyncio.CancelledError):
++        asyncio.run(reg._poll_loop())
++    assert len(sleeps) == 2 and all(299 < delay <= 300 for delay in sleeps)
++    cache = json.loads(reg.state_path.read_text())
++    assert cache["rows"]["2909999"]["checked_at"] == clock[0].isoformat()
++    assert cache["sync"]["counts"]["unchanged"] == 2
++    assert reg.payload()["sync"]["interval_s"] == 300
++
++
++def test_current_fleet_does_not_include_removed_cache_only_wmos(tmp_path):
++    reg = _reg(tmp_path)
++    reg._rows["1234567"] = {"wmo": 1234567}
++    assert {r["wmo"] for r in reg.payload()["floats"]} == {2909999, 6900000}
++
++
++def test_sanitized_internal_identity_is_not_reconstructed():
++    got = fs.FleetSyncRegistry._serve_row(
++        2902086, None, {"platform_type": "PROVOR_III"}, {"ptt": "", "imei": "REDACTED_001"}, NOW
++    )
++    assert got["internal_id"] is None
++    assert got["float_type"] == "PROVOR_III"
++
++
++def test_full_profile_history_uses_dates_not_highest_cycle(tmp_path):
++    j = _juld(NOW)
++    raw = _multi_profile(
++        tmp_path / "all.nc", [1, 2, 3], [60, 61, 62], [j - 10, j - 1, j - 2], cycles=[100, 2, 3]
++    )
++    got = fs.parse_profile(raw, 2909999, None, NOW)
++    assert got["cycle"] == 2 and got["position_index"] == 1
++    assert (got["lat"], got["lon"]) == (2, 61)
++    assert got["cycle_mismatch"] is False
++
++
++def test_full_history_can_supply_newer_good_position_when_latest_cycle_is_bad(
++    tmp_path, monkeypatch
++):
++    fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
++    j = _juld(NOW)
++    aggregate = _multi_profile(
++        tmp_path / "all.nc", [5, 6], [66, 67], [j - 1, j - 0.5], qc=["1", "3"], cycles=[24, 25]
++    )
++    fake.profile_files["2909999_prof.nc"] = aggregate
++    original_size = fake.size
++    fake.size = lambda path: (
++        len(aggregate) if path.endswith("2909999_prof.nc") else original_size(path)
++    )
++    fake.mdtms["2909999_prof.nc"] = "20260920090000"
++    monkeypatch.setattr(reg, "_connect", lambda: fake)
++    assert reg.sync_now()["status"] == "ok"
++    row = next(r for r in reg.payload()["floats"] if r["wmo"] == 2909999)
++    assert (row["lat"], row["lon"]) == (5, 66)
++    assert row["position_file"] == "2909999_prof.nc"
++    assert row["prof_num"] == 25  # Position provenance does not redefine Prof#.
++    assert row["profile_count"] == 24
++    old = copy.deepcopy(reg._rows["2909999"])
++    fake.size = original_size
++    del fake.mdtms["2909999_prof.nc"]
++    assert reg.sync_now()["status"] == "degraded"
++    assert reg._rows["2909999"]["profile_aggregate"] == old["profile_aggregate"]

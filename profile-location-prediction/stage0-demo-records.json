@@ -1,0 +1,158 @@
+{
+  "generated_utc": "2026-09-21T12:15:40Z",
+  "weight_on_prior": 0.2,
+  "prior_lag_days": 2.0,
+  "note": "research demonstration of the proposed output format; the predictor is NOT implemented in the product",
+  "records": {
+    "1902844": {
+      "wmo": 1902844,
+      "platform": "ARVOR",
+      "telemetry": "IRIDIUM_SBD",
+      "issued_from_cycle": 76,
+      "issued_from_fix_utc": "2026-01-25T13:54:51Z",
+      "last_fix_position": [
+        -8.0952,
+        70.9566
+      ],
+      "last_cycle_step_km": [
+        -24.2,
+        20.2
+      ],
+      "predicted_cycle": 77,
+      "target_time_utc": "2026-02-04T13:59:43Z",
+      "target_time_basis": "last observed interval 10.00 d",
+      "predicted_position": [
+        -8.2734,
+        71.1298
+      ],
+      "region": "Equatorial Indian (10S-0)",
+      "method": "blend(last displacement, regional-seasonal prior), w_prior=0.2",
+      "fallback_rung": "blend",
+      "prior_neighbours_within_2deg_1month": 8,
+      "uncertainty": {
+        "r50_km": 46.8,
+        "r90_km": 206.7,
+        "calibration_cases": 273,
+        "calibration_basis": "region, all rungs pooled",
+        "calibrated_on": "all other floats (target float excluded)"
+      },
+      "provenance": {
+        "trajectory_file": "1902844_Rtraj.nc",
+        "sha256": "428ee0f12f3e5d83264eac7325e4f7bc26fcf8fd8f1ee748c928c8047e2aa107",
+        "predictor": "stage0_blend_w0.2",
+        "prior_lag_days": 2.0
+      },
+      "retrospective_check": {
+        "actual_position": [
+          -7.5123,
+          72.2415
+        ],
+        "actual_time_utc": "2026-02-04T07:16:25Z",
+        "error_km": 148.9,
+        "time_error_days": 0.28,
+        "inside_r50": false,
+        "inside_r90": true
+      }
+    },
+    "2902086": {
+      "wmo": 2902086,
+      "platform": "PROVOR_III",
+      "telemetry": "IRIDIUM_SBD",
+      "issued_from_cycle": 243,
+      "issued_from_fix_utc": "2016-02-11T04:14:14Z",
+      "last_fix_position": [
+        18.1783,
+        84.6583
+      ],
+      "last_cycle_step_km": [
+        37.5,
+        67.4
+      ],
+      "predicted_cycle": 244,
+      "target_time_utc": "2016-02-16T04:16:14Z",
+      "target_time_basis": "last observed interval 5.00 d",
+      "predicted_position": [
+        18.5177,
+        85.2046
+      ],
+      "region": "Bay of Bengal (approx)",
+      "method": "blend(last displacement, regional-seasonal prior), w_prior=0.2",
+      "fallback_rung": "blend",
+      "prior_neighbours_within_2deg_1month": 5,
+      "uncertainty": {
+        "r50_km": 15.6,
+        "r90_km": 179.1,
+        "calibration_cases": 264,
+        "calibration_basis": "region+cycle_class+rung",
+        "calibrated_on": "all other floats (target float excluded)"
+      },
+      "provenance": {
+        "trajectory_file": "2902086_Rtraj.nc",
+        "sha256": "455f3cb0f8cbac2f27fe091e08a87f7b9eabfd7ba69c71b52e1fb4343630cc60",
+        "predictor": "stage0_blend_w0.2",
+        "prior_lag_days": 2.0
+      },
+      "retrospective_check": {
+        "actual_position": [
+          18.33,
+          84.7679
+        ],
+        "actual_time_utc": "2016-02-16T04:16:53Z",
+        "error_km": 50.6,
+        "time_error_days": 0.0,
+        "inside_r50": false,
+        "inside_r90": true
+      }
+    },
+    "2902223": {
+      "wmo": 2902223,
+      "platform": "APEX",
+      "telemetry": "ARGOS",
+      "issued_from_cycle": 352,
+      "issued_from_fix_utc": "2026-09-01T23:28:26Z",
+      "last_fix_position": [
+        -45.769,
+        7.081
+      ],
+      "last_cycle_step_km": [
+        27.8,
+        2.5
+      ],
+      "predicted_cycle": 353,
+      "target_time_utc": "2026-09-11T20:29:34Z",
+      "target_time_basis": "last observed interval 9.88 d",
+      "predicted_position": [
+        -45.518,
+        7.1129
+      ],
+      "region": "South Indian Ocean",
+      "method": "last displacement (prior unavailable)",
+      "fallback_rung": "last_displacement_fallback",
+      "prior_neighbours_within_2deg_1month": 3,
+      "uncertainty": {
+        "r50_km": 72.5,
+        "r90_km": 231.2,
+        "calibration_cases": 1269,
+        "calibration_basis": "region+cycle_class+rung",
+        "calibrated_on": "all other floats (target float excluded)"
+      },
+      "provenance": {
+        "trajectory_file": "2902223_Rtraj.nc",
+        "sha256": "b37fc03d22f335db58e4fc800f8f0946fd8160145a16d9b46470c45cb7dcfd7c",
+        "predictor": "stage0_blend_w0.2",
+        "prior_lag_days": 2.0
+      },
+      "retrospective_check": {
+        "actual_position": [
+          -45.723,
+          7.971
+        ],
+        "actual_time_utc": "2026-09-12T01:44:50Z",
+        "error_km": 70.5,
+        "time_error_days": 0.22,
+        "inside_r50": true,
+        "inside_r90": true
+      }
+    }
+  }
+}

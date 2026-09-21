@@ -1,0 +1,130 @@
+calibration: available=True version=1 grid_cells=3
+
+=== regression ring (8): 30 floats parsed, pool transitions=200
+
+=== shipped ring (400): 30 floats parsed, pool transitions=5294
+
+=== full history (all): 30 floats parsed, pool transitions=5294
+
+      wmo | fixes  tr | method(ship)             rung | tr_all method(all)              rung | changed
+------------------------------------------------------------------------------------------------------
+  1902844 |    78  77 | trajectory_extrapolation    4 |     78 trajectory_extrapolation    4 | 
+  2901304 |    24  23 | trajectory_extrapolation    4 |     24 trajectory_extrapolation    4 | 
+  2901305 |    54  52 | trajectory_extrapolation    4 |     54 trajectory_extrapolation    4 | 
+  2901328 |    88  87 | trajectory_extrapolation    4 |     88 trajectory_extrapolation    4 | 
+  2901339 |   216 215 | trajectory_extrapolation    4 |    216 trajectory_extrapolation    4 | 
+  2901350 |   105 104 | trajectory_extrapolation    4 |    105 trajectory_extrapolation    4 | 
+  2902086 |   246 245 | trajectory_extrapolation    4 |    246 trajectory_extrapolation    4 | 
+  2902087 |   301 300 | history_prior               4 |    301 history_prior               4 | 
+  2902088 |   231 230 | trajectory_extrapolation    4 |    231 trajectory_extrapolation    4 | 
+  2902089 |   103 102 | trajectory_extrapolation    4 |    103 trajectory_extrapolation    4 | 
+  2902090 |    18  17 | trajectory_extrapolation    4 |     18 trajectory_extrapolation    4 | 
+  2902091 |    16  15 | history_prior               4 |     16 history_prior               4 | 
+  2902092 |   151 150 | history_prior               4 |    151 history_prior               4 | 
+  2902093 |   236 235 | history_prior               4 |    236 history_prior               4 | 
+  2902113 |     4   3 | history_prior               4 |      4 history_prior               4 | 
+  2902114 |   286 285 | history_prior               4 |    286 history_prior               4 | 
+  2902115 |   240 239 | trajectory_extrapolation    4 |    240 trajectory_extrapolation    4 | 
+  2902118 |   263 262 | history_prior               4 |    263 history_prior               4 | 
+  2902120 |   265 264 | history_prior               4 |    265 history_prior               4 | 
+  2902130 |   191 190 | trajectory_extrapolation    4 |    191 trajectory_extrapolation    4 | 
+  2902131 |    99  98 | trajectory_extrapolation    4 |     99 trajectory_extrapolation    4 | 
+  2902201 |   348 347 | trajectory_extrapolation    4 |    348 trajectory_extrapolation    4 | 
+  2902203 |   361 359 | history_prior               4 |    361 history_prior               4 | 
+  2902206 |   357 355 | trajectory_extrapolation    4 |    357 trajectory_extrapolation    4 | 
+  2902222 |   340 338 | trajectory_extrapolation    4 |    340 trajectory_extrapolation    4 | 
+  2902223 |   319 316 | trajectory_extrapolation    4 |    319 trajectory_extrapolation    4 | 
+  2902224 |   299 297 | trajectory_extrapolation    4 |    299 trajectory_extrapolation    4 | 
+  2904082 |    78  77 | trajectory_extrapolation    4 |     78 trajectory_extrapolation    4 | 
+  6990711 |     8   7 | trajectory_extrapolation    4 |      8 trajectory_extrapolation    4 | 
+  7902408 |     7   5 | trajectory_extrapolation    4 |      7 trajectory_extrapolation    4 | 
+
+floats whose method/rung changes between the SHIPPED ring and full history: 0  (0 means the shipped bound withholds nothing)
+
+=== regression evidence: with the old 8-fix ring the fleet serves {'trajectory_extrapolation': 30}
+    floats the old ring starved of their documented prior (9): [2902087, 2902091, 2902092, 2902093, 2902113, 2902114, 2902118, 2902120, 2902203]
+
+=== prior diagnosis (full-history scenario) ===
+  1902844 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5217 after_lag=5209 in_2deg=10 in_month=3 · live_prior=no · grid_prior=no
+  2901304 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5271 after_lag=26 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2901305 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5242 after_lag=92 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2901328 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5207 after_lag=75 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2901339 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5079 after_lag=3810 in_2deg=15 in_month=0 · live_prior=no · grid_prior=no
+  2901350 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5190 after_lag=2702 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2902086 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5049 after_lag=1550 in_2deg=3 in_month=0 · live_prior=no · grid_prior=no
+  2902087 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=4994 after_lag=1791 in_2deg=43 in_month=8 · live_prior=yes · grid_prior=no
+  2902088 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5064 after_lag=3180 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2902089 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5192 after_lag=469 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2902090 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5277 after_lag=342 in_2deg=22 in_month=4 · live_prior=no · grid_prior=no
+  2902091 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=5279 after_lag=295 in_2deg=14 in_month=14 · live_prior=yes · grid_prior=no
+  2902092 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=5144 after_lag=2113 in_2deg=265 in_month=35 · live_prior=yes · grid_prior=no
+  2902093 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=5059 after_lag=3211 in_2deg=199 in_month=37 · live_prior=yes · grid_prior=no
+  2902113 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=5291 after_lag=592 in_2deg=82 in_month=6 · live_prior=yes · grid_prior=no
+  2902114 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=5009 after_lag=2438 in_2deg=153 in_month=25 · live_prior=yes · grid_prior=no
+  2902115 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5055 after_lag=3590 in_2deg=2 in_month=0 · live_prior=no · grid_prior=no
+  2902118 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=5032 after_lag=3858 in_2deg=31 in_month=8 · live_prior=yes · grid_prior=no
+  2902120 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=5030 after_lag=3869 in_2deg=162 in_month=27 · live_prior=yes · grid_prior=no
+  2902130 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5104 after_lag=3185 in_2deg=2 in_month=2 · live_prior=no · grid_prior=no
+  2902131 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5196 after_lag=2008 in_2deg=2 in_month=1 · live_prior=no · grid_prior=no
+  2902201 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=4947 after_lag=4791 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2902203 history_prior            rung=4 prior_basis=fleet pool (neighbouring recent cycles) | pool=5294 others=4935 after_lag=4929 in_2deg=175 in_month=33 · live_prior=yes · grid_prior=no
+  2902206 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=4939 after_lag=4869 in_2deg=9 in_month=2 · live_prior=no · grid_prior=no
+  2902222 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=4956 after_lag=4953 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2902223 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=4978 after_lag=4978 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2902224 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=4997 after_lag=4989 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  2904082 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5217 after_lag=5209 in_2deg=4 in_month=3 · live_prior=no · grid_prior=no
+  6990711 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5287 after_lag=5012 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+  7902408 trajectory_extrapolation rung=4 prior_basis=None | pool=5294 others=5289 after_lag=5281 in_2deg=0 in_month=0 · live_prior=no · grid_prior=no
+
+=== summary ===
+{
+  "shipped_ring": 400,
+  "floats_withheld_by_regression_ring": [
+    2902087,
+    2902091,
+    2902092,
+    2902093,
+    2902113,
+    2902114,
+    2902118,
+    2902120,
+    2902203
+  ],
+  "regression ring (8)": {
+    "methods": {
+      "trajectory_extrapolation": 30
+    },
+    "rungs": {
+      "4": 30
+    },
+    "transitions_median": 7,
+    "transitions_mean": 6.7,
+    "pool": 200
+  },
+  "shipped ring (400)": {
+    "methods": {
+      "trajectory_extrapolation": 21,
+      "history_prior": 9
+    },
+    "rungs": {
+      "4": 30
+    },
+    "transitions_median": 215,
+    "transitions_mean": 176.5,
+    "pool": 5294
+  },
+  "full history (all)": {
+    "methods": {
+      "trajectory_extrapolation": 21,
+      "history_prior": 9
+    },
+    "rungs": {
+      "4": 30
+    },
+    "transitions_median": 215,
+    "transitions_mean": 176.5,
+    "pool": 5294
+  }
+}
+
+wrote /home/user/prediction-validation/audit/stage0_audit_summary.json

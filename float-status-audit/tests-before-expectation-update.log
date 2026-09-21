@@ -1,0 +1,129 @@
+.....F.FFFF..FFFFFFFF.....                                               [100%]
+=================================== FAILURES ===================================
+_______________ test_summarize_profiles_prefers_realtime_family ________________
+tests/test_fleet_status.py:190: in test_summarize_profiles_prefers_realtime_family
+    assert s["latest"]["prefix"] == "R"
+E   AssertionError: assert 'D' == 'R'
+E     
+E     - R
+E     + D
+_______________ test_parse_rtraj_selects_max_valid_last_message ________________
+tests/test_fleet_status.py:211: in test_parse_rtraj_selects_max_valid_last_message
+    out = fs.parse_rtraj(raw, 2909999, NOW)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:320: in parse_rtraj
+    arr = _julds(ds, field)
+          ^^^^^^^^^^^^^^^^^
+service/fleet_status.py:278: in _julds
+    raise FloatSyncError(f"{name} has absent/unsupported time units: {units!r}")
+E   fleet_status.FloatSyncError: JULD_LAST_MESSAGE has absent/unsupported time units: ''
+_______________ test_parse_rtraj_falls_back_to_transmission_end ________________
+tests/test_fleet_status.py:226: in test_parse_rtraj_falls_back_to_transmission_end
+    out = fs.parse_rtraj(raw, 2909999, NOW)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:320: in parse_rtraj
+    arr = _julds(ds, field)
+          ^^^^^^^^^^^^^^^^^
+service/fleet_status.py:278: in _julds
+    raise FloatSyncError(f"{name} has absent/unsupported time units: {units!r}")
+E   fleet_status.FloatSyncError: JULD_LAST_MESSAGE has absent/unsupported time units: ''
+________________ test_parse_rtraj_falls_back_to_measurement_max ________________
+tests/test_fleet_status.py:243: in test_parse_rtraj_falls_back_to_measurement_max
+    out = fs.parse_rtraj(raw, 2909999, NOW)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:320: in parse_rtraj
+    arr = _julds(ds, field)
+          ^^^^^^^^^^^^^^^^^
+service/fleet_status.py:278: in _julds
+    raise FloatSyncError(f"{name} has absent/unsupported time units: {units!r}")
+E   fleet_status.FloatSyncError: JULD_LAST_MESSAGE has absent/unsupported time units: ''
+_______________ test_parse_rtraj_vintage_file_without_cycle_msgs _______________
+tests/test_fleet_status.py:256: in test_parse_rtraj_vintage_file_without_cycle_msgs
+    out = fs.parse_rtraj(raw, 2909999, NOW)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:340: in parse_rtraj
+    juld = _julds(ds, "JULD")
+           ^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:278: in _julds
+    raise FloatSyncError(f"{name} has absent/unsupported time units: {units!r}")
+E   fleet_status.FloatSyncError: JULD has absent/unsupported time units: ''
+________________ test_parse_rtraj_last_fix_skips_bad_positions _________________
+tests/test_fleet_status.py:287: in test_parse_rtraj_last_fix_skips_bad_positions
+    out = fs.parse_rtraj(raw, 2909999, NOW)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:320: in parse_rtraj
+    arr = _julds(ds, field)
+          ^^^^^^^^^^^^^^^^^
+service/fleet_status.py:278: in _julds
+    raise FloatSyncError(f"{name} has absent/unsupported time units: {units!r}")
+E   fleet_status.FloatSyncError: JULD_LAST_MESSAGE has absent/unsupported time units: ''
+__________________________ test_parse_profile_values ___________________________
+tests/test_fleet_status.py:299: in test_parse_profile_values
+    out = fs.parse_profile(raw, 2909999, 25, NOW)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:375: in parse_profile
+    _check_platform(ds, wmo, "profile")
+service/fleet_status.py:266: in _check_platform
+    raise FloatSyncError(f"{product} PLATFORM_NUMBER missing or does not match WMO {wmo}")
+E   fleet_status.FloatSyncError: profile PLATFORM_NUMBER missing or does not match WMO 2909999
+__________________ test_parse_profile_tolerates_missing_vars ___________________
+tests/test_fleet_status.py:308: in test_parse_profile_tolerates_missing_vars
+    out = fs.parse_profile(raw, 2909999, 25, NOW)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:375: in parse_profile
+    _check_platform(ds, wmo, "profile")
+service/fleet_status.py:266: in _check_platform
+    raise FloatSyncError(f"{product} PLATFORM_NUMBER missing or does not match WMO {wmo}")
+E   fleet_status.FloatSyncError: profile PLATFORM_NUMBER missing or does not match WMO 2909999
+__________________ test_parse_profile_cycle_mismatch_flagged ___________________
+tests/test_fleet_status.py:314: in test_parse_profile_cycle_mismatch_flagged
+    out = fs.parse_profile(raw, 2909999, 25, NOW)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service/fleet_status.py:375: in parse_profile
+    _check_platform(ds, wmo, "profile")
+service/fleet_status.py:266: in _check_platform
+    raise FloatSyncError(f"{product} PLATFORM_NUMBER missing or does not match WMO {wmo}")
+E   fleet_status.FloatSyncError: profile PLATFORM_NUMBER missing or does not match WMO 2909999
+____________________ test_sync_initial_cycle_populates_rows ____________________
+tests/test_fleet_status.py:420: in test_sync_initial_cycle_populates_rows
+    assert res["accepted"] is True and res["status"] == "ok"
+E   AssertionError: assert (True is True and 'degraded' == 'ok'
+E     
+E     - ok
+E     + degraded)
+___________ test_sync_skips_unchanged_and_redownloads_on_mdtm_change ___________
+tests/test_fleet_status.py:450: in test_sync_skips_unchanged_and_redownloads_on_mdtm_change
+    assert reg.sync_now()["status"] == "ok"
+E   AssertionError: assert 'degraded' == 'ok'
+E     
+E     - ok
+E     + degraded
+________________ test_sync_outage_keeps_cache_and_records_error ________________
+tests/test_fleet_status.py:467: in test_sync_outage_keeps_cache_and_records_error
+    assert reg.sync_now()["status"] == "ok"
+E   AssertionError: assert 'degraded' == 'ok'
+E     
+E     - ok
+E     + degraded
+_____________ test_sync_per_float_failure_degrades_and_retains_row _____________
+tests/test_fleet_status.py:488: in test_sync_per_float_failure_degrades_and_retains_row
+    assert reg.sync_now()["status"] == "ok"
+E   AssertionError: assert 'degraded' == 'ok'
+E     
+E     - ok
+E     + degraded
+=========================== short test summary info ============================
+FAILED tests/test_fleet_status.py::test_summarize_profiles_prefers_realtime_family
+FAILED tests/test_fleet_status.py::test_parse_rtraj_selects_max_valid_last_message
+FAILED tests/test_fleet_status.py::test_parse_rtraj_falls_back_to_transmission_end
+FAILED tests/test_fleet_status.py::test_parse_rtraj_falls_back_to_measurement_max
+FAILED tests/test_fleet_status.py::test_parse_rtraj_vintage_file_without_cycle_msgs
+FAILED tests/test_fleet_status.py::test_parse_rtraj_last_fix_skips_bad_positions
+FAILED tests/test_fleet_status.py::test_parse_profile_values - fleet_status.F...
+FAILED tests/test_fleet_status.py::test_parse_profile_tolerates_missing_vars
+FAILED tests/test_fleet_status.py::test_parse_profile_cycle_mismatch_flagged
+FAILED tests/test_fleet_status.py::test_sync_initial_cycle_populates_rows - A...
+FAILED tests/test_fleet_status.py::test_sync_skips_unchanged_and_redownloads_on_mdtm_change
+FAILED tests/test_fleet_status.py::test_sync_outage_keeps_cache_and_records_error
+FAILED tests/test_fleet_status.py::test_sync_per_float_failure_degrades_and_retains_row
+13 failed, 13 passed in 1.79s

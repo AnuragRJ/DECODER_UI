@@ -1,0 +1,24 @@
+........................................................................ [ 64%]
+.......................................                                  [100%]
+=============================== warnings summary ===============================
+decoder-ui/tests/test_fleet_status.py: 7 warnings
+decoder-ui/tests/test_fleet_status_audit.py: 19 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/tests/test_fleet_status.py:129: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    ds.createVariable("PLATFORM_NUMBER", "S1", ("N_PROF", "STRING8"))[:] = np.frombuffer(
+
+decoder-ui/tests/test_fleet_status_audit.py::test_profile_position_never_combines_separate_n_prof_rows
+decoder-ui/tests/test_fleet_status_audit.py::test_profile_position_never_combines_separate_n_prof_rows
+decoder-ui/tests/test_fleet_status_audit.py::test_profile_position_never_combines_separate_n_prof_rows
+decoder-ui/tests/test_fleet_status_audit.py::test_location_time_is_not_profile_measurement_time
+decoder-ui/tests/test_fleet_status_audit.py::test_full_profile_history_uses_dates_not_highest_cycle
+decoder-ui/tests/test_fleet_status_audit.py::test_full_profile_history_uses_dates_not_highest_cycle
+decoder-ui/tests/test_fleet_status_audit.py::test_full_profile_history_uses_dates_not_highest_cycle
+decoder-ui/tests/test_fleet_status_audit.py::test_full_history_can_supply_newer_good_position_when_latest_cycle_is_bad
+decoder-ui/tests/test_fleet_status_audit.py::test_full_history_can_supply_newer_good_position_when_latest_cycle_is_bad
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/tests/test_fleet_status_audit.py:57: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    pn[i, :] = np.frombuffer(b"2909999 ", dtype="S1")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+111 passed, 35 warnings in 1.13s

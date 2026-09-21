@@ -1,0 +1,69 @@
+{
+  "captured_at": "2026-09-21T19:26:56.348Z",
+  "base": "http://127.0.0.1:3000",
+  "wmo": 1902844,
+  "fleet_stage_counts": {
+    "stage1": 26,
+    "stage0": 4
+  },
+  "payload": {
+    "predictor_stage": "stage1",
+    "predictor_stage_label": "Stage-1 cycle-scale step",
+    "method": "cycle_window",
+    "method_label": "Cycle-Scale Window (Stage-1)",
+    "fallback_rung": 4,
+    "validation_samples": 2145,
+    "validation_source": "Cycle-Scale Window (Stage-1) · Arabian Sea · decadal cycle",
+    "r50_km": 21.9,
+    "r90_km": 75.4,
+    "step_basis": "cycle-scale window 9.79 d = 1.00 x the 9.79 d expected interval (1 fix(es) back)",
+    "step_span_days": 9.79,
+    "step_ratio": 1,
+    "step_cycles": 1,
+    "target_time_iso": "2026-05-14T01:55:52Z",
+    "prediction_horizon_days": 9.79,
+    "issued_from_iso": "2026-05-04T06:56:59Z"
+  },
+  "drawer_rows": {
+    "Predicted Latitude": "8.917°N",
+    "Predicted Longitude": "63.533°E",
+    "Expected Next Profile": "2026-05-14 01:55 UTC",
+    "Prediction Horizon": "+9.79 d",
+    "Prediction Method": "Cycle-Scale Window (Stage-1)",
+    "Predictor stage": "Stage-1 cycle-scale step",
+    "Cycle-scale step basis": "cycle-scale window 9.79 d = 1.00 x the 9.79 d expected interval (1 fix(es) back)",
+    "Fallback rung": "4 — validated history/prior baseline",
+    "Trajectory history available": "yes — 77 cycle hop(s) in the cached trajectory",
+    "Trajectory transitions": "77",
+    "Validation Sample Count": "2145",
+    "R50 (empirical)": "R50: 21.9 km — 50% of historical validation prediction errors were within this distance.",
+    "R90 (empirical)": "R90: 75.4 km — 90% of historical validation prediction errors were within this distance.",
+    "Prediction Status": "AVAILABLE",
+    "Issued from": "2026-05-04 06:56 UTC · 77 recent cycle hop(s)",
+    "Cycle interval used": "9.79 d (profile history)",
+    "Region / cycle class": "Arabian Sea · decadal",
+    "Regional/seasonal prior": "not available for this position",
+    "Ocean currents": "no ocean-current provider configured for this deployment",
+    "Calibration basis": "Cycle-Scale Window (Stage-1) · Arabian Sea · decadal cycle"
+  },
+  "stage_note": "Stage-1 cycle-scale step in use for this prediction. It is under evaluation: Stage-0 (last-hop step) remains the shipped baseline and its R50/R90 are not reused here.",
+  "map_point_keys": {
+    "kinds": [
+      "prediction-link",
+      "prediction-ring",
+      "prediction-ring",
+      "prediction"
+    ],
+    "graphics": 4
+  },
+  "checks": {
+    "stage_row_names_stage1": true,
+    "step_basis_row_present": true,
+    "step_basis_matches_payload": true,
+    "note_keeps_stage0_as_baseline": true,
+    "note_denies_radius_reuse": true,
+    "r50_row_is_stage1_radius": true,
+    "r90_row_is_stage1_radius": true,
+    "samples_row_matches_payload": true
+  }
+}

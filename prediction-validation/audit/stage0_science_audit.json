@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-09-21T21:15:18.344487Z",
+  "payload": "http://127.0.0.1:8000/api/fleet-status (live)",
+  "replay_mode": "off",
+  "serving_stage1": false,
+  "calibration": {
+    "path": "/home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/data/fleet_status/prediction_calibration.json",
+    "generated_at": "2026-09-21T12:38:49Z",
+    "stage1_path": null,
+    "floats": null,
+    "transitions": null
+  },
+  "floats": 30,
+  "available": 30,
+  "prior_served": [
+    2902087,
+    2902091,
+    2902092,
+    2902093,
+    2902113,
+    2902114,
+    2902118,
+    2902120,
+    2902203
+  ],
+  "prior_withheld": [
+    1902844,
+    2901304,
+    2901305,
+    2901328,
+    2901339,
+    2901350,
+    2902086,
+    2902088,
+    2902089,
+    2902090,
+    2902115,
+    2902130,
+    2902131,
+    2902201,
+    2902206,
+    2902222,
+    2902223,
+    2902224,
+    2904082,
+    6990711,
+    7902408
+  ],
+  "prior_exclusion_decisive_on": 8,
+  "pool_sizes": {
+    "min": 5294,
+    "max": 5294
+  },
+  "applied_hop_km": {
+    "median": 35.8,
+    "max": 191.3
+  },
+  "stale_anchor_floats": [
+    {
+      "wmo": 1902844,
+      "anchor_age_days": 137,
+      "anchor_vs_display_km": 322.0,
+      "applied_hop_km": 14.9
+    },
+    {
+      "wmo": 2901350,
+      "anchor_age_days": 870,
+      "anchor_vs_display_km": 4545.8,
+      "applied_hop_km": 61.6
+    },
+    {
+      "wmo": 2902224,
+      "anchor_age_days": 110,
+      "anchor_vs_display_km": 10.2,
+      "applied_hop_km": 138.1
+    },
+    {
+      "wmo": 2904082,
+      "anchor_age_days": 137,
+      "anchor_vs_display_km": 205.3,
+      "applied_hop_km": 31.6
+    },
+    {
+      "wmo": 7902408,
+      "anchor_age_days": 137,
+      "anchor_vs_display_km": 31.2,
+      "applied_hop_km": 64.8
+    }
+  ],
+  "steps_within_own_r90_pct": 96.7,
+  "checks": [
+    {
+      "check": "A0. every served row's stage has its own artefact, and the Stage-0 artefact is intact",
+      "passed": true,
+      "detail": "served stages=['stage0']; Stage-1 artefact present; Stage-0 artefact methods=['history_prior', 'persistence', 'regional_prior', 'trajectory_extrapolation'], stage key=absent"
+    },
+    {
+      "check": "A. every served radius is the calibrated value for its method/region/stratum",
+      "passed": true,
+      "detail": "30 predictions checked against the artefact of the stage that served each row (['stage0'])"
+    },
+    {
+      "check": "B. every served prediction quotes the calibration stratum it came from",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "C. every horizon equals the float's own observed cycle interval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "D. fleet diagnostics are the aggregate of the per-row predictions",
+      "passed": true,
+      "detail": "{\"trajectory_extrapolation\": 21, \"history_prior\": 9}"
+    },
+    {
+      "check": "E. predictions are independent of the wall clock (no now()-driven drift)",
+      "passed": true,
+      "detail": "30 floats re-run at T and T+5 d"
+    },
+    {
+      "check": "E2. the served prediction equals a fresh run of the shipped code on the same cache",
+      "passed": true,
+      "detail": "30 predictions reproduced (position, method, rung, radii, stratum)"
+    },
+    {
+      "check": "F1. the served prior never uses the target float's own hops",
+      "passed": true,
+      "detail": "exclusion decisive on 8 float(s); unchanged elsewhere (unit-tested)"
+    },
+    {
+      "check": "F2. the documented delivery lag is honoured by the accepted neighbours",
+      "passed": true,
+      "detail": "2.0-day lag, float-aware pool"
+    },
+    {
+      "check": "F3. every served prior reproduces exactly under the documented rule",
+      "passed": true,
+      "detail": "9 floats: 2.0 deg radius, +/-1 month, 2.0-day lag, >= 5 neighbours"
+    },
+    {
+      "check": "F4. every float without a prior genuinely fails the documented conditions",
+      "passed": true,
+      "detail": "21 floats re-checked \u2014 no higher rung was skipped"
+    },
+    {
+      "check": "G. predictors only see transitions that start at or before the issuing fix",
+      "passed": true,
+      "detail": "no future transitions in any float's features"
+    },
+    {
+      "check": "H. no WMO or coordinate literals in the prediction feature",
+      "passed": true,
+      "detail": "13 files scanned (fleet_status + prediction/)"
+    },
+    {
+      "check": "I. the validation generator is chronological and float-aware by construction",
+      "passed": true,
+      "detail": "prior pool excludes the target float and lags its inputs"
+    },
+    {
+      "check": "I2. the shipped artefact records its corpus, protocol and radii",
+      "passed": true,
+      "detail": "cases={'history_prior': 2153, 'persistence': 5187, 'regional_prior': 2153, 'trajectory_extrapolation': 5187} floats=[] strata_bins=40 regions=4 generated_at=2026-09-21T12:38:49Z"
+    },
+    {
+      "check": "J. every prediction is a real one-cycle hop from the fix it was issued from",
+      "passed": true,
+      "detail": "applied hops: median 35.8 km, max 191.3 km; apparent distance from the displayed position: median 39.6 km"
+    },
+    {
+      "check": "J2. the served steps are consistent with the calibrated R90 they are judged against",
+      "passed": true,
+      "detail": "96.7% of served steps lie within their own R90 (a 90th percentile threshold, so single exceedances are expected): [{\"wmo\": 2902092, \"applied_hop_km\": 69.1, \"r90_km\": 49.6}]"
+    }
+  ],
+  "passed": 17,
+  "failed": 0
+}

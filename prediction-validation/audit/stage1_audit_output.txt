@@ -1,0 +1,57 @@
+=== 1. last-transition duration / expected interval, all corpus cycles ===
+n=5265  min=0.000  p10=0.992  median=1.000  p90=1.007  max=36.028
+   ratio       0-0.25 :    207  ( 3.93%)
+   ratio     0.25-0.5 :      3  ( 0.06%)
+   ratio     0.5-0.75 :      2  ( 0.04%)
+   ratio       0.75-1 :   2433  (46.21%)
+   ratio       1-1.25 :   2596  (49.31%)
+   ratio     1.25-1.5 :      0  ( 0.00%)
+   ratio        1.5-2 :      7  ( 0.13%)
+   ratio          2-3 :      8  ( 0.15%)
+   ratio          3-5 :      4  ( 0.08%)
+   ratio        5-inf :      5  ( 0.09%)
+
+=== 2. floats whose NEWEST transition is sub-cycle (< 0.5 x interval) ===
+   2902089: last hop 0.737 d = 0.147 x interval (4.998 d), 102 transitions cached
+   2902113: last hop 0.5 d = 0.05 x interval (10.0 d), 3 transitions cached
+   -> 2 float(s)
+
+=== 3. floats whose NEWEST transition spans multiple cycles (> 1.5 x interval) ===
+   2902091: last hop 10.03 d = 10.03 x interval (1.0 d), 15 transitions cached
+   -> 1 float(s)
+
+   (cycle-scale newest hop: 27 float(s))
+
+=== 4. Stage-0 rung-4 step (newest transition as one cycle), chronological replay ===
+{
+  "n": 5265,
+  "median_km": 30.2,
+  "mean_km": 84.6,
+  "p90_km": 182.8,
+  "rmse_km": 273.3,
+  "hit25_pct": 43.5,
+  "hit50_pct": 64.8,
+  "hit100_pct": 79.3
+}
+   split by the sampling class of the hop that produced the step:
+   sub_cycle    {'n': 210, 'median_km': 13.0, 'mean_km': 241.8, 'p90_km': 445.3, 'rmse_km': 892.0, 'hit25_pct': 68.6, 'hit50_pct': 73.8, 'hit100_pct': 79.5}
+   cycle_scale  {'n': 5031, 'median_km': 30.8, 'mean_km': 77.0, 'p90_km': 178.3, 'rmse_km': 206.7, 'hit25_pct': 42.6, 'hit50_pct': 64.5, 'hit100_pct': 79.4}
+   multi_cycle  {'n': 24, 'median_km': 59.9, 'mean_km': 302.2, 'p90_km': 1119.8, 'rmse_km': 683.0, 'hit25_pct': 12.5, 'hit50_pct': 37.5, 'hit100_pct': 66.7}
+   worst floats by median error: [('2902113', 372.9), ('2902223', 101.5), ('2902115', 94.9), ('2902090', 86.7), ('2902130', 84.4)]
+
+=== 5. cycle-scale window availability at prediction time (fixes <= t(N)) ===
+{
+  "cases": 5265,
+  "in_band": 5150,
+  "in_band_pct": 97.8,
+  "normalisable_multi_cycle": 20,
+  "shorter_than_band": 86,
+  "no_window_at_all": 9,
+  "band": [
+    0.75,
+    1.25
+  ]
+}
+   floats with at least one in-band window: 29 | without: [2902113]
+
+wrote /home/user/prediction-validation/audit/stage1_audit.json and /home/user/prediction-validation/audit/stage1_audit_summary.json

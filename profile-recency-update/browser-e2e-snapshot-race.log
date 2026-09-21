@@ -1,0 +1,515 @@
+
+> frontend@1.0.0 test:fleet
+> node e2e/fleetStatus.e2e.mjs
+
+PASS  cache endpoint serves the configured fleet  32 floats; sync=ok
+PASS  live verification is fresh, not disabled or stale
+PASS  Float Status entry and page preserved
+PASS  sync and summary metrics visible
+PASS  actual ArcGIS map is ready (not obsolete SVG assertion)
+PASS  map basemap layers have loaded before visual evidence
+PASS  monitoring source is prof.nc JULD
+PASS  all and only positioned floats have actual map markers  30 markers
+PASS  WMO 1902844: marker/API coordinates agree
+PASS  WMO 2901304: marker/API coordinates agree
+PASS  WMO 2901305: marker/API coordinates agree
+PASS  WMO 2901328: marker/API coordinates agree
+PASS  WMO 2901339: marker/API coordinates agree
+PASS  WMO 2901350: marker/API coordinates agree
+PASS  WMO 2902086: marker/API coordinates agree
+PASS  WMO 2902087: marker/API coordinates agree
+PASS  WMO 2902088: marker/API coordinates agree
+PASS  WMO 2902089: marker/API coordinates agree
+PASS  WMO 2902090: marker/API coordinates agree
+PASS  WMO 2902091: marker/API coordinates agree
+PASS  WMO 2902092: marker/API coordinates agree
+PASS  WMO 2902093: marker/API coordinates agree
+PASS  WMO 2902113: marker/API coordinates agree
+PASS  WMO 2902114: marker/API coordinates agree
+PASS  WMO 2902115: marker/API coordinates agree
+PASS  WMO 2902118: marker/API coordinates agree
+PASS  WMO 2902120: marker/API coordinates agree
+PASS  WMO 2902130: marker/API coordinates agree
+PASS  WMO 2902131: marker/API coordinates agree
+PASS  WMO 2902201: marker/API coordinates agree
+PASS  WMO 2902203: marker/API coordinates agree
+PASS  WMO 2902206: marker/API coordinates agree
+PASS  WMO 2902222: marker/API coordinates agree
+PASS  WMO 2902223: marker/API coordinates agree
+PASS  WMO 2902224: marker/API coordinates agree
+PASS  WMO 2904082: marker/API coordinates agree
+PASS  WMO 6990711: marker/API coordinates agree
+PASS  WMO 7902408: marker/API coordinates agree
+PASS  WMO 1902844: search selects exactly one row
+PASS  WMO 1902844: table fields match API  []
+PASS  WMO 1902844: Last Profile Date is UTC
+PASS  WMO 1902844: status follows exact 10/60-day policy
+PASS  WMO 1902844: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 1902844: unrounded elapsed days and floor(days/10)
+PASS  WMO 1902844: estimate tooltip is explicit
+PASS  WMO 1902844: drawer status and estimate agree
+PASS  WMO 1902844: drawer includes WMO
+PASS  WMO 1902844: drawer includes Internal ID
+PASS  WMO 1902844: drawer includes Float Type
+PASS  WMO 1902844: drawer includes Prof#
+PASS  WMO 1902844: drawer includes Latitude
+PASS  WMO 1902844: drawer includes Longitude
+PASS  WMO 1902844: drawer includes Last Profile Date
+PASS  WMO 1902844: drawer includes Expected Next Profile
+PASS  WMO 1902844: drawer includes Days Since Last Profile
+PASS  WMO 1902844: drawer includes Approx. Profiles Missed
+PASS  WMO 1902844: drawer includes Data Status
+PASS  WMO 1902844: prof.nc JULD -> API date
+PASS  WMO 1902844: identity, Prof# and verified positions unchanged
+PASS  WMO 1902844: profile wording only
+PASS  WMO 2901304: search selects exactly one row
+PASS  WMO 2901304: table fields match API  []
+PASS  WMO 2901304: Last Profile Date is UTC
+PASS  WMO 2901304: status follows exact 10/60-day policy
+PASS  WMO 2901304: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2901304: unrounded elapsed days and floor(days/10)
+PASS  WMO 2901304: estimate tooltip is explicit
+PASS  WMO 2901304: drawer status and estimate agree
+PASS  WMO 2901304: drawer includes WMO
+PASS  WMO 2901304: drawer includes Internal ID
+PASS  WMO 2901304: drawer includes Float Type
+PASS  WMO 2901304: drawer includes Prof#
+PASS  WMO 2901304: drawer includes Latitude
+PASS  WMO 2901304: drawer includes Longitude
+PASS  WMO 2901304: drawer includes Last Profile Date
+PASS  WMO 2901304: drawer includes Expected Next Profile
+PASS  WMO 2901304: drawer includes Days Since Last Profile
+PASS  WMO 2901304: drawer includes Approx. Profiles Missed
+PASS  WMO 2901304: drawer includes Data Status
+PASS  WMO 2901304: prof.nc JULD -> API date
+PASS  WMO 2901304: identity, Prof# and verified positions unchanged
+PASS  WMO 2901304: profile wording only
+PASS  WMO 2901305: search selects exactly one row
+PASS  WMO 2901305: table fields match API  []
+PASS  WMO 2901305: Last Profile Date is UTC
+PASS  WMO 2901305: status follows exact 10/60-day policy
+PASS  WMO 2901305: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2901305: unrounded elapsed days and floor(days/10)
+PASS  WMO 2901305: estimate tooltip is explicit
+PASS  WMO 2901305: drawer status and estimate agree
+PASS  WMO 2901305: drawer includes WMO
+PASS  WMO 2901305: drawer includes Internal ID
+PASS  WMO 2901305: drawer includes Float Type
+PASS  WMO 2901305: drawer includes Prof#
+PASS  WMO 2901305: drawer includes Latitude
+PASS  WMO 2901305: drawer includes Longitude
+PASS  WMO 2901305: drawer includes Last Profile Date
+PASS  WMO 2901305: drawer includes Expected Next Profile
+PASS  WMO 2901305: drawer includes Days Since Last Profile
+PASS  WMO 2901305: drawer includes Approx. Profiles Missed
+PASS  WMO 2901305: drawer includes Data Status
+PASS  WMO 2901305: prof.nc JULD -> API date
+PASS  WMO 2901305: identity, Prof# and verified positions unchanged
+PASS  WMO 2901305: profile wording only
+PASS  WMO 2901328: search selects exactly one row
+PASS  WMO 2901328: table fields match API  []
+PASS  WMO 2901328: Last Profile Date is UTC
+PASS  WMO 2901328: status follows exact 10/60-day policy
+PASS  WMO 2901328: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2901328: unrounded elapsed days and floor(days/10)
+PASS  WMO 2901328: estimate tooltip is explicit
+PASS  WMO 2901328: drawer status and estimate agree
+PASS  WMO 2901328: drawer includes WMO
+PASS  WMO 2901328: drawer includes Internal ID
+PASS  WMO 2901328: drawer includes Float Type
+PASS  WMO 2901328: drawer includes Prof#
+PASS  WMO 2901328: drawer includes Latitude
+PASS  WMO 2901328: drawer includes Longitude
+PASS  WMO 2901328: drawer includes Last Profile Date
+PASS  WMO 2901328: drawer includes Expected Next Profile
+PASS  WMO 2901328: drawer includes Days Since Last Profile
+PASS  WMO 2901328: drawer includes Approx. Profiles Missed
+PASS  WMO 2901328: drawer includes Data Status
+PASS  WMO 2901328: prof.nc JULD -> API date
+PASS  WMO 2901328: identity, Prof# and verified positions unchanged
+PASS  WMO 2901328: profile wording only
+PASS  WMO 2901339: search selects exactly one row
+PASS  WMO 2901339: table fields match API  []
+PASS  WMO 2901339: Last Profile Date is UTC
+PASS  WMO 2901339: status follows exact 10/60-day policy
+PASS  WMO 2901339: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2901339: unrounded elapsed days and floor(days/10)
+PASS  WMO 2901339: estimate tooltip is explicit
+PASS  WMO 2901339: drawer status and estimate agree
+PASS  WMO 2901339: drawer includes WMO
+PASS  WMO 2901339: drawer includes Internal ID
+PASS  WMO 2901339: drawer includes Float Type
+PASS  WMO 2901339: drawer includes Prof#
+PASS  WMO 2901339: drawer includes Latitude
+PASS  WMO 2901339: drawer includes Longitude
+PASS  WMO 2901339: drawer includes Last Profile Date
+PASS  WMO 2901339: drawer includes Expected Next Profile
+PASS  WMO 2901339: drawer includes Days Since Last Profile
+PASS  WMO 2901339: drawer includes Approx. Profiles Missed
+PASS  WMO 2901339: drawer includes Data Status
+PASS  WMO 2901339: prof.nc JULD -> API date
+PASS  WMO 2901339: identity, Prof# and verified positions unchanged
+PASS  WMO 2901339: profile wording only
+PASS  WMO 2901350: search selects exactly one row
+PASS  WMO 2901350: table fields match API  []
+PASS  WMO 2901350: Last Profile Date is UTC
+PASS  WMO 2901350: status follows exact 10/60-day policy
+PASS  WMO 2901350: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2901350: unrounded elapsed days and floor(days/10)
+PASS  WMO 2901350: estimate tooltip is explicit
+PASS  WMO 2901350: drawer status and estimate agree
+PASS  WMO 2901350: drawer includes WMO
+PASS  WMO 2901350: drawer includes Internal ID
+PASS  WMO 2901350: drawer includes Float Type
+PASS  WMO 2901350: drawer includes Prof#
+PASS  WMO 2901350: drawer includes Latitude
+PASS  WMO 2901350: drawer includes Longitude
+PASS  WMO 2901350: drawer includes Last Profile Date
+PASS  WMO 2901350: drawer includes Expected Next Profile
+PASS  WMO 2901350: drawer includes Days Since Last Profile
+PASS  WMO 2901350: drawer includes Approx. Profiles Missed
+PASS  WMO 2901350: drawer includes Data Status
+PASS  WMO 2901350: prof.nc JULD -> API date
+PASS  WMO 2901350: identity, Prof# and verified positions unchanged
+PASS  WMO 2901350: profile wording only
+PASS  WMO 2902086: search selects exactly one row
+PASS  WMO 2902086: table fields match API  []
+PASS  WMO 2902086: Last Profile Date is UTC
+PASS  WMO 2902086: status follows exact 10/60-day policy
+PASS  WMO 2902086: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902086: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902086: estimate tooltip is explicit
+PASS  WMO 2902086: drawer status and estimate agree
+PASS  WMO 2902086: drawer includes WMO
+PASS  WMO 2902086: drawer includes Internal ID
+PASS  WMO 2902086: drawer includes Float Type
+PASS  WMO 2902086: drawer includes Prof#
+PASS  WMO 2902086: drawer includes Latitude
+PASS  WMO 2902086: drawer includes Longitude
+PASS  WMO 2902086: drawer includes Last Profile Date
+PASS  WMO 2902086: drawer includes Expected Next Profile
+PASS  WMO 2902086: drawer includes Days Since Last Profile
+PASS  WMO 2902086: drawer includes Approx. Profiles Missed
+PASS  WMO 2902086: drawer includes Data Status
+PASS  WMO 2902086: prof.nc JULD -> API date
+PASS  WMO 2902086: identity, Prof# and verified positions unchanged
+PASS  WMO 2902086: profile wording only
+PASS  WMO 2902087: search selects exactly one row
+PASS  WMO 2902087: table fields match API  []
+PASS  WMO 2902087: Last Profile Date is UTC
+PASS  WMO 2902087: status follows exact 10/60-day policy
+PASS  WMO 2902087: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902087: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902087: estimate tooltip is explicit
+PASS  WMO 2902087: drawer status and estimate agree
+PASS  WMO 2902087: drawer includes WMO
+PASS  WMO 2902087: drawer includes Internal ID
+PASS  WMO 2902087: drawer includes Float Type
+PASS  WMO 2902087: drawer includes Prof#
+PASS  WMO 2902087: drawer includes Latitude
+PASS  WMO 2902087: drawer includes Longitude
+PASS  WMO 2902087: drawer includes Last Profile Date
+PASS  WMO 2902087: drawer includes Expected Next Profile
+PASS  WMO 2902087: drawer includes Days Since Last Profile
+PASS  WMO 2902087: drawer includes Approx. Profiles Missed
+PASS  WMO 2902087: drawer includes Data Status
+PASS  WMO 2902087: prof.nc JULD -> API date
+PASS  WMO 2902087: identity, Prof# and verified positions unchanged
+PASS  WMO 2902087: profile wording only
+PASS  WMO 2902088: search selects exactly one row
+PASS  WMO 2902088: table fields match API  []
+PASS  WMO 2902088: Last Profile Date is UTC
+PASS  WMO 2902088: status follows exact 10/60-day policy
+PASS  WMO 2902088: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902088: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902088: estimate tooltip is explicit
+PASS  WMO 2902088: drawer status and estimate agree
+PASS  WMO 2902088: drawer includes WMO
+PASS  WMO 2902088: drawer includes Internal ID
+PASS  WMO 2902088: drawer includes Float Type
+PASS  WMO 2902088: drawer includes Prof#
+PASS  WMO 2902088: drawer includes Latitude
+PASS  WMO 2902088: drawer includes Longitude
+PASS  WMO 2902088: drawer includes Last Profile Date
+PASS  WMO 2902088: drawer includes Expected Next Profile
+PASS  WMO 2902088: drawer includes Days Since Last Profile
+PASS  WMO 2902088: drawer includes Approx. Profiles Missed
+PASS  WMO 2902088: drawer includes Data Status
+PASS  WMO 2902088: prof.nc JULD -> API date
+PASS  WMO 2902088: identity, Prof# and verified positions unchanged
+PASS  WMO 2902088: profile wording only
+PASS  WMO 2902089: search selects exactly one row
+PASS  WMO 2902089: table fields match API  []
+PASS  WMO 2902089: Last Profile Date is UTC
+PASS  WMO 2902089: status follows exact 10/60-day policy
+PASS  WMO 2902089: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902089: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902089: estimate tooltip is explicit
+PASS  WMO 2902089: drawer status and estimate agree
+PASS  WMO 2902089: drawer includes WMO
+PASS  WMO 2902089: drawer includes Internal ID
+PASS  WMO 2902089: drawer includes Float Type
+PASS  WMO 2902089: drawer includes Prof#
+PASS  WMO 2902089: drawer includes Latitude
+PASS  WMO 2902089: drawer includes Longitude
+PASS  WMO 2902089: drawer includes Last Profile Date
+PASS  WMO 2902089: drawer includes Expected Next Profile
+PASS  WMO 2902089: drawer includes Days Since Last Profile
+PASS  WMO 2902089: drawer includes Approx. Profiles Missed
+PASS  WMO 2902089: drawer includes Data Status
+PASS  WMO 2902089: prof.nc JULD -> API date
+PASS  WMO 2902089: identity, Prof# and verified positions unchanged
+PASS  WMO 2902089: profile wording only
+PASS  WMO 2902090: search selects exactly one row
+PASS  WMO 2902090: table fields match API  []
+PASS  WMO 2902090: Last Profile Date is UTC
+PASS  WMO 2902090: status follows exact 10/60-day policy
+PASS  WMO 2902090: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902090: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902090: estimate tooltip is explicit
+PASS  WMO 2902090: drawer status and estimate agree
+PASS  WMO 2902090: drawer includes WMO
+PASS  WMO 2902090: drawer includes Internal ID
+PASS  WMO 2902090: drawer includes Float Type
+PASS  WMO 2902090: drawer includes Prof#
+PASS  WMO 2902090: drawer includes Latitude
+PASS  WMO 2902090: drawer includes Longitude
+PASS  WMO 2902090: drawer includes Last Profile Date
+PASS  WMO 2902090: drawer includes Expected Next Profile
+PASS  WMO 2902090: drawer includes Days Since Last Profile
+PASS  WMO 2902090: drawer includes Approx. Profiles Missed
+PASS  WMO 2902090: drawer includes Data Status
+PASS  WMO 2902090: prof.nc JULD -> API date
+PASS  WMO 2902090: identity, Prof# and verified positions unchanged
+PASS  WMO 2902090: profile wording only
+PASS  WMO 2902091: search selects exactly one row
+PASS  WMO 2902091: table fields match API  []
+PASS  WMO 2902091: Last Profile Date is UTC
+PASS  WMO 2902091: status follows exact 10/60-day policy
+PASS  WMO 2902091: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902091: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902091: estimate tooltip is explicit
+PASS  WMO 2902091: drawer status and estimate agree
+PASS  WMO 2902091: drawer includes WMO
+PASS  WMO 2902091: drawer includes Internal ID
+PASS  WMO 2902091: drawer includes Float Type
+PASS  WMO 2902091: drawer includes Prof#
+PASS  WMO 2902091: drawer includes Latitude
+PASS  WMO 2902091: drawer includes Longitude
+PASS  WMO 2902091: drawer includes Last Profile Date
+PASS  WMO 2902091: drawer includes Expected Next Profile
+PASS  WMO 2902091: drawer includes Days Since Last Profile
+PASS  WMO 2902091: drawer includes Approx. Profiles Missed
+PASS  WMO 2902091: drawer includes Data Status
+PASS  WMO 2902091: prof.nc JULD -> API date
+PASS  WMO 2902091: identity, Prof# and verified positions unchanged
+PASS  WMO 2902091: profile wording only
+PASS  WMO 2902092: search selects exactly one row
+PASS  WMO 2902092: table fields match API  []
+PASS  WMO 2902092: Last Profile Date is UTC
+PASS  WMO 2902092: status follows exact 10/60-day policy
+PASS  WMO 2902092: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902092: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902092: estimate tooltip is explicit
+PASS  WMO 2902092: drawer status and estimate agree
+PASS  WMO 2902092: drawer includes WMO
+PASS  WMO 2902092: drawer includes Internal ID
+PASS  WMO 2902092: drawer includes Float Type
+PASS  WMO 2902092: drawer includes Prof#
+PASS  WMO 2902092: drawer includes Latitude
+PASS  WMO 2902092: drawer includes Longitude
+PASS  WMO 2902092: drawer includes Last Profile Date
+PASS  WMO 2902092: drawer includes Expected Next Profile
+PASS  WMO 2902092: drawer includes Days Since Last Profile
+PASS  WMO 2902092: drawer includes Approx. Profiles Missed
+PASS  WMO 2902092: drawer includes Data Status
+PASS  WMO 2902092: prof.nc JULD -> API date
+PASS  WMO 2902092: identity, Prof# and verified positions unchanged
+PASS  WMO 2902092: profile wording only
+PASS  WMO 2902093: search selects exactly one row
+PASS  WMO 2902093: table fields match API  []
+PASS  WMO 2902093: Last Profile Date is UTC
+PASS  WMO 2902093: status follows exact 10/60-day policy
+PASS  WMO 2902093: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902093: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902093: estimate tooltip is explicit
+PASS  WMO 2902093: drawer status and estimate agree
+PASS  WMO 2902093: drawer includes WMO
+PASS  WMO 2902093: drawer includes Internal ID
+PASS  WMO 2902093: drawer includes Float Type
+PASS  WMO 2902093: drawer includes Prof#
+PASS  WMO 2902093: drawer includes Latitude
+PASS  WMO 2902093: drawer includes Longitude
+PASS  WMO 2902093: drawer includes Last Profile Date
+PASS  WMO 2902093: drawer includes Expected Next Profile
+PASS  WMO 2902093: drawer includes Days Since Last Profile
+PASS  WMO 2902093: drawer includes Approx. Profiles Missed
+PASS  WMO 2902093: drawer includes Data Status
+PASS  WMO 2902093: prof.nc JULD -> API date
+PASS  WMO 2902093: identity, Prof# and verified positions unchanged
+PASS  WMO 2902093: profile wording only
+PASS  WMO 2902113: search selects exactly one row
+PASS  WMO 2902113: table fields match API  []
+PASS  WMO 2902113: Last Profile Date is UTC
+PASS  WMO 2902113: status follows exact 10/60-day policy
+PASS  WMO 2902113: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902113: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902113: estimate tooltip is explicit
+PASS  WMO 2902113: drawer status and estimate agree
+PASS  WMO 2902113: drawer includes WMO
+PASS  WMO 2902113: drawer includes Internal ID
+PASS  WMO 2902113: drawer includes Float Type
+PASS  WMO 2902113: drawer includes Prof#
+PASS  WMO 2902113: drawer includes Latitude
+PASS  WMO 2902113: drawer includes Longitude
+PASS  WMO 2902113: drawer includes Last Profile Date
+PASS  WMO 2902113: drawer includes Expected Next Profile
+PASS  WMO 2902113: drawer includes Days Since Last Profile
+PASS  WMO 2902113: drawer includes Approx. Profiles Missed
+PASS  WMO 2902113: drawer includes Data Status
+PASS  WMO 2902113: prof.nc JULD -> API date
+PASS  WMO 2902113: identity, Prof# and verified positions unchanged
+PASS  WMO 2902113: profile wording only
+PASS  WMO 2902114: search selects exactly one row
+PASS  WMO 2902114: table fields match API  []
+PASS  WMO 2902114: Last Profile Date is UTC
+PASS  WMO 2902114: status follows exact 10/60-day policy
+PASS  WMO 2902114: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902114: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902114: estimate tooltip is explicit
+PASS  WMO 2902114: drawer status and estimate agree
+PASS  WMO 2902114: drawer includes WMO
+PASS  WMO 2902114: drawer includes Internal ID
+PASS  WMO 2902114: drawer includes Float Type
+PASS  WMO 2902114: drawer includes Prof#
+PASS  WMO 2902114: drawer includes Latitude
+PASS  WMO 2902114: drawer includes Longitude
+PASS  WMO 2902114: drawer includes Last Profile Date
+PASS  WMO 2902114: drawer includes Expected Next Profile
+PASS  WMO 2902114: drawer includes Days Since Last Profile
+PASS  WMO 2902114: drawer includes Approx. Profiles Missed
+PASS  WMO 2902114: drawer includes Data Status
+PASS  WMO 2902114: prof.nc JULD -> API date
+PASS  WMO 2902114: identity, Prof# and verified positions unchanged
+PASS  WMO 2902114: profile wording only
+PASS  WMO 2902115: search selects exactly one row
+PASS  WMO 2902115: table fields match API  []
+PASS  WMO 2902115: Last Profile Date is UTC
+PASS  WMO 2902115: status follows exact 10/60-day policy
+PASS  WMO 2902115: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902115: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902115: estimate tooltip is explicit
+PASS  WMO 2902115: drawer status and estimate agree
+PASS  WMO 2902115: drawer includes WMO
+PASS  WMO 2902115: drawer includes Internal ID
+PASS  WMO 2902115: drawer includes Float Type
+PASS  WMO 2902115: drawer includes Prof#
+PASS  WMO 2902115: drawer includes Latitude
+PASS  WMO 2902115: drawer includes Longitude
+PASS  WMO 2902115: drawer includes Last Profile Date
+PASS  WMO 2902115: drawer includes Expected Next Profile
+PASS  WMO 2902115: drawer includes Days Since Last Profile
+PASS  WMO 2902115: drawer includes Approx. Profiles Missed
+PASS  WMO 2902115: drawer includes Data Status
+PASS  WMO 2902115: prof.nc JULD -> API date
+PASS  WMO 2902115: identity, Prof# and verified positions unchanged
+PASS  WMO 2902115: profile wording only
+PASS  WMO 2902118: search selects exactly one row
+PASS  WMO 2902118: table fields match API  []
+PASS  WMO 2902118: Last Profile Date is UTC
+PASS  WMO 2902118: status follows exact 10/60-day policy
+PASS  WMO 2902118: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902118: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902118: estimate tooltip is explicit
+PASS  WMO 2902118: drawer status and estimate agree
+PASS  WMO 2902118: drawer includes WMO
+PASS  WMO 2902118: drawer includes Internal ID
+PASS  WMO 2902118: drawer includes Float Type
+PASS  WMO 2902118: drawer includes Prof#
+PASS  WMO 2902118: drawer includes Latitude
+PASS  WMO 2902118: drawer includes Longitude
+PASS  WMO 2902118: drawer includes Last Profile Date
+PASS  WMO 2902118: drawer includes Expected Next Profile
+PASS  WMO 2902118: drawer includes Days Since Last Profile
+PASS  WMO 2902118: drawer includes Approx. Profiles Missed
+PASS  WMO 2902118: drawer includes Data Status
+PASS  WMO 2902118: prof.nc JULD -> API date
+PASS  WMO 2902118: identity, Prof# and verified positions unchanged
+PASS  WMO 2902118: profile wording only
+PASS  WMO 2902120: search selects exactly one row
+PASS  WMO 2902120: table fields match API  []
+PASS  WMO 2902120: Last Profile Date is UTC
+PASS  WMO 2902120: status follows exact 10/60-day policy
+PASS  WMO 2902120: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902120: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902120: estimate tooltip is explicit
+PASS  WMO 2902120: drawer status and estimate agree
+PASS  WMO 2902120: drawer includes WMO
+PASS  WMO 2902120: drawer includes Internal ID
+PASS  WMO 2902120: drawer includes Float Type
+PASS  WMO 2902120: drawer includes Prof#
+PASS  WMO 2902120: drawer includes Latitude
+PASS  WMO 2902120: drawer includes Longitude
+PASS  WMO 2902120: drawer includes Last Profile Date
+PASS  WMO 2902120: drawer includes Expected Next Profile
+PASS  WMO 2902120: drawer includes Days Since Last Profile
+PASS  WMO 2902120: drawer includes Approx. Profiles Missed
+PASS  WMO 2902120: drawer includes Data Status
+PASS  WMO 2902120: prof.nc JULD -> API date
+PASS  WMO 2902120: identity, Prof# and verified positions unchanged
+PASS  WMO 2902120: profile wording only
+PASS  WMO 2902130: search selects exactly one row
+PASS  WMO 2902130: table fields match API  []
+PASS  WMO 2902130: Last Profile Date is UTC
+PASS  WMO 2902130: status follows exact 10/60-day policy
+PASS  WMO 2902130: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902130: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902130: estimate tooltip is explicit
+PASS  WMO 2902130: drawer status and estimate agree
+PASS  WMO 2902130: drawer includes WMO
+PASS  WMO 2902130: drawer includes Internal ID
+PASS  WMO 2902130: drawer includes Float Type
+PASS  WMO 2902130: drawer includes Prof#
+PASS  WMO 2902130: drawer includes Latitude
+PASS  WMO 2902130: drawer includes Longitude
+PASS  WMO 2902130: drawer includes Last Profile Date
+PASS  WMO 2902130: drawer includes Expected Next Profile
+PASS  WMO 2902130: drawer includes Days Since Last Profile
+PASS  WMO 2902130: drawer includes Approx. Profiles Missed
+PASS  WMO 2902130: drawer includes Data Status
+PASS  WMO 2902130: prof.nc JULD -> API date
+PASS  WMO 2902130: identity, Prof# and verified positions unchanged
+PASS  WMO 2902130: profile wording only
+PASS  WMO 2902131: search selects exactly one row
+PASS  WMO 2902131: table fields match API  []
+PASS  WMO 2902131: Last Profile Date is UTC
+PASS  WMO 2902131: status follows exact 10/60-day policy
+PASS  WMO 2902131: Expected Next Profile = Last Profile Date +10 days
+PASS  WMO 2902131: unrounded elapsed days and floor(days/10)
+PASS  WMO 2902131: estimate tooltip is explicit
+PASS  WMO 2902131: drawer status and estimate agree
+PASS  WMO 2902131: drawer includes WMO
+PASS  WMO 2902131: drawer includes Internal ID
+PASS  WMO 2902131: drawer includes Float Type
+PASS  WMO 2902131: drawer includes Prof#
+PASS  WMO 2902131: drawer includes Latitude
+PASS  WMO 2902131: drawer includes Longitude
+PASS  WMO 2902131: drawer includes Last Profile Date
+PASS  WMO 2902131: drawer includes Expected Next Profile
+PASS  WMO 2902131: drawer includes Days Since Last Profile
+PASS  WMO 2902131: drawer includes Approx. Profiles Missed
+PASS  WMO 2902131: drawer includes Data Status
+PASS  WMO 2902131: prof.nc JULD -> API date
+PASS  WMO 2902131: identity, Prof# and verified positions unchanged
+PASS  WMO 2902131: profile wording only
+PASS  WMO 2902201: search selects exactly one row
+PASS  WMO 2902201: table fields match API  []
+PASS  WMO 2902201: Last Profile Date is UTC
+PASS  WMO 2902201: status follows exact 10/60-day policy
+PASS  WMO 2902201: Expected Next Profile = Last Profile Date +10 days
+FAIL  WMO 2902201: unrounded elapsed days and floor(days/10)
+Error: WMO 2902201: unrounded elapsed days and floor(days/10): 
+    at check (file:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/e2e/fleetStatus.e2e.mjs:24:25)
+    at file:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/e2e/fleetStatus.e2e.mjs:142:5
+
+505/507 checks passed; 21 floats field-checked

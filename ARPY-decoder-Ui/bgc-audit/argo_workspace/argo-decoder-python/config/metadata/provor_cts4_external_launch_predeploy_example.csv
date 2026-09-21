@@ -1,0 +1,24 @@
+# Dedicated CTS4 external per-float LAUNCH_CONFIG (161) + PREDEPLOYMENT_CALIB (11×4096) — example for hypothetical NEW float and real 2902091/2902086.
+# This file is NOT one of the four frozen legacy schemas (meta.csv, sensor-info.csv, calib.csv, config_params.csv).
+# Mechanism layer 3: per-float authoritative metadata keyed by flbb_serial (sensor serial, e.g., 2662), never WMO allocation or IMEI routing.
+# Provide via ExternalMeta fields: launch_config_parameter_names/values (161), predeployment_calib_equations/coefficients/comments (11).
+# Or via --external-meta JSON: {"float_serial_no": "...", "config_parameter_names": [...], "launch_config_parameter_names": [...], ...}
+# Provenance: incois_2902091_meta.nc (7×2), incois_2902086_meta.nc (18×3) dumped via netCDF4 chartostring; BBP via doi:10.17882/54520, BETASW via Zhang 2009 delta 0.039.
+flbb_serial,wmo_hypothesis,field,index,parameter,value,provenance
+2662,2902091,launch_config,0,CONFIG_VectorBoardShowModeOn_LOGICAL,0.0,incois_2902091_meta.nc LAUNCH_CONFIG_PARAMETER_VALUE[0]
+2662,2902091,launch_config,2,CONFIG_OptodeVerticalPressureOffset_dbar,-0.06,incois_2902091_meta.nc
+2662,2902091,launch_config,3,CONFIG_FlbbBetaAngle_angularDeg,124.0,incois_2902091_meta.nc
+2662,2902091,launch_config,160,CONFIG_FlbbMinTransmittedBeta_COUNT,4130.0,incois_2902091_meta.nc
+2662,2902091,predeploy_equation,5,TEMP_DOXY,"TEMP_DOXY=T0+T1*TEMP_VOLTAGE_DOXY+...",incois_2902091_meta.nc PREDEPLOYMENT_CALIB_EQUATION[5]
+2662,2902091,predeploy_equation,6,DOXY,"TPHASE_DOXY=C1PHASE_DOXY-C2PHASE_DOXY; ...",incois_2902091_meta.nc
+2662,2902091,predeploy_equation,9,CHLA,"CHLA=(FLUORESCENCE_CHLA-DARK_CHLA)*SCALE_CHLA",incois_2902091_meta.nc
+2662,2902091,predeploy_equation,10,BBP700,"BBP700=2*pi*khi*((BETA_BACKSCATTERING700-DARK_BACKSCATTERING700)*SCALE_BACKSCATTERING700-BETASW700)",incois_2902091_meta.nc
+2662,2902091,predeploy_coeff,5,TEMP_DOXY,"T0=27.4829; T1=-0.031358; ...",incois_2902091_meta.nc
+2662,2902091,predeploy_coeff,10,BBP700,"DARK_BACKSCATTERING700=49, SCALE_BACKSCATTERING700=1.773e-06, khi=1.097, BETASW700 calculated at 142 deg",incois_2902091_meta.nc + doi:10.17882/54520
+2662,2902091,config,0,CONFIG_NumberOfSubCycles_NUMBER,1.0 mission 1,incois_2902091_meta.nc CONFIG_PARAMETER_VALUE[0,0]
+2662,2902091,config,1,CONFIG_SurfaceDay_FloatDay,1.0 mission1 / 5.0 mission2,incois_2902091_meta.nc
+2663,2902086,launch_config,0,CONFIG_VectorBoardShowModeOn_LOGICAL,0.0,incois_2902086_meta.nc
+2663,2902086,config,0,CONFIG_NumberOfSubCycles_NUMBER,1.0 mission1,incois_2902086_meta.nc (18×3)
+2663,2902086,config,12,CONFIG_OptodePowerSwitchDelayMin_msec,7000.0 mission1 / 6000.0 mission2,incois_2902086_meta.nc
+9999,NEW_SYNTHETIC,launch_config,0,CONFIG_VectorBoardShowModeOn_LOGICAL,0.0,synthetic example for NEW float (flbb 9999) — demonstrates dedicated CSV without pre-existing WMO
+9999,NEW_SYNTHETIC,config,0,CONFIG_NumberOfSubCycles_NUMBER,1.0,synthetic NEW float (N_CONFIG_PARAM=7 example, flbb_serial 9999, no WMO allocation)

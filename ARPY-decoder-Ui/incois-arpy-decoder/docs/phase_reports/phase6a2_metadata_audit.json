@@ -1,0 +1,448 @@
+{
+  "records": [
+    {
+      "status": "structural_parity",
+      "structure": {
+        "attribute_diffs": [],
+        "dtype_diffs": [],
+        "extra_dimensions": [],
+        "extra_variables": [],
+        "global_attribute_diffs": [
+          "~history"
+        ],
+        "missing_dimensions": [],
+        "missing_variables": [],
+        "variable_order_identical": true
+      },
+      "values": {
+        "blank_in_py": [
+          "TRANS_SYSTEM_ID",
+          "TRANS_FREQUENCY",
+          "MANUAL_VERSION",
+          "STANDARD_FORMAT_ID",
+          "BATTERY_TYPE",
+          "BATTERY_PACKS",
+          "CONTROLLER_BOARD_TYPE_PRIMARY",
+          "CONTROLLER_BOARD_SERIAL_NO_PRIMARY",
+          "LAUNCH_CONFIG_PARAMETER_NAME",
+          "LAUNCH_CONFIG_PARAMETER_VALUE",
+          "CONFIG_PARAMETER_NAME",
+          "CONFIG_PARAMETER_VALUE",
+          "SENSOR_MAKER",
+          "SENSOR_MODEL",
+          "SENSOR_SERIAL_NO",
+          "PREDEPLOYMENT_CALIB_EQUATION",
+          "PREDEPLOYMENT_CALIB_COEFFICIENT"
+        ],
+        "both_blank": [
+          "ANOMALY",
+          "CONTROLLER_BOARD_TYPE_SECONDARY",
+          "CONTROLLER_BOARD_SERIAL_NO_SECONDARY",
+          "SPECIAL_FEATURES",
+          "CUSTOMISATION",
+          "STARTUP_DATE",
+          "DEPLOYMENT_CRUISE_ID",
+          "DEPLOYMENT_REFERENCE_STATION_ID",
+          "END_MISSION_DATE",
+          "CONFIG_MISSION_COMMENT",
+          "PREDEPLOYMENT_CALIB_COMMENT"
+        ],
+        "differs": [
+          {
+            "py": "61810",
+            "ref": "1010",
+            "variable": "DAC_FORMAT_ID"
+          },
+          {
+            "py": "ORV Sagar Nidhi",
+            "ref": "orv sagar nidhi",
+            "variable": "DEPLOYMENT_PLATFORM"
+          },
+          {
+            "py": "0.002|0.005|2.4",
+            "ref": "0|0|0",
+            "variable": "PARAMETER_ACCURACY"
+          },
+          {
+            "py": "0.001|0.001|0.1",
+            "ref": "0|0|0",
+            "variable": "PARAMETER_RESOLUTION"
+          }
+        ],
+        "value_match": [
+          "DATA_TYPE",
+          "FORMAT_VERSION",
+          "HANDBOOK_VERSION",
+          "PLATFORM_NUMBER",
+          "PTT",
+          "TRANS_SYSTEM",
+          "POSITIONING_SYSTEM",
+          "PLATFORM_FAMILY",
+          "PLATFORM_TYPE",
+          "PLATFORM_MAKER",
+          "FIRMWARE_VERSION",
+          "FLOAT_SERIAL_NO",
+          "WMO_INST_TYPE",
+          "PROJECT_NAME",
+          "DATA_CENTRE",
+          "PI_NAME",
+          "FLOAT_OWNER",
+          "OPERATING_INSTITUTION",
+          "LAUNCH_DATE",
+          "LAUNCH_LATITUDE",
+          "LAUNCH_LONGITUDE",
+          "LAUNCH_QC",
+          "START_DATE",
+          "START_DATE_QC",
+          "STARTUP_DATE_QC",
+          "END_MISSION_STATUS",
+          "CONFIG_MISSION_NUMBER",
+          "SENSOR",
+          "PARAMETER",
+          "PARAMETER_SENSOR",
+          "PARAMETER_UNITS"
+        ]
+      },
+      "wmo": "2901339"
+    },
+    {
+      "status": "structural_parity",
+      "structure": {
+        "attribute_diffs": [],
+        "dtype_diffs": [],
+        "extra_dimensions": [],
+        "extra_variables": [],
+        "global_attribute_diffs": [
+          "~history"
+        ],
+        "missing_dimensions": [],
+        "missing_variables": [],
+        "variable_order_identical": true
+      },
+      "values": {
+        "blank_in_py": [
+          "TRANS_SYSTEM_ID",
+          "TRANS_FREQUENCY",
+          "MANUAL_VERSION",
+          "STANDARD_FORMAT_ID",
+          "BATTERY_TYPE",
+          "BATTERY_PACKS",
+          "CONTROLLER_BOARD_TYPE_PRIMARY",
+          "CONTROLLER_BOARD_SERIAL_NO_PRIMARY",
+          "LAUNCH_CONFIG_PARAMETER_NAME",
+          "LAUNCH_CONFIG_PARAMETER_VALUE",
+          "CONFIG_PARAMETER_NAME",
+          "CONFIG_PARAMETER_VALUE",
+          "SENSOR_MAKER",
+          "SENSOR_MODEL",
+          "SENSOR_SERIAL_NO",
+          "PREDEPLOYMENT_CALIB_EQUATION",
+          "PREDEPLOYMENT_CALIB_COEFFICIENT"
+        ],
+        "both_blank": [
+          "ANOMALY",
+          "CONTROLLER_BOARD_TYPE_SECONDARY",
+          "CONTROLLER_BOARD_SERIAL_NO_SECONDARY",
+          "SPECIAL_FEATURES",
+          "CUSTOMISATION",
+          "STARTUP_DATE",
+          "DEPLOYMENT_CRUISE_ID",
+          "DEPLOYMENT_REFERENCE_STATION_ID",
+          "END_MISSION_DATE",
+          "CONFIG_MISSION_COMMENT",
+          "PREDEPLOYMENT_CALIB_COMMENT"
+        ],
+        "differs": [
+          {
+            "py": "091515",
+            "ref": "1021",
+            "variable": "DAC_FORMAT_ID"
+          },
+          {
+            "py": "20251225125526",
+            "ref": "20160307112800",
+            "variable": "START_DATE"
+          },
+          {
+            "py": "FRV Sagar Sampada",
+            "ref": "frv sagar sampada",
+            "variable": "DEPLOYMENT_PLATFORM"
+          },
+          {
+            "py": "0.002|0.005|2.4",
+            "ref": "0|0|0",
+            "variable": "PARAMETER_ACCURACY"
+          },
+          {
+            "py": "0.001|0.001|0.1",
+            "ref": "0|0|0",
+            "variable": "PARAMETER_RESOLUTION"
+          }
+        ],
+        "value_match": [
+          "DATA_TYPE",
+          "FORMAT_VERSION",
+          "HANDBOOK_VERSION",
+          "PLATFORM_NUMBER",
+          "PTT",
+          "TRANS_SYSTEM",
+          "POSITIONING_SYSTEM",
+          "PLATFORM_FAMILY",
+          "PLATFORM_TYPE",
+          "PLATFORM_MAKER",
+          "FIRMWARE_VERSION",
+          "FLOAT_SERIAL_NO",
+          "WMO_INST_TYPE",
+          "PROJECT_NAME",
+          "DATA_CENTRE",
+          "PI_NAME",
+          "FLOAT_OWNER",
+          "OPERATING_INSTITUTION",
+          "LAUNCH_DATE",
+          "LAUNCH_LATITUDE",
+          "LAUNCH_LONGITUDE",
+          "LAUNCH_QC",
+          "START_DATE_QC",
+          "STARTUP_DATE_QC",
+          "END_MISSION_STATUS",
+          "CONFIG_MISSION_NUMBER",
+          "SENSOR",
+          "PARAMETER",
+          "PARAMETER_SENSOR",
+          "PARAMETER_UNITS"
+        ]
+      },
+      "wmo": "2902201"
+    },
+    {
+      "status": "structural_parity",
+      "structure": {
+        "attribute_diffs": [],
+        "dtype_diffs": [],
+        "extra_dimensions": [],
+        "extra_variables": [],
+        "global_attribute_diffs": [
+          "~history"
+        ],
+        "missing_dimensions": [],
+        "missing_variables": [],
+        "variable_order_identical": true
+      },
+      "values": {
+        "blank_in_py": [
+          "TRANS_SYSTEM_ID",
+          "TRANS_FREQUENCY",
+          "MANUAL_VERSION",
+          "STANDARD_FORMAT_ID",
+          "BATTERY_TYPE",
+          "BATTERY_PACKS",
+          "CONTROLLER_BOARD_TYPE_PRIMARY",
+          "CONTROLLER_BOARD_SERIAL_NO_PRIMARY",
+          "LAUNCH_CONFIG_PARAMETER_NAME",
+          "LAUNCH_CONFIG_PARAMETER_VALUE",
+          "CONFIG_PARAMETER_NAME",
+          "CONFIG_PARAMETER_VALUE",
+          "SENSOR_MAKER",
+          "SENSOR_MODEL",
+          "SENSOR_SERIAL_NO",
+          "PREDEPLOYMENT_CALIB_EQUATION",
+          "PREDEPLOYMENT_CALIB_COEFFICIENT"
+        ],
+        "both_blank": [
+          "ANOMALY",
+          "CONTROLLER_BOARD_TYPE_SECONDARY",
+          "CONTROLLER_BOARD_SERIAL_NO_SECONDARY",
+          "SPECIAL_FEATURES",
+          "CUSTOMISATION",
+          "STARTUP_DATE",
+          "DEPLOYMENT_CRUISE_ID",
+          "DEPLOYMENT_REFERENCE_STATION_ID",
+          "END_MISSION_DATE",
+          "CONFIG_MISSION_COMMENT",
+          "PREDEPLOYMENT_CALIB_COMMENT"
+        ],
+        "differs": [
+          {
+            "py": "091615",
+            "ref": "1021",
+            "variable": "DAC_FORMAT_ID"
+          },
+          {
+            "py": "20251225073447",
+            "ref": "20170121042620",
+            "variable": "START_DATE"
+          },
+          {
+            "py": "S.A. Agulhas",
+            "ref": "s a agulhas",
+            "variable": "DEPLOYMENT_PLATFORM"
+          },
+          {
+            "py": "0.002|0.005|2.4",
+            "ref": "0|0|0",
+            "variable": "PARAMETER_ACCURACY"
+          },
+          {
+            "py": "0.001|0.001|0.1",
+            "ref": "0|0|0",
+            "variable": "PARAMETER_RESOLUTION"
+          }
+        ],
+        "value_match": [
+          "DATA_TYPE",
+          "FORMAT_VERSION",
+          "HANDBOOK_VERSION",
+          "PLATFORM_NUMBER",
+          "PTT",
+          "TRANS_SYSTEM",
+          "POSITIONING_SYSTEM",
+          "PLATFORM_FAMILY",
+          "PLATFORM_TYPE",
+          "PLATFORM_MAKER",
+          "FIRMWARE_VERSION",
+          "FLOAT_SERIAL_NO",
+          "WMO_INST_TYPE",
+          "PROJECT_NAME",
+          "DATA_CENTRE",
+          "PI_NAME",
+          "FLOAT_OWNER",
+          "OPERATING_INSTITUTION",
+          "LAUNCH_DATE",
+          "LAUNCH_LATITUDE",
+          "LAUNCH_LONGITUDE",
+          "LAUNCH_QC",
+          "START_DATE_QC",
+          "STARTUP_DATE_QC",
+          "END_MISSION_STATUS",
+          "CONFIG_MISSION_NUMBER",
+          "SENSOR",
+          "PARAMETER",
+          "PARAMETER_SENSOR",
+          "PARAMETER_UNITS"
+        ]
+      },
+      "wmo": "2902222"
+    },
+    {
+      "status": "structural_parity",
+      "structure": {
+        "attribute_diffs": [],
+        "dtype_diffs": [],
+        "extra_dimensions": [],
+        "extra_variables": [],
+        "global_attribute_diffs": [
+          "~history"
+        ],
+        "missing_dimensions": [],
+        "missing_variables": [],
+        "variable_order_identical": true
+      },
+      "values": {
+        "blank_in_py": [
+          "TRANS_SYSTEM_ID",
+          "TRANS_FREQUENCY",
+          "MANUAL_VERSION",
+          "STANDARD_FORMAT_ID",
+          "BATTERY_TYPE",
+          "BATTERY_PACKS",
+          "CONTROLLER_BOARD_TYPE_PRIMARY",
+          "CONTROLLER_BOARD_SERIAL_NO_PRIMARY",
+          "LAUNCH_CONFIG_PARAMETER_NAME",
+          "LAUNCH_CONFIG_PARAMETER_VALUE",
+          "CONFIG_PARAMETER_NAME",
+          "CONFIG_PARAMETER_VALUE",
+          "SENSOR_MAKER",
+          "SENSOR_MODEL",
+          "SENSOR_SERIAL_NO",
+          "PREDEPLOYMENT_CALIB_EQUATION",
+          "PREDEPLOYMENT_CALIB_COEFFICIENT"
+        ],
+        "both_blank": [
+          "ANOMALY",
+          "CONTROLLER_BOARD_TYPE_SECONDARY",
+          "CONTROLLER_BOARD_SERIAL_NO_SECONDARY",
+          "SPECIAL_FEATURES",
+          "CUSTOMISATION",
+          "STARTUP_DATE",
+          "DEPLOYMENT_CRUISE_ID",
+          "DEPLOYMENT_REFERENCE_STATION_ID",
+          "END_MISSION_DATE",
+          "CONFIG_MISSION_COMMENT",
+          "PREDEPLOYMENT_CALIB_COMMENT"
+        ],
+        "differs": [
+          {
+            "py": "091615",
+            "ref": "1021",
+            "variable": "DAC_FORMAT_ID"
+          },
+          {
+            "py": "20251226002136",
+            "ref": "20170121203831",
+            "variable": "START_DATE"
+          },
+          {
+            "py": "S.A. Agulhas",
+            "ref": "s a agulhas",
+            "variable": "DEPLOYMENT_PLATFORM"
+          },
+          {
+            "py": "0.002|0.005|2.4",
+            "ref": "0|0|0",
+            "variable": "PARAMETER_ACCURACY"
+          },
+          {
+            "py": "0.001|0.001|0.1",
+            "ref": "0|0|0",
+            "variable": "PARAMETER_RESOLUTION"
+          }
+        ],
+        "value_match": [
+          "DATA_TYPE",
+          "FORMAT_VERSION",
+          "HANDBOOK_VERSION",
+          "PLATFORM_NUMBER",
+          "PTT",
+          "TRANS_SYSTEM",
+          "POSITIONING_SYSTEM",
+          "PLATFORM_FAMILY",
+          "PLATFORM_TYPE",
+          "PLATFORM_MAKER",
+          "FIRMWARE_VERSION",
+          "FLOAT_SERIAL_NO",
+          "WMO_INST_TYPE",
+          "PROJECT_NAME",
+          "DATA_CENTRE",
+          "PI_NAME",
+          "FLOAT_OWNER",
+          "OPERATING_INSTITUTION",
+          "LAUNCH_DATE",
+          "LAUNCH_LATITUDE",
+          "LAUNCH_LONGITUDE",
+          "LAUNCH_QC",
+          "START_DATE_QC",
+          "STARTUP_DATE_QC",
+          "END_MISSION_STATUS",
+          "CONFIG_MISSION_NUMBER",
+          "SENSOR",
+          "PARAMETER",
+          "PARAMETER_SENSOR",
+          "PARAMETER_UNITS"
+        ]
+      },
+      "wmo": "2902223"
+    },
+    {
+      "status": "not_generated_no_raw_data",
+      "wmo": "2902203"
+    },
+    {
+      "status": "not_generated_no_raw_data",
+      "wmo": "2902206"
+    }
+  ],
+  "summary": {
+    "not_generated_no_raw_data": 2,
+    "structural_parity": 4
+  }
+}

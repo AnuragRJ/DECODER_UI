@@ -1,0 +1,377 @@
+(Nov 21 2022 06:08:23,  847622 sec) TelemetryInit()      Profile 263. (Apf9i FwRev: 012811)
+(Nov 21 2022 06:16:02,  848081 sec) AirSystem()          Battery [143cnt, 11.1V]  Current [67cnt, 27.0mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [66s]
+(Nov 21 2022 06:16:30,  848108 sec) GpsServices()        GPS almanac is current.
+(Nov 21 2022 06:16:30,  848109 sec) GpsServices()        Initiating GPS fix acquisition.
+(Nov 21 2022 06:16:47,  848126 sec) gga()                $GPGGA,061610,0227.5522,N,04917.0094,E,0,00,,,M,,M,,*5C
+(Nov 21 2022 06:16:57,  848136 sec) gga()                $GPGGA,061630,0227.5522,N,04917.0094,E,0,00,,,M,,M,,*5E
+(Nov 21 2022 06:17:07,  848146 sec) gga()                $GPGGA,061640,0227.5522,N,04917.0094,E,0,00,,,M,,M,,*59
+(Nov 21 2022 06:17:18,  848156 sec) gga()                $GPGGA,061650,0227.5522,N,04917.0094,E,0,00,,,M,,M,,*58
+(Nov 21 2022 06:17:46,  848185 sec) gga()                $GPGGA,061700,0203.4607,N,04955.6527,E,6,08,1.0,16.9,M,-50.9,M,,*5C
+(Nov 21 2022 06:18:11,  848210 sec) gga()                $GPGGA,061710,0203.4601,N,04955.6511,E,1,08,1.1,12.0,M,-50.9,M,,*55
+(Nov 21 2022 06:18:11,  848210 sec) GpsServices()        Profile 263 GPS fix obtained in 101 seconds.
+(Nov 21 2022 06:18:11,  848210 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Nov 21 2022 06:18:11,  848210 sec) GpsServices()        Fix:   49.928   2.058 11/21/2022 061710    8
+(Nov 21 2022 06:18:46,  848245 sec) gga()                $GPGGA,061800,0203.4557,N,04955.6515,E,1,09,0.9,11.7,M,-50.9,M,,*53
+(Nov 21 2022 06:18:52,  848250 sec) gga()                $GPGGA,061830,0203.4535,N,04955.6523,E,1,09,0.9,12.5,M,-50.9,M,,*50
+(Nov 21 2022 06:18:52,  848250 sec) GpsServices()        APF9 RTC skew (22s) OK.
+(Nov 21 2022 06:18:52,  848251 sec) LogNmeaSentences()   6,41,21,72,292,46,22,08,033,42,27,19,170,39*73
+(Nov 21 2022 06:18:52,  848251 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,24,035,43,06,29,324,00,09,10,265,00,14,10,029,00*71
+(Nov 21 2022 06:19:01,  848260 sec) LogNmeaSentences()   $GPRMC,061840,A,0203.4531,N,04955.6524,E,000.7,152.0,211122,001.4,W*62
+(Nov 21 2022 06:19:02,  848261 sec) LogNmeaSentences()   $GPGGA,061840,0203.4531,N,04955.6524,E,1,09,0.9,12.3,M,-50.9,M,,*52
+(Nov 21 2022 06:19:02,  848261 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,10,21,22,27,31,,,,1.2,0.9,0.8*38
+(Nov 21 2022 06:19:03,  848261 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,53,321,45,03,18,341,40,07,06,216,37,08,28,205,42*75
+(Nov 21 2022 06:19:03,  848262 sec) LogNmeaSentences()   $GPGSV,3,2,12,10,09,106,43,21,72,292,45,22,08,033,41,27,19,170,40*7F
+(Nov 21 2022 06:19:03,  848262 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,24,035,45,06,29,324,00,09,10,265,00,14,10,029,00*77
+(Nov 21 2022 06:19:11,  848270 sec) LogNmeaSentences()   $GPRMC,061850,A,0203.4524,N,04955.6519,E,000.0,152.9,211122,001.4,W*67
+(Nov 21 2022 06:19:12,  848271 sec) LogNmeaSentences()   $GPGGA,061850,0203.4524,N,04955.6519,E,1,09,0.9,12.7,M,-50.9,M,,*5D
+(Nov 21 2022 06:19:12,  848271 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,10,21,22,27,31,,,,1.2,0.9,0.8*38
+(Nov 21 2022 06:19:13,  848271 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,53,321,45,03,18,341,39,07,06,216,41,08,28,205,43*7B
+(Nov 21 2022 06:19:13,  848272 sec) LogNmeaSentences()   $GPGSV,3,2,12,10,09,106,41,21,72,292,46,22,08,033,33,27,19,170,42*79
+(Nov 21 2022 06:19:13,  848272 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,24,035,36,06,29,324,00,09,10,265,00,14,10,029,00*73
+(Nov 21 2022 06:19:21,  848280 sec) LogNmeaSentences()   $GPRMC,061900,A,0203.4522,N,04955.6515,E,000.0,133.9,211122,001.4,W*6E
+(Nov 21 2022 06:19:22,  848281 sec) LogNmeaSentences()   $GPGGA,061900,0203.4522,N,04955.6515,E,1,09,0.9,12.3,M,-50.9,M,,*57
+(Nov 21 2022 06:19:22,  848281 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,10,21,22,27,31,,,,1.2,0.9,0.8*38
+(Nov 21 2022 06:19:23,  848281 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,53,321,46,03,18,341,40,07,06,216,37,08,28,205,42*76
+(Nov 21 2022 06:19:23,  848282 sec) LogNmeaSentences()   $GPGSV,3,2,12,10,09,106,41,21,73,291,46,22,08,033,40,27,19,170,41*7C
+(Nov 21 2022 06:19:23,  848282 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,24,035,44,06,29,324,00,09,10,265,00,14,10,029,00*76
+(Nov 21 2022 06:19:24,  848282 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Nov 21 2022 06:19:24,  848283 sec) GpsServices()        GPS services complete.
+(Nov 21 2022 06:19:48,  848307 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 06:20:00,  848318 sec) CLogin()             Connection 1 established in 12 seconds.
+(Nov 21 2022 06:20:31,  848349 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Nov 21 2022 06:20:31,  848349 sec) login()              Login failed.
+(Nov 21 2022 06:21:30,  848408 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Nov 21 2022 06:21:30,  848408 sec) login()              Password prompt not received.
+(Nov 21 2022 06:21:30,  848408 sec) login()              No carrier detected.
+(Nov 21 2022 06:21:30,  848409 sec) CLogin()             Attempt to login to host failed.
+(Nov 21 2022 06:21:30,  848409 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Nov 21 2022 06:21:35,  848414 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 06:21:53,  848432 sec) CLogin()             Connection 2 established in 18 seconds.
+(Nov 21 2022 06:22:24,  848462 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2022 06:22:24,  848462 sec) login()              Login prompt not received.
+(Nov 21 2022 06:22:32,  848471 sec) login()              Login successful.
+(Nov 21 2022 06:22:35,  848474 sec) CLogin()             Logged in to host.  [Login required 42 seconds]
+(Nov 21 2022 06:22:43,  848481 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Nov 21 2022 06:22:45,  848484 sec) Rx()                 Initiating transfer. [0x43]
+(Nov 21 2022 06:22:47,  848486 sec) RxStartByte()        Sync errors encountered: 574
+(Nov 21 2022 06:22:54,  848492 sec) Rx()                 Truncated packet received - retrying.
+(Nov 21 2022 06:22:55,  848494 sec) RxStartByte()        Sync errors encountered: 532
+(Nov 21 2022 06:23:00,  848499 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Nov 21 2022 06:23:05,  848503 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 20 sec, 51.2 bps]
+(Nov 21 2022 06:23:05,  848503 sec) RxConfig()           Download successful.
+(Nov 21 2022 06:23:18,  848517 sec) WriteVitals()        Writing vitals to "7521.263.msg".
+(Nov 21 2022 06:23:25,  848524 sec) UpLoadFile()         Uploading "7521.263.msg" to host as "7521.263.msg".
+(Nov 21 2022 06:23:30,  848529 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 21 2022 06:25:39,  848657 sec) Tx()                 Transmission completed successfully [24 packets, 23788 bytes, 128 sec, 192.0 bps]
+(Nov 21 2022 06:25:39,  848657 sec) UpLoadFile()         Upload successful.
+(Nov 21 2022 06:25:46,  848665 sec) UpLoadFile()         Uploading "7521.263.log" to host as "7521.263.log".
+(Nov 21 2022 06:25:49,  848667 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 21 2022 06:25:51,  848670 sec) TxPacket()           Invalid response [0x35] - resending packet. [PktNum=0x01]
+(Nov 21 2022 06:25:51,  848670 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2022 06:27:33,  848772 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Nov 21 2022 06:27:33,  848772 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2022 06:27:51,  848790 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Nov 21 2022 06:27:51,  848790 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Nov 21 2022 06:28:14,  848813 sec) TxPacket()           No carrier detected.
+(Nov 21 2022 06:28:15,  848813 sec) TxPacket()           Exit status: -5
+(Nov 21 2022 06:28:15,  848813 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Nov 21 2022 06:28:25,  848824 sec) UpLoadFile()         Upload failed.
+(Nov 21 2022 06:28:31,  848830 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 06:28:37,  848835 sec) chat()               Expected string [OK] not received.
+(Nov 21 2022 06:28:37,  848835 sec) modem_restore_factor Modem command [AT&F0] failed.
+(Nov 21 2022 06:28:37,  848835 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Nov 21 2022 06:28:37,  848836 sec) modem_connect()      Modem configuration failed.
+(Nov 21 2022 06:28:45,  848844 sec) CLogin()             Connection 3 established in 14 seconds.
+(Nov 21 2022 06:29:17,  848875 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Nov 21 2022 06:29:17,  848875 sec) login()              Login failed.
+(Nov 21 2022 06:29:17,  848875 sec) login()              No carrier detected.
+(Nov 21 2022 06:29:17,  848876 sec) CLogin()             Attempt to login to host failed.
+(Nov 21 2022 06:29:17,  848876 sec) UpLoad()             Files successfully uploaded: 1
+(Nov 21 2022 06:29:17,  848876 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Nov 21 2022 06:29:17,  848876 sec) logout()             No carrier detected.
+(Nov 21 2022 06:29:17,  848876 sec) Telemetry()          Telemetry cycle complete: PrfId=263 ConnectionAttempts=4  Connections=3
+(Nov 21 2022 06:44:31,  849790 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Nov 21 2022 06:44:57,  849816 sec) GpsServices()        GPS almanac is current.
+(Nov 21 2022 06:44:57,  849816 sec) GpsServices()        Initiating GPS fix acquisition.
+(Nov 21 2022 06:45:08,  849827 sec) gga()                $GPGGA,064440,0203.4607,N,04955.6527,E,0,00,,,M,,M,,*50
+(Nov 21 2022 06:45:46,  849865 sec) gga()                $GPGGA,064500,0203.4100,N,04955.6646,E,1,08,1.1,10.0,M,-50.9,M,,*56
+(Nov 21 2022 06:45:46,  849865 sec) GpsServices()        Profile 263 GPS fix obtained in 49 seconds.
+(Nov 21 2022 06:45:46,  849865 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Nov 21 2022 06:45:46,  849865 sec) GpsServices()        Fix:   49.928   2.057 11/21/2022 064500    8
+(Nov 21 2022 06:46:16,  849895 sec) gga()                $GPGGA,064530,0203.4106,N,04955.6649,E,1,08,1.1,9.0,M,-50.9,M,,*64
+(Nov 21 2022 06:46:22,  849900 sec) gga()                $GPGGA,064600,0203.4107,N,04955.6652,E,1,08,1.1,9.0,M,-50.9,M,,*6F
+(Nov 21 2022 06:46:22,  849900 sec) GpsServices()        APF9 RTC skew (22s) OK.
+(Nov 21 2022 06:46:22,  849901 sec) LogNmeaSentences()   39,21,73,243,47,22,03,041,38,27,14,160,41*7C
+(Nov 21 2022 06:46:22,  849901 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,13,033,42,06,39,315,00,14,04,039,00,16,34,129,00*76
+(Nov 21 2022 06:46:23,  849901 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Nov 21 2022 06:46:31,  849910 sec) LogNmeaSentences()   $GPRMC,064610,A,0203.4108,N,04955.6654,E,000.0,261.5,211122,001.4,W*67
+(Nov 21 2022 06:46:32,  849911 sec) LogNmeaSentences()   $GPGGA,064610,0203.4108,N,04955.6654,E,1,08,1.0,9.0,M,-50.9,M,,*66
+(Nov 21 2022 06:46:32,  849911 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,10,21,,27,31,,,,1.3,1.0,0.8*31
+(Nov 21 2022 06:46:33,  849911 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,63,303,47,03,25,350,43,07,17,220,41,08,24,193,40*7F
+(Nov 21 2022 06:46:33,  849912 sec) LogNmeaSentences()   $GPGSV,3,2,12,10,05,117,39,21,73,243,46,22,03,041,35,27,14,160,40*71
+(Nov 21 2022 06:46:33,  849912 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,13,033,42,06,39,315,00,14,04,039,00,16,34,129,00*76
+(Nov 21 2022 06:46:41,  849920 sec) LogNmeaSentences()   $GPRMC,064620,A,0203.4105,N,04955.6661,E,000.7,064.3,211122,001.4,W*69
+(Nov 21 2022 06:46:42,  849921 sec) LogNmeaSentences()   $GPGGA,064620,0203.4105,N,04955.6661,E,1,08,1.0,8.6,M,-50.9,M,,*69
+(Nov 21 2022 06:46:42,  849921 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,10,21,,27,31,,,,1.3,1.0,0.8*31
+(Nov 21 2022 06:46:43,  849921 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,63,303,46,03,25,350,41,07,17,220,42,08,24,193,39*71
+(Nov 21 2022 06:46:43,  849922 sec) LogNmeaSentences()   $GPGSV,3,2,12,10,05,117,39,21,73,242,45,22,03,042,33,27,14,160,41*77
+(Nov 21 2022 06:46:43,  849922 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,13,033,43,06,39,315,00,14,04,039,00,16,34,129,00*77
+(Nov 21 2022 06:46:51,  849930 sec) LogNmeaSentences()   $GPRMC,064630,A,0203.4101,N,04955.6666,E,000.6,188.9,211122,001.4,W*63
+(Nov 21 2022 06:46:52,  849931 sec) LogNmeaSentences()   $GPGGA,064630,0203.4101,N,04955.6666,E,1,08,1.0,8.0,M,-50.9,M,,*6D
+(Nov 21 2022 06:46:52,  849931 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,10,21,,27,31,,,,1.3,1.0,0.8*31
+(Nov 21 2022 06:46:53,  849931 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,63,302,47,03,25,350,39,07,17,220,43,08,24,193,42*73
+(Nov 21 2022 06:46:53,  849932 sec) GpsServices()        GPS services complete.
+(Nov 21 2022 06:47:17,  849956 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 06:47:46,  849985 sec) CLogin()             Connection 4 established in 29 seconds.
+(Nov 21 2022 06:48:20,  850018 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Nov 21 2022 06:48:20,  850018 sec) login()              Login failed.
+(Nov 21 2022 06:48:50,  850048 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2022 06:48:50,  850048 sec) login()              Login prompt not received.
+(Nov 21 2022 06:48:50,  850048 sec) login()              No carrier detected.
+(Nov 21 2022 06:48:50,  850049 sec) CLogin()             Attempt to login to host failed.
+(Nov 21 2022 06:48:50,  850049 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Nov 21 2022 06:48:55,  850054 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 06:49:27,  850086 sec) CLogin()             Connection 5 established in 32 seconds.
+(Nov 21 2022 06:49:59,  850117 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Nov 21 2022 06:49:59,  850117 sec) login()              Login failed.
+(Nov 21 2022 06:50:29,  850147 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2022 06:50:29,  850147 sec) login()              Login prompt not received.
+(Nov 21 2022 06:50:59,  850177 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2022 06:50:59,  850177 sec) login()              Login prompt not received.
+(Nov 21 2022 06:50:59,  850177 sec) CLogin()             Attempt to login to host failed.
+(Nov 21 2022 06:50:59,  850178 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Nov 21 2022 06:50:59,  850178 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Nov 21 2022 06:50:59,  850178 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 06:51:15,  850194 sec) CLogin()             Connection 6 established in 16 seconds.
+(Nov 21 2022 06:51:46,  850224 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Nov 21 2022 06:51:46,  850224 sec) login()              Login failed.
+(Nov 21 2022 06:52:16,  850254 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2022 06:52:16,  850254 sec) login()              Login prompt not received.
+(Nov 21 2022 06:52:46,  850284 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2022 06:52:46,  850284 sec) login()              Login prompt not received.
+(Nov 21 2022 06:52:46,  850284 sec) CLogin()             Attempt to login to host failed.
+(Nov 21 2022 06:52:52,  850290 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 06:53:01,  850300 sec) CLogin()             Connection 7 established in 9 seconds.
+(Nov 21 2022 06:53:33,  850331 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Nov 21 2022 06:53:33,  850331 sec) login()              Login failed.
+(Nov 21 2022 06:54:32,  850390 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Nov 21 2022 06:54:32,  850390 sec) login()              Password prompt not received.
+(Nov 21 2022 06:54:32,  850390 sec) login()              No carrier detected.
+(Nov 21 2022 06:54:32,  850391 sec) CLogin()             Attempt to login to host failed.
+(Nov 21 2022 06:54:32,  850391 sec) UpLoad()             Files successfully uploaded: 0
+(Nov 21 2022 06:54:32,  850391 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Nov 21 2022 06:54:32,  850391 sec) logout()             No carrier detected.
+(Nov 21 2022 06:54:32,  850391 sec) Telemetry()          Telemetry cycle complete: PrfId=263 ConnectionAttempts=8  Connections=7
+(Nov 21 2022 07:09:46,  851305 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Nov 21 2022 07:10:12,  851331 sec) GpsServices()        GPS almanac is current.
+(Nov 21 2022 07:10:12,  851331 sec) GpsServices()        Initiating GPS fix acquisition.
+(Nov 21 2022 07:10:47,  851365 sec) gga()                $GPGGA,071000,0203.4093,N,04955.7004,E,6,06,1.4,13.8,M,-50.9,M,,*5A
+(Nov 21 2022 07:11:11,  851390 sec) gga()                $GPGGA,071010,0203.4129,N,04955.6940,E,1,06,1.4,1.9,M,-50.9,M,,*66
+(Nov 21 2022 07:11:12,  851390 sec) GpsServices()        Profile 263 GPS fix obtained in 60 seconds.
+(Nov 21 2022 07:11:12,  851390 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Nov 21 2022 07:11:12,  851391 sec) GpsServices()        Fix:   49.928   2.057 11/21/2022 071010    6
+(Nov 21 2022 07:11:46,  851425 sec) gga()                $GPGGA,071100,0203.4104,N,04955.6947,E,1,06,1.4,-0.8,M,-50.9,M,,*43
+(Nov 21 2022 07:11:51,  851430 sec) gga()                $GPGGA,071130,0203.4094,N,04955.6951,E,1,06,1.4,-1.4,M,-50.9,M,,*42
+(Nov 21 2022 07:11:52,  851430 sec) GpsServices()        APF9 RTC skew (22s) OK.
+(Nov 21 2022 07:11:52,  851431 sec) LogNmeaSentences()   27,11,151,42,31,04,033,35,06,47,303,00*7A
+(Nov 21 2022 07:11:52,  851431 sec) LogNmeaSentences()   $GPGSV,3,3,12,11,45,236,00,14,01,047,00,16,37,114,00,22,18,116,00*73
+(Nov 21 2022 07:12:01,  851440 sec) LogNmeaSentences()   $GPRMC,071140,A,0203.4090,N,04955.6951,E,000.0,166.9,211122,001.4,W*63
+(Nov 21 2022 07:12:02,  851441 sec) LogNmeaSentences()   $GPGGA,071140,0203.4090,N,04955.6951,E,1,06,1.6,-0.7,M,-50.9,M,,*41
+(Nov 21 2022 07:12:02,  851441 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,21,27,,,,,,,2.5,1.6,2.0*3B
+(Nov 21 2022 07:12:02,  851441 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,68,271,46,03,34,358,44,07,26,226,42,08,21,183,39*73
+(Nov 21 2022 07:12:03,  851442 sec) LogNmeaSentences()   $GPGSV,3,2,12,21,65,213,45,27,11,150,41,31,03,033,39,06,47,303,00*70
+(Nov 21 2022 07:12:03,  851442 sec) LogNmeaSentences()   $GPGSV,3,3,12,11,45,236,00,14,01,047,00,16,37,114,00,22,18,116,00*73
+(Nov 21 2022 07:12:11,  851450 sec) LogNmeaSentences()   $GPRMC,071150,A,0203.4086,N,04955.6953,E,000.5,123.1,211122,001.4,W*6B
+(Nov 21 2022 07:12:12,  851451 sec) LogNmeaSentences()   $GPGGA,071150,0203.4086,N,04955.6953,E,1,06,1.4,-2.3,M,-50.9,M,,*41
+(Nov 21 2022 07:12:12,  851451 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,21,27,,,,,,,1.7,1.4,0.9*33
+(Nov 21 2022 07:12:12,  851451 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,68,271,47,03,34,358,44,07,26,227,42,08,21,182,39*72
+(Nov 21 2022 07:12:13,  851452 sec) LogNmeaSentences()   $GPGSV,3,2,12,21,65,213,47,27,11,150,42,31,03,033,35,06,47,303,00*7D
+(Nov 21 2022 07:12:13,  851452 sec) LogNmeaSentences()   $GPGSV,3,3,12,11,45,236,00,14,01,047,00,16,37,114,00,22,18,117,00*72
+(Nov 21 2022 07:12:21,  851460 sec) LogNmeaSentences()   $GPRMC,071200,A,0203.4081,N,04955.6954,E,000.4,344.5,211122,001.4,W*6B
+(Nov 21 2022 07:12:22,  851461 sec) LogNmeaSentences()   $GPGGA,071200,0203.4081,N,04955.6954,E,1,06,1.4,-2.5,M,-50.9,M,,*41
+(Nov 21 2022 07:12:22,  851461 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,21,27,,,,,,,1.7,1.4,0.9*33
+(Nov 21 2022 07:12:23,  851461 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,68,271,47,03,34,358,43,07,26,227,43,08,21,182,40*7A
+(Nov 21 2022 07:12:23,  851462 sec) LogNmeaSentences()   $GPGSV,3,2,12,21,64,213,46,27,11,150,42,31,03,033,35,06,47,303,00*7D
+(Nov 21 2022 07:12:23,  851462 sec) LogNmeaSentences()   $GPGSV,3,3,12,11,45,236,00,14,01,047,00,16,37,114,00,22,18,117,00*72
+(Nov 21 2022 07:12:24,  851462 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Nov 21 2022 07:12:24,  851463 sec) GpsServices()        GPS services complete.
+(Nov 21 2022 07:12:48,  851487 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 07:13:03,  851502 sec) CLogin()             Connection 8 established in 15 seconds.
+(Nov 21 2022 07:13:35,  851533 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Nov 21 2022 07:13:35,  851533 sec) login()              Login failed.
+(Nov 21 2022 07:14:05,  851563 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2022 07:14:05,  851563 sec) login()              Login prompt not received.
+(Nov 21 2022 07:14:35,  851593 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Nov 21 2022 07:14:35,  851593 sec) login()              Password prompt not received.
+(Nov 21 2022 07:14:35,  851593 sec) CLogin()             Attempt to login to host failed.
+(Nov 21 2022 07:14:35,  851594 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Nov 21 2022 07:14:40,  851599 sec) CLogin()             Connecting to primary host.
+(Nov 21 2022 07:14:57,  851616 sec) CLogin()             Connection 9 established in 17 seconds.
+(Nov 21 2022 07:15:06,  851625 sec) login()              Login successful.
+(Nov 21 2022 07:15:11,  851629 sec) chat()               Expected string [cmd>] not received.
+(Nov 21 2022 07:15:11,  851629 sec) login()              Attempt to set the command prompt failed.
+(Nov 21 2022 07:15:12,  851631 sec) CLogin()             Logged in to host.  [Login required 15 seconds]
+(Nov 21 2022 07:15:20,  851638 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Nov 21 2022 07:15:22,  851641 sec) Rx()                 Initiating transfer. [0x43]
+(Nov 21 2022 07:15:24,  851643 sec) RxStartByte()        Sync errors encountered: 698
+(Nov 21 2022 07:15:27,  851645 sec) Rx()                 Truncated packet received - retrying.
+(Nov 21 2022 07:15:31,  851650 sec) RxStartByte()        Sync errors encountered: 966
+(Nov 21 2022 07:15:35,  851654 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Nov 21 2022 07:15:42,  851660 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 20 sec, 51.2 bps]
+(Nov 21 2022 07:15:42,  851660 sec) RxConfig()           Download successful.
+(Nov 21 2022 07:16:05,  851683 sec) UpLoadFile()         Uploading "7521.263.log" to host as "7521.263.log".
+(Nov 21 2022 07:16:07,  851686 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 21 2022 07:16:58,  851736 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Nov 21 2022 07:16:58,  851736 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2022 07:17:55,  851793 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Nov 21 2022 07:17:55,  851793 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2022 07:18:32,  851830 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(Nov 21 2022 07:18:32,  851830 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Nov 21 2022 07:20:11,  851929 sec) Tx()                 Transmission completed successfully [40 packets, 40704 bytes, 243 sec, 168.6 bps]
+(Nov 21 2022 07:20:11,  851930 sec) UpLoadFile()         Upload successful.
+(Nov 21 2022 07:20:17,  851935 sec) UpLoad()             Files successfully uploaded: 1
+(Nov 21 2022 07:20:17,  851935 sec) UpLoad()             Upload complete.
+(Nov 21 2022 07:20:23,  851941 sec) chat()               Expected string [logout] not received.
+(Nov 21 2022 07:20:23,  851941 sec) logout()             Attempt to log-out failed.
+(Nov 21 2022 07:20:23,  851941 sec) logout()             No carrier detected.
+(Nov 21 2022 07:20:23,  851942 sec) Telemetry()          Telemetry cycle complete: PrfId=263 ConnectionAttempts=10  Connections=9
+(Nov 21 2022 07:20:23,  851942 sec) TelemetryTerminate() Parsing new mission configuration.
+(Nov 21 2022 07:20:24,  851943 sec) configure()          Parsing configurators in "mission.cfg".
+(Nov 21 2022 07:20:28,  851947 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Nov 21 2022 07:20:29,  851947 sec) configure()          Configuration CRCs and syntax OK.
+(Nov 21 2022 07:20:29,  851947 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Nov 21 2022 07:20:29,  851948 sec) ConfigSupervisor()   Configuration accepted.
+(Nov 21 2022 07:20:29,  851948 sec) TelemetryTerminate() Reconditioning the file system.
+(Nov 21 2022 07:20:42,       6 sec) DescentInit()        Deep profile 264 initiated at mission-time 851954sec.
+(Nov 21 2022 07:20:44,       9 sec) DescentInit()        Surface pressure: -0.4dbars.
+(Nov 21 2022 07:20:49,      13 sec) PistonMoveAbsWTO()    224->074 223 222 221 220 219 218 217 216 215 214 213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 [1014sec, 11.0Volts, 0.113Amps, CPT:1014sec]
+(Nov 21 2022 07:37:52,    1037 sec) Descent()            Pressure: 85.2
+(Nov 21 2022 08:20:39,    3604 sec) Descent()            Pressure: 406.9
+(Nov 21 2022 09:20:39,    7204 sec) Descent()            Pressure: 738.8
+(Nov 21 2022 10:20:39,   10804 sec) Descent()            Pressure: 921.6
+(Nov 21 2022 11:20:39,   14404 sec) Descent()            Pressure: 981.9
+(Nov 21 2022 12:20:39,   18004 sec) Descent()            Pressure: 983.9
+(Nov 21 2022 12:20:39,   18004 sec) ParkInit()           
+(Nov 21 2022 12:21:08,   18033 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  983.88,  7.4008,103.0011\r\n]
+(Nov 21 2022 13:21:05,   21630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  995.15,  7.1672,103.7028\r\n]
+(Nov 21 2022 14:21:05,   25230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  998.34,  7.2704,103.5163\r\n]
+(Nov 21 2022 15:21:05,   28830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1004.13,  7.1721,103.8071\r\n]
+(Nov 21 2022 16:21:05,   32430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  995.55,  7.3006,103.5400\r\n]
+(Nov 21 2022 17:21:05,   36030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  998.06,  7.1510,104.0065\r\n]
+(Nov 21 2022 18:21:05,   39630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.51,  7.1620,104.0797\r\n]
+(Nov 21 2022 19:21:05,   43230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.01,  7.0882,104.3201\r\n]
+(Nov 21 2022 20:21:05,   46830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.18,  7.0890,104.4138\r\n]
+(Nov 21 2022 21:21:05,   50430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1004.57,  7.1578,104.3197\r\n]
+(Nov 21 2022 22:21:05,   54030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.36,  7.1280,104.5219\r\n]
+(Nov 21 2022 23:21:05,   57630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.90,  7.1260,104.5954\r\n]
+(Nov 22 2022 00:21:05,   61230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.87,  7.1566,104.5774\r\n]
+(Nov 22 2022 01:21:05,   64830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.47,  7.1873,104.5584\r\n]
+(Nov 22 2022 02:21:05,   68430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  992.84,  7.3798,104.1730\r\n]
+(Nov 22 2022 03:21:05,   72030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.03,  7.1649,104.7832\r\n]
+(Nov 22 2022 04:21:05,   75630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.64,  7.0867,105.0477\r\n]
+(Nov 22 2022 05:21:05,   79230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.03,  7.0892,105.0987\r\n]
+(Nov 22 2022 06:21:05,   82830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.39,  7.0955,105.1499\r\n]
+(Nov 22 2022 07:21:05,   86430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.51,  7.0814,105.2683\r\n]
+(Nov 22 2022 08:21:05,   90030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  997.98,  7.0809,105.3345\r\n]
+(Nov 22 2022 09:21:05,   93630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.27,  7.0791,105.3945\r\n]
+(Nov 22 2022 10:21:05,   97230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.94,  7.0803,105.4791\r\n]
+(Nov 22 2022 11:21:05,  100830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.66,  7.0800,105.8158\r\n]
+(Nov 22 2022 12:21:05,  104430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1003.29,  7.0827,106.3261\r\n]
+(Nov 22 2022 13:21:05,  108030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.60,  7.0849,106.9828\r\n]
+(Nov 22 2022 14:21:05,  111630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  995.69,  7.0829,107.6469\r\n]
+(Nov 22 2022 15:21:05,  115230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  998.80,  7.0809,108.2437\r\n]
+(Nov 22 2022 16:21:05,  118830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1003.66,  7.1996,108.9517\r\n]
+(Nov 22 2022 17:21:05,  122430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.37,  7.2340,109.9623\r\n]
+(Nov 22 2022 18:21:05,  126030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  998.42,  7.2270,110.9846\r\n]
+(Nov 22 2022 19:21:05,  129630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.85,  7.0970,112.0486\r\n]
+(Nov 22 2022 20:21:05,  133230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.96,  7.0853,112.6864\r\n]
+(Nov 22 2022 21:21:05,  136830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.26,  7.0807,113.1860\r\n]
+(Nov 22 2022 22:21:05,  140430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1003.84,  7.0774,113.6226\r\n]
+(Nov 22 2022 23:21:05,  144030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.64,  7.0805,114.2781\r\n]
+(Nov 23 2022 00:21:05,  147630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1004.25,  7.0824,114.8873\r\n]
+(Nov 23 2022 01:21:05,  151230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1009.30,  7.0817,115.5054\r\n]
+(Nov 23 2022 02:21:05,  154830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.82,  7.0808,115.8010\r\n]
+(Nov 23 2022 03:21:05,  158430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.21,  7.0809,116.1315\r\n]
+(Nov 23 2022 04:21:05,  162030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.08,  7.0835,116.4345\r\n]
+(Nov 23 2022 05:21:05,  165630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.72,  7.0939,117.0454\r\n]
+(Nov 23 2022 06:21:05,  169230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.40,  7.0965,117.6389\r\n]
+(Nov 23 2022 07:21:05,  172830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.67,  7.0913,117.9219\r\n]
+(Nov 23 2022 08:21:05,  176430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.99,  7.1170,117.9875\r\n]
+(Nov 23 2022 09:21:05,  180030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.36,  7.0834,118.2968\r\n]
+(Nov 23 2022 10:21:05,  183630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.17,  7.0830,118.4610\r\n]
+(Nov 23 2022 11:21:05,  187230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.85,  7.0845,118.7048\r\n]
+(Nov 23 2022 12:21:05,  190830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.76,  7.0830,118.8600\r\n]
+(Nov 23 2022 13:21:05,  194430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.69,  7.0829,119.0624\r\n]
+(Nov 23 2022 14:21:05,  198030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.01,  7.0547,119.3971\r\n]
+(Nov 23 2022 15:21:05,  201630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1006.27,  7.0868,119.4980\r\n]
+(Nov 23 2022 16:21:05,  205230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1003.42,  7.0831,119.7313\r\n]
+(Nov 23 2022 17:21:05,  208830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.18,  7.0864,119.8558\r\n]
+(Nov 23 2022 18:21:05,  212430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.03,  7.0829,120.0666\r\n]
+(Nov 23 2022 19:21:05,  216030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.02,  7.0837,120.2931\r\n]
+(Nov 23 2022 20:21:05,  219630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1006.46,  7.0892,120.3938\r\n]
+(Nov 23 2022 21:21:05,  223230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.31,  7.2144,120.1278\r\n]
+(Nov 23 2022 22:21:05,  226830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.67,  7.0933,120.6677\r\n]
+(Nov 23 2022 23:21:05,  230430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  994.77,  7.0880,120.7938\r\n]
+(Nov 24 2022 00:21:05,  234030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.01,  7.0871,120.9235\r\n]
+(Nov 24 2022 01:21:05,  237630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  997.04,  7.0869,121.0839\r\n]
+(Nov 24 2022 02:21:05,  241230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.53,  7.0885,121.3130\r\n]
+(Nov 24 2022 03:21:05,  244830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.56,  7.0876,121.4320\r\n]
+(Nov 24 2022 04:21:05,  248430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  998.41,  7.0881,121.5902\r\n]
+(Nov 24 2022 05:21:05,  252030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.49,  7.0871,121.7193\r\n]
+(Nov 24 2022 06:21:05,  255630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1006.75,  7.0877,121.8340\r\n]
+(Nov 24 2022 07:21:05,  259230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.23,  7.0862,122.0078\r\n]
+(Nov 24 2022 08:21:05,  262830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1004.91,  7.0876,122.1389\r\n]
+(Nov 24 2022 09:21:05,  266430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.11,  7.0867,122.2434\r\n]
+(Nov 24 2022 10:21:05,  270030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.77,  7.0871,122.3706\r\n]
+(Nov 24 2022 11:21:05,  273630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.96,  7.0878,122.4615\r\n]
+(Nov 24 2022 12:21:05,  277230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  998.28,  7.0863,122.5896\r\n]
+(Nov 24 2022 13:21:05,  280830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.18,  7.0881,122.7080\r\n]
+(Nov 24 2022 14:21:05,  284430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1004.42,  7.0888,122.7935\r\n]
+(Nov 24 2022 15:21:05,  288030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1003.65,  7.0886,122.8943\r\n]
+(Nov 24 2022 16:21:05,  291630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1004.72,  7.0885,123.0114\r\n]
+(Nov 24 2022 17:21:05,  295230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  997.18,  7.0878,123.1128\r\n]
+(Nov 24 2022 18:21:05,  298830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1006.50,  7.0866,123.2178\r\n]
+(Nov 24 2022 19:21:05,  302430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.84,  7.0854,123.3079\r\n]
+(Nov 24 2022 20:21:05,  306030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.85,  7.0899,123.4057\r\n]
+(Nov 24 2022 21:21:05,  309630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.99,  7.0890,123.4995\r\n]
+(Nov 24 2022 22:21:05,  313230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  996.82,  7.0851,123.6471\r\n]
+(Nov 24 2022 23:21:05,  316830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  996.52,  7.0869,123.7958\r\n]
+(Nov 25 2022 00:21:05,  320430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.87,  7.0902,123.8905\r\n]
+(Nov 25 2022 01:21:05,  324030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.50,  7.0865,123.9959\r\n]
+(Nov 25 2022 02:21:05,  327630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.65,  7.0866,124.0888\r\n]
+(Nov 25 2022 03:21:05,  331230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.18,  7.0914,124.1567\r\n]
+(Nov 25 2022 04:21:05,  334830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.34,  7.0863,124.2708\r\n]
+(Nov 25 2022 05:21:05,  338430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.39,  7.0902,124.3556\r\n]
+(Nov 25 2022 06:21:05,  342030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.88,  7.0885,124.4681\r\n]
+(Nov 25 2022 07:21:05,  345630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.28,  7.0889,124.5356\r\n]
+(Nov 25 2022 08:21:05,  349230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.56,  7.0900,124.6321\r\n]
+(Nov 25 2022 09:21:05,  352830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1007.08,  7.0877,124.7482\r\n]
+(Nov 25 2022 10:21:05,  356430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.14,  7.0885,124.8263\r\n]
+(Nov 25 2022 11:21:05,  360030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1003.14,  7.0874,124.9662\r\n]
+(Nov 25 2022 12:21:05,  363630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1000.35,  7.0796,125.0591\r\n]
+(Nov 25 2022 13:21:05,  367230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.65,  7.0870,125.1241\r\n]
+(Nov 25 2022 14:21:05,  370830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  997.78,  7.0886,125.1919\r\n]
+(Nov 25 2022 15:21:05,  374430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.43,  7.0898,125.2652\r\n]
+(Nov 25 2022 16:21:05,  378030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1004.20,  7.0858,125.3682\r\n]
+(Nov 25 2022 17:21:05,  381630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1004.40,  7.0800,125.4628\r\n]
+(Nov 25 2022 18:21:05,  385230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  998.69,  7.0504,125.6781\r\n]
+
+
+(Nov 25 2022 19:21:06) LogSize()            Log file is 39029 bytes.  Limit is 40960 bytes.
+
+(Nov 25 2022 19:21:05,  388830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.63,  7.0905,125.6054\r\n]
+(Nov 25 2022 20:21:05,  392430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.85,  7.0864,125.7136\r\n]
+(Nov 25 2022 21:21:05,  396030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.31,  7.0912,125.7653\r\n]
+(Nov 25 2022 22:21:05,  399630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.36,  7.0897,125.8699\r\n]
+(Nov 25 2022 23:21:05,  403230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.09,  7.0879,125.9335\r\n]
+(Nov 26 2022 00:21:05,  406830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.65,  7.1113,125.9668\r\n]
+(Nov 26 2022 01:21:05,  410430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1003.83,  7.0864,126.1216\r\n]
+(Nov 26 2022 02:21:05,  414030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1005.32,  7.0912,126.2015\r\n]
+(Nov 26 2022 03:21:05,  417630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.87,  7.0915,126.2874\r\n]
+(Nov 26 2022 04:21:05,  421230 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.00,  7.0876,126.3649\r\n]
+(Nov 26 2022 05:21:05,  424830 sec) Sbe41cpGetPts()      Violation of pedantic regex: [  999.38,  7.0456,126.5760\r\n]
+(Nov 26 2022 06:21:05,  428430 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1002.68,  7.0501,126.6432\r\n]
+(Nov 26 2022 07:21:05,  432030 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1003.29,  7.0320,126.7774\r\n]
+(Nov 26 2022 08:21:05,  435630 sec) Sbe41cpGetPts()      Violation of pedantic regex: [ 1001.06,  7.0407,126.8238\r\n]
+
+<EOT>

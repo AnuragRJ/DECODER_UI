@@ -1,0 +1,36 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend[39m
+
+ [32m✓[39m src/components/FleetOceanMap.eez.ssr.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 165[2mms[22m[39m
+ [32m✓[39m src/utils/indiaEez.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 90[2mms[22m[39m
+ [32m✓[39m src/store/eez.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 71[2mms[22m[39m
+ [32m✓[39m src/components/fleetMapModel.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 48[2mms[22m[39m
+ [32m✓[39m src/components/FloatStatusPage.ssr.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m src/components/EezCombinedAlert.test.tsx [2m([22m[2m13 tests[22m[2m)[22m[32m 35[2mms[22m[39m
+ [32m✓[39m src/components/FleetOceanMap.ssr.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32m✓[39m src/components/mapProjection.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+[90mstderr[2m | src/store/ingestionArrivals.test.ts[2m > [22m[2mfetchIngestion — normalized arrivals surface as NEW DATA state[2m > [22m[2mis resilient to backend errors (keeps prior state shape)
+[22m[39mFailed to fetch ingestion status: Error: offline
+    at [90m/home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/[39msrc/store/ingestionArrivals.test.ts:57:32
+    at [90mfile:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/[39mnode_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2956:64
+
+ [32m✓[39m src/store/ingestionArrivals.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m src/utils/fleetStatus.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m src/store/investigation.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m src/store/useFleetStatusStore.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m src/store/decodeAllGating.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m src/utils/investigate.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m14 passed[39m[22m[90m (14)[39m
+[2m      Tests [22m [1m[32m144 passed[39m[22m[90m (144)[39m
+[2m   Start at [22m 11:39:10
+[2m   Duration [22m 3.87s[2m (transform 454ms, setup 0ms, import 1.46s, tests 546ms, environment 1ms)[22m
+

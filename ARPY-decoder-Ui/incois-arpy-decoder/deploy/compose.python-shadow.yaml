@@ -1,0 +1,41 @@
+# Python shadow container for the Direct Migration plan.
+#
+# This overlay is applied alongside the existing MATLAB compose stack. It
+# mounts the SAME input/config/ref volumes read-only, writes to a separate
+# shadow output tree, and never touches MATLAB's output directory.
+#
+# Usage:
+#   DATA_ROOT=/data REGISTRY=/path/to/registry.csv \
+#     docker compose -f compose.yaml -f compose.python-shadow.yaml up -d argo-python-shadow
+#
+# Environment variables:
+#   ARGO_WMO_SAMPLE   - space-separated list of WMOs for shadow sampling
+#                       (default: the demo/early-shadow 10-WMO sample).
+#   METADATA_REGISTRY - path to registry.csv inside the container (default
+#                       /mnt/metadata/registry.csv).
+
+services:
+  argo-python-shadow:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: ghcr.io/euroargodev/coriolis-argo-decoder-python:${PYTHON_TAG:-dev}
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
+    # Note: `group_add: [gbatch]` is POSIX-only; omit on Windows/Docker Desktop
+    volumes:
+      - ${DECODER_DATA_INPUT_VOLUME:-/data/rsync}:/mnt/data/rsync:ro
+      - ${DECODER_DATA_CONF_VOLUME:-/data/config}:/mnt/data/config:ro
+      - ${METADATA_REGISTRY_FILE:-./config/registry.csv}:/mnt/metadata/registry.csv:ro
+      - ${DECODER_REF_VOLUME:-/data/ref}:/mnt/ref:ro
+      - ${DECODER_DATA_PYTHON_OUTPUT_VOLUME:-/data/output-python}:/mnt/data/output:rw
+    command: >
+      argo-decoder decode-float ${ARGO_WMO_SAMPLE:-6902892}
+        --metadata-backend csv
+        --registry /mnt/metadata/registry.csv
+        --null-decoder
+    restart: on-failure
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "5"

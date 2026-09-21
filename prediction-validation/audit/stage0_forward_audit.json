@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-09-21T21:15:19.050734Z",
+  "log": "/home/user/profile-recency-update/runtime/fleet_status/prediction_forward_log.jsonl",
+  "events": 30,
+  "issued": 30,
+  "scored": 0,
+  "pending": 30,
+  "scored_now": [],
+  "archived_replay": [
+    {
+      "wmo": 1902844,
+      "old_observation": "2026-02-05T03:51:00+00:00",
+      "old_error_km": 2077.712,
+      "new_observation": "2026-02-14T22:49:00+00:00",
+      "new_target_time": "2026-02-14T02:12:52Z",
+      "new_observation_is_interior_cycle": true
+    },
+    {
+      "wmo": 2904082,
+      "old_observation": "2026-02-06T04:07:00+00:00",
+      "old_error_km": 2196.163,
+      "new_observation": "2026-02-15T23:12:00+00:00",
+      "new_target_time": "2026-02-14T02:13:58Z",
+      "new_observation_is_interior_cycle": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "1a. a repeated poll adds no audit records (idempotent recording)",
+      "passed": true,
+      "detail": "30 events before, 30 after"
+    },
+    {
+      "check": "1b. one record per (float, issuing fix) \u2014 never duplicated",
+      "passed": true,
+      "detail": "30 keys, 30 distinct"
+    },
+    {
+      "check": "1c. the summary counts the same events the file holds",
+      "passed": true,
+      "detail": "issued=30 scored=0 pending=30"
+    },
+    {
+      "check": "2. every scored prediction was matched to a strictly later cycle of the same float",
+      "passed": true,
+      "detail": "0 scored events re-derived from the cache"
+    },
+    {
+      "check": "3. recorded errors, containment flags and time errors reproduce exactly",
+      "passed": true,
+      "detail": "0 events recomputed from raw coordinates"
+    },
+    {
+      "check": "4. the radii the metrics are judged against are the quoted, calibrated radii",
+      "passed": true,
+      "detail": "R50/R90 preserved on the event and equal to the served values"
+    },
+    {
+      "check": "5. pending entries are genuinely unscorable yet (no later cycle in the cache)",
+      "passed": true,
+      "detail": "30 pending entries re-checked"
+    },
+    {
+      "check": "6a. monitoring figures and float rows are identical across audit polls",
+      "passed": true,
+      "detail": "{\"total\": 30, \"recent_profile\": 4, \"profile_overdue\": 2, \"no_recent_profile_60\": 24, \"no_data\": 0, \"approx_profiles_missed_total\": 13845}"
+    },
+    {
+      "check": "6b. the audit is reported under prediction only, never inside monitoring",
+      "passed": true,
+      "detail": "path=/home/user/profile-recency-update/runtime/fleet_status/prediction_forward_log.jsonl"
+    },
+    {
+      "check": "7. the pre-fix archive is preserved and shows why the rule changed",
+      "passed": true,
+      "detail": "34 archived events, 2 of them sub-cycle scores"
+    },
+    {
+      "check": "8. the two archived sub-cycle scores are rejected by the current rule",
+      "passed": true,
+      "detail": "[{\"wmo\": 1902844, \"old_observation\": \"2026-02-05T03:51:00+00:00\", \"old_error_km\": 2077.712, \"new_observation\": \"2026-02-14T22:49:00+00:00\", \"new_target_time\": \"2026-02-14T02:12:52Z\", \"new_observation_is_interior_cycle\": true}, {\"wmo\": 2904082, \"old_observation\": \"2026-02-06T04:07:00+00:00\", \"old_err"
+    }
+  ],
+  "passed": 11,
+  "failed": 0
+}

@@ -1,0 +1,20 @@
+dropped arrival: /home/user/profile-recency-update/runtime/incoming/102525/burst-1789998139760.txt (real raw telemetry content)
+PASS  arrival detected + normalized by backend (WMO resolved via real metadata) — wmo=2901304 platform=APEX files=3 src=incoming/102525
+PASS  normalized fields honest (cycle/JULD/coords unset — nothing invented)
+PASS  NO decoder batch auto-started by detection — batches 9 → 9
+PASS  header data-source pill present + LOCAL — LOCAL (DEV SOURCE) NEW DATA: 3
+PASS  source labelled as DEV SOURCE in local mode
+PASS  UI NEVER claims FTP CONNECTED without a real session
+PASS  header shows NEW DATA count badge — NEW DATA: 3
+PASS  Incoming-data arrivals panel visible in Fleet view
+PASS  fleet panel shows WMO + NEW DATA badge — WMO 2901304 NEW DATA +2 earlier platform APEX · received 9/21/2026, 1:42:19 PM · 3 file(s) View float Mark seen
+PASS  panel surfaces real metadata (platform, received time)
+PASS  unidentified source associations are labelled, never assigned a WMO
+PASS  fleet TABLE row shows 🟡 NEW DATA badge for the float
+PASS  View float opens Decoder workspace with the float selected (decode stays manual) — select=2901304
+PASS  still NO auto decode after View float
+PASS  Mark seen clears the NEW DATA card
+PASS  ack persisted server-side (arrival now seen, history kept)
+PASS  final: batches count unchanged through the whole flow (no auto-decode)
+
+ALL CHECKS PASSED (17 checks)

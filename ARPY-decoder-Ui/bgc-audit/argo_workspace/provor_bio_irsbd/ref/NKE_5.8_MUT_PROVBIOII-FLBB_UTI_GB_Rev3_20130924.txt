@@ -1,0 +1,3558 @@
+--- PAGE 1 ---
+ 
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+Z.I de KERANDRE  - RUE GUTENBERG 
+56700 HENNEBONT - FRANCE 
+Telephone: +33 (0)2 97 36 10 12  Fax: +33 (0)2 97 36 55 17  
+Web : http://www.nke.fr - E-mail : info.instrumentation@nke.fr 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+USER MANUAL 
+ 
+© nke: This document is the property of nke electronics and contains proprietary and confidential information. The document is loaned on the 
+express condition that neithe r the document itself nor the information contained therein shall be disclosed without the express consent of nke 
+electronics and that the  information shall not be used by the recipient without prior written acceptance by nke electronics. Furthermore, the 
+document shall be  returned immediately to nke electronics upon request. 
+         DOC du 24 / 09 / 13  rev.3 
+--- PAGE 2 ---
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+1 INTRODUCTION ............................................................................................................................................................... 5 
+2 OPERATING INSTRUCTIONS ........................................................................................................................................ 6 
+2.1 HANDLING PRECAUTIONS .............................................................................................................................................. 6 
+2.2 ACCEPTANCE TESTS ...................................................................................................................................................... 6 
+2.2.1 Inventory ................................................................................................................................................................... 6 
+2.2.2 Physical Inspection ................................................................................................................................................... 6 
+2.3 DEFAULT PARAMETERS ................................................................................................................................................. 6 
+2.3.1 ARGO Identification ................................................................................................................................................. 6 
+2.3.2 Decoding .................................................................................................................................................................. 6 
+2.4 LAUNCHING ................................................................................................................................................................... 7 
+2.4.1 Test the Float and arm the mission .......................................................................................................................... 7 
+2.4.2 Remove protective plugs and magnet ....................................................................................................................... 7 
+2.4.1 Deployment checklist ................................................................................................................................................ 9 
+2.4.2 Launch the Float .................................................................................................................................................... 10 
+2.5 CHECKS PRIOR TO DEPLOYMENT .................................................................................................................................. 11 
+2.5.1 Necessary Equipment ............................................................................................................................................. 11 
+2.5.2 Connecting the PC .................................................................................................................................................. 11 
+2.5.3 Example of Bluetooth dongle tested by NKE .......................................................................................................... 13 
+2.5.4 How to Send Commands ......................................................................................................................................... 14 
+2.5.5 How to Read and change Parameter Values .......................................................................................................... 14 
+2.5.6 How to Check and change the Time ....................................................................................................................... 17 
+2.5.7 Configuration Check .............................................................................................................................................. 17 
+2.5.8 Functional Tests ..................................................................................................................................................... 17 
+3 GENERAL DESCRIPTION OF PROVBIOII FLOAT ................................................................................................. 20 
+3.1 PROVBIOII ................................................................................................................................................................... 20 
+3.1.1 Electronics .............................................................................................................................................................. 20 
+3.1.2 Embedded software ................................................................................................................................................ 20 
+3.2 DENSITY CONTROL SYSTEM ........................................................................................................................................ 22 
+3.3 SENSORS ...................................................................................................................................................................... 22 
+3.4 IRIDIUM TRANSMITTER ................................................................................................................................................ 22 
+3.5 CPU BOARD ................................................................................................................................................................ 22 
+3.6 MEASURE BOARD ........................................................................................................................................................ 22 
+3.7 BATTERY ..................................................................................................................................................................... 22 
+3.8 MMI LINK .................................................................................................................................................................... 22 
+4 THE LIFE OF AN PROVBIOII FLOAT ........................................................................................................................ 23 
+4.1 THE MISSION - OVERVIEW ........................................................................................................................................... 23 
+4.2 DESCENT ..................................................................................................................................................................... 25 
+4.3 GROUNDING................................................................................................................................................................. 25 
+4.4 SUBMERGED DRIFT ...................................................................................................................................................... 26 
+4.5 ASCENT ....................................................................................................................................................................... 26 
+4.6 MULTI-PROFILES ......................................................................................................................................................... 26 
+4.7 TRANSMISSION ............................................................................................................................................................ 26 
+5 PROVBIOII PARAMETERS ........................................................................................................................................... 27 
+5.1 MISSION PARAMETERS ................................................................................................................................................ 27 
+5.1.1 Mission Parameters details (PM) ........................................................................................................................... 29 
+5.2 VECTOR PARAMETERS (PV)......................................................................................................................................... 31 
+5.2.1 Vector Parameters details ...................................................................................................................................... 32 
+5.3 SENSOR PARAMETERS (PC) ......................................................................................................................................... 33 
+5.3.1 How to read and modify Sensor Parameter ........................................................................................................... 33 
+5.3.2 Standard parameter information ............................................................................................................................ 34 
+5.3.3 Specific parameter information .............................................................................................................................. 37 
+
+--- PAGE 3 ---
+5.3.4 CTD parameters (Sensor “0”) ............................................................................................................................... 37 
+5.3.5 Optode Parameters (Sensor “1”) ........................................................................................................................... 40 
+5.3.6 FLBB Parameters (Sensor “4”) ............................................................................................................................. 42 
+6 USER COMMANDS ......................................................................................................................................................... 44 
+7 IRIDIUM FORMATS ....................................................................................................................................................... 46 
+7.1 TRANSMISSION STRATEGY ........................................................................................................................................... 46 
+7.2 PACKET TYPES ............................................................................................................................................................ 47 
+7.2.1 Sensor Data type .................................................................................................................................................... 47 
+7.2.2 Phase description ................................................................................................................................................... 48 
+7.2.3 Coding format......................................................................................................................................................... 48 
+7.2.4 Packets Formats ..................................................................................................................................................... 49 
+7.3 LIFE EXPIRY MESSAGE ................................................................................................................................................ 59 
+7.4 PACKET TRANSMITTING SEQUENCE (IRIDIUM SESSION) ................................................................................................ 59 
+7.5 IRIDIUM COMMMANDS ................................................................................................................................................. 59 
+7.5.1 Command Sending procedure (SBD MODE) ......................................................................................................... 60 
+8 SPECIFICATIONS ........................................................................................................................................................... 62 
+9 PROVBIOII OPERATING PRINCIPLE ........................................................................................................................ 63 
+10 LITHIUM BATTERY ....................................................................................................................................................... 64 
+11 GLOSSARY ....................................................................................................................................................................... 65 
+ 
+DATE REVISION OBJET Auteur 
+20/07/12 0 Création (prototype) JS 
+15/01/12 
+06/03/13 
+1 
+2 
+ 
+ 
+JS 
+JS 
+04/09/13 3  JS 
+    
+    
+    
+--- PAGE 4 ---
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+WHITE PAGE / PAGE BLANCHE
+--- PAGE 5 ---
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+1 INTRODUCTION 
+ 
+ProvBioII is a subsurface profiling float developed jointly by IFREMER and NKE.  
+The ProvBioII float described in this manual is designed for the ARGO Program. This international program 
+will be a major component of the Global Ocean Observing System (GOOS). An array of 3,000 free -drifting 
+profiling floats is planned for deployment in 2004. These floats will measure the temperature and salinity of the 
+upper 2,000 meters of the ocean, allowing continuous monitoring of the ocean's climate. 
+All Argo measurements will be relayed and made publicly available  within hours after collection. The data will 
+provide a quantitative description of the evolving state of the upper ocean and the patterns of ocean climate 
+variability, including heat and freshwater storage and transport. It is expected that ARGO data will  be used for 
+initialization of ocean and coupled forecast models, and for dynamic model testing. A primary focus of Argo is 
+seasonal to decadal climate variability and predictability. 
+After launch, ProvBioII's mission consists of a repeating cycle of desce nt, submerged drift, ascent and data 
+transmission. During these cycles, ProvBioII dynamically controls its buoyancy with a hydraulic system. This 
+hydraulic system adjusts the density of the float causing it to descend, ascend or hover at a constant depth i n 
+the ocean. The user selects the depth at which the system drifts between descent and ascent profiles. 
+ProvBioII continually samples the pressure at this drift depth and maintains t hat depth within approximately  
++/-50m. 
+After the submerged drift portion of a cycle, the float proceeds to the depth at which the ascending profile is to 
+begin. The ascent profile starting depth (typically the ARGO -selected depth of 2,000m) is not necessarily the 
+same as the drift depth. 
+During its mission, ProvBioII collects measurements of several parameters (depending on sensor mounted) - 
+salinity, temperature , depth, dissolved oxygen , Chlorophyll  A, CDOM, Backscaterring, Nutri ents, ...  - and 
+saves them in its memory. These measurements can be sampled during the float descen t (descent profile), 
+during the submerged drift period (Lagrangian operation) and during the ascent (ascent profile). 
+After each ascent, ProvBioII transmits its saved data to the satellites of the Iridium system.  
+This manual describes the ProvBioII float, how to use it and safety precautions to be observed during 
+handling. 
+ 
+Please read this manual carefully to ensure that ProvBioII functions as intended. 
+ 
+Overview of the present manual’s contents: 
+ 
+ Chapter 2 contains the instructions necessary for the personnel in charge of the deployment  
+ Chapter 3  describes the components of ProvBioII ; it is intended for those who want a more in -depth 
+understanding of ProvBioII  
+ Chapter 4 describes the mission of ProvBioII  
+ Chapter 5 describes the various parameters  
+ Chapter 6 describes the user commands that can be send to the float 
+ Chapter 7 describes the formats of the various Iridium messages  
+ Chapter 8 presents the technical specifications 
+ Chapter 9 provides explanations about the operation of ProvBioII  
+ Chapter 10 specifies the elements of the constraints limited to the transport of Lithium batteries.   
+ 
+ 
+ 
+--- PAGE 6 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+6 
+ 
+2 OPERATING INSTRUCTIONS 
+The following instructions tell you how to handle, configure, test and launch the ProvBioII float. Please read 
+these instructions carefully and follow them closely to ensure your ProvBioII float functions as intended. 
+ 
+2.1  Handling Precautions 
+ProvBioII is designed to withstand submersion at great depths for long periods of time (up to five years). This 
+remarkable specification in oceanographic instrumentation is possible thanks to the protection of the casing 
+by an anti -corrosion coating. This coating is sensitive to  impact. Damage to the coating can accelerate the 
+corrosion process. 
+NOTE:   Take precautions to preserve the anti -corrosion coating during handling. Remove the float 
+from its packing only when absolutely necessary. 
+NOTE:   Regulations state that ProvBioII must not be switched on during transport. 
+2.2 Acceptance Tests 
+Immediately upon receipt of the ProvBioII float, you should test it to confirm that it is complete, correctly 
+configured and has not been damaged in shipment. If your ProvBioII float fails any of the following tests, you 
+should contact nke electronics. 
+ 
+2.2.1 Inventory 
+The following items should be supplied with your ProvBioII float: 
+ 
+• The present user manual. 
+ 
+• A test sheet. 
+ 
+NOTE:    Disassembly of the float voids the warranty. 
+Check that all of the above items are present. If any are missing, contact nke. 
+ 
+2.2.2 Physical Inspection 
+Upon the opening of the transport casing, visually inspect the float's general condition: Inspect the transport 
+container for dents, damage, signs of impact or other signs that the float has been mishandled during 
+shipping. 
+Inspect the CTD sensor, antenna, hull, housing around the lower bladder for dents or any other signs of 
+damage  
+ 
+ 
+NOTE:    Ensure the magnet is in place against the hull (on ON/OFF position). 
+ 
+2.3 Default Parameters  
+Notwithstanding special instructions given to NKE during the ProvBioII preparation stage, the following set of 
+parameters is applied: section 5. 
+ 
+If these parameters are not appropriate, the user can change them himself by following the instructions.   
+2.3.1 ARGO Identification  
+The user is responsible for contacting the AIC in order to obtain the WMO number which will identify the 
+ProvBioII ’s mission. 
+2.3.2 Decoding  
+The CORIOLIS project team (IFREMER) is able to assist the teams that use ProvBioII for data processing. 
+ 
+--- PAGE 7 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+7 
+ 
+2.4 Launching 
+Following is what you should do to launch the ProvBioII float. 
+ 
+2.4.1 Test the Float and arm the mission 
+Before you take ProvBioII on deck for deployment, we recommend that you repeat all of the tests de scribed in 
+section 2.5.8. This will ensure that the float is functioning and configured correctly and maximize the probability 
+of success of your experiment. 
+ 
+IMPORTANT:   Before launching the float, you must arm the mission by issuing the !AR 1 command: 
+!AR ON 
+ProvBioII will respond : 
+<AR ON> 
+Put the magnet on the float (ON/OFF position). 
+NOTE:    Once the mission is armed, the next time you will attempt to communicate with the float upon 
+magnet removal, you need to establish Bluetooth connection (see section 2.5.2) and press 
+"ENTER" within 30 seconds in order to get the prompt ]. 
+  
+ 
+2.4.2 Remove protective plugs and magnet 
+ 
+The pump system of the CTD sensor is sealed by 3 protective plugs. Remove these plugs from the sensor 
+before launching. 
+ 
+ 
+rotective plugs                                                                           
+ 
+CTD sensor      Optode sensor 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 8 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+8 
+ 
+ 
+ 
+ 
+ON/OFF Position 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Remove the magnet located near the top of the float (see Figure 1 – General view of ProvBioII float 
+). Retain the magnet for future use in case the float is recovered. 
+ 
+ProvBioII is now ready for launch. 
+ 
+To confirm that the magnet has been removed and that the float is ready for launch, 5 seconds after magnet 
+removal, ProvBioII starts 5 valves actions. After 80s, the seabird pump is active. If you have water in the CTD, 
+this water go out by the holes where was the protectives plugs. After 100 sec, floats starts 5 quick valve 
+activations. 
+ 
+NOTE:    Once the magnet has been removed, the ProvBioII float performs an initial test (if Armed Mode 
+is ON only). Ensure that the CTD pump starts as explained above before placing the float in 
+the water. 
+ 
+If your do not hear the valve running after 30 seconds, and you do not see the water after 90s, replace the 
+magnet, connect the PC, and conduct the tests described in section 2.5. If these tests fail, contact nke technical 
+support. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 9 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+9 
+ 
+2.4.1 Deployment checklist 
+ 
+Test Description Expected Result Result 
+Check before deployment 
+1 Visual inspection No scratch, good general state  OK 
+2 Magnet Position Magnet placed on ON/OFF position (means OFF)  OK 
+3 Remove all sensor 
+plugs Plugs removed (see section 2.4.2)  OK 
+4 Distilled Water in 
+conductivity cell 
+Introduce distilled water in conductivity cell (enable 
+CTD pump check on test 5 & 8)  OK 
+Check during deployment (Float must be on VERTICAL position) 
+5 Magnet removal Magnet removed from ON/OFF position  OK 
+6 5 slow Ev activations 5 slow Ev activations heard (5-15 sec after magnet 
+removal)  OK 
+7 Hydraulic pump 
+Hydraulic pump activation to fill in external bladder 
+(from 5 sec to several minutes depending on bladder 
+state at deployment) 
+ OK 
+8 CTD pump Water level change in CTD water circuit  OK 
+8b Optical sensor (option) Optical sensor activation (Light on ECO-FL sensor)  OK 
+9 5 quick Ev activation 5 quick Ev activations heard  OK 
+10 Delay before mission Wait for “PM1” Minutes  OK 
+11 CTD pump Water level change in CTD water circuit  OK 
+12 Hydraulic pump Hear Hydraulic pump (2 sec)  OK 
+13 Iridium Transmission   Iridium transmission (files received by mail)  OK 
+Deployment 
+14 Deployment Deployment system in place  OK 
+15 Float drift Float drift at surface  OK 
+ 
+If step 9 is not reached and Iridium message are not received, place magnet on ON/OFF position and 
+try again from beginning. To check iridium transmission & GPS acq, it is recommended to reach step 13 
+Do not DEPLOY after 3 unsuccessfull tries ! 
+--- PAGE 10 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+10 
+ 
+2.4.2 Launch the Float 
+NOTE:   Keep the float in its protective packaging for as long as pos sible to guard against any nicks 
+and scratches that could occur during handling. Handle the float carefully, using soft, non -
+abrasive materials only. Do not lay the float on the deployment vessel's unprotected deck. Use 
+cardboard or cloth to protect it. 
+2.4.2.1 By hand  
+ProvBioII can be launched by hand from the deck from a height of 2 meters  
+2.4.2.2 Using a rope  
+ 
+The damping disk is already fastened on the tube (under the buoyancy foam). 
+It is possible to use the holes in the damping disk in order to handle and secure the float during deployment. 
+ 
+ 
+After the launch, you may decide to wait alongside the float until it starts its descent, but this can take 
+up to 3 hours depending on the float’s buoyancy when it is placed in the water. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 11 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+11 
+ 
+2.5 Checks prior to deployment 
+2.5.1 Necessary Equipment 
+The equipment required to check that ProvBioII is functioning correctly and to prepare it for the mission are: 
+(1)   A PC. 
+The most convenient way of communicating with ProvBioII is with a PC in terminal emula tion mode. 
+Among other advantages, this allows storage of configuration parameters and commands. You can use 
+any standard desktop or laptop computer. The PC must be equipped with a serial port (usually called 
+COM1 or COM2). 
+(2)   VT52 or VT100 terminal emulation software. 
+The Hyper Terminal emulation software can be used. 
+(3)   A Bluetooth Dongle with drivers installed on the PC (BELKIN class 2 model is recommended). 
+(4)   An accurate time source. 
+This could be a wristwatch, a GPS receiver or the PC's inter nal clock. Some users use a GPS 
+receiver connected to the PC to adjust the clock. 
+ 
+2.5.2  Connecting the PC 
+ 
+Make sure you check the following points before attempting a connection: 
+ Bluetooth key connected to the PC with the drivers installed 
+ Magnet present at the Bluetooth’s power supply ILS (see Figure 1 – General view of ProvBioII float 
+ 
+ Start Hyperterminal after checking on which COM port the Bluetooth key is installed by going to: Control 
+Panel->System-> click on Hardware tab->Device Manager as shown in the figure below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ On the PC, run the following commands as shown in the figure below: 
+ Right click on the Bluetooth logo in the bottom right corner of the Desktop 
+ Select Quick Connect, Bluetooth Serial Port, then click on other devices 
+ 
+
+--- PAGE 12 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A window appears as shown in the figure below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Click on Refresh 
+ Check that the Bluetooth number is present on the traceability label (see Figure 1 – General view of 
+ProvBioII float 
+ There are two ways of establishing the connection: 
+ Either select the number shown and press Connect 
+ Or come back to the previous step and instead of selecting “other devices”, select the number shown 
+ When the connection is made, a dialog box appears as shown in the figure above: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 13 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+13 
+ 
+Double click on it and a window appears as shown below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Enter the security code “0000” 
+ You can now check the connection by double clicking on the Bluetooth logo in bottom right corner of the 
+Desktop 
+ 
+ The “Bluetooth favourites” window appears: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Use your PC's terminal emulation software to configure the selected serial port for: 
+ 
+•    9,600 baud  
+ 
+•    8 data bits  
+ 
+•    1 stop bit  
+ 
+•    Parity: none 
+ 
+•    Full duplex  
+ 
+•    No flow control  
+ 
+2.5.3 Example of Bluetooth dongle tested by NKE  
+ 
+ 
+ 
+ 
+USB Bluetooth™ adaptor - 100 meters,  
+Part # F8T012fr 
+Made by Belkin  
+ 
+ 
+
+--- PAGE 14 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+14 
+ 
+2.5.4  How to Send Commands 
+You must communicate with ProvBioII to verify or change its configuration parameters, to read data from the 
+float, or to test the float's functions. You perform these verifications/changes by sending commands, and by 
+observing the float's response to those commands. Compose commands by typing characters on the keyboard 
+of your PC, and send them to ProvBioII by pressing the Enter key. 
+In the following descriptions of commands we will use the general syntax: 
+ 
+•    Keystrokes entered by the user are written in bold. 
+ 
+•    Replies received from the float are in normal font. 
+ 
+•    Commands entered by the user end with the Enter key. 
+ 
+The software version can be viewed using the ?VL command 
+ProvBioII will respond: 
+<ProvBioII > 
+<VL V1_06  > 
+<TX IRIDIUM> 
+Get measure ?VL  
+SOFTWARE VERSION Measure: V0.24.100 
+] 
+ 
+The float’s serial number can be viewed using the ?NS command 
+ProvBioII will respond: 
+<NS 1202> 
+Get measure ?NS  
+SERIAL NUMBER Measure: 1202 
+] (year 12, identification 2) 
+ 
+2.5.5  How to Read and change Parameter Values 
+Read the values of “mission parameters” by sending the PM command. Do this by typing the characters ?PM or 
+?PV or ?PI or ?PT or ?PC (respectively for mission parameters, Vector parameters, Rudics parameters, 
+Technical parameters and Sensor parameters) in response to ProvBioII 's  prompt character (“]” ) then confirm 
+the command by pressing the Enter key. It should look like this: 
+?PM 
+ProvBioII will respond: 
+<PM0        1> 
+<PM1        0> 
+<PM2        1> 
+<PM3        1> 
+<PM4        4> 
+<PM5        1000> 
+<PM6        2000> 
+<PM7        0> 
+... 
+<PM51      2000> 
+<PM52      1> 
+] 
+ 
+As you can see, the responses are of the form: 
+ 
+•    PM parameter number, value. 
+ 
+ 
+ 
+--- PAGE 15 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+15 
+ 
+You can also read the values of the parameters individually using the command 
+? PM X 
+where X identifies the parameter. Each parameter is identified by a parameter number corresponding to a 
+parameter name. They are summarised for reference in section 5.1 
+ 
+ Abbr. NAME DEFAULT 
+VALUE UNIT MIN VALUE MAX VALUE 
+ PM0 Number of profiles per cycle 1 - 1 10 
+ PM1 Delay Before Mission 0 Minutes 0 1440 
+ PM2 Reference Day 1 Mission day 0 364 
+ 
+1st 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM3 Day for 1st surfacing 1 Mission day 1 364 
+PM4 Estimated hour for 1st surfacing (1) 4 Hour in the day 0 23 
+PM5 Drift Depth 1000 dBars 100 2000 
+PM6 Profile Depth 2000 dBars 100 2030 
+PM7 Transmission for 1st profile (0 = N, 1 = Y) 0  0 1 
+ 
+2nd  
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM8 Day for 2nd surfacing 1 Mission day 1 364 
+PM9 Estimated hour for 2nd surfacing (1) 4 Hour in the day 0 23 
+PM10 Drift Depth 1000 dBars 100 2000 
+PM11 Profile Depth 2000 dBars 100 2030 
+PM12 Transmission for 2nd profile (0 = N, 1 = Y) 0  0 1 
+ 
+3rd 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM13 Day for 3rd surfacing 1 Mission day 1 364 
+PM14 Estimated hour for 3rd surfacing (1) 4 Hour in the day 0 23 
+PM15 Drift Depth 1000 dBars 100 2000 
+PM16 Profile Depth 2000 dBars 100 2030 
+PM17 Transmission for 3rd profile (0 = N, 1 = Y) 0  0 1 
+ 
+4th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM18 Day for 4th surfacing 1 Mission day 1 364 
+PM19 Estimated hour for 4th surfacing (1) 4 Hour in the day 0 23 
+PM20 Drift Depth 1000 dBars 100 2000 
+PM21 Profile Depth 2000 dBars 100 2030 
+PM22 Transmission for 4th profile (0 = N, 1 = Y) 0  0 1 
+ 
+5th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM23 Day for 5th surfacing 1 Mission day 1 364 
+PM24 Estimated hour for 5th  surfacing (1) 4 Hour in the day 0 23 
+PM55 Drift Depth 1000 dBars 100 2000 
+PM26 Profile Depth 2000 dBars 100 2030 
+PM27 Transmission for 5th profile (0 = N, 1 = Y) 0  0 1 
+ 
+6th 
+ 
+P 
+R 
+O 
+F 
+PM28 Day for 6th surfacing 1 Mission day 1 364 
+PM29 Estimated hour for 6th surfacing (1) 4 Hour in the day 0 23 
+PM30 Drift Depth 1000 dBars 100 2000 
+PM31 Profile Depth 2000 dBars 100 2030 
+--- PAGE 16 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+16 
+ 
+I 
+L 
+E 
+PM32  Transmission for 6th profile (0 = N, 1 = Y) 0  0 1 
+ 
+7th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM33 Day for 7th surfacing 1 Mission day 1 364 
+PM34 Estimated hour for 7th surfacing (1) 4 Hour in the day 0 23 
+PM35 Drift Depth 1000 dBars 100 2000 
+PM36 Profile Depth 2000 dBars 100 2030 
+PM37 Transmission for 7th profile (0 = N, 1 = Y) 0  0 1 
+ 
+8th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM38 Day for 8th surfacing 1 Mission day 1 364 
+PM39 Estimated hour for 8th surfacing (1) 4 Hour in the day 0 23 
+PM40 Drift Depth 1000 dBars 100 2000 
+PM41 Profile Depth 2000 dBars 100 2030 
+PM42 Transmission for 8th profile (0 = N, 1 = Y) 0  0 1 
+ 
+9th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM43 Day for 9th surfacing 1 Mission day 1 364 
+PM44 Estimated hour for 9th  surfacing (1) 4 Hour in the day 0 23 
+PM45 Drift Depth 1000 dBars 100 2000 
+PM46 Profile Depth 2000 dBars 100 2030 
+PM47 Transmission for 9th profile (0 = N, 1 = Y) 0  0 1 
+ 
+10th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM48 Day for 10th surfacing 1 Mission day 1 364 
+PM49 Estimated hour for 10th  surfacing (1) 4 Hour in the day 0 23 
+PM50 Drift Depth 1000 dBars 100 2000 
+PM51 Profile Depth 2000 dBars 100 2030 
+PM52 Transmission for 10th profile (0 = N, 1 = Y) 1  0 1 
+ 
+For example, to verify the value of the drift pressure target (1st profile), send the command: 
+ 
+? PM 5 
+ProvBioII will respond: 
+<PM5      1000> 
+] 
+The commands for changing the values of the mission parameters are of the form: 
+!PM X Y 
+where X identifies the parameter and Y provides its new value. 
+For example, to change the profile depth  to 2030 (max value) for 1st profile, send the command: 
+!PM 06 2030 
+ProvBioII will respond: 
+<PM6 2030> 
+ 
+NOTE:    ProvBioII will always respond by confirming the present value of the parameter. This is true 
+even if your attempt to change the parameter's value has been unsuccessful, so you should 
+observe carefully how ProvBioII responds to your commands. 
+ 
+ 
+--- PAGE 17 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+17 
+ 
+In a same way, to read vector parameters, user send the command : 
+?PV 
+Float will respond with vector parameters list. 
+To read sensor parameters, send the command : 
+?PC x    with x is sensor number identification (see section 5.3 for more details). 
+Float will respond with Sensor “x” parameters list. 
+ 
+All command list is given in section 6  “USER COMMANDS” 
+ 
+2.5.6  How to Check and change the Time 
+ 
+Connect the PC to the float using the BT connection (see section 2.5.2). Ask ProvBioII to display the time 
+stored in its internal clock by sending the command: 
+? TI 
+(Do this by typing the characters ? TI followed by the Enter key). ProvBioII will respond: 
+Get measure ?TI 
+Command Measure: ?TI 
+#TI 15:29:11 12/09/12 
+DATE/TIME Measure: 15:29:11 12/09/12 
+]] 
+The date and time are in the format hh:mm:ss  DD/MM/YY 
+ 
+You can set the time on the float's internal clock by sending the command: 
+!TI DD MM YY hh mm ss 
+ 
+For example, if you send the command: 
+!TI 01 03 13 14 30 00 
+ProvBioII will respond: 
+01/03/13, 14h 30m 00s 
+ 
+2.5.7 Configuration Check 
+ 
+The float has been programmed at the factory. The objective of this portion of the acceptance test is to 
+verify the float's configuration parameters. 
+Connect the PC to the float (see section 2.5.2). Send the PM command, as explained in section 2.5.5. to verify 
+that ProvBioII 's parameters have been set correctly. 
+ 
+2.5.8 Functional Tests 
+Connect the PC to the float (see section 2.5.2). 
+NOTE:    The hydraulic components will function correctly only if the float is in a vertical position with 
+the antenna up. 
+Orient the float vertically, and support it to prevent it from falling over during the performance of the functional 
+tests. 
+ProvBioII has several commands that allow you to test its various functions. 
+ 
+--- PAGE 18 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+18 
+ 
+2.5.8.1 Complete AUTO-TEST 
+Send the command : 
+!C 
+ProvBioII will respond: 
+***AUTOTEST*** 
+***Test FLASH*** 
+< FLASH: OK (DB7C) > 
+***Test VACUUM*** 
+< VACUUM: OK (700) > 
+***Test BAT*** 
+< BAT: OK > 
+***Test RES*** 
+Remplissage reservoir 
+<RV ON> 
+< RES: OK > 
+***Test MEASURE*** 
+< MEASURE: OK > 
+***Test MODEM*** 
+< MODEM: OK > 
+****AUTOTEST OK**** 
+] 
+Sensor will be tested only if sampling period is different from zero (at least in one phase and/or 
+zone). 
+Sampling period description can be find in section 5.3.2. 
+2.5.8.2 Display of technological parameters 
+ 
+2 commands are used (?VB and !RV): 
+ 
+Send the command: 
+?VB 
+ 
+ProvBioII will respond: 
+***Mesure vide interne*** 
+<B:107 V:705 (A=1.687 B=-368.240)> 
+] -> means 705 mBar internal and 10.7V Battery pack  voltage 
+•  Internal vacuum (V). 
+This vacuum is drawn on the float as one of the final steps of assembly. It should be between 600 
+and 800 mbar absolute. 700 mbar is recommended (with external bladder full  @ 20°C). 
+ 
+ 
+•  Battery voltage (B) 
+Normal values for a new battery are 10.8 volts (see test sheets for limits). 
+ 
+Send the command : 
+!RV 
+ 
+Float will respond with: 
+<RV ON> if lower blade is full. 
+If lower blade is not full pump will activate until oil has been transferred and lower blade is full . By this way, 
+initial buoyancy will be maximal at deployment. 
+Before using RV command, float must be in vertical position. If float is in box, test could be false. 
+--- PAGE 19 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+19 
+ 
+2.5.8.3 Test of CTD sensor (sensor 0) 
+ 
+This command is used to display: 
+ 
+•  External pressure (P). 
+ 
+•  Temperature (T). 
+ 
+•  Salinity (S). 
+ 
+Send the command: 
+?ME 0 
+ 
+ProvBioII will respond: 
+Get mesure ?ME 
+Command Measure: ?ME 0 
+]ONE SHOT Measure: 0 CTD -0.0548 24.8029 0.4743    
+As this sensor is in open air, only the temperature data should be regarded as accurate. 
+2.5.8.4 Test of Oxygen sensor (sensor 1) 
+This command  is used to perform an acquisition on the oxygen sensor. 
+Send the command : 
+?ME 1 
+Float will respond with : 
+< Get measure ?ME 1 
+ONE SHOT Measure: 1 DO 43 586 32.6750 2.6810 26.5220 > 
+2.5.8.5 Test of FLBB sensor (sensor 4) 
+This command  is used to perform an acquisition on the FLNTU sensor. 
+Send the command : 
+?ME 4 
+Float will respond with : 
+< Get measure ?ME 4 
+ONE SHOT Measure: 4 FLBB 99/99/99 99:99:99 695 53 700 158 530 > 
+2.5.8.6 Test Hydraulic Pump 
+ 
+To activate the pump for one second, send the command: 
+!P 100 
+ 
+Listen for the pump running for one second (unit: centiseconds). 
+2.5.8.7 Test Hydraulic Valve 
+ 
+To activate the valve for one second, send the command: 
+!E 100 
+ 
+Listen for the actuation of the valve (unit: centiseconds). 
+2.5.8.8 Test GPS/Iridium Subsystem 
+ 
+Float must be placed in free area, in order satellite communication (GPS and Iridium) can be performed 
+To test the Iridium transmitter, send the command : 
+!SE 
+The float will reprogram time with GPS, then will send a technical message. Put the magnet back in place to 
+stop the transmission. 
+This command will cause ProvBioII to transmit several messages. They are technical messages, the format of 
+which is described in section 7. 
+--- PAGE 20 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+20 
+ 
+Use email address you give to pr ovider at Iridium activation request, to check transmission was OK  (SBD 
+transmission mode only) or check transmitted file on rudics server (rudics transmission mode) . The message 
+content is not meaningful, this is a test of the transmission only. 
+ 
+You have now completed the functional tests. Ensure the magnet is in place on the ON/OFF position (see 
+Figure 2). 
+ 
+ 
+ 
+3 GENERAL DESCRIPTION OF PROVBIOII FLOAT 
+3.1  ProvBioII  
+The main developments of ProvBioII compared to the CTS-3.1 float are mainly: 
+ 
+ 
+ Embedded software, 
+ Electronics, 
+ Mechanical interface with sensors 
+ 
+ 
+ 
+ 
+3.1.1  Electronics 
+A new CPU board has been developed to take in account the obsolescence of components of the CTS -3.1 
+PROVOR profiler. A new electronic board has been designed to deal with sensor acquisition and treatment. 
+ 
+ 
+3.1.2  Embedded software 
+The CPU board is equipped with a new embedded software taking in account supplementary inputs and 
+possibilities required by the new electronic design including two boards : one for float managing and the other 
+for sensor.. 
+ 
+ 
+ 
+ 
+--- PAGE 21 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+21 
+ 
+ 
+ 
+  Iridium / GPS Antenna 
+ 
+ 
+ 
+ 
+ 
+ 
+  CTD Sensor 
+ 
+  Optode Sensor 
+ 
+  FLBB Sensor 
+ 
+ 
+ 
+  Buoyancy foam 
+ 
+ 
+ 
+ 
+ 
+ 
+  Magnet Position (ON/OFF) 
+ 
+ 
+ 
+  Magnet Position (Bluetooth) 
+ 
+   
+ 
+   
+ 
+ 
+ 
+  Tracability label (Float @ BT) 
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1 – General view of ProvBioII float 
+--- PAGE 22 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+22 
+ 
+3.2  Density Control System 
+Descent and ascent depend upon buoyancy. ProvBioII is balanced when its density is equal to that of the level of 
+surrounding water. The float has a fixed mass. A precision hydraulic s ystem is used to adjust its volume. This 
+system inflates or deflates an external bladder by exchanging oil with an internal reservoir. This exchange is 
+performed by a hydraulic system comprising a high-pressure pump and a solenoid valve. 
+The interested rea der is referred to a more detailed description of the operation of ProvBioII 's density control 
+system in section 9.  
+ 
+3.3  Sensors 
+ProvBioII is equipped with precision instruments for measuring : 
+- pressure, temp erature and salinity with the SEABIRD SBE41CP CTD sensor. Specifications of the sensor 
+are provided in section 8. 
+- Dissolved Oxygen with the Oxygen Optode AANDERAA 3830 or 4330 sensor 
+- FLBB Sensor  (WETLABS sensor) 
+ 
+3.4  Iridium Transmitter 
+ 
+While the float is at the surface, the Iridium  transmitter sends stored data to the satellites of the Iridium system (see 
+sections 7. And 7.1.). The transmitter has a uniq ue ID assigned by Iridium (IMEI number). This ID identifies  the 
+individual float. The Iridium  antenna is mounted on the top end of the ProvBioII float and must be above the sea 
+surface in order for transmissions to reach the satellites. 
+ 
+3.5  CPU Board 
+This board contains a micro -controller (or CPU) that controls ProvBioII . Its functions include maintenance of the 
+calendar and internal clock, supervision of the depth cycling process and activation and control of the hydraulics. 
+This board allows communication with the outside world for the purpose of testing and programming. 
+ 
+3.6 Measure Board 
+This board contains a micro -controller (or CPU) that drive all sensors (power ON & OFF, fram e acquisition, 
+storage, treatment and communication with CPU board for transmission phase. 
+ 
+3.7  Battery 
+ 
+A battery of lithium thionyl chloride cells supplies the energy required to operate ProvBioII . 
+ 
+3.8 MMI link 
+ 
+The User link is made via Bluetooth (radiofrequency link) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 23 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+23 
+ 
+4 THE LIFE OF AN PROVBIOII FLOAT 
+The life of an ProvBioII float is divided into four phases: Storage/Transport, Deployment, Mission, and Life 
+Expiry. 
+(1)   Storage/Transport 
+During this phase, the float, packed in its transport case, awaits deployment. The electronic components 
+are dormant, and float's buoyancy control functions are completely shut down. This is the appropriate 
+status for both transport and storage. 
+(2)   Deployment 
+The float is removed from its protective packaging, configured, tested and launched at sea. 
+(3)   Mission 
+The mission begins with the launch ing of the float. During the Mission, ProvBioII conducts a pre -
+programmed number of cycles of descent, submerged drift, ascent and data transmission. During these 
+cycles it collects measurement data and transmits it to the Iridium satellite system. 
+(4)   Life Expiry 
+Life Expiry begins automatically upon completion of the pre -programmed number of cycles. During Life 
+Expiry, the float, drifting on the sea surface, periodically transmits messages until the battery is depleted. 
+Reception of these messages makes  it possible to locate the float, to follow its movements and, if 
+desired, to recover it. ProvBioII floats are designed to be expendable, so recovery is not part of its normal 
+life cycle. However, float can be ordered to enter in new mission with specific telecommand. 
+If the battery is depleted before completion of the pre -programmed number of cycles, ProvBioII will probably 
+remain submerged and cannot be located or recovered. 
+ 
+4.1  The Mission - Overview 
+We call "Mission" the period between the moment when the  float is launched at the experiment zone and the 
+moment when the data transmission relating to the final depth cycle is completed. 
+During the Mission, ProvBioII conducts ascent and descent profiles, separated by periods of Iridium 
+transmitting and driftin g at a predetermined depth. ProvBioII can collect data during the descent, submerged 
+drift, or ascent portions of the cycle, and transmits the collected data during the surface drift period at the end 
+of each cycle. One cycle is shown in the figure below. 
+--- PAGE 24 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+24 
+ 
+ 
+ 
+(1)   Delay Before Mission 
+To prevent ProvBioII from trying to sink before it is in the water, the float waits for this time before starting its 
+descent. This happens only before the first cycle; it is not repeated at each cycle. 
+(2)   IRIDIUM Preliminary Transmissions 
+To test Iridium transmitter, before descent phase, float will perform Iridium transmission by sending a 
+technical message. A GPS position will be acquired and transmitted in technical message. 
+(3)   Buoyancy reduction (1st profile) 
+Float is deployed with full external bladder to get a maximal buoyancy. To reach a neutral buoyancy position 
+before descending, float needs to transfer oil inside float. For the 2 first cycles this phase can take up to one 
+hour and a ha lf (by opening electro -valve several times with one minute for pressure monitoring between 
+activations). At  following cycles, float memorizes necessary global electro -valve opening time (precedent 
+cycle) and reduce this global duration by reducing  time between valve activations to 4 seconds instead of 1 
+minute. 
+(4)   Descent (1st profile) 
+The float d escends with an average vertical speed of 3 cm/sec. During descent, which typically lasts a few 
+hours, ProvBioII can detect possible grounding on a high portion  of the seabed and can move away from 
+such places (see section 4.3. for more details on grounding).  
+(5)   Drifting at Depth (1st profile) 
+During the drift period, ProvBioII drifts underwater at a user -selected drift depth, typically 1,000m to 2,000m 
+below the sea surface. The drift period duration is user-selectable and can last from a few days to several 
+weeks, but is typically 10 days. The float automatically adjusts its buoyancy if it drifts from the selected depth 
+by more than 5 bars over a 60-minute period. ProvBioII can collect measurements at user-selected intervals 
+during this drift period if the user selects this option. 
+ 
+1,2,3 & 4 5 6 7 8 9 10 11 12,13&14 15 16  17 18 & 19 
+Cycle 
+Profile 1 Profile 2 Profile 3 
+Time Scale 
+Depth 
+Drift depth 
+(Profile1)  –>PM5 
+Drift depth 
+(Profile2)-> PM10 
+Drift & Profile depth 
+(Profile3)-> PM15 &16 
+Profile depth 
+(Profile1)->PM6 
+Profile depth 
+(Profile2)->PM11 
+Hour & Day 
+on surface 
+(Profile1) 
+->PM3 & 4 
+Hour & Day 
+on surface 
+(Profile2) 
+->PM8 & 9 
+Hour & Day 
+on surface 
+(Profile3) 
+->PM13 &14 
+Figure 2 - Schematic representation of a PROVBIO-II's cycle (ex with 3 profiles) during the Mission 
+--- PAGE 25 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+25 
+ 
+(6)   Descent to Profile Depth (1st profile) 
+The user may select a starting depth for the ascent p rofile that is deeper than the drift depth. If this is the 
+case, ProvBioII must first descend to the profile depth before beginning the ascent profile. 
+ProvBioII can detect a possible grounding during this descent and take corrective action (as described i n 
+section 4.3.). 
+(7)   Wait for Ascent Time (1st profile) 
+The user can program several floats to conduct profiles simultaneously. This makes it possible to use 
+several ProvBioII floats in a network of synoptic measurements, even though the instruments have not been 
+all deployed at the same time. If this is the case, it may be necessary for ProvBioII to standby at the profile 
+starting depth while awaiting the scheduled ascent time. 
+(8)   Ascent (1st profile) 
+Ascent lasts a few hours, during which time ProvBioII ascends to the sea surface at an average speed of 9-
+10cm/sec. 
+(9)   Transmission (1st profile) 
+At the end of each cycle, the float finds sufficient buoyancy to ensure Iridium transmission quality. ProvBioII 
+remains at th e sea surface transmitting the data collected during the preceding drift - ascent portion of the 
+cycle. Except for last profile of cycle, transmission can bet request or not. If transmission is not requested for 
+1st profiles of cycle, user must program a transmission for last profile, in order to transmit all data  acquired 
+during all profiles. According to PM7 on 1st profile. 
+(10)   Buoyancy reduction + Descent (2nd profile) 
+(11)   Drifting at Depth (2nd profile) 
+(12)   Descent to Profile Depth (2nd profile) 
+(13)   Wait for Ascent Time (2nd profile) 
+(14)   Ascent (2nd profile) 
+(15)   Transmission (2nd profile). According to PM12 on 2nd profile. 
+(16)   Buoyancy reduction + Descent (3rd profile) 
+(17)   Drifting at parking + drifting at Depth (3rd profile) 
+This profile is programmed with same Parking and Profile Depth 
+(18)   Ascent (3rd profile) 
+(19)   Transmission (3rd profile) 
+According to PM17 on 3 rd profile. Last transmission for cycle. If previous profiles were programmed without 
+transmission, all data will be transmitted at this time. Transmission for last profile MUST be set to “1” by user 
+ 
+4.2  Descent 
+While the float is still at the sea surface ProvBioII measures and records its pressure sensor offset. This offset is 
+used to correct all pressure measurements. The offset is transmitted in a technical message (see section 7) for 
+a description of the technical messag e format). Descent takes the float from the sea surface to the drift depth. 
+Initially, in order to avoid possible collisions with ships, ProvBioII 's objective is to lose buoyancy in the shortest 
+possible time. It does this by opening the solenoid valve fo r a time period that is initially long, but decreases as 
+the float approaches its target depth.  
+ 
+4.3 Grounding 
+ProvBioII monitors itself for possible grounding on the seabed. During descent to drift depth, if the pressure 
+remains unchanged for too long, ProvBioII enters a correction mode. The user selects one of two available 
+modes during Mission programming before launch (technical parameter PT13) : 
+•    Grounding Mode = 0  (PT13=0) : The pre -programmed drift depth is disregarded. The pressure at the time of 
+grounding minus an offset (5 bar) is taken as the new value for the drift pressure. The float adjusts its buoyancy 
+to reach this new drift depth. The drift depth reverts to its programmed value for subsequent cycles. 
+If the grounded pressure is lower than a programmed threshold (20 bar), the float remains on the seabed until 
+the next programmed ascent time. 
+ 
+ 
+--- PAGE 26 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+26 
+ 
+•    Grounding Mode = 1  (PT13=1) : the float remains where it is until the next scheduled ascent time. The 
+pressure measured at grounding becomes the profile start pressure for the cycle in progress. The profile start 
+pressure reverts to its programmed value for subsequent cycles. 
+ 
+4.4  Submerged Drift 
+While ProvBioII is drifting at drift depth, it checks the external pressure regularly to determine whether there is 
+need either for depth adjustment or for an emergency ascent. 
+If the measured pressure differs from the drift depth pressure by more than a specified tolerance, and this 
+difference is maintained, ProvBioII adjusts its buoyancy to return to the drift depth. 
+If the pressure increases by an amount that exceeds a factory -set danger threshold  (technical parameter) , 
+ProvBioII immediately ascends to the sea surface. 
+If the user chooses, ProvBioII will collect measurements at user-selected intervals during submerged drift. 
+4.5 Ascent 
+If the chosen ascent profile starting pressure is higher than the drift pressure, the float must first descend to 
+reach the profile starting pressure. 
+If grounding is detected while ProvBioII is descending to the profile starting pr essure, the present pressure is 
+substituted for the profile starting pressure. This substitution is only for the cycle in progress; the profile starting 
+pressure reverts to its pre-programmed value for subsequent cycles. 
+Once the profile starting pressure has been reached, the float waits for the programmed time to begin the 
+ascent. If this time is reached before the float has arrived at the profile starting pressure, the ascent starts 
+immediately. 
+ProvBioII ascends by repeated use of the pump. When the pre ssure change between two successive 
+measurements is less than 1 bar, the pump is activated for a pre -set time period. In this way, the pump performs 
+minimum work at high pressure, which ensures minimum electrical energy consumption. The average speed of 
+ascent is approximately 9-10cm/sec. For a 2,000m profile, the ascent would therefore last 6 hours. 
+When the pressure drops below 1 bar (signifying completion of ascent), ProvBioII waits 10 minutes and then 
+activates the pump in order to empty the reservoir a nd achieve maximum buoyancy. Sensor measurements begin 
+at the profile start time and stop 10 minutes after the float rises above the 1 bar isobar in its approach to the sea 
+surface.  
+ 
+4.6 Multi-Profiles 
+ProvBioII float can realize up to 10 profiles per cycle. All profiles are independently parametered. 
+For each profile, user can set, day and hour on surface, parking and profile depth, sensor slices and area for 
+acquisition and treatment (raw, average, ...). Transmission for each profile can also be programmed or not. 
+For example, in case a cycle is parametered for realizing 10 profiles, each of 9 nine first profiles can be transmitted 
+or not at the end of each profile. Transmission will be forced by the float at the end of the last profile. In case no 
+transmission were programmed during the nine first profiles, final transmission will send messages for the complete 
+cycle. 
+4.7 Transmission 
+The data transmission process takes into account the limitations of the Iridium data collection system, including : 
+ 
+ 
+•    the uncertainty of the float's antenna emerging in rough seas; 
+ 
+•    radio propagation uncertainties due to weather conditions, and; 
+ 
+•    the satellites' operational status. 
+ProvBioII creates transmission messages from the stored data. 
+Please refer to section 7.   for a detailed description of the transmitted message formats. 
+ 
+--- PAGE 27 ---
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+5 PROVBIOII PARAMETERS 
+ProvBioII can be controlled and parametered with 5 set of parameters : 
+- Mission parameters 
+- Vector parameters 
+- Sensor parameters 
+- Technical parameters (not described in this manual. For specific request contact nke-
+intrumentation) 
+ProvBioII 's configuration is determined by the values of its mission parameters defined below. Instructions 
+on how to read and change the values of these parameters are provided in sections 2.5.5.  
+ 
+5.1  Mission Parameters 
+ 
+The following table summarizes all mission parameter names, ranges and default values. 
+Mission parameters are used to describe all profile in the cycle. For each profile, user has to set :Day and 
+hour for surfacing, drift and Profile depth, and set if transmission is requested at end of the profile. All data 
+acquired during profile with no transmission will be transmitted during 1st transmission. 
+ 
+ Abbr. NAME DEFAULT VALUE UNIT MIN VALUE MAX VALUE 
+ PM0 Number of profiles per cycle 1 - 1 10 
+ PM1 Delay Before Mission 0 Minutes 0 1440 
+ PM2 Reference Day (day for1st surfacing during 1st 
+cycle after deployment) 1 Mission day 0 364 
+ 
+1st 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM3 Day for 1st surfacing 1 Mission day 1 364 
+PM4 Estimated hour for 1st surfacing (1) 4 Hour in the day 0 23 
+PM5 Drift Depth 1000 dBars 100 2000 
+PM6 Profile Depth 2000 dBars 100 2030 
+PM7 Transmission for 1st profile (0 = N, 1 = Y) 0  0 1 
+ 
+2nd  
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM8 Day for 2nd surfacing 1 Mission day 1 364 
+PM9 Estimated hour for 2nd surfacing (1) 4 Hour in the day 0 23 
+PM10 Drift Depth 1000 dBars 100 2000 
+PM11 Profile Depth 2000 dBars 100 2030 
+PM12 Transmission for 2nd profile (0 = N, 1 = Y) 0  0 1 
+ 
+3rd 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM13 Day for 3rd surfacing 1 Mission day 1 364 
+PM14 Estimated hour for 3rd surfacing (1) 4 Hour in the day 0 23 
+PM15 Drift Depth 1000 dBars 100 2000 
+PM16 Profile Depth 2000 dBars 100 2030 
+PM17 Transmission for 3rd profile (0 = N, 1 = Y) 0  0 1 
+ 
+4th 
+ 
+P 
+R 
+O 
+F 
+I 
+PM18 Day for 4th surfacing 1 Mission day 1 364 
+PM19 Estimated hour for 4th surfacing (1) 4 Hour in the day 0 23 
+PM20 Drift Depth 1000 dBars 100 2000 
+PM21 Profile Depth 2000 dBars 100 2030 
+--- PAGE 28 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+28 
+ 
+L 
+E PM22 Transmission for 4th profile (0 = N, 1 = Y) 0  0 1 
+ 
+5th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM23 Day for 5th surfacing 1 Mission day 1 364 
+PM24 Estimated hour for 5th  surfacing (1) 4 Hour in the day 0 23 
+PM55 Drift Depth 1000 dBars 100 2000 
+PM26 Profile Depth 2000 dBars 100 2030 
+PM27 Transmission for 5th profile (0 = N, 1 = Y) 0  0 1 
+ 
+6th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM28 Day for 6th surfacing 1 Mission day 1 364 
+PM29 Estimated hour for 6th surfacing (1) 4 Hour in the day 0 23 
+PM30 Drift Depth 1000 dBars 100 2000 
+PM31 Profile Depth 2000 dBars 100 2030 
+PM32  Transmission for 6th profile (0 = N, 1 = Y) 0  0 1 
+ 
+7th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM33 Day for 7th surfacing 1 Mission day 1 364 
+PM34 Estimated hour for 7th surfacing (1) 4 Hour in the day 0 23 
+PM35 Drift Depth 1000 dBars 100 2000 
+PM36 Profile Depth 2000 dBars 100 2030 
+PM37 Transmission for 7th profile (0 = N, 1 = Y) 0  0 1 
+ 
+8th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM38 Day for 8th surfacing 1 Mission day 1 364 
+PM39 Estimated hour for 8th surfacing (1) 4 Hour in the day 0 23 
+PM40 Drift Depth 1000 dBars 100 2000 
+PM41 Profile Depth 2000 dBars 100 2030 
+PM42 Transmission for 8th profile (0 = N, 1 = Y) 0  0 1 
+ 
+9th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM43 Day for 9th surfacing 1 Mission day 1 364 
+PM44 Estimated hour for 9th  surfacing (1) 4 Hour in the day 0 23 
+PM45 Drift Depth 1000 dBars 100 2000 
+PM46 Profile Depth 2000 dBars 100 2030 
+PM47 Transmission for 9th profile (0 = N, 1 = Y) 0  0 1 
+ 
+10th 
+ 
+P 
+R 
+O 
+F 
+I 
+L 
+E 
+PM48 Day for 10th surfacing 1 Mission day 1 364 
+PM49 Estimated hour for 10th  surfacing (1) 4 Hour in the day 0 23 
+PM50 Drift Depth 1000 dBars 100 2000 
+PM51 Profile Depth 2000 dBars 100 2030 
+PM52 Transmission for 10th profile (0 = N, 1 = Y) 1  0 1 
+ 
+Table 1 - Summary of ProvBioII user-programmable Mission Parameters  
+ 
+ 
+ 
+ 
+ 
+--- PAGE 29 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+29 
+ 
+5.1.1 Mission Parameters details (PM) 
+ 
+  PM(0)  Number of Different Profiles per Cycle  
+This is the number of profiles of descent, submerged drift, ascent and transmission that ProvBioII will 
+perform during one cycle. The mission ends and ProvBioII enters Life Expiry mode when this number 
+of cycles has been completed. 
+The capacity of ProvBioII 's batteries is sufficient for at least 180 cycles  (1 profile) . If you wish to 
+recover ProvBioII at the end of the mission, you must set the number of cycles at less than 180 to 
+ensure there is sufficient battery capacity remaining to allow ProvBioII to return to the sea surface and 
+enter Life Expiry. 
+Under favourable conditions, the ba ttery capacity may exceed 180 cycles  (possible more than 300 
+cycles depending on sensor equipment and sampling strategy) . If you do not plan to recover the 
+ProvBioII float, you may choose to set the number of cycles to 180 to ensure that ProvBioII completes 
+the maximum number of cycles possible. 
+ 
+   PM(1)  Delay Before Mission (minutes) 
+To prevent ProvBioII from trying to sink while still on launch boat’s, the float waits for this time before 
+commanding the buoyancy engine to start the descent. After disconnection of the PC, followed by 
+removal of the magnet, ProvBioII will wait for this delay before beginning the descent. The delay is 
+measured after the first start of the pump which confirms the removal of the magnet (see section 
+2.4.1) and before the start of the descent. 
+ 
+  PM(2)  Reference Day (day number) 
+Allows you to configure a group of floats so that they all conduct their profiles at the same time. The 
+parameter defines a particular day on which the first profile is to be made. When the float's internal 
+clock's day number equals the reference day, it will conduct its first profile. The float’s internal clock day 
+number is set to zero when the mission starts. When setting the reference day, it is recommended to 
+allow enough time between the deployment and reach of profiling depth. Using a reference day of at 
+least 2 will ensure the first profile is complete. 
+ 
+PM3 to PM 7 for 1st profile 
+PM(3)  Day for 1st surfacing 
+Relative day for 1st profile (float arrives on surface). 
+ 
+PM(4)  Estimated Hour on Surface (hours) 
+Estimated time float must reach surface (associate to PM3 (or PM2 during first cycle after 
+deployment) day). 
+ 
+  PM(5)  Drift Depth (dbar) 
+The depth at which ProvBioII drifts after completion of a descent while awaiting the time scheduled for 
+the beginning of the next ascent. 
+ 
+PM(6)  Profile Depth (dbar) 
+Depth at which profiling begins ascending profile. If ProvBioII is drifting at some shallower depth, it will 
+first descend to the profile depth before starting the ascent profile. 
+ 
+PM(7)  Transmission 
+Set if Iridium transmission is requested (0 = no, 1 = yes).  Transmission will be forced by the float for 
+last profile of the cycle. 
+ 
+   PM8 to PM12 for 2nd profile 
+Identical PM3 to PM7 respectively for 2 nd profile 
+ 
+   PM13 to PM17 for 3rd profile 
+Identical PM3 to PM7 respectively for 3rd profile 
+ 
+   PM18 to PM22 for 4th profile 
+Identical PM3 to PM7 respectively for 4th profile 
+--- PAGE 30 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+30 
+ 
+  PM23 to PM27 for 5th profile 
+Identical PM3 to PM7 respectively for 5th profile 
+ 
+   PM28 to PM32 for 6th profile 
+Identical PM3 to PM7 respectively for 6th profile 
+ 
+   PM33 to PM37 for 7th profile 
+Identical PM3 to PM7 respectively for 7th profile 
+ 
+   PM38 to PM42 for 8th profile 
+Identical PM3 to PM7 respectively for 8th profile 
+ 
+   PM43 to PM47 for 9th profile 
+Identical PM3 to PM7 respectively for 9th profile 
+ 
+   PM48 to PM52 for10th profile 
+Identical PM3 to PM7 respectively for 10th  profile 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 31 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+31 
+ 
+5.2 Vector parameters (PV) 
+This set of parameters is used for programming in advance date for changing “Cycle period”. 
+5 different “cycle period” can be programmed in advance. These parameters must be used with great 
+precautions, because mission parameters have also to be changed, because all surfacing days could 
+be false with new cycle period. 
+NB : Use of pre-programmed cycle period is recommended only for mono-cycle profile, because in that 
+case, day and hour on surface (mission parameters) have to adjusted for all profiles if more than one 
+profile is set. Nke recommend not to use more than 1 pre-programmed cycle period for cycles with 
+multi-profiles. 
+Abbr. NAME DEFAULT 
+VALUE UNIT MIN 
+VALUE 
+MAX 
+VALUE 
+PV0 Number of different cycle duration 1  1 5 
+PV1 Iridium End-Of-Life Period 60 Minutes 10 7200 
+PV2 Iridium 2nd session waiting time (“0” means no 2nd 
+session) 10 Minutes 0 360 
+PV3 Cycle Period1 24 Hours 24 4320 
+PV4 End Day for “Cycle Period” 1 31 Day 31 31 
+PV5 End Month for “Cycle Period” 1 12 Month 12 12 
+PV6 End Year for “Cycle Period” 1 99 Year 99 99 
+PV7 Cycle Period2 24 Hours 24 4320 
+PV8 End Day for “Cycle Period 2” 31 Day 31 31 
+PV9 End Month for “Cycle Period” 2 12 Month 12 12 
+PV10 End Year for “Cycle Period” 2 99 Year 99 99 
+PV11 Cycle Period3 24 Hours 24 4320 
+PV12 End Day for “Cycle Period 3 31 Day 31 31 
+PV13 End Month for “Cycle Period” 3 12 Month 12 12 
+PV14 Année de fin pour durée 3 99 Year 99 99 
+PV15 Cycle Period4 24 Hours 24 4320 
+PV16 End Day for “Cycle Period 4 31 Day 31 31 
+PV17 End Month for “Cycle Period” 4 12 Month 12 12 
+PV18 End Year for “Cycle Period” 4 99 Year 99 99 
+PV19 Cycle Period5 24 Hours 24 4320 
+PV20 End Day for “Cycle Period 5 31 Day 31 31 
+PV21 End Month for “Cycle Period” 5 12 Month 12 12 
+PV22 End Year for “Cycle Period” 5 99 Year 99 99 
+ 
+ 
+ 
+--- PAGE 32 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+32 
+ 
+5.2.1 Vector Parameters details  
+ 
+  PV(0) Number of different cycles Duration 
+This parameter enables to anticipate cycle period modification. In case you want 
+float realizes for example 5-days cycles up to a specific date, then 7 days-cycles, 
+you can specify, 2 different duration. Float cycle period will be 5 days (PV3 = 5) up 
+to date specify by PV4, 5 & 6. Once this date is reached, float will entered in 2nd 
+period, considering PV7 as the new cycle period. Up the date specified with PV8, 9 
+& 10. Using several Cycle period is not recommended for multi-profiles cycles, 
+because, changing Cycle period request also to modify Mission parameters for 
+each profile. 
+ 
+  PV(1) Iridium End of life period (minutes) 
+Transmission period (in minutes) once float is in “end of life mode” (all 
+programmed cycles have been reached. Float send Technical message with 
+refreshed GPS point. 
+ 
+  PV(2) Iridium Inter-cycles wait period (min) 
+If this parameter is not null, a second iridium session (assigned to the next cycle 
+number) will occur PV2 minutes after the last transmission session of tghe current 
+cycle. This enables to check if a change on mission or technical parameter has 
+been correctly treated by the float and if new parameters are effective for next 
+cycle. 
+ 
+  PV(3) Cycle duration for period 1 
+Indicate cycle duration for all the cycles that were programmed (i.e. until the date 
+defined by PV4, PV5 and PV6 
+ 
+ 
+  PV(4) End of “period 1” day 
+  PV(5) End of “period 1” month 
+  PV(6) End of “period 1” year 
+ 
+Once PV 4, 5 and 6 are reached, float will change cycle period to PV7 (Cycle 
+duration for period 2) if at least 2 period are set (see PV 0), or float will enter in 
+End-Of life mode if only one period was set 
+ 
+Using more than 1 cycle period is not recommended in case of cycle with muti-profiles, 
+because a cycle period change request also to modify hour and day for profile surfacing 
+(PM parameters) and these parameters cannot be changed in advance (only with iridium 
+telecommand), meaning risk of bad programmation increase highly. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 33 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+33 
+ 
+5.3 Sensor parameters (PC) 
+ 
+Each sensor has 2 sets of parameters : 
+Standard parameters and Specific parameters 
+Standard parameters deal with sampling period in each of the 5 zones in all phase (descent, drift, 
+ascent, ....), slice thickness, threshold, treatment type and Power Supply Mode. 
+Specific parameters are used for setting different parameters linked exclusively to one sensor 
+(Warm-Up time, calibration coefficients, ...). 
+Standard parameters structures are identical for all sensors. Specific parameters structures are 
+different from one sensor to another. 
+5.3.1 How to read and modify Sensor Parameter 
+ 
+To read sensor parameter, send the command : 
+?PC x   with x Sensor number, according to the following table 
+Float will answer with all sensor parameter (standard and specific) 
+ 
+To modify Sensor parameter, send the command : 
+!PC w x y z, where w means Sensor number, x to indicate if this is standard (=0)  or specific 
+(=1)  parameter, Y means parameter number, and Z value for parameter 
+Prior to sensor parameter modification, user have to unlock access, with command : 
+!KC 1234 
+Float will answer  
+Set measure !KC  
+LOCK UNLOCK Measure: READ/WRITE ACCESS 
+ 
+Same command is used for lock again parameters access 
+See section 6 for details about User commands syntax and explanations 
+ 
+ 
+Sensor Sensor number 
+CTD 0 
+Optode 1 
+FLBB 4 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 34 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+34 
+ 
+5.3.2 Standard parameter information 
+ 
+Sampling Period : Deal with period for each sensor acquisition of raw data (5 parameters per 
+profile : 1 in any phase of float  : descent to parking depth, drift at parking depth, descent to 
+profile depth, drift at profile depth, ascent profile). If all sampling period (in each of the 5 zone) 
+are set to “zero”, sensor is considered as “not mounted on Float”, meaning it is not tested 
+during auto-test. 
+NB : A sensor not mounted (i.e. with all sampling period set to zero) at float deployment MUST 
+NOT BE ACTIVATED then by Iridium telecommand during float’s mission. If user wants one 
+sensor physically mounted on float and not active at the beginning of mission, he should set all 
+“power acquisition mode” to zero.  By this way, sensor will not be acquired until telecommand 
+reception. If all sampling period are set to zero before deployment, memory organization is 
+created without considering this sensor, so activate sensor during mission with telecommand 
+will cause a failure in data memorization. That’s why, for specific mission with sensor not active 
+at beginning, user have to set sampling period different from zero (so sensor will be tested 
+during auto-test and memory organization will take in account), and uses “power acquisition 
+mode” to activate or deactivate sampling. 
+NB 2 : CTD must be active in all phase where other sensor are active. All measurements need 
+to be referenced to a pressure before transmission. So, CTD must be active in any zone or 
+phase if other sensor are active. 
+Power Acquisition Mode : You can choose, no acquisition (=0), pulsed mode (=2) or 
+Continuous (=3). 
+Pulsed Mode means Sensor is Powered On for acquisition, then Supply is OFF until next 
+sample (depending on requested sampling period). This mode enable to save energy. Using 
+pulsed mode need precautions regarding sampling period.  
+Sampling period must be > (“Sensor Power Warm-up Time” + “Power OFF time between Power 
+ON retry” + 2 seconds). If sampling period is too short regarding sensor specific parameters, 
+mode will be forced in continuous mode. Specific parameters details are given in section 5.3.3 
+Continuous mode means sensor is continuously powered ON during ascent or descent profile. 
+No acquisition means, sensor won’t be acquired 
+Treatment Type : Float acquires samples for each sensors, then these samples (called Raw 
+data) are computed in accordance with zone (zone 1 for  surface zone to zone 5 for the 
+deepest zone)  and slice thickness. Treatment consist in averaging (=3) (decimation then 
+averaging) or in Averaging + additional information (Standard deviation and Median, in that 
+case =7). If Standard deviation and Median are set, additional packets will be transmitted (Cf 
+7.2.4 describing packets formats). 
+Slices thickness : Used for raw data computation. In one slice, all raw data are computed to 
+generate one treated data that will be transmitted in Iridium message. 
+Threshold between zone : Used to determine pressure target for slice thickness modification. 
+Synchronization zone : Not used. 
+ 
+--- PAGE 35 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+35 
+ 
+ 
+ 
+ 
+For each sensor, profile is divided in 5 zone (separated with 4 thresholds between 5 zones) as 
+described on figure 3. 
+Within each zone, could be defined : 
+- Acquisition mode (Off, Pulsed or Continuous) 
+- Data processing (raw, mean or mean + median + standard deviation) for transmission 
+- slice thickness (depth resolution) within which data will be processed.  
+- Sampling rate during float descent (D), Parking Drift (Pa), descent to starting profile depth (DP), 
+deep parking (DPa) and ascent to surface (A). 
+ 
+Time Scale 
+Depth 
+Profile N (in 1..10) 
+Sensor i Zone 1 
+Sensor i Zone 2 
+Sensor i Zone 3 
+Sensor i Zone 4 
+Sensor i Zone 5 
+(D1) 
+(D2) 
+(DP3) 
+(DP4) 
+(DP5) 
+(A5) 
+(A4) 
+(A3) 
+(A2) 
+(A1) 
+(Pa2) 
+(DPa5) 
+PC i 0 14 _ 
+PC i 0 9 _ 
+PC i 0 19 _ 
+PC i 0 24 _ 
+PM 6 (1st profile) 
+Figure 3 - Sensor zone description 
+--- PAGE 36 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+36 
+ 
+ 
+ 
+ 
+ 
+Sensor powering and data acquisition options along a profile. The ProvBioII float allows balancing 
+power consumption and data resolution by controlling the sensor power supply, the sampling rate and 
+the thickness of slices within which data will be processed. These parameters could be defined 
+independently for each sensor for five depth intervals (Zones). 
+ 
+ 
+ 
+ 
+slice N-1 
+  
+slice N+1 
+  
+slice N 
+  
+  Mean 
+Or 
+Mean + median + Stdev 
+Medium resolution in continuous 
+mode with small depth slices 
+slice N-1 
+  
+slice N+1 
+  
+slice N 
+  
+ 
+Mean 
+Or 
+Mean + median + Stdev 
+Low resolution in pulse mode with large 
+depth slices 
+  
+    
+ 
+ 
+  
+Sensor Off Sensor On Sensor 
+Sample (= 
+Raw 
+DataData 
+Point 
+Depth 
+  
+  
+  
+  
+  Raw data 
+Highest resolution in continuous 
+mode with sub meter depth slices 
+ Zone 1 
+Zone 2 
+Zone 3 
+Zone 4 
+Zone 5 
+Off 
+  
+Pulsed 
+  
+Continuous 
+  
+ 
+Figure 4 – Power Supply Mode description 
+Sensor Sample (= Raw Data) 
+--- PAGE 37 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+37 
+ 
+5.3.3 Specific parameter information 
+ 
+All specific parameters have been set in factory. Modification on specific parameters can cause 
+trouble in sensor acquisition. Before specific modifications, contact nke instrumentation. 
+The 4 first specific parameters are identical for all sensor. Then following parameters are 
+completely specific to each sensor. 
+1- Sensor Power Warm-up Time : This parameter indicates timing before sensor deliver 1st 
+sample after sensor is powered ON.  
+2- Power OFF time between Power ON retry : this parameter indicates timing for sensor 
+power to remain OFF before sensor is powered ON again, in order sensor power supply 
+applies a good reset to sensor. 
+3- 1st «valid sample» rank : This parameter indicates which sample can be considered as 
+valid. Count begins from “0”, meaning first sample (raw data) coming from sensor is 
+considered as valid. 
+4- Number of raw data per slice in ECO mode : not implemented for the moment. 
+In the specific parameters of a given sensor we usually can find : 
+Min value : Indicate for each measure, minimal value that will be acquired. Rejected if inferior 
+Max value : Indicate for each measure, maximal value that will be acquired. Rejected if 
+superior 
+ 
+5.3.4 CTD parameters (Sensor “0”) 
+5.3.4.1 CTD Standard parameters 
+STANDARD SENSOR PARAMETERS (TYPE 0) – SENSOR 0 (CTD) 
+Abbr. NAME DEFAULT 
+VALUE UNIT MIN 
+VALUE 
+MAX 
+VALUE 
+PC 0 0 0 Sampling period in descent to parking depth 0 sec 0 3600 
+PC 0 0 1 Sampling period in Parking Drift 60 min 0 3600 
+PC 0 0 2  Sampling period in Descent To Profile Depth 0 sec 0 3600 
+PC 0 0 3 Sampling period in Profile Depth Drift 0 min 0 3600 
+PC 0 0 4 Sampling period in Ascent Profile 10 sec 0 3600 
+PC 0 0 5 Power Acquisition Mode in zone 1 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 0 0 6 Treatment Type in zone 1 (0 : raw, 1 : average, 7 : 
+Average/Median/Standard Deviation) 1  0 7 
+PC 0 0 7 Synchronization  zone 1 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 0 0 8 Slices Thickness for zone 1 1 dBars 1 500 
+PC 0 0 9 Threshold  zone 1/zone 2 10 dBars 10 2200 
+PC 0 0 10 Power Acquisition Mode in zone 2 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 0 0 11 Treatment Type in zone 2 (0 : raw, 1 : average, 7 : 
+Average/Median/Standard Deviation) 1  0 7 
+PC 0 0 12 Synchronization  zone 2 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 0 0 13 Slices Thickness for zone 2 5 dBars 1 500 
+PC 0 0 14 Threshold  zone 2 / zone 3 200 dBars 1 2200 
+PC 0 0 15 Power Acquisition Mode in zone 3 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+--- PAGE 38 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+38 
+ 
+PC 0 0 16 Treatment Type in zone 3 (0 : raw, 1 : average, 7 : 
+Average/Median/Standard Deviation) 1  0 7 
+PC 0 0 17 Synchronization  zone 3 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 0 0 18 Slices Thickness for zone 3 10 dBars 1 500 
+PC 0 0 19 Threshold  zone 3 / zone 4 500 dBars 1 2200 
+PC 0 0 20 Power Acquisition Mode in zone 4 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 0 0 21 Treatment Type in zone 4 (0 : raw, 1 : average, 7 : 
+Average/Median/Standard Deviation) 1  0 7 
+PC 0 0 22 Synchronization  zone 4 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 0 0 23 Slices Thickness for zone 4 20 dBars 1 500 
+PC 0 0 24 Threshold  zone 4 / zone 5 1000 dBars 1 2200 
+PC 0 0 25 Power Acquisition Mode in zone 5 (0 : none, 2 : pulsed, 3 : continuous) 3  3 3 
+PC 0 0 26 Treatment Type in zone 5 (0 : raw, 1 : average, 7 : 
+Average/Median/Standard Deviation) 1   7 
+PC 0 0 27 Synchronization  zone 5 (0 : None, 1 : CTD pressure) (NOT USED) 0   0 
+PC 0 0 28 Slices Thickness for zone 5 25 dBars 1 500 
+ 
+See section 5.3.2 for standard parameters details. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 39 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+39 
+ 
+Theorical slice 
+(6-4 dBars) : 
+One treated 
+data 
+Theorical slice (5-4 dBars) with 
+non pumped raw data 
+Theorical slice (6-5 dBars) with 
+pumped raw data 
+Cut-Off Pressure (typ. 5 dBars) 
+4 dBars 
+6 dBars 
+5.3.4.2 CTD Specific parameters 
+SPECIFIC SENSOR PARAMETERS (TYPE 1) – SENSOR 0 (CTD) 
+Abbr. NAME DEFAULT VALUE UNIT MIN VALUE MAX VALUE 
+PC 0 1 0 Sensor Power Warm-up Time 4800 msec 0 65535 
+PC 0 1 1 Power OFF time between Power ON retry 5000 msec 0 65535 
+PC 0 1 2  1st «valid sample» rank 0  0 255 
+PC 0 1 3 Cut-off Pressure 5 dBars 0 65535 
+PC 0 1 4 Min Pressure -5 dBars Mini float Maxi float 
+PC 0 1 5 Max Pressure 2500 dBars Mini float Maxi float 
+PC 0 1 6 Min temperature -5 m°C Mini float Maxi float 
+PC 0 1 7 Max temperature 50 m°C Mini float Maxi float 
+PC 0 1 8 Min salinity 0 mPSU Mini float Maxi float 
+PC 0 1 9 Max salinity 50 mPSU Mini float Maxi float 
+PC 0 1 10 Min ascent speed 0.083 m/s 0.01 0.5 
+PC 0 1 11 Min descent speed 0.01 m/s 0.01 0.5 
+ 
+Cut-Off Pressure : indicate SBE 41 Cut-off Pressure. As float reach this pressure, in ascent profile, 
+CTD pump is stopped, but CTD sample acquisition continues. In case this pressure is included inside a 
+theoretical slice, an additional treatment is made by float, in order in 1 slice, samples acquired with and 
+without pump are not averaged. 
+Example : 2 dBars slice on surface, with Cut-Off Pressure to 5 dBars. Cut-Off Pressure is included 
+inside slice [4;6] dBars. 
+In that case, float will force a treatment with raw data included in range [6;5] dBars (with sample 
+acquired as pump is active), and then realize another treatment with raw data included in range [5;4] 
+dBars (raw data acquired as pump is not active). 
+By this way, a treated data cannot include raw data acquired with and without pumping. 
+ 
+See section 5.3.3 for specific parameters details. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 40 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+40 
+ 
+5.3.5 Optode Parameters (Sensor “1”) 
+5.3.5.1 Optode Standard parameters 
+STANDARD SENSOR PARAMETERS (TYPE 0) – SENSOR 1 (OPTODE) 
+Abbr. NAME DEFAULT 
+VALUE UNIT MIN 
+VALUE 
+MAX 
+VALUE 
+PC 1 0 0 Sampling period in descent to parking depth 0 sec 0 3600 
+PC 1 0 1 Sampling period in Parking Drift 60 min 0 3600 
+PC 1 0 2  Sampling period in Descent To Profile Depth 0 sec 0 3600 
+PC 1 0 3 Sampling period in Profile Depth Drift 0 min 0 3600 
+PC 1 0 4 Sampling period in Ascent Profile 10 sec 0 3600 
+PC 1 0 5 Power Acquisition Mode in zone 1 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 1 0 6 Treatment Type in zone 1 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1  0 7 
+PC 1 0 7 Synchronization  zone 1 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 1 0 8 Slices Thickness for zone 1 1 dBars 1 500 
+PC 1 0 9 Threshold  zone 1/zone 2 10 dBars 10 2200 
+PC 1 0 10 Power Acquisition Mode in zone 2 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 1 0 11 Treatment Type in zone 2 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1  0 7 
+PC 1 0 12 Synchronization  zone 2 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 1 0 13 Slices Thickness for zone 2 5 dBars 1 500 
+PC 1 0 14 Threshold  zone 2 / zone 3 200 dBars 1 2200 
+PC 1 0 15 Power Acquisition Mode in zone 3 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 1 0 16 Treatment Type in zone 3 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1  0 7 
+PC 1 0 17 Synchronization  zone 3 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 1 0 18 Slices Thickness for zone 3 10 dBars 1 500 
+PC 1 0 19 Threshold  zone 3 / zone 4 500 dBars 1 2200 
+PC 1 0 20 Power Acquisition Mode in zone 4 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 1 0 21 Treatment Type in zone 4 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1  0 7 
+PC 1 0 22 Synchronization  zone 4 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 1 0 23 Slices Thickness for zone 4 20 dBars 1 500 
+PC 1 0 24 Threshold  zone 4 / zone 5 1000 dBars 1 2200 
+PC 1 0 25 Power Acquisition Mode in zone 5 (0 : none, 2 : pulsed, 3 : continuous) 3  3 3 
+PC 1 0 26 Treatment Type in zone 5 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1   7 
+PC 1 0 27 Synchronization  zone 5 (0 : None, 1 : CTD pressure) (NOT USED) 0   0 
+PC 1 0 28 Slices Thickness for zone 5 25 dBars 1 500 
+ 
+See section 5.3.2 for standard parameters details. 
+ 
+ 
+--- PAGE 41 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+41 
+ 
+5.3.5.2 Optode Specific parameters 
+ 
+SPECIFIC SENSOR PARAMETERS (TYPE 1) – SENSOR 1 (OPTODE) 
+Abbr. NAME DEFAULT VALUE UNIT MIN VALUE MAX VALUE 
+PC 1 1 0 Sensor Power Warm-up Time 1500 msec 0 65535 
+PC 1 1 1 Power OFF time between Power ON retry 10000 msec 0 65535 
+PC 1 1 2 1st «valid sample» rank 0  0 255 
+PC 1 1 3 Min C1 phase Mini float deg Mini float Maxi float 
+PC 1 1 4 Max C1 phase Maxi float deg Mini float Maxi float 
+PC 1 1 5 Min C2 phase Mini float deg Mini float Maxi float 
+PC 1 1 6 Max C2 phase Maxi float deg Mini float Maxi float 
+PC 1 1 7 Min T° Mini float m°C Mini float Maxi float 
+PC 1 1 8 Max T° Maxi float m°C Mini float Maxi float 
+ 
+See section 5.3.3 for specific parameters details. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 42 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+42 
+ 
+5.3.6 FLBB Parameters (Sensor “4”) 
+5.3.6.1 FLBB Standard parameters 
+STANDARD SENSOR PARAMETERS (TYPE 0) – SENSOR 4 (FLBB) 
+Abbr. NAME DEFAULT 
+VALUE UNIT MIN 
+VALUE 
+MAX 
+VALUE 
+PC 4 0 0 Sampling period in descent to parking depth 0 sec 0 3600 
+PC 4 0 1 Sampling period in Parking Drift 60 min 0 3600 
+PC 4 0 2  Sampling period in Descent To Profile Depth 0 sec 0 3600 
+PC 4 0 3 Sampling period in Profile Depth Drift 0 min 0 3600 
+PC 4 0 4 Sampling period in Ascent Profile 10 sec 0 3600 
+PC 4 0 5 Power Acquisition Mode in zone 1 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 4 0 6 Treatment Type in zone 1 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1  0 7 
+PC 4 0 7 Synchronization  zone 1 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 4 0 8 Slices Thickness for zone 1 1 dBars 1 500 
+PC 4 0 9 Threshold  zone 1/zone 2 10 dBars 10 2200 
+PC 4 0 10 Power Acquisition Mode in zone 2 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 4 0 11 Treatment Type in zone 2 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1  0 7 
+PC 4 0 12 Synchronization  zone 2 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 4 0 13 Slices Thickness for zone 2 5 dBars 1 500 
+PC 4 0 14 Threshold  zone 2 / zone 3 200 dBars 1 2200 
+PC 4 0 15 Power Acquisition Mode in zone 3 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 4 0 16 Treatment Type in zone 3 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1  0 7 
+PC 4 0 17 Synchronization  zone 3 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 4 0 18 Slices Thickness for zone 3 10 dBars 1 500 
+PC 4 0 19 Threshold  zone 3 / zone 4 500 dBars 1 2200 
+PC 4 0 20 Power Acquisition Mode in zone 4 (0 : none, 2 : pulsed, 3 : continuous) 3  0 3 
+PC 4 0 21 Treatment Type in zone 4 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1  0 7 
+PC 4 0 22 Synchronization  zone 4 (0 : None, 1 : CTD pressure) (NOT USED) 0  0 0 
+PC 4 0 23 Slices Thickness for zone 4 20 dBars 1 500 
+PC 4 0 24 Threshold  zone 4 / zone 5 1000 dBars 1 2200 
+PC 4 0 25 Power Acquisition Mode in zone 5 (0 : none, 2 : pulsed, 3 : continuous) 3  3 3 
+PC 4 0 26 Treatment Type in zone 5 (0 : raw, 1 : average, 7 : Average/Median/Standard 
+Deviation) 1   7 
+PC 4 0 27 Synchronization  zone 5 (0 : None, 1 : CTD pressure) (NOT USED) 0   0 
+PC 4 0 28 Slices Thickness for zone 5 25 dBars 1 500 
+ 
+See section 5.3.2 for standard parameters details. 
+ 
+ 
+--- PAGE 43 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+43 
+ 
+5.3.6.2 FLBB Specific parameters 
+ 
+SPECIFIC SENSOR PARAMETERS (TYPE 1) – SENSOR 4 (FLBB) 
+Abbr. NAME DEFAULT VALUE UNIT MIN VALUE MAX VALUE 
+PC 4 1 0 Sensor Power Warm-up Time 3600 msec 0 65535 
+PC 4 1 1 Power OFF time between Power ON retry 4000 msec 0 65535 
+PC 4 1 2 1st «valid sample» rank 0  0 255 
+PC 4 1 3 Min Chlorophyll 0  Mini float Maxi float 
+PC 4 1 4 Max Chlorophyll 4130  Mini float Maxi float 
+PC 4 1 5 Min Scattering 0  Mini float Maxi float 
+PC 4 1 6 Max Scattering 4130  Mini float Maxi float 
+PC 4 1 7 Sensor Serial number 0  Mini float Maxi float 
+PC 4 1 8 ScaleFactor Chlorophyll 1  Mini float Maxi float 
+PC 4 1 9 DarkCounts Chlorophyll 0  Mini float Maxi float 
+PC 4 1 10 ScaleFactor Scattering 1  Mini float Maxi float 
+PC 4 1 11 DarkCounts Scattering 0  Mini float Maxi float 
+ 
+See section 5.3.3 for specific parameters details. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 44 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+44 
+ 
+6 USER COMMANDS 
+ 
+Command Rôle 
+!C Float complete auto-test (CPU + measure board).  
+!CH Measure Board Auto-test (Sensor) 
+!SE Initiate Iridium transmission session 
+!PM x y Set value y for “mission parameter” x 
+?PM Screen all mission parameters 
+?PM x Screen mission parameter x 
+!PT x y * Set value y for “technical parameter” x 
+?PT * Screen all technical parameters 
+?PT x * Screen technical parameter x 
+!PV x y Set value y for “vector parameter” x 
+?PV Screen all vector parameters 
+?PV x Screen vector parameter x 
+!PC w x y z ** Set value z (sensor w) for parameter number y (x=0 for standard 
+parameter, x=1 for specific parameter) 
+?PC x Request sensor parameter for sensor x 
+?PC x y z Request parameter z for sensor x (standard parameter if y=0, specific 
+parameter if y=1) 
+!SH x Activate (x=1) or de-activate (x=0)  Vector Show mode (MUST BE OFF 
+FOR DEPLOYMENT) 
+?SH Request show mode state 
+!TI jj mm aa hh mn ss Set date and time to dd/mm/yy hh H : mn M : ss S 
+?TI Request date and time for both CPU and measure board 
+?DH Read all hydraulic data (pump and electrovalve activations) 
+?DT ALL x Read all Treated Data for sensor x 
+?DB Read all Raw Data for sensor x 
+!E x Activate electrovalve for x cs (ctrl-c to stop) 
+!P x Activate pump for x cs (ctrl-c to stop) 
+?ME x *** Sensor x acquisition. X to identify sensor to be acquired 
+?VB Request internal vacuum and battery voltage (in decivolt and millibars) 
+!AR x **** Arm float (x=1) or deactivate arm mode (x=0)**** 
+?AR Request arm state 
+!RP Parameters are transfered from EEPROM memory to RAM memory 
+!PO Request GPS position 
+?VL Request software version 
+--- PAGE 45 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+45 
+ 
+?NS Request float’s serial number 
+!KV x Command to activate or deactivate read/Write access for technical 
+parameters. X value is communicated to users upon request to nke 
+!KC x Command to activate or deactivate read/Write access for Sensors 
+parameters. X value is communicated to users upon request to nke 
+!RV ***** External bladder is filled-in with Oil up to full position (float must be in 
+vertical position) 
+?RE Read the 5 last reset date and time 
+!PB Request Battery Voltage with hydraulic pump active 
+ 
+* : protected command (need !KV 1234 to unlock) 
+** : protected command (need !KC 1234 to unlock) 
+*** : Sensor type : 
+ 
+0 = CTD, 1 = Optode, 4 = FLNTU 
+ **** : As Armed Mode command  is sent to float, float perfoms auto-test, and fill in external 
+bladder, by activate hydraulic pump. Floats can pump up to several minutes depending on external 
+bladder initial state. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 46 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+46 
+ 
+7 IRIDIUM FORMATS 
+7.1 Transmission strategy 
+ 
+Iridium format consists in transmiting file by rudics or SBD (size up to 1960 bytes in SBD mode and 
+1024 bytes in Rudics mode) coded in hexadecimal. Several messages can be necessary for a 
+complete cycle transmission. 
+Messages are divided into elementary Packet (size 140 bytes). Maximum message contains 14 
+packets (SBD mode) or 5 packets (Rudics mode). 
+ 
+1) SBD Packet creation then Message creation 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note : Last message for a complete transmission session can be shorter than 1960 
+bytes. 
+ 
+2) SBD Transmission Strategy 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Packet Type 0  
+Packet Type 255 
+Packet Type 254 
+Packet Type 253 
+Packet Type 252 
+Packet Type 251 
+Packet Type 250 
+Packet Type 2xx (free) 
+1960 bytes message N°1 sent 
+1960 bytes message N°2 sent 
+ 
+1960 bytes message N°n sent 
+ 
+1960 BYTES MESSAGE 
+980 BYTES MESSAGE 980 BYTES MESSAGE 
+ 
+420 BYTES 
+MESSAGE 
+420 BYTES 
+MESSAGE 
+ 
+420 BYTES 
+MESSAGE 
+ 
+… 
+10 transmission tries (PT25)  for one message,  then Modem is powered 
+OFF and ON, then  10 others transmission tries (2 power Commutations). 
+If transmission is not OK, message size is divided by 2 size 980 bytes 
+10 transmission tries (PT25)  for one message,  then Modem is powered 
+OFF and ON, then  10 others transmission tries (2 power 
+Commutations). If transmission is not OK, message size is divided to 
+420 bytes (3 packet) 
+ 
+--- PAGE 47 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+47 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note :  message size go back to superior size if transmission succeed. 
+7.2 Packet Types 
+ 
+Packet number Packet Type (see “Sensors Data Type” section for description) 
+0 Sensor Data 
+… Not used 
+250 Sensor Technical Data 
+251 PC Sensor Parameters 
+252 Vector Pressure Data 
+253 Vector Technical Data 
+254 PT Technical parameters 
+255 PV & PM Parameters 
+ 
+7.2.1 Sensor Data type 
+ 
+In Data messages (Packet type = 0), the field « Sensor data type » give the format of message, 
+depending on transmitted sensor and treatment type (depending on PC parameter). 
+Sensor Data Type Data Type 
+0 CTD (Average) 
+1 CTD (Standard deviation+ Median) 
+2 Not used 
+3 Oxygen (Average) 
+4  Oxygen (Standard deviation+ Median) 
+5 Not used 
+6 FLBB (Average) 
+7 FLBB (Standard deviation+ Median) 
+ 
+ 
+ 
+ 
+140 BYTES 
+MESSAGE 
+140 BYTES 
+MESSAGE 
+ 
+140 BYTES 
+MESSAGE 
+ 
+140 BYTES 
+MESSAGE 
+ 
+140 BYTES 
+MESSAGE 
+ 
+… 
+10 transmission tries (PT25)  for one message,  then Modem is powered 
+OFF and ON, then 10 others transmission tries (2 power Commutations). 
+If transmission is not OK, message size is reduced 140 bytes (1 packet) 
+ 
+Transmission aborted (Data of cycle are lost) 
+--- PAGE 48 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+48 
+ 
+7.2.2 Phase description 
+All transmitted data are acquired during different phase in the cycle, here the description for 
+each phase (included in all message) 
+ Phase n° Phase Name Description 
+0 Pre-mission Mission beginning (1st Iridium session) 
+1 Surface Waiting Float wiat’s on surface between 2 ridium session 
+(if PV2 is not null) 
+2 Init new cycle Float computes all timing for next cycle 
+3 Init new profile Float computes all timing for next profile 
+4 Buoyancy reduction Float descending phase at surface (up to PT 
+specific threshold) 
+5 Descent to parking pressure Float descend to Parking Pressure depth 
+6 Parking Drift  
+7 Descent to profile pressure  
+8 Drift at Profile Depth  
+9 Ascent Profile  
+10 Emergence Float activate hydraulic pump to inflate external 
+bladder to get enough buoyancy for Satelitte 
+transmission 
+11 Data treatment Float computes all calculations on raw datas for 
+transmission phase 
+12 Satellite transmission Float transmit all sensor and technical packets 
+13 End of Profile  
+14 End Of Life Float has reached programmed number of cycle  
+15 Emergency ascent Float ascent to surface in case of trouble 
+16 User Dialog Mode Float is not yet on mission, waiting for User 
+command by Bluetooth 
+ 
+7.2.3 Coding format 
+For coding all information inside message, different coding format will be used : 
+Coding Format abreviation Coding range 
+Unsigned Char (UC) [0;255] 
+Signed char (CHAR) [-128 ; 127] 
+Unsigned int (UI) [0 ; 65 535] 
+Signed int (INT) [-32 768 ; 32 767] 
+Unsigned Long Int (U LONG INT) [0 ; 4 294 967 295] 
+Long Int (LONG INT) [-2 147 483 648 ; 2 147 483 647] 
+Float (F) [3.4*10e-38 ; 3.4 * 10e38] 
+ 
+--- PAGE 49 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+49 
+ 
+7.2.4 Packets Formats 
+7.2.4.1 Packet type 0  - CTD Data 
+Resolution : 
+- Pressure : in cBar 
+- Temperature : in m°C with 2000m°C offset (except for standard deviation). 
+- Salinity : in mPSU 
+- Date and Hour : number of seconds since 1st january 2000 
+7.2.4.1.1 Data Type : CTD (Average) 
+Data Format (bytes) Format (coding) 
+Packet Type: 0 1 UC 
+Sensor Data Type : 0 1 UC 
+Cycle number 2 UI 
+Profile Number 1 UC 
+Phase Number  1 UC 
+1st Sample Date & Hour 4 U LONG INT 
+1st Sample « Average Pressure » 2 INT 
+1st Sample « Average Temperature» 2 UI 
+1st Sample « Average Salinity » 2 UI 
+2nd  to 21st Data blocks (2+2+2)*20  
+Complement (bits to zero) 4  
+Total 140  
+7.2.4.1.2 Data Type : CTD (Standard deviation+ Median) 
+Data Format (bytes) Format (coding) 
+Packet Type: 0 1 UC 
+Sensor Data Type : 1 1 UC 
+Cycle number 2 UI 
+Profile Number 1 UC 
+Phase Number 1 UC 
+1st Sample Date & Hour 4 U LONG INT 
+1st Sample « Mean Pressure » 2 INT 
+1st Sample « standard deviation temperature » (no offset) 1 UC 
+1st Sample « standard deviation salinity » 1 UC 
+1st Sample « Median Pressure » 2 INT 
+1st Sample « Median temperature » 2 UI 
+1st Sample « Median salinity » 2 UI 
+2nd to 13th Data block (2+1+1+2+2+2) * 12  
+Total 140  
+ 
+ 
+--- PAGE 50 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+50 
+ 
+7.2.4.2 Packet type 0 – Oxygen Sensor data 
+Resolution : 
+- Pressure : in cBar 
+- C1/C2 Phase : in millidegrees 
+- Temperature : in m°C with a 2000m°C offset (except for standard deviation) 
+- Date and Hour : number of seconds since 1st january 2000 
+7.2.4.2.1 Data Type : Oxygen (Average) 
+Data Format (bytes) Format (coding) 
+Packet Type: 0 1 UC 
+Sensor Data type : 3 1 UC 
+Cycle number 2 UI 
+Profile Number 1 UC 
+Phase Number 1 UC 
+1st Sample Date & Hour 4 U LONG INT 
+1st Sample « Mean Pressure » 2 INT 
+1st Sample « C1 Phase » 4 LONG INT 
+1st Sample « C2 Phase » 4 LONG INT 
+1st Sample « temperature » 2 UI 
+2nd to 10th Data blocks (2+4+4+2) * 9  
+Complement 10  
+Total 140  
+7.2.4.2.2 Data Type : Oxygen (Standard deviation+ Median) 
+Data Format (bytes) Format (coding) 
+Packet Type: 0 1 UC 
+Sensor Data Type : 4 1 UC 
+Cycle number 2 UI 
+Profile Number 1 UC 
+Phase Number 1 UC 
+1st Sample Date & Hour 4 U LONG INT 
+1st Sample « Mean Pressure » 2 INT 
+1st Sample « standard deviation C1 Phase » 2 UI 
+1st Sample « standard deviation C2 Phase » 2 UI 
+1st Sample « standard deviation Temperature » (no offset) 1 UC 
+1st Sample « Median C1 Phase » 4 LONG INT 
+1st Sample « Median C2 Phase » 4  LONG INT 
+1st Sample « Median Temperature » 2 UI 
+2nd to7th Data blocks (2+2+2+1+4+4+2) * 6  
+Complement 11  
+Total 140  
+ 
+ 
+--- PAGE 51 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+51 
+ 
+7.2.4.3 Packet type 0 – FLNTU Sensor Data 
+Resolution : 
+- Pressure : in cBar 
+- Chlorophyll : in « Count » * 10 
+- Backscatter : in « Count » * 10 
+- Date and Hour : number of seconds since 1st january 2000 
+7.2.4.3.1 Data Type : FLBB (Average) 
+ 
+Data Format (bytes) Format (coding) 
+Packet Type: 0 1 UC 
+Sensor Data type : 6 1 UC 
+Cycle number 2 UI 
+Profile Number 1 UC 
+Phase Number 1 UC 
+1st Sample Date & Hour 4 U LONG INT 
+1st Sample « Mean Pressure» 2 INT 
+1st Sample « Chlorophyll » 2 UI 
+1st Sample « Backscatter » 2 UI 
+2nd to 21st data blocks (Pressure, Chlorophyll, Backscatter ) (2+2+2) * 20  
+Complement 4  
+Total 140  
+7.2.4.3.2 Data Type : FLNTU (Standard deviation+ Median) 
+ 
+Data Format (bytes) Format (coding) 
+Packet Type: 0 1 UC 
+Sensor Data type : 7 1 UC 
+Cycle number 2 UI 
+Profile Number 1 UC 
+Phase Number 1 UC 
+1st Sample Date & Hour 4 U LONG INT 
+1st Sample « Mean Pressure» 2 INT 
+1st Sample « standard deviation Chlorophyll» 1 UC 
+1st Sample « standard deviation Turbidity  » 1 UC 
+1st Sample « Median Chlorophyll» 2 UI 
+1st Sample « Median Turbidity  » 2 UI 
+2nd to 16th data blocks  (2+1+1+2+2) * 15  
+Complement 2  
+Total 140  
+--- PAGE 52 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+52 
+ 
+7.2.4.4 Packet Type 255 (Vector & Mission Parameters) 
+ 
+data Format (bytes) Format 
+(coding) 
+Packet Type: 255 1 UC 
+Packet Date/Hour (Day, month, Year, hour, minute, 
+second) 6*1 6 * UC 
+Cycle Number 2 UI 
+Profile Number 1 UC 
+PV 0  -  Number of different cycle durations (1 to 5) 1 UC 
+PV 1  -  Iridium End Of Life Period(min) 2 UI 
+PV 2  -  Iridium 2nd session waiting time (min) 1 UC 
+PV 3  -  Cycle Period1 (in hours) 2 UI 
+PV 4,5 &6  -  End date for Duration1 (Day, Month, Year) 3 * 1 3 * UC 
+PV 7  -  Cycle Period2 (in hours) 2 UI 
+PV 8, 9 & 10  -  End date for Duration2 (Day, Month, Year) 3 * 1 3 * UC 
+PV 11  -  Cycle Period3 (in hours) 2 UI 
+PV 12, 13 & 14  -  End date for Duration3 (Day, Month, 
+Year) 3 *1 3 * UC 
+PV 15  -  Cycle Period4 (in hours) 2 UI 
+PV 16, 17 & 18  -  End date for Duration4 (Day, Month, 
+Year) 3 * 1 3 * UC 
+PV 19  -  Cycle Period5 (in hours) 2 UI 
+PV 20, 21 & 22  -  End date for Duration5 (Day, Month, 
+Year) 3 * 1 3 * UC 
+PM 0  -  Number of requested Profiles 1 UC 
+PM 1  -  Delay before mission 2 UI 
+PM 2  -  Reference Day 1 UC 
+PM 3  -  Day for 1st profile surfacing 1 UC 
+PM 4  -  Estimated Hour on Surface 1 UC 
+PM 5  -  1st Parking Depth (Bar) 2 UI 
+PM 6  -  1st Profile Depth (Bar) 2 UI 
+PM 7  -  Transmission 1 UC 
+2nd to 9th Day for surfacing + Hour + Pdrift + Pprofile + 
+Transmission (1+1+2+2+1) * 8  
+PM 48  -  10th profile Surfacing day 1 UC 
+PM 49  -  10th  Profile Surfacing hour 1 UC 
+PM 50  -  10th  Parking Depth (Bar) 2 UC 
+PM 51  -  10th  Profile Depth (Bar) 2 UC 
+PM 52  -  10th Transmission 1 UC 
+Not Used (filled with zeros) 27  
+Total 140  
+--- PAGE 53 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+53 
+ 
+7.2.4.5 Packet Type 254 (Technical parameters) 
+Data Format (bytes) Format (coding) 
+Packet Type: 254 1 UC 
+Packet Date & Hour (Day, Month, Year, Hour, Minute, 
+Second) 6*1 6 * UC 
+Cycle number 2 UI 
+Profile Number 1 UC 
+PT 0  -  Max eV activation on Surface (in csec) 2 UC 
+PT 1  -  Number of Valve activations target 2 UI 
+PT 2  -  Pressure timing period during buoyancy reduction 2 UI 
+PT 3  -  Pressure timing period during ascent (in min) 2 UI 
+PT 4  -  Max volume eV during descent and repositioning 2 UI 
+PT 5  -  Max duration pump during repositioning (in csec) 2 UI 
+PT 6  -  Duration pump during ascent (in csec) 2 UI 
+PT 7  -  Duration Pump during for surfacing (in csec) 2 UI 
+PT 8  -  Pressure Delta for positioning (in dBars) 2 UI 
+PT 9  -  Max pressure before emergency ascent (in dBars) 2 UI 
+PT 10  -  1st threshold for buoyancy reduction (in dBars) 2 UI 
+PT 11  -  2nd threshold for buoyancy reduction (in dBars) 2 UI 
+PT 12  -  Repositioning threshold (in dBars) 2 UI 
+PT 13  -  Grounding mode (0 = pressure switch, 1 stay 
+grounded) 2 UI 
+PT 14  -  Max volume before detecting grounding (in cm3) 2 UI 
+PT 15  -  Grounding pressure (in dBars) 2 UI 
+PT 16  -  Grounding switch pressure (in dBars) 2 UI 
+PT 17  -  Pressure delta during drift (in dBars) 2 UI 
+PT 18  -  Average descent speed (in mm/sec) 2 UI 
+PT 19 -  Pressure increment (in dBars) 2 UI 
+PT 20  -  Time-out modem Iridium (in min) 2 UI 
+PT 21  -  Min ascent speed (in mm/sec) 2 UI 
+PT 22  -  Average ascent speed (in mm/sec) 2 UI 
+PT23  -  Wait period on surface after Emergency ascent (in 
+min) 2 UI 
+PT24  -  Volume to transfer after Buyoancy reduction (cm3) 2 UI 
+PT25 – Iridium Retries 2 UI 
+PT 26 – Coef 1 2 UI 
+PT 27 – Coef 2 2 UI 
+Not used (filled with zeros) 74  
+Total 140  
+--- PAGE 54 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+54 
+ 
+7.2.4.6 Packet Type 253 (Vector Technical data) 
+Data Format (bytes) Format (coding) 
+General Information   
+Packet Type : 253 1 UC 
+Float’s time (Year, Month, Day, Hour, Minute, Second) 6 6 * UC 
+Float serial number 2 UI 
+Total number of profile 2 UI 
+Cycle number 2 UI 
+Profile Number 1 UC 
+Cycle Start Day (relative to mission start Day) 2 UI 
+Cycle Start Hour (resolution : 1 minute) 2 UI 
+Phase 1 UC 
+Sensor Board Dialog error (count) 2 UI 
+TimeOut FP (count) 2 UI 
+Internal Vacuum (modulo 5mbar, 5mbar resolution) 1 UC 
+Battery Voltage (Voltage dropout from 15V, resolution : 0.1V) 1 UC 
+RTC State 1 UC 
+Buyoancy Reduction   
+Buoyancy Reduction Start Day (relative to mission start Day) 2 UI 
+Buoyancy Reduction Start Hour (resolution : 1 minute) 2 UI 
+Ev Timing opening (in minutes) 1 UC 
+number of valve actions at the surface 1 UC 
+Descent to parking Depth   
+Parking Descent Start Day (relative to mission start) 2 UI 
+Parking Descent Start Hour (resolution : 1 minute) 2 UI 
+float stabilisation Day (relative to mission start) 2 UI 
+float stabilisation Hour (resolution : 1 minute) 2 UI 
+Parking Descent End Day (relative to mission start) 2 UI 
+Parking Descent End Hour (resolution : 1 minute) 2 UI 
+number of valve actions in descent 1 UC 
+number of pump actions in descent 1 UC 
+float stabilisation pressure (Resolution 1 Bar) 1 UC 
+Max pressure during descent to parking depth (Res : 1 Bar) 1 UC 
+Parking Drift Phase   
+number of entrance in drift target range (descent) 1 UC 
+number of repositions 1 UC 
+minimum pressure in drift to parking depth (Res : 1 Bar) 1 UC 
+maximum pressure in drift to parking depth (Res : 1 Bar) 1 UC 
+number of valve actions in parking 1 UC 
+number of pump actions in parking 1 UC 
+Descent To Profile Depth   
+Profile Descent Start Day (relative to mission start) 2 UI 
+Profile Descent Start Hour (resolution : 1 minute) 2 UI 
+--- PAGE 55 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+55 
+ 
+Profile Descent End Day  (relative to mission start) 2 UI 
+Profile Descent End Hour (resolution : 1 minute) 2 UI 
+number of valve actions in descent 1 UC 
+number of pump actions in descent 1 UC 
+max pressure in descent to Pprofile (Res : 1 Bar) 1 UC 
+Profile Drift Phase   
+number of entrance in profile drift target range 1 UC 
+number of re-positioning in profile stand-by 1 UC 
+number of valve actions in drift at Profile depth 1 UC 
+number of pump actions in drift at Profile depth 1 UC 
+minimum pressure in drift to Pprofile (Res : 1 Bar) 1 UC 
+maximum pressure in drift to Pprofile(Res : 1 Bar) 1 UC 
+Ascent Phase   
+Profile Ascent Start Day (relative to mission start) 2 UI 
+Profile Ascent Start Hour (resolution : 1 minute) 2 UI 
+Profile Ascent End Day (relative to mission start) 2 UI 
+Profile Ascent End Hour (resolution : 1 minute) 2 UI 
+number of pump actions in ascent 1 UC 
+First Grounding Information   
+grounding detected (grounding = 1, No grounding = 0) 1 UC 
+Grounding pressure (Res : 1 Bar) 1 UC 
+First grounding day relative to mission start 2 UI 
+Hour at grounding (resolution : 1 minute) 2 UI 
+Emergency Ascent Phase   
+Emergency ascent number 1 UC 
+1st Emergency ascent time  (resolution : 1 minute) 2 UI 
+1st Emergency pressure (Res :  Bar) 1 UC 
+number of pump actions in first emergency ascent 1 UC 
+1st Emergency ascent relative day (to 1st cycle day) 1 UC 
+Iridium Remote Control   
+Remote control received 1 UC 
+Remote control rejected 1 UC 
+GPS Data   
+GPS latitude in degrees 1 UC 
+GPS latitude in minutes 1 UC 
+GPS latitude in minutes fractions (1/10000) 2 UI 
+GPS latitude orientation (0= North, 1 = South) 1 UC 
+GPS longitude in degrees 1 UC 
+GPS longitude in minutes 1 UC 
+GPS longitude in minutes fractions (1/10000) 2 UI 
+GPS longitude orientation (0= East, 1 = West) 1 UC 
+GPS valid fix (1 = valid, 0 = not valid) 1 UC 
+Show mode Vector Board (0 : not active ; 1 active) 1 UC 
+--- PAGE 56 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+56 
+ 
+Show mode Sensor Board (0 :not active ; 1 active) 1 UC 
+Free (filled with zeros) 33  
+TOTAL 140  
+ 
+ One technical packet per profile. In case of « multi profile » Cycle without transmission, several 
+technical packet will be generated and transmitted. 
+ Float’s Time is coded with 6 bytes : year (1byte) + month (1 byte) + day (1byte)  hour (1 byte) + 
+minute (1 byte) + second (1 byte). 
+ 
+7.2.4.7 Packet Type 252 (Pressure Packet) 
+Data Format (bytes) Format 
+(coding) 
+Packet Type: 252 1 UC 
+Cycle Number 2 UI 
+Phase & Profile Number (*) (Sample 1) 1 UC 
+Pump or ev (0 = eV, 1 = Pump) (Sample 1) 1 UC 
+Activation Pressure (Bars) (Sample 1) 1 UC 
+Relative Time (minutes / phase start) (Sample 1) 2 UI 
+Sample 2 to 27 (1+1+1+2) * 26  
+Not used (filled with zeros) 2  
+Total 140  
+ 
+(*) : Phase is coded on the 4first bits, Profile number with the last 4 bits 
+NB : Hydraulic actions in Buoyancy reduction are not included in this packet 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 57 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+57 
+ 
+7.2.4.8 Packet Type 251 (Sensor Parameters) 
+Only modified parameters since last Iridium session, are transmitted. 
+Data Format (bytes) Format 
+(coding) 
+Packet Type: 251 1 UC 
+1st number of modified Sensor 1 UC 
+1st Parameter Type (0 : Standard 1 : Specific) 1 UC 
+1st Parameter Number 1 UC 
+1st Old value 4 FLOAT 
+1st New value 4 FLOAT 
+2nd to12th modified sensor number + parameter type + parameter 
+number + old value + New value 
+(1+1+1+4+4) * 
+11  
+Not used (filled with zeros) 7  
+Total 140  
+7.2.4.9 Packet Type 250 (Sensor Technical Data) 
+Data Format (bytes) Format 
+(coding) 
+General information   
+Packet Type: 250 1 UC 
+Data Type : « X » (*) 1 UC 
+Cycle number 2 UI 
+Profile Number 1 UC 
+Type X transmitted Data   
+Packet Number for « X » Type in descent 1 UC 
+Packet Number for « X » Type in drift 1 UC 
+Packet Number for « X » Type in ascent 1 UC 
+Type X acquired Data   
+Descent, nb points zone 1 1 UC 
+Descent, nb points zone 2 1 UC 
+Descent, nb points zone 3 1 UC 
+Descent, nb points zone 4 1 UC 
+Descent, nb points zone 5 1 UC 
+Nb  points in Drift 1 UC 
+Ascent, nb points zone 1 1 UC 
+Ascent, nb points zone 2 1 UC 
+Ascent, nb points zone 3 1 UC 
+Ascent, nb points zone 4 1 UC 
+Ascent, nb points zone 5 1 UC 
+X type Status Sensor (1 : normal,  0 if  pb) 1 UC 
+Free Zone (specific to each sensor) (**) 50  
+TOTAL 70  
+ 
+Two “70 bytes packet” are included in  “one140 bytes packet” that is elementary packet 
+--- PAGE 58 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+58 
+ 
+Float transmit “Sensor technical packet” for all sensor mounted on float. To set one sensor as mounted 
+on float, user must set at minimum one sampling period (standard PC) as different from zero. 
+If all sampling period (standard PC) are equal to zero (for each sensor), it means that sensor is not 
+mounted on float. In that case, sensor is not acquired during auto-test and during mission. 
+(*) Data Type 
+Sensor Data Type 
+CTD 0 
+Optode 1 
+FLBB 4 
+ 
+Free zone details by sensor (**) 
+ 
+N.B : Attention : Sensor information inside « free zone » are coded in « Little Endian » (***) 
+  
+Free zone « CTD Data » Format (bytes) Format 
+(coding) 
+Offset Pressure (Surface) 4 FLOAT (***) 
+Pressure « Subsurface » 4 FLOAT (***) 
+Temperature « Subsurface » 4 FLOAT (***) 
+Salinity « Subsurface » 4 FLOAT (***) 
+Free 34  
+TOTAL 50  
+ 
+Free zone « Optode Data » Format (bytes) Format 
+(coding) 
+Free 50  
+TOTAL 50  
+ 
+Free zone « FLBBNTU Data » Format (bytes) Format 
+(coding) 
+Sensor Serial number 2 UI (***) 
+Coefficient Scale factor Chlorophyll 4 FLOAT (***) 
+Coefficient Dark count Chlorophyll 2 UI (***) 
+Coefficient Scale factor Turbidity 4 FLOAT (***) 
+Coefficient Dark count Turbidity 2 UI (***) 
+Coefficient Scale factor Chlorophyll 4 FLOAT (***) 
+TOTAL 50  
+ 
+ 
+--- PAGE 59 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+59 
+ 
+7.3  Life Expiry Message 
+ 
+Life expiry messages are transmitted when the float is drifting on the surface and has completed 
+transmission of all data from the last cycle of the Mission. Life Expiry mode continues un til the 
+recovery of the float, depletion of the battery, or telecommand sending for new mission beginning. 
+These transmissions - unlike other transmissions - occur at “PV1” minutes intervals (Vector 
+parameter n° 1). The content of the life expiry message is identical to the technical message. 
+ 
+7.4 Packet transmitting sequence (Iridium session) 
+ 
+After each surfacing, the float, starts a transmission phase which begins with a GPS acquisition (set of 
+RTC clock and acquisition of a GPS fix). 
+It then  transmits all the data collected since its last surface transmission (i.e. corresponding to one or 
+several profiles depending on profile transmission request set with PM parameters). 
+The transmitted messages are the following: 
+Sensor measurement data: 
+- sensor measurements (type 0); the number of messages depends on the amount of data to transmit 
+(it is provided in the associated message type 250) 
+Technical data: 
+- one sensor technical message (type 250) per sensor 
+- one float technical message (type 253) 
+- pressure packets (type 252), the number of messages depends on the recorded hydraulic activations 
+to transmit 
+Configuration information: 
+- 251, 254 and 255 message types to transmit parameters 
+ 
+During the second Iridium session (done when PV2 > 0), only configuration information and the float 
+technical message (only for the updated GPS fix) are transmitted. 
+ 
+7.5 Iridium commmands 
+Each parameter (PM, PV, PC, PT and some PI) can be modified by sending an Iridium telecommand 
+to the float.  
+PC modified parameter are immediately taken into account, other parameter modification will be 
+considered for the next cycle of the float’s mission. Modified values are sent back by the float trhough 
+255, 254 and 251 message types. Several parameter can be modified with one telecommand. 
+Several telecommands can be send for one cycle. 
+ 
+ 
+ 
+ 
+--- PAGE 60 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+60 
+ 
+7.5.1 Command Sending procedure (SBD MODE) 
+ 
+To send a telecommand to float in order to modify a mission parameter, User need to send an 
+email with attached file containing text command 
+ 
+For example, to modify mission parameter 5 (drift pressure for 1st profile) from 1000 to 1050, user 
+need : 
+1- to create an empty text file (with notepad or wordpad for example) 
+2- to type same command as command send to float with hyperterminal. In our example, user 
+need to type in file :  !PM 5 1050 followed by carriage return 
+3- save file as “PM5_1050.txt” 
+4- close file 
+5- change file extension from “.txt” to “.sbd” 
+ 
+Once file is created, User must send email to Iridium system, with attached file. 
+6- Create an empty mail 
+7- In message subject, user must indicate float IMEI number (number only no other characters) 
+Be careful to indicate the right IMEI number in order not to send telecommand to another 
+Iridium receiver or float) 
+8- Email address is : Data@SBD.IRIDIUM.com 
+9- Attached file name “PM5_1050.sbd” 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Example of mail send to iridium system 
+10-  Send mail 
+ 
+
+--- PAGE 61 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+61 
+ 
+11-  In a delay of a few minutes, user can check that iridium system send confirmation that message is 
+queued (email coming from sbdservice@sbd.iridium.com with subject : “SBD Mobile Terminated 
+Message Queued for Unit : xxxxxxxxxxxxxxx    (here xx replace IMEI number) 
+Mail from iridium will indicate :  
+“ 
+The following mobile-terminated message was queued for delivery: 
+ 
+IMEI: 300034013403xxx 
+Time: Thu Apr 29 12:00:13 2010 
+ 
+Attachment Filename: PM5_1050.sbd 
+Attachment Size: 10 
+ 
+The MTMSN is 2, and the message is number 1 in the queue. 
+“ 
+At this step, message is queued and ready to be treated by float at next float surfacing. 
+Several command can be included in file. In that case do not forget to type carriage return after last 
+command 
+ 
+Important : Telecommand file size must be less than 260 bytes
+--- PAGE 62 ---
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+8 SPECIFICATIONS 
+•    Storage 
+Temperature range........................................................................................................... -20°C to +50°C 
+Storage time before expiry ...................................................................................................up to 1 year 
+ 
+•    Operational 
+Temperature range............................................................................................................ 0°C to +40°C 
+Pressure at drift depth .................................................................................................. 40 bar to 200 bar 
+Depth maintenance accuracy ......................................................................... ± 3 bar typical (adjustable) 
+Survival at sea ....................................................................................................................up to 4 years 
+Maximum number of cycles............................................................................................up to 255 cycles 
+ 
+•    Mechanical 
+ 
+Length 
+ 
+with antenna .....................................................................................................................#220 cm 
+ 
+Diameter 
+casing ...............................................................................................................................17 cm 
+damping disk .................................................................................................................... 35 cm 
+Weight.................................................................................................................................46kg 
+Material............................................................................................... anodized aluminum casing 
+ 
+•   Sensors     
+ 
+Salinity 
+range........................ ............................................................................................. 10 to 42 PSU initial 
+accuracy ........................................................................................................ ± 0.005 PSU 
+resolution................................................................................................................... 0.001 PSU 
+ 
+Temperature 
+range... ................................................................................................................. -3°C to +32°C initial 
+accuracy .............................................................................................................± 0.002°C 
+resolution........................................................................................................................0.001°C 
+ 
+Pressure 
+range... ........................................................................................................... 0 bar to 2500 dbar initial 
+accuracy ........................................................................................................... ± 2.4 dbar* 
+solution............................................................................................................................0.1 dbar 
+Offset adjusted when surfacing 
+Oxygen 
+range... ............................................................................................................ 0 bar to 500 µM/l l initial 
+accuracy ............................................................ ±8 µM/l (if < 160 µM/l ) or 5% (if >160 µM/l) 
+resolution.........................................................................................................................< 1 µM/l 
+ 
+ 
+(*) offset has to be adjusted at each surfacing 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 63 ---
+     PROVOR ProvBio II –   UTI 
+USER MANUAL 
+ 
+63 
+ 
+9 PROVBIOII OPERATING PRINCIPLE 
+Movement of the float through its profile is accomplished by a pump and valve system. The pump transfers oil 
+from the inner reservoir to the outer bladder. Oil moves back to the reservoir when the valve is opened - -driven by 
+the difference between the float's internal and external pressures. 
+The float's speed of ascent oscillates. This oscillation is due to the way in which the float's controller regulates its 
+speed. The controller, using depth measurements from the float's pressure sensor, calculates the change in 
+depth over a set period of time. With this information, the controller determines the float's speed. 
+ 
+When ascending, if the calculated speed is lower than d esired, the pump is activated for about 10 seconds, 
+pumping oil into the outer bladder. This produces an increase in buoyancy, which increases the speed of ascent. 
+As the float rises to shallower depths, its buoyancy decreases, causing the ascent speed to also decrease. When 
+the calculated speed is too low, the pump is activated again. 
+ 
+This cycle repeats until the float reaches the surface. 
+The same regulating method is used to control the float's descent speed, by opening the valve and allowing oil to 
+flow from the external bladder to the internal reservoir. 
+ 
+Why does ProvBioII 's speed decrease as it ascends? 
+The buoyancy of a float is determined principally by its mass and its volume, but another factor, hull 
+compressibility, also plays an important role . As ProvBioII ascends, the decrease in water density reduces the 
+float's buoyancy. At the same time, the decrease in water pressure causes ProvBioII 's hull to expand, which 
+increases the float's buoyancy. The two effects tend to counteract each other. 
+Because ProvBioII 's compressibility is actually less than that of sea water, the decrease in buoyancy due to 
+decreasing water density is greater than the increase in buoyancy due to hull expansion. This causes ProvBioII 's 
+speed of ascent to decrease as it rises in the water column. 
+Conversely, as the float descends, the increasing water density increases the buoyancy more than the decreasing 
+buoyancy from hull compressure. This causes ProvBioII 's speed of descent to slow as it goes deeper. 
+ 
+To reduce the p robability of contact with ships, ProvBioII 's target speed during the initial stage of descent is high 
+at shallow depths. This minimizes the time during which the float is at risk of damage. 
+To slow the float's descent, its controller is programmed with a  series of depths at which the descent speed is 
+halved until it reaches the target depth. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 64 ---
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+10 LITHIUM BATTERY 
+All batteries, both lithium batteries and batteries with other chemical elements, contain large quantities of stored 
+energy. This is, of course, what makes them useful, but it also makes them potentially hazardous. 
+If correctly handled, neither alkaline nor lithium batteries present any risk to humans or the environment. Improper 
+handling of these batteries presents potential risks to humans, but does not present an environmental risk. 
+The energy stored in a battery cell is stored in chemical form. Most batteries contain corrosive chemicals. These 
+chemicals can be released if the cells are mishandled. Mishandling includes: 
+ 
+•    short-circuiting the cells; 
+ 
+•    (re)charging the cells; 
+ 
+•    puncturing the cell enclosure with a sharp object; 
+ 
+•    exposing the cell to high temperatures. 
+WARNING:    BOTH ALKALINE AND LITHIUM BATTERIES MAY EXPLODE, PYROLIZE OR VENT IF MIS-
+HANDLED. DO NOT DISASSEMBLE , PUNCTURE, CRUSH, SHORT -CIRCUIT, 
+(RE)CHARGE OR INCINERATE THE CELLS. DO NOT EXPOSE CELLS TO HIGH 
+TEMPERATURES. 
+The lithium thionyl chloride cells used in ProvBioII floats incorporate sealed steel containers, warning labels 
+and venting systems to guard against accidental release of their contents. 
+WARNING:   IF A BATTERY SPILLS ITS CONTENTS DUE TO MISHANDLING, THE RELEASED 
+CHEMICALS AND THEIR REACTION PRODUCTS INCLUDE CAUSTIC AND ACIDIC 
+MATERIALS, SUCH AS HYDROCHLORIC ACID (HCL) IN THE CASE OF LITHIUM 
+THIONYL CHLORIDE BATTERIES, AND POTASSIUM HYDROXIDE (KOH) IN THE CASE 
+OF ALKALINE BATTERIES. THESE CHEMICALS CAN CAUSE EYE AND NOSE 
+IRRITATION AND BURNS TO EXPOSED FLESH. 
+The hazard presented by these chemicals is comparable to that presented by common domestic  cleaning 
+materials like bleach, muriatic acid or oven cleaner. 
+Inevitably, the battery contents will eventually be released into the environment, regardless of whether the 
+cells are deliberately dismantled or simply disintegrate due to the forces of natur e. Because of their highly 
+reactive nature, battery materials disintegrate rapidly when released into the environment. They pose no long -
+term environmental threat. There are no heavy metals or chronic toxins in ProvBioII 's lithium cells. Indeed, a 
+recommended safe disposal method for thionyl chloride lithium cells is to crush them and dilute them in 
+sufficient quantities of water. 
+Discharged batteries pose a greatly reduced threat, as the process of discharging them consumes the 
+corrosive chemicals contained in them. 
+In summary, ProvBioII 's lithium battery poses no significant or long -term environmental threats. Any threats 
+that they do present, are short -term threats to the safety of persons mishandling the cells. These safety 
+threats are similar to those  of other common household -use materials. These threats are reduced when the 
+cells are discharged - and exist only if the cells are mishandled in extreme ways. These threats are the same 
+as those presented by the alkaline cells widely used by consumers. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 65 ---
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+ 
+11 GLOSSARY 
+ 
+CPU 
+Central Processing Unit. In the context of ProvBioII , this term denotes the board that ensures the running and 
+control of the system. 
+ 
+ 
+COM1, COM2. 
+Serial communication ports. 
+ 
+dBar. 
+1/10 bar = 1 decibar Unit of pressure used for ProvBioII. It roughly corresponds to a depth of 1m.  
+ 
+IFREMER 
+Institut Français pour la Recherche et l'Exploitation de la MER (French Institute for the Research and the 
+Exploitation of the Sea). 
+ 
+Mission 
+The portion of ProvBioII ’s life that consists of a number of repeating profiles of descent, submerged drift, 
+ascent and data transmission. 
+ 
+PC 
+Personal Computer; IBM-PC compatible. 
+ 
+ 
+ProvBioII  
+Name given to the drifting profiler developed by nke and IFREMER. 
+ 
+RS232 
+Widely recognized standard for the implementation of a serial data communication link. 
+ 
+ 
+VT52, VT100 
+Video Terminal, type 52 or 100 
+Computer terminals developed by Digital Equipment Corporation (DEC). They are considered standard in 
+the field. 
+ 
+--- PAGE 66 ---
+     PROVOR ProvBioII –   UTI 
+USER MANUAL 
+ 
+ 
+ 
+Fabriqué par / Manufactured by 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Nke Instrumentation 
+Z.I de KERANDRE  - RUE GUTENBERG 
+56700 HENNEBONT - FRANCE 
+Telephone: +33 (0)2 97 36 10 12  Fax: +33 (0)2 97 36 55 17  
+Web : http://www.nke.fr - E-mail : info.instrumentation@nke.fr 

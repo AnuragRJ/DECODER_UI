@@ -1,0 +1,35 @@
+..................................FFFF.................................. [ 70%]
+..............................                                           [100%]
+=================================== FAILURES ===================================
+____________________ test_sync_initial_cycle_populates_rows ____________________
+tests/test_fleet_status.py:420: in test_sync_initial_cycle_populates_rows
+    assert res["accepted"] is True and res["status"] == "ok"
+E   assert (False is True)
+___________ test_sync_skips_unchanged_and_redownloads_on_mdtm_change ___________
+tests/test_fleet_status.py:450: in test_sync_skips_unchanged_and_redownloads_on_mdtm_change
+    assert reg.sync_now()["status"] == "ok"
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'status'
+________________ test_sync_outage_keeps_cache_and_records_error ________________
+tests/test_fleet_status.py:467: in test_sync_outage_keeps_cache_and_records_error
+    assert reg.sync_now()["status"] == "ok"
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'status'
+_____________ test_sync_per_float_failure_degrades_and_retains_row _____________
+tests/test_fleet_status.py:488: in test_sync_per_float_failure_degrades_and_retains_row
+    assert reg.sync_now()["status"] == "ok"
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'status'
+=============================== warnings summary ===============================
+../../../.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /home/user/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--- generated xml file: /home/user/repository-verification/service-tests.xml ---
+=========================== short test summary info ============================
+FAILED tests/test_fleet_status.py::test_sync_initial_cycle_populates_rows - a...
+FAILED tests/test_fleet_status.py::test_sync_skips_unchanged_and_redownloads_on_mdtm_change
+FAILED tests/test_fleet_status.py::test_sync_outage_keeps_cache_and_records_error
+FAILED tests/test_fleet_status.py::test_sync_per_float_failure_degrades_and_retains_row
+4 failed, 98 passed, 1 warning in 2.68s

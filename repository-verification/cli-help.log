@@ -1,0 +1,23 @@
+                                                                                
+ Usage: argo-decoder [OPTIONS] COMMAND [ARGS]...                                
+                                                                                
+ Coriolis Argo float decoder (Python)                                           
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --log-level  -l      <str>  Log level [default: INFO]                        │
+│ --json-logs                 Emit JSON log lines                              │
+│ --help                      Show this message and exit.                      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────╮
+│ decode-float      Decode a single float and write NetCDF/XML outputs.        │
+│ validate-config   Validate a decoder configuration file.                     │
+│ dual-run          Run oracle and Python against the same inputs, then diff   │
+│                   outputs.                                                   │
+│ shadow            Shorthand for dual-run against the Docker/MCR MATLAB       │
+│                   oracle.                                                    │
+│ publish-cts4      Publish CTS4 (decoder-301) NetCDF files per frozen         │
+│                   Phase-2C contract.                                         │
+│ version                                                                      │
+│ metadata          Metadata registry validation & materialisation.            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+

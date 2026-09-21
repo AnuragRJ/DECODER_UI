@@ -1,0 +1,172 @@
+Obtaining file:///home/user/ARPY-decoder-Ui/incois-arpy-decoder
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting fastapi>=0.110.0 (from -r decoder-ui/service/requirements.txt (line 1))
+  Downloading fastapi-0.141.1-py3-none-any.whl.metadata (27 kB)
+Collecting uvicorn>=0.29.0 (from -r decoder-ui/service/requirements.txt (line 2))
+  Downloading uvicorn-0.53.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting websockets>=12.0 (from -r decoder-ui/service/requirements.txt (line 3))
+  Downloading websockets-17.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+Collecting pydantic>=2.7.0 (from -r decoder-ui/service/requirements.txt (line 4))
+  Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+Collecting xarray>=2024.3.0 (from -r decoder-ui/service/requirements.txt (line 5))
+  Downloading xarray-2026.7.0-py3-none-any.whl.metadata (12 kB)
+Collecting netCDF4>=1.6.0 (from -r decoder-ui/service/requirements.txt (line 6))
+  Downloading netcdf4-1.7.4-cp311-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (2.1 kB)
+Collecting h5netcdf>=1.3.0 (from -r decoder-ui/service/requirements.txt (line 7))
+  Downloading h5netcdf-1.8.1-py3-none-any.whl.metadata (15 kB)
+Collecting cf-xarray>=0.9.0 (from -r decoder-ui/service/requirements.txt (line 8))
+  Downloading cf_xarray-0.11.3-py3-none-any.whl.metadata (16 kB)
+Collecting gsw>=3.6.0 (from -r decoder-ui/service/requirements.txt (line 9))
+  Downloading gsw-3.6.23-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (7.0 kB)
+Collecting numpy>=2.0.0 (from -r decoder-ui/service/requirements.txt (line 10))
+  Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting scipy>=1.13.0 (from -r decoder-ui/service/requirements.txt (line 11))
+  Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pyyaml>=6.0.0 (from -r decoder-ui/service/requirements.txt (line 12))
+  Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting lxml>=5.0.0 (from -r decoder-ui/service/requirements.txt (line 13))
+  Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting rich>=13.0.0 (from -r decoder-ui/service/requirements.txt (line 14))
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting structlog>=24.0.0 (from -r decoder-ui/service/requirements.txt (line 15))
+  Downloading structlog-26.1.0-py3-none-any.whl.metadata (9.7 kB)
+Collecting typer>=0.12.0 (from -r decoder-ui/service/requirements.txt (line 16))
+  Downloading typer-0.27.2-py3-none-any.whl.metadata (16 kB)
+Collecting reportlab>=4.0.0 (from -r decoder-ui/service/requirements.txt (line 17))
+  Downloading reportlab-5.0.1-py3-none-any.whl.metadata (1.6 kB)
+Collecting lxml>=5.0.0 (from -r decoder-ui/service/requirements.txt (line 13))
+  Downloading lxml-5.4.0-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+Collecting rich>=13.0.0 (from -r decoder-ui/service/requirements.txt (line 14))
+  Downloading rich-13.9.4-py3-none-any.whl.metadata (18 kB)
+Collecting structlog>=24.0.0 (from -r decoder-ui/service/requirements.txt (line 15))
+  Downloading structlog-24.4.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.7.0->-r decoder-ui/service/requirements.txt (line 4))
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.5 (from pydantic>=2.7.0->-r decoder-ui/service/requirements.txt (line 4))
+  Downloading pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting typing-extensions>=4.14.1 (from pydantic>=2.7.0->-r decoder-ui/service/requirements.txt (line 4))
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic>=2.7.0->-r decoder-ui/service/requirements.txt (line 4))
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting cftime (from netCDF4>=1.6.0->-r decoder-ui/service/requirements.txt (line 6))
+  Downloading cftime-1.6.5-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (8.7 kB)
+Collecting certifi (from netCDF4>=1.6.0->-r decoder-ui/service/requirements.txt (line 6))
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13.0.0->-r decoder-ui/service/requirements.txt (line 14))
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.0.0->-r decoder-ui/service/requirements.txt (line 14))
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting shellingham>=1.3.0 (from typer>=0.12.0->-r decoder-ui/service/requirements.txt (line 16))
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting annotated-doc>=0.0.2 (from typer>=0.12.0->-r decoder-ui/service/requirements.txt (line 16))
+  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting starlette>=0.46.0 (from fastapi>=0.110.0->-r decoder-ui/service/requirements.txt (line 1))
+  Downloading starlette-1.6.0-py3-none-any.whl.metadata (6.4 kB)
+Collecting click>=7.0 (from uvicorn>=0.29.0->-r decoder-ui/service/requirements.txt (line 2))
+  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn>=0.29.0->-r decoder-ui/service/requirements.txt (line 2))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting packaging>=24.2 (from xarray>=2024.3.0->-r decoder-ui/service/requirements.txt (line 5))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pandas>=2.2 (from xarray>=2024.3.0->-r decoder-ui/service/requirements.txt (line 5))
+  Downloading pandas-3.0.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting pillow>=9.0.0 (from reportlab>=4.0.0->-r decoder-ui/service/requirements.txt (line 17))
+  Downloading pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting charset-normalizer (from reportlab>=4.0.0->-r decoder-ui/service/requirements.txt (line 17))
+  Downloading charset_normalizer-3.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.0.0->-r decoder-ui/service/requirements.txt (line 14))
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting python-dateutil>=2.8.2 (from pandas>=2.2->xarray>=2024.3.0->-r decoder-ui/service/requirements.txt (line 5))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=2.2->xarray>=2024.3.0->-r decoder-ui/service/requirements.txt (line 5))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting anyio<5,>=3.6.2 (from starlette>=0.46.0->fastapi>=0.110.0->-r decoder-ui/service/requirements.txt (line 1))
+  Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette>=0.46.0->fastapi>=0.110.0->-r decoder-ui/service/requirements.txt (line 1))
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting httptools>=0.8.0 (from uvicorn[standard]>=0.29; extra == "service"->argo-decoder==0.1.0a0)
+  Downloading httptools-0.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]>=0.29; extra == "service"->argo-decoder==0.1.0a0)
+  Downloading python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.29; extra == "service"->argo-decoder==0.1.0a0)
+  Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]>=0.29; extra == "service"->argo-decoder==0.1.0a0)
+  Downloading watchfiles-1.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 50.8 MB/s  0:00:00
+Downloading netcdf4-1.7.4-cp311-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (10.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 139.2 MB/s  0:00:00
+Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 154.1 MB/s  0:00:00
+Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.6/801.6 kB 86.6 MB/s  0:00:00
+Downloading lxml-5.4.0-cp313-cp313-manylinux_2_28_x86_64.whl (4.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 111.3 MB/s  0:00:00
+Downloading rich-13.9.4-py3-none-any.whl (242 kB)
+Downloading structlog-24.4.0-py3-none-any.whl (67 kB)
+Downloading typer-0.27.2-py3-none-any.whl (123 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 106.2 MB/s  0:00:00
+Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+Downloading uvicorn-0.53.0-py3-none-any.whl (87 kB)
+Downloading websockets-17.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (224 kB)
+Downloading xarray-2026.7.0-py3-none-any.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 114.6 MB/s  0:00:00
+Downloading h5netcdf-1.8.1-py3-none-any.whl (62 kB)
+Downloading cf_xarray-0.11.3-py3-none-any.whl (80 kB)
+Downloading gsw-3.6.23-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 118.3 MB/s  0:00:00
+Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 141.8 MB/s  0:00:00
+Downloading reportlab-5.0.1-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 96.1 MB/s  0:00:00
+Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pandas-3.0.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 246.9 MB/s  0:00:00
+Downloading pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 181.0 MB/s  0:00:00
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading httptools-0.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (486 kB)
+Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 173.0 MB/s  0:00:00
+Downloading watchfiles-1.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (454 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading cftime-1.6.5-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 75.3 MB/s  0:00:00
+Downloading charset_normalizer-3.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+Building wheels for collected packages: argo-decoder
+  Building editable for argo-decoder (pyproject.toml): started
+  Building editable for argo-decoder (pyproject.toml): finished with status 'done'
+  Created wheel for argo-decoder: filename=argo_decoder-0.1.0a0-py3-none-any.whl size=4399 sha256=30b20b17adb0c5013be6be6fb046761f5958ef2f06e44d82389a5e42b951bb46
+  Stored in directory: /tmp/pip-ephem-wheel-cache-mr6rc4p0/wheels/b2/c6/59/6040f9cb8c8b53d2f0287a20ae149438ba1e900f34792f813b
+Successfully built argo-decoder
+Installing collected packages: websockets, uvloop, typing-extensions, structlog, six, shellingham, pyyaml, python-dotenv, pygments, pillow, packaging, numpy, mdurl, lxml, idna, httptools, h11, click, charset-normalizer, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, scipy, reportlab, python-dateutil, pydantic-core, markdown-it-py, h5netcdf, gsw, cftime, anyio, watchfiles, starlette, rich, pydantic, pandas, netCDF4, xarray, typer, fastapi, cf-xarray, argo-decoder
+
+Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 argo-decoder-0.1.0a0 certifi-2026.7.22 cf-xarray-0.11.3 cftime-1.6.5 charset-normalizer-3.5.1 click-8.5.0 fastapi-0.141.1 gsw-3.6.23 h11-0.16.0 h5netcdf-1.8.1 httptools-0.8.0 idna-3.20 lxml-5.4.0 markdown-it-py-4.2.0 mdurl-0.1.2 netCDF4-1.7.4 numpy-2.5.3 packaging-26.3 pandas-3.0.6 pillow-12.3.0 pydantic-2.13.5 pydantic-core-2.46.5 pygments-2.21.0 python-dateutil-2.9.0.post0 python-dotenv-1.2.3 pyyaml-6.0.3 reportlab-5.0.1 rich-13.9.4 scipy-1.18.1 shellingham-1.5.4 six-1.17.0 starlette-1.6.0 structlog-24.4.0 typer-0.27.2 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.53.0 uvloop-0.22.1 watchfiles-1.2.0 websockets-17.1 xarray-2026.7.0
+
+[notice] A new release of pip is available: 26.1.2 -> 26.2.1
+[notice] To update, run: /home/user/.venv/bin/python -m pip install --upgrade pip

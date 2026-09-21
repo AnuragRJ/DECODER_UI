@@ -1,0 +1,25 @@
+.......F..................                                               [100%]
+=================================== FAILURES ===================================
+_______________ test_parse_rtraj_selects_max_valid_last_message ________________
+tests/test_fleet_status.py:224: in test_parse_rtraj_selects_max_valid_last_message
+    assert out["last_tx_status_rt19"] == "2"
+E   assert "np.bytes_(b'2')" == '2'
+E     
+E     - 2
+E     + np.bytes_(b'2')
+=============================== warnings summary ===============================
+decoder-ui/tests/test_fleet_status.py::test_parse_profile_values
+decoder-ui/tests/test_fleet_status.py::test_parse_profile_tolerates_missing_vars
+decoder-ui/tests/test_fleet_status.py::test_parse_profile_cycle_mismatch_flagged
+decoder-ui/tests/test_fleet_status.py::test_sync_initial_cycle_populates_rows
+decoder-ui/tests/test_fleet_status.py::test_sync_skips_unchanged_and_redownloads_on_mdtm_change
+decoder-ui/tests/test_fleet_status.py::test_sync_outage_keeps_cache_and_records_error
+decoder-ui/tests/test_fleet_status.py::test_sync_per_float_failure_degrades_and_retains_row
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/tests/test_fleet_status.py:111: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    ds.createVariable("PLATFORM_NUMBER", "S1", ("N_PROF", "STRING8"))[:] = np.frombuffer(f"{wmo:<8}".encode(), dtype="S1").reshape(1, 8)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_fleet_status.py::test_parse_rtraj_selects_max_valid_last_message
+1 failed, 25 passed, 7 warnings in 1.39s

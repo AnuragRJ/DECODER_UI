@@ -1,0 +1,16 @@
+Collecting httpx2
+  Downloading httpx2-2.13.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: anyio>=4.10 in /home/user/.venv/lib/python3.13/site-packages (from httpx2) (4.15.1)
+Collecting httpcore2==2.13.0 (from httpx2)
+  Downloading httpcore2-2.13.0-py3-none-any.whl.metadata (26 kB)
+Requirement already satisfied: idna>=3.18 in /home/user/.venv/lib/python3.13/site-packages (from httpx2) (3.20)
+Collecting truststore>=0.10 (from httpx2)
+  Downloading truststore-0.10.4-py3-none-any.whl.metadata (4.4 kB)
+Requirement already satisfied: h11>=0.16 in /home/user/.venv/lib/python3.13/site-packages (from httpcore2==2.13.0->httpx2) (0.16.0)
+Requirement already satisfied: typing_extensions>=4.16.0 in /home/user/.venv/lib/python3.13/site-packages (from anyio>=4.10->httpx2) (4.16.0)
+Downloading httpx2-2.13.0-py3-none-any.whl (95 kB)
+Downloading httpcore2-2.13.0-py3-none-any.whl (83 kB)
+Downloading truststore-0.10.4-py3-none-any.whl (18 kB)
+Installing collected packages: truststore, httpcore2, httpx2
+
+Successfully installed httpcore2-2.13.0 httpx2-2.13.0 truststore-0.10.4

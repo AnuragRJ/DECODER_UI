@@ -1,0 +1,25 @@
+
+> frontend@1.0.0 test:fleet
+> node e2e/fleetStatus.e2e.mjs
+
+PASS  sync cycle completed   disabled
+PASS  upstream rows present   30/32 with timestamps
+PASS  top-nav View Results entry exists
+PASS  View Result renders
+PASS  Float Status button on View Result
+PASS  View Result keeps Back to Decoder
+PASS  View Result body intact (metrics or empty state)
+PASS  Float Status page opens
+PASS  sync pill visible
+PASS  summary metrics visible
+FAIL  map mounted
+PASS  search narrows to the WMO
+PASS  detail drawer opens on row click
+PASS  Detail drawer closes
+PASS  Clear restores rows   20 rows
+PASS  status filter narrows rows   1/1
+PASS  Back returns to View Result
+PASS  no top-level Float Status nav item
+PASS  no console/page errors
+
+18/19 checks passed

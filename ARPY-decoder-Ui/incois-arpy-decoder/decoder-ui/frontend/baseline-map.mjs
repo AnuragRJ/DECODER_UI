@@ -1,0 +1,13 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1657, height: 900 } });
+await page.goto('http://127.0.0.1:3000', { waitUntil: 'networkidle' });
+await page.locator('[title="Open Persistent Run History"]').click();
+await new Promise(r => setTimeout(r, 1000));
+await page.getByRole('button', { name: /BATCH SUMMARIES/ }).click();
+await new Promise(r => setTimeout(r, 600));
+await page.getByRole('button', { name: 'LOAD IN RESULTS' }).first().click();
+await new Promise(r => setTimeout(r, 3500));
+await page.screenshot({ path: '/home/user/verify-shots/baseline-map-before.png' });
+console.log('markers:', await page.locator('svg g[data-wmo]').count());
+await browser.close();

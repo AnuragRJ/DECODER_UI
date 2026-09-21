@@ -1,0 +1,3060 @@
+{
+  "audit_as_of": "2026-09-20T20:47:04.059683+00:00",
+  "scope": "32 existing local presets; configured Ifremer DAC=incois",
+  "oracle": "Independent numeric extraction: public HTTPS raw products + local CSV identity fields; no service parser imports",
+  "floats": [
+    {
+      "wmo": 1902844,
+      "internal_id": "123230",
+      "float_type": "ARVOR",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:13 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:13 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2026-05-04T07:00:15+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 9.85295,
+      "lon": 65.99677,
+      "prof_num": 25,
+      "profile_count": 24,
+      "profiles_missing": 1,
+      "profiles_missing_list": [
+        22
+      ],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/1902844/1902844_Rtraj.nc",
+        "sha256": "428ee0f12f3e5d83264eac7325e4f7bc26fcf8fd8f1ee748c928c8047e2aa107",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 12,
+        "raw_juld": 27882.291840277612,
+        "field_status": "1",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          77
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 28009.586238426156,
+        "iso": "2026-09-08T14:04:11+00:00",
+        "lat": 9.85295,
+        "lon": 65.99677,
+        "qc": "1",
+        "index": 0,
+        "cycle": 25,
+        "time_field": "JULD_LOCATION",
+        "source": "profile",
+        "file": "R1902844_025.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/1902844/profiles/R1902844_025.nc",
+        "sha256": "7a100a782f56a0663de516dd9b731ac72f5cab47e972c986918009ddb1fe96d2"
+      },
+      "profile_evidence": {
+        "file": "R1902844_025.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/1902844/profiles/R1902844_025.nc",
+        "sha256": "7a100a782f56a0663de516dd9b731ac72f5cab47e972c986918009ddb1fe96d2",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/1902844/profiles/",
+        "listing_sha256": "6dba0067188fc0d7153ac229e46c03caf0aa0f0aa053e1036b94afb2d59794c0",
+        "max_cycle": 25,
+        "available_cycles": 24,
+        "missing": [
+          22
+        ],
+        "measurement_iso": "2026-09-08T14:04:11+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          9.85295
+        ],
+        "lon_values": [
+          65.99677
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/1902844/1902844_meta.nc",
+        "sha256": "38a07e90d5902876cabc1d7db2703d553c5504b69446846ecdfb92616dda3d93",
+        "PLATFORM_NUMBER": "1902844",
+        "PLATFORM_TYPE": "ARVOR"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/1902844/1902844_prof.nc",
+        "sha256": "429de6038752becf1c58c22e8287517fc872dbce1a2651637edf4277ce032ceb",
+        "profile_rows": 24,
+        "latest_valid_position": {
+          "juld": 28009.586238425927,
+          "iso": "2026-09-08T14:04:11+00:00",
+          "lat": 9.85295,
+          "lon": 65.99677,
+          "qc": "1",
+          "index": 23,
+          "cycle": 25,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "1902844_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/1902844/1902844_prof.nc",
+          "sha256": "429de6038752becf1c58c22e8287517fc872dbce1a2651637edf4277ce032ceb"
+        }
+      }
+    },
+    {
+      "wmo": 2901304,
+      "internal_id": "102525",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:5 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:5 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2011-09-22T08:47:29+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -58.87,
+      "lon": 72.648,
+      "prof_num": 20,
+      "profile_count": 20,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901304/2901304_Rtraj.nc",
+        "sha256": "dd705ca398c43a7c844e929bc5bab618c1cd43ae1ee3f465b50f35bbe23d26c5",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 22,
+        "raw_juld": 22544.366307870372,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          23
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 22544.363078703704,
+        "iso": "2011-09-22T08:42:50+00:00",
+        "lat": -58.87,
+        "lon": 72.648,
+        "qc": "1",
+        "index": 532,
+        "cycle": 23,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2901304_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901304/2901304_Rtraj.nc",
+        "sha256": "dd705ca398c43a7c844e929bc5bab618c1cd43ae1ee3f465b50f35bbe23d26c5"
+      },
+      "profile_evidence": {
+        "file": "D2901304_020.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901304/profiles/D2901304_020.nc",
+        "sha256": "c52483372989fc4f343cb5725095252f73d32d2e0118ae71309867567e36e7dd",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2901304/profiles/",
+        "listing_sha256": "b1e810f050e14a69adce58bee71c718babef3eecd97b7a9041f24bc4a1e87b6b",
+        "max_cycle": 20,
+        "available_cycles": 20,
+        "missing": [],
+        "measurement_iso": "2011-08-23T00:35:01+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          -59.913
+        ],
+        "lon_values": [
+          69.366
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901304/2901304_meta.nc",
+        "sha256": "32de86b2f37b55baeafde279091e1eb5b4e9600c2bc6323c5957ff78d0371bb1",
+        "PLATFORM_NUMBER": "2901304",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901304/2901304_prof.nc",
+        "sha256": "0ad7c9473cc6065a895d53546b494db6f951f5490e105bab47e80e9cba437852",
+        "profile_rows": 20,
+        "latest_valid_position": {
+          "juld": 22514.024317129628,
+          "iso": "2011-08-23T00:35:01+00:00",
+          "lat": -59.913,
+          "lon": 69.366,
+          "qc": "1",
+          "index": 19,
+          "cycle": 20,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2901304_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2901304/2901304_prof.nc",
+          "sha256": "0ad7c9473cc6065a895d53546b494db6f951f5490e105bab47e80e9cba437852"
+        }
+      }
+    },
+    {
+      "wmo": 2901305,
+      "internal_id": "102526",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:6 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:6 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": null,
+      "last_tx_field": null,
+      "lat": -62.021,
+      "lon": 60.694,
+      "prof_num": 27,
+      "profile_count": 27,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": null,
+      "position_evidence": {
+        "juld": 22885.719027777668,
+        "iso": "2012-08-28T17:15:24+00:00",
+        "lat": -62.021,
+        "lon": 60.694,
+        "qc": "1",
+        "index": 969,
+        "cycle": 57,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2901305_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901305/2901305_Rtraj.nc",
+        "sha256": "fce04c8491bc2f43b6959c8d4b0d04469ef126423b7065fc1ad586edfd37e324"
+      },
+      "profile_evidence": {
+        "file": "D2901305_027.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901305/profiles/D2901305_027.nc",
+        "sha256": "aecfb8725d3929d67ad12102b15b8e9d8ac5dba3cb4aec0b73652caf21264011",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2901305/profiles/",
+        "listing_sha256": "573ba23f11caa7c401a94b496e8592fcc5683f5274277fc576db1cd63d91d25e",
+        "max_cycle": 27,
+        "available_cycles": 27,
+        "missing": [],
+        "measurement_iso": "2011-11-02T09:12:07+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          -59.909
+        ],
+        "lon_values": [
+          55.432
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901305/2901305_meta.nc",
+        "sha256": "73e274e2f3f84c47253efff7d2576fb4af87dd1dcdb86447eb03476ee806385e",
+        "PLATFORM_NUMBER": "2901305",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "availability_note": "No last-message or transmission-end field. Generic measurement JULD is not used.",
+      "other_upstream_evidence_not_used": {
+        "field": "JULD_START_TRANSMISSION",
+        "raw_juld": 22885.581736111082,
+        "iso": "2012-08-28T13:57:42+00:00",
+        "status": "1",
+        "status_conventions": "0 : Nominal, 1 : Estimated, 2 : Transmitted",
+        "reason": "Estimated transmission START, not the latest received message or transmission END."
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901305/2901305_prof.nc",
+        "sha256": "3175befebc1a68a1bb7f3725dcf12f01ed8050383bc0e34c9f36bd2de4775ac1",
+        "profile_rows": 27,
+        "latest_valid_position": {
+          "juld": 22585.386782407408,
+          "iso": "2011-11-02T09:16:58+00:00",
+          "lat": -59.909,
+          "lon": 55.432,
+          "qc": "1",
+          "index": 26,
+          "cycle": 27,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2901305_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2901305/2901305_prof.nc",
+          "sha256": "3175befebc1a68a1bb7f3725dcf12f01ed8050383bc0e34c9f36bd2de4775ac1"
+        }
+      }
+    },
+    {
+      "wmo": 2901328,
+      "internal_id": "102507",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:7 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:7 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": null,
+      "last_tx_field": null,
+      "lat": 11.826,
+      "lon": 80.065,
+      "prof_num": 98,
+      "profile_count": 92,
+      "profiles_missing": 6,
+      "profiles_missing_list": [
+        81,
+        86,
+        87,
+        88,
+        89,
+        92
+      ],
+      "communication_evidence": null,
+      "position_evidence": {
+        "juld": 23011.3539814814,
+        "iso": "2013-01-01T08:29:44+00:00",
+        "lat": 11.826,
+        "lon": 80.065,
+        "qc": "1",
+        "index": 0,
+        "cycle": 98,
+        "time_field": "JULD_LOCATION",
+        "source": "profile",
+        "file": "D2901328_098.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901328/profiles/D2901328_098.nc",
+        "sha256": "6e8408c2e0407e8b9f79a69158b83adb6839950aeb0de791058db8d4f906e32d"
+      },
+      "profile_evidence": {
+        "file": "D2901328_098.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901328/profiles/D2901328_098.nc",
+        "sha256": "6e8408c2e0407e8b9f79a69158b83adb6839950aeb0de791058db8d4f906e32d",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2901328/profiles/",
+        "listing_sha256": "a359304bb8b5641469574b554f473cd76a05857f2c2c61e81a4c4592a4ae955d",
+        "max_cycle": 98,
+        "available_cycles": 92,
+        "missing": [
+          81,
+          86,
+          87,
+          88,
+          89,
+          92
+        ],
+        "measurement_iso": "2013-01-01T08:14:45+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          11.826
+        ],
+        "lon_values": [
+          80.065
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901328/2901328_meta.nc",
+        "sha256": "9cc57ad4f9e8d4f821c3da5e056f2a8a0413864ce01e7ee342f51f8e02fcb7ef",
+        "PLATFORM_NUMBER": "2901328",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "availability_note": "No last-message or transmission-end field. Generic measurement JULD is not used.",
+      "other_upstream_evidence_not_used": {
+        "field": "JULD_START_TRANSMISSION",
+        "raw_juld": 23006.327245370485,
+        "iso": "2012-12-27T07:51:14+00:00",
+        "status": "1",
+        "status_conventions": "0 : Nominal, 1 : Estimated, 2 : Transmitted",
+        "reason": "Estimated transmission START, not the latest received message or transmission END."
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901328/2901328_prof.nc",
+        "sha256": "c94397f1543843724970c3729757b2f4f8a80edad1cc02b7723007a6233c8e39",
+        "profile_rows": 92,
+        "latest_valid_position": {
+          "juld": 23011.353981481483,
+          "iso": "2013-01-01T08:29:44+00:00",
+          "lat": 11.826,
+          "lon": 80.065,
+          "qc": "1",
+          "index": 91,
+          "cycle": 98,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2901328_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2901328/2901328_prof.nc",
+          "sha256": "c94397f1543843724970c3729757b2f4f8a80edad1cc02b7723007a6233c8e39"
+        }
+      }
+    },
+    {
+      "wmo": 2901339,
+      "internal_id": "102510",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:8 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:8 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2020-12-20T06:39:57+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 10.536,
+      "lon": 70.362,
+      "prof_num": 329,
+      "profile_count": 329,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901339/2901339_Rtraj.nc",
+        "sha256": "ed6910cf7fd41500c420dc2ba76b230bfa3c222aeeac620bad4e43c89e878a4d",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 215,
+        "raw_juld": 25921.277743055485,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          216
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 25921.272847222164,
+        "iso": "2020-12-20T06:32:54+00:00",
+        "lat": 10.536,
+        "lon": 70.362,
+        "qc": "1",
+        "index": 5550,
+        "cycle": 329,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2901339_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901339/2901339_Rtraj.nc",
+        "sha256": "ed6910cf7fd41500c420dc2ba76b230bfa3c222aeeac620bad4e43c89e878a4d"
+      },
+      "profile_evidence": {
+        "file": "D2901339_329.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901339/profiles/D2901339_329.nc",
+        "sha256": "e94bb8f58c99a97abd6f50c7a431bab97564bb99fcec674ea6f3e3947bbe08e7",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2901339/profiles/",
+        "listing_sha256": "ec193989f5977872fce1a734ee486b4794e20af0a26e8c6e7ca5592a1a2fbb09",
+        "max_cycle": 329,
+        "available_cycles": 329,
+        "missing": [],
+        "measurement_iso": "2020-12-19T21:44:27+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          10.52
+        ],
+        "lon_values": [
+          70.362
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901339/2901339_meta.nc",
+        "sha256": "b2a84f37be1005d30fa8a9439100ac96f32bddf44064d87743d31c510ed24801",
+        "PLATFORM_NUMBER": "2901339",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901339/2901339_prof.nc",
+        "sha256": "629ec824d99a08b5552c57b1d008452cfe3e296c8fd91b44adad0fb690b49075",
+        "profile_rows": 329,
+        "latest_valid_position": {
+          "juld": 25921.00767361111,
+          "iso": "2020-12-20T00:11:03+00:00",
+          "lat": 10.52,
+          "lon": 70.362,
+          "qc": "1",
+          "index": 328,
+          "cycle": 329,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2901339_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2901339/2901339_prof.nc",
+          "sha256": "629ec824d99a08b5552c57b1d008452cfe3e296c8fd91b44adad0fb690b49075"
+        }
+      }
+    },
+    {
+      "wmo": 2901350,
+      "internal_id": "75415",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:9 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:9 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2020-04-26T18:09:24+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -51.059,
+      "lon": -114.149,
+      "prof_num": 301,
+      "profile_count": 301,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901350/2901350_Rtraj.nc",
+        "sha256": "106be3deb4a813559007b002627b4d92b749878e9bc8d081b6c1eb6d68c239d5",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 191,
+        "raw_juld": 25683.75652777776,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          192
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 25683.487708333414,
+        "iso": "2020-04-26T11:42:18+00:00",
+        "lat": -51.059,
+        "lon": -114.149,
+        "qc": "1",
+        "index": 0,
+        "cycle": 301,
+        "time_field": "JULD_LOCATION",
+        "source": "profile",
+        "file": "D2901350_301.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901350/profiles/D2901350_301.nc",
+        "sha256": "d684418f7ed1f6f0df422d8ad01f2a58a2896a05f1f88d4e609060539cd80746"
+      },
+      "profile_evidence": {
+        "file": "D2901350_301.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901350/profiles/D2901350_301.nc",
+        "sha256": "d684418f7ed1f6f0df422d8ad01f2a58a2896a05f1f88d4e609060539cd80746",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2901350/profiles/",
+        "listing_sha256": "edd403d4c2d69de586de397187b9af2ceb030ae129e1bb8ef1a8a0012c2876d7",
+        "max_cycle": 301,
+        "available_cycles": 301,
+        "missing": [],
+        "measurement_iso": "2020-04-26T10:42:09+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          -51.059
+        ],
+        "lon_values": [
+          -114.149
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901350/2901350_meta.nc",
+        "sha256": "fd404a51e64101617bf8e387876ee38ea0bac9b5ea34b1eda79d60a6ef1f7b96",
+        "PLATFORM_NUMBER": "2901350",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2901350/2901350_prof.nc",
+        "sha256": "ef8f29bb5c2c89bd197b4416eb33f3c14dfe62cc58f84417eaa74bbb38fb5d7b",
+        "profile_rows": 301,
+        "latest_valid_position": {
+          "juld": 25683.487708333334,
+          "iso": "2020-04-26T11:42:18+00:00",
+          "lat": -51.059,
+          "lon": -114.149,
+          "qc": "1",
+          "index": 300,
+          "cycle": 301,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2901350_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2901350/2901350_prof.nc",
+          "sha256": "ef8f29bb5c2c89bd197b4416eb33f3c14dfe62cc58f84417eaa74bbb38fb5d7b"
+        }
+      }
+    },
+    {
+      "wmo": 2902086,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2016-02-16T04:34:35+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 18.33004,
+      "lon": 84.76787,
+      "prof_num": 244,
+      "profile_count": 244,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902086/2902086_Rtraj.nc",
+        "sha256": "455f3cb0f8cbac2f27fe091e08a87f7b9eabfd7ba69c71b52e1fb4343630cc60",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 244,
+        "raw_juld": 24152.190682870336,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          245
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 24152.190682870336,
+        "iso": "2016-02-16T04:34:35+00:00",
+        "lat": 18.33004,
+        "lon": 84.76787,
+        "qc": "1",
+        "index": 27995,
+        "cycle": 244,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902086_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902086/2902086_Rtraj.nc",
+        "sha256": "455f3cb0f8cbac2f27fe091e08a87f7b9eabfd7ba69c71b52e1fb4343630cc60"
+      },
+      "profile_evidence": {
+        "file": "D2902086_244.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902086/profiles/D2902086_244.nc",
+        "sha256": "42cd467f363ba41d5f8b9bb361043313cb106f9cffa1bf71ed3d9d53bfeff27c",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902086/profiles/",
+        "listing_sha256": "026738be27190984e719382e64c4dd6454e1053483108841a1e3ef5375c96f17",
+        "max_cycle": 244,
+        "available_cycles": 244,
+        "missing": [],
+        "measurement_iso": "2016-02-16T03:56:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          18.323,
+          18.323,
+          18.323,
+          18.323
+        ],
+        "lon_values": [
+          84.77337333333334,
+          84.77337333333334,
+          84.77337333333334,
+          84.77337333333334
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902086/2902086_meta.nc",
+        "sha256": "2317eea7c09d203963789ef4025aa42d6743e64222c080b29d96ddf74ac38375",
+        "PLATFORM_NUMBER": "2902086",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902086/2902086_prof.nc",
+        "sha256": "d8494144cea321a71d494349a43afc38896b9db93ae0e590ef00d17463f21854",
+        "profile_rows": 244,
+        "latest_valid_position": {
+          "juld": 24152.18011574074,
+          "iso": "2016-02-16T04:19:22+00:00",
+          "lat": 18.323,
+          "lon": 84.77337333333334,
+          "qc": "1",
+          "index": 243,
+          "cycle": 244,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902086_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902086/2902086_prof.nc",
+          "sha256": "d8494144cea321a71d494349a43afc38896b9db93ae0e590ef00d17463f21854"
+        }
+      }
+    },
+    {
+      "wmo": 2902087,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2016-08-14T04:15:12+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 12.24699,
+      "lon": 80.7311,
+      "prof_num": 323,
+      "profile_count": 323,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902087/2902087_Rtraj.nc",
+        "sha256": "759ad9ada562721c4aad0a7f6ed414345ecbf51e579ec8c597221e8135e1b3f8",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 323,
+        "raw_juld": 24332.177222222206,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          324
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 24332.177222222206,
+        "iso": "2016-08-14T04:15:12+00:00",
+        "lat": 12.24699,
+        "lon": 80.7311,
+        "qc": "1",
+        "index": 35147,
+        "cycle": 324,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902087_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902087/2902087_Rtraj.nc",
+        "sha256": "759ad9ada562721c4aad0a7f6ed414345ecbf51e579ec8c597221e8135e1b3f8"
+      },
+      "profile_evidence": {
+        "file": "D2902087_323.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902087/profiles/D2902087_323.nc",
+        "sha256": "0d234a58064715f627b39b9eaab3f4f0ce0ae0f478c26b34fc9d80d82614102a",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902087/profiles/",
+        "listing_sha256": "5dbf5b2b50b2f12065b708b138c221a597e02ba545ea0d123e92d716aa95d6e4",
+        "max_cycle": 323,
+        "available_cycles": 323,
+        "missing": [],
+        "measurement_iso": "2016-08-09T03:44:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          12.41335,
+          12.41335,
+          12.41335,
+          12.41335
+        ],
+        "lon_values": [
+          80.92375666666666,
+          80.92375666666666,
+          80.92375666666666,
+          80.92375666666666
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902087/2902087_meta.nc",
+        "sha256": "a369899e617a4d787b347dfc4702e5db432e8d3a05790cfdf17ed1b2f57d86c7",
+        "PLATFORM_NUMBER": "2902087",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902087/2902087_prof.nc",
+        "sha256": "2eacce5de08b33840e0f022f07782bb4f76ec6b05fb673d94b70abb0e71c07ad",
+        "profile_rows": 323,
+        "latest_valid_position": {
+          "juld": 24327.17258101852,
+          "iso": "2016-08-09T04:08:31+00:00",
+          "lat": 12.41335,
+          "lon": 80.92375666666666,
+          "qc": "1",
+          "index": 322,
+          "cycle": 323,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902087_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902087/2902087_prof.nc",
+          "sha256": "2eacce5de08b33840e0f022f07782bb4f76ec6b05fb673d94b70abb0e71c07ad"
+        }
+      }
+    },
+    {
+      "wmo": 2902088,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2019-03-20T04:35:01+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -4.27467,
+      "lon": 86.89816,
+      "prof_num": 228,
+      "profile_count": 228,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902088/2902088_Rtraj.nc",
+        "sha256": "8004974b418a0dbc8a4368a928cc49c4d9c6b4be0965d14a6ee1005dd8f0ce0f",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 229,
+        "raw_juld": 25280.19098379626,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          230
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 25280.19098379626,
+        "iso": "2019-03-20T04:35:01+00:00",
+        "lat": -4.27467,
+        "lon": 86.89816,
+        "qc": "1",
+        "index": 32947,
+        "cycle": 229,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902088_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902088/2902088_Rtraj.nc",
+        "sha256": "8004974b418a0dbc8a4368a928cc49c4d9c6b4be0965d14a6ee1005dd8f0ce0f"
+      },
+      "profile_evidence": {
+        "file": "D2902088_228.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902088/profiles/D2902088_228.nc",
+        "sha256": "e91fcb6fddcee59e0b7e6594004db81c0183aff81fd0522e8e948ca8d172aa3d",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902088/profiles/",
+        "listing_sha256": "e990f86d3053ecf2f100d0ae813a080d07bb23a537671e851ac0ddcd52f118f4",
+        "max_cycle": 228,
+        "available_cycles": 228,
+        "missing": [],
+        "measurement_iso": "2019-03-10T03:49:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          -4.611526666666666,
+          -4.611526666666666,
+          -4.611526666666666,
+          -4.611526666666666
+        ],
+        "lon_values": [
+          86.88611166666666,
+          86.88611166666666,
+          86.88611166666666,
+          86.88611166666666
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902088/2902088_meta.nc",
+        "sha256": "85e7d2fd8bee5b0d574877edb972645586346addb47bc64bfdf217b0d3eb7f67",
+        "PLATFORM_NUMBER": "2902088",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902088/2902088_prof.nc",
+        "sha256": "fffedd91d9768db85f1ae3c7ded8feb922b1931034807ef416d070af07fb4564",
+        "profile_rows": 228,
+        "latest_valid_position": {
+          "juld": 25270.176886574074,
+          "iso": "2019-03-10T04:14:43+00:00",
+          "lat": -4.611526666666666,
+          "lon": 86.88611166666666,
+          "qc": "1",
+          "index": 227,
+          "cycle": 228,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902088_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902088/2902088_prof.nc",
+          "sha256": "fffedd91d9768db85f1ae3c7ded8feb922b1931034807ef416d070af07fb4564"
+        }
+      }
+    },
+    {
+      "wmo": 2902089,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2013-10-29T14:21:48+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -22.13373,
+      "lon": 61.94348,
+      "prof_num": 130,
+      "profile_count": 130,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902089/2902089_Rtraj.nc",
+        "sha256": "902eb4efc7b3ec81cb1ad50a56e5f425e6d9fabd900c6a129c15db577d28dab7",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 130,
+        "raw_juld": 23312.59847222222,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          131
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 23312.59847222222,
+        "iso": "2013-10-29T14:21:48+00:00",
+        "lat": -22.13373,
+        "lon": 61.94348,
+        "qc": "1",
+        "index": 12899,
+        "cycle": 130,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902089_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902089/2902089_Rtraj.nc",
+        "sha256": "902eb4efc7b3ec81cb1ad50a56e5f425e6d9fabd900c6a129c15db577d28dab7"
+      },
+      "profile_evidence": {
+        "file": "D2902089_130.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902089/profiles/D2902089_130.nc",
+        "sha256": "91292f4efd314d46c8d3774868a4947a4c2cea1d94d91747d32017f0942c9da6",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902089/profiles/",
+        "listing_sha256": "28160e279fab78dc6fcab559ad85e9326aa5bb656cf6238fd28eac7683234c64",
+        "max_cycle": 130,
+        "available_cycles": 130,
+        "missing": [],
+        "measurement_iso": "2013-10-25T10:03:00+00:00",
+        "position_qc_values": [
+          "9",
+          "9",
+          "9",
+          "9"
+        ],
+        "lat_values": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "lon_values": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902089/2902089_meta.nc",
+        "sha256": "065c627172f1ffb1c34253d70fe5171872171d0d9433c1929be543817bb25166",
+        "PLATFORM_NUMBER": "2902089",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902089/2902089_prof.nc",
+        "sha256": "f4dc1d6e35dcb0ac6b4644a12cf5a4e62243384507379c68b538ee36ecca429f",
+        "profile_rows": 130,
+        "latest_valid_position": null
+      }
+    },
+    {
+      "wmo": 2902090,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2013-05-13T04:06:07+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -57.09159,
+      "lon": 53.10369,
+      "prof_num": 16,
+      "profile_count": 16,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902090/2902090_Rtraj.nc",
+        "sha256": "2f6e7f5afeff52f5d77edd89bb74418c7207b20afae42a3da6e04d6f7e08f974",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 16,
+        "raw_juld": 23143.170914351824,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          17
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 23143.170914351824,
+        "iso": "2013-05-13T04:06:07+00:00",
+        "lat": -57.09159,
+        "lon": 53.10369,
+        "qc": "2",
+        "index": 1707,
+        "cycle": 16,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902090_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902090/2902090_Rtraj.nc",
+        "sha256": "2f6e7f5afeff52f5d77edd89bb74418c7207b20afae42a3da6e04d6f7e08f974"
+      },
+      "profile_evidence": {
+        "file": "D2902090_016.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902090/profiles/D2902090_016.nc",
+        "sha256": "bf579f7dfa8d9d42213ef50fca064ab7bd176e6537cfd0e3d5bdd9cdbbffe9e3",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902090/profiles/",
+        "listing_sha256": "97061ac0103da65b8e95b3743463f119e6f3b31967f69ad7b755c09d572f0643",
+        "max_cycle": 16,
+        "available_cycles": 16,
+        "missing": [],
+        "measurement_iso": "2013-05-13T03:27:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          -56.941945,
+          -56.941945,
+          -56.941945
+        ],
+        "lon_values": [
+          55.927675,
+          55.927675,
+          55.927675
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902090/2902090_meta.nc",
+        "sha256": "e09157453eb4d0bc2731b771ab1125e3d739458302c60640773a84c58a299720",
+        "PLATFORM_NUMBER": "2902090",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902090/2902090_prof.nc",
+        "sha256": "300f52a401ae65f155b57245a960e517a38d0bda9c550366c31e9d5c8abc7f55",
+        "profile_rows": 16,
+        "latest_valid_position": {
+          "juld": 23143.15960648148,
+          "iso": "2013-05-13T03:49:50+00:00",
+          "lat": -56.941945,
+          "lon": 55.927675,
+          "qc": "1",
+          "index": 15,
+          "cycle": 16,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902090_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902090/2902090_prof.nc",
+          "sha256": "300f52a401ae65f155b57245a960e517a38d0bda9c550366c31e9d5c8abc7f55"
+        }
+      }
+    },
+    {
+      "wmo": 2902091,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2013-12-24T12:49:06+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 4.38251,
+      "lon": 84.44005,
+      "prof_num": 13,
+      "profile_count": 13,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902091/2902091_Rtraj.nc",
+        "sha256": "3e8c663840bc2e4f6062da34a93fc25e2bd0f08a4632c72be398c09577b18e7e",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 14,
+        "raw_juld": 23368.534097222262,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          15
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 23368.534097222262,
+        "iso": "2013-12-24T12:49:06+00:00",
+        "lat": 4.38251,
+        "lon": 84.44005,
+        "qc": "2",
+        "index": 17014,
+        "cycle": 14,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902091_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902091/2902091_Rtraj.nc",
+        "sha256": "3e8c663840bc2e4f6062da34a93fc25e2bd0f08a4632c72be398c09577b18e7e"
+      },
+      "profile_evidence": {
+        "file": "D2902091_013.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902091/profiles/D2902091_013.nc",
+        "sha256": "2be96cea27ff723060211e2b4c1e6d3f6e700228abe279fd43c34f4079a84ebf",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902091/profiles/",
+        "listing_sha256": "7ab53aab52da8584ae2433035c14ba9cc3ac80c7fac71458c6d9b20cc47d8d2c",
+        "max_cycle": 13,
+        "available_cycles": 13,
+        "missing": [],
+        "measurement_iso": "2013-03-15T03:28:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          20.464403333333333,
+          20.464403333333333,
+          20.464403333333333,
+          20.464403333333333
+        ],
+        "lon_values": [
+          65.553245,
+          65.553245,
+          65.553245,
+          65.553245
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902091/2902091_meta.nc",
+        "sha256": "71b9fdf4d8d9e199a3c74813463693c6d11894bde098f8a3b681acffee737233",
+        "PLATFORM_NUMBER": "2902091",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902091/2902091_prof.nc",
+        "sha256": "3a533512cb9851531bcb95bbd9d2f6f313fd4d51beb117a6941565e164ba9d28",
+        "profile_rows": 13,
+        "latest_valid_position": {
+          "juld": 23084.16138888889,
+          "iso": "2013-03-15T03:52:24+00:00",
+          "lat": 20.464403333333333,
+          "lon": 65.553245,
+          "qc": "1",
+          "index": 12,
+          "cycle": 13,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902091_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902091/2902091_prof.nc",
+          "sha256": "3a533512cb9851531bcb95bbd9d2f6f313fd4d51beb117a6941565e164ba9d28"
+        }
+      }
+    },
+    {
+      "wmo": 2902092,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2016-12-14T06:51:30+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 18.74924,
+      "lon": 67.03563,
+      "prof_num": 149,
+      "profile_count": 149,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902092/2902092_Rtraj.nc",
+        "sha256": "3589151fa2ddd3b8edf9ad4d665f85560ac7cdea510efa8f02622a310aab439b",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 149,
+        "raw_juld": 24454.285763888853,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          150
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 24454.285763888853,
+        "iso": "2016-12-14T06:51:30+00:00",
+        "lat": 18.74924,
+        "lon": 67.03563,
+        "qc": "2",
+        "index": 19889,
+        "cycle": 149,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902092_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902092/2902092_Rtraj.nc",
+        "sha256": "3589151fa2ddd3b8edf9ad4d665f85560ac7cdea510efa8f02622a310aab439b"
+      },
+      "profile_evidence": {
+        "file": "D2902092_149.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902092/profiles/D2902092_149.nc",
+        "sha256": "17b6c24d899b61589e34fdf3f4856da5b45b55c81a2c4cb7b5b1f6245bfe65f1",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902092/profiles/",
+        "listing_sha256": "e9c4ef7e86e4ad87391174c76486a212afbe015e69e1de0f13f50e012b56e348",
+        "max_cycle": 149,
+        "available_cycles": 149,
+        "missing": [],
+        "measurement_iso": "2016-12-14T03:49:00+00:00",
+        "position_qc_values": [
+          "9",
+          "9",
+          "9",
+          "9"
+        ],
+        "lat_values": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "lon_values": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902092/2902092_meta.nc",
+        "sha256": "f9b6bb03c42c4c67dfdbee1cc837fd2598630fa2b9c1ed78ca156645b8c57fdc",
+        "PLATFORM_NUMBER": "2902092",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902092/2902092_prof.nc",
+        "sha256": "bd1c6596fa21b22ca433c48979f3f5bc0e9ff9e541b0908f1a4c6fa982b39eb5",
+        "profile_rows": 149,
+        "latest_valid_position": {
+          "juld": 24434.187905092593,
+          "iso": "2016-11-24T04:30:35+00:00",
+          "lat": 18.500146666666666,
+          "lon": 66.82463333333334,
+          "qc": "1",
+          "index": 146,
+          "cycle": 147,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902092_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902092/2902092_prof.nc",
+          "sha256": "bd1c6596fa21b22ca433c48979f3f5bc0e9ff9e541b0908f1a4c6fa982b39eb5"
+        }
+      }
+    },
+    {
+      "wmo": 2902093,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2019-04-23T04:30:41+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 14.18155,
+      "lon": 67.68236,
+      "prof_num": 234,
+      "profile_count": 234,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902093/2902093_Rtraj.nc",
+        "sha256": "2475ff6797a766ce9567a29b121185b8fa2f6cd6d6216b3333aba98d87f8d3d8",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 234,
+        "raw_juld": 25314.187974537024,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          235
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 25314.187974537024,
+        "iso": "2019-04-23T04:30:41+00:00",
+        "lat": 14.18155,
+        "lon": 67.68236,
+        "qc": "1",
+        "index": 32148,
+        "cycle": 234,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902093_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902093/2902093_Rtraj.nc",
+        "sha256": "2475ff6797a766ce9567a29b121185b8fa2f6cd6d6216b3333aba98d87f8d3d8"
+      },
+      "profile_evidence": {
+        "file": "R2902093_234.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902093/profiles/R2902093_234.nc",
+        "sha256": "a6ac7ac330cb2d73ae3edba87862975fad6c5d619a47c530f86fd6059de121b7",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902093/profiles/",
+        "listing_sha256": "6b22308e96e691234c3129f206fb7f1defb5e890c328789bc3f80876776b1a0f",
+        "max_cycle": 234,
+        "available_cycles": 234,
+        "missing": [],
+        "measurement_iso": "2019-04-23T03:51:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          14.246798333333333,
+          14.246798333333333,
+          14.246798333333333
+        ],
+        "lon_values": [
+          67.66293666666667,
+          67.66293666666667,
+          67.66293666666667
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902093/2902093_meta.nc",
+        "sha256": "c39eb61a2f8a3fb31c8b825dc35a7d554be2ce649a43377a35f2f19e1cea8134",
+        "PLATFORM_NUMBER": "2902093",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902093/2902093_prof.nc",
+        "sha256": "ab715de1fd548c576ede67fc150fca88bbd859a04dcd8b2234587bd4ef8a46aa",
+        "profile_rows": 234,
+        "latest_valid_position": {
+          "juld": 25314.177337962963,
+          "iso": "2019-04-23T04:15:22+00:00",
+          "lat": 14.246798333333333,
+          "lon": 67.66293666666667,
+          "qc": "1",
+          "index": 233,
+          "cycle": 234,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902093_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902093/2902093_prof.nc",
+          "sha256": "ab715de1fd548c576ede67fc150fca88bbd859a04dcd8b2234587bd4ef8a46aa"
+        }
+      }
+    },
+    {
+      "wmo": 2902113,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2013-11-23T13:44:07+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 18.0931,
+      "lon": 89.58427,
+      "prof_num": 2,
+      "profile_count": 2,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902113/2902113_Rtraj.nc",
+        "sha256": "e5f885ee829986cc9d33ec3e0df7b192a117f43abe7b77ff3b6ff0a297fe276e",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 2,
+        "raw_juld": 23337.57230324077,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          3
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 23337.57230324077,
+        "iso": "2013-11-23T13:44:07+00:00",
+        "lat": 18.0931,
+        "lon": 89.58427,
+        "qc": "2",
+        "index": 211,
+        "cycle": 2,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902113_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902113/2902113_Rtraj.nc",
+        "sha256": "e5f885ee829986cc9d33ec3e0df7b192a117f43abe7b77ff3b6ff0a297fe276e"
+      },
+      "profile_evidence": {
+        "file": "D2902113_002.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902113/profiles/D2902113_002.nc",
+        "sha256": "228c49ec79de591920d48214f3e97fb0ef5d4d71d9601284cb22e918bb232d33",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902113/profiles/",
+        "listing_sha256": "49d1546cf3951f826236cede67c41f7affa35e66a5692ff5a540ee5ed23cf605",
+        "max_cycle": 2,
+        "available_cycles": 2,
+        "missing": [],
+        "measurement_iso": "2013-11-23T13:04:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          18.129961666666667,
+          18.129961666666667,
+          18.129961666666667,
+          18.129961666666667
+        ],
+        "lon_values": [
+          89.57938666666666,
+          89.57938666666666,
+          89.57938666666666,
+          89.57938666666666
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902113/2902113_meta.nc",
+        "sha256": "c239092670bebd1c616089cc3af2fa8ff46dc2bd64327fd6d94a01eb4302ea99",
+        "PLATFORM_NUMBER": "2902113",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902113/2902113_prof.nc",
+        "sha256": "411083548075023d27ca4c0a7914f564bb9f98fbaecf0318b89bc8fabbe38225",
+        "profile_rows": 2,
+        "latest_valid_position": {
+          "juld": 23337.56134259259,
+          "iso": "2013-11-23T13:28:20+00:00",
+          "lat": 18.129961666666667,
+          "lon": 89.57938666666666,
+          "qc": "1",
+          "index": 1,
+          "cycle": 2,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902113_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902113/2902113_prof.nc",
+          "sha256": "411083548075023d27ca4c0a7914f564bb9f98fbaecf0318b89bc8fabbe38225"
+        }
+      }
+    },
+    {
+      "wmo": 2902114,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2017-10-09T12:36:42+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 14.6323,
+      "lon": 87.54756,
+      "prof_num": 284,
+      "profile_count": 284,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902114/2902114_Rtraj.nc",
+        "sha256": "972b5f62b1a2802bc93ad6e02f4658eccaf27502a748d262b46231effc5c6397",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 284,
+        "raw_juld": 24753.52548611106,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          285
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 24753.52548611106,
+        "iso": "2017-10-09T12:36:42+00:00",
+        "lat": 14.6323,
+        "lon": 87.54756,
+        "qc": "2",
+        "index": 31951,
+        "cycle": 284,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902114_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902114/2902114_Rtraj.nc",
+        "sha256": "972b5f62b1a2802bc93ad6e02f4658eccaf27502a748d262b46231effc5c6397"
+      },
+      "profile_evidence": {
+        "file": "D2902114_284.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902114/profiles/D2902114_284.nc",
+        "sha256": "b895f94ec3665187fe68677f680dbe6af8e4a6b60f5dbadc3853221cea9ca3b1",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902114/profiles/",
+        "listing_sha256": "144741236319afa812ad0bf2952495aa924fe412d5b25f3809c62bc153ed6110",
+        "max_cycle": 284,
+        "available_cycles": 284,
+        "missing": [],
+        "measurement_iso": "2017-10-09T11:54:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          14.581386666666667,
+          14.581386666666667,
+          14.581386666666667,
+          14.581386666666667
+        ],
+        "lon_values": [
+          87.43724333333333,
+          87.43724333333333,
+          87.43724333333333,
+          87.43724333333333
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902114/2902114_meta.nc",
+        "sha256": "7ce4bd66cda3e442d9589c3bf7aa7325306442dea3c0ac0f6d7dd7c5b9eb357c",
+        "PLATFORM_NUMBER": "2902114",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902114/2902114_prof.nc",
+        "sha256": "d7a0759d850b40a521d8c3111d2b47660902a163bac9724009adb76e5068857d",
+        "profile_rows": 284,
+        "latest_valid_position": {
+          "juld": 24753.512627314816,
+          "iso": "2017-10-09T12:18:11+00:00",
+          "lat": 14.581386666666667,
+          "lon": 87.43724333333333,
+          "qc": "1",
+          "index": 283,
+          "cycle": 284,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902114_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902114/2902114_prof.nc",
+          "sha256": "d7a0759d850b40a521d8c3111d2b47660902a163bac9724009adb76e5068857d"
+        }
+      }
+    },
+    {
+      "wmo": 2902115,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2020-05-16T12:33:49+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -53.66326,
+      "lon": 172.83744,
+      "prof_num": 238,
+      "profile_count": 238,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902115/2902115_Rtraj.nc",
+        "sha256": "53a8dfb9442f22f5b8f873601ae468ee5d8470bdab052958d1793982ce39db14",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 238,
+        "raw_juld": 25703.523483796278,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          239
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 25703.523483796278,
+        "iso": "2020-05-16T12:33:49+00:00",
+        "lat": -53.66326,
+        "lon": 172.83744,
+        "qc": "1",
+        "index": 32118,
+        "cycle": 238,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902115_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902115/2902115_Rtraj.nc",
+        "sha256": "53a8dfb9442f22f5b8f873601ae468ee5d8470bdab052958d1793982ce39db14"
+      },
+      "profile_evidence": {
+        "file": "D2902115_238.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902115/profiles/D2902115_238.nc",
+        "sha256": "37d0774adf3ef29622dcad88659f2de224b23df7bd4a70609bbfecec3137aab3",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902115/profiles/",
+        "listing_sha256": "282a89cd9a246139688b946ac8c1c0db590f51da8491f1f659ce941ab7bda7a1",
+        "max_cycle": 238,
+        "available_cycles": 238,
+        "missing": [],
+        "measurement_iso": "2020-05-16T11:53:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          -53.650778333333335,
+          -53.650778333333335,
+          -53.650778333333335,
+          -53.650778333333335
+        ],
+        "lon_values": [
+          172.83362,
+          172.83362,
+          172.83362,
+          172.83362
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902115/2902115_meta.nc",
+        "sha256": "55aa06551ff94d62ec050639496fcd257dd06da2748501ea84bc4ff4b2fdd391",
+        "PLATFORM_NUMBER": "2902115",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902115/2902115_prof.nc",
+        "sha256": "ed64d951c589430b83299db9f6b7f58d93d48143c7a4386018d20c940b4fa316",
+        "profile_rows": 238,
+        "latest_valid_position": {
+          "juld": 25703.510868055557,
+          "iso": "2020-05-16T12:15:39+00:00",
+          "lat": -53.650778333333335,
+          "lon": 172.83362,
+          "qc": "1",
+          "index": 237,
+          "cycle": 238,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902115_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902115/2902115_prof.nc",
+          "sha256": "ed64d951c589430b83299db9f6b7f58d93d48143c7a4386018d20c940b4fa316"
+        }
+      }
+    },
+    {
+      "wmo": 2902118,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2021-04-21T12:26:31+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 12.0285,
+      "lon": 65.07857,
+      "prof_num": 261,
+      "profile_count": 261,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902118/2902118_Rtraj.nc",
+        "sha256": "eaf703a0b0a08e4650a8383bdc70f7d7175ca2939b484e009013f34899b1e33e",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 261,
+        "raw_juld": 26043.518414351856,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          262
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 26043.518414351856,
+        "iso": "2021-04-21T12:26:31+00:00",
+        "lat": 12.0285,
+        "lon": 65.07857,
+        "qc": "2",
+        "index": 33247,
+        "cycle": 261,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902118_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902118/2902118_Rtraj.nc",
+        "sha256": "eaf703a0b0a08e4650a8383bdc70f7d7175ca2939b484e009013f34899b1e33e"
+      },
+      "profile_evidence": {
+        "file": "D2902118_261.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902118/profiles/D2902118_261.nc",
+        "sha256": "911dc096c63f97ba1ba981ca3e8d61b291aa84ea8382242f3c0484cd705a5137",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902118/profiles/",
+        "listing_sha256": "159781d8916f194b4d9095b94fd1fdfa7173ddeb6f820c752b95d12206b5a127",
+        "max_cycle": 261,
+        "available_cycles": 261,
+        "missing": [],
+        "measurement_iso": "2021-04-21T11:49:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          12.032528333333333,
+          12.032528333333333,
+          12.032528333333333
+        ],
+        "lon_values": [
+          65.04438,
+          65.04438,
+          65.04438
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902118/2902118_meta.nc",
+        "sha256": "b23c48e839118021bf383fad14457e1c72c5e8846a29566f90a2cb33917b8c37",
+        "PLATFORM_NUMBER": "2902118",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902118/2902118_prof.nc",
+        "sha256": "4f2d81830ad50e8252aba58b2fce69338ffb9a30b3151306d50d424caf0ff27f",
+        "profile_rows": 261,
+        "latest_valid_position": {
+          "juld": 26043.50726851852,
+          "iso": "2021-04-21T12:10:28+00:00",
+          "lat": 12.032528333333333,
+          "lon": 65.04438,
+          "qc": "1",
+          "index": 260,
+          "cycle": 261,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902118_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902118/2902118_prof.nc",
+          "sha256": "4f2d81830ad50e8252aba58b2fce69338ffb9a30b3151306d50d424caf0ff27f"
+        }
+      }
+    },
+    {
+      "wmo": 2902120,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2021-05-12T12:41:44+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 13.07015,
+      "lon": 69.17182,
+      "prof_num": 262,
+      "profile_count": 262,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902120/2902120_Rtraj.nc",
+        "sha256": "56304b843b4ee466d5c9ef24f9d53ccf8b1c8fbf5085db6976c2f5d57bd847a0",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 263,
+        "raw_juld": 26064.528981481446,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          264
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 26064.528981481446,
+        "iso": "2021-05-12T12:41:44+00:00",
+        "lat": 13.07015,
+        "lon": 69.17182,
+        "qc": "1",
+        "index": 36814,
+        "cycle": 263,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902120_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902120/2902120_Rtraj.nc",
+        "sha256": "56304b843b4ee466d5c9ef24f9d53ccf8b1c8fbf5085db6976c2f5d57bd847a0"
+      },
+      "profile_evidence": {
+        "file": "D2902120_262.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902120/profiles/D2902120_262.nc",
+        "sha256": "30ca12bef556278c4a662babf1174fe7cda4a362b775b451e0afc5f09007052d",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902120/profiles/",
+        "listing_sha256": "7758370f201ed90a8c36c5af5bcc05e5dfa625c38ac0ab5f45971ae239cd87b6",
+        "max_cycle": 262,
+        "available_cycles": 262,
+        "missing": [],
+        "measurement_iso": "2021-05-02T11:43:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          12.831588333333332,
+          12.831588333333332,
+          12.831588333333332,
+          12.831588333333332
+        ],
+        "lon_values": [
+          68.99703333333333,
+          68.99703333333333,
+          68.99703333333333,
+          68.99703333333333
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902120/2902120_meta.nc",
+        "sha256": "8c2d593a1b9e875e4116d79b62cfd2de82b1e0446040baa3526c43e36ea395e4",
+        "PLATFORM_NUMBER": "2902120",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902120/2902120_prof.nc",
+        "sha256": "c5613719040f650223d0e53fefe067436173ab39cca424bf78dc9205d9e39b67",
+        "profile_rows": 262,
+        "latest_valid_position": {
+          "juld": 26054.50505787037,
+          "iso": "2021-05-02T12:07:17+00:00",
+          "lat": 12.831588333333332,
+          "lon": 68.99703333333333,
+          "qc": "1",
+          "index": 261,
+          "cycle": 262,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902120_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902120/2902120_prof.nc",
+          "sha256": "c5613719040f650223d0e53fefe067436173ab39cca424bf78dc9205d9e39b67"
+        }
+      }
+    },
+    {
+      "wmo": 2902130,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2019-02-19T12:07:20+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -52.58553,
+      "lon": 102.86184,
+      "prof_num": 189,
+      "profile_count": 189,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902130/2902130_Rtraj.nc",
+        "sha256": "30f47ecc09809bbc988d99cf3a100b20ab35391d6d102612c62c1a18a06ed711",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 189,
+        "raw_juld": 25251.50509259256,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          190
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 25251.50509259256,
+        "iso": "2019-02-19T12:07:20+00:00",
+        "lat": -52.58553,
+        "lon": 102.86184,
+        "qc": "1",
+        "index": 26067,
+        "cycle": 189,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902130_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902130/2902130_Rtraj.nc",
+        "sha256": "30f47ecc09809bbc988d99cf3a100b20ab35391d6d102612c62c1a18a06ed711"
+      },
+      "profile_evidence": {
+        "file": "D2902130_189.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902130/profiles/D2902130_189.nc",
+        "sha256": "0832a83a83edd9575b58846f0c37f912521c959797c9059ede158820ca3ffd9e",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902130/profiles/",
+        "listing_sha256": "63295fdb0a76fdebf82de09d0b201b828425a675857b130e457f66235a5c0e3d",
+        "max_cycle": 189,
+        "available_cycles": 189,
+        "missing": [],
+        "measurement_iso": "2019-02-19T11:25:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          -52.57555833333333,
+          -52.57555833333333,
+          -52.57555833333333,
+          -52.57555833333333
+        ],
+        "lon_values": [
+          102.91116333333333,
+          102.91116333333333,
+          102.91116333333333,
+          102.91116333333333
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902130/2902130_meta.nc",
+        "sha256": "75a96fe34b14c1b0051dbd0136c73b0b7f8c60222602c2bf665730b06eaa2244",
+        "PLATFORM_NUMBER": "2902130",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902130/2902130_prof.nc",
+        "sha256": "7a46bf0481f37d92019c971a3bbd5eb9cb4690c0022c69e75b2b7f6180f1ea56",
+        "profile_rows": 189,
+        "latest_valid_position": {
+          "juld": 25251.49341435185,
+          "iso": "2019-02-19T11:50:31+00:00",
+          "lat": -52.57555833333333,
+          "lon": 102.91116333333333,
+          "qc": "1",
+          "index": 188,
+          "cycle": 189,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902130_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902130/2902130_prof.nc",
+          "sha256": "7a46bf0481f37d92019c971a3bbd5eb9cb4690c0022c69e75b2b7f6180f1ea56"
+        }
+      }
+    },
+    {
+      "wmo": 2902131,
+      "internal_id": null,
+      "float_type": "PROVOR_III",
+      "local_sources": {
+        "wmo": "config/metadata/provor_cts4_301_reference.csv [wmo]; path_resolver._discover_cts4_presets",
+        "internal_id": "No PTT/IMEI in local identity registries (sanitized CTS4 data)",
+        "float_type": "service/path_resolver.py:_discover_cts4_presets [platform_type=PROVOR_III]"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2016-08-23T11:53:50+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -42.69385,
+      "lon": 42.20141,
+      "prof_num": 97,
+      "profile_count": 97,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902131/2902131_Rtraj.nc",
+        "sha256": "97f2477f200f1639b238f9ed35ed34938a5009013b5993046b27984477da8949",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 97,
+        "raw_juld": 24341.495717592537,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          98
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 24341.495717592537,
+        "iso": "2016-08-23T11:53:50+00:00",
+        "lat": -42.69385,
+        "lon": 42.20141,
+        "qc": "2",
+        "index": 12736,
+        "cycle": 97,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902131_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902131/2902131_Rtraj.nc",
+        "sha256": "97f2477f200f1639b238f9ed35ed34938a5009013b5993046b27984477da8949"
+      },
+      "profile_evidence": {
+        "file": "D2902131_097.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902131/profiles/D2902131_097.nc",
+        "sha256": "062fa2b8c26bd98460918dcffb3610c33074cdbc061f757b92f9428b2e1f8bc2",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902131/profiles/",
+        "listing_sha256": "f96f91885354ff0d285a4da117c6abee2a5b1569b62fb1ed09dd4c8e7dd1fa69",
+        "max_cycle": 97,
+        "available_cycles": 97,
+        "missing": [],
+        "measurement_iso": "2016-08-23T11:11:00+00:00",
+        "position_qc_values": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "lat_values": [
+          -42.64013,
+          -42.64013,
+          -42.64013,
+          -42.64013
+        ],
+        "lon_values": [
+          42.19353666666667,
+          42.19353666666667,
+          42.19353666666667,
+          42.19353666666667
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902131/2902131_meta.nc",
+        "sha256": "31b651374924fa3f79b808fcce16de63e00bf538f4fc9d9ee9d59f1852a9b2f9",
+        "PLATFORM_NUMBER": "2902131",
+        "PLATFORM_TYPE": "PROVOR_III"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902131/2902131_prof.nc",
+        "sha256": "6ff629cecdd62cd2d86a8922262c9ac9538e4fbf412af7abcf6ea39203cb003a",
+        "profile_rows": 97,
+        "latest_valid_position": {
+          "juld": 24341.484386574073,
+          "iso": "2016-08-23T11:37:31+00:00",
+          "lat": -42.64013,
+          "lon": 42.19353666666667,
+          "qc": "1",
+          "index": 96,
+          "cycle": 97,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902131_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902131/2902131_prof.nc",
+          "sha256": "6ff629cecdd62cd2d86a8922262c9ac9538e4fbf412af7abcf6ea39203cb003a"
+        }
+      }
+    },
+    {
+      "wmo": 2902201,
+      "internal_id": "152399",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:12 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:12 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2025-09-26T20:21:45+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 22.495,
+      "lon": 61.077,
+      "prof_num": 350,
+      "profile_count": 350,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902201/2902201_Rtraj.nc",
+        "sha256": "2ca27153e3e1b2482393696f3a67bde4082da30d1811a18e21bad6872f622f79",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 347,
+        "raw_juld": 27662.848437500186,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          348
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 27662.84549768502,
+        "iso": "2025-09-26T20:17:31+00:00",
+        "lat": 22.495,
+        "lon": 61.077,
+        "qc": "1",
+        "index": 9007,
+        "cycle": 350,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902201_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902201/2902201_Rtraj.nc",
+        "sha256": "2ca27153e3e1b2482393696f3a67bde4082da30d1811a18e21bad6872f622f79"
+      },
+      "profile_evidence": {
+        "file": "R2902201_350.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902201/profiles/R2902201_350.nc",
+        "sha256": "d6f23864ae6159e92df12da0c841bc154c04e0089405f11365875a802d15acee",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902201/profiles/",
+        "listing_sha256": "6df5e0e38dd973ed464d4d2488d7f2a7216ed34086548973e7134bdfc6c1d979",
+        "max_cycle": 350,
+        "available_cycles": 350,
+        "missing": [],
+        "measurement_iso": "2025-09-26T12:02:23+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          22.458
+        ],
+        "lon_values": [
+          61.094
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902201/2902201_meta.nc",
+        "sha256": "8b092252a0b4f6406809658fe205fd27df8ded486ee23074897ccbd8902de5be",
+        "PLATFORM_NUMBER": "2902201",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902201/2902201_prof.nc",
+        "sha256": "a35ee2fb5b8474978ddfb11404c9622b55b64425ad22eadac1a0976a96d23944",
+        "profile_rows": 350,
+        "latest_valid_position": {
+          "juld": 27662.501655092594,
+          "iso": "2025-09-26T12:02:23+00:00",
+          "lat": 22.458,
+          "lon": 61.094,
+          "qc": "1",
+          "index": 349,
+          "cycle": 350,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902201_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902201/2902201_prof.nc",
+          "sha256": "a35ee2fb5b8474978ddfb11404c9622b55b64425ad22eadac1a0976a96d23944"
+        }
+      }
+    },
+    {
+      "wmo": 2902203,
+      "internal_id": "152398",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:11 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:11 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2026-05-15T20:59:17+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 13.802,
+      "lon": 65.138,
+      "prof_num": 374,
+      "profile_count": 366,
+      "profiles_missing": 8,
+      "profiles_missing_list": [
+        226,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372
+      ],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902203/2902203_Rtraj.nc",
+        "sha256": "10a6a4da31ab6813b0553aa97f89d504229130418c5480d960ac178e1869dd79",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 360,
+        "raw_juld": 27893.87450231472,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          361
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 27903.664444444235,
+        "iso": "2026-05-25T15:56:48+00:00",
+        "lat": 13.802,
+        "lon": 65.138,
+        "qc": "1",
+        "index": 0,
+        "cycle": 374,
+        "time_field": "JULD_LOCATION",
+        "source": "profile",
+        "file": "R2902203_374.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902203/profiles/R2902203_374.nc",
+        "sha256": "d5b582c5c76617c14a5ef8750ed7e2c17909c223a8b35c819a10eeb446b09362"
+      },
+      "profile_evidence": {
+        "file": "R2902203_374.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902203/profiles/R2902203_374.nc",
+        "sha256": "d5b582c5c76617c14a5ef8750ed7e2c17909c223a8b35c819a10eeb446b09362",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902203/profiles/",
+        "listing_sha256": "38032332025f857b5045b1febebbae8a5b167b863c5dbc24fb14489dc52b803b",
+        "max_cycle": 374,
+        "available_cycles": 366,
+        "missing": [
+          226,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372
+        ],
+        "measurement_iso": "2026-05-25T15:56:48+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          13.802
+        ],
+        "lon_values": [
+          65.138
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902203/2902203_meta.nc",
+        "sha256": "6a4f2f0ba3a35e057d55f385c0af93b68eeb9d779e4e1eaa67495f90bcc7b64c",
+        "PLATFORM_NUMBER": "2902203",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902203/2902203_prof.nc",
+        "sha256": "f4f0cd085cc9650692051630aed2367ae90d279527779334f4600e1e10cf0bca",
+        "profile_rows": 366,
+        "latest_valid_position": {
+          "juld": 27903.664444444443,
+          "iso": "2026-05-25T15:56:48+00:00",
+          "lat": 13.802,
+          "lon": 65.138,
+          "qc": "1",
+          "index": 365,
+          "cycle": 374,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902203_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902203/2902203_prof.nc",
+          "sha256": "f4f0cd085cc9650692051630aed2367ae90d279527779334f4600e1e10cf0bca"
+        }
+      }
+    },
+    {
+      "wmo": 2902206,
+      "internal_id": "152397",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:10 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:10 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2026-01-20T14:14:23+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 9.376,
+      "lon": 67.639,
+      "prof_num": 352,
+      "profile_count": 352,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902206/2902206_Rtraj.nc",
+        "sha256": "0f85ca377a59c1ac1e70efe54253b7870cf195750b78e6f89fdd1e682243eb0e",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 356,
+        "raw_juld": 27778.593321759254,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          357
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 27778.588946759235,
+        "iso": "2026-01-20T14:08:05+00:00",
+        "lat": 9.376,
+        "lon": 67.639,
+        "qc": "1",
+        "index": 7355,
+        "cycle": 361,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902206_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902206/2902206_Rtraj.nc",
+        "sha256": "0f85ca377a59c1ac1e70efe54253b7870cf195750b78e6f89fdd1e682243eb0e"
+      },
+      "profile_evidence": {
+        "file": "R2902206_352.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902206/profiles/R2902206_352.nc",
+        "sha256": "576900b41d71b95a59c0256e2712be3ed9c08be003e91a4b1bb1a86caa9b098f",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902206/profiles/",
+        "listing_sha256": "0269f010875abc43fbf1b47aad6e56d0892cc44d20c818dc0bedef3e9f9620fd",
+        "max_cycle": 352,
+        "available_cycles": 352,
+        "missing": [],
+        "measurement_iso": "2025-10-22T06:04:29+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          10.595
+        ],
+        "lon_values": [
+          70.104
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902206/2902206_meta.nc",
+        "sha256": "5da5a19a2b67bf9ef26664582de0f0b58585c9faebef1c02d3a83e90b4553032",
+        "PLATFORM_NUMBER": "2902206",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902206/2902206_prof.nc",
+        "sha256": "599a0bc183c4ef0eb924947182c4a9a0ee75c3b4302ebb526733a77eb97b748e",
+        "profile_rows": 352,
+        "latest_valid_position": {
+          "juld": 27688.253113425926,
+          "iso": "2025-10-22T06:04:29+00:00",
+          "lat": 10.595,
+          "lon": 70.104,
+          "qc": "1",
+          "index": 351,
+          "cycle": 352,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902206_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902206/2902206_prof.nc",
+          "sha256": "599a0bc183c4ef0eb924947182c4a9a0ee75c3b4302ebb526733a77eb97b748e"
+        }
+      }
+    },
+    {
+      "wmo": 2902222,
+      "internal_id": "152389",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:2 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:2 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2026-08-12T15:22:42+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -59.985,
+      "lon": -132.847,
+      "prof_num": 350,
+      "profile_count": 349,
+      "profiles_missing": 1,
+      "profiles_missing_list": [
+        349
+      ],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902222/2902222_Rtraj.nc",
+        "sha256": "e588cd759e587407580bec4fe484c195baef6adc0d2923c4c779ca75825467ff",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 339,
+        "raw_juld": 27982.640763889067,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          340
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 27982.638969907537,
+        "iso": "2026-08-12T15:20:07+00:00",
+        "lat": -59.985,
+        "lon": -132.847,
+        "qc": "1",
+        "index": 10835,
+        "cycle": 350,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902222_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902222/2902222_Rtraj.nc",
+        "sha256": "e588cd759e587407580bec4fe484c195baef6adc0d2923c4c779ca75825467ff"
+      },
+      "profile_evidence": {
+        "file": "R2902222_350.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902222/profiles/R2902222_350.nc",
+        "sha256": "84619dfe5a42bcbbb21851c57cde9370a15741724e78df8bafd2609354885dac",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902222/profiles/",
+        "listing_sha256": "70c59deba4c377ca0363d3091d9d8e8acc2610ba75ff9bb625630ddcde7d5add",
+        "max_cycle": 350,
+        "available_cycles": 349,
+        "missing": [
+          349
+        ],
+        "measurement_iso": "2026-08-12T08:16:08+00:00",
+        "position_qc_values": [
+          "3"
+        ],
+        "lat_values": [
+          -59.978
+        ],
+        "lon_values": [
+          -132.902
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902222/2902222_meta.nc",
+        "sha256": "6408c829f761f083ff14be7bec92d651202005801249a1e40d2cb3b1d8ee246f",
+        "PLATFORM_NUMBER": "2902222",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902222/2902222_prof.nc",
+        "sha256": "ad8c13a5716a4b93856fbdce3c13f9da965fde37153940068141947a1f02e911",
+        "profile_rows": 349,
+        "latest_valid_position": {
+          "juld": 27422.25476851852,
+          "iso": "2025-01-29T06:06:52+00:00",
+          "lat": -53.207,
+          "lon": 179.273,
+          "qc": "1",
+          "index": 293,
+          "cycle": 294,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902222_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902222/2902222_prof.nc",
+          "sha256": "ad8c13a5716a4b93856fbdce3c13f9da965fde37153940068141947a1f02e911"
+        }
+      }
+    },
+    {
+      "wmo": 2902223,
+      "internal_id": "152382",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:3 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:3 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2026-09-12T06:10:30+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -45.719,
+      "lon": 8.043,
+      "prof_num": 353,
+      "profile_count": 350,
+      "profiles_missing": 3,
+      "profiles_missing_list": [
+        158,
+        161,
+        345
+      ],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902223/2902223_Rtraj.nc",
+        "sha256": "b37fc03d22f335db58e4fc800f8f0946fd8160145a16d9b46470c45cb7dcfd7c",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 342,
+        "raw_juld": 28013.257291666698,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          343
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 28013.254131944384,
+        "iso": "2026-09-12T06:05:57+00:00",
+        "lat": -45.719,
+        "lon": 8.043,
+        "qc": "1",
+        "index": 9383,
+        "cycle": 353,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902223_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902223/2902223_Rtraj.nc",
+        "sha256": "b37fc03d22f335db58e4fc800f8f0946fd8160145a16d9b46470c45cb7dcfd7c"
+      },
+      "profile_evidence": {
+        "file": "R2902223_353.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902223/profiles/R2902223_353.nc",
+        "sha256": "53b9e4ba3602f09369a8eae00d78e9f9931d8a20fa1f68a358b4586a94952c83",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902223/profiles/",
+        "listing_sha256": "601448f498a6f854c886205abadc6dfd567e365185077ee3ea03895fd02c24b1",
+        "max_cycle": 353,
+        "available_cycles": 350,
+        "missing": [
+          158,
+          161,
+          345
+        ],
+        "measurement_iso": "2026-09-12T01:44:51+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          -45.723
+        ],
+        "lon_values": [
+          7.971
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902223/2902223_meta.nc",
+        "sha256": "166c8a7a357837766a5e8f828e7d3e39c9e094c93322a9a3e0923e4954d5c71a",
+        "PLATFORM_NUMBER": "2902223",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902223/2902223_prof.nc",
+        "sha256": "374094e6362923e4b78257a12fb33c50e21dcb6bae9cbaa049d5f12c6920d06b",
+        "profile_rows": 350,
+        "latest_valid_position": {
+          "juld": 28013.0728125,
+          "iso": "2026-09-12T01:44:51+00:00",
+          "lat": -45.723,
+          "lon": 7.971,
+          "qc": "1",
+          "index": 349,
+          "cycle": 353,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902223_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902223/2902223_prof.nc",
+          "sha256": "374094e6362923e4b78257a12fb33c50e21dcb6bae9cbaa049d5f12c6920d06b"
+        }
+      }
+    },
+    {
+      "wmo": 2902224,
+      "internal_id": "152390",
+      "float_type": "APEX",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:4 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:4 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2026-05-02T02:32:49+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -42.097,
+      "lon": -33.661,
+      "prof_num": 348,
+      "profile_count": 345,
+      "profiles_missing": 3,
+      "profiles_missing_list": [
+        297,
+        338,
+        347
+      ],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902224/2902224_Rtraj.nc",
+        "sha256": "c9932ede41d80d76116c3bc738f00c72811cd494209a754de41083d1c3fc5a70",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 333,
+        "raw_juld": 27880.10612268513,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          334
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 27880.101423610933,
+        "iso": "2026-05-02T02:26:03+00:00",
+        "lat": -42.097,
+        "lon": -33.661,
+        "qc": "1",
+        "index": 10497,
+        "cycle": 337,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "2902224_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902224/2902224_Rtraj.nc",
+        "sha256": "c9932ede41d80d76116c3bc738f00c72811cd494209a754de41083d1c3fc5a70"
+      },
+      "profile_evidence": {
+        "file": "R2902224_348.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902224/profiles/R2902224_348.nc",
+        "sha256": "3c5fff50d7e3b15e657946c68ce13e3594577329219c63d230a18c434150b39a",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2902224/profiles/",
+        "listing_sha256": "3061d52a1e82ae2fe43113df02633b3f597ad102af63c05f3ec3d0ae1aebbd19",
+        "max_cycle": 348,
+        "available_cycles": 345,
+        "missing": [
+          297,
+          338,
+          347
+        ],
+        "measurement_iso": "2026-08-19T18:26:50+00:00",
+        "position_qc_values": [
+          "3"
+        ],
+        "lat_values": [
+          -41.588
+        ],
+        "lon_values": [
+          -26.359
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902224/2902224_meta.nc",
+        "sha256": "855866d1dc98e5fb35e3a1f61626975ef4997e808913848953abdaeed53c54fe",
+        "PLATFORM_NUMBER": "2902224",
+        "PLATFORM_TYPE": "APEX"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2902224/2902224_prof.nc",
+        "sha256": "27b04d9ff6d6d6012432653eed6026a7b34f4162e684ebad1cc83592f544a471",
+        "profile_rows": 345,
+        "latest_valid_position": {
+          "juld": 26379.74908564815,
+          "iso": "2022-03-23T17:58:41+00:00",
+          "lat": -53.623,
+          "lon": -130.636,
+          "qc": "1",
+          "index": 186,
+          "cycle": 187,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2902224_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2902224/2902224_prof.nc",
+          "sha256": "27b04d9ff6d6d6012432653eed6026a7b34f4162e684ebad1cc83592f544a471"
+        }
+      }
+    },
+    {
+      "wmo": 2904082,
+      "internal_id": "124250",
+      "float_type": "ARVOR",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:14 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:14 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2026-05-05T07:14:13+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 10.266666666666667,
+      "lon": 63.43333333333333,
+      "prof_num": 25,
+      "profile_count": 25,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2904082/2904082_Rtraj.nc",
+        "sha256": "dfdc1e8555d09df04b803a0ef374f0530898bc47498172a0171684dcc6054a02",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 12,
+        "raw_juld": 27883.301539351698,
+        "field_status": "1",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          77
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 28010.584664351773,
+        "iso": "2026-09-09T14:01:55+00:00",
+        "lat": 10.266666666666667,
+        "lon": 63.43333333333333,
+        "qc": "1",
+        "index": 0,
+        "cycle": 25,
+        "time_field": "JULD_LOCATION",
+        "source": "profile",
+        "file": "R2904082_025.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2904082/profiles/R2904082_025.nc",
+        "sha256": "405bd1d109d6d69add12db9e4d2d20e94f06875935091e1b3115437d249a5911"
+      },
+      "profile_evidence": {
+        "file": "R2904082_025.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/2904082/profiles/R2904082_025.nc",
+        "sha256": "405bd1d109d6d69add12db9e4d2d20e94f06875935091e1b3115437d249a5911",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/2904082/profiles/",
+        "listing_sha256": "9d7df73e613c1b5be126ad6dcca4bc507cd57e993ee2ff9b772f0d3aad1d8f5d",
+        "max_cycle": 25,
+        "available_cycles": 25,
+        "missing": [],
+        "measurement_iso": "2026-09-09T14:01:55+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          10.266666666666667
+        ],
+        "lon_values": [
+          63.43333333333333
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2904082/2904082_meta.nc",
+        "sha256": "660e3f56933db9eb914b18982231a0e5dba4fbd603b0bded45dea76d103b6cb6",
+        "PLATFORM_NUMBER": "2904082",
+        "PLATFORM_TYPE": "ARVOR"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/2904082/2904082_prof.nc",
+        "sha256": "db306cf18c3b1f8a857f9f87c06a02b89c5a758d56369ee3d527b2d32e2f339a",
+        "profile_rows": 25,
+        "latest_valid_position": {
+          "juld": 28010.584664351853,
+          "iso": "2026-09-09T14:01:55+00:00",
+          "lat": 10.266666666666667,
+          "lon": 63.43333333333333,
+          "qc": "1",
+          "index": 24,
+          "cycle": 25,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "2904082_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/2904082/2904082_prof.nc",
+          "sha256": "db306cf18c3b1f8a857f9f87c06a02b89c5a758d56369ee3d527b2d32e2f339a"
+        }
+      }
+    },
+    {
+      "wmo": 6902892,
+      "internal_id": "589584",
+      "float_type": "ARVOR_D",
+      "local_sources": {
+        "wmo": "config/registry_apf9.csv:2 [wmo]",
+        "internal_id": "config/registry_apf9.csv:2 [ptt, else imei]",
+        "float_type": "config/registry.csv:2 [platform_type]"
+      },
+      "in_incois_dac": false,
+      "last_tx_iso": null,
+      "last_tx_field": null,
+      "lat": null,
+      "lon": null,
+      "prof_num": null,
+      "profile_count": null,
+      "profiles_missing": null,
+      "profiles_missing_list": [],
+      "communication_evidence": null,
+      "position_evidence": null,
+      "profile_evidence": null,
+      "meta_evidence": null,
+      "availability_note": "No record in configured dac/incois; public dac/coriolis Rtraj independently confirmed by HEAD (not used without scope approval)."
+    },
+    {
+      "wmo": 6903014,
+      "internal_id": "850878",
+      "float_type": "ARVOR",
+      "local_sources": {
+        "wmo": "config/registry_apf9.csv:3 [wmo]",
+        "internal_id": "config/registry_apf9.csv:3 [ptt, else imei]",
+        "float_type": "config/registry.csv:3 [platform_type]"
+      },
+      "in_incois_dac": false,
+      "last_tx_iso": null,
+      "last_tx_field": null,
+      "lat": null,
+      "lon": null,
+      "prof_num": null,
+      "profile_count": null,
+      "profiles_missing": null,
+      "profiles_missing_list": [],
+      "communication_evidence": null,
+      "position_evidence": null,
+      "profile_evidence": null,
+      "meta_evidence": null,
+      "availability_note": "No record in configured dac/incois; public dac/coriolis Rtraj independently confirmed by HEAD (not used without scope approval)."
+    },
+    {
+      "wmo": 6990711,
+      "internal_id": "664170",
+      "float_type": "ARVOR",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:15 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:15 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2025-05-02T00:01:25+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": -64.70572,
+      "lon": 69.86632,
+      "prof_num": 7,
+      "profile_count": 7,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/6990711/6990711_Rtraj.nc",
+        "sha256": "c82b61b75ccbd5eb06a41af62c075122c6707ee0e45c11da4986c8e3f01352ba",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 5,
+        "raw_juld": 27515.000983796297,
+        "field_status": "4",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          7
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 27515.000983796297,
+        "iso": "2025-05-02T00:01:25+00:00",
+        "lat": -64.70572,
+        "lon": 69.86632,
+        "qc": "1",
+        "index": 94,
+        "cycle": 6,
+        "time_field": "JULD",
+        "source": "traj",
+        "file": "6990711_Rtraj.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/6990711/6990711_Rtraj.nc",
+        "sha256": "c82b61b75ccbd5eb06a41af62c075122c6707ee0e45c11da4986c8e3f01352ba"
+      },
+      "profile_evidence": {
+        "file": "R6990711_007.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/6990711/profiles/R6990711_007.nc",
+        "sha256": "08969c9692ecb5c6c15e6806a862513ba7f31e806686c08f122c8bd7db1aedf6",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/6990711/profiles/",
+        "listing_sha256": "64afa93fe09e615173b260a2f6b1cb5e318959d341dcc3c715d15f8bb7f5fbd7",
+        "max_cycle": 7,
+        "available_cycles": 7,
+        "missing": [],
+        "measurement_iso": "2025-05-01T23:58:26+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          -64.66666666666667
+        ],
+        "lon_values": [
+          70.1
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/6990711/6990711_meta.nc",
+        "sha256": "5fc69f13a5cd4d0e27378352bac11a9c8867f81cddda6bfda163009e503d9c61",
+        "PLATFORM_NUMBER": "6990711",
+        "PLATFORM_TYPE": "ARVOR"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/6990711/6990711_prof.nc",
+        "sha256": "ad095355446128a0f051ed09279ad10a49da581cfa7e1a1374a9764e704f3b63",
+        "profile_rows": 7,
+        "latest_valid_position": {
+          "juld": 27515.000405092593,
+          "iso": "2025-05-02T00:00:35+00:00",
+          "lat": -64.68638,
+          "lon": 69.97391,
+          "qc": "1",
+          "index": 5,
+          "cycle": 6,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "6990711_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/6990711/6990711_prof.nc",
+          "sha256": "ad095355446128a0f051ed09279ad10a49da581cfa7e1a1374a9764e704f3b63"
+        }
+      }
+    },
+    {
+      "wmo": 7902408,
+      "internal_id": "339490",
+      "float_type": "ARVOR",
+      "local_sources": {
+        "wmo": "config/metadata/meta.csv:16 [WMO id]",
+        "internal_id": "config/metadata/meta.csv:16 [Argos number, else imei]",
+        "float_type": "config/metadata/meta.csv + MultiCsvLoader.load_info(wmo).float_type \u2192 preset.platform_type"
+      },
+      "in_incois_dac": true,
+      "last_tx_iso": "2026-05-05T09:58:55+00:00",
+      "last_tx_field": "JULD_LAST_MESSAGE",
+      "lat": 3.33145,
+      "lon": 81.106,
+      "prof_num": 18,
+      "profile_count": 18,
+      "profiles_missing": 0,
+      "profiles_missing_list": [],
+      "communication_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/7902408/7902408_Rtraj.nc",
+        "sha256": "f2a8dc38a9b2ba326d13a39632addd5bc8524cd8a86628d08f6044fb8fa659a4",
+        "field": "JULD_LAST_MESSAGE",
+        "index": 5,
+        "raw_juld": 27883.415914352052,
+        "field_status": "1",
+        "dimensions": [
+          "N_CYCLE"
+        ],
+        "shape": [
+          6
+        ],
+        "long_name": "Date of latest float message received",
+        "units": "days since 1950-01-01 00:00:00 UTC",
+        "fill_value": "999999.0"
+      },
+      "position_evidence": {
+        "juld": 28010.710358796176,
+        "iso": "2026-09-09T17:02:55+00:00",
+        "lat": 3.33145,
+        "lon": 81.106,
+        "qc": "1",
+        "index": 0,
+        "cycle": 18,
+        "time_field": "JULD_LOCATION",
+        "source": "profile",
+        "file": "R7902408_018.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/7902408/profiles/R7902408_018.nc",
+        "sha256": "c486545aee3bec60f73473385b16825ea2c3ce41779d0d72685283a8a03dc9ba"
+      },
+      "profile_evidence": {
+        "file": "R7902408_018.nc",
+        "url": "https://data-argo.ifremer.fr/dac/incois/7902408/profiles/R7902408_018.nc",
+        "sha256": "c486545aee3bec60f73473385b16825ea2c3ce41779d0d72685283a8a03dc9ba",
+        "listing_url": "https://data-argo.ifremer.fr/dac/incois/7902408/profiles/",
+        "listing_sha256": "de728c4abef07b46cefa1f976ee3f584bbaeb5905d1211b76b598fe15c812bb6",
+        "max_cycle": 18,
+        "available_cycles": 18,
+        "missing": [],
+        "measurement_iso": "2026-09-09T17:02:55+00:00",
+        "position_qc_values": [
+          "1"
+        ],
+        "lat_values": [
+          3.33145
+        ],
+        "lon_values": [
+          81.106
+        ]
+      },
+      "meta_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/7902408/7902408_meta.nc",
+        "sha256": "1edac7d437d4a6e4478aea5af294b3ff1d5c687f4b7989a8e9aad39544b0ea1d",
+        "PLATFORM_NUMBER": "7902408",
+        "PLATFORM_TYPE": "ARVOR"
+      },
+      "full_profile_evidence": {
+        "url": "https://data-argo.ifremer.fr/dac/incois/7902408/7902408_prof.nc",
+        "sha256": "953e53d1a4be1a268609c29706d346406018dc6ec82622ae3f90e3de752efbf6",
+        "profile_rows": 18,
+        "latest_valid_position": {
+          "juld": 28010.710358796296,
+          "iso": "2026-09-09T17:02:55+00:00",
+          "lat": 3.33145,
+          "lon": 81.106,
+          "qc": "1",
+          "index": 17,
+          "cycle": 18,
+          "time_field": "JULD_LOCATION",
+          "source": "profile",
+          "file": "7902408_prof.nc",
+          "url": "https://data-argo.ifremer.fr/dac/incois/7902408/7902408_prof.nc",
+          "sha256": "953e53d1a4be1a268609c29706d346406018dc6ec82622ae3f90e3de752efbf6"
+        }
+      }
+    }
+  ]
+}

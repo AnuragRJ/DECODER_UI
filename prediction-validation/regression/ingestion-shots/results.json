@@ -1,0 +1,87 @@
+[
+  {
+    "name": "arrival detected + normalized by backend (WMO resolved via real metadata)",
+    "ok": true,
+    "detail": "wmo=2901304 platform=APEX files=3 src=incoming/102525"
+  },
+  {
+    "name": "normalized fields honest (cycle/JULD/coords unset — nothing invented)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "NO decoder batch auto-started by detection",
+    "ok": true,
+    "detail": "batches 9 → 9"
+  },
+  {
+    "name": "header data-source pill present + LOCAL",
+    "ok": true,
+    "detail": "LOCAL (DEV SOURCE) NEW DATA: 3"
+  },
+  {
+    "name": "source labelled as DEV SOURCE in local mode",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "UI NEVER claims FTP CONNECTED without a real session",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "header shows NEW DATA count badge",
+    "ok": true,
+    "detail": "NEW DATA: 3"
+  },
+  {
+    "name": "Incoming-data arrivals panel visible in Fleet view",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "fleet panel shows WMO + NEW DATA badge",
+    "ok": true,
+    "detail": "WMO 2901304 NEW DATA +2 earlier platform APEX · received 9/21/2026, 1:42:19 PM · 3 file(s) View float Mark seen"
+  },
+  {
+    "name": "panel surfaces real metadata (platform, received time)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "unidentified source associations are labelled, never assigned a WMO",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "fleet TABLE row shows 🟡 NEW DATA badge for the float",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "View float opens Decoder workspace with the float selected (decode stays manual)",
+    "ok": true,
+    "detail": "select=2901304"
+  },
+  {
+    "name": "still NO auto decode after View float",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "Mark seen clears the NEW DATA card",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "ack persisted server-side (arrival now seen, history kept)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "final: batches count unchanged through the whole flow (no auto-decode)",
+    "ok": true,
+    "detail": ""
+  }
+]

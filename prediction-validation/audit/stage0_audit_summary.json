@@ -1,0 +1,49 @@
+{
+  "shipped_ring": 400,
+  "floats_withheld_by_regression_ring": [
+    2902087,
+    2902091,
+    2902092,
+    2902093,
+    2902113,
+    2902114,
+    2902118,
+    2902120,
+    2902203
+  ],
+  "regression ring (8)": {
+    "methods": {
+      "trajectory_extrapolation": 30
+    },
+    "rungs": {
+      "4": 30
+    },
+    "transitions_median": 7,
+    "transitions_mean": 6.7,
+    "pool": 200
+  },
+  "shipped ring (400)": {
+    "methods": {
+      "trajectory_extrapolation": 21,
+      "history_prior": 9
+    },
+    "rungs": {
+      "4": 30
+    },
+    "transitions_median": 215,
+    "transitions_mean": 176.5,
+    "pool": 5294
+  },
+  "full history (all)": {
+    "methods": {
+      "trajectory_extrapolation": 21,
+      "history_prior": 9
+    },
+    "rungs": {
+      "4": 30
+    },
+    "transitions_median": 215,
+    "transitions_mean": 176.5,
+    "pool": 5294
+  }
+}

@@ -1,0 +1,20 @@
+-meta-------------------------
+"""expected"" vs ""live"""	column_2	"grey are ""dead"","	"blue are giving ""suspect"" data,         red are ""evil"" - bad but will not die!,             yellow are ""unknown"""	column_5	column_6	column_7	column_8	column_9	column_10	column_11	column_12	column_13	column_14	column_15	column_16	column_17	column_18	column_19	"yellow are ""unknown"""	column_21	column_22	column_23	column_24	"Float subtype 1001 = APF9a"	column_26	column_27	column_28
+Column1	live	20260116153200	10.44	65.00	124250	2904082	25002	0	596	Incois	844	SBE41CP	21443	0i-0	0	13139863	0	4	6.94	2	1000	10	2000	"RV Sindhu Sadhana"	0	arvor	1024
+"""expected"" vs ""live"""	column_2	"grey are ""dead"","	"blue are giving ""suspect"" data,         red are ""evil"" - bad but will not die!,             yellow are ""unknown"""	column_5	column_6	column_7	column_8	column_9	column_10	column_11	column_12	column_13	column_14	column_15	column_16	column_17	column_18	column_19	"yellow are ""unknown"""	column_21	column_22	column_23	column_24	"Float subtype 1001 = APF9a"	column_26	column_27	column_28
+Column1	live	20260115133000	11.00	66.87	123230	1902844	25001	0	595	Incois	844	SBE41CP	21432	0i-0	0	13133091	0	4	6.94	2	1000	10	2000	"RV Sindhu Sadhana"	0	arvor	1024
+----------------------------------------------------------------
+-sensor-info---------
+"start marker"	"WMO id"	"Webb Number"	"deployment order number"	"CTD mfg"	"CTD serial number"	"firmware revision number"	"CTD Sensor Type"	"Pressure sensor mfg"	"Pressure sensor serial #"	"Presure Units"	"Oxygen sensor mfg"	"Oxygen Model #"	"Oxy Sensor serial number"	"Oxygen Units"	"Transmiss mfg"	"Transmiss Model #"	"Transmiss Serial #"	"Transmiss units"	"FLBB/EM sensor mfg"	"FLBB/EM Model #"	"FLBB/EM serial #"	"FLBB/EM units"	"Comms system"	"Comms ID"	"battery config"	"argos frequency"
+Column1	1902844	25001	595	SeaBird	21432	7.2.5	SBE41CP	DRUCK	13133091	dBAR													IRIDIUM	0	"4DD LI"	STANDARD
+Column1	2904082	25002	596	SeaBird	21443	7.2.5	SBE41CP	DRUCK	13139863	dBAR													IRIDIUM	0	"4DD LI"	STANDARD
+-------------------------------------------------------------------
+-calib-----------------
+column_1	column_2	column_3	column_4	column_5	column_6	column_7	column_8	column_9	"SBE presssure sensor coeffs"	column_11	column_12	column_13	column_14	column_15	column_16	column_17	column_18	column_19	column_20	column_21	"SBE temperature sensor coeffs"	column_23	column_24	column_25	"SBE conductivity sensor coeffs"	column_27	column_28	column_29	column_30	column_31	column_32	column_1_2
+11111	1902844	21432	0	0	0	0	0	0	1.880633e-01	3.885497e-04	-2.995575e-13	-1.082440e+03	6.429735e+01	-1.936784e+00	3.132824e+05	1.903569e+01	-1.206378e-01	2.872023e+02	-6.074426e-05	-9.350584e-1	-8.194507e-04	2.875602e-04	-3.277728e-06	1.410046e-07	-1.024114e+00	1.463256e-01	-3.686789e-04	4.808188e-05	-9.5700e-008	3.2500e-006	-6.2854e-07	1.00E+05
+11111	2904082	21443	0	0	0	0	0	0	1.441876e-01	3.894748e-04	-2.839447e-13	6.438375e+02	1.983232e+01	-1.180969e-01	3.252783e+05	4.128753e+00	1.953703e-01	2.893770e+02	-6.103025e-05	-9.288678e-13	-7.288255e-04	2.784435e-04	-2.931386e-06	1.316092e-07	-1.027415e+00	1.489199e-01	-3.767175e-04	4.918359e-05	-9.5700e-008	3.2500e-006	-5.6975e-07	1.00E+05
+------------------------------------------------------------------------
+-config-params------------------
+"start marker"	"Argos number"	"WMO id"	"Manufacturer Serial Number"	column_5	reprate	"Parktime (days)"	"Float subtype"	column_9	"asctime (hours)"	surftime	"Park Pressure"	uptime	"Profile pressure"	column_15	column_16	column_17	column_18	column_19	column_20	column_21	column_22	column_23	column_24	column_25	column_26	column_27	column_28	"manual date"	"firmware date/software date"	column_31	column_32	column_33	"format standard number"
+column1	"     0"	1902844	25001	595	0	4.50	1024	112	6.0	6.6	1000	12	2000	6	222		1	240	66		25	67						070120	160414				001020
+column1	"     0"	2904082	25002	596	0	4.50	1024	112	6.0	6.6	1000	12	2000	6	222		1	240	66		25	67						070120	160414				001020

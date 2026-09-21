@@ -1,0 +1,842 @@
+E501 Line too long (102 > 100)
+   --> service/fleet_status.py:235:101
+    |
+233 |             return ""
+234 |         item = np.asarray(v).ravel()[0].item()
+235 |         return item.decode(errors="replace").strip() if isinstance(item, bytes) else str(item).strip()
+    |                                                                                                     ^^
+236 |     except (ValueError, TypeError, IndexError):
+237 |         return ""
+    |
+
+E501 Line too long (113 > 100)
+   --> service/fleet_status.py:277:101
+    |
+275 |     if units not in valid_units:
+276 |         raise FloatSyncError(f"{name} has absent/unsupported time units: {units!r}")
+277 |     if str(getattr(var, "calendar", "standard")).lower() not in {"standard", "gregorian", "proleptic_gregorian"}:
+    |                                                                                                     ^^^^^^^^^^^^^
+278 |         raise FloatSyncError(f"{name} has an unsupported calendar")
+279 |     return _farr(var)
+    |
+
+E501 Line too long (121 > 100)
+   --> service/fleet_status.py:312:101
+    |
+310 |             "last_tx_iso": None, "last_tx_field": None, "last_tx_status_rt19": "",
+311 |             "last_tx_index": None, "last_tx_cycle": None, "communication_error": None}
+312 |         cycle_index = _farr(ds.variables["CYCLE_NUMBER_INDEX"]) if "CYCLE_NUMBER_INDEX" in ds.variables else np.array([])
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^
+313 |         for field in COMMUNICATION_FIELDS:
+314 |             if field not in ds.variables:
+    |
+
+E501 Line too long (101 > 100)
+   --> service/fleet_status.py:326:101
+    |
+324 |             out.update(last_tx_juld=value, last_tx_iso=juld_to_iso(value), last_tx_field=field,
+325 |                        last_tx_index=i, last_tx_cycle=_int_at(cycle_index, i),
+326 |                        last_tx_status_rt19=_char_at(status_var, i) if status_var is not None else "",
+    |                                                                                                     ^
+327 |                        last_tx_units=str(ds.variables[field].units),
+328 |                        last_tx_long_name=str(getattr(ds.variables[field], "long_name", "")))
+    |
+
+E501 Line too long (169 > 100)
+   --> service/fleet_status.py:331:101
+    |
+329 | …
+330 | …
+331 | …or JULD_TRANSMISSION_END in upstream Rtraj; measurement/profile JULD is not communication evidence."
+    |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+332 | …
+333 | …
+    |
+
+E501 Line too long (123 > 100)
+   --> service/fleet_status.py:335:101
+    |
+333 |         for name in ("CYCLE_NUMBER_INDEX", "CYCLE_NUMBER"):
+334 |             if name in ds.variables:
+335 |                 nums.extend(int(v) for v in _farr(ds.variables[name]) if np.isfinite(v) and 0 <= v < 99999 and v == int(v))
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+336 |         out["traj_max_cycle"] = max(nums) if nums else None
+337 |         out["last_fix"] = None
+    |
+
+E501 Line too long (101 > 100)
+   --> service/fleet_status.py:341:101
+    |
+339 |         lat = _farr(ds.variables["LATITUDE"]) if "LATITUDE" in ds.variables else np.array([])
+340 |         lon = _farr(ds.variables["LONGITUDE"]) if "LONGITUDE" in ds.variables else np.array([])
+341 |         cyc = _farr(ds.variables["CYCLE_NUMBER"]) if "CYCLE_NUMBER" in ds.variables else np.array([])
+    |                                                                                                     ^
+342 |         mc = _farr(ds.variables["MEASUREMENT_CODE"]) if "MEASUREMENT_CODE" in ds.variables else np.array([])
+343 |         qc_values = _flags(ds, "POSITION_QC")
+    |
+
+E501 Line too long (108 > 100)
+   --> service/fleet_status.py:342:101
+    |
+340 |         lon = _farr(ds.variables["LONGITUDE"]) if "LONGITUDE" in ds.variables else np.array([])
+341 |         cyc = _farr(ds.variables["CYCLE_NUMBER"]) if "CYCLE_NUMBER" in ds.variables else np.array([])
+342 |         mc = _farr(ds.variables["MEASUREMENT_CODE"]) if "MEASUREMENT_CODE" in ds.variables else np.array([])
+    |                                                                                                     ^^^^^^^^
+343 |         qc_values = _flags(ds, "POSITION_QC")
+344 |         for i in range(min(juld.size, lat.size, lon.size)):
+    |
+
+E501 Line too long (101 > 100)
+   --> service/fleet_status.py:385:101
+    |
+383 |         lat = _farr(ds.variables["LATITUDE"]) if "LATITUDE" in ds.variables else np.array([])
+384 |         lon = _farr(ds.variables["LONGITUDE"]) if "LONGITUDE" in ds.variables else np.array([])
+385 |         cyc = _farr(ds.variables["CYCLE_NUMBER"]) if "CYCLE_NUMBER" in ds.variables else np.array([])
+    |                                                                                                     ^
+386 |         qc_values = _flags(ds, "POSITION_QC")
+387 |         valid_j = [(i, float(v)) for i, v in enumerate(j) if _valid_juld(v, now) is not None]
+    |
+
+E501 Line too long (109 > 100)
+   --> service/fleet_status.py:391:101
+    |
+389 |         known_cycles = [int(v) for v in cyc if np.isfinite(v) and 0 <= v < 99999]
+390 |         out["cycle"] = _int_at(cyc, 0)
+391 |         out["cycle_mismatch"] = filename_cycle is not None and any(c != filename_cycle for c in known_cycles)
+    |                                                                                                     ^^^^^^^^^
+392 |         candidates = []
+393 |         for i in range(min(loc.size, lat.size, lon.size)):
+    |
+
+E501 Line too long (122 > 100)
+   --> service/fleet_status.py:408:101
+    |
+406 |             flags = sorted(set(qc_values.tolist()))
+407 |             out["position_qc_observed"] = flags
+408 |             out["position_error"] = ("Profile position unavailable: require a matching cycle, paired finite coordinates, "
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^
+409 |                                      f"POSITION_QC 1/2 and a valid JULD_LOCATION (QC present: {','.join(flags) or 'none'}).")
+410 |         if measured:
+    |
+
+E501 Line too long (125 > 100)
+   --> service/fleet_status.py:409:101
+    |
+407 |             out["position_qc_observed"] = flags
+408 |             out["position_error"] = ("Profile position unavailable: require a matching cycle, paired finite coordinates, "
+409 |                                      f"POSITION_QC 1/2 and a valid JULD_LOCATION (QC present: {','.join(flags) or 'none'}).")
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+410 |         if measured:
+411 |             i, value = measured
+    |
+
+E501 Line too long (103 > 100)
+   --> service/fleet_status.py:438:101
+    |
+436 |     members = {n for n in out if re.fullmatch(r"\d{7}", n)}
+437 |     if not members:
+438 |         raise FloatSyncError("DAC listing contains no valid WMO directories; membership is unverified")
+    |                                                                                                     ^^^
+439 |     return members
+    |
+
+E501 Line too long (108 > 100)
+   --> service/fleet_status.py:469:101
+    |
+467 |         if parsed is None:
+468 |             if ln.strip() and not re.fullmatch(r"total\s+\d+", ln.strip()):
+469 |                 raise FloatSyncError("Unparseable profiles LIST response; refusing an incomplete inventory")
+    |                                                                                                     ^^^^^^^^
+470 |             continue
+471 |         name, size, mtime, is_dir = parsed
+    |
+
+E501 Line too long (126 > 100)
+   --> service/fleet_status.py:516:101
+    |
+514 |         self._root = (root or os.environ.get("FLEET_FTP_ROOT", "/ifremer/argo")).rstrip("/") or "/"
+515 |         self._timeout = timeout_s or float(os.environ.get("FLEET_FTP_TIMEOUT_S", "30"))
+516 |         requested_interval = interval_s if interval_s is not None else float(os.environ.get("FLEET_SYNC_INTERVAL_S", "21600"))
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+517 |         self._interval = max(float(requested_interval), 300.0) if math.isfinite(float(requested_interval)) else 21600.0
+518 |         self._enabled = (os.environ.get("FLEET_SYNC_ENABLED", "1") != "0") if enabled is None else enabled
+    |
+
+E501 Line too long (119 > 100)
+   --> service/fleet_status.py:517:101
+    |
+515 |         self._timeout = timeout_s or float(os.environ.get("FLEET_FTP_TIMEOUT_S", "30"))
+516 |         requested_interval = interval_s if interval_s is not None else float(os.environ.get("FLEET_SYNC_INTERVAL_S", "21600"))
+517 |         self._interval = max(float(requested_interval), 300.0) if math.isfinite(float(requested_interval)) else 21600.0
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^
+518 |         self._enabled = (os.environ.get("FLEET_SYNC_ENABLED", "1") != "0") if enabled is None else enabled
+519 |         self._rows: dict[str, dict[str, Any]] = {}
+    |
+
+E501 Line too long (106 > 100)
+   --> service/fleet_status.py:518:101
+    |
+516 |         requested_interval = interval_s if interval_s is not None else float(os.environ.get("FLEET_SYNC_INTERVAL_S", "21600"))
+517 |         self._interval = max(float(requested_interval), 300.0) if math.isfinite(float(requested_interval)) else 21600.0
+518 |         self._enabled = (os.environ.get("FLEET_SYNC_ENABLED", "1") != "0") if enabled is None else enabled
+    |                                                                                                     ^^^^^^
+519 |         self._rows: dict[str, dict[str, Any]] = {}
+520 |         self._sync: dict[str, Any] = {
+    |
+
+E501 Line too long (153 > 100)
+   --> service/fleet_status.py:553:101
+    |
+551 | …
+552 | …D only if unavailable)",
+553 | … fix or JULD_LOCATION in full _prof.nc history / latest profile file; no local coordinates",
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+554 | …e; available = distinct positive cycles; missing = gaps in 1..Prof#",
+555 | …
+    |
+
+E501 Line too long (130 > 100)
+   --> service/fleet_status.py:554:101
+    |
+552 | …         "field": "JULD_LAST_MESSAGE (JULD_TRANSMISSION_END only if unavailable)",
+553 | …         "position_policy": "Newest QC 1/2 trajectory JULD fix or JULD_LOCATION in full _prof.nc history / latest profile file; no l…
+554 | …         "profile_policy": "Prof# = highest published cycle; available = distinct positive cycles; missing = gaps in 1..Prof#",
+    |                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+555 | …         "interval_s": self._interval,
+556 | …     }
+    |
+
+E501 Line too long (101 > 100)
+   --> service/fleet_status.py:568:101
+    |
+566 |                 return
+567 |             data = json.loads(self._state_path.read_text(encoding="utf-8"))
+568 |             if not isinstance(data, dict) or int(data.get("version") or 0) not in (1, STATE_VERSION):
+    |                                                                                                     ^
+569 |                 return
+570 |             rows = data.get("rows")
+    |
+
+E501 Line too long (149 > 100)
+   --> service/fleet_status.py:575:101
+    |
+573 | …
+574 | …
+575 | …t_success_at", "last_completed_at", "error", "counts", "duration_s", "persistence_error"):
+    |                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+576 | …
+577 | …
+    |
+
+E501 Line too long (106 > 100)
+   --> service/fleet_status.py:598:101
+    |
+596 |         except Exception as exc:
+597 |             with self._lock:
+598 |                 self._sync["persistence_error"] = f"Cache persistence failed: {type(exc).__name__}: {exc}"
+    |                                                                                                     ^^^^^^
+599 |             try:
+600 |                 tmp.unlink(missing_ok=True)
+    |
+
+E501 Line too long (113 > 100)
+   --> service/fleet_status.py:699:101
+    |
+697 |                     "last_completed_at": now_iso,
+698 |                     "last_success_at": now_iso if failed == 0 else previous_success,
+699 |                     "error": None if failed == 0 else f"{failed} float(s) failed refresh (kept last valid rows)",
+    |                                                                                                     ^^^^^^^^^^^^^
+700 |                     "counts": {"total": len(wmos), "updated": updated,
+701 |                                "unchanged": unchanged, "failed": failed},
+    |
+
+E501 Line too long (107 > 100)
+   --> service/fleet_status.py:708:101
+    |
+706 |                     self._sync.update(status=SYNC_DEGRADED, last_success_at=previous_success,
+707 |                                       error=self._sync["persistence_error"])
+708 |             return {"accepted": True, "status": self._sync["status"], "counts": dict(self._sync["counts"])}
+    |                                                                                                     ^^^^^^^
+709 |         finally:
+710 |             try:
+    |
+
+E501 Line too long (117 > 100)
+   --> service/fleet_status.py:750:101
+    |
+748 |                    "profiles": None, "error": None, "updated_at": now.isoformat(),
+749 |                    "checked_at": now.isoformat(), "parser_version": PARSER_VERSION,
+750 |                    "reason": "Outside configured DAC: no record in Ifremer dac/incois (other DACs are not searched)"}
+    |                                                                                                     ^^^^^^^^^^^^^^^^^
+751 |             with self._lock:
+752 |                 self._rows[key] = row
+    |
+
+E501 Line too long (129 > 100)
+   --> service/fleet_status.py:766:101
+    |
+764 |         aggregate_name = f"{wmo}_prof.nc"
+765 |         aggregate_size, aggregate_mdtm = ftp_file_stat(ftp, f"{base}/{aggregate_name}")
+766 |         aggregate_fp = f"{aggregate_mdtm}|{aggregate_size}" if aggregate_mdtm is not None or aggregate_size is not None else None
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+767 |         if aggregate_fp is None and (old or {}).get("profile_aggregate"):
+768 |             raise FloatSyncError("Full profile history unavailable; retained previously verified row")
+    |
+
+E501 Line too long (102 > 100)
+   --> service/fleet_status.py:768:101
+    |
+766 |         aggregate_fp = f"{aggregate_mdtm}|{aggregate_size}" if aggregate_mdtm is not None or aggregate_size is not None else None
+767 |         if aggregate_fp is None and (old or {}).get("profile_aggregate"):
+768 |             raise FloatSyncError("Full profile history unavailable; retained previously verified row")
+    |                                                                                                     ^^
+769 |         old_rtraj_fp = (old or {}).get("rtraj_fp")
+770 |         old_prof_fp = (old or {}).get("profiles_fp")
+    |
+
+E501 Line too long (133 > 100)
+   --> service/fleet_status.py:789:101
+    |
+787 |             rtraj_block.update(mdtm=mdtm, size=size, sha256=hashlib.sha256(raw).hexdigest())
+788 |         summary = summarize_profiles([n for (n, _s, _m) in entries], wmo)
+789 |         latest_parse = (old.get("profiles") or {}).get("latest_parse") if current_parser and old and old_prof_fp == prof_fp else None
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+790 |         latest = summary.get("latest")
+791 |         if latest and latest_parse is None:
+    |
+
+E501 Line too long (144 > 100)
+   --> service/fleet_status.py:799:101
+    |
+797 | …).hexdigest()
+798 | …st_parse)
+799 | … if current_parser and (old or {}).get("profile_aggregate_fp") == aggregate_fp else None
+    |                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+800 | …e:
+801 | …
+    |
+
+E501 Line too long (127 > 100)
+   --> service/fleet_status.py:856:101
+    |
+854 |         age = _age_seconds(sync.get("last_success_at"), now)
+855 |         stale = (age is None or age > self._interval or summary["stale_rows"] > 0 or
+856 |                  sync.get("status") in (SYNC_ERROR, SYNC_DEGRADED) or bool(sync.get("persistence_error")) or bool(fleet_error))
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+857 |         sync.update(running=running, progress=progress, interval_s=self._interval,
+858 |                     stale=stale, age_seconds=age,
+    |
+
+E501 Line too long (102 > 100)
+   --> service/fleet_status.py:859:101
+    |
+857 |         sync.update(running=running, progress=progress, interval_s=self._interval,
+858 |                     stale=stale, age_seconds=age,
+859 |                     stale_reason=(fleet_error or sync.get("error") or sync.get("persistence_error") or
+    |                                                                                                     ^^
+860 |                                   ("No fully successful synchronization" if age is None else
+861 |                                    "Cached observations need re-verification" if stale else None)),
+    |
+
+E501 Line too long (117 > 100)
+   --> service/fleet_status.py:862:101
+    |
+860 |                                   ("No fully successful synchronization" if age is None else
+861 |                                    "Cached observations need re-verification" if stale else None)),
+862 |                     status=SYNC_DISABLED if not self._enabled else (SYNC_RUNNING if running else sync.get("status")))
+    |                                                                                                     ^^^^^^^^^^^^^^^^^
+863 |         return {"generated_at": now.isoformat(), "sync": sync, "summary": summary,
+864 |                 "floats": floats, "source": self.source_info}
+    |
+
+E501 Line too long (136 > 100)
+   --> service/fleet_status.py:872:101
+    |
+870 | …:
+871 | …
+872 | …one", "null", "redacted", "sanitized"} or "redacted" in text.lower() or "*" in text:
+    |                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+873 | …
+874 | …
+    |
+
+E501 Line too long (107 > 100)
+   --> service/fleet_status.py:881:101
+    |
+879 |             "transmission_type": (preset or {}).get("transmission_type") or "—",
+880 |             "in_incois_dac": (row or {}).get("in_incois_dac"),
+881 |             "prof_num": None, "profile_count": None, "profiles_missing": None, "profiles_missing_list": [],
+    |                                                                                                     ^^^^^^^
+882 |             "lon": None, "lat": None, "pos_source": None, "pos_qc": None,
+883 |             "position_iso": None, "position_time_field": None, "position_file": None, "position_error": None,
+    |
+
+E501 Line too long (109 > 100)
+   --> service/fleet_status.py:883:101
+    |
+881 |             "prof_num": None, "profile_count": None, "profiles_missing": None, "profiles_missing_list": [],
+882 |             "lon": None, "lat": None, "pos_source": None, "pos_qc": None,
+883 |             "position_iso": None, "position_time_field": None, "position_file": None, "position_error": None,
+    |                                                                                                     ^^^^^^^^^
+884 |             "last_tx_iso": None, "last_tx_field": None, "last_tx_status_rt19": None,
+885 |             "last_tx_index": None, "last_tx_cycle": None, "communication_error": None,
+    |
+
+E501 Line too long (109 > 100)
+   --> service/fleet_status.py:890:101
+    |
+888 |             "traj_lagging_profiles": None, "rtraj_mdtm": None,
+889 |             "error": None, "updated_at": None, "checked_at": None,
+890 |             "stale": True, "stale_reason": "Awaiting first upstream verification", "cache_age_seconds": None,
+    |                                                                                                     ^^^^^^^^^
+891 |         }
+892 |         if not row:
+    |
+
+E501 Line too long (110 > 100)
+   --> service/fleet_status.py:895:101
+    |
+893 |             out["error"] = "awaiting first synchronization"
+894 |             return out
+895 |         out.update(error=row.get("error"), updated_at=row.get("updated_at"), checked_at=row.get("checked_at"))
+    |                                                                                                     ^^^^^^^^^^
+896 |         age = _age_seconds(row.get("checked_at"), now)
+897 |         old_parser = row.get("parser_version") != PARSER_VERSION
+    |
+
+E501 Line too long (112 > 100)
+   --> service/fleet_status.py:898:101
+    |
+896 |         age = _age_seconds(row.get("checked_at"), now)
+897 |         old_parser = row.get("parser_version") != PARSER_VERSION
+898 |         position_inventory_pending = row.get("in_incois_dac") is not False and "profile_aggregate_fp" not in row
+    |                                                                                                     ^^^^^^^^^^^^
+899 |         out["cache_age_seconds"] = age
+900 |         out["stale"] = bool(old_parser or position_inventory_pending or row.get("error") or age is None or age > interval_s)
+    |
+
+E501 Line too long (124 > 100)
+   --> service/fleet_status.py:900:101
+    |
+898 |         position_inventory_pending = row.get("in_incois_dac") is not False and "profile_aggregate_fp" not in row
+899 |         out["cache_age_seconds"] = age
+900 |         out["stale"] = bool(old_parser or position_inventory_pending or row.get("error") or age is None or age > interval_s)
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+901 |         out["stale_reason"] = (row.get("error") or ("Legacy cache needs source re-validation" if old_parser else
+902 |                                "Full profile position inventory needs verification" if position_inventory_pending else
+    |
+
+E501 Line too long (112 > 100)
+   --> service/fleet_status.py:901:101
+    |
+899 |         out["cache_age_seconds"] = age
+900 |         out["stale"] = bool(old_parser or position_inventory_pending or row.get("error") or age is None or age > interval_s)
+901 |         out["stale_reason"] = (row.get("error") or ("Legacy cache needs source re-validation" if old_parser else
+    |                                                                                                     ^^^^^^^^^^^^
+902 |                                "Full profile position inventory needs verification" if position_inventory_pending else
+903 |                                "No verified upstream check time" if age is None else
+    |
+
+E501 Line too long (118 > 100)
+   --> service/fleet_status.py:902:101
+    |
+900 |         out["stale"] = bool(old_parser or position_inventory_pending or row.get("error") or age is None or age > interval_s)
+901 |         out["stale_reason"] = (row.get("error") or ("Legacy cache needs source re-validation" if old_parser else
+902 |                                "Full profile position inventory needs verification" if position_inventory_pending else
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^
+903 |                                "No verified upstream check time" if age is None else
+904 |                                "Upstream check older than the sync interval" if age > interval_s else None))
+    |
+
+E501 Line too long (108 > 100)
+   --> service/fleet_status.py:904:101
+    |
+902 |                                "Full profile position inventory needs verification" if position_inventory_pending else
+903 |                                "No verified upstream check time" if age is None else
+904 |                                "Upstream check older than the sync interval" if age > interval_s else None))
+    |                                                                                                     ^^^^^^^^
+905 |         if row.get("in_incois_dac") is False:
+906 |             out["communication_error"] = row.get("reason") or "no record in Ifremer dac/incois"
+    |
+
+E501 Line too long (107 > 100)
+   --> service/fleet_status.py:924:101
+    |
+922 |             out["latest_profile"] = {"file": latest.get("file"), "prefix": latest.get("prefix"),
+923 |                 "cycle": latest.get("cycle"), "juld_iso": parsed.get("juld_iso"),
+924 |                 "lat": parsed.get("lat"), "lon": parsed.get("lon"), "pos_qc": parsed.get("pos_qc") or None,
+    |                                                                                                     ^^^^^^^
+925 |                 "cycle_mismatch": bool(parsed.get("cycle_mismatch")),
+926 |                 "position_iso": parsed.get("position_iso"), "position_error": parsed.get("position_error")}
+    |
+
+E501 Line too long (107 > 100)
+   --> service/fleet_status.py:926:101
+    |
+924 |                 "lat": parsed.get("lat"), "lon": parsed.get("lon"), "pos_qc": parsed.get("pos_qc") or None,
+925 |                 "cycle_mismatch": bool(parsed.get("cycle_mismatch")),
+926 |                 "position_iso": parsed.get("position_iso"), "position_error": parsed.get("position_error")}
+    |                                                                                                     ^^^^^^^
+927 |         candidates = []
+928 |         fix = rtraj.get("last_fix") or {}
+    |
+
+E501 Line too long (120 > 100)
+   --> service/fleet_status.py:930:101
+    |
+928 |         fix = rtraj.get("last_fix") or {}
+929 |         fix_time = _parse_utc(fix.get("juld_iso"))
+930 |         if fix_time is not None and fix_time <= now and _position_ok(fix.get("lat"), fix.get("lon"), fix.get("pos_qc")):
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^
+931 |             out["traj_last_fix"] = fix
+932 |             candidates.append((fix_time, "traj", fix, "JULD", f"{wmo}_Rtraj.nc"))
+    |
+
+E501 Line too long (109 > 100)
+   --> service/fleet_status.py:937:101
+    |
+935 |                 not parsed.get("cycle_mismatch") and parsed.get("platform_number") == str(wmo) and
+936 |                 _position_ok(parsed.get("lat"), parsed.get("lon"), parsed.get("pos_qc"))):
+937 |             candidates.append((profile_time, "profile", parsed, "JULD_LOCATION", (latest or {}).get("file")))
+    |                                                                                                     ^^^^^^^^^
+938 |         aggregate = row.get("profile_aggregate") or {}
+939 |         aggregate_time = _parse_utc(aggregate.get("position_iso"))
+    |
+
+E501 Line too long (109 > 100)
+   --> service/fleet_status.py:943:101
+    |
+941 | …             aggregate.get("platform_number") == str(wmo) and
+942 | …             _position_ok(aggregate.get("lat"), aggregate.get("lon"), aggregate.get("pos_qc"))):
+943 | …         candidates.append((aggregate_time, "profile", aggregate, "JULD_LOCATION", aggregate.get("file")))
+    |                                                                                                   ^^^^^^^^^
+944 | …     out["position_error"] = ("Legacy profile cache has no verified location time; refresh required" if old_parser and latest else p…
+945 | …     if not aggregate and not old_parser:
+    |
+
+E501 Line too long (163 > 100)
+   --> service/fleet_status.py:944:101
+    |
+942 | …lon"), aggregate.get("pos_qc"))):
+943 | …e, "JULD_LOCATION", aggregate.get("file")))
+944 | …fied location time; refresh required" if old_parser and latest else parsed.get("position_error"))
+    |                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+945 | …
+946 | …rch limited to trajectory and highest published cycle."
+    |
+
+E501 Line too long (121 > 100)
+   --> service/fleet_status.py:946:101
+    |
+944 | …     out["position_error"] = ("Legacy profile cache has no verified location time; refresh required" if old_parser and latest else p…
+945 | …     if not aggregate and not old_parser:
+946 | …         note = "Full profile history unavailable; position search limited to trajectory and highest published cycle."
+    |                                                                                                   ^^^^^^^^^^^^^^^^^^^^^
+947 | …         out["position_error"] = f"{out['position_error']} {note}" if out["position_error"] else note
+948 | …     if candidates:
+    |
+
+E501 Line too long (104 > 100)
+   --> service/fleet_status.py:947:101
+    |
+945 |         if not aggregate and not old_parser:
+946 |             note = "Full profile history unavailable; position search limited to trajectory and highest published cycle."
+947 |             out["position_error"] = f"{out['position_error']} {note}" if out["position_error"] else note
+    |                                                                                                     ^^^^
+948 |         if candidates:
+949 |             # Prefer the direct trajectory fix when observation times tie.
+    |
+
+E501 Line too long (102 > 100)
+   --> service/fleet_status.py:952:101
+    |
+950 |             dt, source, pos, field, filename = max(candidates, key=lambda c: (c[0], c[1] == "traj"))
+951 |             out.update(lat=pos["lat"], lon=pos["lon"], pos_source=source, pos_qc=pos["pos_qc"],
+952 |                        position_iso=dt.isoformat(), position_time_field=field, position_file=filename)
+    |                                                                                                     ^^
+953 |         elif out["position_error"] is None:
+954 |             out["position_error"] = "No timestamped QC 1/2 upstream position available"
+    |
+
+E501 Line too long (106 > 100)
+   --> service/fleet_status.py:964:101
+    |
+962 |             out.update(last_tx_iso=last_tx.isoformat(), last_tx_field=field,
+963 |                        last_tx_status_rt19=rtraj.get("last_tx_status_rt19") or None,
+964 |                        last_tx_index=rtraj.get("last_tx_index"), last_tx_cycle=rtraj.get("last_tx_cycle"),
+    |                                                                                                     ^^^^^^
+965 |                        days_since_last_tx=days, expected_next_iso=(last_tx + timedelta(days=10)).isoformat(),
+966 |                        status=comm_status(days))
+    |
+
+E501 Line too long (109 > 100)
+   --> service/fleet_status.py:965:101
+    |
+963 |                        last_tx_status_rt19=rtraj.get("last_tx_status_rt19") or None,
+964 |                        last_tx_index=rtraj.get("last_tx_index"), last_tx_cycle=rtraj.get("last_tx_cycle"),
+965 |                        days_since_last_tx=days, expected_next_iso=(last_tx + timedelta(days=10)).isoformat(),
+    |                                                                                                     ^^^^^^^^^
+966 |                        status=comm_status(days))
+967 |         else:
+    |
+
+E501 Line too long (141 > 100)
+   --> service/fleet_status.py:969:101
+    |
+967 | …
+968 | …munication_error") or (
+969 | …oritative communication timestamp" if field and field not in COMMUNICATION_FIELDS else
+    |                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+970 | …amp")
+971 | ….get("juld_iso")), _parse_utc(aggregate.get("juld_iso"))) if dt is not None]
+    |
+
+E501 Line too long (131 > 100)
+   --> service/fleet_status.py:971:101
+    |
+969 | … authoritative communication timestamp" if field and field not in COMMUNICATION_FIELDS else
+970 | …imestamp")
+971 | …arsed.get("juld_iso")), _parse_utc(aggregate.get("juld_iso"))) if dt is not None]
+    |                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+972 | …ments else None
+973 | …
+    |
+
+E501 Line too long (101 > 100)
+   --> tests/test_fleet_status.py:103:101
+    |
+102 | def _write_profile(path: Path, juld=None, lat=None, lon=None, qc="1",
+103 |                    cycle=7, with_pos=True, with_juld=True, with_location=True, wmo=2909999) -> bytes:
+    |                                                                                                     ^
+104 |     ds = netCDF4.Dataset(str(path), "w", format="NETCDF4")
+105 |     try:
+    |
+
+E501 Line too long (140 > 100)
+   --> tests/test_fleet_status.py:108:101
+    |
+106 | …
+107 | …
+108 | …_PROF", "STRING8"))[:] = np.frombuffer(f"{wmo:<8}".encode(), dtype="S1").reshape(1, 8)
+    |                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+109 | …
+110 | …OF",), fill_value=999999.0)
+    |
+
+E501 Line too long (107 > 100)
+   --> tests/test_fleet_status.py:157:101
+    |
+155 | def test_parse_list_line_shapes():
+156 |     # Captured shapes from ftp.ifremer.fr (mtime year vs. time forms).
+157 |     a = fs.parse_list_line("-rw-r--r--    1 ftp      ftp        210112 Jun 16 14:14 1902844_Rtraj.nc", NOW)
+    |                                                                                                     ^^^^^^^
+158 |     assert a is not None and a[0] == "1902844_Rtraj.nc" and a[1] == 210112 and a[3] is False
+159 |     b = fs.parse_list_line("-rw-r--r--    1 ftp      ftp         22192 Feb 04  2026 R1902844_001.nc", NOW)
+    |
+
+E501 Line too long (106 > 100)
+   --> tests/test_fleet_status.py:159:101
+    |
+157 |     a = fs.parse_list_line("-rw-r--r--    1 ftp      ftp        210112 Jun 16 14:14 1902844_Rtraj.nc", NOW)
+158 |     assert a is not None and a[0] == "1902844_Rtraj.nc" and a[1] == 210112 and a[3] is False
+159 |     b = fs.parse_list_line("-rw-r--r--    1 ftp      ftp         22192 Feb 04  2026 R1902844_001.nc", NOW)
+    |                                                                                                     ^^^^^^
+160 |     assert b is not None and b[0] == "R1902844_001.nc"
+161 |     assert datetime.fromtimestamp(b[2], tz=UTC).year == 2026
+    |
+
+E501 Line too long (107 > 100)
+   --> tests/test_fleet_status.py:174:101
+    |
+172 |     assert fs.listing_fingerprint(e1) == fs.listing_fingerprint(e2)
+173 |     assert fs.listing_fingerprint(e1) != fs.listing_fingerprint([("a.nc", 10, 100.0)])
+174 |     assert fs.listing_fingerprint(e1) != fs.listing_fingerprint([("a.nc", 11, 100.0), ("b.nc", 20, 200.0)])
+    |                                                                                                     ^^^^^^^
+
+E501 Line too long (116 > 100)
+   --> tests/test_fleet_status.py:431:101
+    |
+429 |     reg = _reg(tmp_path)
+430 |     monkeypatch.setattr(reg, "_connect", lambda: fake)
+431 |     monkeypatch.setattr("datasources.local.build_wmo_identity_map", lambda: {2909999: {"ptt": "10255", "imei": ""}})
+    |                                                                                                     ^^^^^^^^^^^^^^^^
+432 |     res = reg.sync_now()
+433 |     assert res["accepted"] is True and res["status"] == "ok"
+    |
+
+E501 Line too long (102 > 100)
+  --> tests/test_fleet_status_audit.py:22:101
+   |
+20 | from test_fleet_status import NOW, _fake_gdac, _juld, _reg, _write_profile, _write_rtraj
+21 |
+22 | CACHE = json.loads((Path(__file__).resolve().parents[1] / "data/fleet_status/cache.json").read_text())
+   |                                                                                                     ^^
+23 | AS_OF = datetime(2026, 9, 21, tzinfo=UTC)
+24 | UNITS = "days since 1950-01-01 00:00:00 UTC"
+   |
+
+E501 Line too long (101 > 100)
+  --> tests/test_fleet_status_audit.py:53:101
+   |
+51 |             if name.startswith("JULD"):
+52 |                 v.units = UNITS
+53 |         d.createVariable("POSITION_QC", "S1", ("N_PROF",))[:] = np.array(qc or ["1"] * n, dtype="S1")
+   |                                                                                                     ^
+54 |         d.createVariable("CYCLE_NUMBER", "i4", ("N_PROF",))[:] = cycles or [25] * n
+55 |     return path.read_bytes()
+   |
+
+E501 Line too long (117 > 100)
+  --> tests/test_fleet_status_audit.py:65:101
+   |
+63 |     assert got["wmo"] == int(wmo)
+64 |     assert got["stale"]  # Version 1 cannot masquerade as a new verified sync.
+65 |     if r.get("in_incois_dac") is False or (r.get("rtraj") or {}).get("last_tx_field") not in fs.COMMUNICATION_FIELDS:
+   |                                                                                                     ^^^^^^^^^^^^^^^^^
+66 |         assert got["status"] == "NO DATA"
+67 |         for key in ("last_tx_iso", "expected_next_iso", "days_since_last_tx"):
+   |
+
+E501 Line too long (104 > 100)
+  --> tests/test_fleet_status_audit.py:88:101
+   |
+87 | def test_actual_cache_total_is_available_cycles_not_sum_of_maxima():
+88 |     rows = [fs.FleetSyncRegistry._serve_row(int(w), r, {}, {}, AS_OF) for w, r in CACHE["rows"].items()]
+   |                                                                                                     ^^^^
+89 |     assert sum(r["profile_count"] or 0 for r in rows) == 5625
+90 |     assert sum(r["prof_num"] or 0 for r in rows) == 5647
+   |
+
+E501 Line too long (131 > 100)
+   --> tests/test_fleet_status_audit.py:124:101
+    |
+122 | @pytest.mark.parametrize("iso", [None, "bad", "2026-09-01T00:00:00", "2026-09-21T00:00:01+00:00"])
+123 | def test_bad_naive_and_future_cache_timestamps_are_unavailable(iso):
+124 |     got = fs.FleetSyncRegistry._serve_row(2909999, _row({"last_tx_field": "JULD_LAST_MESSAGE", "last_tx_iso": iso}), {}, {}, AS_OF)
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+125 |     assert got["last_tx_iso"] is None and got["status"] == "NO DATA"
+    |
+
+E501 Line too long (106 > 100)
+   --> tests/test_fleet_status_audit.py:130:101
+    |
+128 | def test_timezone_offsets_are_normalized_to_utc():
+129 |     got = fs.FleetSyncRegistry._serve_row(2909999, _row({
+130 |         "last_tx_field": "JULD_LAST_MESSAGE", "last_tx_iso": "2026-09-11T05:30:00+05:30"}), {}, {}, AS_OF)
+    |                                                                                                     ^^^^^^
+131 |     assert got["last_tx_iso"] == "2026-09-11T00:00:00+00:00"
+132 |     assert got["expected_next_iso"] == AS_OF.isoformat()
+    |
+
+E501 Line too long (101 > 100)
+   --> tests/test_fleet_status_audit.py:189:101
+    |
+187 |     raw = _multi_profile(tmp_path / "loc.nc", [8], [65], [j-1], juld=[j-30])
+188 |     profile = fs.parse_profile(raw, 2909999, 25, NOW)
+189 |     traj = {"last_tx_field": "JULD_LAST_MESSAGE", "last_tx_iso": (NOW-timedelta(days=5)).isoformat(),
+    |                                                                                                     ^
+190 |             "last_fix": {"juld_iso": (NOW-timedelta(days=2)).isoformat(), "lat": 7, "lon": 64, "pos_qc": "1"}}
+191 |     got = fs.FleetSyncRegistry._serve_row(2909999, _row(traj, profile), {}, {}, NOW)
+    |
+
+E501 Line too long (110 > 100)
+   --> tests/test_fleet_status_audit.py:190:101
+    |
+188 |     profile = fs.parse_profile(raw, 2909999, 25, NOW)
+189 |     traj = {"last_tx_field": "JULD_LAST_MESSAGE", "last_tx_iso": (NOW-timedelta(days=5)).isoformat(),
+190 |             "last_fix": {"juld_iso": (NOW-timedelta(days=2)).isoformat(), "lat": 7, "lon": 64, "pos_qc": "1"}}
+    |                                                                                                     ^^^^^^^^^^
+191 |     got = fs.FleetSyncRegistry._serve_row(2909999, _row(traj, profile), {}, {}, NOW)
+192 |     assert got["pos_source"] == "profile"
+    |
+
+E501 Line too long (102 > 100)
+   --> tests/test_fleet_status_audit.py:200:101
+    |
+198 | @pytest.mark.parametrize("qc", ["0", "3", "4", "8", "9", " "])
+199 | def test_nonapproved_profile_position_qc_not_plotted(tmp_path, qc):
+200 |     raw = _write_profile(tmp_path / "qc.nc", juld=_juld(NOW-timedelta(days=1)), lat=10, lon=65, qc=qc)
+    |                                                                                                     ^^
+201 |     got = fs.parse_profile(raw, 2909999, 7, NOW)
+202 |     assert got["lat"] is None and got["lon"] is None
+    |
+
+E501 Line too long (117 > 100)
+   --> tests/test_fleet_status_audit.py:208:101
+    |
+207 | def test_profile_measurement_cannot_stand_in_for_missing_juld_location(tmp_path):
+208 |     raw = _write_profile(tmp_path / "loc.nc", juld=_juld(NOW-timedelta(days=1)), lat=10, lon=65, with_location=False)
+    |                                                                                                     ^^^^^^^^^^^^^^^^^
+209 |     got = fs.parse_profile(raw, 2909999, 7, NOW)
+210 |     assert got["position_iso"] is None and got["lat"] is None
+    |
+
+E501 Line too long (112 > 100)
+   --> tests/test_fleet_status_audit.py:215:101
+    |
+214 | def test_profile_cycles_include_descent_four_digits_and_deduplicate_families():
+215 |     files = ["D2909999_000.nc", "R2909999_001D.nc", "BD2909999_001.nc", "R2909999_1000D.nc", "ZZ2909999_999.nc"]
+    |                                                                                                     ^^^^^^^^^^^^
+216 |     got = fs.summarize_profiles(files + files, 2909999)
+217 |     assert got["max_cycle"] == 1000 and got["available_cycles"] == 2
+    |
+
+E501 Line too long (103 > 100)
+   --> tests/test_fleet_status_audit.py:281:101
+    |
+280 | @pytest.mark.parametrize("bad_members", [[], ["unexpected-response"]])
+281 | def test_empty_or_malformed_dac_membership_cannot_erase_valid_rows(tmp_path, monkeypatch, bad_members):
+    |                                                                                                     ^^^
+282 |     fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
+283 |     monkeypatch.setattr(reg, "_connect", lambda: fake)
+    |
+
+E501 Line too long (101 > 100)
+   --> tests/test_fleet_status_audit.py:291:101
+    |
+291 | def test_unparsed_profile_listing_cannot_turn_available_profiles_into_missing(tmp_path, monkeypatch):
+    |                                                                                                     ^
+292 |     fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
+293 |     monkeypatch.setattr(reg, "_connect", lambda: fake)
+    |
+
+E501 Line too long (102 > 100)
+   --> tests/test_fleet_status_audit.py:332:101
+    |
+332 | def test_scheduler_immediate_and_next_cycle_persist_and_use_effective_interval(tmp_path, monkeypatch):
+    |                                                                                                     ^^
+333 |     fake, reg = _fake_gdac(tmp_path), _reg(tmp_path, interval_s=1)
+334 |     monkeypatch.setattr(reg, "_connect", lambda: fake)
+    |
+
+E501 Line too long (131 > 100)
+   --> tests/test_fleet_status_audit.py:360:101
+    |
+359 | def test_sanitized_internal_identity_is_not_reconstructed():
+360 |     got = fs.FleetSyncRegistry._serve_row(2902086, None, {"platform_type": "PROVOR_III"}, {"ptt": "", "imei": "REDACTED_001"}, NOW)
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+361 |     assert got["internal_id"] is None
+362 |     assert got["float_type"] == "PROVOR_III"
+    |
+
+E501 Line too long (101 > 100)
+   --> tests/test_fleet_status_audit.py:375:101
+    |
+375 | def test_full_history_can_supply_newer_good_position_when_latest_cycle_is_bad(tmp_path, monkeypatch):
+    |                                                                                                     ^
+376 |     fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
+377 |     j = _juld(NOW)
+    |
+
+E501 Line too long (104 > 100)
+   --> tests/test_fleet_status_audit.py:382:101
+    |
+380 |     fake.profile_files["2909999_prof.nc"] = aggregate
+381 |     original_size = fake.size
+382 |     fake.size = lambda path: len(aggregate) if path.endswith("2909999_prof.nc") else original_size(path)
+    |                                                                                                     ^^^^
+383 |     fake.mdtms["2909999_prof.nc"] = "20260920090000"
+384 |     monkeypatch.setattr(reg, "_connect", lambda: fake)
+    |
+
+Found 132 errors (54 fixed, 78 remaining).

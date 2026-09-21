@@ -1,0 +1,17 @@
+import {chromium} from '/home/user/ARPY-decoder-Ui/incois-arpy-decoder/decoder-ui/frontend/node_modules/playwright/index.mjs';
+import fs from 'node:fs';
+const browser=await chromium.launch();const page=await browser.newPage({viewport:{width:1720,height:1000},timezoneId:'Asia/Kolkata'});
+const responses=[],errors=[];
+page.on('response',r=>{if(r.url().includes('arcgisonline'))responses.push({url:r.url(),status:r.status()});});
+page.on('requestfailed',r=>errors.push({url:r.url(),error:r.failure()}));
+await page.goto('http://127.0.0.1:3000');
+await page.getByTitle('Open Dedicated Results & Oceanographic Analysis Workspace').click();
+await page.getByRole('button',{name:'[ Float Status ]',exact:true}).click();
+await page.waitForFunction(()=>document.querySelector('[data-testid="esri-map-view"]')?.__fleetMapView?.view?.ready,null,{timeout:90000});
+await page.waitForFunction(()=>{const v=document.querySelector('[data-testid="esri-map-view"]')?.__fleetMapView?.view;return v?.ready&&v.stationary&&!v.updating;},null,{timeout:90000});
+const container=page.getByTestId('esri-map-view');
+const before=await container.evaluate(el=>{const v=el.__fleetMapView.view;return{center:v.center.toJSON(),extent:v.extent.toJSON(),zoom:v.zoom,stationary:v.stationary,updating:v.updating,layers:v.map.allLayers.toArray().map(l=>({id:l.id,load:l.loadStatus,visible:l.visible,graphics:l.graphics?.length})),markers:el.__fleetMapData.markers};});
+await page.screenshot({path:'/home/user/float-status-audit/browser/02-settled-map.png'});
+console.log('SETTLED',JSON.stringify(before));console.log('ESRI responses',responses.length,'failed',errors.length);
+fs.writeFileSync('/home/user/float-status-audit/browser/map-render-verification.json',JSON.stringify({before,responses,errors},null,2));
+await browser.close();

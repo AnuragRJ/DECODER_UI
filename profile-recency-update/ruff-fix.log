@@ -1,0 +1,166 @@
+E501 Line too long (110 > 100)
+   --> service/fleet_status.py:867:101
+    |
+865 |                         "error": None
+866 |                         if failed == 0
+867 |                         else f"{failed} float(s) had source refresh failures (kept last valid affected data)",
+    |                                                                                                     ^^^^^^^^^^
+868 |                         "counts": {
+869 |                             "total": len(wmos),
+    |
+
+E501 Line too long (103 > 100)
+    --> service/fleet_status.py:1222:101
+     |
+1220 |         )
+1221 |         if row.get("in_incois_dac") is False:
+1222 |             out["profile_date_error"] = row.get("reason") or "No profile history in Ifremer dac/incois"
+     |                                                                                                     ^^^
+1223 |             return out
+1224 |         rtraj, profs = row.get("rtraj") or {}, row.get("profiles") or {}
+     |
+
+E501 Line too long (108 > 100)
+    --> service/fleet_status.py:1328:101
+     |
+1326 |                 last_profile_index=aggregate.get("measurement_index"),
+1327 |                 last_profile_cycle=aggregate.get("measurement_cycle"),
+1328 |                 expected_next_profile_iso=(latest_date + timedelta(days=PROFILE_INTERVAL_DAYS)).isoformat(),
+     |                                                                                                     ^^^^^^^^
+1329 |                 days_since_last_profile=days,
+1330 |                 approx_profiles_missed=math.floor(days / PROFILE_INTERVAL_DAYS),
+     |
+
+E501 Line too long (102 > 100)
+   --> tests/test_fleet_status.py:595:101
+    |
+593 |     base = {"wmo": 1, "in_incois_dac": True, "parser_version": fs.PARSER_VERSION,
+594 |             "rtraj": {}, "profiles": {}, "error": None, "updated_at": None}
+595 |     for days, want in [(3, fs.STATUS_RECENT), (30, fs.STATUS_OVERDUE), (200, fs.STATUS_NO_RECENT_60)]:
+    |                                                                                                     ^^
+596 |         row = dict(base, profile_aggregate={"file": "1_prof.nc", "platform_number": "1",
+597 |                                            "juld": _juld(NOW - timedelta(days=days))})
+    |
+
+E501 Line too long (118 > 100)
+  --> tests/test_fleet_status_audit.py:85:101
+   |
+83 |     # trajectory timestamps nor its latest individual profile may be used.
+84 |     assert got["data_status"] == "NO DATA"
+85 |     for key in ("last_profile_iso", "expected_next_profile_iso", "days_since_last_profile", "approx_profiles_missed"):
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^
+86 |         assert got[key] is None
+87 |     assert got["profile_date_error"]
+   |
+
+E501 Line too long (122 > 100)
+   --> tests/test_fleet_status_audit.py:141:101
+    |
+141 | @pytest.mark.parametrize("value", [None, "bad", float("nan"), float("inf"), 999999, -1, _juld(AS_OF + timedelta(days=1))])
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^
+142 | def test_bad_and_future_cached_profile_values_are_unavailable(value):
+143 |     row = _row(profile={"platform_number": "2909999", "juld": value}, now=AS_OF)
+    |
+
+E501 Line too long (104 > 100)
+   --> tests/test_fleet_status_audit.py:226:101
+    |
+224 |     assert got["pos_source"] == "profile"
+225 |     assert got["position_time_field"] == "JULD_LOCATION"
+226 |     assert got["days_since_last_profile"] == pytest.approx(30)  # JULD, not location or trajectory time.
+    |                                                                                                     ^^^^
+227 |     assert datetime.fromisoformat(profile["juld_iso"]) < datetime.fromisoformat(got["position_iso"])
+    |
+
+E501 Line too long (110 > 100)
+  --> tests/test_profile_recency.py:51:101
+   |
+49 |     aggregate = history(entry["juld"], w) if entry["http_status"] == 200 else None
+50 |     source = row(aggregate, w)
+51 |     source["profiles"] = {"max_cycle": entry["inventory_max_cycle"], "missing": entry["inventory_gap_cycles"]}
+   |                                                                                                     ^^^^^^^^^^
+52 |     source["rtraj"] = {"last_tx_iso": entry["recorded_rtraj_date"], "last_tx_field": "JULD_LAST_MESSAGE"}
+53 |     if entry["http_status"] == 404:
+   |
+
+E501 Line too long (105 > 100)
+  --> tests/test_profile_recency.py:52:101
+   |
+50 |     source = row(aggregate, w)
+51 |     source["profiles"] = {"max_cycle": entry["inventory_max_cycle"], "missing": entry["inventory_gap_cycles"]}
+52 |     source["rtraj"] = {"last_tx_iso": entry["recorded_rtraj_date"], "last_tx_field": "JULD_LAST_MESSAGE"}
+   |                                                                                                     ^^^^^
+53 |     if entry["http_status"] == 404:
+54 |         source["in_incois_dac"] = False
+   |
+
+E501 Line too long (118 > 100)
+  --> tests/test_profile_recency.py:66:101
+   |
+64 |     assert got["days_since_last_profile"] == days
+65 |     assert got["approx_profiles_missed"] == math.floor(days / 10)
+66 |     expected_status = (fs.STATUS_RECENT if days <= 10 else fs.STATUS_OVERDUE if days < 60 else fs.STATUS_NO_RECENT_60)
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^
+67 |     assert got["data_status"] == expected_status
+68 |     # Exact published gaps remain independent internal inventory information.
+   |
+
+E501 Line too long (115 > 100)
+  --> tests/test_profile_recency.py:87:101
+   |
+87 | @pytest.mark.parametrize("message", [None, "1950-01-01T00:00:00Z", "2026-09-21T12:00:00Z", "2099-01-01T00:00:00Z"])
+   |                                                                                                     ^^^^^^^^^^^^^^^
+88 | def test_trajectory_message_never_drives_profile_monitoring(message):
+89 |     source = row(history(_juld(NOW - timedelta(days=12))))
+   |
+
+E501 Line too long (109 > 100)
+   --> tests/test_profile_recency.py:110:101
+    |
+108 |     assert got["days_since_last_profile"] is None
+109 |     assert got["approx_profiles_missed"] is None
+110 |     source["profile_aggregate"] = dict(history(None), position_juld=_juld(NOW), position_iso=NOW.isoformat())
+    |                                                                                                     ^^^^^^^^^
+111 |     assert serve(source)["data_status"] == "NO DATA"
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> tests/test_profile_recency.py:214:20
+    |
+212 |     fake.profile_files["2909999_prof.nc"] = new
+213 |     fake.mdtms["2909999_prof.nc"] = "20260921100000"
+214 |     fake.rtraj = {};fake.profiles_lists = {};fake.mdtms.pop("2909999_Rtraj.nc")
+    |                    ^
+215 |     monkeypatch.setattr(fs, "_utcnow", lambda: NOW)
+216 |     assert reg.sync_now()["status"] == "degraded"
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> tests/test_profile_recency.py:214:45
+    |
+212 |     fake.profile_files["2909999_prof.nc"] = new
+213 |     fake.mdtms["2909999_prof.nc"] = "20260921100000"
+214 |     fake.rtraj = {};fake.profiles_lists = {};fake.mdtms.pop("2909999_Rtraj.nc")
+    |                                             ^
+215 |     monkeypatch.setattr(fs, "_utcnow", lambda: NOW)
+216 |     assert reg.sync_now()["status"] == "degraded"
+    |
+
+E501 Line too long (103 > 100)
+   --> tests/test_profile_recency.py:236:101
+    |
+236 | def test_failed_profile_refresh_retains_valid_cached_profile_with_stale_warning(tmp_path, monkeypatch):
+    |                                                                                                     ^^^
+237 |     fake, reg = _fake_gdac(tmp_path), _reg(tmp_path)
+238 |     monkeypatch.setattr(reg, "_connect", lambda: fake)
+    |
+
+E501 Line too long (107 > 100)
+   --> tests/test_profile_recency.py:285:101
+    |
+283 |     assert info["field"] == "JULD (maximum valid value over N_PROF)"
+284 |     assert info["expected_profile_interval_days"] == 10
+285 |     assert info["approximation_note"] == "Approximate estimate based on the expected 10-day profile cycle."
+    |                                                                                                     ^^^^^^^
+
+Found 17 errors (1 fixed, 16 remaining).

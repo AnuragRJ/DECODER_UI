@@ -1,0 +1,34 @@
+# ===========================================================================
+# Runtime / operational data — NEVER commit these.
+# A downloaded workspace must start clean (fresh STANDBY, no prior batches).
+# Real history persists on the machine that produced it; regeneration happens
+# automatically the first time the workstation decodes anything.
+# (Empty directories are created on demand by the service — no .gitkeep needed.)
+# ===========================================================================
+
+# Persisted run/batch history, generated reports and sample decode outputs
+/decoder-ui/data/runs/
+/decoder-ui/data/batches/
+/decoder-ui/data/reports/
+/decoder-ui/data/test_output/
+
+# Decoder runtime output trees (per-WMO / per-run NetCDF + XML)
+/output/
+
+# Atomic-write residue (crash leftovers, swept on service startup)
+*.json.tmp
+
+# ---------------------------------------------------------------------------
+# Build / environment noise (preventive — keep the repo source-only)
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+
+# Editor / OS noise
+.DS_Store
+
+# Ingestion runtime state + local landing zone (operator/test drops)
+/decoder-ui/data/ingestion.json
+/decoder-ui/data/incoming/

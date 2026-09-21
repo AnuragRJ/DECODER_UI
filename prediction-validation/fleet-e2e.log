@@ -1,0 +1,994 @@
+
+> frontend@1.0.0 test:fleet
+> node e2e/fleetStatus.e2e.mjs
+
+PASS  cache endpoint serves the configured fleet  30 floats; sync=ok
+PASS  Float Status entry and page preserved
+PASS  sync and summary metrics visible
+PASS  actual ArcGIS map is ready (not obsolete SVG assertion)
+PASS  map basemap layers have loaded before visual evidence
+PASS  monitoring source is prof.nc JULD
+PASS  source metadata states the observed-interval policy
+PASS  fleet-wide prediction summary matches the rows  30/30 available
+PASS  every row carries an explicit prediction status
+PASS  prediction label is present and not a communication claim
+PASS  validation-derived radii, never fabricated
+PASS  unavailable predictions carry a null position and a reason
+PASS  calibration artefact is advertised with its own provenance
+PASS  absent current provider is stated identically on every row
+PASS  ML rung is never claimed
+PASS  per-float prediction endpoint agrees with the fleet payload
+PASS  per-float prediction endpoint refuses an unmonitored WMO
+PASS  forward-test audit is present and reports its own file
+PASS  forward test records one prediction per float without inflating the audit  issued=30 scored=0 pending=30
+PASS  forward-test metrics are only claimed once predictions have been scored
+PASS  the audit is disabled or honest, never silently empty
+PASS  scored predictions are attributed to the float they belong to
+PASS  all and only positioned floats have actual map markers  30 markers
+PASS  WMO 1902844: marker/API coordinates agree
+PASS  WMO 2901304: marker/API coordinates agree
+PASS  WMO 2901305: marker/API coordinates agree
+PASS  WMO 2901328: marker/API coordinates agree
+PASS  WMO 2901339: marker/API coordinates agree
+PASS  WMO 2901350: marker/API coordinates agree
+PASS  WMO 2902086: marker/API coordinates agree
+PASS  WMO 2902087: marker/API coordinates agree
+PASS  WMO 2902088: marker/API coordinates agree
+PASS  WMO 2902089: marker/API coordinates agree
+PASS  WMO 2902090: marker/API coordinates agree
+PASS  WMO 2902091: marker/API coordinates agree
+PASS  WMO 2902092: marker/API coordinates agree
+PASS  WMO 2902093: marker/API coordinates agree
+PASS  WMO 2902113: marker/API coordinates agree
+PASS  WMO 2902114: marker/API coordinates agree
+PASS  WMO 2902115: marker/API coordinates agree
+PASS  WMO 2902118: marker/API coordinates agree
+PASS  WMO 2902120: marker/API coordinates agree
+PASS  WMO 2902130: marker/API coordinates agree
+PASS  WMO 2902131: marker/API coordinates agree
+PASS  WMO 2902201: marker/API coordinates agree
+PASS  WMO 2902203: marker/API coordinates agree
+PASS  WMO 2902206: marker/API coordinates agree
+PASS  WMO 2902222: marker/API coordinates agree
+PASS  WMO 2902223: marker/API coordinates agree
+PASS  WMO 2902224: marker/API coordinates agree
+PASS  WMO 2904082: marker/API coordinates agree
+PASS  WMO 6990711: marker/API coordinates agree
+PASS  WMO 7902408: marker/API coordinates agree
+PASS  WMO 1902844: search selects exactly one row
+PASS  WMO 1902844: table fields match API  []
+PASS  WMO 1902844: Last Profile Date is UTC
+PASS  WMO 1902844: status follows the exact observed-interval / 60-day policy
+PASS  WMO 1902844: Expected Next Profile = Last Profile Date + observed interval (9.79 d)
+PASS  WMO 1902844: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 1902844: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 9.8-day profile cycle (median of 24 published profile dates).
+PASS  WMO 1902844: drawer states the interval used and its provenance
+PASS  WMO 1902844: drawer status and estimate agree
+PASS  WMO 1902844: drawer identity shows WMO
+PASS  WMO 1902844: drawer identity shows Internal ID
+PASS  WMO 1902844: drawer identity shows Float Type
+PASS  WMO 1902844: drawer position shows Latitude
+PASS  WMO 1902844: drawer position shows Longitude
+PASS  WMO 1902844: drawer inventory shows Prof#
+PASS  WMO 1902844: drawer recency shows Last Profile Date
+PASS  WMO 1902844: drawer recency shows Expected Next Profile
+PASS  WMO 1902844: drawer recency shows Days Since Last Profile
+PASS  WMO 1902844: drawer recency shows Approx. Profiles Missed
+PASS  WMO 1902844: drawer recency shows Data Status
+PASS  WMO 1902844: drawer recency shows Observed cycle interval
+PASS  WMO 1902844: drawer has the experimental prediction block
+PASS  WMO 1902844: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 1902844: predicted position matches the API  6.917°S 73.531°E
+PASS  WMO 1902844: method, rung, samples and status match the API
+PASS  WMO 1902844: uncertainty is the validated radius, never a placeholder
+PASS  WMO 1902844: horizon states the lead time behind the prediction  +9.79 d
+PASS  WMO 1902844: drawer quotes the calibration basis behind the radius
+PASS  WMO 1902844: profile wording only
+PASS  WMO 2901304: search selects exactly one row
+PASS  WMO 2901304: table fields match API  []
+PASS  WMO 2901304: Last Profile Date is UTC
+PASS  WMO 2901304: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2901304: Expected Next Profile = Last Profile Date + observed interval (10.04 d)
+PASS  WMO 2901304: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2901304: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 19 published profile dates).
+PASS  WMO 2901304: drawer states the interval used and its provenance
+PASS  WMO 2901304: drawer status and estimate agree
+PASS  WMO 2901304: drawer identity shows WMO
+PASS  WMO 2901304: drawer identity shows Internal ID
+PASS  WMO 2901304: drawer identity shows Float Type
+PASS  WMO 2901304: drawer position shows Latitude
+PASS  WMO 2901304: drawer position shows Longitude
+PASS  WMO 2901304: drawer inventory shows Prof#
+PASS  WMO 2901304: drawer recency shows Last Profile Date
+PASS  WMO 2901304: drawer recency shows Expected Next Profile
+PASS  WMO 2901304: drawer recency shows Days Since Last Profile
+PASS  WMO 2901304: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2901304: drawer recency shows Data Status
+PASS  WMO 2901304: drawer recency shows Observed cycle interval
+PASS  WMO 2901304: drawer has the experimental prediction block
+PASS  WMO 2901304: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2901304: predicted position matches the API  58.180°S 73.203°E
+PASS  WMO 2901304: method, rung, samples and status match the API
+PASS  WMO 2901304: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2901304: horizon states the lead time behind the prediction  +10.04 d
+PASS  WMO 2901304: drawer quotes the calibration basis behind the radius
+PASS  WMO 2901304: profile wording only
+PASS  WMO 2901305: search selects exactly one row
+PASS  WMO 2901305: table fields match API  []
+PASS  WMO 2901305: Last Profile Date is UTC
+PASS  WMO 2901305: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2901305: Expected Next Profile = Last Profile Date + observed interval (10.02 d)
+PASS  WMO 2901305: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2901305: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 26 published profile dates).
+PASS  WMO 2901305: drawer states the interval used and its provenance
+PASS  WMO 2901305: drawer status and estimate agree
+PASS  WMO 2901305: drawer identity shows WMO
+PASS  WMO 2901305: drawer identity shows Internal ID
+PASS  WMO 2901305: drawer identity shows Float Type
+PASS  WMO 2901305: drawer position shows Latitude
+PASS  WMO 2901305: drawer position shows Longitude
+PASS  WMO 2901305: drawer inventory shows Prof#
+PASS  WMO 2901305: drawer recency shows Last Profile Date
+PASS  WMO 2901305: drawer recency shows Expected Next Profile
+PASS  WMO 2901305: drawer recency shows Days Since Last Profile
+PASS  WMO 2901305: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2901305: drawer recency shows Data Status
+PASS  WMO 2901305: drawer recency shows Observed cycle interval
+PASS  WMO 2901305: drawer has the experimental prediction block
+PASS  WMO 2901305: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2901305: predicted position matches the API  62.267°S 60.567°E
+PASS  WMO 2901305: method, rung, samples and status match the API
+PASS  WMO 2901305: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2901305: horizon states the lead time behind the prediction  +10.02 d
+PASS  WMO 2901305: drawer quotes the calibration basis behind the radius
+PASS  WMO 2901305: profile wording only
+PASS  WMO 2901328: search selects exactly one row
+PASS  WMO 2901328: table fields match API  []
+PASS  WMO 2901328: Last Profile Date is UTC
+PASS  WMO 2901328: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2901328: Expected Next Profile = Last Profile Date + observed interval (5.01 d)
+PASS  WMO 2901328: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2901328: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 5.0-day profile cycle (median of 91 published profile dates).
+PASS  WMO 2901328: drawer states the interval used and its provenance
+PASS  WMO 2901328: drawer status and estimate agree
+PASS  WMO 2901328: drawer identity shows WMO
+PASS  WMO 2901328: drawer identity shows Internal ID
+PASS  WMO 2901328: drawer identity shows Float Type
+PASS  WMO 2901328: drawer position shows Latitude
+PASS  WMO 2901328: drawer position shows Longitude
+PASS  WMO 2901328: drawer inventory shows Prof#
+PASS  WMO 2901328: drawer recency shows Last Profile Date
+PASS  WMO 2901328: drawer recency shows Expected Next Profile
+PASS  WMO 2901328: drawer recency shows Days Since Last Profile
+PASS  WMO 2901328: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2901328: drawer recency shows Data Status
+PASS  WMO 2901328: drawer recency shows Observed cycle interval
+PASS  WMO 2901328: drawer has the experimental prediction block
+PASS  WMO 2901328: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2901328: predicted position matches the API  11.347°N 79.870°E
+PASS  WMO 2901328: method, rung, samples and status match the API
+PASS  WMO 2901328: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2901328: horizon states the lead time behind the prediction  +5.01 d
+PASS  WMO 2901328: drawer quotes the calibration basis behind the radius
+PASS  WMO 2901328: profile wording only
+PASS  WMO 2901339: search selects exactly one row
+PASS  WMO 2901339: table fields match API  []
+PASS  WMO 2901339: Last Profile Date is UTC
+PASS  WMO 2901339: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2901339: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2901339: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2901339: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 328 published profile dates).
+PASS  WMO 2901339: drawer states the interval used and its provenance
+PASS  WMO 2901339: drawer status and estimate agree
+PASS  WMO 2901339: drawer identity shows WMO
+PASS  WMO 2901339: drawer identity shows Internal ID
+PASS  WMO 2901339: drawer identity shows Float Type
+PASS  WMO 2901339: drawer position shows Latitude
+PASS  WMO 2901339: drawer position shows Longitude
+PASS  WMO 2901339: drawer inventory shows Prof#
+PASS  WMO 2901339: drawer recency shows Last Profile Date
+PASS  WMO 2901339: drawer recency shows Expected Next Profile
+PASS  WMO 2901339: drawer recency shows Days Since Last Profile
+PASS  WMO 2901339: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2901339: drawer recency shows Data Status
+PASS  WMO 2901339: drawer recency shows Observed cycle interval
+PASS  WMO 2901339: drawer has the experimental prediction block
+PASS  WMO 2901339: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2901339: predicted position matches the API  10.320°N 70.392°E
+PASS  WMO 2901339: method, rung, samples and status match the API
+PASS  WMO 2901339: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2901339: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2901339: drawer quotes the calibration basis behind the radius
+PASS  WMO 2901339: profile wording only
+PASS  WMO 2901350: search selects exactly one row
+PASS  WMO 2901350: table fields match API  []
+PASS  WMO 2901350: Last Profile Date is UTC
+PASS  WMO 2901350: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2901350: Expected Next Profile = Last Profile Date + observed interval (10.01 d)
+PASS  WMO 2901350: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2901350: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 300 published profile dates).
+PASS  WMO 2901350: drawer states the interval used and its provenance
+PASS  WMO 2901350: drawer status and estimate agree
+PASS  WMO 2901350: drawer identity shows WMO
+PASS  WMO 2901350: drawer identity shows Internal ID
+PASS  WMO 2901350: drawer identity shows Float Type
+PASS  WMO 2901350: drawer position shows Latitude
+PASS  WMO 2901350: drawer position shows Longitude
+PASS  WMO 2901350: drawer inventory shows Prof#
+PASS  WMO 2901350: drawer recency shows Last Profile Date
+PASS  WMO 2901350: drawer recency shows Expected Next Profile
+PASS  WMO 2901350: drawer recency shows Days Since Last Profile
+PASS  WMO 2901350: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2901350: drawer recency shows Data Status
+PASS  WMO 2901350: drawer recency shows Observed cycle interval
+PASS  WMO 2901350: drawer has the experimental prediction block
+PASS  WMO 2901350: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2901350: predicted position matches the API  49.814°S 178.443°E
+PASS  WMO 2901350: method, rung, samples and status match the API
+PASS  WMO 2901350: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2901350: horizon states the lead time behind the prediction  +10.01 d
+PASS  WMO 2901350: drawer quotes the calibration basis behind the radius
+PASS  WMO 2901350: profile wording only
+PASS  WMO 2902086: search selects exactly one row
+PASS  WMO 2902086: table fields match API  []
+PASS  WMO 2902086: Last Profile Date is UTC
+PASS  WMO 2902086: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902086: Expected Next Profile = Last Profile Date + observed interval (5.00 d)
+PASS  WMO 2902086: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902086: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 5.0-day profile cycle (median of 243 published profile dates).
+PASS  WMO 2902086: drawer states the interval used and its provenance
+PASS  WMO 2902086: drawer status and estimate agree
+PASS  WMO 2902086: drawer identity shows WMO
+PASS  WMO 2902086: drawer identity shows Internal ID
+PASS  WMO 2902086: drawer identity shows Float Type
+PASS  WMO 2902086: drawer position shows Latitude
+PASS  WMO 2902086: drawer position shows Longitude
+PASS  WMO 2902086: drawer inventory shows Prof#
+PASS  WMO 2902086: drawer recency shows Last Profile Date
+PASS  WMO 2902086: drawer recency shows Expected Next Profile
+PASS  WMO 2902086: drawer recency shows Days Since Last Profile
+PASS  WMO 2902086: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902086: drawer recency shows Data Status
+PASS  WMO 2902086: drawer recency shows Observed cycle interval
+PASS  WMO 2902086: drawer has the experimental prediction block
+PASS  WMO 2902086: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902086: predicted position matches the API  18.482°N 84.877°E
+PASS  WMO 2902086: method, rung, samples and status match the API
+PASS  WMO 2902086: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902086: horizon states the lead time behind the prediction  +5.00 d
+PASS  WMO 2902086: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902086: profile wording only
+PASS  WMO 2902087: search selects exactly one row
+PASS  WMO 2902087: table fields match API  []
+PASS  WMO 2902087: Last Profile Date is UTC
+PASS  WMO 2902087: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902087: Expected Next Profile = Last Profile Date + observed interval (5.00 d)
+PASS  WMO 2902087: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902087: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 5.0-day profile cycle (median of 297 published profile dates).
+PASS  WMO 2902087: drawer states the interval used and its provenance
+PASS  WMO 2902087: drawer status and estimate agree
+PASS  WMO 2902087: drawer identity shows WMO
+PASS  WMO 2902087: drawer identity shows Internal ID
+PASS  WMO 2902087: drawer identity shows Float Type
+PASS  WMO 2902087: drawer position shows Latitude
+PASS  WMO 2902087: drawer position shows Longitude
+PASS  WMO 2902087: drawer inventory shows Prof#
+PASS  WMO 2902087: drawer recency shows Last Profile Date
+PASS  WMO 2902087: drawer recency shows Expected Next Profile
+PASS  WMO 2902087: drawer recency shows Days Since Last Profile
+PASS  WMO 2902087: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902087: drawer recency shows Data Status
+PASS  WMO 2902087: drawer recency shows Observed cycle interval
+PASS  WMO 2902087: drawer has the experimental prediction block
+PASS  WMO 2902087: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902087: predicted position matches the API  12.028°N 80.513°E
+PASS  WMO 2902087: method, rung, samples and status match the API
+PASS  WMO 2902087: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902087: horizon states the lead time behind the prediction  +5.00 d
+PASS  WMO 2902087: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902087: profile wording only
+PASS  WMO 2902088: search selects exactly one row
+PASS  WMO 2902088: table fields match API  []
+PASS  WMO 2902088: Last Profile Date is UTC
+PASS  WMO 2902088: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902088: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902088: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902088: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 227 published profile dates).
+PASS  WMO 2902088: drawer states the interval used and its provenance
+PASS  WMO 2902088: drawer status and estimate agree
+PASS  WMO 2902088: drawer identity shows WMO
+PASS  WMO 2902088: drawer identity shows Internal ID
+PASS  WMO 2902088: drawer identity shows Float Type
+PASS  WMO 2902088: drawer position shows Latitude
+PASS  WMO 2902088: drawer position shows Longitude
+PASS  WMO 2902088: drawer inventory shows Prof#
+PASS  WMO 2902088: drawer recency shows Last Profile Date
+PASS  WMO 2902088: drawer recency shows Expected Next Profile
+PASS  WMO 2902088: drawer recency shows Days Since Last Profile
+PASS  WMO 2902088: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902088: drawer recency shows Data Status
+PASS  WMO 2902088: drawer recency shows Observed cycle interval
+PASS  WMO 2902088: drawer has the experimental prediction block
+PASS  WMO 2902088: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902088: predicted position matches the API  3.911°S 86.901°E
+PASS  WMO 2902088: method, rung, samples and status match the API
+PASS  WMO 2902088: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902088: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902088: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902088: profile wording only
+PASS  WMO 2902089: search selects exactly one row
+PASS  WMO 2902089: table fields match API  []
+PASS  WMO 2902089: Last Profile Date is UTC
+PASS  WMO 2902089: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902089: Expected Next Profile = Last Profile Date + observed interval (5.00 d)
+PASS  WMO 2902089: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902089: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 5.0-day profile cycle (median of 59 published profile dates).
+PASS  WMO 2902089: drawer states the interval used and its provenance
+PASS  WMO 2902089: drawer status and estimate agree
+PASS  WMO 2902089: drawer identity shows WMO
+PASS  WMO 2902089: drawer identity shows Internal ID
+PASS  WMO 2902089: drawer identity shows Float Type
+PASS  WMO 2902089: drawer position shows Latitude
+PASS  WMO 2902089: drawer position shows Longitude
+PASS  WMO 2902089: drawer inventory shows Prof#
+PASS  WMO 2902089: drawer recency shows Last Profile Date
+PASS  WMO 2902089: drawer recency shows Expected Next Profile
+PASS  WMO 2902089: drawer recency shows Days Since Last Profile
+PASS  WMO 2902089: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902089: drawer recency shows Data Status
+PASS  WMO 2902089: drawer recency shows Observed cycle interval
+PASS  WMO 2902089: drawer has the experimental prediction block
+PASS  WMO 2902089: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902089: predicted position matches the API  21.030°S 60.957°E
+PASS  WMO 2902089: method, rung, samples and status match the API
+PASS  WMO 2902089: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902089: horizon states the lead time behind the prediction  +5.00 d
+PASS  WMO 2902089: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902089: profile wording only
+PASS  WMO 2902090: search selects exactly one row
+PASS  WMO 2902090: table fields match API  []
+PASS  WMO 2902090: Last Profile Date is UTC
+PASS  WMO 2902090: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902090: Expected Next Profile = Last Profile Date + observed interval (9.99 d)
+PASS  WMO 2902090: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902090: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 15 published profile dates).
+PASS  WMO 2902090: drawer states the interval used and its provenance
+PASS  WMO 2902090: drawer status and estimate agree
+PASS  WMO 2902090: drawer identity shows WMO
+PASS  WMO 2902090: drawer identity shows Internal ID
+PASS  WMO 2902090: drawer identity shows Float Type
+PASS  WMO 2902090: drawer position shows Latitude
+PASS  WMO 2902090: drawer position shows Longitude
+PASS  WMO 2902090: drawer inventory shows Prof#
+PASS  WMO 2902090: drawer recency shows Last Profile Date
+PASS  WMO 2902090: drawer recency shows Expected Next Profile
+PASS  WMO 2902090: drawer recency shows Days Since Last Profile
+PASS  WMO 2902090: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902090: drawer recency shows Data Status
+PASS  WMO 2902090: drawer recency shows Observed cycle interval
+PASS  WMO 2902090: drawer has the experimental prediction block
+PASS  WMO 2902090: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902090: predicted position matches the API  56.799°S 59.493°E
+PASS  WMO 2902090: method, rung, samples and status match the API
+PASS  WMO 2902090: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902090: horizon states the lead time behind the prediction  +9.99 d
+PASS  WMO 2902090: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902090: profile wording only
+PASS  WMO 2902091: search selects exactly one row
+PASS  WMO 2902091: table fields match API  []
+PASS  WMO 2902091: Last Profile Date is UTC
+PASS  WMO 2902091: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902091: Expected Next Profile = Last Profile Date + observed interval (1.00 d)
+PASS  WMO 2902091: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902091: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 1.0-day profile cycle (median of 12 published profile dates).
+PASS  WMO 2902091: drawer states the interval used and its provenance
+PASS  WMO 2902091: drawer status and estimate agree
+PASS  WMO 2902091: drawer identity shows WMO
+PASS  WMO 2902091: drawer identity shows Internal ID
+PASS  WMO 2902091: drawer identity shows Float Type
+PASS  WMO 2902091: drawer position shows Latitude
+PASS  WMO 2902091: drawer position shows Longitude
+PASS  WMO 2902091: drawer inventory shows Prof#
+PASS  WMO 2902091: drawer recency shows Last Profile Date
+PASS  WMO 2902091: drawer recency shows Expected Next Profile
+PASS  WMO 2902091: drawer recency shows Days Since Last Profile
+PASS  WMO 2902091: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902091: drawer recency shows Data Status
+PASS  WMO 2902091: drawer recency shows Observed cycle interval
+PASS  WMO 2902091: drawer has the experimental prediction block
+PASS  WMO 2902091: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902091: predicted position matches the API  20.040°N 65.769°E
+PASS  WMO 2902091: method, rung, samples and status match the API
+PASS  WMO 2902091: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902091: horizon states the lead time behind the prediction  +1.00 d
+PASS  WMO 2902091: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902091: profile wording only
+PASS  WMO 2902092: search selects exactly one row
+PASS  WMO 2902092: table fields match API  []
+PASS  WMO 2902092: Last Profile Date is UTC
+PASS  WMO 2902092: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902092: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902092: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902092: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 148 published profile dates).
+PASS  WMO 2902092: drawer states the interval used and its provenance
+PASS  WMO 2902092: drawer status and estimate agree
+PASS  WMO 2902092: drawer identity shows WMO
+PASS  WMO 2902092: drawer identity shows Internal ID
+PASS  WMO 2902092: drawer identity shows Float Type
+PASS  WMO 2902092: drawer position shows Latitude
+PASS  WMO 2902092: drawer position shows Longitude
+PASS  WMO 2902092: drawer inventory shows Prof#
+PASS  WMO 2902092: drawer recency shows Last Profile Date
+PASS  WMO 2902092: drawer recency shows Expected Next Profile
+PASS  WMO 2902092: drawer recency shows Days Since Last Profile
+PASS  WMO 2902092: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902092: drawer recency shows Data Status
+PASS  WMO 2902092: drawer recency shows Observed cycle interval
+PASS  WMO 2902092: drawer has the experimental prediction block
+PASS  WMO 2902092: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902092: predicted position matches the API  18.790°N 67.853°E
+PASS  WMO 2902092: method, rung, samples and status match the API
+PASS  WMO 2902092: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902092: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902092: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902092: profile wording only
+PASS  WMO 2902093: search selects exactly one row
+PASS  WMO 2902093: table fields match API  []
+PASS  WMO 2902093: Last Profile Date is UTC
+PASS  WMO 2902093: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902093: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902093: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902093: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 233 published profile dates).
+PASS  WMO 2902093: drawer states the interval used and its provenance
+PASS  WMO 2902093: drawer status and estimate agree
+PASS  WMO 2902093: drawer identity shows WMO
+PASS  WMO 2902093: drawer identity shows Internal ID
+PASS  WMO 2902093: drawer identity shows Float Type
+PASS  WMO 2902093: drawer position shows Latitude
+PASS  WMO 2902093: drawer position shows Longitude
+PASS  WMO 2902093: drawer inventory shows Prof#
+PASS  WMO 2902093: drawer recency shows Last Profile Date
+PASS  WMO 2902093: drawer recency shows Expected Next Profile
+PASS  WMO 2902093: drawer recency shows Days Since Last Profile
+PASS  WMO 2902093: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902093: drawer recency shows Data Status
+PASS  WMO 2902093: drawer recency shows Observed cycle interval
+PASS  WMO 2902093: drawer has the experimental prediction block
+PASS  WMO 2902093: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902093: predicted position matches the API  13.968°N 67.648°E
+PASS  WMO 2902093: method, rung, samples and status match the API
+PASS  WMO 2902093: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902093: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902093: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902093: profile wording only
+PASS  WMO 2902113: search selects exactly one row
+PASS  WMO 2902113: table fields match API  []
+PASS  WMO 2902113: Last Profile Date is UTC
+PASS  WMO 2902113: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902113: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902113: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902113: estimate tooltip states the observed interval and its source  Approximate estimate based on the expected 10-day profile cycle (no sufficient observed cycle history).
+PASS  WMO 2902113: drawer states the interval used and its provenance
+PASS  WMO 2902113: drawer status and estimate agree
+PASS  WMO 2902113: drawer identity shows WMO
+PASS  WMO 2902113: drawer identity shows Internal ID
+PASS  WMO 2902113: drawer identity shows Float Type
+PASS  WMO 2902113: drawer position shows Latitude
+PASS  WMO 2902113: drawer position shows Longitude
+PASS  WMO 2902113: drawer inventory shows Prof#
+PASS  WMO 2902113: drawer recency shows Last Profile Date
+PASS  WMO 2902113: drawer recency shows Expected Next Profile
+PASS  WMO 2902113: drawer recency shows Days Since Last Profile
+PASS  WMO 2902113: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902113: drawer recency shows Data Status
+PASS  WMO 2902113: drawer recency shows Observed cycle interval
+PASS  WMO 2902113: drawer has the experimental prediction block
+PASS  WMO 2902113: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902113: predicted position matches the API  18.231°N 88.977°E
+PASS  WMO 2902113: method, rung, samples and status match the API
+PASS  WMO 2902113: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902113: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902113: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902113: profile wording only
+PASS  WMO 2902114: search selects exactly one row
+PASS  WMO 2902114: table fields match API  []
+PASS  WMO 2902114: Last Profile Date is UTC
+PASS  WMO 2902114: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902114: Expected Next Profile = Last Profile Date + observed interval (5.00 d)
+PASS  WMO 2902114: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902114: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 5.0-day profile cycle (median of 283 published profile dates).
+PASS  WMO 2902114: drawer states the interval used and its provenance
+PASS  WMO 2902114: drawer status and estimate agree
+PASS  WMO 2902114: drawer identity shows WMO
+PASS  WMO 2902114: drawer identity shows Internal ID
+PASS  WMO 2902114: drawer identity shows Float Type
+PASS  WMO 2902114: drawer position shows Latitude
+PASS  WMO 2902114: drawer position shows Longitude
+PASS  WMO 2902114: drawer inventory shows Prof#
+PASS  WMO 2902114: drawer recency shows Last Profile Date
+PASS  WMO 2902114: drawer recency shows Expected Next Profile
+PASS  WMO 2902114: drawer recency shows Days Since Last Profile
+PASS  WMO 2902114: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902114: drawer recency shows Data Status
+PASS  WMO 2902114: drawer recency shows Observed cycle interval
+PASS  WMO 2902114: drawer has the experimental prediction block
+PASS  WMO 2902114: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902114: predicted position matches the API  14.569°N 87.323°E
+PASS  WMO 2902114: method, rung, samples and status match the API
+PASS  WMO 2902114: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902114: horizon states the lead time behind the prediction  +5.00 d
+PASS  WMO 2902114: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902114: profile wording only
+PASS  WMO 2902115: search selects exactly one row
+PASS  WMO 2902115: table fields match API  []
+PASS  WMO 2902115: Last Profile Date is UTC
+PASS  WMO 2902115: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902115: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902115: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902115: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 237 published profile dates).
+PASS  WMO 2902115: drawer states the interval used and its provenance
+PASS  WMO 2902115: drawer status and estimate agree
+PASS  WMO 2902115: drawer identity shows WMO
+PASS  WMO 2902115: drawer identity shows Internal ID
+PASS  WMO 2902115: drawer identity shows Float Type
+PASS  WMO 2902115: drawer position shows Latitude
+PASS  WMO 2902115: drawer position shows Longitude
+PASS  WMO 2902115: drawer inventory shows Prof#
+PASS  WMO 2902115: drawer recency shows Last Profile Date
+PASS  WMO 2902115: drawer recency shows Expected Next Profile
+PASS  WMO 2902115: drawer recency shows Days Since Last Profile
+PASS  WMO 2902115: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902115: drawer recency shows Data Status
+PASS  WMO 2902115: drawer recency shows Observed cycle interval
+PASS  WMO 2902115: drawer has the experimental prediction block
+PASS  WMO 2902115: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902115: predicted position matches the API  53.354°S 172.834°E
+PASS  WMO 2902115: method, rung, samples and status match the API
+PASS  WMO 2902115: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902115: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902115: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902115: profile wording only
+PASS  WMO 2902118: search selects exactly one row
+PASS  WMO 2902118: table fields match API  []
+PASS  WMO 2902118: Last Profile Date is UTC
+PASS  WMO 2902118: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902118: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902118: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902118: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 260 published profile dates).
+PASS  WMO 2902118: drawer states the interval used and its provenance
+PASS  WMO 2902118: drawer status and estimate agree
+PASS  WMO 2902118: drawer identity shows WMO
+PASS  WMO 2902118: drawer identity shows Internal ID
+PASS  WMO 2902118: drawer identity shows Float Type
+PASS  WMO 2902118: drawer position shows Latitude
+PASS  WMO 2902118: drawer position shows Longitude
+PASS  WMO 2902118: drawer inventory shows Prof#
+PASS  WMO 2902118: drawer recency shows Last Profile Date
+PASS  WMO 2902118: drawer recency shows Expected Next Profile
+PASS  WMO 2902118: drawer recency shows Days Since Last Profile
+PASS  WMO 2902118: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902118: drawer recency shows Data Status
+PASS  WMO 2902118: drawer recency shows Observed cycle interval
+PASS  WMO 2902118: drawer has the experimental prediction block
+PASS  WMO 2902118: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902118: predicted position matches the API  11.954°N 64.683°E
+PASS  WMO 2902118: method, rung, samples and status match the API
+PASS  WMO 2902118: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902118: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902118: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902118: profile wording only
+PASS  WMO 2902120: search selects exactly one row
+PASS  WMO 2902120: table fields match API  []
+PASS  WMO 2902120: Last Profile Date is UTC
+PASS  WMO 2902120: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902120: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902120: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902120: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 261 published profile dates).
+PASS  WMO 2902120: drawer states the interval used and its provenance
+PASS  WMO 2902120: drawer status and estimate agree
+PASS  WMO 2902120: drawer identity shows WMO
+PASS  WMO 2902120: drawer identity shows Internal ID
+PASS  WMO 2902120: drawer identity shows Float Type
+PASS  WMO 2902120: drawer position shows Latitude
+PASS  WMO 2902120: drawer position shows Longitude
+PASS  WMO 2902120: drawer inventory shows Prof#
+PASS  WMO 2902120: drawer recency shows Last Profile Date
+PASS  WMO 2902120: drawer recency shows Expected Next Profile
+PASS  WMO 2902120: drawer recency shows Days Since Last Profile
+PASS  WMO 2902120: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902120: drawer recency shows Data Status
+PASS  WMO 2902120: drawer recency shows Observed cycle interval
+PASS  WMO 2902120: drawer has the experimental prediction block
+PASS  WMO 2902120: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902120: predicted position matches the API  13.408°N 69.419°E
+PASS  WMO 2902120: method, rung, samples and status match the API
+PASS  WMO 2902120: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902120: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902120: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902120: profile wording only
+PASS  WMO 2902130: search selects exactly one row
+PASS  WMO 2902130: table fields match API  []
+PASS  WMO 2902130: Last Profile Date is UTC
+PASS  WMO 2902130: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902130: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902130: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902130: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 188 published profile dates).
+PASS  WMO 2902130: drawer states the interval used and its provenance
+PASS  WMO 2902130: drawer status and estimate agree
+PASS  WMO 2902130: drawer identity shows WMO
+PASS  WMO 2902130: drawer identity shows Internal ID
+PASS  WMO 2902130: drawer identity shows Float Type
+PASS  WMO 2902130: drawer position shows Latitude
+PASS  WMO 2902130: drawer position shows Longitude
+PASS  WMO 2902130: drawer inventory shows Prof#
+PASS  WMO 2902130: drawer recency shows Last Profile Date
+PASS  WMO 2902130: drawer recency shows Expected Next Profile
+PASS  WMO 2902130: drawer recency shows Days Since Last Profile
+PASS  WMO 2902130: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902130: drawer recency shows Data Status
+PASS  WMO 2902130: drawer recency shows Observed cycle interval
+PASS  WMO 2902130: drawer has the experimental prediction block
+PASS  WMO 2902130: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902130: predicted position matches the API  52.365°S 102.739°E
+PASS  WMO 2902130: method, rung, samples and status match the API
+PASS  WMO 2902130: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902130: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902130: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902130: profile wording only
+PASS  WMO 2902131: search selects exactly one row
+PASS  WMO 2902131: table fields match API  []
+PASS  WMO 2902131: Last Profile Date is UTC
+PASS  WMO 2902131: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902131: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902131: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902131: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 96 published profile dates).
+PASS  WMO 2902131: drawer states the interval used and its provenance
+PASS  WMO 2902131: drawer status and estimate agree
+PASS  WMO 2902131: drawer identity shows WMO
+PASS  WMO 2902131: drawer identity shows Internal ID
+PASS  WMO 2902131: drawer identity shows Float Type
+PASS  WMO 2902131: drawer position shows Latitude
+PASS  WMO 2902131: drawer position shows Longitude
+PASS  WMO 2902131: drawer inventory shows Prof#
+PASS  WMO 2902131: drawer recency shows Last Profile Date
+PASS  WMO 2902131: drawer recency shows Expected Next Profile
+PASS  WMO 2902131: drawer recency shows Days Since Last Profile
+PASS  WMO 2902131: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902131: drawer recency shows Data Status
+PASS  WMO 2902131: drawer recency shows Observed cycle interval
+PASS  WMO 2902131: drawer has the experimental prediction block
+PASS  WMO 2902131: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902131: predicted position matches the API  42.712°S 42.234°E
+PASS  WMO 2902131: method, rung, samples and status match the API
+PASS  WMO 2902131: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902131: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902131: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902131: profile wording only
+PASS  WMO 2902201: search selects exactly one row
+PASS  WMO 2902201: table fields match API  []
+PASS  WMO 2902201: Last Profile Date is UTC
+PASS  WMO 2902201: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902201: Expected Next Profile = Last Profile Date + observed interval (9.99 d)
+PASS  WMO 2902201: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902201: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 349 published profile dates).
+PASS  WMO 2902201: drawer states the interval used and its provenance
+PASS  WMO 2902201: drawer status and estimate agree
+PASS  WMO 2902201: drawer identity shows WMO
+PASS  WMO 2902201: drawer identity shows Internal ID
+PASS  WMO 2902201: drawer identity shows Float Type
+PASS  WMO 2902201: drawer position shows Latitude
+PASS  WMO 2902201: drawer position shows Longitude
+PASS  WMO 2902201: drawer inventory shows Prof#
+PASS  WMO 2902201: drawer recency shows Last Profile Date
+PASS  WMO 2902201: drawer recency shows Expected Next Profile
+PASS  WMO 2902201: drawer recency shows Days Since Last Profile
+PASS  WMO 2902201: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902201: drawer recency shows Data Status
+PASS  WMO 2902201: drawer recency shows Observed cycle interval
+PASS  WMO 2902201: drawer has the experimental prediction block
+PASS  WMO 2902201: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902201: predicted position matches the API  22.380°N 61.216°E
+PASS  WMO 2902201: method, rung, samples and status match the API
+PASS  WMO 2902201: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902201: horizon states the lead time behind the prediction  +9.99 d
+PASS  WMO 2902201: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902201: profile wording only
+PASS  WMO 2902203: search selects exactly one row
+PASS  WMO 2902203: table fields match API  []
+PASS  WMO 2902203: Last Profile Date is UTC
+PASS  WMO 2902203: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902203: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902203: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902203: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 364 published profile dates).
+PASS  WMO 2902203: drawer states the interval used and its provenance
+PASS  WMO 2902203: drawer status and estimate agree
+PASS  WMO 2902203: drawer identity shows WMO
+PASS  WMO 2902203: drawer identity shows Internal ID
+PASS  WMO 2902203: drawer identity shows Float Type
+PASS  WMO 2902203: drawer position shows Latitude
+PASS  WMO 2902203: drawer position shows Longitude
+PASS  WMO 2902203: drawer inventory shows Prof#
+PASS  WMO 2902203: drawer recency shows Last Profile Date
+PASS  WMO 2902203: drawer recency shows Expected Next Profile
+PASS  WMO 2902203: drawer recency shows Days Since Last Profile
+PASS  WMO 2902203: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902203: drawer recency shows Data Status
+PASS  WMO 2902203: drawer recency shows Observed cycle interval
+PASS  WMO 2902203: drawer has the experimental prediction block
+PASS  WMO 2902203: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902203: predicted position matches the API  13.438°N 64.958°E
+PASS  WMO 2902203: method, rung, samples and status match the API
+PASS  WMO 2902203: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902203: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902203: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902203: profile wording only
+PASS  WMO 2902206: search selects exactly one row
+PASS  WMO 2902206: table fields match API  []
+PASS  WMO 2902206: Last Profile Date is UTC
+PASS  WMO 2902206: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902206: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902206: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902206: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 351 published profile dates).
+PASS  WMO 2902206: drawer states the interval used and its provenance
+PASS  WMO 2902206: drawer status and estimate agree
+PASS  WMO 2902206: drawer identity shows WMO
+PASS  WMO 2902206: drawer identity shows Internal ID
+PASS  WMO 2902206: drawer identity shows Float Type
+PASS  WMO 2902206: drawer position shows Latitude
+PASS  WMO 2902206: drawer position shows Longitude
+PASS  WMO 2902206: drawer inventory shows Prof#
+PASS  WMO 2902206: drawer recency shows Last Profile Date
+PASS  WMO 2902206: drawer recency shows Expected Next Profile
+PASS  WMO 2902206: drawer recency shows Days Since Last Profile
+PASS  WMO 2902206: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902206: drawer recency shows Data Status
+PASS  WMO 2902206: drawer recency shows Observed cycle interval
+PASS  WMO 2902206: drawer has the experimental prediction block
+PASS  WMO 2902206: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902206: predicted position matches the API  9.044°N 67.319°E
+PASS  WMO 2902206: method, rung, samples and status match the API
+PASS  WMO 2902206: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902206: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902206: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902206: profile wording only
+PASS  WMO 2902222: search selects exactly one row
+PASS  WMO 2902222: table fields match API  []
+PASS  WMO 2902222: Last Profile Date is UTC
+PASS  WMO 2902222: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902222: Expected Next Profile = Last Profile Date + observed interval (9.99 d)
+PASS  WMO 2902222: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902222: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 348 published profile dates).
+PASS  WMO 2902222: drawer states the interval used and its provenance
+PASS  WMO 2902222: drawer status and estimate agree
+PASS  WMO 2902222: drawer identity shows WMO
+PASS  WMO 2902222: drawer identity shows Internal ID
+PASS  WMO 2902222: drawer identity shows Float Type
+PASS  WMO 2902222: drawer position shows Latitude
+PASS  WMO 2902222: drawer position shows Longitude
+PASS  WMO 2902222: drawer inventory shows Prof#
+PASS  WMO 2902222: drawer recency shows Last Profile Date
+PASS  WMO 2902222: drawer recency shows Expected Next Profile
+PASS  WMO 2902222: drawer recency shows Days Since Last Profile
+PASS  WMO 2902222: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902222: drawer recency shows Data Status
+PASS  WMO 2902222: drawer recency shows Observed cycle interval
+PASS  WMO 2902222: drawer has the experimental prediction block
+PASS  WMO 2902222: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902222: predicted position matches the API  61.434°S 132.309°W
+PASS  WMO 2902222: method, rung, samples and status match the API
+PASS  WMO 2902222: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902222: horizon states the lead time behind the prediction  +9.99 d
+PASS  WMO 2902222: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902222: profile wording only
+PASS  WMO 2902223: search selects exactly one row
+PASS  WMO 2902223: table fields match API  []
+PASS  WMO 2902223: Last Profile Date is UTC
+PASS  WMO 2902223: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902223: Expected Next Profile = Last Profile Date + observed interval (10.00 d)
+PASS  WMO 2902223: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902223: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 349 published profile dates).
+PASS  WMO 2902223: drawer states the interval used and its provenance
+PASS  WMO 2902223: drawer status and estimate agree
+PASS  WMO 2902223: drawer identity shows WMO
+PASS  WMO 2902223: drawer identity shows Internal ID
+PASS  WMO 2902223: drawer identity shows Float Type
+PASS  WMO 2902223: drawer position shows Latitude
+PASS  WMO 2902223: drawer position shows Longitude
+PASS  WMO 2902223: drawer inventory shows Prof#
+PASS  WMO 2902223: drawer recency shows Last Profile Date
+PASS  WMO 2902223: drawer recency shows Expected Next Profile
+PASS  WMO 2902223: drawer recency shows Days Since Last Profile
+PASS  WMO 2902223: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902223: drawer recency shows Data Status
+PASS  WMO 2902223: drawer recency shows Observed cycle interval
+PASS  WMO 2902223: drawer has the experimental prediction block
+PASS  WMO 2902223: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902223: predicted position matches the API  45.677°S 8.860°E
+PASS  WMO 2902223: method, rung, samples and status match the API
+PASS  WMO 2902223: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902223: horizon states the lead time behind the prediction  +10.00 d
+PASS  WMO 2902223: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902223: profile wording only
+PASS  WMO 2902224: search selects exactly one row
+PASS  WMO 2902224: table fields match API  []
+PASS  WMO 2902224: Last Profile Date is UTC
+PASS  WMO 2902224: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2902224: Expected Next Profile = Last Profile Date + observed interval (9.99 d)
+PASS  WMO 2902224: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2902224: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 10.0-day profile cycle (median of 344 published profile dates).
+PASS  WMO 2902224: drawer states the interval used and its provenance
+PASS  WMO 2902224: drawer status and estimate agree
+PASS  WMO 2902224: drawer identity shows WMO
+PASS  WMO 2902224: drawer identity shows Internal ID
+PASS  WMO 2902224: drawer identity shows Float Type
+PASS  WMO 2902224: drawer position shows Latitude
+PASS  WMO 2902224: drawer position shows Longitude
+PASS  WMO 2902224: drawer inventory shows Prof#
+PASS  WMO 2902224: drawer recency shows Last Profile Date
+PASS  WMO 2902224: drawer recency shows Expected Next Profile
+PASS  WMO 2902224: drawer recency shows Days Since Last Profile
+PASS  WMO 2902224: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2902224: drawer recency shows Data Status
+PASS  WMO 2902224: drawer recency shows Observed cycle interval
+PASS  WMO 2902224: drawer has the experimental prediction block
+PASS  WMO 2902224: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2902224: predicted position matches the API  42.030°S 32.101°W
+PASS  WMO 2902224: method, rung, samples and status match the API
+PASS  WMO 2902224: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2902224: horizon states the lead time behind the prediction  +9.99 d
+PASS  WMO 2902224: drawer quotes the calibration basis behind the radius
+PASS  WMO 2902224: profile wording only
+PASS  WMO 2904082: search selects exactly one row
+PASS  WMO 2904082: table fields match API  []
+PASS  WMO 2904082: Last Profile Date is UTC
+PASS  WMO 2904082: status follows the exact observed-interval / 60-day policy
+PASS  WMO 2904082: Expected Next Profile = Last Profile Date + observed interval (9.79 d)
+PASS  WMO 2904082: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 2904082: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 9.8-day profile cycle (median of 25 published profile dates).
+PASS  WMO 2904082: drawer states the interval used and its provenance
+PASS  WMO 2904082: drawer status and estimate agree
+PASS  WMO 2904082: drawer identity shows WMO
+PASS  WMO 2904082: drawer identity shows Internal ID
+PASS  WMO 2904082: drawer identity shows Float Type
+PASS  WMO 2904082: drawer position shows Latitude
+PASS  WMO 2904082: drawer position shows Longitude
+PASS  WMO 2904082: drawer inventory shows Prof#
+PASS  WMO 2904082: drawer recency shows Last Profile Date
+PASS  WMO 2904082: drawer recency shows Expected Next Profile
+PASS  WMO 2904082: drawer recency shows Days Since Last Profile
+PASS  WMO 2904082: drawer recency shows Approx. Profiles Missed
+PASS  WMO 2904082: drawer recency shows Data Status
+PASS  WMO 2904082: drawer recency shows Observed cycle interval
+PASS  WMO 2904082: drawer has the experimental prediction block
+PASS  WMO 2904082: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 2904082: predicted position matches the API  6.917°S 73.531°E
+PASS  WMO 2904082: method, rung, samples and status match the API
+PASS  WMO 2904082: uncertainty is the validated radius, never a placeholder
+PASS  WMO 2904082: horizon states the lead time behind the prediction  +9.79 d
+PASS  WMO 2904082: drawer quotes the calibration basis behind the radius
+PASS  WMO 2904082: profile wording only
+PASS  WMO 6990711: search selects exactly one row
+PASS  WMO 6990711: table fields match API  []
+PASS  WMO 6990711: Last Profile Date is UTC
+PASS  WMO 6990711: status follows the exact observed-interval / 60-day policy
+PASS  WMO 6990711: Expected Next Profile = Last Profile Date + observed interval (9.79 d)
+PASS  WMO 6990711: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 6990711: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 9.8-day profile cycle (median of 5 published profile dates).
+PASS  WMO 6990711: drawer states the interval used and its provenance
+PASS  WMO 6990711: drawer status and estimate agree
+PASS  WMO 6990711: drawer identity shows WMO
+PASS  WMO 6990711: drawer identity shows Internal ID
+PASS  WMO 6990711: drawer identity shows Float Type
+PASS  WMO 6990711: drawer position shows Latitude
+PASS  WMO 6990711: drawer position shows Longitude
+PASS  WMO 6990711: drawer inventory shows Prof#
+PASS  WMO 6990711: drawer recency shows Last Profile Date
+PASS  WMO 6990711: drawer recency shows Expected Next Profile
+PASS  WMO 6990711: drawer recency shows Days Since Last Profile
+PASS  WMO 6990711: drawer recency shows Approx. Profiles Missed
+PASS  WMO 6990711: drawer recency shows Data Status
+PASS  WMO 6990711: drawer recency shows Observed cycle interval
+PASS  WMO 6990711: drawer has the experimental prediction block
+PASS  WMO 6990711: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 6990711: predicted position matches the API  64.670°S 70.346°E
+PASS  WMO 6990711: method, rung, samples and status match the API
+PASS  WMO 6990711: uncertainty is the validated radius, never a placeholder
+PASS  WMO 6990711: horizon states the lead time behind the prediction  +9.79 d
+PASS  WMO 6990711: drawer quotes the calibration basis behind the radius
+PASS  WMO 6990711: profile wording only
+PASS  WMO 7902408: search selects exactly one row
+PASS  WMO 7902408: table fields match API  []
+PASS  WMO 7902408: Last Profile Date is UTC
+PASS  WMO 7902408: status follows the exact observed-interval / 60-day policy
+PASS  WMO 7902408: Expected Next Profile = Last Profile Date + observed interval (9.79 d)
+PASS  WMO 7902408: unrounded elapsed days and floor(days / observed interval)
+PASS  WMO 7902408: estimate tooltip states the observed interval and its source  Approximate estimate based on the observed 9.8-day profile cycle (median of 18 published profile dates).
+PASS  WMO 7902408: drawer states the interval used and its provenance
+PASS  WMO 7902408: drawer status and estimate agree
+PASS  WMO 7902408: drawer identity shows WMO
+PASS  WMO 7902408: drawer identity shows Internal ID
+PASS  WMO 7902408: drawer identity shows Float Type
+PASS  WMO 7902408: drawer position shows Latitude
+PASS  WMO 7902408: drawer position shows Longitude
+PASS  WMO 7902408: drawer inventory shows Prof#
+PASS  WMO 7902408: drawer recency shows Last Profile Date
+PASS  WMO 7902408: drawer recency shows Expected Next Profile
+PASS  WMO 7902408: drawer recency shows Days Since Last Profile
+PASS  WMO 7902408: drawer recency shows Approx. Profiles Missed
+PASS  WMO 7902408: drawer recency shows Data Status
+PASS  WMO 7902408: drawer recency shows Observed cycle interval
+PASS  WMO 7902408: drawer has the experimental prediction block
+PASS  WMO 7902408: prediction block is labelled experimental, not a telemetry claim  Experimental prediction — not a communication signal
+PASS  WMO 7902408: predicted position matches the API  3.650°N 81.266°E
+PASS  WMO 7902408: method, rung, samples and status match the API
+PASS  WMO 7902408: uncertainty is the validated radius, never a placeholder
+PASS  WMO 7902408: horizon states the lead time behind the prediction  +9.79 d
+PASS  WMO 7902408: drawer quotes the calibration basis behind the radius
+PASS  WMO 7902408: profile wording only
+PASS  prediction layer is an explicit opt-in control, unchecked by default
+PASS  prediction data is ready but nothing is painted until the operator opts in  enabled=false painted=0 prepared=30
+PASS  prediction toggle quotes the number of floats that actually have one
+PASS  every validated prediction is drawn exactly once as its own marker  30 predicted positions
+PASS  predicted positions use a distinct symbol style from real float markers  diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond,diamond
+PASS  predicted positions cannot be mistaken for real markers on the same layer
+PASS  each prediction carries its 50 % and 90 % uncertainty rings  60 ring graphics
+PASS  a dashed connector is drawn only where a real position exists  30 connectors
+PASS  enabling the layer never hides or moves the real float markers  90 real markers
+PASS  WMO 1902844: drawn prediction equals the API position
+PASS  WMO 2901304: drawn prediction equals the API position
+PASS  WMO 2901305: drawn prediction equals the API position
+PASS  WMO 2901328: drawn prediction equals the API position
+PASS  WMO 2901339: drawn prediction equals the API position
+PASS  WMO 2901350: drawn prediction equals the API position
+PASS  WMO 2902086: drawn prediction equals the API position
+PASS  WMO 2902087: drawn prediction equals the API position
+PASS  WMO 2902088: drawn prediction equals the API position
+PASS  WMO 2902089: drawn prediction equals the API position
+PASS  WMO 2902090: drawn prediction equals the API position
+PASS  WMO 2902091: drawn prediction equals the API position
+PASS  WMO 2902092: drawn prediction equals the API position
+PASS  WMO 2902093: drawn prediction equals the API position
+PASS  WMO 2902113: drawn prediction equals the API position
+PASS  WMO 2902114: drawn prediction equals the API position
+PASS  WMO 2902115: drawn prediction equals the API position
+PASS  WMO 2902118: drawn prediction equals the API position
+PASS  WMO 2902120: drawn prediction equals the API position
+PASS  WMO 2902130: drawn prediction equals the API position
+PASS  WMO 2902131: drawn prediction equals the API position
+PASS  WMO 2902201: drawn prediction equals the API position
+PASS  WMO 2902203: drawn prediction equals the API position
+PASS  WMO 2902206: drawn prediction equals the API position
+PASS  WMO 2902222: drawn prediction equals the API position
+PASS  WMO 2902223: drawn prediction equals the API position
+PASS  WMO 2902224: drawn prediction equals the API position
+PASS  WMO 2904082: drawn prediction equals the API position
+PASS  WMO 6990711: drawn prediction equals the API position
+PASS  WMO 7902408: drawn prediction equals the API position
+PASS  clicking a predicted position selects the same float
+PASS  disabling the layer removes every prediction graphic and keeps the real markers  90 real markers
+PASS  clicking the real map marker opens the matching WMO detail
+PASS  pagination covers all configured WMOs exactly once
+PASS  search by Internal ID works
+PASS  float-type filter ARVOR
+PASS  float-type filter APEX
+PASS  float-type filter PROVOR_III
+PASS  data-status filter ACTIVE / RECENT PROFILE
+PASS  data-status filter PROFILE OVERDUE
+PASS  data-status filter NO RECENT PROFILE DATA 60+ DAYS
+PASS  data-status filter NO DATA
+PASS  sort WMO ID asc, nulls last, across pages
+PASS  sort WMO ID desc, nulls last, across pages
+PASS  sort Last Profile Date desc, nulls last, across pages
+PASS  sort Last Profile Date asc, nulls last, across pages
+PASS  sort Days Since Last Profile desc, nulls last, across pages
+PASS  sort Days Since Last Profile asc, nulls last, across pages
+PASS  sort Prof# desc, nulls last, across pages
+PASS  sort Prof# asc, nulls last, across pages
+PASS  sort Approx. Profiles Missed desc, nulls last, across pages
+PASS  sort Approx. Profiles Missed asc, nulls last, across pages
+PASS  empty search is honest, no fabricated rows
+PASS  Back returns to Results without redesigning navigation
+PASS  no runtime page errors
+PASS  UTC presentation is identical in Kolkata and Los Angeles
+
+988/988 checks passed; 30 floats field-checked

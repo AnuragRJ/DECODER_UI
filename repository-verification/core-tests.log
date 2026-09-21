@@ -1,0 +1,1290 @@
+ss..s.s.s.................................................FFFF.FFFFFFFFF [  5%]
+.ssssssssssssssssFFFFFF..FFFFFFFFFFFFFFFFFFFssssssssssssssssssssssssssss [ 11%]
+sssssssssssssssssssssssssEEEEEEEEEEEEEEEFFEEE...Fss..ss.ssFsssF......... [ 17%]
+.............................................FFFFFF.F......F............ [ 23%]
+........................................................................ [ 29%]
+........................................................................ [ 35%]
+....................................FFF.........F..FFFFFFFFFFFF..F...... [ 41%]
+....................................................................FF.. [ 46%]
+........................................................................ [ 52%]
+........................................................................ [ 58%]
+.......F............................................F................... [ 64%]
+........................................................................ [ 70%]
+......................F................................................. [ 76%]
+.................FF...FF................................................ [ 82%]
+........................................................................ [ 87%]
+........................FFF............................................. [ 93%]
+........................................................................ [ 99%]
+....                                                                     [100%]
+==================================== ERRORS ====================================
+_______________ ERROR at setup of test_6990711_row_count_is_467 ________________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+_______________ ERROR at setup of test_7902408_row_count_is_804 ________________
+tests/integration/test_arvor_i_tech_nc.py:71: in tech_7902408
+    return build_arvor_tech_dataset(science_7902408, wmo=7902408)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+_______________ ERROR at setup of test_6990711_per_cycle_counts ________________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+________ ERROR at setup of test_7902408_per_cycle_counts_and_c13_absent ________
+tests/integration/test_arvor_i_tech_nc.py:71: in tech_7902408
+    return build_arvor_tech_dataset(science_7902408, wmo=7902408)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+_____ ERROR at setup of test_cycle_ordering_is_ascending_then_alphabetical _____
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+_______ ERROR at setup of test_cycle_minus_one_and_pending_emit_nothing ________
+tests/integration/test_arvor_i_tech_nc.py:71: in tech_7902408
+    return build_arvor_tech_dataset(science_7902408, wmo=7902408)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+_________________ ERROR at setup of test_6990711_param_id_set __________________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+_________________ ERROR at setup of test_7902408_param_id_set __________________
+tests/integration/test_arvor_i_tech_nc.py:71: in tech_7902408
+    return build_arvor_tech_dataset(science_7902408, wmo=7902408)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+______________ ERROR at setup of test_never_emitted_params_absent ______________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+___________ ERROR at setup of test_param_136_follows_gps_valid_flag ____________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+____________ ERROR at setup of test_no_tech_aux_names_in_tech_rows _____________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+__________ ERROR at setup of test_aux_rows_are_bookkept_not_discarded __________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+__________ ERROR at setup of test_6990711_cycle1_values_match_fields ___________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+__________ ERROR at setup of test_7902408_cycle12_values_match_fields __________
+tests/integration/test_arvor_i_tech_nc.py:71: in tech_7902408
+    return build_arvor_tech_dataset(science_7902408, wmo=7902408)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+____________ ERROR at setup of test_cycle_numbers_use_buffer_cycles ____________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+____________ ERROR at setup of test_written_file_excludes_aux_rows _____________
+tests/integration/test_arvor_i_tech_nc.py:71: in tech_7902408
+    return build_arvor_tech_dataset(science_7902408, wmo=7902408)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+______ ERROR at setup of test_published_file_is_the_gdac_slot_projection _______
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+_________ ERROR at setup of test_data_centre_override_maps_institution _________
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+=================================== FAILURES ===================================
+______________ Test6990711.test_seven_logical_cycles_all_complete ______________
+tests/integration/test_arvor_i_cycle_reconstruction.py:65: in test_seven_logical_cycles_all_complete
+    assert [b.cycle_number for b in res.buffers] == [1, 2, 3, 4, 5, 6, 7]
+E   assert [] == [1, 2, 3, 4, 5, 6, ...]
+E     
+E     Right contains 7 more items, first extra item: 1
+E     Use -v to get more diff
+____________ Test6990711.test_expected_vs_received_counts_per_cycle ____________
+tests/integration/test_arvor_i_cycle_reconstruction.py:77: in test_expected_vs_received_counts_per_cycle
+    assert by[1].expected_counts == (4, 1, 7)
+           ^^^^^
+E   KeyError: 1
+______________ Test6990711.test_final_burst_order_7_then_5_then_6 ______________
+tests/integration/test_arvor_i_cycle_reconstruction.py:89: in test_final_burst_order_7_then_5_then_6
+    assert by[7].rank < by[5].rank < by[6].rank
+           ^^^^^
+E   KeyError: 7
+______________ Test6990711.test_final_burst_is_one_merged_session ______________
+tests/integration/test_arvor_i_cycle_reconstruction.py:99: in test_final_burst_is_one_merged_session
+    assert len(res.sessions) == 5
+E   assert 0 == 5
+E    +  where 0 = len([])
+E    +    where [] = CycleReconstructionResult(buffers=[], sessions=[], resets=[], pre_launch_discarded=[], kept_pre_launch_param_packets=[], dropped_packets=[], unranked_packets=[], stream_size=0).sessions
+_____________________ Test6990711.test_packet_conservation _____________________
+tests/integration/test_arvor_i_cycle_reconstruction.py:116: in test_packet_conservation
+    assert total == 95  # Phase-1 histogram total
+    ^^^^^^^^^^^^^^^^^^
+E   assert 0 == 95
+_______ Test6990711.test_as_coded_completion_unreachable_for_deep_cycles _______
+tests/integration/test_arvor_i_cycle_reconstruction.py:134: in test_as_coded_completion_unreachable_for_deep_cycles
+    assert by[2].expected_counts_coriolis_as_coded == (2, 7, 0)
+           ^^^^^
+E   KeyError: 2
+_____________________ Test7902408.test_completion_pattern ______________________
+tests/integration/test_arvor_i_cycle_reconstruction.py:143: in test_completion_pattern
+    assert complete == [1, 4, 9, 12]
+E   assert [] == [1, 4, 9, 12]
+E     
+E     Right contains 4 more items, first extra item: 1
+E     Use -v to get more diff
+_____________________ Test7902408.test_pre_launch_handling _____________________
+tests/integration/test_arvor_i_cycle_reconstruction.py:150: in test_pre_launch_handling
+    assert len(res.pre_launch_discarded) == 20
+E   assert 0 == 20
+E    +  where 0 = len([])
+E    +    where [] = CycleReconstructionResult(buffers=[], sessions=[], resets=[], pre_launch_discarded=[], kept_pre_launch_param_packets=[], dropped_packets=[], unranked_packets=[], stream_size=0).pre_launch_discarded
+_____________ Test7902408.test_incomplete_cycles_match_momsn_gaps ______________
+tests/integration/test_arvor_i_cycle_reconstruction.py:169: in test_incomplete_cycles_match_momsn_gaps
+    assert by[2].received_counts == (0, 1, 5)  # 1 drift + 2 asc missing
+           ^^^^^
+E   KeyError: 2
+_________________ Test7902408.test_cycles_13_15_metadata_less __________________
+tests/integration/test_arvor_i_cycle_reconstruction.py:185: in test_cycles_13_15_metadata_less
+    assert 13 in by
+E   assert 13 in {}
+________ Test7902408.test_pending_cycles_with_process_remaining_buffers ________
+tests/integration/test_arvor_i_cycle_reconstruction.py:211: in test_pending_cycles_with_process_remaining_buffers
+    assert 14 in by and 15 in by
+E   assert (14 in {})
+_________________ Test7902408.test_sessions_and_split_reasons __________________
+tests/integration/test_arvor_i_cycle_reconstruction.py:222: in test_sessions_and_split_reasons
+    assert len(res.sessions) == 3 + 13
+E   assert 0 == (3 + 13)
+E    +  where 0 = len([])
+E    +    where [] = CycleReconstructionResult(buffers=[], sessions=[], resets=[], pre_launch_discarded=[], kept_pre_launch_param_packets=[], dropped_packets=[], unranked_packets=[], stream_size=0).sessions
+_____________________ Test7902408.test_packet_conservation _____________________
+tests/integration/test_arvor_i_cycle_reconstruction.py:229: in test_packet_conservation
+    assert total == 184  # Phase-1 histogram total
+    ^^^^^^^^^^^^^^^^^^^
+E   assert 0 == 184
+____________ test_message_counts_and_payload_preservation[6990711] _____________
+tests/integration/test_arvor_i_raw_decode.py:102: in test_message_counts_and_payload_preservation
+    assert len(msgs) == EXPECTED_MESSAGES[flt]
+E   assert 0 == 35
+E    +  where 0 = len([])
+____________ test_message_counts_and_payload_preservation[7902408] _____________
+tests/integration/test_arvor_i_raw_decode.py:102: in test_message_counts_and_payload_preservation
+    assert len(msgs) == EXPECTED_MESSAGES[flt]
+E   assert 0 == 64
+E    +  where 0 = len([])
+_________________ test_packet_histograms_and_padding[6990711] __________________
+tests/integration/test_arvor_i_raw_decode.py:112: in test_packet_histograms_and_padding
+    assert dict(hist) == EXPECTED_HISTOGRAMS[flt]
+E   assert {} == {0: 7, 1: 4, ...3, 3: 49, ...}
+E     
+E     Right contains 6 more items:
+E     {0: 7, 1: 4, 2: 13, 3: 49, 4: 7, 6: 15}
+E     Use -v to get more diff
+_________________ test_packet_histograms_and_padding[7902408] __________________
+tests/integration/test_arvor_i_raw_decode.py:112: in test_packet_histograms_and_padding
+    assert dict(hist) == EXPECTED_HISTOGRAMS[flt]
+E   assert {} == {0: 19, 1: 4,...3, 3: 74, ...}
+E     
+E     Right contains 7 more items:
+E     {0: 19, 1: 4, 2: 23, 3: 74, 4: 19, 5: 7, 6: 38}
+E     Use -v to get more diff
+________________ test_engine_identification_consistent[6990711] ________________
+tests/integration/test_arvor_i_raw_decode.py:124: in test_engine_identification_consistent
+    assert engines == {
+E   AssertionError: assert set() == {<ArvorIEngin...222_223_225'>}
+E     
+E     Extra items in the right set:
+E     <ArvorIEngine.FAMILY_222_223_225: '222_223_225'>
+E     Use -v to get more diff
+________________ test_engine_identification_consistent[7902408] ________________
+tests/integration/test_arvor_i_raw_decode.py:124: in test_engine_identification_consistent
+    assert engines == {
+E   AssertionError: assert set() == {<ArvorIEngin...E_232: '232'>}
+E     
+E     Extra items in the right set:
+E     <ArvorIEngine.ENGINE_232: '232'>
+E     Use -v to get more diff
+_____________________ test_momsn_gaps_match_investigation ______________________
+tests/integration/test_arvor_i_raw_decode.py:148: in test_momsn_gaps_match_investigation
+    assert gaps == expected
+E   assert [] == [(72, 74), (7...86), (90, 92)]
+E     
+E     Right contains 4 more items, first extra item: (72, 74)
+E     Use -v to get more diff
+_______________ test_operator_ctd_parity[6990711-1-3-Ascctd001] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Ascctd001.txt'
+_______________ test_operator_ctd_parity[6990711-2-3-Ascctd002] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Ascctd002.txt'
+_______________ test_operator_ctd_parity[6990711-3-3-Ascctd003] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Ascctd003.txt'
+_______________ test_operator_ctd_parity[6990711-4-3-Ascctd004] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Ascctd004.txt'
+_______________ test_operator_ctd_parity[6990711-5-3-Ascctd005] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Ascctd005.txt'
+_______________ test_operator_ctd_parity[6990711-6-3-Ascctd006] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Ascctd006.txt'
+_______________ test_operator_ctd_parity[6990711-7-3-Ascctd007] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Ascctd007.txt'
+_______________ test_operator_ctd_parity[6990711-1-2-Subctd001] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Subctd001.txt'
+_______________ test_operator_ctd_parity[6990711-1-1-Desctd001] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Desctd001.txt'
+_______________ test_operator_ctd_parity[7902408-1-3-Ascctd001] ________________
+tests/integration/test_arvor_i_raw_decode.py:190: in test_operator_ctd_parity
+    ref = {(round(p, 2), round(t, 3), round(s, 3)) for p, t, s in _operator_profile(flt, stem)}
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/7902408/ctd/Ascctd001.txt'
+____________________ test_operator_psal_unsigned_convention ____________________
+tests/integration/test_arvor_i_raw_decode.py:202: in test_operator_psal_unsigned_convention
+    ref = _operator_profile("6990711", "Ascctd001")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_raw_decode.py:162: in _operator_profile
+    lines = (RAW_ROOT / flt / "ctd" / f"{stem}.txt").read_text().splitlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/ctd/Ascctd001.txt'
+_________________ test_active_float_cycle_coverage_and_period __________________
+tests/integration/test_arvor_i_raw_decode.py:220: in test_active_float_cycle_coverage_and_period
+    assert sorted(by_cycle_t0) == list(range(0, 13))
+E   assert [] == [0, 1, 2, 3, 4, 5, ...]
+E     
+E     Right contains 13 more items, first extra item: 0
+E     Use -v to get more diff
+___________________ test_active_float_incomplete_late_cycles ___________________
+tests/integration/test_arvor_i_raw_decode.py:237: in test_active_float_incomplete_late_cycles
+    assert got == types
+E   assert set() == {2, 3}
+E     
+E     Extra items in the right set:
+E     2
+E     3
+E     Use -v to get more diff
+_______________ test_active_float_incomplete_measurement_cycles ________________
+tests/integration/test_arvor_i_raw_decode.py:259: in test_active_float_incomplete_measurement_cycles
+    assert complete == {1, 4, 9, 12}  # PROVEN during investigation
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   assert set() == {1, 4, 9, 12}
+E     
+E     Extra items in the right set:
+E     1
+E     4
+E     12
+E     9
+E     Use -v to get more diff
+_____________________ test_dead_float_no_eol_flag_anywhere _____________________
+tests/integration/test_arvor_i_raw_decode.py:271: in test_dead_float_no_eol_flag_anywhere
+    assert len(tech1) == 7
+E   assert 0 == 7
+E    +  where 0 = len([])
+______________________ test_dead_float_final_burst_order _______________________
+tests/integration/test_arvor_i_raw_decode.py:287: in test_dead_float_final_burst_order
+    assert cycles_in_time_order == [7, 5, 6]
+E   assert [] == [7, 5, 6]
+E     
+E     Right contains 3 more items, first extra item: 7
+E     Use -v to get more diff
+_____________________ test_dead_float_all_cycles_complete ______________________
+tests/integration/test_arvor_i_raw_decode.py:309: in test_dead_float_all_cycles_complete
+    e = expected[cycle]
+        ^^^^^^^^^^^^^^^
+E   KeyError: 1
+____________________ test_content_retransmissions_preserved ____________________
+tests/integration/test_arvor_i_raw_decode.py:321: in test_content_retransmissions_preserved
+    assert n_c9 == 7  # all 7 distinct packets present in our e-mail subset
+    ^^^^^^^^^^^^^^^^
+E   assert 0 == 7
+______________ test_written_file_layout[tech_6990711-6990711-154] ______________
+tests/integration/test_arvor_i_tech_nc.py:271: in test_written_file_layout
+    dataset = request.getfixturevalue(fixture_name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:549: in getfixturevalue
+    fixturedef = self._get_active_fixturedef(argname)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:640: in _get_active_fixturedef
+    fixturedef.execute(request=subrequest)
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:1108: in execute
+    raise exc.with_traceback(exc_tb)
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:1196: in pytest_fixture_setup
+    result = call_fixture_func(fixturefunc, request, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:930: in call_fixture_func
+    fixture_result = fixturefunc(**kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_tech_nc.py:66: in tech_6990711
+    return build_arvor_tech_dataset(science_6990711, wmo=6990711)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+______________ test_written_file_layout[tech_7902408-7902408-264] ______________
+tests/integration/test_arvor_i_tech_nc.py:271: in test_written_file_layout
+    dataset = request.getfixturevalue(fixture_name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:549: in getfixturevalue
+    fixturedef = self._get_active_fixturedef(argname)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:640: in _get_active_fixturedef
+    fixturedef.execute(request=subrequest)
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:1108: in execute
+    raise exc.with_traceback(exc_tb)
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:1196: in pytest_fixture_setup
+    result = call_fixture_func(fixturefunc, request, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../.venv/lib/python3.13/site-packages/_pytest/fixtures.py:930: in call_fixture_func
+    fixture_result = fixturefunc(**kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_arvor_i_tech_nc.py:71: in tech_7902408
+    return build_arvor_tech_dataset(science_7902408, wmo=7902408)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i_tech.py:764: in build_arvor_tech_dataset
+    raise ValueError("no Tech#1 packet found: cannot resolve decoder id")
+E   ValueError: no Tech#1 packet found: cannot resolve decoder id
+_________________________ test_csv_backend_end_to_end __________________________
+tests/integration/test_csv_metadata_pipeline.py:50: in test_csv_backend_end_to_end
+    assert result.status == "ok"
+E   AssertionError: assert 'nok' == 'ok'
+E     
+E     - ok
+E     + nok
+E     ? +
+----------------------------- Captured stdout call -----------------------------
+2026-09-20 20:11:25 [info     ] 2026-09-20 20:11:25 [info     ] pipeline_start                 stage=pipeline wmo=6902892
+2026-09-20 20:11:25 [info     ] 2026-09-20 20:11:25 [info     ] metadata_backend               backend=csv materialized_dir=/tmp/argo_decoder/meta_cache registry=/home/user/ARPY-decoder-Ui/incois-arpy-decoder/config/registry.csv stage=metadata
+2026-09-20 20:11:25 [info     ] 2026-09-20 20:11:25 [info     ] csv_loaded                     component=CsvLoader n_rows=6 path=/home/user/ARPY-decoder-Ui/incois-arpy-decoder/config/registry.csv
+2026-09-20 20:11:25 [info     ] 2026-09-20 20:11:25 [info     ] input_files                    n=0 stage=pipeline wmo=6902892
+2026-09-20 20:11:25 [error    ] 2026-09-20 20:11:25 [error    ] no_input_files                 discovered_ids=[] rsync_data_dir=/home/user/ARPY-decoder-Ui/Coriolis-data-processing-chain-for-Argo-floats-container/decArgo_demo/input/archive/cycle searched_ids=['300234065895840', '589584', '6902892'] stage=pipeline wmo=6902892
+2026-09-20 20:11:25 [info     ] 2026-09-20 20:11:25 [info     ] decoder_selected               decoder=NullDecoder stage=pipeline wmo=6902892
+2026-09-20 20:11:25 [info     ] 2026-09-20 20:11:25 [info     ] pipeline_end                   duration_s=0.0018201179999834949 n_cycles=0 n_files=0 nc_files=0 stage=pipeline wmo=6902892
+_____________________ test_null_decode_produces_nc_and_xml _____________________
+tests/integration/test_null_pipeline.py:30: in test_null_decode_produces_nc_and_xml
+    result = run_pipeline(config=cfg, wmo=6902892, use_null_decoder=True, write_xml=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/pipeline/runner.py:100: in run_pipeline
+    info = loader.load_info(wmo_int)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/metadata/json_loader.py:79: in load_info
+    raise FileNotFoundError(f"No info JSON found for WMO {wmo} in {self.info_dir}")
+E   FileNotFoundError: No info JSON found for WMO 6902892 in /home/user/ARPY-decoder-Ui/Coriolis-data-processing-chain-for-Argo-floats-container/decArgo_demo/config/decArgo_config_floats/json_float_info
+----------------------------- Captured stdout call -----------------------------
+2026-09-20 20:11:27 [info     ] 2026-09-20 20:11:27 [info     ] pipeline_start                 stage=pipeline wmo=6902892
+2026-09-20 20:11:27 [info     ] 2026-09-20 20:11:27 [info     ] metadata_backend               backend=json stage=metadata
+_________________ test_csv_backend_matches_golden_structurally _________________
+tests/integration/test_structural_parity.py:47: in test_csv_backend_matches_golden_structurally
+    assert result.status == "ok"
+E   AssertionError: assert 'nok' == 'ok'
+E     
+E     - ok
+E     + nok
+E     ? +
+----------------------------- Captured stdout call -----------------------------
+2026-09-20 20:11:27 [info     ] 2026-09-20 20:11:27 [info     ] pipeline_start                 stage=pipeline wmo=6902892
+2026-09-20 20:11:27 [info     ] 2026-09-20 20:11:27 [info     ] metadata_backend               backend=csv materialized_dir=/tmp/argo_decoder/meta_cache registry=/home/user/ARPY-decoder-Ui/incois-arpy-decoder/config/registry.csv stage=metadata
+2026-09-20 20:11:27 [info     ] 2026-09-20 20:11:27 [info     ] csv_loaded                     component=CsvLoader n_rows=6 path=/home/user/ARPY-decoder-Ui/incois-arpy-decoder/config/registry.csv
+2026-09-20 20:11:27 [info     ] 2026-09-20 20:11:27 [info     ] input_files                    n=0 stage=pipeline wmo=6902892
+2026-09-20 20:11:27 [error    ] 2026-09-20 20:11:27 [error    ] no_input_files                 discovered_ids=[] rsync_data_dir=/home/user/ARPY-decoder-Ui/Coriolis-data-processing-chain-for-Argo-floats-container/decArgo_demo/input/archive/cycle searched_ids=['300234065895840', '589584', '6902892'] stage=pipeline wmo=6902892
+2026-09-20 20:11:27 [info     ] 2026-09-20 20:11:27 [info     ] decoder_selected               decoder=NullDecoder stage=pipeline wmo=6902892
+2026-09-20 20:11:27 [info     ] 2026-09-20 20:11:27 [info     ] pipeline_end                   duration_s=0.0019377300000087416 n_cycles=0 n_files=0 nc_files=0 stage=pipeline wmo=6902892
+____________ test_park_statistics_match_gdac_mc296[327-2.75-1000.9] ____________
+tests/unit/test_apex_engineering.py:493: in test_park_statistics_match_gdac_mc296
+    pytest.fail(f"cycle {cycle} not decoded")
+E   Failed: cycle 327 not decoded
+___________ test_park_statistics_match_gdac_mc296[328-2.797-1005.4] ____________
+tests/unit/test_apex_engineering.py:493: in test_park_statistics_match_gdac_mc296
+    pytest.fail(f"cycle {cycle} not decoded")
+E   Failed: cycle 328 not decoded
+___________ test_park_statistics_match_gdac_mc296[329-2.796-1006.5] ____________
+tests/unit/test_apex_engineering.py:493: in test_park_statistics_match_gdac_mc296
+    pytest.fail(f"cycle {cycle} not decoded")
+E   Failed: cycle 329 not decoded
+_______ test_park_end_sample_matches_gdac_mc290[327-2.731-34.548-1004.2] _______
+tests/unit/test_apex_engineering.py:512: in test_park_end_sample_matches_gdac_mc290
+    pytest.fail(f"cycle {cycle} not decoded")
+E   Failed: cycle 327 not decoded
+_______ test_park_end_sample_matches_gdac_mc290[328-2.78-34.532-1004.2] ________
+tests/unit/test_apex_engineering.py:512: in test_park_end_sample_matches_gdac_mc290
+    pytest.fail(f"cycle {cycle} not decoded")
+E   Failed: cycle 328 not decoded
+_______ test_park_end_sample_matches_gdac_mc290[329-2.786-34.531-1005.4] _______
+tests/unit/test_apex_engineering.py:512: in test_park_end_sample_matches_gdac_mc290
+    pytest.fail(f"cycle {cycle} not decoded")
+E   Failed: cycle 329 not decoded
+____________ test_park_statistics_are_physically_plausible_on_1005 _____________
+tests/unit/test_apex_engineering.py:537: in test_park_statistics_are_physically_plausible_on_1005
+    assert seen > 10
+E   assert 0 > 10
+____________ test_descent_marks_increase_monotonically_on_real_data ____________
+tests/unit/test_apex_engineering.py:625: in test_descent_marks_increase_monotonically_on_real_data
+    assert seen >= 2
+E   assert 0 >= 2
+_ test_width_tables_match_matlab_source[decode_prv_data_ir_sbd_222_223_225.m-param1_widths0] _
+tests/unit/test_arvor_i_frames.py:111: in test_width_tables_match_matlab_source
+    tables = _parse_tabnbbits((CORIOLIS_SRC / matlab_file).read_text())
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/data/arvor_i/coriolis_src/decode_prv_data_ir_sbd_222_223_225.m'
+_ test_width_tables_match_matlab_source[decode_prv_data_ir_sbd_232.m-param1_widths1] _
+tests/unit/test_arvor_i_frames.py:111: in test_width_tables_match_matlab_source
+    tables = _parse_tabnbbits((CORIOLIS_SRC / matlab_file).read_text())
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/data/arvor_i/coriolis_src/decode_prv_data_ir_sbd_232.m'
+____________ test_firmware_checksum_table_matches_check_decoder_id _____________
+tests/unit/test_arvor_i_frames.py:131: in test_firmware_checksum_table_matches_check_decoder_id
+    src = (CORIOLIS_SRC / "check_decoder_id.m").read_text()  # noqa: F841
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/data/arvor_i/coriolis_src/check_decoder_id.m'
+_____________________ test_framing_real_payload_three_rows _____________________
+tests/unit/test_arvor_i_frames.py:198: in test_framing_real_payload_three_rows
+    payload = (RAW_ROOT / "6990711" / "redacted_imei_170_000067.sbd").read_bytes()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/redacted_imei_170_000067.sbd'
+__________________ test_eml_header_only_with_sidecar_payload ___________________
+tests/unit/test_arvor_i_frames.py:239: in test_eml_header_only_with_sidecar_payload
+    msg = read_arvor_i_eml(eml)
+          ^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i.py:726: in read_arvor_i_eml
+    raw = p.read_bytes()
+          ^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/redacted_imei_170_000067.eml'
+________________________ test_eml_rejects_size_mismatch ________________________
+tests/unit/test_arvor_i_frames.py:256: in test_eml_rejects_size_mismatch
+    bad.write_bytes(eml.read_bytes().replace(b"300", b"299", 1))
+                    ^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/redacted_imei_170_000067.eml'
+___________________ test_tech1_dead_float_first_transmission ___________________
+tests/unit/test_arvor_i_frames.py:275: in test_tech1_dead_float_first_transmission
+    pk = _packet("6990711", 67, 0)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+___________________ test_tech1_active_float_factory_session ____________________
+tests/unit/test_arvor_i_frames.py:290: in test_tech1_active_float_factory_session
+    pk = _packet("7902408", 32, 0)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+__________________ test_tech1_stale_position_when_gps_invalid __________________
+tests/unit/test_arvor_i_frames.py:303: in test_tech1_stale_position_when_gps_invalid
+    c4 = _packet("6990711", 86, 0)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+_________________ test_tech2_expected_counts_corrected_mapping _________________
+tests/unit/test_arvor_i_frames.py:319: in test_tech2_expected_counts_corrected_mapping
+    pk = _packet("6990711", 67, 4)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+______________ test_tech2_expected_counts_match_received_packets _______________
+tests/unit/test_arvor_i_frames.py:354: in test_tech2_expected_counts_match_received_packets
+    exp = expected[cycle]
+          ^^^^^^^^^^^^^^^
+E   KeyError: 1
+_______________ test_ctd_first_triplets_raw_counts_and_physical ________________
+tests/unit/test_arvor_i_frames.py:366: in test_ctd_first_triplets_raw_counts_and_physical
+    pk = _packet("6990711", 70, 3)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+___________________ test_ctd_first_measurement_time_fraction ___________________
+tests/unit/test_arvor_i_frames.py:396: in test_ctd_first_measurement_time_fraction
+    pk = _packet("6990711", 70, 3)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+____________________________ test_ctd_fill_sentinel ____________________________
+tests/unit/test_arvor_i_frames.py:405: in test_ctd_fill_sentinel
+    pk = _packet("6990711", 70, 3)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+________________________ test_param1_both_engine_tables ________________________
+tests/unit/test_arvor_i_frames.py:431: in test_param1_both_engine_tables
+    pk = _packet("7902408", 32, 5)  # cycle-0 factory session, engine 232
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+____________________________ test_hydraulic_packet _____________________________
+tests/unit/test_arvor_i_frames.py:437: in test_hydraulic_packet
+    pk = _packet("6990711", 67, 6)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_arvor_i_frames.py:269: in _packet
+    p = next(d.glob(f"*_{momsn:06d}.sbd"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+_________________ test_identical_payloads_flagged_not_dropped __________________
+tests/unit/test_arvor_i_frames.py:474: in test_identical_payloads_flagged_not_dropped
+    m1 = read_arvor_i_eml(src)
+         ^^^^^^^^^^^^^^^^^^^^^
+src/argo_decoder/platforms/provor_ir_sbd/arvor_i.py:726: in read_arvor_i_eml
+    raw = p.read_bytes()
+          ^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/arvor_raw/ARVOR-I-raw-files/20260819/6990711/redacted_imei_170_000067.eml'
+_____________ test_label_table_matches_vendored_coriolis_json[222] _____________
+tests/unit/test_arvor_i_tech.py:48: in test_label_table_matches_vendored_coriolis_json
+    data = json.loads(path.read_text())
+                      ^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/data/arvor_i/coriolis_src/_techParamNames/_tech_param_name_222.json'
+_____________ test_label_table_matches_vendored_coriolis_json[232] _____________
+tests/unit/test_arvor_i_tech.py:48: in test_label_table_matches_vendored_coriolis_json
+    data = json.loads(path.read_text())
+                      ^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:546: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.13/pathlib/_local.py:537: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/data/arvor_i/coriolis_src/_techParamNames/_tech_param_name_232.json'
+______________________ test_json_loader_finds_demo_floats ______________________
+tests/unit/test_metadata_loader.py:27: in test_json_loader_finds_demo_floats
+    assert 6902892 in wmos
+E   assert 6902892 in set()
+_________ TestArvorIStartDateDerivation.test_uses_dst_not_cycle_start __________
+tests/unit/test_metadata_nc.py:636: in test_uses_dst_not_cycle_start
+    result = science(7902408)
+             ^^^^^^^^^^^^^^^^
+scripts/validate_arvor_i_rtraj.py:77: in science
+    msgs = [read_arvor_i_eml(p) for p in sorted((_raw_dir(wmo)).glob("*.eml"))]
+                                                 ^^^^^^^^^^^^^
+scripts/validate_arvor_i_rtraj.py:53: in _raw_dir
+    raise FileNotFoundError(f"no raw .eml for {wmo}")
+E   FileNotFoundError: no raw .eml for 7902408
+___ test_missing_calibration_emits_equations_but_never_invents_coefficients ____
+tests/unit/test_multi_csv_loader.py:307: in test_missing_calibration_emits_equations_but_never_invents_coefficients
+    assert coefficients == ["n/a", "n/a", "n/a"]
+E   AssertionError: assert ['ser# = 5234...C =  -0.0000'] == ['n/a', 'n/a', 'n/a']
+E     
+E     At index 0 diff: 'ser# = 5234 pressure coeffs: PA0 = 0.314 PA1 = 0.14 PA2 = -4.16e-08 PTCA0 = 53.9 PTCA1 = 0.179 PTCA2 = -0.00348 PTCB0 = 25.3 PTCB1 = 0.0001 PTCB2 = 0 PTHA0 = -73.7 PTHA1 = 0.0493 PTHA2 = -7.68e-08' != 'n/a'
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+2026-09-20 20:11:34 [info     ] 2026-09-20 20:11:34 [info     ] multi_csv_loaded               component=MultiCsvLoader n_calib=15 n_config=15 n_floats=15 n_meta=15 n_sensor=15 path=/home/user/.cache/argo-verification/core-tmp/test_missing_calibration_emits0
+____________________ test_parse_sbd_email_zero_payload_ping ____________________
+tests/unit/test_provor_ir_sbd.py:81: in test_parse_sbd_email_zero_payload_ping
+    assert files
+E   assert []
+______________________ test_parse_sbd_email_with_payload _______________________
+tests/unit/test_provor_ir_sbd.py:97: in test_parse_sbd_email_with_payload
+    fp = _first_payload_file()
+         ^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_provor_ir_sbd.py:74: in _first_payload_file
+    assert files, "demo data not available"
+E   AssertionError: demo data not available
+E   assert []
+____________________ test_unpack_tech_packet_from_real_data ____________________
+tests/unit/test_provor_ir_sbd.py:168: in test_unpack_tech_packet_from_real_data
+    assert found >= 1, "expected at least one Tech#1 packet in first 200 SBDs"
+E   AssertionError: expected at least one Tech#1 packet in first 200 SBDs
+E   assert 0 >= 1
+__________________ test_unpack_nonzero_payloads_do_not_crash ___________________
+tests/unit/test_provor_ir_sbd.py:181: in test_unpack_nonzero_payloads_do_not_crash
+    assert unpacked > 50
+E   assert 0 > 50
+______ TestNCycleFillPairing.test_unpublished_families_are_fill_in_ncycle ______
+tests/unit/test_rtqc_trajectory.py:204: in test_unpublished_families_are_fill_in_ncycle
+    _internal, nc = self._built(7902408)
+                    ^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_rtqc_trajectory.py:198: in _built
+    ds = build_arvor_rtraj_dataset(science(wmo), wmo=wmo, launch_position=_launch_position(wmo))
+                                   ^^^^^^^^^^^^
+scripts/validate_arvor_i_rtraj.py:77: in science
+    msgs = [read_arvor_i_eml(p) for p in sorted((_raw_dir(wmo)).glob("*.eml"))]
+                                                 ^^^^^^^^^^^^^
+scripts/validate_arvor_i_rtraj.py:53: in _raw_dir
+    raise FileNotFoundError(f"no raw .eml for {wmo}")
+E   FileNotFoundError: no raw .eml for 7902408
+_________ TestNCycleFillPairing.test_decoded_values_survive_internally _________
+tests/unit/test_rtqc_trajectory.py:213: in test_decoded_values_survive_internally
+    internal, _ = self._built(7902408)
+                  ^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_rtqc_trajectory.py:198: in _built
+    ds = build_arvor_rtraj_dataset(science(wmo), wmo=wmo, launch_position=_launch_position(wmo))
+                                   ^^^^^^^^^^^^
+scripts/validate_arvor_i_rtraj.py:77: in science
+    msgs = [read_arvor_i_eml(p) for p in sorted((_raw_dir(wmo)).glob("*.eml"))]
+                                                 ^^^^^^^^^^^^^
+scripts/validate_arvor_i_rtraj.py:53: in _raw_dir
+    raise FileNotFoundError(f"no raw .eml for {wmo}")
+E   FileNotFoundError: no raw .eml for 7902408
+____ TestNCycleFillPairing.test_published_families_keep_their_ncycle_dates _____
+tests/unit/test_rtqc_trajectory.py:221: in test_published_families_keep_their_ncycle_dates
+    _, nc = self._built(7902408)
+            ^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_rtqc_trajectory.py:198: in _built
+    ds = build_arvor_rtraj_dataset(science(wmo), wmo=wmo, launch_position=_launch_position(wmo))
+                                   ^^^^^^^^^^^^
+scripts/validate_arvor_i_rtraj.py:77: in science
+    msgs = [read_arvor_i_eml(p) for p in sorted((_raw_dir(wmo)).glob("*.eml"))]
+                                                 ^^^^^^^^^^^^^
+scripts/validate_arvor_i_rtraj.py:53: in _raw_dir
+    raise FileNotFoundError(f"no raw .eml for {wmo}")
+E   FileNotFoundError: no raw .eml for 7902408
+=============================== warnings summary ===============================
+tests/integration/test_apex_argos_raw_parity.py: 167 warnings
+tests/integration/test_cli_empty_input.py: 40 warnings
+tests/integration/test_cycle_grouping_suffix.py: 501 warnings
+tests/unit/test_metadata_nc.py: 280 warnings
+tests/unit/test_mono_profile_admt.py: 2475 warnings
+tests/unit/test_multi_profile_admt.py: 135 warnings
+tests/unit/test_nc_writer_sanitize.py: 35 warnings
+tests/unit/test_technical_nc.py: 16 warnings
+tests/unit/test_trajectory_nc.py: 70 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/src/argo_decoder/nc/admt.py:330: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    var[:] = values
+
+tests/integration/test_apex_argos_raw_parity.py: 45 warnings
+tests/integration/test_cycle_grouping_suffix.py: 135 warnings
+tests/unit/test_mono_profile_admt.py: 45 warnings
+tests/unit/test_multi_profile.py: 45 warnings
+tests/unit/test_multi_profile_admt.py: 1170 warnings
+tests/unit/test_nc_writer_sanitize.py: 35 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/src/argo_decoder/nc/multi_profile.py:575: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    var[:] = vals
+
+tests/integration/test_cycle_grouping_suffix.py::test_foreign_burst_is_withheld_2902206
+tests/integration/test_cycle_grouping_suffix.py::test_single_burst_mono_juld_unchanged
+  /home/user/.venv/lib/python3.13/site-packages/gsw/_wrapped_ufuncs.py:406: RuntimeWarning: invalid value encountered in c_from_sp
+    return _gsw_ufuncs.c_from_sp(SP, t, p, **kwargs)
+
+tests/unit/test_comparator.py: 15 warnings
+tests/unit/test_phase3_m1_oracle_harness.py: 6 warnings
+  /home/user/.venv/lib/python3.13/site-packages/xarray/backends/netCDF4_.py:96: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    data[key] = value
+
+tests/unit/test_metadata_nc.py: 17 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_metadata_nc.py:153: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    return [str(v).strip() for v in np.asarray(netCDF4.chartostring(arr)).reshape(-1)]
+
+tests/unit/test_metadata_nc.py::test_launch_date_formats_are_normalised[20/01/2017 08:44:00]
+tests/unit/test_metadata_nc.py::test_launch_date_formats_are_normalised[2017-01-20T08:44:00]
+tests/unit/test_metadata_nc.py::test_launch_date_formats_are_normalised[2017-01-20 08:44:00]
+tests/unit/test_metadata_nc.py::test_launch_date_formats_are_normalised[20170120084400]
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_metadata_nc.py:276: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    decoded = netCDF4.chartostring(np.asarray(ds["LAUNCH_DATE"].values))
+
+tests/unit/test_metadata_nc.py::test_end_mission_date_is_written_when_supplied
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_metadata_nc.py:291: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    decoded = str(netCDF4.chartostring(np.asarray(ds["END_MISSION_DATE"].values)))
+
+tests/unit/test_metadata_nc.py::test_end_mission_date_stays_blank_when_not_supplied
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_metadata_nc.py:299: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    decoded = str(netCDF4.chartostring(np.asarray(ds["END_MISSION_DATE"].values)))
+
+tests/unit/test_metadata_nc.py::test_unparseable_date_is_blank_not_guessed
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_metadata_nc.py:306: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    decoded = str(netCDF4.chartostring(np.asarray(ds["LAUNCH_DATE"].values)))
+
+tests/unit/test_metadata_nc.py::test_unknown_sensors_are_kept_not_dropped
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_metadata_nc.py:381: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    for v in np.asarray(netCDF4.chartostring(np.asarray(ds["SENSOR"].values))).reshape(-1)
+
+tests/unit/test_metadata_nc.py::test_absent_metadata_is_blank_not_invented
+tests/unit/test_metadata_nc.py::test_absent_metadata_is_blank_not_invented
+tests/unit/test_metadata_nc.py::test_absent_metadata_is_blank_not_invented
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_metadata_nc.py:421: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    decoded = str(netCDF4.chartostring(np.asarray(ds[name].values)))
+
+tests/unit/test_metadata_nc.py::test_empty_config_block_yields_single_fill_valued_entry
+tests/unit/test_metadata_nc.py::test_empty_config_block_yields_single_fill_valued_entry
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_metadata_nc.py:439: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    decoded = netCDF4.chartostring(np.asarray(ds[name].values))
+
+tests/unit/test_mono_profile_admt.py: 17 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:105: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    return str(netCDF4.chartostring(var[:]).ravel()[0])
+
+tests/unit/test_mono_profile_admt.py::test_station_parameters_matches_the_gdac_reference
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:238: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    for v in netCDF4.chartostring(ds.variables["STATION_PARAMETERS"][:])[0]
+
+tests/unit/test_mono_profile_admt.py::test_no_exported_parameter_with_data_is_omitted
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:256: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    for v in netCDF4.chartostring(ds.variables["STATION_PARAMETERS"][:])[0]
+
+tests/unit/test_mono_profile_admt.py::test_parameter_has_calib_slot_shape_and_core_params
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:435: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    values = [str(v) for v in netCDF4.chartostring(var[:])[0][0]]
+
+tests/unit/test_mono_profile_admt.py::test_parameter_matches_station_parameters
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:441: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    station = netCDF4.chartostring(np.asarray(built["STATION_PARAMETERS"].values))[0]
+
+tests/unit/test_mono_profile_admt.py::test_parameter_matches_station_parameters
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:442: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    parameter = netCDF4.chartostring(np.asarray(built["PARAMETER"].values))[0][0]
+
+tests/unit/test_mono_profile_admt.py: 17 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:546: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    decoded = netCDF4.chartostring(np.asarray(ds[name].values))
+
+tests/unit/test_mono_profile_admt.py::test_scientific_calib_date_set_only_for_populated_slots
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:607: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    update = str(netCDF4.chartostring(np.asarray(built["DATE_UPDATE"].values)))
+
+tests/unit/test_mono_profile_admt.py::test_scientific_calib_does_not_disturb_science_or_parameter
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:713: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    parameter = netCDF4.chartostring(np.asarray(built["PARAMETER"].values))[0][0]
+
+tests/unit/test_mono_profile_admt.py: 19 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:736: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    decoded = netCDF4.chartostring(np.asarray(ds[name].values))
+
+tests/unit/test_mono_profile_admt.py::test_meta_fields_publish_into_the_mono_product
+tests/unit/test_mono_profile_admt.py::test_meta_fields_publish_into_the_mono_product
+tests/unit/test_mono_profile_admt.py::test_meta_fields_publish_into_the_mono_product
+tests/unit/test_mono_profile_admt.py::test_meta_fields_publish_into_the_mono_product
+tests/unit/test_mono_profile_admt.py::test_meta_fields_publish_into_the_mono_product
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:825: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    return str(netCDF4.chartostring(built[name].values).ravel()[0]).strip()
+
+tests/unit/test_mono_profile_admt.py::test_firmware_version_override_beats_meta_sheet_label
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_mono_profile_admt.py:843: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    assert str(netCDF4.chartostring(built["FIRMWARE_VERSION"].values).ravel()[0]).strip() == "7.2.5"
+
+tests/unit/test_multi_profile_admt.py::test_cndc_is_not_exported
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_multi_profile_admt.py:241: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    for v in np.asarray(netCDF4.chartostring(ds["STATION_PARAMETERS"][:])).reshape(-1)
+
+tests/unit/test_multi_profile_admt.py::test_dc_reference_is_wmo_slash_cycle
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_multi_profile_admt.py:281: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    for v in np.asarray(netCDF4.chartostring(ds["DC_REFERENCE"][:])).reshape(-1)
+
+tests/unit/test_multi_profile_admt.py::test_vertical_sampling_scheme_is_discrete
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_multi_profile_admt.py:293: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    for v in np.asarray(netCDF4.chartostring(ds["VERTICAL_SAMPLING_SCHEME"][:])).reshape(-1)
+
+tests/unit/test_rtqc_bathymetry.py: 11 warnings
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_rtqc_bathymetry.py:42: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    ds.createVariable(elevation_name, "f4", ("lat", "lon"))[:] = elev
+
+tests/unit/test_rtqc_bathymetry.py::test_fill_valued_elevation_cell_is_reported_as_unknown
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_rtqc_bathymetry.py:190: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    ds.createVariable("elevation", "f4", ("lat", "lon"))[:] = np.full((2, 2), np.nan)
+
+tests/unit/test_technical_nc.py::test_file_identity_scalars
+tests/unit/test_technical_nc.py::test_file_identity_scalars
+tests/unit/test_technical_nc.py::test_file_identity_scalars
+tests/unit/test_technical_nc.py::test_file_identity_scalars
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_technical_nc.py:147: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    chars = lambda n: str(netCDF4.chartostring(nc.variables[n][:]).ravel()[0])  # noqa: E731
+
+tests/unit/test_technical_nc.py::test_records_use_reference_parameter_names
+tests/unit/test_technical_nc.py::test_values_come_from_the_engineering_decoder
+tests/unit/test_technical_nc.py::test_termination_flag_is_written_to_the_table
+tests/unit/test_technical_nc.py::test_uncalibrated_parameters_are_not_emitted
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_technical_nc.py:97: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    netCDF4.chartostring(nc.variables["TECHNICAL_PARAMETER_NAME"][:])
+
+tests/unit/test_technical_nc.py::test_records_use_reference_parameter_names
+tests/unit/test_technical_nc.py::test_values_come_from_the_engineering_decoder
+tests/unit/test_technical_nc.py::test_termination_flag_is_written_to_the_table
+tests/unit/test_technical_nc.py::test_uncalibrated_parameters_are_not_emitted
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_technical_nc.py:103: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    netCDF4.chartostring(nc.variables["TECHNICAL_PARAMETER_VALUE"][:])
+
+tests/unit/test_trajectory_nc.py::test_file_level_scalars_match_reference_values
+tests/unit/test_trajectory_nc.py::test_file_level_scalars_match_reference_values
+tests/unit/test_trajectory_nc.py::test_file_level_scalars_match_reference_values
+tests/unit/test_trajectory_nc.py::test_file_level_scalars_match_reference_values
+tests/unit/test_trajectory_nc.py::test_file_level_scalars_match_reference_values
+tests/unit/test_trajectory_nc.py::test_file_level_scalars_match_reference_values
+tests/unit/test_trajectory_nc.py::test_file_level_scalars_match_reference_values
+tests/unit/test_trajectory_nc.py::test_file_level_scalars_match_reference_values
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_trajectory_nc.py:461: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    chars = lambda n: str(netCDF4.chartostring(nc.variables[n][:]).ravel()[0])  # noqa: E731
+
+tests/unit/test_trajectory_nc.py::test_trajectory_parameters_lists_core_params
+  /home/user/ARPY-decoder-Ui/incois-arpy-decoder/tests/unit/test_trajectory_nc.py:476: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+  As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+    values = [str(v) for v in netCDF4.chartostring(nc.variables["TRAJECTORY_PARAMETERS"][:])]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+---- generated xml file: /home/user/repository-verification/core-tests.xml -----
+=========================== short test summary info ============================
+SKIPPED [2] tests/integration/test_apex_argos_raw_parity.py:50: raw ARGOS/GDAC reference files are not present in this workspace
+SKIPPED [1] tests/integration/test_apex_argos_raw_parity.py:102: raw ARGOS reference files are not present in this workspace
+SKIPPED [1] tests/integration/test_argos_burst_splitting.py:44: 152389/152389_2026-01-14_2902222_329.txt not in the local archive
+SKIPPED [1] tests/integration/test_argos_burst_splitting.py:44: 102525/102525_2011-02-13.txt not in the local archive
+SKIPPED [1] tests/integration/test_arvor_i_generic_pipeline.py:74: ARVOR-I raw telemetry / fleet CSVs not present
+SKIPPED [1] tests/integration/test_arvor_i_meta_nc.py:62: ARVOR-I raw datasets not present
+SKIPPED [2] tests/integration/test_arvor_i_meta_nc.py:85: ARVOR-I raw datasets not present
+SKIPPED [2] tests/integration/test_arvor_i_meta_nc.py:117: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_meta_nc.py:142: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:99: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:107: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:113: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:135: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:142: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:161: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:180: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:212: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_prof_nc.py:223: ARVOR-I raw datasets not present
+SKIPPED [1] tests/integration/test_arvor_i_rtqc_pipeline.py:110: ARVOR-I raw telemetry / fleet CSVs not present
+SKIPPED [1] tests/integration/test_arvor_i_rtqc_pipeline.py:115: ARVOR-I raw telemetry / fleet CSVs not present
+SKIPPED [1] tests/integration/test_arvor_i_rtqc_pipeline.py:135: ARVOR-I raw telemetry / fleet CSVs not present
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:76: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:99: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:112: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:127: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:145: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:154: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:166: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:175: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:184: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:190: raw ARVOR-I .eml datasets not in workspace
+SKIPPED [2] tests/integration/test_arvor_i_rtraj_nc.py:212: GDAC reference files not in workspace
+SKIPPED [2] tests/integration/test_arvor_i_rtraj_nc.py:233: GDAC reference files not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:251: GDAC reference files not in workspace
+SKIPPED [2] tests/integration/test_arvor_i_rtraj_nc.py:269: GDAC reference files not in workspace
+SKIPPED [2] tests/integration/test_arvor_i_rtraj_nc.py:302: GDAC reference files not in workspace
+SKIPPED [2] tests/integration/test_arvor_i_rtraj_nc.py:310: GDAC reference files not in workspace
+SKIPPED [2] tests/integration/test_arvor_i_rtraj_nc.py:321: GDAC reference files not in workspace
+SKIPPED [2] tests/integration/test_arvor_i_rtraj_nc.py:344: GDAC reference files not in workspace
+SKIPPED [2] tests/integration/test_arvor_i_rtraj_nc.py:357: GDAC reference files not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_rtraj_nc.py:393: GDAC reference files not in workspace
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:69: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:73: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:80: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:90: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:94: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:101: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:107: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:115: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:120: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:129: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:132: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:140: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:150: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:158: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:168: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:177: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:185: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:197: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:205: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:216: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:219: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_arvor_i_science_reconstruction.py:228: raw ARVOR-I dataset not available
+SKIPPED [1] tests/integration/test_cycle_grouping_suffix.py:74: 2902224 raw files are not present in this workspace
+SKIPPED [1] tests/integration/test_cycle_grouping_suffix.py:109: 2902224 raw files are not present in this workspace
+SKIPPED [1] tests/integration/test_cycle_grouping_suffix.py:198: 2902222 raw files are not present in this workspace
+SKIPPED [1] tests/integration/test_cycle_grouping_suffix.py:227: 2902224 raw files are not present in this workspace
+SKIPPED [1] tests/integration/test_cycle_grouping_suffix.py:327: 2902224 raw files are not present in this workspace
+SKIPPED [1] tests/integration/test_cycle_grouping_suffix.py:388: 2902224 raw files are not present in this workspace
+SKIPPED [1] tests/integration/test_provor_sbd_decode.py:85: demo data not available in this environment
+SKIPPED [1] tests/integration/test_provor_sbd_decode.py:130: demo data not available in this environment
+SKIPPED [1] tests/integration/test_provor_sbd_decode.py:161: demo data not available in this environment
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_6990711_row_count_is_467
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_7902408_row_count_is_804
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_6990711_per_cycle_counts
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_7902408_per_cycle_counts_and_c13_absent
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_cycle_ordering_is_ascending_then_alphabetical
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_cycle_minus_one_and_pending_emit_nothing
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_6990711_param_id_set - ...
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_7902408_param_id_set - ...
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_never_emitted_params_absent
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_param_136_follows_gps_valid_flag
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_no_tech_aux_names_in_tech_rows
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_aux_rows_are_bookkept_not_discarded
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_6990711_cycle1_values_match_fields
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_7902408_cycle12_values_match_fields
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_cycle_numbers_use_buffer_cycles
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_written_file_excludes_aux_rows
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_published_file_is_the_gdac_slot_projection
+ERROR tests/integration/test_arvor_i_tech_nc.py::test_data_centre_override_maps_institution
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test6990711::test_seven_logical_cycles_all_complete
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test6990711::test_expected_vs_received_counts_per_cycle
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test6990711::test_final_burst_order_7_then_5_then_6
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test6990711::test_final_burst_is_one_merged_session
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test6990711::test_packet_conservation
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test6990711::test_as_coded_completion_unreachable_for_deep_cycles
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test7902408::test_completion_pattern
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test7902408::test_pre_launch_handling
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test7902408::test_incomplete_cycles_match_momsn_gaps
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test7902408::test_cycles_13_15_metadata_less
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test7902408::test_pending_cycles_with_process_remaining_buffers
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test7902408::test_sessions_and_split_reasons
+FAILED tests/integration/test_arvor_i_cycle_reconstruction.py::Test7902408::test_packet_conservation
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_message_counts_and_payload_preservation[6990711]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_message_counts_and_payload_preservation[7902408]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_packet_histograms_and_padding[6990711]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_packet_histograms_and_padding[7902408]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_engine_identification_consistent[6990711]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_engine_identification_consistent[7902408]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_momsn_gaps_match_investigation
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-1-3-Ascctd001]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-2-3-Ascctd002]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-3-3-Ascctd003]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-4-3-Ascctd004]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-5-3-Ascctd005]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-6-3-Ascctd006]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-7-3-Ascctd007]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-1-2-Subctd001]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[6990711-1-1-Desctd001]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_ctd_parity[7902408-1-3-Ascctd001]
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_operator_psal_unsigned_convention
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_active_float_cycle_coverage_and_period
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_active_float_incomplete_late_cycles
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_active_float_incomplete_measurement_cycles
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_dead_float_no_eol_flag_anywhere
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_dead_float_final_burst_order
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_dead_float_all_cycles_complete
+FAILED tests/integration/test_arvor_i_raw_decode.py::test_content_retransmissions_preserved
+FAILED tests/integration/test_arvor_i_tech_nc.py::test_written_file_layout[tech_6990711-6990711-154]
+FAILED tests/integration/test_arvor_i_tech_nc.py::test_written_file_layout[tech_7902408-7902408-264]
+FAILED tests/integration/test_csv_metadata_pipeline.py::test_csv_backend_end_to_end
+FAILED tests/integration/test_null_pipeline.py::test_null_decode_produces_nc_and_xml
+FAILED tests/integration/test_structural_parity.py::test_csv_backend_matches_golden_structurally
+FAILED tests/unit/test_apex_engineering.py::test_park_statistics_match_gdac_mc296[327-2.75-1000.9]
+FAILED tests/unit/test_apex_engineering.py::test_park_statistics_match_gdac_mc296[328-2.797-1005.4]
+FAILED tests/unit/test_apex_engineering.py::test_park_statistics_match_gdac_mc296[329-2.796-1006.5]
+FAILED tests/unit/test_apex_engineering.py::test_park_end_sample_matches_gdac_mc290[327-2.731-34.548-1004.2]
+FAILED tests/unit/test_apex_engineering.py::test_park_end_sample_matches_gdac_mc290[328-2.78-34.532-1004.2]
+FAILED tests/unit/test_apex_engineering.py::test_park_end_sample_matches_gdac_mc290[329-2.786-34.531-1005.4]
+FAILED tests/unit/test_apex_engineering.py::test_park_statistics_are_physically_plausible_on_1005
+FAILED tests/unit/test_apex_engineering.py::test_descent_marks_increase_monotonically_on_real_data
+FAILED tests/unit/test_arvor_i_frames.py::test_width_tables_match_matlab_source[decode_prv_data_ir_sbd_222_223_225.m-param1_widths0]
+FAILED tests/unit/test_arvor_i_frames.py::test_width_tables_match_matlab_source[decode_prv_data_ir_sbd_232.m-param1_widths1]
+FAILED tests/unit/test_arvor_i_frames.py::test_firmware_checksum_table_matches_check_decoder_id
+FAILED tests/unit/test_arvor_i_frames.py::test_framing_real_payload_three_rows
+FAILED tests/unit/test_arvor_i_frames.py::test_eml_header_only_with_sidecar_payload
+FAILED tests/unit/test_arvor_i_frames.py::test_eml_rejects_size_mismatch - Fi...
+FAILED tests/unit/test_arvor_i_frames.py::test_tech1_dead_float_first_transmission
+FAILED tests/unit/test_arvor_i_frames.py::test_tech1_active_float_factory_session
+FAILED tests/unit/test_arvor_i_frames.py::test_tech1_stale_position_when_gps_invalid
+FAILED tests/unit/test_arvor_i_frames.py::test_tech2_expected_counts_corrected_mapping
+FAILED tests/unit/test_arvor_i_frames.py::test_tech2_expected_counts_match_received_packets
+FAILED tests/unit/test_arvor_i_frames.py::test_ctd_first_triplets_raw_counts_and_physical
+FAILED tests/unit/test_arvor_i_frames.py::test_ctd_first_measurement_time_fraction
+FAILED tests/unit/test_arvor_i_frames.py::test_ctd_fill_sentinel - StopIteration
+FAILED tests/unit/test_arvor_i_frames.py::test_param1_both_engine_tables - St...
+FAILED tests/unit/test_arvor_i_frames.py::test_hydraulic_packet - StopIteration
+FAILED tests/unit/test_arvor_i_frames.py::test_identical_payloads_flagged_not_dropped
+FAILED tests/unit/test_arvor_i_tech.py::test_label_table_matches_vendored_coriolis_json[222]
+FAILED tests/unit/test_arvor_i_tech.py::test_label_table_matches_vendored_coriolis_json[232]
+FAILED tests/unit/test_metadata_loader.py::test_json_loader_finds_demo_floats
+FAILED tests/unit/test_metadata_nc.py::TestArvorIStartDateDerivation::test_uses_dst_not_cycle_start
+FAILED tests/unit/test_multi_csv_loader.py::test_missing_calibration_emits_equations_but_never_invents_coefficients
+FAILED tests/unit/test_provor_ir_sbd.py::test_parse_sbd_email_zero_payload_ping
+FAILED tests/unit/test_provor_ir_sbd.py::test_parse_sbd_email_with_payload - ...
+FAILED tests/unit/test_provor_ir_sbd.py::test_unpack_tech_packet_from_real_data
+FAILED tests/unit/test_provor_ir_sbd.py::test_unpack_nonzero_payloads_do_not_crash
+FAILED tests/unit/test_rtqc_trajectory.py::TestNCycleFillPairing::test_unpublished_families_are_fill_in_ncycle
+FAILED tests/unit/test_rtqc_trajectory.py::TestNCycleFillPairing::test_decoded_values_survive_internally
+FAILED tests/unit/test_rtqc_trajectory.py::TestNCycleFillPairing::test_published_families_keep_their_ncycle_dates
+80 failed, 1047 passed, 83 skipped, 5349 warnings, 18 errors in 25.60s
