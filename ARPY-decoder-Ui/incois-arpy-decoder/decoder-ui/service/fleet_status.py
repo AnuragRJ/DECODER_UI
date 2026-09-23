@@ -24,6 +24,9 @@ from datetime import UTC, datetime, timedelta
 from io import BytesIO
 from pathlib import Path
 from typing import Any
+import email.utils
+import urllib.error
+import urllib.request
 
 import netCDF4
 import numpy as np
@@ -42,7 +45,8 @@ FILL_JULD = 90000.0
 
 STATUS_RECENT = "ACTIVE / RECENT PROFILE"
 STATUS_OVERDUE = "PROFILE OVERDUE"
-STATUS_NO_RECENT_60 = "NO RECENT PROFILE DATA 60+ DAYS"
+STATUS_NO_RECENT_80 = "NO RECENT PROFILE DATA 80+ DAYS"
+STATUS_NO_RECENT_60 = STATUS_NO_RECENT_80  # Backward-compatibility alias
 STATUS_NO_DATA = "NO DATA"
 
 SYNC_OK = "ok"
@@ -155,7 +159,7 @@ def profile_data_status(days_since: float | None, interval_days: float | None = 
 
     The recent/overdue boundary follows the float's own observed cycle
     interval (10-day fallback), so a 5-day float is not called current for
-    10 days. The 60-day band and all status wording are unchanged.
+    10 days. The 80-day band and all status wording are unchanged.
     """
     return profile_cycle.status_for(
         days_since, interval_days if interval_days is not None else PROFILE_INTERVAL_DAYS
@@ -693,6 +697,172 @@ def ftp_retrieve(ftp: ftplib.FTP, path: str) -> bytes:
     return buf.getvalue()
 
 
+class GdacHttpsClient:
+    """Fast, reliable HTTPS GDAC transport against Ifremer's official HTTP mirror."""
+
+    def __init__(self, base_url: str = "https://data-argo.ifremer.fr", timeout: float = 30.0) -> None:
+        if not base_url.startswith("http://") and not base_url.startswith("https://"):
+            base_url = f"https://{base_url}"
+        self.base_url = base_url.rstrip("/")
+        self.timeout = timeout
+        self.downloads: list[str] = []
+
+    def _url(self, path: str) -> str:
+        cleaned = path.replace("/ifremer/argo", "").lstrip("/")
+        return f"{self.base_url}/{cleaned}"
+
+    def membership(self, dac_dir: str) -> set[str]:
+        """Discover WMO directories present under the DAC path."""
+        url = self._url(dac_dir)
+        if not url.endswith("/"):
+            url += "/"
+        req = urllib.request.Request(url, headers={"User-Agent": "incois-arpy-decoder/1.0"})
+        try:
+            with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+                html = resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as exc:
+            raise FloatSyncError(f"HTTP {exc.code} listing DAC {dac_dir}: {exc.reason}") from exc
+        except Exception as exc:
+            raise FloatSyncError(f"DAC listing failed: {exc}") from exc
+
+        members = set(re.findall(r'<a\s+href="(\d{7})/"', html))
+        if not members:
+            members = {m for m in re.findall(r'href=[\'"]?(\d{7})/?[\'"]?', html) if len(m) == 7}
+        if not members:
+            raise FloatSyncError(
+                "DAC listing contains no valid WMO directories; membership is unverified"
+            )
+        return members
+
+    def file_stat(self, path: str) -> tuple[int | None, str | None]:
+        """(size, MDTM 'YYYYMMDDHHMMSS') via HTTP HEAD request."""
+        url = self._url(path)
+        req = urllib.request.Request(url, headers={"User-Agent": "incois-arpy-decoder/1.0"})
+        req.get_method = lambda: "HEAD"
+        try:
+            with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+                size = None
+                cl = resp.headers.get("Content-Length")
+                if cl and cl.strip().isdigit():
+                    size = int(cl.strip())
+                mdtm = None
+                lm = resp.headers.get("Last-Modified")
+                if lm:
+                    try:
+                        dt = email.utils.parsedate_to_datetime(lm)
+                        if dt.tzinfo is None:
+                            dt = dt.replace(tzinfo=UTC)
+                        else:
+                            dt = dt.astimezone(UTC)
+                        mdtm = dt.strftime("%Y%m%d%H%M%S")
+                    except Exception:
+                        pass
+                return size, mdtm
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                return None, None
+            raise FloatSyncError(f"HTTP {exc.code} statting {path}: {exc.reason}") from exc
+        except Exception as exc:
+            raise FloatSyncError(f"Network error statting {path}: {exc}") from exc
+
+    def list_entries(self, path: str) -> list[tuple[str, int, float]]:
+        """Files in a remote directory as (name, size, mtime_epoch)."""
+        url = self._url(path)
+        if not url.endswith("/"):
+            url += "/"
+        req = urllib.request.Request(url, headers={"User-Agent": "incois-arpy-decoder/1.0"})
+        try:
+            with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+                html = resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                return []
+            raise FloatSyncError(f"HTTP {exc.code} listing {path}: {exc.reason}") from exc
+        except Exception as exc:
+            raise FloatSyncError(f"Unparseable profiles LIST response: {exc}") from exc
+
+        rows = re.findall(
+            r'<a href="([^"?/]+)">\1</a>\s*</td>\s*<td align="right">([^<]+)</td>\s*<td align="right">([^<]+)</td>',
+            html,
+            re.IGNORECASE,
+        )
+        now = _utcnow()
+        out = []
+        for name, mtime_str, size_str in rows:
+            name = name.strip()
+            if name.startswith("?") or name in (".", "..", "Parent Directory"):
+                continue
+            mtime_str = mtime_str.strip()
+            size_str = size_str.strip()
+            try:
+                dt = datetime.strptime(mtime_str, "%Y-%m-%d %H:%M").replace(tzinfo=UTC)
+                epoch = dt.timestamp()
+            except Exception:
+                epoch = now.timestamp()
+
+            size = 0
+            if size_str.endswith("K"):
+                size = int(float(size_str[:-1]) * 1024)
+            elif size_str.endswith("M"):
+                size = int(float(size_str[:-1]) * 1024 * 1024)
+            elif size_str.endswith("G"):
+                size = int(float(size_str[:-1]) * 1024 * 1024 * 1024)
+            elif size_str.isdigit():
+                size = int(size_str)
+
+            out.append((name, size, epoch))
+        return out
+
+    def retrieve(self, path: str) -> bytes:
+        """Download raw bytes via HTTP GET."""
+        url = self._url(path)
+        req = urllib.request.Request(url, headers={"User-Agent": "incois-arpy-decoder/1.0"})
+        try:
+            with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+                data = resp.read()
+                self.downloads.append(path.rsplit("/", 1)[-1])
+                return data
+        except urllib.error.HTTPError as exc:
+            raise FloatSyncError(f"HTTP {exc.code} downloading {path}: {exc.reason}") from exc
+        except Exception as exc:
+            raise FloatSyncError(f"Network error downloading {path}: {exc}") from exc
+
+    def close(self) -> None:
+        pass
+
+
+class GdacFtpClient:
+    """FTP transport adapter (ftplib.FTP or FakeFTP)."""
+
+    def __init__(self, ftp: Any) -> None:
+        self._ftp = ftp
+        self.downloads: list[str] = getattr(ftp, "downloads", [])
+
+    def membership(self, dac_dir: str) -> set[str]:
+        return ftp_membership(self._ftp, dac_dir)
+
+    def file_stat(self, path: str) -> tuple[int | None, str | None]:
+        return ftp_file_stat(self._ftp, path)
+
+    def list_entries(self, path: str) -> list[tuple[str, int, float]]:
+        return ftp_list_entries(self._ftp, path)
+
+    def retrieve(self, path: str) -> bytes:
+        data = ftp_retrieve(self._ftp, path)
+        if hasattr(self._ftp, "downloads") and not getattr(self._ftp, "downloads", None):
+            self.downloads.append(path.rsplit("/", 1)[-1])
+        return data
+
+    def close(self) -> None:
+        try:
+            self._ftp.quit()
+        except Exception:
+            try:
+                self._ftp.close()
+            except Exception:
+                pass
+
+
 # ---------------------------------------------------------------------------
 # Sync registry (mirrors ingestion.py lifecycle)
 # ---------------------------------------------------------------------------
@@ -722,7 +892,7 @@ class FleetSyncRegistry:
     ) -> None:
         self._state_path = state_path or (DATA_DIR / "fleet_status" / "cache.json")
         self._fleet_fn = fleet_fn or _default_fleet
-        self._host = host or os.environ.get("FLEET_FTP_HOST", "ftp.ifremer.fr")
+        self._host = host or os.environ.get("FLEET_FTP_HOST", "data-argo.ifremer.fr")
         self._port = port or int(os.environ.get("FLEET_FTP_PORT", "21"))
         self._root = (root or os.environ.get("FLEET_FTP_ROOT", "/ifremer/argo")).rstrip("/") or "/"
         self._timeout = timeout_s or float(os.environ.get("FLEET_FTP_TIMEOUT_S", "30"))
@@ -771,7 +941,13 @@ class FleetSyncRegistry:
 
     @property
     def source_info(self) -> dict[str, Any]:
+        proto = (
+            "https"
+            if ("http" in self._host or self._host in ("ftp.ifremer.fr", "data-argo.ifremer.fr"))
+            else "ftp"
+        )
         return {
+            "protocol": proto,
             "host": self._host,
             "port": self._port,
             "root": self._root,
@@ -904,11 +1080,31 @@ class FleetSyncRegistry:
         finally:
             self._end()
 
-    def _connect(self) -> ftplib.FTP:
+    def _connect(self) -> Any:
+        proto = os.environ.get("FLEET_GDAC_PROTOCOL", "").lower()
+        if proto == "ftp":
+            ftp = ftplib.FTP(timeout=self._timeout)
+            ftp.connect(self._host, self._port)
+            ftp.login(user="anonymous", passwd="fleet-status@incois")
+            return GdacFtpClient(ftp)
+
+        if (
+            self._host in ("ftp.ifremer.fr", "data-argo.ifremer.fr")
+            or "ifremer.fr" in self._host
+            or self._host.startswith("http://")
+            or self._host.startswith("https://")
+        ):
+            base_url = (
+                self._host
+                if self._host.startswith("http")
+                else "https://data-argo.ifremer.fr"
+            )
+            return GdacHttpsClient(base_url=base_url, timeout=self._timeout)
+
         ftp = ftplib.FTP(timeout=self._timeout)
         ftp.connect(self._host, self._port)
         ftp.login(user="anonymous", passwd="fleet-status@incois")
-        return ftp
+        return GdacFtpClient(ftp)
 
     def _cycle(self) -> dict[str, Any]:
         t0 = time.time()
@@ -927,18 +1123,24 @@ class FleetSyncRegistry:
         with self._lock:
             self._progress = {"done": 0, "total": len(wmos)}
         try:
-            ftp = self._connect()
+            raw_conn = self._connect()
+            if hasattr(raw_conn, "membership") and not hasattr(raw_conn, "nlst"):
+                client = raw_conn
+            elif hasattr(raw_conn, "nlst"):
+                client = GdacFtpClient(raw_conn)
+            else:
+                client = raw_conn
         except Exception as exc:
-            return self._fail(f"FTP {self._host}:{self._port} unreachable: {exc}", t0)
+            return self._fail(f"GDAC {self._host}:{self._port} unreachable: {exc}", t0)
         try:
             try:
-                members = ftp_membership(ftp, f"{self._root}/dac/incois")
+                members = client.membership(f"{self._root}/dac/incois")
             except Exception as exc:
                 return self._fail(f"DAC listing failed: {exc}", t0)
             updated = unchanged = failed = 0
             for wmo in wmos:
                 try:
-                    changed = self._refresh_float(ftp, wmo, members)
+                    changed = self._refresh_float(client, wmo, members)
                     if changed:
                         updated += 1
                     else:
@@ -996,12 +1198,9 @@ class FleetSyncRegistry:
             }
         finally:
             try:
-                ftp.quit()
+                client.close()
             except Exception:
-                try:
-                    ftp.close()
-                except Exception:
-                    pass
+                pass
 
     def _fail(self, error: str, t0: float) -> dict[str, Any]:
         with self._lock:
@@ -1028,11 +1227,16 @@ class FleetSyncRegistry:
                 if in_dac is not None:
                     row["in_incois_dac"] = in_dac
 
-    def _refresh_float(self, ftp: ftplib.FTP, wmo: int, members: set[str]) -> bool:
+    def _refresh_float(self, transport: Any, wmo: int, members: set[str]) -> bool:
         """Refresh independent source blocks. Profile recency must not wait
         for trajectory or inventory success. Each failed block retains its
         last valid data; a partial row is explicitly stale/degraded.
         """
+        if hasattr(transport, "nlst") and not hasattr(transport, "membership"):
+            client = GdacFtpClient(transport)
+        else:
+            client = transport
+
         key = str(wmo)
         with self._lock:
             old = copy.deepcopy(self._rows.get(key))
@@ -1081,7 +1285,7 @@ class FleetSyncRegistry:
         # Missing/unreadable history never falls back to another product/date.
         profile_name = f"{wmo}_prof.nc"
         try:
-            size, mdtm = ftp_file_stat(ftp, f"{base}/{profile_name}")
+            size, mdtm = client.file_stat(f"{base}/{profile_name}")
             if size is None and mdtm is None:
                 raise FloatSyncError(f"{profile_name} absent or unavailable upstream")
             fp = f"{mdtm}|{size}"
@@ -1095,7 +1299,7 @@ class FleetSyncRegistry:
                 and aggregate.get("platform_number") == key
             )
             if not reusable:
-                raw = ftp_retrieve(ftp, f"{base}/{profile_name}")
+                raw = client.retrieve(f"{base}/{profile_name}")
                 aggregate = parse_profile(raw, wmo, None, now)
                 aggregate.update(
                     file=profile_name, mdtm=mdtm, size=size, sha256=hashlib.sha256(raw).hexdigest()
@@ -1117,13 +1321,13 @@ class FleetSyncRegistry:
         # Position evidence only. An unavailable Rtraj cannot block a newer
         # profile date; no message timestamp is used in monitoring formulas.
         try:
-            size, mdtm = ftp_file_stat(ftp, f"{base}/{wmo}_Rtraj.nc")
+            size, mdtm = client.file_stat(f"{base}/{wmo}_Rtraj.nc")
             if size is None and mdtm is None:
                 raise FloatSyncError("Rtraj absent or unavailable upstream")
             fp = f"{mdtm}|{size}"
             rtraj = (old or {}).get("rtraj")
             if not (parser_current and rtraj and (old or {}).get("rtraj_fp") == fp):
-                raw = ftp_retrieve(ftp, f"{base}/{wmo}_Rtraj.nc")
+                raw = client.retrieve(f"{base}/{wmo}_Rtraj.nc")
                 rtraj = parse_rtraj(raw, wmo, now)
                 rtraj.update(mdtm=mdtm, size=size, sha256=hashlib.sha256(raw).hexdigest())
                 changed = True
@@ -1135,7 +1339,7 @@ class FleetSyncRegistry:
         # Exact published inventory and the existing latest-file position
         # candidate are independent of the time-based approximate estimate.
         try:
-            entries = ftp_list_entries(ftp, f"{base}/profiles")
+            entries = client.list_entries(f"{base}/profiles")
             fp = listing_fingerprint(entries)
             if not (
                 parser_current
@@ -1145,7 +1349,7 @@ class FleetSyncRegistry:
                 summary = summarize_profiles([n for n, _size, _mtime in entries], wmo)
                 latest, parsed = summary.get("latest"), None
                 if latest:
-                    raw = ftp_retrieve(ftp, f"{base}/profiles/{latest['file']}")
+                    raw = client.retrieve(f"{base}/profiles/{latest['file']}")
                     parsed = parse_profile(raw, wmo, latest["cycle"], now)
                     parsed["sha256"] = hashlib.sha256(raw).hexdigest()
                 row["profiles"] = dict(summary, latest_parse=parsed)
@@ -1346,7 +1550,8 @@ class FleetSyncRegistry:
             "total": len(floats),
             "recent_profile": sum(f["data_status"] == STATUS_RECENT for f in floats),
             "profile_overdue": sum(f["data_status"] == STATUS_OVERDUE for f in floats),
-            "no_recent_profile_60": sum(f["data_status"] == STATUS_NO_RECENT_60 for f in floats),
+            "no_recent_profile_80": sum(f["data_status"] == STATUS_NO_RECENT_80 for f in floats),
+            "no_recent_profile_60": sum(f["data_status"] == STATUS_NO_RECENT_80 for f in floats),
             "no_data": sum(f["data_status"] == STATUS_NO_DATA for f in floats),
             "approx_profiles_missed_total": (
                 sum(f["approx_profiles_missed"] or 0 for f in floats)

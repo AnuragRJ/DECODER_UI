@@ -1,0 +1,130 @@
+(Oct 04 2016 12:04:24,    5506 sec) AirSystem()          Battery [190cnt, 14.7V]  Current [77cnt, 310.3mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [43s]
+(Oct 04 2016 12:05:41,    5583 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.2dbars / 238.2uM 26.624C 29.330 8.997 59.333 / 128,215,535
+(Oct 04 2016 12:05:52,    5594 sec) GpsServices()        Replacing aged (109 days) almanac.
+(Oct 04 2016 12:05:52,    5594 sec) UpLoadGpsAlmanac()   Pausing for 15 minutes to upload GPS almanac.
+(Oct 04 2016 12:20:52,    6494 sec) UpLoadGpsAlmanac()   Pause complete.
+(Oct 04 2016 12:20:52,    6494 sec) GpsServices()        New almanac acquired.
+(Oct 04 2016 12:20:52,    6495 sec) GpsServices()        Initiating GPS fix acquisition.
+(Oct 04 2016 12:21:35,    6538 sec) gga()                $GPGGA,122050,1605.0102,N,06354.7210,E,1,08,0.9,-5.4,M,-60.7,M,,*46
+(Oct 04 2016 12:21:36,    6538 sec) GpsServices()        Profile 0 GPS fix obtained in 43 seconds.
+(Oct 04 2016 12:21:36,    6538 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Oct 04 2016 12:21:36,    6538 sec) GpsServices()        Fix:   63.912  16.084 10/04/2016 122050    8
+(Oct 04 2016 12:22:25,    6588 sec) gga()                $GPGGA,122140,1605.0044,N,06354.7273,E,1,08,0.9,-3.8,M,-60.7,M,,*4A
+(Oct 04 2016 12:22:33,    6595 sec) gga()                $GPGGA,122230,1604.9983,N,06354.7338,E,1,08,0.9,2.5,M,-60.7,M,,*6B
+(Oct 04 2016 12:22:33,    6596 sec) GpsServices()        APF9 RTC skew (3s) OK.
+(Oct 04 2016 12:22:34,    6596 sec) GpsServices()        GPS services complete.
+(Oct 04 2016 12:23:23,    6645 sec) CLogin()             Connecting to primary host.
+(Oct 04 2016 12:23:38,    6661 sec) CLogin()             Connection 1 established in 15 seconds.
+(Oct 04 2016 12:23:52,    6674 sec) login()              Login successful.
+(Oct 04 2016 12:23:55,    6678 sec) CLogin()             Logged in to host.  [Login required 17 seconds]
+(Oct 04 2016 12:24:10,    6692 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Oct 04 2016 12:24:12,    6695 sec) Rx()                 Initiating transfer. [0x43]
+(Oct 04 2016 12:24:16,    6699 sec) RxStartByte()        Sync errors encountered: 474
+(Oct 04 2016 12:24:21,    6703 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Oct 04 2016 12:24:26,    6708 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 14 sec, 73.1 bps]
+(Oct 04 2016 12:24:26,    6708 sec) RxConfig()           Download successful.
+(Oct 04 2016 12:24:36,    6718 sec) RxConfig()           Attempt to delete "mission.cfg" failed [errno=2].
+(Oct 04 2016 12:24:59,    6741 sec) WriteVitals()        Writing vitals to "7827.1610041202".
+(Oct 04 2016 12:25:04,    6746 sec) UpLoadFile()         Uploading "7827.1610041052.log" to host as "7827.1610041052.log".
+(Oct 04 2016 12:25:07,    6749 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Oct 04 2016 12:25:14,    6756 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Oct 04 2016 12:25:14,    6756 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Oct 04 2016 12:25:30,    6772 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Oct 04 2016 12:25:30,    6772 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Oct 04 2016 12:25:51,    6793 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Oct 04 2016 12:25:51,    6793 sec) TxPacket()           Packet xmit history: [01001001] (0:ok, 1:fail).
+(Oct 04 2016 12:25:56,    6798 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Oct 04 2016 12:25:56,    6798 sec) TxPacket()           Packet xmit history: [10010011] (0:ok, 1:fail).
+(Oct 04 2016 12:26:08,    6810 sec) Tx()                 Transmission completed successfully [5 packets, 3327 bytes, 60 sec, 70.4 bps]
+(Oct 04 2016 12:26:08,    6811 sec) UpLoadFile()         Upload successful.
+(Oct 04 2016 12:26:12,    6814 sec) UpLoadFile()         Uploading "7827.1610041110.log" to host as "7827.1610041110.log".
+(Oct 04 2016 12:26:15,    6818 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Oct 04 2016 12:26:43,    6845 sec) Tx()                 Transmission completed successfully [4 packets, 3296 bytes, 26 sec, 157.5 bps]
+(Oct 04 2016 12:26:43,    6846 sec) UpLoadFile()         Upload successful.
+(Oct 04 2016 12:26:47,    6850 sec) UpLoadFile()         Uploading "7827.1610041127.log" to host as "7827.1610041127.log".
+(Oct 04 2016 12:26:53,    6855 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Oct 04 2016 12:27:15,    6877 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Oct 04 2016 12:27:15,    6877 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Oct 04 2016 12:27:27,    6889 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Oct 04 2016 12:27:27,    6889 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Oct 04 2016 12:27:38,    6901 sec) Tx()                 Transmission completed successfully [4 packets, 3296 bytes, 43 sec, 95.3 bps]
+(Oct 04 2016 12:27:39,    6901 sec) UpLoadFile()         Upload successful.
+(Oct 04 2016 12:27:43,    6905 sec) UpLoadFile()         Uploading "7827.1610041145.log" to host as "7827.1610041145.log".
+(Oct 04 2016 12:27:47,    6909 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Oct 04 2016 12:27:52,    6914 sec) TxPacket()           Invalid response [0x43] - resending packet. [PktNum=0x01]
+(Oct 04 2016 12:27:52,    6914 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Oct 04 2016 12:27:55,    6917 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Oct 04 2016 12:27:55,    6917 sec) TxPacket()           Packet xmit history: [00101011] (0:ok, 1:fail).
+(Oct 04 2016 12:28:02,    6924 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Oct 04 2016 12:28:02,    6924 sec) TxPacket()           Packet xmit history: [10101101] (0:ok, 1:fail).
+(Oct 04 2016 12:28:16,    6939 sec) Tx()                 Transmission completed successfully [6 packets, 3296 bytes, 28 sec, 123.4 bps]
+(Oct 04 2016 12:28:17,    6939 sec) UpLoadFile()         Upload successful.
+(Oct 04 2016 12:28:26,    6948 sec) UpLoadFile()         Uploading "2676.000.log" to host as "2676.000.log".
+(Oct 04 2016 12:28:29,    6951 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Oct 04 2016 12:29:04,    6986 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Oct 04 2016 12:29:04,    6986 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Oct 04 2016 12:29:45,    7027 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Oct 04 2016 12:29:45,    7027 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Oct 04 2016 12:30:19,    7061 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Oct 04 2016 12:30:19,    7061 sec) TxPacket()           Packet xmit history: [01100001] (0:ok, 1:fail).
+(Oct 04 2016 12:30:23,    7065 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Oct 04 2016 12:30:23,    7065 sec) TxPacket()           Packet xmit history: [11000011] (0:ok, 1:fail).
+(Oct 04 2016 12:31:46,    7148 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Oct 04 2016 12:31:46,    7148 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Oct 04 2016 12:32:41,    7203 sec) Tx()                 Transmission completed successfully [28 packets, 27960 bytes, 251 sec, 114.2 bps]
+(Oct 04 2016 12:32:41,    7204 sec) UpLoadFile()         Upload successful.
+(Oct 04 2016 12:32:46,    7208 sec) UpLoadFile()         Uploading "7827.1610041202" to host as "7827.1610041202".
+(Oct 04 2016 12:32:49,    7211 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Oct 04 2016 12:33:04,    7226 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Oct 04 2016 12:33:04,    7226 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Oct 04 2016 12:33:11,    7234 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Oct 04 2016 12:33:12,    7234 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Oct 04 2016 12:33:23,    7245 sec) Tx()                 Transmission completed successfully [1 packets, 801 bytes, 33 sec, 31.0 bps]
+(Oct 04 2016 12:33:23,    7246 sec) UpLoadFile()         Upload successful.
+(Oct 04 2016 12:33:34,    7256 sec) UpLoad()             Files successfully uploaded: 6
+(Oct 04 2016 12:33:34,    7256 sec) UpLoad()             Upload complete.
+(Oct 04 2016 12:33:37,    7260 sec) logout()             Log-out successful.
+(Oct 04 2016 12:33:39,    7261 sec) Telemetry()          Telemetry cycle complete: PrfId=0 ConnectionAttempts=1  Connections=1
+(Oct 04 2016 12:33:42,    7264 sec) configure()          Parsing configurators in "mission.cfg".
+(Oct 04 2016 12:33:48,    7270 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Oct 04 2016 12:33:49,    7271 sec) configure()          Configuration CRCs and syntax OK.
+(Oct 04 2016 12:33:49,    7271 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Oct 04 2016 12:33:49,    7271 sec) ConfigSupervisor()   Configuration accepted.
+(Oct 04 2016 12:48:57,    8179 sec) Prelude()            Logging configuration and initiating telemetry.
+(Oct 04 2016 12:48:57,    8179 sec) LogConfiguration()   Mission configuration for Apf9i FwRev 061016:
+(Oct 04 2016 12:48:57,    8179 sec) LogConfiguration()      AscentTimeOut(540) [min]
+(Oct 04 2016 12:48:57,    8179 sec) LogConfiguration()      AtDialCmd(AT+CBST=71,0,1;DT0088160000573) [primary]
+(Oct 04 2016 12:48:57,    8179 sec) LogConfiguration()      AltDialCmd(ATDT0013014291790) [alternate]
+(Oct 04 2016 12:48:57,    8179 sec) LogConfiguration()      BuoyancyNudge(10) [count]
+(Oct 04 2016 12:48:57,    8179 sec) LogConfiguration()      BuoyancyNudgeInitial(22) [count]
+(Oct 04 2016 12:48:57,    8180 sec) LogConfiguration()      ConnectTimeOut(60) [sec]
+(Oct 04 2016 12:48:57,    8180 sec) LogConfiguration()      CpActivationP(500) [dbar]
+(Oct 04 2016 12:48:58,    8180 sec) LogConfiguration()      DeepProfileDescentTime(300) [min]
+(Oct 04 2016 12:48:58,    8180 sec) LogConfiguration()      DeepProfilePistonPos(16) [count]
+(Oct 04 2016 12:48:58,    8180 sec) LogConfiguration()      DeepProfilePressure(2000) [dbar]
+(Oct 04 2016 12:48:58,    8180 sec) LogConfiguration()      CompensatorHyperRetraction(0) [count]
+(Oct 04 2016 12:48:58,    8180 sec) LogConfiguration()      DownTime(13740) [min]
+(Oct 04 2016 12:48:58,    8180 sec) LogConfiguration()      FlbbMode(1)
+(Oct 04 2016 12:48:58,    8180 sec) LogConfiguration()      FloatId(7827)
+(Oct 04 2016 12:48:58,    8180 sec) LogConfiguration()      FullExtension(226) [count]
+(Oct 04 2016 12:48:58,    8181 sec) LogConfiguration()      FullRetraction(9) [count]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      MaxAirBladder(124) [count]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      MaxLogKb(40) [KByte]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      MissionPrelude(360) [min]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      OkVacuum(96) [count]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      PActivationPistonPosition(16) [count]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      ParkDescentTime(300) [min]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      ParkPistonPos(66) [count]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      ParkPressure(1000) [dbar]
+(Oct 04 2016 12:48:59,    8181 sec) LogConfiguration()      PnPCycleLen(1)
+(Oct 04 2016 12:48:59,    8182 sec) LogConfiguration()      Pwd(0x3c35)
+(Oct 04 2016 12:48:59,    8182 sec) LogConfiguration()      TelemetryRetry(15) [min]
+(Oct 04 2016 12:49:00,    8182 sec) LogConfiguration()      TimeOfDay(DISABLED) [min]
+(Oct 04 2016 12:49:00,    8182 sec) LogConfiguration()      UpTime(660) [min]
+(Oct 04 2016 12:49:00,    8182 sec) LogConfiguration()      User(f7827)
+(Oct 04 2016 12:49:00,    8182 sec) LogConfiguration()      Verbosity(2)
+(Oct 04 2016 12:49:00,    8182 sec) LogConfiguration()      DebugBits(0x0002)
+
+<EOT>
+
+<EOT>

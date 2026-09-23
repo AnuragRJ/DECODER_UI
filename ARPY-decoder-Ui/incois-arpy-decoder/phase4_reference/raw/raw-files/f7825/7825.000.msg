@@ -1,0 +1,37 @@
+# GPS fix obtained in 58 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   89.634  18.266 12/24/2016 214020    8
+Apf9iFwRev=061016
+ActiveBallastAdjustments=0
+AirBladderPressure=127
+AirPumpAmps=63
+AirPumpVolts=192
+BuoyancyPumpOnTime=1078
+BuoyancyPumpAmps=0
+BuoyancyPumpVolts=0
+CurrentPistonPosition=226
+DeepProfilePistonPosition=16
+GpsFixTime=58
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7825
+ParkDescentPCnt=0
+ParkPistonPosition=66
+ParkObs={ 0.0dbar, 0.000C, 0.0000PSU / 0.000 0.000C 0.000 / 0, 0, 0}
+ProfileId=000
+ObsIndex=0
+QuiescentAmps=0
+QuiescentVolts=0
+RtcSkew=1
+Sbe41cpAmps=0
+Sbe41cpVolts=0
+Sbe41cpStatus=0x00000000
+status=0x00000000
+SurfaceObs={ 0.1dbar, nan, nan / 23.146 30.518C 8.694 / 65, 134, 531}
+SurfacePistonPosition=0
+SurfacePressure=0.00
+Vacuum=87
+
+<EOT>
+
+<EOT>

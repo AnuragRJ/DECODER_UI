@@ -1,0 +1,406 @@
+(Sep 20 2011 07:00:15,  842232 sec) TelemetryInit()      Profile 11. (Apf9i FwRev: 101207)
+(Sep 20 2011 07:07:00,  842637 sec) AirSystem()          Battery [186cnt, 14.4V]  Current [81cnt, 32.6mA]  Barometer [127cnt, 6.8"Hg]  Run-Time [43s]
+(Sep 20 2011 07:07:29,  842665 sec) GpsServices()        GPS almanac is current.
+(Sep 20 2011 07:07:29,  842665 sec) GpsServices()        Initiating GPS fix acquisition.
+(Sep 20 2011 07:07:45,  842682 sec) gga()                $GPGGA,070724,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*49
+(Sep 20 2011 07:07:55,  842692 sec) gga()                $GPGGA,070734,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*48
+(Sep 20 2011 07:08:05,  842702 sec) gga()                $GPGGA,070744,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*4F
+(Sep 20 2011 07:08:15,  842712 sec) gga()                $GPGGA,070754,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*4E
+(Sep 20 2011 07:08:25,  842722 sec) gga()                $GPGGA,070804,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*44
+(Sep 20 2011 07:08:35,  842732 sec) gga()                $GPGGA,070814,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*45
+(Sep 20 2011 07:08:45,  842742 sec) gga()                $GPGGA,070824,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*46
+(Sep 20 2011 07:08:55,  842752 sec) gga()                $GPGGA,070834,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*47
+(Sep 20 2011 07:09:05,  842762 sec) gga()                $GPGGA,070844,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*40
+(Sep 20 2011 07:09:15,  842772 sec) gga()                $GPGGA,070854,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*41
+(Sep 20 2011 07:09:25,  842782 sec) gga()                $GPGGA,070904,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*45
+(Sep 20 2011 07:09:45,  842802 sec) gga()                $GPGGA,070924,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*47
+(Sep 20 2011 07:09:55,  842812 sec) gga()                $GPGGA,070934,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*46
+(Sep 20 2011 07:10:05,  842822 sec) gga()                $GPGGA,070944,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*41
+(Sep 20 2011 07:10:15,  842832 sec) gga()                $GPGGA,070954,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*40
+(Sep 20 2011 07:10:25,  842842 sec) gga()                $GPGGA,071004,0955.5941,S,07806.4323,E,0,00,,,M,,M,,*4D
+(Sep 20 2011 07:10:55,  842872 sec) gga()                $GPGGA,071010,0934.7546,S,07709.6867,E,1,07,1.1,4.0,M,-71.9,M,,*71
+(Sep 20 2011 07:10:56,  842872 sec) GpsServices()        Profile 11 GPS fix obtained in 207 seconds.
+(Sep 20 2011 07:10:56,  842872 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Sep 20 2011 07:10:56,  842873 sec) GpsServices()        Fix:   77.161  -9.579 09/20/2011 071010    7
+(Sep 20 2011 07:11:25,  842902 sec) gga()                $GPGGA,071040,0934.7563,S,07709.6846,E,1,07,1.2,2.7,M,-71.9,M,,*72
+(Sep 20 2011 07:11:31,  842908 sec) gga()                $GPGGA,071110,0934.7570,S,07709.6822,E,1,08,1.0,-2.7,M,-71.9,M,,*56
+(Sep 20 2011 07:11:31,  842908 sec) GpsServices()        APF9 RTC skew (21s) OK.
+(Sep 20 2011 07:11:32,  842908 sec) LogNmeaSentences()   ,N,N*31
+(Sep 20 2011 07:11:32,  842908 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 07:11:41,  842918 sec) LogNmeaSentences()   $GPRMC,071120,A,0934.7559,S,07709.6814,E,000.8,260.6,200911,008.3,W*74
+(Sep 20 2011 07:11:42,  842918 sec) LogNmeaSentences()   $GPGGA,071120,0934.7559,S,07709.6814,E,1,08,1.0,1.0,M,-71.9,M,,*72
+(Sep 20 2011 07:11:42,  842919 sec) LogNmeaSentences()   $GPGSA,A,3,02,04,,07,,10,15,17,26,28,,,1.9,1.0,1.6*30
+(Sep 20 2011 07:11:42,  842919 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,48,225,46,04,80,350,49,05,16,216,42,07,39,138,43*75
+(Sep 20 2011 07:11:43,  842919 sec) LogNmeaSentences()   $PGRME,6.1,M,10.8,M,12.4,M*27
+(Sep 20 2011 07:11:43,  842919 sec) LogNmeaSentences()   $PGRMT,GPS 15-L Ver. 4.40,P,P,R,R,P,,,R,P*7E
+(Sep 20 2011 07:11:43,  842920 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 07:11:43,  842920 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 07:11:51,  842928 sec) LogNmeaSentences()   $GPRMC,071130,A,0934.7550,S,07709.6819,E,001.5,348.1,200911,008.3,W*71
+(Sep 20 2011 07:11:52,  842928 sec) LogNmeaSentences()   $GPGGA,071130,0934.7550,S,07709.6819,E,1,08,1.0,3.1,M,-71.9,M,,*74
+(Sep 20 2011 07:11:52,  842928 sec) LogNmeaSentences()   $GPGSA,A,3,02,04,,07,,10,15,17,26,28,,,1.9,1.0,1.6*30
+(Sep 20 2011 07:11:52,  842929 sec) LogNmeaSentences()   $GPGSV,3,2,10,08,65,117,48,10,42,161,45,15,04,287,38,17,18,357,43*76
+(Sep 20 2011 07:11:53,  842929 sec) LogNmeaSentences()   $PGRME,6.1,M,10.8,M,12.4,M*27
+(Sep 20 2011 07:11:53,  842929 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 07:11:53,  842930 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 07:12:01,  842938 sec) LogNmeaSentences()   $GPRMC,071140,A,0934.7548,S,07709.6815,E,000.6,317.3,200911,008.3,W*79
+(Sep 20 2011 07:12:02,  842938 sec) LogNmeaSentences()   $GPGGA,071140,0934.7548,S,07709.6815,E,1,09,0.9,3.2,M,-71.9,M,,*7C
+(Sep 20 2011 07:12:02,  842938 sec) LogNmeaSentences()   $GPGSA,A,3,02,04,05,07,,10,15,17,26,28,,,1.7,0.9,1.4*31
+(Sep 20 2011 07:12:02,  842939 sec) LogNmeaSentences()   $GPGSV,3,3,10,26,33,264,45,28,21,031,42*70
+(Sep 20 2011 07:12:02,  842939 sec) LogNmeaSentences()   $PGRME,5.6,M,8.7,M,10.3,M*10
+(Sep 20 2011 07:12:03,  842939 sec) GpsServices()        GPS services complete.
+(Sep 20 2011 07:12:35,  842972 sec) CLogin()             Connecting to primary host.
+(Sep 20 2011 07:12:52,  842989 sec) CLogin()             Connection 1 established in 17 seconds.
+(Sep 20 2011 07:13:04,  843001 sec) login()              Login successful.
+(Sep 20 2011 07:13:08,  843004 sec) CLogin()             Logged in to host.  [Login required 16 seconds]
+(Sep 20 2011 07:13:16,  843012 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Sep 20 2011 07:13:18,  843014 sec) Rx()                 Initiating transfer. [0x43]
+(Sep 20 2011 07:13:26,  843023 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Sep 20 2011 07:13:33,  843029 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 15 sec, 68.3 bps]
+(Sep 20 2011 07:13:33,  843029 sec) RxConfig()           Download successful.
+(Sep 20 2011 07:13:46,  843043 sec) WriteVitals()        Writing vitals to "6856.011.msg".
+(Sep 20 2011 07:13:56,  843052 sec) UpLoadFile()         Uploading "6856.011.log" to host as "6856.011.log".
+(Sep 20 2011 07:13:58,  843055 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Sep 20 2011 07:14:35,  843092 sec) GetReceiverResponse( Return value: 13
+(Sep 20 2011 07:14:35,  843092 sec) TxPacket()           No carrier detected.
+(Sep 20 2011 07:14:36,  843092 sec) TxPacket()           Exit status: -5
+(Sep 20 2011 07:14:36,  843092 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Sep 20 2011 07:14:46,  843103 sec) UpLoadFile()         Upload failed.
+(Sep 20 2011 07:14:47,  843103 sec) CLogin()             Connecting to primary host.
+(Sep 20 2011 07:14:53,  843109 sec) chat()               Expected string [OK] not received.
+(Sep 20 2011 07:14:53,  843109 sec) modem_restore_factor Modem command [AT&F0] failed.
+(Sep 20 2011 07:14:53,  843109 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Sep 20 2011 07:14:53,  843109 sec) modem_connect()      Modem configuration failed.
+(Sep 20 2011 07:15:14,  843131 sec) CLogin()             Connection 2 established in 27 seconds.
+(Sep 20 2011 07:15:26,  843143 sec) login()              Login successful.
+(Sep 20 2011 07:15:30,  843146 sec) CLogin()             Logged in to host.  [Login required 16 seconds]
+(Sep 20 2011 07:15:35,  843151 sec) UpLoadFile()         Uploading "6856.011.msg" to host as "6856.011.msg".
+(Sep 20 2011 07:15:37,  843153 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Sep 20 2011 07:15:44,  843161 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:15:44,  843161 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Sep 20 2011 07:15:44,  843161 sec) TxPacket()           History of packet transmission failures: [11100001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:15:44,  843161 sec) LogPacket()          0x02 0x01 0xfe  []   0xcc 0x54
+(Sep 20 2011 07:15:51,  843168 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:15:51,  843168 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Sep 20 2011 07:15:51,  843168 sec) TxPacket()           History of packet transmission failures: [11000011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:15:51,  843168 sec) LogPacket()          0x02 0x01 0xfe  []   0xcc 0x54
+(Sep 20 2011 07:16:10,  843187 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:16:10,  843187 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:16:10,  843187 sec) TxPacket()           History of packet transmission failures: [00011001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:16:10,  843187 sec) LogPacket()          0x02 0x03 0xfc  []   0x31 0xb6
+(Sep 20 2011 07:16:33,  843210 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:16:33,  843210 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Sep 20 2011 07:16:33,  843210 sec) TxPacket()           History of packet transmission failures: [11001001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:16:33,  843210 sec) LogPacket()          0x02 0x05 0xfa  []   0x65 0x32
+(Sep 20 2011 07:16:50,  843226 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:16:50,  843227 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Sep 20 2011 07:16:50,  843227 sec) TxPacket()           History of packet transmission failures: [01001001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:16:50,  843227 sec) LogPacket()          0x02 0x07 0xf8  []   0x32 0xb0
+(Sep 20 2011 07:17:14,  843251 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:17:14,  843251 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Sep 20 2011 07:17:14,  843251 sec) TxPacket()           History of packet transmission failures: [10010001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:17:14,  843251 sec) LogPacket()          0x02 0x0a 0xf5  []   0x02 0xf1
+(Sep 20 2011 07:17:19,  843255 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:17:19,  843256 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Sep 20 2011 07:17:19,  843256 sec) TxPacket()           History of packet transmission failures: [00100011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:17:19,  843256 sec) LogPacket()          0x02 0x0a 0xf5  []   0x02 0xf1
+(Sep 20 2011 07:17:21,  843258 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:17:21,  843258 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Sep 20 2011 07:17:21,  843258 sec) TxPacket()           History of packet transmission failures: [01000111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:17:21,  843258 sec) LogPacket()          0x02 0x0a 0xf5  []   0x02 0xf1
+(Sep 20 2011 07:17:27,  843264 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:17:27,  843264 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:17:27,  843264 sec) TxPacket()           History of packet transmission failures: [00011101]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:17:27,  843264 sec) LogPacket()          0x01 0x0b 0xf4  []   0xca 0x62
+(Sep 20 2011 07:17:34,  843270 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:17:34,  843271 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:17:34,  843271 sec) TxPacket()           History of packet transmission failures: [00111011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:17:34,  843271 sec) LogPacket()          0x01 0x0b 0xf4  []   0xca 0x62
+(Sep 20 2011 07:17:52,  843288 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:17:52,  843289 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Sep 20 2011 07:17:52,  843289 sec) TxPacket()           History of packet transmission failures: [10110001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:17:52,  843289 sec) LogPacket()          0x01 0x0e 0xf1  []   0x0e 0x58
+(Sep 20 2011 07:18:34,  843330 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:18:34,  843331 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Sep 20 2011 07:18:34,  843331 sec) TxPacket()           History of packet transmission failures: [00000001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:18:34,  843331 sec) LogPacket()          0x02 0x15 0xea  []   0x2d 0x1f
+(Sep 20 2011 07:18:50,  843347 sec) Tx()                 Transmission completed successfully [22 packets, 18723 bytes, 192 sec, 98.7 bps]
+(Sep 20 2011 07:18:50,  843347 sec) UpLoadFile()         Upload successful.
+(Sep 20 2011 07:19:03,  843360 sec) UpLoadFile()         Uploading "6856.011.log" to host as "6856.011.log".
+(Sep 20 2011 07:19:05,  843362 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Sep 20 2011 07:19:08,  843365 sec) GetReceiverResponse( Return value: 48
+(Sep 20 2011 07:19:08,  843365 sec) TxPacket()           Invalid response [0x30] - resending packet. [PktNum=0x01]
+(Sep 20 2011 07:19:08,  843365 sec) TxPacket()           History of packet transmission failures: [00001001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:08,  843365 sec) LogPacket()          0x02 0x01 0xfe  []   0x75 0x40
+(Sep 20 2011 07:19:12,  843368 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:19:12,  843369 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Sep 20 2011 07:19:12,  843369 sec) TxPacket()           History of packet transmission failures: [00010011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:12,  843369 sec) LogPacket()          0x02 0x01 0xfe  []   0x75 0x40
+(Sep 20 2011 07:19:26,  843383 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:19:26,  843383 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:26,  843383 sec) TxPacket()           History of packet transmission failures: [10011001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:26,  843383 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:34,  843390 sec) GetReceiverResponse( Return value: 24
+(Sep 20 2011 07:19:37,  843393 sec) TxPacket()           History of packet transmission failures: [00110010]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:37,  843393 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:43,  843400 sec) GetReceiverResponse( Return value: 99
+(Sep 20 2011 07:19:44,  843400 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:44,  843400 sec) TxPacket()           History of packet transmission failures: [01100101]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:44,  843400 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:45,  843401 sec) GetReceiverResponse( Return value: 109
+(Sep 20 2011 07:19:45,  843401 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:45,  843401 sec) TxPacket()           History of packet transmission failures: [11001011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:45,  843402 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:46,  843402 sec) GetReceiverResponse( Return value: 94
+(Sep 20 2011 07:19:46,  843402 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:46,  843403 sec) TxPacket()           History of packet transmission failures: [10010111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:46,  843403 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:47,  843403 sec) GetReceiverResponse( Return value: 67
+(Sep 20 2011 07:19:47,  843404 sec) TxPacket()           Invalid response [0x43] - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:47,  843404 sec) TxPacket()           History of packet transmission failures: [00101111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:47,  843404 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:50,  843406 sec) GetReceiverResponse( Return value: 41
+(Sep 20 2011 07:19:50,  843406 sec) TxPacket()           Invalid response [0x29] - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:50,  843407 sec) TxPacket()           History of packet transmission failures: [01011111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:50,  843407 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:51,  843408 sec) GetReceiverResponse( Return value: 109
+(Sep 20 2011 07:19:51,  843408 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:51,  843408 sec) TxPacket()           History of packet transmission failures: [10111111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:51,  843408 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:56,  843413 sec) GetReceiverResponse( Return value: 49
+(Sep 20 2011 07:19:57,  843414 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:57,  843414 sec) TxPacket()           History of packet transmission failures: [01111111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:57,  843414 sec) LogPacket()          0x02 0x03 0xfc  []   0xf5 0xfa
+(Sep 20 2011 07:19:58,  843415 sec) GetReceiverResponse( Return value: 55
+(Sep 20 2011 07:19:58,  843415 sec) TxPacket()           Invalid response [0x37] - resending packet. [PktNum=0x03]
+(Sep 20 2011 07:19:58,  843415 sec) TxPacket()           History of packet transmission failures: [11111111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:19:59,  843415 sec) TxPacket()           Exit status: -5
+(Sep 20 2011 07:19:59,  843415 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Sep 20 2011 07:20:10,  843426 sec) UpLoadFile()         Upload failed.
+(Sep 20 2011 07:20:24,  843441 sec) UpLoadFile()         Uploading "6856.011.log" to host as "6856.011.log".
+(Sep 20 2011 07:21:24,  843500 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Sep 20 2011 07:21:34,  843511 sec) UpLoadFile()         Upload failed.
+(Sep 20 2011 07:21:34,  843511 sec) UpLoad()             Files successfully uploaded: 1
+(Sep 20 2011 07:21:35,  843511 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Sep 20 2011 07:21:39,  843515 sec) logout()             Log-out successful.
+(Sep 20 2011 07:21:40,  843516 sec) Telemetry()          Telemetry cycle complete: PrfId=11 ConnectionAttempts=3  Connections=2
+(Sep 20 2011 07:36:54,  844431 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [125cnt, 6.2"Hg].
+(Sep 20 2011 07:37:20,  844457 sec) GpsServices()        GPS almanac is current.
+(Sep 20 2011 07:37:20,  844457 sec) GpsServices()        Initiating GPS fix acquisition.
+(Sep 20 2011 07:37:36,  844473 sec) gga()                $GPGGA,073709,0934.7597,S,07709.6851,E,0,00,,,M,,M,,*4B
+(Sep 20 2011 07:38:05,  844502 sec) gga()                $GPGGA,073720,0934.7960,S,07709.6207,E,1,03,1.8,,M,-71.9,M,,*54
+(Sep 20 2011 07:38:05,  844502 sec) GpsServices()        Profile 11 GPS fix obtained in 45 seconds.
+(Sep 20 2011 07:38:06,  844502 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Sep 20 2011 07:38:06,  844502 sec) GpsServices()        Fix:   77.160  -9.580 09/20/2011 073720    3
+(Sep 20 2011 07:38:36,  844532 sec) gga()                $GPGGA,073750,0934.7991,S,07709.6216,E,1,07,0.9,-3.4,M,-71.9,M,,*5D
+(Sep 20 2011 07:38:41,  844538 sec) gga()                $GPGGA,073820,0934.8007,S,07709.6153,E,1,07,0.9,-3.6,M,-71.9,M,,*5C
+(Sep 20 2011 07:38:41,  844538 sec) GpsServices()        APF9 RTC skew (21s) OK.
+(Sep 20 2011 07:38:42,  844538 sec) LogNmeaSentences()   6
+(Sep 20 2011 07:38:42,  844538 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 07:38:42,  844538 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 07:38:51,  844548 sec) LogNmeaSentences()   $GPRMC,073830,A,0934.8003,S,07709.6157,E,000.9,214.5,200911,008.3,W*74
+(Sep 20 2011 07:38:52,  844548 sec) LogNmeaSentences()   $GPGGA,073830,0934.8003,S,07709.6157,E,1,07,0.9,-5.8,M,-71.9,M,,*55
+(Sep 20 2011 07:38:52,  844549 sec) LogNmeaSentences()   $GPGSA,A,3,,04,05,07,,,15,17,26,28,,,1.9,0.9,1.7*3F
+(Sep 20 2011 07:38:52,  844549 sec) LogNmeaSentences()   $GPGSV,3,3,10,26,33,249,44,28,26,042,43*7C
+(Sep 20 2011 07:38:52,  844549 sec) LogNmeaSentences()   $PGRME,6.2,M,12.4,M,13.9,M*26
+(Sep 20 2011 07:38:53,  844549 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 07:38:53,  844549 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 07:39:01,  844558 sec) LogNmeaSentences()   $GPRMC,073840,A,0934.8012,S,07709.6161,E,002.4,143.7,200911,008.3,W*7A
+(Sep 20 2011 07:39:02,  844558 sec) LogNmeaSentences()   $GPGGA,073840,0934.8012,S,07709.6161,E,1,07,1.0,-3.3,M,-71.9,M,,*52
+(Sep 20 2011 07:39:02,  844559 sec) LogNmeaSentences()   $GPGSA,A,3,,04,05,07,,,15,17,26,28,,,2.0,1.0,1.7*3D
+(Sep 20 2011 07:39:02,  844559 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,57,239,00,04,66,003,49,05,23,206,42,07,27,144,42*7B
+(Sep 20 2011 07:39:03,  844559 sec) LogNmeaSentences()   $PGRME,6.2,M,12.5,M,13.9,M*27
+(Sep 20 2011 07:39:03,  844559 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 07:39:03,  844560 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 07:39:11,  844568 sec) LogNmeaSentences()   $GPRMC,073850,A,0934.8021,S,07709.6167,E,001.2,187.4,200911,008.3,W*73
+(Sep 20 2011 07:39:12,  844568 sec) LogNmeaSentences()   $GPGGA,073850,0934.8021,S,07709.6167,E,1,07,1.0,3.5,M,-71.9,M,,*7E
+(Sep 20 2011 07:39:12,  844568 sec) LogNmeaSentences()   $GPGSA,A,3,,04,05,07,,,15,17,26,28,,,2.0,1.0,1.7*3D
+(Sep 20 2011 07:39:12,  844569 sec) LogNmeaSentences()   $GPGSV,3,2,10,08,54,138,46,10,46,143,45,15,08,276,40,17,12,006,45*75
+(Sep 20 2011 07:39:13,  844569 sec) LogNmeaSentences()   $PGRME,6.2,M,12.5,M,14.0,M*29
+(Sep 20 2011 07:39:13,  844569 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 07:39:13,  844570 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 07:39:21,  844578 sec) LogNmeaSentences()   $GPRMC,073900,A,0934.8031,S,07709.6171,E,001.6,261.2,200911,008.3,W*78
+(Sep 20 2011 07:39:22,  844578 sec) LogNmeaSentences()   $GPGGA,073900,0934.8031,S,07709.6171,E,1,07,0.9,-0.8,M,-71.9,M,,*57
+(Sep 20 2011 07:39:22,  844578 sec) LogNmeaSentences()   $GPGSA,A,3,,04,05,07,,,15,17,26,28,,,1.9,0.9,1.7*3F
+(Sep 20 2011 07:39:22,  844579 sec) LogNmeaSentences()   $GPGSV,3,3,10,26,33,248,45,28,27,043,40*7F
+(Sep 20 2011 07:39:22,  844579 sec) LogNmeaSentences()   $PGRME,6.2,M,12.5,M,14.0,M*29
+(Sep 20 2011 07:39:23,  844579 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 07:39:23,  844579 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 07:39:31,  844588 sec) LogNmeaSentences()   $GPRMC,073910,A,0934.8027,S,07709.6174,E,001.1,015.6,200911,008.3,W*79
+(Sep 20 2011 07:39:32,  844588 sec) LogNmeaSentences()   $GPGGA,073910,0934.8027,S,07709.6174,E,1,07,0.9,1.6,M,-71.9,M,,*76
+(Sep 20 2011 07:39:32,  844589 sec) LogNmeaSentences()   $GPGSA,A,3,,04,05,07,,,15,17,26,28,,,1.9,0.9,1.4*3C
+(Sep 20 2011 07:39:32,  844589 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,57,241,00,04,66,003,49,05,23,206,44,07,27,144,44*74
+(Sep 20 2011 07:39:33,  844589 sec) LogNmeaSentences()   $PGRME,6.2,M,12.6,M,14.0,M*2A
+(Sep 20 2011 07:39:33,  844589 sec) LogNmeaSentences()   $PGRMT,GPS 15-L Ver. 4.40,P,P,R,R,P,,,R,P*7E
+(Sep 20 2011 07:39:33,  844590 sec) GpsServices()        GPS services complete.
+(Sep 20 2011 07:39:57,  844614 sec) CLogin()             Connecting to primary host.
+(Sep 20 2011 07:40:11,  844628 sec) CLogin()             Connection 3 established in 14 seconds.
+(Sep 20 2011 07:40:22,  844639 sec) login()              Login successful.
+(Sep 20 2011 07:40:26,  844642 sec) CLogin()             Logged in to host.  [Login required 15 seconds]
+(Sep 20 2011 07:40:34,  844650 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Sep 20 2011 07:40:36,  844652 sec) Rx()                 Initiating transfer. [0x43]
+(Sep 20 2011 07:40:45,  844662 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Sep 20 2011 07:40:55,  844671 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 19 sec, 53.9 bps]
+(Sep 20 2011 07:40:55,  844671 sec) RxConfig()           Download successful.
+(Sep 20 2011 07:41:16,  844692 sec) UpLoadFile()         Uploading "6856.011.log" to host as "6856.011.log".
+(Sep 20 2011 07:41:18,  844694 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Sep 20 2011 07:41:26,  844703 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:41:26,  844703 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Sep 20 2011 07:41:26,  844703 sec) TxPacket()           History of packet transmission failures: [01110001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:41:27,  844703 sec) LogPacket()          0x02 0x01 0xfe  []   0x75 0x40
+(Sep 20 2011 07:42:38,  844774 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:42:38,  844774 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:42:38,  844774 sec) TxPacket()           History of packet transmission failures: [00000001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:42:38,  844774 sec) LogPacket()          0x02 0x0b 0xf4  []   0x04 0x1a
+(Sep 20 2011 07:42:39,  844775 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:42:39,  844775 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:42:39,  844775 sec) TxPacket()           History of packet transmission failures: [00000011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:42:39,  844776 sec) LogPacket()          0x02 0x0b 0xf4  []   0x04 0x1a
+(Sep 20 2011 07:42:47,  844783 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:42:47,  844783 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:42:47,  844783 sec) TxPacket()           History of packet transmission failures: [00000111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:42:47,  844783 sec) LogPacket()          0x02 0x0b 0xf4  []   0x04 0x1a
+(Sep 20 2011 07:42:49,  844786 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:42:49,  844786 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:42:50,  844786 sec) TxPacket()           History of packet transmission failures: [00001111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:42:50,  844786 sec) LogPacket()          0x02 0x0b 0xf4  []   0x04 0x1a
+(Sep 20 2011 07:42:54,  844791 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:42:54,  844791 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:42:54,  844791 sec) TxPacket()           History of packet transmission failures: [00011111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:42:54,  844791 sec) LogPacket()          0x02 0x0b 0xf4  []   0x04 0x1a
+(Sep 20 2011 07:42:58,  844795 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:42:58,  844795 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:42:58,  844795 sec) TxPacket()           History of packet transmission failures: [00111111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:42:59,  844795 sec) LogPacket()          0x02 0x0b 0xf4  []   0x04 0x1a
+(Sep 20 2011 07:43:04,  844800 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:43:04,  844800 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:43:04,  844800 sec) TxPacket()           History of packet transmission failures: [01111111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:04,  844800 sec) LogPacket()          0x02 0x0b 0xf4  []   0x04 0x1a
+(Sep 20 2011 07:43:06,  844803 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:43:06,  844803 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 20 2011 07:43:06,  844803 sec) TxPacket()           History of packet transmission failures: [11111111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:07,  844803 sec) LogPacket()          0x02 0x0b 0xf4  []   0x04 0x1a
+(Sep 20 2011 07:43:13,  844810 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:43:13,  844810 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:13,  844810 sec) TxPacket()           History of packet transmission failures: [11111001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:14,  844810 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:19,  844816 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 07:43:19,  844816 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:19,  844816 sec) TxPacket()           History of packet transmission failures: [11110011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:19,  844816 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:25,  844821 sec) GetReceiverResponse( Return value: 24
+(Sep 20 2011 07:43:28,  844824 sec) TxPacket()           History of packet transmission failures: [11100110]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:28,  844824 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:32,  844829 sec) GetReceiverResponse( Return value: 99
+(Sep 20 2011 07:43:33,  844829 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:33,  844829 sec) TxPacket()           History of packet transmission failures: [11001101]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:33,  844829 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:33,  844830 sec) GetReceiverResponse( Return value: 109
+(Sep 20 2011 07:43:33,  844830 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:33,  844830 sec) TxPacket()           History of packet transmission failures: [10011011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:33,  844830 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:35,  844831 sec) GetReceiverResponse( Return value: 94
+(Sep 20 2011 07:43:35,  844831 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:35,  844832 sec) TxPacket()           History of packet transmission failures: [00110111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:35,  844832 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:35,  844832 sec) GetReceiverResponse( Return value: 65
+(Sep 20 2011 07:43:35,  844832 sec) TxPacket()           Invalid response [0x41] - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:36,  844832 sec) TxPacket()           History of packet transmission failures: [01101111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:36,  844832 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:37,  844834 sec) GetReceiverResponse( Return value: 115
+(Sep 20 2011 07:43:37,  844834 sec) TxPacket()           Invalid response [0x73] - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:38,  844834 sec) TxPacket()           History of packet transmission failures: [11011111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:38,  844834 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:38,  844834 sec) GetReceiverResponse( Return value: 32
+(Sep 20 2011 07:43:38,  844835 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:38,  844835 sec) TxPacket()           History of packet transmission failures: [10111111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:38,  844835 sec) LogPacket()          0x01 0x0d 0xf2  []   0x69 0x4f
+(Sep 20 2011 07:43:39,  844835 sec) GetReceiverResponse( Return value: 46
+(Sep 20 2011 07:43:39,  844835 sec) TxPacket()           Invalid response [0x2e] - resending packet. [PktNum=0x0d]
+(Sep 20 2011 07:43:39,  844835 sec) TxPacket()           History of packet transmission failures: [01111111]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 07:43:39,  844836 sec) TxPacket()           Exit status: -5
+(Sep 20 2011 07:43:39,  844836 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Sep 20 2011 07:43:50,  844846 sec) UpLoadFile()         Upload failed.
+(Sep 20 2011 07:44:06,  844862 sec) UpLoadFile()         Uploading "6856.011.log" to host as "6856.011.log".
+(Sep 20 2011 07:45:06,  844922 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Sep 20 2011 07:45:16,  844933 sec) UpLoadFile()         Upload failed.
+(Sep 20 2011 07:45:16,  844933 sec) UpLoad()             Files successfully uploaded: 0
+(Sep 20 2011 07:45:16,  844933 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Sep 20 2011 07:45:20,  844937 sec) logout()             Log-out successful.
+(Sep 20 2011 07:45:22,  844938 sec) Telemetry()          Telemetry cycle complete: PrfId=11 ConnectionAttempts=4  Connections=3
+(Sep 20 2011 08:00:35,  845852 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Sep 20 2011 08:01:33,  845910 sec) GpsServices()        GPS almanac is current.
+(Sep 20 2011 08:01:33,  845910 sec) GpsServices()        Initiating GPS fix acquisition.
+(Sep 20 2011 08:01:49,  845926 sec) gga()                $GPGGA,080122,0934.8005,S,07709.6163,E,0,00,,,M,,M,,*41
+(Sep 20 2011 08:01:59,  845936 sec) gga()                $GPGGA,080132,0934.8005,S,07709.6163,E,0,00,,,M,,M,,*40
+(Sep 20 2011 08:02:09,  845946 sec) gga()                $GPGGA,080143,0934.8005,S,07709.6163,E,0,00,,,M,,M,,*46
+(Sep 20 2011 08:02:35,  845972 sec) gga()                $GPGGA,080150,0934.8589,S,07709.5438,E,1,07,1.9,24.2,M,-71.9,M,,*4B
+(Sep 20 2011 08:02:36,  845972 sec) GpsServices()        Profile 11 GPS fix obtained in 63 seconds.
+(Sep 20 2011 08:02:36,  845972 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Sep 20 2011 08:02:36,  845972 sec) GpsServices()        Fix:   77.159  -9.581 09/20/2011 080150    7
+(Sep 20 2011 08:03:05,  846002 sec) gga()                $GPGGA,080220,0934.8597,S,07709.5415,E,1,08,0.9,-1.4,M,-71.9,M,,*5D
+(Sep 20 2011 08:03:11,  846008 sec) gga()                $GPGGA,080250,0934.8617,S,07709.5416,E,1,08,1.0,1.2,M,-71.9,M,,*71
+(Sep 20 2011 08:03:11,  846008 sec) GpsServices()        APF9 RTC skew (21s) OK.
+(Sep 20 2011 08:03:12,  846008 sec) LogNmeaSentences()   ,M*28
+(Sep 20 2011 08:03:12,  846008 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 08:03:12,  846008 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 08:03:21,  846018 sec) LogNmeaSentences()   $GPRMC,080300,A,0934.8607,S,07709.5411,E,001.3,020.1,200911,008.3,W*7C
+(Sep 20 2011 08:03:22,  846018 sec) LogNmeaSentences()   $GPGGA,080300,0934.8607,S,07709.5411,E,1,08,0.9,1.6,M,-71.9,M,,*7F
+(Sep 20 2011 08:03:22,  846019 sec) LogNmeaSentences()   $GPGSA,A,3,02,04,05,07,,,,15,17,26,28,,1.7,0.9,1.4*30
+(Sep 20 2011 08:03:22,  846019 sec) LogNmeaSentences()   $GPGSV,3,2,11,08,43,147,44,09,03,323,00,10,49,127,45,15,10,266,41*76
+(Sep 20 2011 08:03:23,  846019 sec) LogNmeaSentences()   $PGRME,7.1,M,12.4,M,14.2,M*28
+(Sep 20 2011 08:03:23,  846019 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 08:03:23,  846020 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 08:03:31,  846028 sec) LogNmeaSentences()   $GPRMC,080310,A,0934.8606,S,07709.5403,E,002.2,142.2,200911,008.3,W*7B
+(Sep 20 2011 08:03:32,  846028 sec) LogNmeaSentences()   $GPGGA,080310,0934.8606,S,07709.5403,E,1,08,0.9,-2.5,M,-71.9,M,,*51
+(Sep 20 2011 08:03:32,  846029 sec) LogNmeaSentences()   $GPGSA,A,3,02,04,05,07,,,,15,17,26,28,,1.7,0.9,1.4*30
+(Sep 20 2011 08:03:32,  846029 sec) LogNmeaSentences()   $GPGSV,3,3,11,17,09,014,43,26,33,235,45,28,32,055,45*4F
+(Sep 20 2011 08:03:33,  846029 sec) LogNmeaSentences()   $PGRME,6.9,M,12.3,M,14.1,M*25
+(Sep 20 2011 08:03:33,  846029 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 08:03:33,  846029 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 08:03:41,  846038 sec) LogNmeaSentences()   $GPRMC,080320,A,0934.8629,S,07709.5410,E,002.1,088.6,200911,008.3,W*77
+(Sep 20 2011 08:03:42,  846038 sec) LogNmeaSentences()   $GPGGA,080320,0934.8629,S,07709.5410,E,1,08,1.0,2.1,M,-71.9,M,,*7C
+(Sep 20 2011 08:03:42,  846039 sec) LogNmeaSentences()   $GPGSA,A,3,02,04,05,07,,,,15,17,26,28,,1.7,1.0,1.4*38
+(Sep 20 2011 08:03:42,  846039 sec) LogNmeaSentences()   $GPGSV,3,1,11,02,62,260,46,04,53,005,49,05,31,199,41,07,17,146,42*76
+(Sep 20 2011 08:03:43,  846039 sec) LogNmeaSentences()   $PGRME,7.2,M,12.6,M,14.5,M*2E
+(Sep 20 2011 08:03:43,  846039 sec) LogNmeaSentences()   $PGRMB,0.0,200,,,,K,,N,N*31
+(Sep 20 2011 08:03:43,  846040 sec) LogNmeaSentences()   $PGRMM,WGS 84*06
+(Sep 20 2011 08:03:51,  846048 sec) LogNmeaSentences()   $GPRMC,080330,A,0934.8632,S,07709.5393,E,001.4,166.3,200911,008.3,W*72
+(Sep 20 2011 08:03:52,  846048 sec) LogNmeaSentences()   $GPGGA,080330,0934.8632,S,07709.5393,E,1,08,1.2,2.2,M,-71.9,M,,*7A
+(Sep 20 2011 08:03:52,  846049 sec) LogNmeaSentences()   $GPGSA,A,3,02,04,05,07,,,,15,17,26,28,,2.1,1.2,1.7*3C
+(Sep 20 2011 08:03:52,  846049 sec) LogNmeaSentences()   $GPGSV,3,2,11,08,43,147,42,09,03,323,00,10,49,127,43,15,10,266,42*75
+(Sep 20 2011 08:03:53,  846049 sec) LogNmeaSentences()   $PGRME,8.3,M,13.7,M,16.1,M*26
+(Sep 20 2011 08:03:53,  846049 sec) LogNmeaSentences()   $PGRMT,GPS 15-L Ver. 4.40,P,P,R,R,P,,,R,P*7E
+(Sep 20 2011 08:03:53,  846050 sec) GpsServices()        GPS services complete.
+(Sep 20 2011 08:04:17,  846074 sec) CLogin()             Connecting to primary host.
+(Sep 20 2011 08:04:40,  846097 sec) CLogin()             Connection 4 established in 23 seconds.
+(Sep 20 2011 08:04:49,  846106 sec) login()              Login successful.
+(Sep 20 2011 08:04:54,  846110 sec) chat()               Expected string [cmd>] not received.
+(Sep 20 2011 08:04:54,  846110 sec) login()              Attempt to set the command prompt failed.
+(Sep 20 2011 08:04:57,  846113 sec) CLogin()             Logged in to host.  [Login required 17 seconds]
+(Sep 20 2011 08:05:05,  846122 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Sep 20 2011 08:05:08,  846124 sec) Rx()                 Initiating transfer. [0x43]
+(Sep 20 2011 08:05:14,  846130 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Sep 20 2011 08:05:19,  846135 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 11 sec, 93.1 bps]
+
+
+(Sep 20 2011 08:05:19) LogSize()            Log file is 38941 bytes.  Limit is 40960 bytes.
+
+(Sep 20 2011 08:05:19,  846135 sec) RxConfig()           Download successful.
+(Sep 20 2011 08:05:39,  846156 sec) UpLoadFile()         Uploading "6856.011.log" to host as "6856.011.log".
+(Sep 20 2011 08:05:44,  846161 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Sep 20 2011 08:07:21,  846258 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 08:07:21,  846258 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Sep 20 2011 08:07:22,  846258 sec) TxPacket()           History of packet transmission failures: [00000001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 08:07:22,  846258 sec) LogPacket()          0x02 0x10 0xef  []   0x21 0x74
+(Sep 20 2011 08:07:28,  846265 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 08:07:28,  846265 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Sep 20 2011 08:07:29,  846265 sec) TxPacket()           History of packet transmission failures: [00000011]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 08:07:29,  846265 sec) LogPacket()          0x02 0x10 0xef  []   0x21 0x74
+(Sep 20 2011 08:08:41,  846338 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 08:08:41,  846338 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Sep 20 2011 08:08:41,  846338 sec) TxPacket()           History of packet transmission failures: [00000001]  (0:xmit-ok, 1:xmit-failed).
+(Sep 20 2011 08:08:42,  846338 sec) LogPacket()          0x02 0x1b 0xe4  []   0xcf 0xf8
+(Sep 20 2011 08:09:02,  846359 sec) GetReceiverResponse( Return value: 21
+(Sep 20 2011 08:09:02,  846359 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+
+<EOT>

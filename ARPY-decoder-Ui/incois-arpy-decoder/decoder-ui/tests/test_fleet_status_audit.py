@@ -160,7 +160,9 @@ def test_nonfinite_and_negative_elapsed_days_are_not_active(value):
         (10, "ACTIVE / RECENT PROFILE"),
         (10.000001, "PROFILE OVERDUE"),
         (59.999999, "PROFILE OVERDUE"),
-        (60, "NO RECENT PROFILE DATA 60+ DAYS"),
+        (60, "PROFILE OVERDUE"),
+        (79.999999, "PROFILE OVERDUE"),
+        (80, "NO RECENT PROFILE DATA 80+ DAYS"),
     ],
 )
 def test_status_boundaries_and_elapsed_days_do_not_round_early(days, want):

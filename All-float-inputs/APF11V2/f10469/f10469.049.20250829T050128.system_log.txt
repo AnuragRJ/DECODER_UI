@@ -1,0 +1,680 @@
+20250819T064135|0|Firmware|07/21/23 18:56:40 2.17.4 STD IRID Final
+20250819T064135|0|Username|f10469
+20250819T064135|5|LOG|archived: f10469.048.20250819T064132.science_log.bin.gz
+20250819T064136|5|LOG|archived: f10469.048.20250819T064134.vitals_log.bin.gz
+20250819T064137|5|LOG|archived: f10469.048.20250819T064136.suna_log.txt.gz
+20250819T064138|5|LOG|archived: f10469.048.20250819T064136.system_log.txt.gz
+20250819T064148|5|RMC|Set Clock: 08/19/2025 06:41:48
+20250819T064148|5|GPS|GPS TimeToFix: 3 secs
+20250819T064148|5|GPS|GPS Skew: 0 secs
+20250819T064148|5|GPS|GPS Fix: 08/19/2025 06:41:48,18.71937,62.66325,8
+20250819T064149|5|GPS|time and location set
+20250819T064222|5|COMMS|CSQ=3
+20250819T064345|4|COMMS|transfer attempt 1/12 aborted, login failed, connection lost
+20250819T064348|5|COMMS|CSQ=4
+20250819T064523|5|get_upload_file_entries|There are 4 file(s) to be uploaded
+20250819T064812|5|COMMS|uploaded: f10469.048.20250819T064132.science_log.bin.gz, 27710 bytes in 160 secs
+20250819T064918|5|COMMS|uploaded: f10469.048.20250819T064136.system_log.txt.gz, 6080 bytes in 60 secs
+20250819T065122|5|COMMS|uploaded: f10469.048.20250819T064136.suna_log.txt.gz, 8125 bytes in 120 secs
+20250819T065152|5|COMMS|uploaded: f10469.048.20250819T064134.vitals_log.bin.gz, 376 bytes in 21 secs
+20250819T065158|4|COMMS|logout unsuccessful, connection lost
+20250819T065211|5|RMC|Set Clock: 08/19/2025 06:52:11
+20250819T065211|5|GPS|GPS TimeToFix: 2 secs
+20250819T065211|5|GPS|GPS Skew: 0 secs
+20250819T065211|5|GPS|GPS Fix: 08/19/2025 06:52:11,18.71972,62.66486,8
+20250819T065212|5|GPS|time and location set
+20250819T065213|5|SURFACE|awake|count: 1, time: 1581, energy: 60.937500
+20250819T065213|5|SURFACE|sleep|count: 0, time: 0, energy: 0.000000
+20250819T065213|5|mission_state|SURFACE -> PARKDESCENT
+20250819T065215|5|PARKDESCENT|Starting Mission No.: 49
+20250819T065215|5|mission_cfg|ActivateRecoveryMode off
+20250819T065215|5|mission_cfg|AscentRate 0.08
+20250819T065215|5|mission_cfg|AscentStartTimes -1 -1 -1 -1
+20250819T065215|5|mission_cfg|AscentTimeout 521
+20250819T065215|5|mission_cfg|AscentTimerInterval 300
+20250819T065215|5|mission_cfg|BuoyancyNudge 100
+20250819T065215|5|mission_cfg|DeepDescentCount 708
+20250819T065215|5|mission_cfg|DeepDescentPressure 2000.00
+20250819T065215|5|mission_cfg|DeepDescentTimeout 334
+20250819T065215|5|mission_cfg|DeepDescentTimerInterval 300
+20250819T065215|5|mission_cfg|DeepProfileFirst on
+20250819T065215|5|mission_cfg|DownTime 13953
+20250819T065215|5|mission_cfg|EmergencyTimerInterval 3600
+20250819T065215|5|mission_cfg|HyperRetractCount 0
+20250819T065215|5|mission_cfg|HyperRetractPressure 850.00
+20250819T065215|5|mission_cfg|IceMonths 0000
+20250819T065215|5|mission_cfg|IdleTimerInterval 3600
+20250819T065215|5|mission_cfg|InitialBuoyancyNudge 300
+20250819T065215|5|mission_cfg|LeakDetect on
+20250819T065215|5|mission_cfg|LogVerbosity 5
+20250819T065215|5|mission_cfg|MActivationCount 262
+20250819T065215|5|mission_cfg|MActivationPressure 25.00
+20250819T065215|5|mission_cfg|MinBuoyancyCount 147
+20250819T065215|5|mission_cfg|MinVacuum 9.00
+20250819T065215|5|mission_cfg|ParkBuoyancyNudge 10
+20250819T065215|5|mission_cfg|ParkDeadBand 25.00
+20250819T065215|5|mission_cfg|ParkDescentCount 1284
+20250819T065215|5|mission_cfg|ParkDescentTimeout 334
+20250819T065215|5|mission_cfg|ParkDescentTimerInterval 3600
+20250819T065215|5|mission_cfg|ParkPressure 1000.00
+20250819T065215|5|mission_cfg|ParkTimerInterval 3600
+20250819T065215|5|mission_cfg|PnPCycleLen 1
+20250819T065215|5|mission_cfg|PreludeSelfTest on
+20250819T065215|5|mission_cfg|PreludeTime 120
+20250819T065215|5|mission_cfg|SurfacePressure 4.00
+20250819T065215|5|mission_cfg|TelemetryDays 0 0
+20250819T065215|5|mission_cfg|TelemetryInterval 900
+20250819T065215|5|mission_cfg|TelemetryTimeout 120
+20250819T065215|5|mission_cfg|UpTime 641
+20250819T065215|5|mission_cfg|VitalsMask 0007
+20250819T065215|5|mission_cfg|Checksum 8BAB
+20250819T065215|5|sample_cfg|<PARK>
+20250819T065215|5|sample_cfg|SAMPLE PTSH 2000 4 0 DBAR 1
+20250819T065215|5|sample_cfg|<ASCENT>
+20250819T065215|5|sample_cfg|SAMPLE NO3 2000 1000 100 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE NO3 1000 100 50 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE NO3 100 50 10 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE NO3 50 5 1 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE OPT 2000 1000 100 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE OPT 1000 100 50 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE OPT 100 50 10 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE OPT 50 5 1 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE FLBB 2000 1000 100 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE FLBB 1000 100 50 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE FLBB 100 50 10 DBAR 1
+20250819T065215|5|sample_cfg|SAMPLE FLBB 50 5 1 DBAR 1
+20250819T065215|5|sample_cfg|PROFILE CTD 2000 4 2 1 HZ #Regime:1
+20250819T065215|5|sample_cfg|PROFILE PH 2000 4 2
+20250819T065215|5|sample_cfg|<SURFACE>
+20250819T065215|5|sample_cfg|MEASURE OPT
+20250819T065218|5|PARKDESCENT|surface pressure offset updated from -0.08 to -0.12 dbar
+20250819T065230|5|AIR|deflated to 8.17 dbar after 2 attempts
+20250819T065230|5|PARKDESCENT|adjusting buoyancy to ParkDescentCount 1284
+20250819T065231|5|BuoyEngine|adjusting from 3222 to 1284
+20250819T070258|5|BuoyEngine|destination 1285 reached after 10:26
+20250819T070358|2|system_cfg|float_id not specified
+20250819T080401|2|system_cfg|float_id not specified
+20250819T090404|2|system_cfg|float_id not specified
+20250819T095611|2|system_cfg|float_id not specified
+20250819T103106|2|system_cfg|float_id not specified
+20250819T105824|2|system_cfg|float_id not specified
+20250819T115827|2|system_cfg|float_id not specified
+20250819T115832|4|PARKDESCENT|slow descent rate 1: 0.0035 @ 987.99 dbar
+20250819T115930|2|system_cfg|float_id not specified
+20250819T115935|4|PARKDESCENT|slow descent rate 2: 0.0025 @ 988.15 dbar
+20250819T120033|2|system_cfg|float_id not specified
+20250819T120038|4|PARKDESCENT|slow descent rate 3: 0.0022 @ 988.29 dbar
+20250819T120040|5|PARKDESCENT|adjusting buoyancy by HitBottomNudge -16
+20250819T120042|5|BuoyEngine|adjusting from 1285 to 1269
+20250819T120049|5|BuoyEngine|destination 1269 reached after 00:05
+20250819T120052|5|mission_cfg|ParkDescentCount 1284 to 1269
+20250819T120149|2|system_cfg|float_id not specified
+20250819T122611|2|system_cfg|float_id not specified
+20250819T122616|5|PARKDESCENT|ParkPressure reached @ 1011.17 dbar after 334 mins
+20250819T122616|5|PARKDESCENT|awake|count: 12, time: 742, energy: 31.875000
+20250819T122616|5|PARKDESCENT|sleep|count: 11, time: 19301, energy: 0.402104
+20250819T122616|5|mission_state|PARKDESCENT -> PARK
+20250819T132614|2|system_cfg|float_id not specified
+20250819T142639|2|system_cfg|float_id not specified
+20250819T142707|4|PARK|deep 1 @ 1026.74 dbar
+20250819T152704|2|system_cfg|float_id not specified
+20250819T152732|4|PARK|deep 2 @ 1030.20 dbar
+20250819T162729|2|system_cfg|float_id not specified
+20250819T162757|4|PARK|deep 3 @ 1032.56 dbar
+20250819T162759|5|BuoyEngine|adjusting from 1269 to 1280
+20250819T162806|5|BuoyEngine|destination 1281 reached after 00:05
+20250819T162806|5|mission_cfg|ParkDescentCount 1269 to 1281
+20250819T172754|2|system_cfg|float_id not specified
+20250819T182819|2|system_cfg|float_id not specified
+20250819T192844|2|system_cfg|float_id not specified
+20250819T202909|2|system_cfg|float_id not specified
+20250819T212934|2|system_cfg|float_id not specified
+20250819T222959|2|system_cfg|float_id not specified
+20250819T233024|2|system_cfg|float_id not specified
+20250820T003049|2|system_cfg|float_id not specified
+20250820T013114|2|system_cfg|float_id not specified
+20250820T023139|2|system_cfg|float_id not specified
+20250820T033204|2|system_cfg|float_id not specified
+20250820T043229|2|system_cfg|float_id not specified
+20250820T053254|2|system_cfg|float_id not specified
+20250820T063319|2|system_cfg|float_id not specified
+20250820T073344|2|system_cfg|float_id not specified
+20250820T083409|2|system_cfg|float_id not specified
+20250820T093434|2|system_cfg|float_id not specified
+20250820T103459|2|system_cfg|float_id not specified
+20250820T113524|2|system_cfg|float_id not specified
+20250820T123549|2|system_cfg|float_id not specified
+20250820T133614|2|system_cfg|float_id not specified
+20250820T143639|2|system_cfg|float_id not specified
+20250820T153704|2|system_cfg|float_id not specified
+20250820T163729|2|system_cfg|float_id not specified
+20250820T173754|2|system_cfg|float_id not specified
+20250820T183819|2|system_cfg|float_id not specified
+20250820T193844|2|system_cfg|float_id not specified
+20250820T203909|2|system_cfg|float_id not specified
+20250820T213934|2|system_cfg|float_id not specified
+20250820T223959|2|system_cfg|float_id not specified
+20250820T234024|2|system_cfg|float_id not specified
+20250821T004049|2|system_cfg|float_id not specified
+20250821T014114|2|system_cfg|float_id not specified
+20250821T024139|2|system_cfg|float_id not specified
+20250821T034204|2|system_cfg|float_id not specified
+20250821T044229|2|system_cfg|float_id not specified
+20250821T054254|2|system_cfg|float_id not specified
+20250821T064319|2|system_cfg|float_id not specified
+20250821T074344|2|system_cfg|float_id not specified
+20250821T084409|2|system_cfg|float_id not specified
+20250821T094434|2|system_cfg|float_id not specified
+20250821T104459|2|system_cfg|float_id not specified
+20250821T114524|2|system_cfg|float_id not specified
+20250821T124549|2|system_cfg|float_id not specified
+20250821T134614|2|system_cfg|float_id not specified
+20250821T144639|2|system_cfg|float_id not specified
+20250821T154704|2|system_cfg|float_id not specified
+20250821T164729|2|system_cfg|float_id not specified
+20250821T174754|2|system_cfg|float_id not specified
+20250821T184819|2|system_cfg|float_id not specified
+20250821T194844|2|system_cfg|float_id not specified
+20250821T204909|2|system_cfg|float_id not specified
+20250821T214934|2|system_cfg|float_id not specified
+20250821T224959|2|system_cfg|float_id not specified
+20250821T235024|2|system_cfg|float_id not specified
+20250822T005049|2|system_cfg|float_id not specified
+20250822T015114|2|system_cfg|float_id not specified
+20250822T025139|2|system_cfg|float_id not specified
+20250822T035204|2|system_cfg|float_id not specified
+20250822T045229|2|system_cfg|float_id not specified
+20250822T055254|2|system_cfg|float_id not specified
+20250822T065319|2|system_cfg|float_id not specified
+20250822T075344|2|system_cfg|float_id not specified
+20250822T085409|2|system_cfg|float_id not specified
+20250822T095434|2|system_cfg|float_id not specified
+20250822T105459|2|system_cfg|float_id not specified
+20250822T115524|2|system_cfg|float_id not specified
+20250822T125549|2|system_cfg|float_id not specified
+20250822T135614|2|system_cfg|float_id not specified
+20250822T145639|2|system_cfg|float_id not specified
+20250822T155704|2|system_cfg|float_id not specified
+20250822T165729|2|system_cfg|float_id not specified
+20250822T175754|2|system_cfg|float_id not specified
+20250822T185819|2|system_cfg|float_id not specified
+20250822T195844|2|system_cfg|float_id not specified
+20250822T205909|2|system_cfg|float_id not specified
+20250822T215934|2|system_cfg|float_id not specified
+20250822T225959|2|system_cfg|float_id not specified
+20250823T000024|2|system_cfg|float_id not specified
+20250823T010049|2|system_cfg|float_id not specified
+20250823T020114|2|system_cfg|float_id not specified
+20250823T030139|2|system_cfg|float_id not specified
+20250823T040204|2|system_cfg|float_id not specified
+20250823T050229|2|system_cfg|float_id not specified
+20250823T060254|2|system_cfg|float_id not specified
+20250823T070319|2|system_cfg|float_id not specified
+20250823T080344|2|system_cfg|float_id not specified
+20250823T090409|2|system_cfg|float_id not specified
+20250823T100434|2|system_cfg|float_id not specified
+20250823T110459|2|system_cfg|float_id not specified
+20250823T120524|2|system_cfg|float_id not specified
+20250823T130549|2|system_cfg|float_id not specified
+20250823T140614|2|system_cfg|float_id not specified
+20250823T150639|2|system_cfg|float_id not specified
+20250823T160704|2|system_cfg|float_id not specified
+20250823T170729|2|system_cfg|float_id not specified
+20250823T180754|2|system_cfg|float_id not specified
+20250823T190819|2|system_cfg|float_id not specified
+20250823T200844|2|system_cfg|float_id not specified
+20250823T210909|2|system_cfg|float_id not specified
+20250823T220934|2|system_cfg|float_id not specified
+20250823T230959|2|system_cfg|float_id not specified
+20250824T001024|2|system_cfg|float_id not specified
+20250824T011049|2|system_cfg|float_id not specified
+20250824T021114|2|system_cfg|float_id not specified
+20250824T031139|2|system_cfg|float_id not specified
+20250824T041204|2|system_cfg|float_id not specified
+20250824T041232|4|PARK|deep 1 @ 1025.16 dbar
+20250824T051229|2|system_cfg|float_id not specified
+20250824T061254|2|system_cfg|float_id not specified
+20250824T071319|2|system_cfg|float_id not specified
+20250824T081344|2|system_cfg|float_id not specified
+20250824T091409|2|system_cfg|float_id not specified
+20250824T101434|2|system_cfg|float_id not specified
+20250824T111459|2|system_cfg|float_id not specified
+20250824T121524|2|system_cfg|float_id not specified
+20250824T131549|2|system_cfg|float_id not specified
+20250824T141614|2|system_cfg|float_id not specified
+20250824T151639|2|system_cfg|float_id not specified
+20250824T161704|2|system_cfg|float_id not specified
+20250824T171729|2|system_cfg|float_id not specified
+20250824T181754|2|system_cfg|float_id not specified
+20250824T191819|2|system_cfg|float_id not specified
+20250824T201844|2|system_cfg|float_id not specified
+20250824T211909|2|system_cfg|float_id not specified
+20250824T221934|2|system_cfg|float_id not specified
+20250824T231959|2|system_cfg|float_id not specified
+20250825T002024|2|system_cfg|float_id not specified
+20250825T012049|2|system_cfg|float_id not specified
+20250825T022114|2|system_cfg|float_id not specified
+20250825T032139|2|system_cfg|float_id not specified
+20250825T042204|2|system_cfg|float_id not specified
+20250825T052229|2|system_cfg|float_id not specified
+20250825T062254|2|system_cfg|float_id not specified
+20250825T072319|2|system_cfg|float_id not specified
+20250825T082344|2|system_cfg|float_id not specified
+20250825T092409|2|system_cfg|float_id not specified
+20250825T102434|2|system_cfg|float_id not specified
+20250825T112459|2|system_cfg|float_id not specified
+20250825T122524|2|system_cfg|float_id not specified
+20250825T132549|2|system_cfg|float_id not specified
+20250825T142614|2|system_cfg|float_id not specified
+20250825T152639|2|system_cfg|float_id not specified
+20250825T162704|2|system_cfg|float_id not specified
+20250825T172729|2|system_cfg|float_id not specified
+20250825T182754|2|system_cfg|float_id not specified
+20250825T192819|2|system_cfg|float_id not specified
+20250825T202844|2|system_cfg|float_id not specified
+20250825T212909|2|system_cfg|float_id not specified
+20250825T222934|2|system_cfg|float_id not specified
+20250825T232959|2|system_cfg|float_id not specified
+20250826T003024|2|system_cfg|float_id not specified
+20250826T013049|2|system_cfg|float_id not specified
+20250826T023114|2|system_cfg|float_id not specified
+20250826T033139|2|system_cfg|float_id not specified
+20250826T043204|2|system_cfg|float_id not specified
+20250826T053229|2|system_cfg|float_id not specified
+20250826T063254|2|system_cfg|float_id not specified
+20250826T073319|2|system_cfg|float_id not specified
+20250826T083344|2|system_cfg|float_id not specified
+20250826T093409|2|system_cfg|float_id not specified
+20250826T103434|2|system_cfg|float_id not specified
+20250826T113459|2|system_cfg|float_id not specified
+20250826T113527|4|PARK|deep 1 @ 1025.35 dbar
+20250826T123524|2|system_cfg|float_id not specified
+20250826T133549|2|system_cfg|float_id not specified
+20250826T143614|2|system_cfg|float_id not specified
+20250826T153639|2|system_cfg|float_id not specified
+20250826T163704|2|system_cfg|float_id not specified
+20250826T173729|2|system_cfg|float_id not specified
+20250826T183754|2|system_cfg|float_id not specified
+20250826T193819|2|system_cfg|float_id not specified
+20250826T203844|2|system_cfg|float_id not specified
+20250826T213909|2|system_cfg|float_id not specified
+20250826T223934|2|system_cfg|float_id not specified
+20250826T233959|2|system_cfg|float_id not specified
+20250827T004024|2|system_cfg|float_id not specified
+20250827T014049|2|system_cfg|float_id not specified
+20250827T024114|2|system_cfg|float_id not specified
+20250827T034139|2|system_cfg|float_id not specified
+20250827T044204|2|system_cfg|float_id not specified
+20250827T054229|2|system_cfg|float_id not specified
+20250827T064254|2|system_cfg|float_id not specified
+20250827T074319|2|system_cfg|float_id not specified
+20250827T084344|2|system_cfg|float_id not specified
+20250827T094409|2|system_cfg|float_id not specified
+20250827T104434|2|system_cfg|float_id not specified
+20250827T114459|2|system_cfg|float_id not specified
+20250827T124524|2|system_cfg|float_id not specified
+20250827T134549|2|system_cfg|float_id not specified
+20250827T144614|2|system_cfg|float_id not specified
+20250827T154639|2|system_cfg|float_id not specified
+20250827T154707|4|PARK|deep 1 @ 1025.06 dbar
+20250827T164704|2|system_cfg|float_id not specified
+20250827T174729|2|system_cfg|float_id not specified
+20250827T174757|4|PARK|deep 1 @ 1025.02 dbar
+20250827T184754|2|system_cfg|float_id not specified
+20250827T194819|2|system_cfg|float_id not specified
+20250827T204844|2|system_cfg|float_id not specified
+20250827T214909|2|system_cfg|float_id not specified
+20250827T214937|4|PARK|deep 1 @ 1026.35 dbar
+20250827T224934|2|system_cfg|float_id not specified
+20250827T234959|2|system_cfg|float_id not specified
+20250828T005024|2|system_cfg|float_id not specified
+20250828T015049|2|system_cfg|float_id not specified
+20250828T015117|4|PARK|deep 1 @ 1025.34 dbar
+20250828T025114|2|system_cfg|float_id not specified
+20250828T035139|2|system_cfg|float_id not specified
+20250828T035207|4|PARK|deep 1 @ 1026.00 dbar
+20250828T045204|2|system_cfg|float_id not specified
+20250828T055229|2|system_cfg|float_id not specified
+20250828T065254|2|system_cfg|float_id not specified
+20250828T075319|2|system_cfg|float_id not specified
+20250828T085344|2|system_cfg|float_id not specified
+20250828T095409|2|system_cfg|float_id not specified
+20250828T105434|2|system_cfg|float_id not specified
+20250828T115459|2|system_cfg|float_id not specified
+20250828T125524|2|system_cfg|float_id not specified
+20250828T135549|2|system_cfg|float_id not specified
+20250828T145614|2|system_cfg|float_id not specified
+20250828T145642|4|PARK|deep 1 @ 1026.35 dbar
+20250828T155639|2|system_cfg|float_id not specified
+20250828T165704|2|system_cfg|float_id not specified
+20250828T175110|2|system_cfg|float_id not specified
+20250828T175138|5|PARK|awake|count: 221, time: 6637, energy: 138.750000
+20250828T175138|5|PARK|sleep|count: 220, time: 790703, energy: 16.472979
+20250828T175138|5|mission_state|PARK -> DEEPDESCENT
+20250828T175143|5|DEEPDESCENT|adjusting buoyancy to DeepDescentCount 708
+20250828T175144|5|BuoyEngine|adjusting from 1281 to 708
+20250828T175451|5|BuoyEngine|destination 707 reached after 03:05
+20250828T175551|2|system_cfg|float_id not specified
+20250828T180054|2|system_cfg|float_id not specified
+20250828T180557|2|system_cfg|float_id not specified
+20250828T181100|2|system_cfg|float_id not specified
+20250828T181603|2|system_cfg|float_id not specified
+20250828T182106|2|system_cfg|float_id not specified
+20250828T182609|2|system_cfg|float_id not specified
+20250828T183112|2|system_cfg|float_id not specified
+20250828T183615|2|system_cfg|float_id not specified
+20250828T184118|2|system_cfg|float_id not specified
+20250828T184621|2|system_cfg|float_id not specified
+20250828T185124|2|system_cfg|float_id not specified
+20250828T185627|2|system_cfg|float_id not specified
+20250828T190130|2|system_cfg|float_id not specified
+20250828T190633|2|system_cfg|float_id not specified
+20250828T191136|2|system_cfg|float_id not specified
+20250828T191639|2|system_cfg|float_id not specified
+20250828T192142|2|system_cfg|float_id not specified
+20250828T192645|2|system_cfg|float_id not specified
+20250828T193148|2|system_cfg|float_id not specified
+20250828T193651|2|system_cfg|float_id not specified
+20250828T194154|2|system_cfg|float_id not specified
+20250828T194657|2|system_cfg|float_id not specified
+20250828T195200|2|system_cfg|float_id not specified
+20250828T195703|2|system_cfg|float_id not specified
+20250828T200206|2|system_cfg|float_id not specified
+20250828T200709|2|system_cfg|float_id not specified
+20250828T201212|2|system_cfg|float_id not specified
+20250828T201715|2|system_cfg|float_id not specified
+20250828T202218|2|system_cfg|float_id not specified
+20250828T202721|2|system_cfg|float_id not specified
+20250828T203224|2|system_cfg|float_id not specified
+20250828T203727|2|system_cfg|float_id not specified
+20250828T204230|2|system_cfg|float_id not specified
+20250828T204733|2|system_cfg|float_id not specified
+20250828T205236|2|system_cfg|float_id not specified
+20250828T205739|2|system_cfg|float_id not specified
+20250828T210242|2|system_cfg|float_id not specified
+20250828T210745|2|system_cfg|float_id not specified
+20250828T211248|2|system_cfg|float_id not specified
+20250828T211751|2|system_cfg|float_id not specified
+20250828T212254|2|system_cfg|float_id not specified
+20250828T212757|2|system_cfg|float_id not specified
+20250828T212802|5|DEEPDESCENT|DeepDescentPressure reached @ 2000.66 dbar after 216 mins
+20250828T212802|5|DEEPDESCENT|awake|count: 44, time: 498, energy: 4.687500
+20250828T212802|5|DEEPDESCENT|sleep|count: 43, time: 12487, energy: 0.260146
+20250828T212802|5|mission_state|DEEPDESCENT -> ASCENT
+20250828T212810|5|BuoyEngine|adjusting from 707 to 1008
+20250828T212932|5|CTD|start_profile|CP Started
+20250828T212957|5|CTD|start_profile|current: 24.970703 mA @ 13.342 V
+20250828T213003|4|SUNA|sample_once|PTS NOT sent to sensor, 13106 seconds old
+20250828T213010|5|BuoyEngine|destination 1007 reached after 01:58
+20250828T213120|2|system_cfg|float_id not specified
+20250828T213623|2|system_cfg|float_id not specified
+20250828T214125|2|system_cfg|float_id not specified
+20250828T214627|2|system_cfg|float_id not specified
+20250828T214705|2|system_cfg|float_id not specified
+20250828T214714|4|SUNA|sample_once|PTS NOT sent to sensor, 14137 seconds old
+20250828T215129|2|system_cfg|float_id not specified
+20250828T215631|2|system_cfg|float_id not specified
+20250828T220133|2|system_cfg|float_id not specified
+20250828T220635|2|system_cfg|float_id not specified
+20250828T220741|2|system_cfg|float_id not specified
+20250828T220750|4|SUNA|sample_once|PTS NOT sent to sensor, 15373 seconds old
+20250828T221137|2|system_cfg|float_id not specified
+20250828T221639|2|system_cfg|float_id not specified
+20250828T221643|5|ASCENT|slow ascent rate 3: -0.0748 dbar/sec @ 1759.33 dbar
+20250828T221645|5|BuoyEngine|adjusting from 1000 to 1107
+20250828T221725|5|BuoyEngine|destination 1108 reached after 00:39
+20250828T221825|2|system_cfg|float_id not specified
+20250828T222327|2|system_cfg|float_id not specified
+20250828T222711|2|system_cfg|float_id not specified
+20250828T222724|4|SUNA|sample_once|PTS NOT sent to sensor, 16547 seconds old
+20250828T222829|2|system_cfg|float_id not specified
+20250828T223331|2|system_cfg|float_id not specified
+20250828T223833|2|system_cfg|float_id not specified
+20250828T224335|2|system_cfg|float_id not specified
+20250828T224726|2|system_cfg|float_id not specified
+20250828T224740|2|system_cfg|float_id not specified
+20250828T224750|4|SUNA|sample_once|PTS NOT sent to sensor, 17773 seconds old
+20250828T224838|2|system_cfg|float_id not specified
+20250828T225341|2|system_cfg|float_id not specified
+20250828T225346|5|ASCENT|slow ascent rate 3: -0.0703 dbar/sec @ 1574.33 dbar
+20250828T225348|5|BuoyEngine|adjusting from 1102 to 1209
+20250828T225427|5|BuoyEngine|destination 1209 reached after 00:38
+20250828T225528|2|system_cfg|float_id not specified
+20250828T230031|2|system_cfg|float_id not specified
+20250828T230534|2|system_cfg|float_id not specified
+20250828T230726|2|system_cfg|float_id not specified
+20250828T230736|4|SUNA|sample_once|PTS NOT sent to sensor, 18959 seconds old
+20250828T231037|2|system_cfg|float_id not specified
+20250828T231540|2|system_cfg|float_id not specified
+20250828T232043|2|system_cfg|float_id not specified
+20250828T232546|2|system_cfg|float_id not specified
+20250828T232949|2|system_cfg|float_id not specified
+20250828T233006|2|system_cfg|float_id not specified
+20250828T233016|4|SUNA|sample_once|PTS NOT sent to sensor, 20319 seconds old
+20250828T233049|2|system_cfg|float_id not specified
+20250828T233054|5|ASCENT|slow ascent rate 3: -0.0603 dbar/sec @ 1397.22 dbar
+20250828T233056|5|BuoyEngine|adjusting from 1201 to 1309
+20250828T233134|5|BuoyEngine|destination 1309 reached after 00:37
+20250828T233235|2|system_cfg|float_id not specified
+20250828T233738|2|system_cfg|float_id not specified
+20250828T234241|2|system_cfg|float_id not specified
+20250828T234744|2|system_cfg|float_id not specified
+20250828T235030|2|system_cfg|float_id not specified
+20250828T235040|4|SUNA|sample_once|PTS NOT sent to sensor, 21543 seconds old
+20250828T235246|2|system_cfg|float_id not specified
+20250828T235749|2|system_cfg|float_id not specified
+20250829T000252|2|system_cfg|float_id not specified
+20250829T000755|2|system_cfg|float_id not specified
+20250829T001252|2|system_cfg|float_id not specified
+20250829T001257|5|ASCENT|slow ascent rate 3: -0.0655 dbar/sec @ 1200.91 dbar
+20250829T001259|5|BuoyEngine|adjusting from 1301 to 1409
+20250829T001318|4|SUNA|sample_once|PTS NOT sent to sensor, 22901 seconds old
+20250829T001336|5|BuoyEngine|destination 1409 reached after 00:36
+20250829T001436|2|system_cfg|float_id not specified
+20250829T001939|2|system_cfg|float_id not specified
+20250829T002442|2|system_cfg|float_id not specified
+20250829T002945|2|system_cfg|float_id not specified
+20250829T003237|2|system_cfg|float_id not specified
+20250829T003251|4|SUNA|sample_once|PTS NOT sent to sensor, 24074 seconds old
+20250829T003448|2|system_cfg|float_id not specified
+20250829T003950|2|system_cfg|float_id not specified
+20250829T004453|2|system_cfg|float_id not specified
+20250829T004458|5|ASCENT|slow ascent rate 3: -0.0701 dbar/sec @ 1045.46 dbar
+20250829T004500|5|BuoyEngine|adjusting from 1409 to 1509
+20250829T004537|5|BuoyEngine|destination 1510 reached after 00:36
+20250829T004638|2|system_cfg|float_id not specified
+20250829T005140|2|system_cfg|float_id not specified
+20250829T005338|2|system_cfg|float_id not specified
+20250829T005352|4|SUNA|sample_once|PTS NOT sent to sensor, 25335 seconds old
+20250829T005642|2|system_cfg|float_id not specified
+20250829T010144|2|system_cfg|float_id not specified
+20250829T010352|2|system_cfg|float_id not specified
+20250829T010406|4|SUNA|sample_once|PTS NOT sent to sensor, 25949 seconds old
+20250829T010646|2|system_cfg|float_id not specified
+20250829T011148|2|system_cfg|float_id not specified
+20250829T011524|2|system_cfg|float_id not specified
+20250829T011535|2|system_cfg|float_id not specified
+20250829T011545|4|SUNA|sample_once|PTS NOT sent to sensor, 26648 seconds old
+20250829T011650|2|system_cfg|float_id not specified
+20250829T011655|5|ASCENT|slow ascent rate 3: -0.0648 dbar/sec @ 895.03 dbar
+20250829T011657|5|BuoyEngine|adjusting from 1510 to 1611
+20250829T011734|5|BuoyEngine|destination 1612 reached after 00:36
+20250829T011834|2|system_cfg|float_id not specified
+20250829T012336|2|system_cfg|float_id not specified
+20250829T012544|2|system_cfg|float_id not specified
+20250829T012554|4|SUNA|sample_once|PTS NOT sent to sensor, 27257 seconds old
+20250829T012838|2|system_cfg|float_id not specified
+20250829T013340|2|system_cfg|float_id not specified
+20250829T013608|2|system_cfg|float_id not specified
+20250829T013622|4|SUNA|sample_once|PTS NOT sent to sensor, 27885 seconds old
+20250829T013842|2|system_cfg|float_id not specified
+20250829T014344|2|system_cfg|float_id not specified
+20250829T014349|5|ASCENT|slow ascent rate 3: -0.0710 dbar/sec @ 767.48 dbar
+20250829T014351|5|BuoyEngine|adjusting from 1612 to 1713
+20250829T014428|5|BuoyEngine|destination 1707 reached after 00:36
+20250829T014528|2|system_cfg|float_id not specified
+20250829T014706|2|system_cfg|float_id not specified
+20250829T014716|4|SUNA|sample_once|PTS NOT sent to sensor, 28539 seconds old
+20250829T015030|2|system_cfg|float_id not specified
+20250829T015532|2|system_cfg|float_id not specified
+20250829T015619|2|system_cfg|float_id not specified
+20250829T015629|4|SUNA|sample_once|PTS NOT sent to sensor, 29092 seconds old
+20250829T020034|2|system_cfg|float_id not specified
+20250829T020536|2|system_cfg|float_id not specified
+20250829T020615|2|system_cfg|float_id not specified
+20250829T020625|4|SUNA|sample_once|PTS NOT sent to sensor, 29688 seconds old
+20250829T021038|2|system_cfg|float_id not specified
+20250829T021540|2|system_cfg|float_id not specified
+20250829T021727|2|system_cfg|float_id not specified
+20250829T021737|4|SUNA|sample_once|PTS NOT sent to sensor, 30360 seconds old
+20250829T022042|2|system_cfg|float_id not specified
+20250829T022047|5|ASCENT|slow ascent rate 3: -0.0716 dbar/sec @ 585.97 dbar
+20250829T022049|5|BuoyEngine|adjusting from 1706 to 1815
+20250829T022125|5|BuoyEngine|destination 1815 reached after 00:35
+20250829T022226|2|system_cfg|float_id not specified
+20250829T022721|2|system_cfg|float_id not specified
+20250829T022731|4|SUNA|sample_once|PTS NOT sent to sensor, 30954 seconds old
+20250829T023243|2|system_cfg|float_id not specified
+20250829T023701|2|system_cfg|float_id not specified
+20250829T023719|2|system_cfg|float_id not specified
+20250829T023729|4|SUNA|sample_once|PTS NOT sent to sensor, 31552 seconds old
+20250829T024241|2|system_cfg|float_id not specified
+20250829T024743|2|system_cfg|float_id not specified
+20250829T024927|2|system_cfg|float_id not specified
+20250829T024941|4|SUNA|sample_once|PTS NOT sent to sensor, 32284 seconds old
+20250829T025245|2|system_cfg|float_id not specified
+20250829T025250|5|ASCENT|slow ascent rate 3: -0.0649 dbar/sec @ 437.16 dbar
+20250829T025252|5|BuoyEngine|adjusting from 1807 to 1915
+20250829T025327|5|BuoyEngine|destination 1916 reached after 00:34
+20250829T025428|2|system_cfg|float_id not specified
+20250829T025930|2|system_cfg|float_id not specified
+20250829T025958|2|system_cfg|float_id not specified
+20250829T030007|4|SUNA|sample_once|PTS NOT sent to sensor, 32910 seconds old
+20250829T030432|2|system_cfg|float_id not specified
+20250829T030927|2|system_cfg|float_id not specified
+20250829T030935|2|system_cfg|float_id not specified
+20250829T030947|2|system_cfg|float_id not specified
+20250829T030957|4|SUNA|sample_once|PTS NOT sent to sensor, 33500 seconds old
+20250829T031437|2|system_cfg|float_id not specified
+20250829T031939|2|system_cfg|float_id not specified
+20250829T032117|2|system_cfg|float_id not specified
+20250829T032131|4|SUNA|sample_once|PTS NOT sent to sensor, 34194 seconds old
+20250829T032441|2|system_cfg|float_id not specified
+20250829T032446|5|ASCENT|slow ascent rate 3: -0.0663 dbar/sec @ 286.63 dbar
+20250829T032448|5|BuoyEngine|adjusting from 1909 to 2017
+20250829T032522|5|BuoyEngine|destination 2017 reached after 00:33
+20250829T032623|2|system_cfg|float_id not specified
+20250829T033125|2|system_cfg|float_id not specified
+20250829T033215|2|system_cfg|float_id not specified
+20250829T033233|4|SUNA|sample_once|PTS NOT sent to sensor, 34856 seconds old
+20250829T033627|2|system_cfg|float_id not specified
+20250829T034129|2|system_cfg|float_id not specified
+20250829T034625|2|system_cfg|float_id not specified
+20250829T034630|5|ASCENT|slow ascent rate 3: -0.0514 dbar/sec @ 201.43 dbar
+20250829T034632|5|BuoyEngine|adjusting from 2009 to 2117
+20250829T034707|5|BuoyEngine|destination 2119 reached after 00:34
+20250829T034709|4|SUNA|sample_once|PTS NOT sent to sensor, 35732 seconds old
+20250829T034826|2|system_cfg|float_id not specified
+20250829T034831|5|ASCENT|slow ascent rate 4: -0.0603 dbar/sec @ 194.74 dbar
+20250829T034833|5|BuoyEngine|adjusting from 2111 to 2219
+20250829T034908|5|BuoyEngine|destination 2220 reached after 00:34
+20250829T035008|2|system_cfg|float_id not specified
+20250829T035013|5|ASCENT|slow ascent rate 5: -0.0789 dbar/sec @ 187.20 dbar
+20250829T035015|5|BuoyEngine|adjusting from 2213 to 2321
+20250829T035049|5|BuoyEngine|destination 2321 reached after 00:33
+20250829T035150|2|system_cfg|float_id not specified
+20250829T035651|2|system_cfg|float_id not specified
+20250829T035721|2|system_cfg|float_id not specified
+20250829T035729|2|system_cfg|float_id not specified
+20250829T035738|4|SUNA|sample_once|PTS NOT sent to sensor, 36361 seconds old
+20250829T040153|2|system_cfg|float_id not specified
+20250829T040655|2|system_cfg|float_id not specified
+20250829T041157|2|system_cfg|float_id not specified
+20250829T041202|5|ASCENT|slow ascent rate 3: -0.0197 dbar/sec @ 117.44 dbar
+20250829T041204|5|BuoyEngine|adjusting from 2321 to 2422
+20250829T041237|5|BuoyEngine|destination 2423 reached after 00:32
+20250829T041338|2|system_cfg|float_id not specified
+20250829T041343|5|ASCENT|slow ascent rate 4: -0.0477 dbar/sec @ 113.63 dbar
+20250829T041345|5|BuoyEngine|adjusting from 2421 to 2524
+20250829T041419|5|BuoyEngine|destination 2524 reached after 00:33
+20250829T041520|2|system_cfg|float_id not specified
+20250829T041525|5|ASCENT|slow ascent rate 5: -0.0687 dbar/sec @ 107.16 dbar
+20250829T041527|5|BuoyEngine|adjusting from 2524 to 2625
+20250829T041602|5|BuoyEngine|destination 2626 reached after 00:34
+20250829T041701|2|system_cfg|float_id not specified
+20250829T041710|4|SUNA|sample_once|PTS NOT sent to sensor, 37533 seconds old
+20250829T041845|2|system_cfg|float_id not specified
+20250829T041853|2|system_cfg|float_id not specified
+20250829T041902|4|SUNA|sample_once|PTS NOT sent to sensor, 37645 seconds old
+20250829T042059|2|system_cfg|float_id not specified
+20250829T042112|2|system_cfg|float_id not specified
+20250829T042121|4|SUNA|sample_once|PTS NOT sent to sensor, 37784 seconds old
+20250829T042223|2|system_cfg|float_id not specified
+20250829T042344|2|system_cfg|float_id not specified
+20250829T042353|4|SUNA|sample_once|PTS NOT sent to sensor, 37936 seconds old
+20250829T042612|2|system_cfg|float_id not specified
+20250829T042620|2|system_cfg|float_id not specified
+20250829T042629|4|SUNA|sample_once|PTS NOT sent to sensor, 38092 seconds old
+20250829T042725|2|system_cfg|float_id not specified
+20250829T042920|2|system_cfg|float_id not specified
+20250829T043029|2|system_cfg|float_id not specified
+20250829T043143|2|system_cfg|float_id not specified
+20250829T043227|2|system_cfg|float_id not specified
+20250829T043232|5|ASCENT|slow ascent rate 3: -0.0032 dbar/sec @ 55.26 dbar
+20250829T043234|5|BuoyEngine|adjusting from 2627 to 2727
+20250829T043308|5|BuoyEngine|destination 2728 reached after 00:33
+20250829T043335|2|system_cfg|float_id not specified
+20250829T043409|2|system_cfg|float_id not specified
+20250829T043414|5|ASCENT|slow ascent rate 4: -0.0237 dbar/sec @ 53.46 dbar
+20250829T043416|5|BuoyEngine|adjusting from 2728 to 2828
+20250829T043449|5|BuoyEngine|destination 2828 reached after 00:32
+20250829T043550|2|system_cfg|float_id not specified
+20250829T043559|4|SUNA|sample_once|PTS NOT sent to sensor, 38662 seconds old
+20250829T043615|5|ASCENT|slow ascent rate 5: -0.0476 dbar/sec @ 48.57 dbar
+20250829T043617|5|BuoyEngine|adjusting from 2828 to 2928
+20250829T043621|4|SUNA|sample_once|PTS NOT sent to sensor, 38684 seconds old
+20250829T043643|4|SUNA|sample_once|PTS NOT sent to sensor, 38706 seconds old
+20250829T043650|5|BuoyEngine|destination 2929 reached after 00:32
+20250829T043705|4|SUNA|sample_once|PTS NOT sent to sensor, 38728 seconds old
+20250829T043731|4|SUNA|sample_once|PTS NOT sent to sensor, 38754 seconds old
+20250829T043755|4|SUNA|sample_once|PTS NOT sent to sensor, 38778 seconds old
+20250829T043819|4|SUNA|sample_once|PTS NOT sent to sensor, 38802 seconds old
+20250829T043843|4|SUNA|sample_once|PTS NOT sent to sensor, 38826 seconds old
+20250829T043907|4|SUNA|sample_once|PTS NOT sent to sensor, 38850 seconds old
+20250829T043931|4|SUNA|sample_once|PTS NOT sent to sensor, 38874 seconds old
+20250829T043955|4|SUNA|sample_once|PTS NOT sent to sensor, 38898 seconds old
+20250829T044019|4|SUNA|sample_once|PTS NOT sent to sensor, 38922 seconds old
+20250829T044043|4|SUNA|sample_once|PTS NOT sent to sensor, 38946 seconds old
+20250829T044107|4|SUNA|sample_once|PTS NOT sent to sensor, 38970 seconds old
+20250829T044131|4|SUNA|sample_once|PTS NOT sent to sensor, 38994 seconds old
+20250829T044155|4|SUNA|sample_once|PTS NOT sent to sensor, 39018 seconds old
+20250829T044219|4|SUNA|sample_once|PTS NOT sent to sensor, 39042 seconds old
+20250829T044243|4|SUNA|sample_once|PTS NOT sent to sensor, 39066 seconds old
+20250829T044307|4|SUNA|sample_once|PTS NOT sent to sensor, 39090 seconds old
+20250829T044331|4|SUNA|sample_once|PTS NOT sent to sensor, 39114 seconds old
+20250829T044355|4|SUNA|sample_once|PTS NOT sent to sensor, 39138 seconds old
+20250829T044419|4|SUNA|sample_once|PTS NOT sent to sensor, 39162 seconds old
+20250829T044443|4|SUNA|sample_once|PTS NOT sent to sensor, 39186 seconds old
+20250829T044506|5|CTD|stop_profile|current: 19.580080 mA @ 14.823 V
+20250829T044507|5|CTD|stop_profile|CP Stopped
+20250829T044516|5|ASCENT|SurfacePressure reached @ 3.27 dbar after 437 mins
+20250829T044516|5|ASCENT|awake|count: 138, time: 3010, energy: 144.687500
+20250829T044516|5|ASCENT|sleep|count: 137, time: 23281, energy: 161.872168
+20250829T044516|5|mission_state|ASCENT -> SURFACE
+20250829T044522|5|measurement_sequence|starting
+20250829T044743|5|measurement_sequence|completed
+20250829T044744|5|BuoyEngine|adjusting from 2930 to 3230
+20250829T044923|5|BuoyEngine|destination 3229 reached after 01:37
+20250829T044924|5|AIR|starting inflation from 8.06 dbar
+20250829T045121|5|AIR|inflated to 12.14 dbar after 17 pulses (Time ON:85, OFF:17)
+20250829T045121|5|measurement_sequence|starting
+20250829T045341|5|measurement_sequence|completed
+20250829T045416|5|COMMS|found sky
+20250829T045816|5|CTD|bin_average|samples=26112 bins=1001 maxP=1999.45
+20250829T045948|4|CTD|download_profile|empty bin count: 3
+20250829T045951|5|SURFACE|Completing Mission No.: 49
+20250829T050121|5|RMC|Set Clock: 08/29/2025 05:01:21
+20250829T050121|5|GPS|GPS TimeToFix: 82 secs
+20250829T050121|5|GPS|GPS Skew: 1 secs
+20250829T050121|5|GPS|GPS Fix: 08/29/2025 05:01:21,18.66706,62.71156,5
+20250829T050122|5|GPS|time and location set

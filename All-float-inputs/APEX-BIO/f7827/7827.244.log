@@ -1,0 +1,310 @@
+(May 12 2022 23:23:24,  866412 sec) TelemetryInit()      Profile 243. (Apf9i FwRev: 061016)
+(May 12 2022 23:30:55,  866862 sec) AirSystem()          Battery [142cnt, 11.0V]  Current [71cnt, 286.1mA]  Barometer [127cnt, 6.8"Hg]  Run-Time [62s]
+(May 12 2022 23:31:48,  866915 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.5dbars / 221.8uM 29.517C 29.046 9.006 -32.738 / 62,171,531
+(May 12 2022 23:31:56,  866924 sec) GpsServices()        GPS almanac is current.
+(May 12 2022 23:31:56,  866924 sec) GpsServices()        Initiating GPS fix acquisition.
+(May 12 2022 23:32:18,  866945 sec) gga()                $GPGGA,233150,1839.5230,N,05939.0971,E,0,00,,,M,,M,,*55
+(May 12 2022 23:32:31,  866959 sec) gga()                $GPGGA,233210,1839.5230,N,05939.0971,E,0,00,,,M,,M,,*52
+(May 12 2022 23:32:43,  866970 sec) gga()                $GPGGA,233220,1839.5230,N,05939.0971,E,0,00,,,M,,M,,*51
+(May 12 2022 23:32:54,  866981 sec) gga()                $GPGGA,233230,1839.5230,N,05939.0971,E,0,00,,,M,,M,,*50
+(May 12 2022 23:33:04,  866992 sec) gga()                $GPGGA,233230,1839.5230,N,05939.0971,E,0,00,,,M,,M,,*50
+(May 12 2022 23:33:47,  867035 sec) gga()                $GPGGA,233240,1904.3525,N,06008.2725,E,1,06,1.2,13.0,M,-47.5,M,,*5B
+(May 12 2022 23:33:48,  867035 sec) GpsServices()        Profile 243 GPS fix obtained in 111 seconds.
+(May 12 2022 23:33:48,  867035 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(May 12 2022 23:33:48,  867036 sec) GpsServices()        Fix:   60.138  19.073 05/12/2022 233240    6
+(May 12 2022 23:34:33,  867081 sec) gga()                $GPGGA,233340,1904.3632,N,06008.2798,E,1,07,1.1,10.8,M,-47.5,M,,*50
+(May 12 2022 23:34:41,  867088 sec) gga()                $GPGGA,233430,1904.3738,N,06008.2858,E,1,07,1.1,9.4,M,-47.5,M,,*6C
+(May 12 2022 23:34:41,  867089 sec) GpsServices()        APF9 RTC skew (11s) OK.
+(May 12 2022 23:34:42,  867089 sec) GpsServices()        GPS services complete.
+(May 12 2022 23:35:23,  867131 sec) CLogin()             Connecting to primary host.
+(May 12 2022 23:35:36,  867143 sec) CLogin()             Connection 1 established in 13 seconds.
+(May 12 2022 23:36:10,  867177 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(May 12 2022 23:36:10,  867177 sec) login()              Login failed.
+(May 12 2022 23:37:08,  867235 sec) expect()             Attempt to read prompt string [Password:] failed.
+(May 12 2022 23:37:08,  867235 sec) login()              Password prompt not received.
+(May 12 2022 23:37:20,  867247 sec) CLogin()             Connection 2 established in 117 seconds.
+(May 12 2022 23:37:51,  867278 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(May 12 2022 23:37:51,  867278 sec) login()              Login failed.
+(May 12 2022 23:38:21,  867308 sec) expect()             Attempt to read prompt string [login:] failed.
+(May 12 2022 23:38:21,  867308 sec) login()              Login prompt not received.
+(May 12 2022 23:38:21,  867308 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(May 12 2022 23:39:22,  867369 sec) chat()               Expected string [CONNECT] not received.
+(May 12 2022 23:39:22,  867369 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(May 12 2022 23:39:22,  867369 sec) connect()            Connection attempt failed.
+(May 12 2022 23:40:23,  867430 sec) chat()               Expected string [CONNECT] not received.
+(May 12 2022 23:40:23,  867430 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(May 12 2022 23:40:23,  867430 sec) connect()            Connection attempt failed.
+(May 12 2022 23:40:23,  867430 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(May 12 2022 23:40:24,  867431 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(May 12 2022 23:40:30,  867437 sec) CLogin()             Connecting to primary host.
+(May 12 2022 23:41:31,  867498 sec) chat()               Expected string [CONNECT] not received.
+(May 12 2022 23:41:31,  867498 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(May 12 2022 23:41:31,  867498 sec) connect()            Connection attempt failed.
+(May 12 2022 23:41:41,  867509 sec) CLogin()             Connection 3 established in 72 seconds.
+(May 12 2022 23:42:16,  867543 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(May 12 2022 23:42:16,  867543 sec) login()              Login failed.
+(May 12 2022 23:43:13,  867600 sec) expect()             Attempt to read prompt string [Password:] failed.
+(May 12 2022 23:43:13,  867600 sec) login()              Password prompt not received.
+(May 12 2022 23:43:13,  867600 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(May 12 2022 23:44:14,  867661 sec) chat()               Expected string [CONNECT] not received.
+(May 12 2022 23:44:14,  867661 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(May 12 2022 23:44:14,  867661 sec) connect()            Connection attempt failed.
+(May 12 2022 23:45:15,  867722 sec) chat()               Expected string [CONNECT] not received.
+(May 12 2022 23:45:15,  867722 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(May 12 2022 23:45:15,  867722 sec) connect()            Connection attempt failed.
+(May 12 2022 23:45:15,  867723 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(May 12 2022 23:45:16,  867723 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(May 12 2022 23:45:16,  867723 sec) DownLoadMissionCfg(  Aborting download: Retry limit [2] exceeded.
+(May 12 2022 23:45:16,  867723 sec) WriteVitals()        Writing vitals to "7827.243.msg".
+(May 12 2022 23:45:23,  867731 sec) CLogin()             Connecting to primary host.
+(May 12 2022 23:45:32,  867739 sec) CLogin()             Connection 4 established in 9 seconds.
+(May 12 2022 23:45:39,  867746 sec) login()              Login successful.
+(May 12 2022 23:45:42,  867749 sec) CLogin()             Logged in to host.  [Login required 10 seconds]
+(May 12 2022 23:46:03,  867771 sec) UpLoadFile()         Uploading "7827.243.log" to host as "7827.243.log".
+(May 12 2022 23:46:12,  867780 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(May 12 2022 23:46:23,  867791 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 12 2022 23:46:24,  867791 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(May 12 2022 23:46:39,  867806 sec) TxPacket()           No carrier detected.
+(May 12 2022 23:46:39,  867806 sec) TxPacket()           Exit status: -5
+(May 12 2022 23:46:39,  867806 sec) Tx()                 Packet transmission failed - aborting transfer.
+(May 12 2022 23:46:50,  867818 sec) UpLoadFile()         Upload failed.
+(May 12 2022 23:46:51,  867819 sec) CLogin()             Connecting to primary host.
+(May 12 2022 23:46:57,  867824 sec) chat()               Expected string [OK] not received.
+(May 12 2022 23:46:57,  867824 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(May 12 2022 23:46:57,  867824 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(May 12 2022 23:46:57,  867825 sec) modem_connect()      Modem configuration failed.
+(May 12 2022 23:46:57,  867825 sec) connect()            Connection attempt failed.
+(May 12 2022 23:47:05,  867832 sec) CLogin()             Connection 5 established in 14 seconds.
+(May 12 2022 23:47:11,  867839 sec) login()              Login successful.
+(May 12 2022 23:47:14,  867842 sec) CLogin()             Logged in to host.  [Login required 9 seconds]
+(May 12 2022 23:47:24,  867851 sec) UpLoadFile()         Uploading "7827.243.msg" to host as "7827.243.msg".
+(May 12 2022 23:47:27,  867855 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(May 12 2022 23:47:30,  867858 sec) TxPacket()           Invalid response [0x43] - resending packet. [PktNum=0x01]
+(May 12 2022 23:47:30,  867858 sec) TxPacket()           Packet xmit history: [11100011] (0:ok, 1:fail).
+(May 12 2022 23:47:39,  867866 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(May 12 2022 23:47:39,  867867 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(May 12 2022 23:47:44,  867871 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(May 12 2022 23:47:44,  867872 sec) TxPacket()           Packet xmit history: [00110011] (0:ok, 1:fail).
+(May 12 2022 23:47:56,  867884 sec) TxPacket()           No carrier detected.
+(May 12 2022 23:47:56,  867884 sec) TxPacket()           Exit status: -5
+(May 12 2022 23:47:57,  867884 sec) Tx()                 Packet transmission failed - aborting transfer.
+(May 12 2022 23:48:08,  867895 sec) UpLoadFile()         Upload failed.
+(May 12 2022 23:48:08,  867896 sec) UpLoad()             Files successfully uploaded: 0
+(May 12 2022 23:48:08,  867896 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(May 12 2022 23:48:08,  867896 sec) logout()             No carrier detected.
+(May 12 2022 23:48:09,  867896 sec) Telemetry()          Telemetry cycle complete: PrfId=243 ConnectionAttempts=11  Connections=5
+(May 13 2022 00:03:24,  868811 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [125cnt, 6.2"Hg].
+(May 13 2022 00:04:33,  868880 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.7dbars / 221.6uM 29.083C 29.213 8.984 -19.059 / 56,149,531
+(May 13 2022 00:04:41,  868889 sec) GpsServices()        GPS almanac is current.
+(May 13 2022 00:04:41,  868889 sec) GpsServices()        Initiating GPS fix acquisition.
+(May 13 2022 00:05:34,  868941 sec) gga()                $GPGGA,000440,1904.7353,N,06008.5280,E,6,07,1.1,10.4,M,-47.5,M,,*53
+(May 13 2022 00:06:17,  868984 sec) gga()                $GPGGA,000500,1904.7382,N,06008.5310,E,1,07,1.1,8.4,M,-47.5,M,,*6C
+(May 13 2022 00:06:17,  868984 sec) GpsServices()        Profile 243 GPS fix obtained in 95 seconds.
+(May 13 2022 00:06:17,  868985 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(May 13 2022 00:06:17,  868985 sec) GpsServices()        Fix:   60.142  19.079 05/13/2022 000500    7
+(May 13 2022 00:07:03,  869031 sec) gga()                $GPGGA,000610,1904.7513,N,06008.5417,E,1,07,1.1,4.7,M,-47.5,M,,*6F
+(May 13 2022 00:07:11,  869038 sec) gga()                $GPGGA,000700,1904.7611,N,06008.5492,E,1,07,1.1,4.5,M,-47.5,M,,*61
+(May 13 2022 00:07:11,  869039 sec) GpsServices()        APF9 RTC skew (11s) OK.
+(May 13 2022 00:07:12,  869039 sec) GpsServices()        GPS services complete.
+(May 13 2022 00:08:41,  869129 sec) CLogin()             Connecting to primary host.
+(May 13 2022 00:08:53,  869140 sec) CLogin()             Connection 6 established in 12 seconds.
+(May 13 2022 00:09:24,  869171 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(May 13 2022 00:09:24,  869171 sec) login()              Login failed.
+(May 13 2022 00:10:23,  869230 sec) expect()             Attempt to read prompt string [Password:] failed.
+(May 13 2022 00:10:23,  869230 sec) login()              Password prompt not received.
+(May 13 2022 00:10:30,  869237 sec) CLogin()             Connection 7 established in 109 seconds.
+(May 13 2022 00:10:39,  869246 sec) login()              Login successful.
+(May 13 2022 00:10:42,  869250 sec) CLogin()             Logged in to host.  [Login required 12 seconds]
+(May 13 2022 00:10:54,  869262 sec) RxConfig()           Downloading "mission.cfg" from host.
+(May 13 2022 00:10:57,  869264 sec) Rx()                 Initiating transfer. [0x43]
+(May 13 2022 00:10:59,  869266 sec) RxStartByte()        Sync errors encountered: 667
+(May 13 2022 00:11:03,  869270 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(May 13 2022 00:11:10,  869277 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 13 sec, 78.8 bps]
+(May 13 2022 00:11:10,  869277 sec) RxConfig()           Download successful.
+(May 13 2022 00:11:33,  869300 sec) WriteVitals()        Writing vitals to "7827.243.msg".
+(May 13 2022 00:11:49,  869316 sec) UpLoadFile()         Uploading "7827.243.log" to host as "7827.243.log".
+(May 13 2022 00:11:52,  869320 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(May 13 2022 00:12:42,  869369 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(May 13 2022 00:12:42,  869370 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(May 13 2022 00:13:15,  869402 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(May 13 2022 00:13:15,  869403 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(May 13 2022 00:13:20,  869407 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(May 13 2022 00:13:20,  869407 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(May 13 2022 00:14:24,  869471 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(May 13 2022 00:14:24,  869472 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(May 13 2022 00:14:59,  869506 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(May 13 2022 00:14:59,  869507 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(May 13 2022 00:15:06,  869513 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(May 13 2022 00:15:06,  869514 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(May 13 2022 00:15:34,  869541 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(May 13 2022 00:15:34,  869542 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(May 13 2022 00:15:39,  869546 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(May 13 2022 00:15:39,  869547 sec) TxPacket()           Packet xmit history: [01100011] (0:ok, 1:fail).
+(May 13 2022 00:15:56,  869563 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(May 13 2022 00:15:56,  869564 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(May 13 2022 00:17:07,  869634 sec) TxPacket()           NAK received - resending packet. [PktNum=0x25]
+(May 13 2022 00:17:07,  869635 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(May 13 2022 00:17:25,  869652 sec) Tx()                 Transmission completed successfully [38 packets, 37276 bytes, 332 sec, 114.5 bps]
+(May 13 2022 00:17:25,  869653 sec) UpLoadFile()         Upload successful.
+(May 13 2022 00:17:35,  869663 sec) UpLoadFile()         Uploading "7827.243.msg" to host as "7827.243.msg".
+(May 13 2022 00:17:41,  869669 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(May 13 2022 00:17:48,  869675 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 13 2022 00:17:48,  869676 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(May 13 2022 00:18:54,  869741 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(May 13 2022 00:18:54,  869742 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(May 13 2022 00:20:13,  869820 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(May 13 2022 00:20:13,  869821 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(May 13 2022 00:20:22,  869830 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(May 13 2022 00:20:23,  869830 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(May 13 2022 00:20:28,  869836 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(May 13 2022 00:20:28,  869836 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(May 13 2022 00:20:44,  869851 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(May 13 2022 00:20:44,  869852 sec) TxPacket()           Packet xmit history: [00111001] (0:ok, 1:fail).
+(May 13 2022 00:21:12,  869879 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(May 13 2022 00:21:12,  869880 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(May 13 2022 00:21:17,  869884 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(May 13 2022 00:21:17,  869885 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(May 13 2022 00:21:36,  869903 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(May 13 2022 00:21:36,  869904 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(May 13 2022 00:22:07,  869934 sec) TxPacket()           NAK received - resending packet. [PktNum=0x21]
+(May 13 2022 00:22:07,  869935 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(May 13 2022 00:22:56,  869983 sec) Tx()                 Transmission completed successfully [39 packets, 37854 bytes, 313 sec, 121.9 bps]
+(May 13 2022 00:22:56,  869984 sec) UpLoadFile()         Upload successful.
+(May 13 2022 00:23:06,  869994 sec) UpLoad()             Files successfully uploaded: 2
+(May 13 2022 00:23:07,  869994 sec) UpLoad()             Upload complete.
+(May 13 2022 00:23:10,  869997 sec) logout()             Log-out successful.
+(May 13 2022 00:23:11,  869999 sec) Telemetry()          Telemetry cycle complete: PrfId=243 ConnectionAttempts=13  Connections=7
+(May 13 2022 00:23:12,  869999 sec) TelemetryTerminate(  Parsing new mission configuration.
+(May 13 2022 00:23:14,  870002 sec) configure()          Parsing configurators in "mission.cfg".
+(May 13 2022 00:23:22,  870010 sec) configure()             TelemetryRetry(15)          [0x7BBC] [TelemetryRetry(15)].
+(May 13 2022 00:23:22,  870010 sec) configure()          Configuration CRCs and syntax OK.
+(May 13 2022 00:23:23,  870010 sec) ConfigSupervisor()   Configuration accepted.
+(May 13 2022 00:23:23,  870010 sec) TelemetryTerminate(  Reconditioning the file system.
+(May 13 2022 00:23:42,      12 sec) DescentInit()        Deep profile 244 initiated at mission-time 870018sec.
+(May 13 2022 00:23:44,      14 sec) DescentInit()        Surface pressure: -0.6dbars.
+(May 13 2022 00:23:49,      19 sec) PistonMoveAbsWTO()    208->077 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 [865sec, 10.9Volts, 0.157Amps, CPT:865sec]
+(May 13 2022 00:38:24,     894 sec) Descent()            Pressure: 75.9
+(May 13 2022 01:23:34,    3604 sec) Descent()            Pressure: 433.6
+(May 13 2022 02:23:34,    7204 sec) Descent()            Pressure: 752.5
+(May 13 2022 03:23:34,   10804 sec) Descent()            Pressure: 925.7
+(May 13 2022 04:23:34,   14404 sec) Descent()            Pressure: 971.3
+(May 13 2022 05:23:34,   18004 sec) Descent()            Pressure: 979.6
+(May 13 2022 05:23:34,   18004 sec) ParkInit()           
+(May 13 2022 07:23:41,   25210 sec) Park()               ParkPOutOfBand[-3, 981.9 dbars]: retract piston.
+(May 13 2022 07:23:41,   25211 sec) PistonMoveAbsWTO()    077->076 076 [6sec, 11.0Volts, 0.101Amps, CPT:871sec]
+(May 14 2022 16:23:41,  144011 sec) Park()               ParkPOutOfBand[3, 1014.3 dbars]: extend piston.
+(May 14 2022 16:23:41,  144011 sec) PistonMoveAbsWTO()    076->077 077 [2sec, 10.4Volts, 0.475Amps, CPT:873sec]
+(May 22 2022 11:30:18,  817608 sec) CtdPower()           [ 1008.64,  9.1829, 36.0821]
+(May 22 2022 11:30:19,  817608 sec) CtdPower()           CTD Power consumption [144VCnt 10ACnt]: 11.163Volts * 0.040Amps = 0.45Watts.
+(May 22 2022 11:30:20,  817609 sec) ParkTerminate()      Piston Position:77 Vacuum:79 Vq:146 Aq:6 Vsbe:144 Asbe:10 Vflbb:143 Aflbb:13
+(May 22 2022 11:30:56,  817646 sec) ParkTerminate()      PTS/O2,T2,TPhase,RawTemp: 1008.8dbars 9.1822C 36.0824PSU / 4.7uM 9.213C 61.166 8.243 618.156
+(May 22 2022 11:30:56,  817646 sec) ParkTerminate()      FLBB FSig, BbSig, TSig: 57, 113, 563
+(May 22 2022 11:30:57,  817647 sec) GoDeepInit()         Moving piston.
+(May 22 2022 11:30:57,  817647 sec) PistonMoveAbsWTO()    077->028 076 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 [319sec, 10.9Volts, 0.117Amps, CPT:1192sec]
+(May 22 2022 14:58:34,  830104 sec) GoDeep()             Sequence point detected at 2000.5dbar.
+(May 22 2022 14:58:37,  830107 sec) ProfileInit()        PrfId:244  Pressure:2000.6dbar  pTable[0]:2000dbar
+(May 22 2022 14:59:23,  830153 sec) Profile()            Sample 0 initiated at 2000.7dbars for bin 0 [2000dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 2001.2dbars 3.3441C 35.5030PSU / 87.2uM 3.362C 51.360 8.328 791.135 /   58  107  573
+(May 22 2022 14:59:24,  830154 sec) PistonMoveAbsWTO()    028->050 029 030 031 [30sec, 9.6Volts, 0.830Amps, CPT:1222sec]
+(May 22 2022 15:00:05,  830195 sec) PistonMoveAbsWTO()    031->050 032 033 034 [30sec, 9.7Volts, 0.818Amps, CPT:1252sec]
+(May 22 2022 15:00:45,  830235 sec) PistonMoveAbsWTO()    034->050 035 036 037 [30sec, 9.8Volts, 0.806Amps, CPT:1282sec]
+(May 22 2022 15:02:49,  830358 sec) Sbe41cpStartCP()     Continuous profile started.
+(May 22 2022 15:02:49,  830359 sec) PistonMoveAbsWTO()    037->050 038 039 040 [30sec, 9.7Volts, 0.830Amps, CPT:1312sec]
+(May 22 2022 15:03:30,  830400 sec) PistonMoveAbsWTO()    040->050 041 042 043 044 [30sec, 9.8Volts, 0.834Amps, CPT:1342sec]
+(May 22 2022 15:04:11,  830441 sec) PistonMoveAbsWTO()    044->050 045 046 047 [30sec, 9.8Volts, 0.814Amps, CPT:1372sec]
+(May 22 2022 15:04:52,  830482 sec) PistonMoveAbsWTO()    047->050 048 049 050 [27sec, 9.8Volts, 0.842Amps, CPT:1399sec]
+(May 22 2022 15:13:47,  831017 sec) AscentControlAgent(  Bouyancy nudge to 60 (v=0.076dbar/sec).
+(May 22 2022 15:13:48,  831018 sec) PistonMoveAbsWTO()    050->060 051 052 053 [30sec, 9.8Volts, 0.834Amps, CPT:1429sec]
+(May 22 2022 15:14:29,  831059 sec) PistonMoveAbsWTO()    053->060 054 055 056 [30sec, 9.8Volts, 0.802Amps, CPT:1459sec]
+(May 22 2022 15:15:10,  831100 sec) PistonMoveAbsWTO()    056->060 057 058 059 [30sec, 9.8Volts, 0.814Amps, CPT:1489sec]
+(May 22 2022 15:15:51,  831141 sec) PistonMoveAbsWTO()    059->060 060 [3sec, 9.8Volts, 0.806Amps, CPT:1492sec]
+(May 22 2022 15:18:38,  831308 sec) Profile()            Sample 1 initiated at 1900.8dbars for bin 1 [1900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1900.4dbars 3.6856C 35.5303PSU / 81.7uM 3.696C 51.780 8.332 781.584 /   57  108  573
+(May 22 2022 15:32:55,  832165 sec) Profile()            Sample 2 initiated at 1801.5dbars for bin 2 [1800dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1801.2dbars 4.0915C 35.5664PSU / 70.5uM 4.108C 52.813 8.331 769.777 /   60  109  572
+(May 22 2022 15:49:07,  833137 sec) Profile()            Sample 3 initiated at 1701.1dbars for bin 3 [1700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1700.8dbars 4.5215C 35.6035PSU / 61.7uM 4.531C 53.660 8.332 757.562 /   58  110  571
+(May 22 2022 16:07:41,  834251 sec) Profile()            Sample 4 initiated at 1601.6dbars for bin 4 [1600dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1601.3dbars 5.1495C 35.6586PSU / 50.0uM 5.153C 54.887 8.335 739.492 /   57  107  571
+(May 22 2022 16:19:37,  834967 sec) AscentControlAgent(  Bouyancy nudge to 70 (v=0.076dbar/sec).
+(May 22 2022 16:19:38,  834968 sec) PistonMoveAbsWTO()    060->070 061 062 063 [30sec, 10.1Volts, 0.661Amps, CPT:1522sec]
+(May 22 2022 16:20:19,  835009 sec) PistonMoveAbsWTO()    063->070 064 065 066 [30sec, 10.1Volts, 0.645Amps, CPT:1552sec]
+(May 22 2022 16:21:00,  835050 sec) PistonMoveAbsWTO()    067->070 068 069 070 [26sec, 10.1Volts, 0.661Amps, CPT:1578sec]
+(May 22 2022 16:26:54,  835404 sec) Profile()            Sample 5 initiated at 1502.0dbars for bin 5 [1500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1501.7dbars 5.6985C 35.7192PSU / 38.0uM 5.711C 56.325 8.342 723.151 /   59  197  570
+(May 22 2022 16:39:50,  836180 sec) AscentControlAgent(  Bouyancy nudge to 80 (v=0.076dbar/sec).
+(May 22 2022 16:39:51,  836181 sec) PistonMoveAbsWTO()    070->080 071 072 073 [30sec, 10.2Volts, 0.645Amps, CPT:1608sec]
+(May 22 2022 16:40:32,  836221 sec) PistonMoveAbsWTO()    073->080 074 075 076 [30sec, 10.2Volts, 0.633Amps, CPT:1638sec]
+(May 22 2022 16:41:12,  836261 sec) PistonMoveAbsWTO()    077->080 078 079 080 [26sec, 10.2Volts, 0.616Amps, CPT:1664sec]
+(May 22 2022 16:45:55,  836545 sec) Profile()            Sample 6 initiated at 1402.0dbars for bin 6 [1400dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1401.7dbars 6.4387C 35.7899PSU / 26.9uM 6.456C 57.758 8.345 701.173 /   58  111  569
+(May 22 2022 16:53:53,  837023 sec) Profile()            Sample 7 initiated at 1351.9dbars for bin 7 [1350dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1351.6dbars 6.7225C 35.8168PSU / 22.9uM 6.737C 58.329 8.345 692.844 /   58  116  568
+(May 22 2022 17:02:03,  837513 sec) Profile()            Sample 8 initiated at 1301.2dbars for bin 8 [1300dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1300.9dbars 7.0235C 35.8434PSU / 19.1uM 7.042C 58.879 8.344 683.738 /   58  113  568
+(May 22 2022 17:10:31,  838021 sec) Profile()            Sample 9 initiated at 1251.6dbars for bin 9 [1250dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1251.3dbars 7.3070C 35.8738PSU / 16.7uM 7.331C 59.223 8.344 675.110 /   59  116  567
+(May 22 2022 17:19:51,  838580 sec) Profile()            Sample 10 initiated at 1202.0dbars for bin 10 [1200dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1201.7dbars 7.6718C 35.9109PSU / 12.6uM 7.694C 59.875 8.344 664.204 /   59  112  566
+(May 22 2022 17:25:45,  838935 sec) AscentControlAgent(  Bouyancy nudge to 90 (v=0.078dbar/sec).
+(May 22 2022 17:25:46,  838935 sec) PistonMoveAbsWTO()    080->090 081 082 083 [30sec, 10.2Volts, 0.556Amps, CPT:1694sec]
+(May 22 2022 17:26:26,  838975 sec) PistonMoveAbsWTO()    083->090 084 085 086 087 [30sec, 10.2Volts, 0.560Amps, CPT:1724sec]
+(May 22 2022 17:27:06,  839015 sec) PistonMoveAbsWTO()    087->090 088 089 090 [23sec, 10.3Volts, 0.540Amps, CPT:1747sec]
+(May 22 2022 17:29:45,  839174 sec) Profile()            Sample 11 initiated at 1151.9dbars for bin 11 [1150dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1151.6dbars 8.1111C 35.9557PSU / 10.7uM 8.131C 60.162 8.341 651.034 /   59  112  566
+(May 22 2022 17:38:25,  839694 sec) Profile()            Sample 12 initiated at 1101.8dbars for bin 12 [1100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1101.6dbars 8.5276C 36.0030PSU / 9.5uM 8.550C 60.324 8.338 638.351 /   58  114  565
+(May 22 2022 17:47:15,  840224 sec) Profile()            Sample 13 initiated at 1051.8dbars for bin 13 [1050dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1051.5dbars 8.9047C 36.0431PSU / 7.5uM 8.928C 60.646 8.340 626.849 /   58  114  564
+(May 22 2022 17:57:05,  840814 sec) Profile()            Sample 14 initiated at 1002.0dbars for bin 14 [1000dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1001.8dbars 9.2595C 36.0788PSU / 4.9uM 9.284C 61.128 8.341 615.983 /   58  113  564
+(May 22 2022 18:01:17,  841067 sec) AscentControlAgent(  Bouyancy nudge to 100 (v=0.075dbar/sec).
+(May 22 2022 18:01:18,  841067 sec) PistonMoveAbsWTO()    090->100 091 092 093 [30sec, 10.4Volts, 0.488Amps, CPT:1777sec]
+(May 22 2022 18:01:58,  841107 sec) PistonMoveAbsWTO()    093->100 094 095 096 097 [30sec, 10.4Volts, 0.484Amps, CPT:1807sec]
+(May 22 2022 18:02:38,  841147 sec) PistonMoveAbsWTO()    097->100 098 099 100 [21sec, 10.4Volts, 0.484Amps, CPT:1828sec]
+(May 22 2022 18:15:34,  841923 sec) Profile()            Sample 16 initiated at 901.3dbars for bin 16 [900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 901.1dbars 10.1088C 36.1699PSU / 4.1uM 10.134C 61.193 8.360 589.868 /   58  118  563
+(May 22 2022 18:36:54,  843204 sec) AscentControlAgent(  Bouyancy nudge to 110 (v=0.079dbar/sec).
+(May 22 2022 18:36:55,  843204 sec) PistonMoveAbsWTO()    100->110 101 102 103 [30sec, 10.5Volts, 0.427Amps, CPT:1858sec]
+(May 22 2022 18:37:34,  843244 sec) PistonMoveAbsWTO()    103->110 104 105 106 107 [30sec, 10.5Volts, 0.419Amps, CPT:1888sec]
+(May 22 2022 18:38:14,  843284 sec) PistonMoveAbsWTO()    107->110 108 109 110 [18sec, 10.5Volts, 0.419Amps, CPT:1906sec]
+(May 22 2022 18:51:58,  844107 sec) Profile()            Sample 20 initiated at 701.3dbars for bin 20 [700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 701.0dbars 11.6576C 36.3020PSU / 3.1uM 11.683C 61.262 8.433 541.763 /   58  115  560
+(May 22 2022 19:07:21,  845031 sec) AscentControlAgent(  Bouyancy nudge to 120 (v=0.077dbar/sec).
+(May 22 2022 19:07:21,  845031 sec) PistonMoveAbsWTO()    110->120 111 112 113 114 [30sec, 10.5Volts, 0.375Amps, CPT:1936sec]
+(May 22 2022 19:08:01,  845071 sec) PistonMoveAbsWTO()    114->120 115 116 117 [30sec, 10.5Volts, 0.379Amps, CPT:1966sec]
+(May 22 2022 19:08:41,  845111 sec) PistonMoveAbsWTO()    118->120 119 120 [16sec, 10.5Volts, 0.371Amps, CPT:1982sec]
+(May 22 2022 19:28:30,  846300 sec) Profile()            Sample 24 initiated at 501.3dbars for bin 24 [500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 501.1dbars 13.9162C 36.5680PSU / 1.4uM 13.958C 61.454 8.506 469.904 /   57  128  557
+(May 22 2022 19:42:52,  847162 sec) AscentControlAgent(  Bouyancy nudge to 130 (v=0.077dbar/sec).
+(May 22 2022 19:42:52,  847162 sec) PistonMoveAbsWTO()    120->130 121 122 123 124 [30sec, 10.6Volts, 0.306Amps, CPT:2012sec]
+(May 22 2022 19:43:32,  847202 sec) PistonMoveAbsWTO()    124->130 125 126 127 128 [30sec, 10.6Volts, 0.310Amps, CPT:2042sec]
+(May 22 2022 19:44:12,  847242 sec) PistonMoveAbsWTO()    128->130 129 130 [13sec, 10.6Volts, 0.302Amps, CPT:2055sec]
+(May 22 2022 20:00:17,  848207 sec) Profile()            Sample 28 initiated at 331.9dbars for bin 28 [330dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 331.7dbars 16.1196C 36.6634PSU / 3.0uM 16.138C 60.862 8.668 400.011 /   57  111  554
+(May 22 2022 20:08:17,  848687 sec) AscentControlAgent(  Bouyancy nudge to 140 (v=0.078dbar/sec).
+(May 22 2022 20:08:17,  848687 sec) PistonMoveAbsWTO()    130->140 131 132 133 134 [30sec, 10.7Volts, 0.262Amps, CPT:2085sec]
+(May 22 2022 20:08:57,  848727 sec) PistonMoveAbsWTO()    134->140 135 136 137 138 [30sec, 10.7Volts, 0.274Amps, CPT:2115sec]
+(May 22 2022 20:09:37,  848767 sec) PistonMoveAbsWTO()    138->140 139 140 [13sec, 10.7Volts, 0.274Amps, CPT:2128sec]
+(May 22 2022 20:18:24,  849294 sec) AscentControlAgent(  Bouyancy nudge to 150 (v=0.077dbar/sec).
+(May 22 2022 20:18:24,  849294 sec) PistonMoveAbsWTO()    140->150 141 142 143 144 [30sec, 10.7Volts, 0.254Amps, CPT:2158sec]
+(May 22 2022 20:19:19,  849349 sec) Profile()            Sample 32 initiated at 240.4dbars for bin 32 [240dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 240.2dbars 17.5256C 36.4343PSU / 2.7uM 17.547C 60.817 8.725 354.414 /   57  115  552
+(May 22 2022 20:19:20,  849350 sec) PistonMoveAbsWTO()    144->150 145 146 147 148 [30sec, 10.8Volts, 0.246Amps, CPT:2188sec]
+(May 22 2022 20:20:01,  849391 sec) PistonMoveAbsWTO()    148->150 149 150 [11sec, 10.8Volts, 0.254Amps, CPT:2199sec]
+(May 22 2022 20:30:37,  850027 sec) Profile()            Sample 36 initiated at 181.1dbars for bin 36 [180dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 180.8dbars 20.4159C 36.7696PSU / 9.4uM 20.437C 58.621 8.839 260.310 /   54  107  549
+(May 22 2022 20:38:58,  850528 sec) AscentControlAgent(  Bouyancy nudge to 160 (v=0.041dbar/sec).
+(May 22 2022 20:38:58,  850528 sec) PistonMoveAbsWTO()    150->160 151 152 153 154 [30sec, 10.8Volts, 0.222Amps, CPT:2229sec]
+(May 22 2022 20:39:38,  850568 sec) PistonMoveAbsWTO()    154->160 155 156 157 158 [30sec, 10.8Volts, 0.222Amps, CPT:2259sec]
+(May 22 2022 20:40:18,  850608 sec) PistonMoveAbsWTO()    158->160 159 160 [10sec, 10.8Volts, 0.218Amps, CPT:2269sec]
+(May 22 2022 20:41:33,  850683 sec) Profile()            Sample 40 initiated at 141.7dbars for bin 40 [140dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 141.4dbars 22.7934C 36.9654PSU / 76.5uM 22.783C 44.398 8.891 183.757 /   56  125  545
+(May 22 2022 20:44:01,  850831 sec) AscentControlAgent(  Bouyancy nudge to 170 (v=0.077dbar/sec).
+(May 22 2022 20:44:01,  850831 sec) PistonMoveAbsWTO()    160->170 161 162 163 164 [30sec, 10.8Volts, 0.214Amps, CPT:2299sec]
+(May 22 2022 20:44:41,  850871 sec) PistonMoveAbsWTO()    164->170 165 166 167 168 [30sec, 10.8Volts, 0.214Amps, CPT:2329sec]
+(May 22 2022 20:45:37,  850926 sec) PistonMoveAbsWTO()    168->170 169 170 [10sec, 10.8Volts, 0.210Amps, CPT:2339sec]
+(May 22 2022 20:49:48,  851178 sec) Profile()            Sample 44 initiated at 101.4dbars for bin 44 [100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 101.2dbars 24.1094C 36.8807PSU / 137.9uM 24.108C 36.853 8.922 140.663 /   93  152  542
+(May 22 2022 20:59:43,  851773 sec) Profile()            Sample 48 initiated at 61.8dbars for bin 48 [60dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 61.7dbars 26.1154C 36.9287PSU / 222.9uM 26.054C 30.301 8.964 77.658 /  189  156  539
+(May 22 2022 21:04:28,  852058 sec) AscentControlAgent(  Bouyancy nudge to 175 (v=0.015dbar/sec).
+(May 22 2022 21:04:28,  852058 sec) PistonMoveAbsWTO()    170->175 171 172 173 174 [30sec, 10.9Volts, 0.197Amps, CPT:2369sec]
+(May 22 2022 21:05:09,  852099 sec) PistonMoveAbsWTO()    174->175 175 [5sec, 10.9Volts, 0.193Amps, CPT:2374sec]
+(May 22 2022 21:09:33,  852363 sec) AscentControlAgent(  Bouyancy nudge to 180 (v=0.018dbar/sec).
+(May 22 2022 21:09:33,  852363 sec) PistonMoveAbsWTO()    175->180 176 177 178 179 [30sec, 10.9Volts, 0.193Amps, CPT:2404sec]
+(May 22 2022 21:10:14,  852404 sec) PistonMoveAbsWTO()    179->180 180 [4sec, 10.9Volts, 0.193Amps, CPT:2408sec]
+(May 22 2022 21:16:14,  852764 sec) Profile()            Sample 52 initiated at 36.7dbars for bin 52 [35dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 36.6dbars 28.2859C 36.9956PSU / 234.0uM 28.293C 28.905 9.009 5.987 /   74  157  535
+(May 22 2022 21:19:50,  852980 sec) AscentControlAgent(  Bouyancy nudge to 185 (v=0.025dbar/sec).
+(May 22 2022 21:19:50,  852980 sec) PistonMoveAbsWTO()    180->185 181 182 183 184 [30sec, 10.9Volts, 0.193Amps, CPT:2438sec]
+(May 22 2022 21:20:31,  853021 sec) PistonMoveAbsWTO()    184->185 185 [4sec, 10.9Volts, 0.197Amps, CPT:2442sec]
+(May 22 2022 21:25:12,  853302 sec) Profile()            Sample 56 initiated at 16.5dbars for bin 56 [15dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 16.3dbars 29.4108C 37.1618PSU / 223.1uM 29.431C 29.013 8.973 -30.034 /   59  156  533
+(May 22 2022 21:26:25,  853375 sec) Profile()            Sample 57 initiated at 11.8dbars for bin 57 [10dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 11.6dbars 29.4108C 37.1621PSU / 222.7uM 29.432C 29.033 8.971 -30.087 /   68  166  533
+(May 22 2022 21:28:09,  853479 sec) Profile()            Sample 58 initiated at 5.2dbars for bin 58 [4dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 4.9dbars 29.4115C 37.1631PSU / 223.1uM 29.434C 29.014 8.968 -30.126 /   58  144  532
+(May 22 2022 21:28:24,  853494 sec) SurfaceDetect()      SurfacePressure:-0.6dbars Pressure:3.1dbars PistonPosition:185
+(May 22 2022 21:28:25,  853495 sec) Sbe41cpStopCP()      Continuous profile stopped.
+(May 22 2022 21:28:32,  853502 sec) PistonMoveAbsWTO()    185->207 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 [148sec, 10.9Volts, 0.161Amps, CPT:2590sec]
+(May 22 2022 21:31:18,  853667 sec) sbe41cp.c:chat()     Expected string [S>] not received.
+(May 22 2022 21:34:35,  853864 sec) Sbe41cpBinAverage()  Finished averaging 23165 samples in 192 seconds.
+(May 22 2022 21:34:40,  853870 sec) Sbe41cpUploadCP()    Sbe41cpSerNo[08355] NSample[23165] NBin[1000]
+(May 22 2022 21:36:39,  853989 sec) Sbe41cpUploadCP()    Continuous profile uploaded [1000 lines].
+
+<EOT>
+
+<EOT>

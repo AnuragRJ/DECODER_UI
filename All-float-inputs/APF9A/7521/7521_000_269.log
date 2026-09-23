@@ -1,0 +1,390 @@
+(Jan 09 2023 11:48:36,  841541 sec) TelemetryInit()      Profile 268. (Apf9i FwRev: 012811)
+(Jan 09 2023 11:56:16,  842001 sec) AirSystem()          Battery [143cnt, 11.1V]  Current [68cnt, 27.4mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [67s]
+(Jan 09 2023 11:57:09,  842053 sec) GpsServices()        GPS almanac is current.
+(Jan 09 2023 11:57:09,  842054 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 09 2023 11:57:24,  842069 sec) gga()                $GPGGA,115640,0117.4975,N,05129.4931,E,0,00,,,M,,M,,*52
+(Jan 09 2023 11:57:34,  842079 sec) gga()                $GPGGA,115700,0117.4975,N,05129.4931,E,0,00,,,M,,M,,*57
+(Jan 09 2023 11:57:41,  842086 sec) gga()                $GPGGA,115700,0117.4975,N,05129.4931,E,0,00,,,M,,M,,*57
+(Jan 09 2023 11:57:47,  842092 sec) gga()                $GPGGA,115710,0117.4975,N,05129.4931,E,0,00,,,M,,M,,*56
+(Jan 09 2023 11:58:13,  842117 sec) gga()                $GPGGA,115720,0106.3814,N,05108.6936,E,1,04,1.6,,M,-54.2,M,,*4E
+(Jan 09 2023 11:58:13,  842118 sec) GpsServices()        Profile 268 GPS fix obtained in 64 seconds.
+(Jan 09 2023 11:58:13,  842118 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 09 2023 11:58:13,  842118 sec) GpsServices()        Fix:   51.145   1.106 01/09/2023 115720    4
+(Jan 09 2023 11:58:43,  842148 sec) gga()                $GPGGA,115750,0106.3841,N,05108.6905,E,1,05,1.4,2.0,M,-54.2,M,,*66
+(Jan 09 2023 11:58:48,  842153 sec) gga()                $GPGGA,115820,0106.3860,N,05108.6874,E,1,06,1.3,0.1,M,-54.2,M,,*6D
+(Jan 09 2023 11:58:49,  842153 sec) GpsServices()        APF9 RTC skew (29s) OK.
+(Jan 09 2023 11:58:49,  842154 sec) LogNmeaSentences()   46,022,46,30,44,080,45,02,27,193,00*7F
+(Jan 09 2023 11:58:49,  842154 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,01,147,00*4A
+(Jan 09 2023 11:58:58,  842163 sec) LogNmeaSentences()   $GPRMC,115830,A,0106.3862,N,05108.6866,E,000.8,176.4,090123,001.9,W*6D
+(Jan 09 2023 11:58:59,  842164 sec) LogNmeaSentences()   $GPGGA,115830,0106.3862,N,05108.6866,E,1,06,1.3,1.0,M,-54.2,M,,*6D
+(Jan 09 2023 11:58:59,  842164 sec) LogNmeaSentences()   $GPGSA,A,3,05,,13,15,17,19,30,,,,,,1.6,1.3,0.9*30
+(Jan 09 2023 11:58:59,  842164 sec) LogNmeaSentences()   $GPGSV,3,1,09,05,13,234,41,06,04,053,44,13,57,303,47,15,25,302,44*70
+(Jan 09 2023 11:59:00,  842165 sec) LogNmeaSentences()   $GPGSV,3,2,09,17,35,022,44,19,46,022,47,30,44,080,45,02,27,193,00*7E
+(Jan 09 2023 11:59:00,  842165 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,01,147,00*4A
+(Jan 09 2023 11:59:08,  842173 sec) LogNmeaSentences()   $GPRMC,115840,A,0106.3865,N,05108.6859,E,000.0,251.6,090123,001.9,W*6D
+(Jan 09 2023 11:59:09,  842174 sec) LogNmeaSentences()   $GPGGA,115840,0106.3865,N,05108.6859,E,1,07,1.1,2.8,M,-54.2,M,,*69
+(Jan 09 2023 11:59:09,  842174 sec) LogNmeaSentences()   $GPGSA,A,3,05,06,13,15,17,19,30,,,,,,1.4,1.1,0.9*36
+(Jan 09 2023 11:59:10,  842174 sec) LogNmeaSentences()   $GPGSV,3,1,09,05,13,234,42,06,47,137,45,13,57,303,46,15,25,302,44*77
+(Jan 09 2023 11:59:10,  842175 sec) LogNmeaSentences()   $GPGSV,3,2,09,17,35,022,43,19,46,022,46,30,44,080,45,02,27,193,00*78
+(Jan 09 2023 11:59:10,  842175 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,01,147,00*4A
+(Jan 09 2023 11:59:18,  842183 sec) LogNmeaSentences()   $GPRMC,115850,A,0106.3878,N,05108.6859,E,001.1,353.7,090123,001.9,W*62
+(Jan 09 2023 11:59:19,  842184 sec) LogNmeaSentences()   $GPGGA,115850,0106.3878,N,05108.6859,E,1,07,1.2,4.1,M,-54.2,M,,*68
+(Jan 09 2023 11:59:19,  842184 sec) LogNmeaSentences()   $GPGSA,A,3,,05,06,13,15,17,19,30,,,,,2.3,1.2,2.0*3A
+(Jan 09 2023 11:59:20,  842184 sec) LogNmeaSentences()   $GPGSV,3,1,09,02,28,192,15,05,13,234,42,06,47,137,46,13,57,302,46*71
+(Jan 09 2023 11:59:20,  842185 sec) LogNmeaSentences()   $GPGSV,3,2,09,15,25,302,43,17,34,022,45,19,68,356,46,30,44,080,46*79
+(Jan 09 2023 11:59:20,  842185 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,01,147,00*4A
+(Jan 09 2023 11:59:28,  842193 sec) LogNmeaSentences()   $GPRMC,115900,A,0106.3879,N,05108.6848,E,000.4,314.4,090123,001.9,W*63
+(Jan 09 2023 11:59:29,  842194 sec) LogNmeaSentences()   $GPGGA,115900,0106.3879,N,05108.6848,E,1,07,1.1,5.1,M,-54.2,M,,*6F
+(Jan 09 2023 11:59:29,  842194 sec) LogNmeaSentences()   $GPGSA,A,3,,05,06,13,15,17,19,30,,,,,1.4,1.1,0.9*36
+(Jan 09 2023 11:59:29,  842194 sec) LogNmeaSentences()   $GPGSV,3,1,09,02,28,192,19,05,13,234,43,06,47,137,43,13,57,302,46*79
+(Jan 09 2023 11:59:30,  842195 sec) LogNmeaSentences()   $GPGSV,3,2,09,15,25,302,43,17,34,022,44,19,68,356,46,30,44,080,45*7B
+(Jan 09 2023 11:59:30,  842195 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,01,147,00*4A
+(Jan 09 2023 11:59:30,  842195 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Jan 09 2023 11:59:31,  842195 sec) GpsServices()        GPS services complete.
+(Jan 09 2023 11:59:55,  842220 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:00:11,  842236 sec) CLogin()             Connection 1 established in 16 seconds.
+(Jan 09 2023 12:00:18,  842243 sec) login()              Login successful.
+(Jan 09 2023 12:00:23,  842248 sec) CLogin()             Logged in to host.  [Login required 12 seconds]
+(Jan 09 2023 12:00:31,  842256 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jan 09 2023 12:00:33,  842258 sec) Rx()                 Initiating transfer. [0x43]
+(Jan 09 2023 12:00:40,  842264 sec) Rx()                 Truncated packet received - retrying.
+(Jan 09 2023 12:00:41,  842266 sec) RxStartByte()        Sync errors encountered: 656
+(Jan 09 2023 12:00:45,  842269 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jan 09 2023 12:00:49,  842273 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 16 sec, 64.0 bps]
+(Jan 09 2023 12:00:49,  842273 sec) RxConfig()           Download successful.
+(Jan 09 2023 12:01:02,  842287 sec) WriteVitals()        Writing vitals to "7521.268.msg".
+(Jan 09 2023 12:01:09,  842294 sec) UpLoadFile()         Uploading "7521.268.msg" to host as "7521.268.msg".
+(Jan 09 2023 12:01:11,  842296 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jan 09 2023 12:01:14,  842299 sec) TxPacket()           Invalid response [0x4a] - resending packet. [PktNum=0x01]
+(Jan 09 2023 12:01:14,  842299 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Jan 09 2023 12:01:46,  842330 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(Jan 09 2023 12:01:46,  842331 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jan 09 2023 12:01:52,  842336 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(Jan 09 2023 12:01:52,  842337 sec) TxPacket()           Packet xmit history: [10000011] (0:ok, 1:fail).
+(Jan 09 2023 12:02:32,  842377 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Jan 09 2023 12:02:32,  842377 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jan 09 2023 12:02:59,  842403 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jan 09 2023 12:02:59,  842403 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Jan 09 2023 12:03:40,  842444 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(Jan 09 2023 12:03:40,  842445 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jan 09 2023 12:04:06,  842470 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(Jan 09 2023 12:04:06,  842471 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Jan 09 2023 12:04:31,  842495 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jan 09 2023 12:04:31,  842495 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Jan 09 2023 12:04:35,  842499 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jan 09 2023 12:04:35,  842500 sec) TxPacket()           Packet xmit history: [00100011] (0:ok, 1:fail).
+(Jan 09 2023 12:04:47,  842511 sec) Tx()                 Transmission completed successfully [25 packets, 23797 bytes, 214 sec, 115.4 bps]
+(Jan 09 2023 12:04:47,  842512 sec) UpLoadFile()         Upload successful.
+(Jan 09 2023 12:04:53,  842518 sec) UpLoadFile()         Uploading "7521.268.log" to host as "7521.268.log".
+(Jan 09 2023 12:04:56,  842520 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jan 09 2023 12:05:03,  842527 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Jan 09 2023 12:05:03,  842528 sec) TxPacket()           Packet xmit history: [10001101] (0:ok, 1:fail).
+(Jan 09 2023 12:05:15,  842539 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jan 09 2023 12:05:15,  842539 sec) TxPacket()           Packet xmit history: [00110101] (0:ok, 1:fail).
+(Jan 09 2023 12:05:37,  842561 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(Jan 09 2023 12:05:37,  842562 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(Jan 09 2023 12:06:25,  842609 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jan 09 2023 12:06:25,  842610 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jan 09 2023 12:07:40,  842684 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:07:40,  842684 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jan 09 2023 12:07:42,  842686 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:07:42,  842686 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jan 09 2023 12:07:45,  842689 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:07:45,  842690 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Jan 09 2023 12:07:48,  842692 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:07:48,  842693 sec) TxPacket()           Packet xmit history: [00001111] (0:ok, 1:fail).
+(Jan 09 2023 12:07:51,  842696 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:07:51,  842696 sec) TxPacket()           Packet xmit history: [00011111] (0:ok, 1:fail).
+(Jan 09 2023 12:07:56,  842701 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:07:56,  842701 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Jan 09 2023 12:07:58,  842703 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:07:58,  842703 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jan 09 2023 12:08:01,  842706 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:08:01,  842706 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jan 09 2023 12:08:07,  842712 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:08:07,  842712 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jan 09 2023 12:08:09,  842714 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jan 09 2023 12:08:09,  842714 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jan 09 2023 12:08:09,  842714 sec) TxPacket()           Exit status: -2
+(Jan 09 2023 12:08:10,  842714 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jan 09 2023 12:08:20,  842725 sec) UpLoadFile()         Upload failed.
+(Jan 09 2023 12:08:33,  842737 sec) UpLoadFile()         Uploading "7521.268.log" to host as "7521.268.log".
+(Jan 09 2023 12:09:33,  842797 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Jan 09 2023 12:09:43,  842808 sec) UpLoadFile()         Upload failed.
+(Jan 09 2023 12:09:43,  842808 sec) UpLoad()             Files successfully uploaded: 1
+(Jan 09 2023 12:09:43,  842808 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jan 09 2023 12:09:50,  842814 sec) chat()               Expected string [logout] not received.
+(Jan 09 2023 12:09:50,  842814 sec) logout()             Attempt to log-out failed.
+(Jan 09 2023 12:09:50,  842814 sec) logout()             No carrier detected.
+(Jan 09 2023 12:09:50,  842815 sec) Telemetry()          Telemetry cycle complete: PrfId=268 ConnectionAttempts=1  Connections=1
+(Jan 09 2023 12:25:04,  843729 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [125cnt, 6.2"Hg].
+(Jan 09 2023 12:25:30,  843755 sec) GpsServices()        GPS almanac is current.
+(Jan 09 2023 12:25:30,  843755 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 09 2023 12:26:04,  843788 sec) gga()                $GPGGA,122510,0106.5635,N,05108.5579,E,6,07,1.0,1.3,M,-54.2,M,,*6A
+(Jan 09 2023 12:26:28,  843813 sec) gga()                $GPGGA,122520,0106.5679,N,05108.5579,E,1,07,1.0,3.5,M,-54.2,M,,*62
+(Jan 09 2023 12:26:28,  843813 sec) GpsServices()        Profile 268 GPS fix obtained in 58 seconds.
+(Jan 09 2023 12:26:29,  843813 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 09 2023 12:26:29,  843813 sec) GpsServices()        Fix:   51.143   1.109 01/09/2023 122520    7
+(Jan 09 2023 12:27:03,  843848 sec) gga()                $GPGGA,122610,0106.5733,N,05108.5518,E,1,07,1.0,-0.0,M,-54.2,M,,*41
+(Jan 09 2023 12:27:09,  843853 sec) gga()                $GPGGA,122640,0106.5775,N,05108.5483,E,1,07,1.0,-0.3,M,-54.2,M,,*46
+(Jan 09 2023 12:27:09,  843853 sec) GpsServices()        APF9 RTC skew (29s) OK.
+(Jan 09 2023 12:27:09,  843854 sec) LogNmeaSentences()   ,17,23,023,42,19,54,002,45,30,42,099,44*7B
+(Jan 09 2023 12:27:09,  843854 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,23,158,00*44
+(Jan 09 2023 12:27:18,  843863 sec) LogNmeaSentences()   $GPRMC,122650,A,0106.5790,N,05108.5469,E,001.4,310.0,090123,001.9,W*6E
+(Jan 09 2023 12:27:19,  843864 sec) LogNmeaSentences()   $GPGGA,122650,0106.5790,N,05108.5469,E,1,07,1.0,-1.2,M,-54.2,M,,*48
+(Jan 09 2023 12:27:19,  843864 sec) LogNmeaSentences()   $GPGSA,A,3,,05,06,13,15,17,19,30,,,,,1.4,1.0,0.9*37
+(Jan 09 2023 12:27:20,  843864 sec) LogNmeaSentences()   $GPGSV,3,1,09,02,39,186,18,05,13,222,42,06,53,117,44,13,63,275,45*7E
+(Jan 09 2023 12:27:20,  843865 sec) LogNmeaSentences()   $GPGSV,3,2,09,15,31,289,45,17,23,023,41,19,54,002,45,30,42,099,44*79
+(Jan 09 2023 12:27:20,  843865 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,23,158,00*44
+(Jan 09 2023 12:27:28,  843873 sec) LogNmeaSentences()   $GPRMC,122700,A,0106.5799,N,05108.5456,E,000.7,014.5,090123,001.9,W*6F
+(Jan 09 2023 12:27:29,  843874 sec) LogNmeaSentences()   $GPGGA,122700,0106.5799,N,05108.5456,E,1,07,1.0,-0.3,M,-54.2,M,,*49
+(Jan 09 2023 12:27:29,  843874 sec) LogNmeaSentences()   $GPGSA,A,3,,05,06,13,15,17,19,30,,,,,1.4,1.0,0.9*37
+(Jan 09 2023 12:27:30,  843874 sec) LogNmeaSentences()   $GPGSV,3,1,09,02,39,186,19,05,13,222,41,06,53,116,46,13,63,275,46*7C
+(Jan 09 2023 12:27:30,  843875 sec) LogNmeaSentences()   $GPGSV,3,2,09,15,31,289,43,17,23,023,40,19,54,002,45,30,42,099,43*79
+(Jan 09 2023 12:27:30,  843875 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,23,158,00*44
+(Jan 09 2023 12:27:30,  843875 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Jan 09 2023 12:27:38,  843883 sec) LogNmeaSentences()   $GPRMC,122710,A,0106.5817,N,05108.5444,E,000.0,332.0,090123,001.9,W*61
+(Jan 09 2023 12:27:39,  843884 sec) LogNmeaSentences()   $GPGGA,122710,0106.5817,N,05108.5444,E,1,07,1.0,-0.7,M,-54.2,M,,*46
+(Jan 09 2023 12:27:39,  843884 sec) LogNmeaSentences()   $GPGSA,A,3,,05,06,13,15,17,19,30,,,,,1.4,1.0,0.9*37
+(Jan 09 2023 12:27:39,  843884 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,39,186,19,05,13,222,41,06,53,116,46,13,63,275,46*74
+(Jan 09 2023 12:27:40,  843885 sec) GpsServices()        GPS services complete.
+(Jan 09 2023 12:28:04,  843909 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:28:20,  843925 sec) CLogin()             Connection 2 established in 16 seconds.
+(Jan 09 2023 12:28:52,  843956 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 12:28:52,  843956 sec) login()              Login failed.
+(Jan 09 2023 12:29:22,  843986 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:29:22,  843986 sec) login()              Login prompt not received.
+(Jan 09 2023 12:29:52,  844016 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:29:52,  844016 sec) login()              Login prompt not received.
+(Jan 09 2023 12:29:52,  844017 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 12:29:52,  844017 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 09 2023 12:29:57,  844022 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:30:59,  844083 sec) chat()               Expected string [CONNECT] not received.
+(Jan 09 2023 12:30:59,  844083 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Jan 09 2023 12:31:11,  844096 sec) CLogin()             Connection 3 established in 74 seconds.
+(Jan 09 2023 12:31:43,  844127 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 12:31:43,  844127 sec) login()              Login failed.
+(Jan 09 2023 12:32:13,  844157 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:32:13,  844157 sec) login()              Login prompt not received.
+(Jan 09 2023 12:32:13,  844158 sec) login()              No carrier detected.
+(Jan 09 2023 12:32:13,  844158 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 12:32:13,  844158 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 09 2023 12:32:13,  844158 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Jan 09 2023 12:32:13,  844158 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:32:25,  844169 sec) CLogin()             Connection 4 established in 11 seconds.
+(Jan 09 2023 12:32:56,  844200 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 12:32:56,  844200 sec) login()              Login failed.
+(Jan 09 2023 12:33:26,  844230 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:33:26,  844230 sec) login()              Login prompt not received.
+(Jan 09 2023 12:33:56,  844260 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:33:56,  844260 sec) login()              Login prompt not received.
+(Jan 09 2023 12:33:56,  844261 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 12:34:02,  844266 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:34:12,  844276 sec) CLogin()             Connection 5 established in 10 seconds.
+(Jan 09 2023 12:34:43,  844307 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 12:34:43,  844307 sec) login()              Login failed.
+(Jan 09 2023 12:35:13,  844337 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:35:13,  844337 sec) login()              Login prompt not received.
+(Jan 09 2023 12:35:43,  844367 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:35:43,  844367 sec) login()              Login prompt not received.
+(Jan 09 2023 12:35:43,  844368 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 12:35:43,  844368 sec) UpLoad()             Files successfully uploaded: 0
+(Jan 09 2023 12:35:43,  844368 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jan 09 2023 12:35:43,  844368 sec) logout()             No carrier detected.
+(Jan 09 2023 12:35:43,  844368 sec) Telemetry()          Telemetry cycle complete: PrfId=268 ConnectionAttempts=6  Connections=5
+(Jan 09 2023 12:50:57,  845282 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Jan 09 2023 12:51:23,  845308 sec) GpsServices()        GPS almanac is current.
+(Jan 09 2023 12:51:23,  845308 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 09 2023 12:51:54,  845338 sec) gga()                $GPGGA,125100,0106.8045,N,05108.4435,E,6,07,1.0,8.1,M,-54.2,M,,*67
+(Jan 09 2023 12:52:18,  845363 sec) gga()                $GPGGA,125110,0106.8073,N,05108.4434,E,1,07,1.0,4.4,M,-54.2,M,,*6C
+(Jan 09 2023 12:52:18,  845363 sec) GpsServices()        Profile 268 GPS fix obtained in 55 seconds.
+(Jan 09 2023 12:52:19,  845363 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 09 2023 12:52:19,  845364 sec) GpsServices()        Fix:   51.141   1.113 01/09/2023 125110    7
+(Jan 09 2023 12:52:53,  845398 sec) gga()                $GPGGA,125200,0106.8145,N,05108.4390,E,1,07,1.0,-5.3,M,-54.2,M,,*48
+(Jan 09 2023 12:52:59,  845403 sec) gga()                $GPGGA,125230,0106.8201,N,05108.4370,E,1,07,1.0,-4.5,M,-54.2,M,,*41
+(Jan 09 2023 12:52:59,  845403 sec) GpsServices()        APF9 RTC skew (29s) OK.
+(Jan 09 2023 12:52:59,  845404 sec) LogNmeaSentences()   9,42,007,45,30,37,114,44,02,50,181,00*77
+(Jan 09 2023 12:52:59,  845404 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,14,155,00*4D
+(Jan 09 2023 12:53:08,  845413 sec) LogNmeaSentences()   $GPRMC,125240,A,0106.8221,N,05108.4362,E,001.7,011.8,090123,001.9,W*6A
+(Jan 09 2023 12:53:09,  845414 sec) LogNmeaSentences()   $GPGGA,125240,0106.8221,N,05108.4362,E,1,07,1.0,-4.4,M,-54.2,M,,*46
+(Jan 09 2023 12:53:09,  845414 sec) LogNmeaSentences()   $GPGSA,A,3,05,06,13,15,17,19,30,,,,,,1.9,1.0,1.6*34
+(Jan 09 2023 12:53:09,  845414 sec) LogNmeaSentences()   $GPGSV,3,1,09,05,14,211,42,06,55,094,47,13,62,246,47,15,35,275,45*78
+(Jan 09 2023 12:53:10,  845415 sec) LogNmeaSentences()   $GPGSV,3,2,09,17,14,026,40,19,42,007,45,30,37,115,44,02,50,181,00*77
+(Jan 09 2023 12:53:10,  845415 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,14,155,00*4D
+(Jan 09 2023 12:53:18,  845423 sec) LogNmeaSentences()   $GPRMC,125250,A,0106.8242,N,05108.4351,E,002.1,308.7,090123,001.9,W*6F
+(Jan 09 2023 12:53:19,  845424 sec) LogNmeaSentences()   $GPGGA,125250,0106.8242,N,05108.4351,E,1,07,1.0,-3.2,M,-54.2,M,,*43
+(Jan 09 2023 12:53:19,  845424 sec) LogNmeaSentences()   $GPGSA,A,3,05,06,13,15,17,19,30,,,,,,1.3,1.0,0.8*31
+(Jan 09 2023 12:53:20,  845424 sec) LogNmeaSentences()   $GPGSV,3,1,09,05,14,211,38,06,55,093,45,13,62,246,47,15,35,275,43*76
+(Jan 09 2023 12:53:20,  845425 sec) LogNmeaSentences()   $GPGSV,3,2,09,17,14,026,38,19,42,007,40,30,37,115,40,02,50,181,00*79
+(Jan 09 2023 12:53:20,  845425 sec) LogNmeaSentences()   $GPGSV,3,3,09,09,14,155,00*4D
+(Jan 09 2023 12:53:28,  845433 sec) LogNmeaSentences()   $GPRMC,125300,A,0106.8258,N,05108.4340,E,000.7,334.8,090123,001.9,W*64
+(Jan 09 2023 12:53:29,  845434 sec) LogNmeaSentences()   $GPGGA,125300,0106.8258,N,05108.4340,E,1,07,1.0,-2.8,M,-54.2,M,,*47
+(Jan 09 2023 12:53:29,  845434 sec) LogNmeaSentences()   $GPGSA,A,3,05,06,13,15,17,19,30,,,,,,1.3,1.0,0.8*31
+(Jan 09 2023 12:53:30,  845434 sec) LogNmeaSentences()   $GPGSV,3,1,10,05,14,211,42,06,55,093,46,13,61,246,46,15,35,274,44*74
+(Jan 09 2023 12:53:30,  845435 sec) LogNmeaSentences()   $GPGSV,3,2,10,17,13,026,41,19,42,007,45,30,37,115,44,02,50,181,00*79
+(Jan 09 2023 12:53:30,  845435 sec) LogNmeaSentences()   $GPGSV,3,3,10,09,14,155,00,24,11,330,00*73
+(Jan 09 2023 12:53:30,  845435 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Jan 09 2023 12:53:31,  845435 sec) GpsServices()        GPS services complete.
+(Jan 09 2023 12:53:55,  845460 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:54:07,  845472 sec) CLogin()             Connection 6 established in 12 seconds.
+(Jan 09 2023 12:54:39,  845503 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 12:54:39,  845503 sec) login()              Login failed.
+(Jan 09 2023 12:55:09,  845533 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:55:09,  845533 sec) login()              Login prompt not received.
+(Jan 09 2023 12:55:39,  845563 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:55:39,  845563 sec) login()              Login prompt not received.
+(Jan 09 2023 12:55:39,  845564 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 12:55:39,  845564 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 09 2023 12:55:44,  845569 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:55:58,  845582 sec) CLogin()             Connection 7 established in 13 seconds.
+(Jan 09 2023 12:56:29,  845613 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 12:56:29,  845613 sec) login()              Login failed.
+(Jan 09 2023 12:56:59,  845643 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:56:59,  845643 sec) login()              Login prompt not received.
+(Jan 09 2023 12:56:59,  845644 sec) login()              No carrier detected.
+(Jan 09 2023 12:56:59,  845644 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 12:56:59,  845644 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 09 2023 12:56:59,  845644 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Jan 09 2023 12:56:59,  845644 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:57:11,  845656 sec) CLogin()             Connection 8 established in 12 seconds.
+(Jan 09 2023 12:57:41,  845685 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:57:41,  845685 sec) login()              Login prompt not received.
+(Jan 09 2023 12:57:41,  845686 sec) login()              No carrier detected.
+(Jan 09 2023 12:57:41,  845686 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 12:57:47,  845692 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 12:57:57,  845702 sec) CLogin()             Connection 9 established in 10 seconds.
+(Jan 09 2023 12:58:30,  845734 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 12:58:30,  845734 sec) login()              Login failed.
+(Jan 09 2023 12:59:00,  845764 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 12:59:00,  845764 sec) login()              Login prompt not received.
+(Jan 09 2023 12:59:00,  845765 sec) login()              No carrier detected.
+(Jan 09 2023 12:59:00,  845765 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 12:59:00,  845765 sec) UpLoad()             Files successfully uploaded: 0
+(Jan 09 2023 12:59:00,  845765 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jan 09 2023 12:59:00,  845765 sec) logout()             No carrier detected.
+(Jan 09 2023 12:59:00,  845765 sec) Telemetry()          Telemetry cycle complete: PrfId=268 ConnectionAttempts=10  Connections=9
+(Jan 09 2023 13:14:14,  846679 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [125cnt, 6.2"Hg].
+(Jan 09 2023 13:14:40,  846705 sec) GpsServices()        GPS almanac is current.
+(Jan 09 2023 13:14:40,  846705 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 09 2023 13:15:14,  846738 sec) gga()                $GPGGA,131420,0107.0983,N,05108.3075,E,6,07,1.0,-1.8,M,-54.2,M,,*45
+(Jan 09 2023 13:15:38,  846763 sec) gga()                $GPGGA,131430,0107.1001,N,05108.3067,E,1,07,1.0,-2.6,M,-54.2,M,,*4F
+(Jan 09 2023 13:15:38,  846763 sec) GpsServices()        Profile 268 GPS fix obtained in 58 seconds.
+(Jan 09 2023 13:15:39,  846763 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 09 2023 13:15:39,  846764 sec) GpsServices()        Fix:   51.138   1.118 01/09/2023 131430    7
+(Jan 09 2023 13:16:13,  846798 sec) gga()                $GPGGA,131520,0107.1100,N,05108.3001,E,1,07,1.0,-2.9,M,-54.2,M,,*40
+(Jan 09 2023 13:16:19,  846803 sec) gga()                $GPGGA,131550,0107.1164,N,05108.2965,E,1,07,1.0,-3.8,M,-54.2,M,,*4F
+(Jan 09 2023 13:16:19,  846804 sec) GpsServices()        APF9 RTC skew (29s) OK.
+(Jan 09 2023 13:16:19,  846804 sec) LogNmeaSentences()   17,06,029,42,19,32,011,44,29,03,229,31*7F
+(Jan 09 2023 13:16:19,  846804 sec) LogNmeaSentences()   $GPGSV,3,3,10,30,31,125,44,09,06,150,00*74
+(Jan 09 2023 13:16:28,  846813 sec) LogNmeaSentences()   $GPRMC,131600,A,0107.1183,N,05108.2948,E,001.4,225.7,090123,001.9,W*61
+(Jan 09 2023 13:16:29,  846814 sec) LogNmeaSentences()   $GPGGA,131600,0107.1183,N,05108.2948,E,1,07,1.0,-3.2,M,-54.2,M,,*45
+(Jan 09 2023 13:16:29,  846814 sec) LogNmeaSentences()   $GPGSA,A,3,,05,06,13,15,17,19,,30,,,,1.3,1.0,0.8*31
+(Jan 09 2023 13:16:30,  846814 sec) LogNmeaSentences()   $GPGSV,3,1,11,02,62,174,20,05,16,202,43,06,53,073,48,13,56,225,46*76
+(Jan 09 2023 13:16:30,  846815 sec) LogNmeaSentences()   $GPGSV,3,2,11,15,35,261,46,17,06,029,37,19,32,011,43,29,03,229,35*7B
+(Jan 09 2023 13:16:30,  846815 sec) LogNmeaSentences()   $GPGSV,3,3,11,30,31,125,43,09,06,150,00,20,26,167,00*44
+(Jan 09 2023 13:16:31,  846815 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Jan 09 2023 13:16:38,  846823 sec) LogNmeaSentences()   $GPRMC,131610,A,0107.1202,N,05108.2928,E,001.3,016.3,090123,001.9,W*6D
+(Jan 09 2023 13:16:39,  846824 sec) LogNmeaSentences()   $GPGGA,131610,0107.1202,N,05108.2928,E,1,07,1.0,-4.5,M,-54.2,M,,*48
+(Jan 09 2023 13:16:39,  846824 sec) LogNmeaSentences()   $GPGSA,A,3,,05,06,13,15,17,19,,30,,,,1.3,1.0,0.8*31
+(Jan 09 2023 13:16:40,  846824 sec) LogNmeaSentences()   $GPGSV,3,1,11,02,62,174,20,05,16,202,42,06,53,072,45,13,56,225,47*7A
+(Jan 09 2023 13:16:40,  846825 sec) LogNmeaSentences()   $GPGSV,3,2,11,15,35,261,46,17,06,029,37,19,32,011,43,29,03,229,35*7B
+(Jan 09 2023 13:16:40,  846825 sec) LogNmeaSentences()   $GPGSV,3,3,11,30,31,125,42,09,06,150,00,20,26,167,00*45
+(Jan 09 2023 13:16:48,  846833 sec) LogNmeaSentences()   $GPRMC,131620,A,0107.1222,N,05108.2916,E,000.9,247.7,090123,001.9,W*68
+(Jan 09 2023 13:16:49,  846834 sec) LogNmeaSentences()   $GPGGA,131620,0107.1222,N,05108.2916,E,1,07,1.0,-3.9,M,-54.2,M,,*4F
+(Jan 09 2023 13:16:49,  846834 sec) LogNmeaSentences()   $GPGSA,A,3,,05,06,13,15,17,19,,30,,,,1.3,1.0,0.8*31
+(Jan 09 2023 13:16:50,  846834 sec) GpsServices()        GPS services complete.
+(Jan 09 2023 13:17:14,  846859 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 13:17:25,  846870 sec) CLogin()             Connection 10 established in 11 seconds.
+(Jan 09 2023 13:17:57,  846901 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 13:17:57,  846901 sec) login()              Login failed.
+(Jan 09 2023 13:18:27,  846931 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 13:18:27,  846931 sec) login()              Login prompt not received.
+(Jan 09 2023 13:18:57,  846961 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 09 2023 13:18:57,  846961 sec) login()              Login prompt not received.
+(Jan 09 2023 13:18:57,  846962 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 13:18:57,  846962 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 09 2023 13:19:02,  846967 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 13:19:17,  846982 sec) CLogin()             Connection 11 established in 15 seconds.
+(Jan 09 2023 13:19:49,  847013 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jan 09 2023 13:19:49,  847013 sec) login()              Login failed.
+(Jan 09 2023 13:20:47,  847071 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Jan 09 2023 13:20:47,  847071 sec) login()              Password prompt not received.
+(Jan 09 2023 13:20:47,  847072 sec) login()              No carrier detected.
+(Jan 09 2023 13:20:47,  847072 sec) CLogin()             Attempt to login to host failed.
+(Jan 09 2023 13:20:47,  847072 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 09 2023 13:20:47,  847072 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Jan 09 2023 13:20:47,  847072 sec) CLogin()             Connecting to primary host.
+(Jan 09 2023 13:20:58,  847083 sec) CLogin()             Connection 12 established in 11 seconds.
+(Jan 09 2023 13:21:09,  847093 sec) login()              Login successful.
+(Jan 09 2023 13:21:12,  847096 sec) CLogin()             Logged in to host.  [Login required 14 seconds]
+(Jan 09 2023 13:21:18,  847103 sec) UpLoadFile()         Uploading "7521.268.log" to host as "7521.268.log".
+(Jan 09 2023 13:21:23,  847107 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jan 09 2023 13:21:41,  847125 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jan 09 2023 13:21:41,  847125 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jan 09 2023 13:22:19,  847163 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jan 09 2023 13:22:19,  847163 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jan 09 2023 13:23:10,  847214 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jan 09 2023 13:23:10,  847215 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jan 09 2023 13:23:37,  847241 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Jan 09 2023 13:23:37,  847242 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Jan 09 2023 13:24:03,  847268 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Jan 09 2023 13:24:03,  847268 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Jan 09 2023 13:25:20,  847344 sec) TxPacket()           NAK received - resending packet. [PktNum=0x25]
+(Jan 09 2023 13:25:20,  847344 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jan 09 2023 13:25:36,  847360 sec) Tx()                 Transmission completed successfully [38 packets, 38220 bytes, 252 sec, 154.4 bps]
+(Jan 09 2023 13:25:36,  847360 sec) UpLoadFile()         Upload successful.
+(Jan 09 2023 13:25:42,  847366 sec) UpLoad()             Files successfully uploaded: 1
+(Jan 09 2023 13:25:42,  847366 sec) UpLoad()             Upload complete.
+(Jan 09 2023 13:25:48,  847372 sec) chat()               Expected string [logout] not received.
+(Jan 09 2023 13:25:48,  847372 sec) logout()             Attempt to log-out failed.
+(Jan 09 2023 13:25:48,  847372 sec) logout()             No carrier detected.
+(Jan 09 2023 13:25:48,  847373 sec) Telemetry()          Telemetry cycle complete: PrfId=268 ConnectionAttempts=13  Connections=12
+(Jan 09 2023 13:25:48,  847373 sec) TelemetryTerminate() Parsing new mission configuration.
+(Jan 09 2023 13:25:50,  847374 sec) configure()          Parsing configurators in "mission.cfg".
+(Jan 09 2023 13:25:54,  847378 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Jan 09 2023 13:25:54,  847378 sec) configure()          Configuration CRCs and syntax OK.
+(Jan 09 2023 13:25:54,  847379 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Jan 09 2023 13:25:54,  847379 sec) ConfigSupervisor()   Configuration accepted.
+(Jan 09 2023 13:25:54,  847379 sec) TelemetryTerminate() Reconditioning the file system.
+(Jan 09 2023 13:26:08,       6 sec) DescentInit()        Deep profile 269 initiated at mission-time 847387sec.
+(Jan 09 2023 13:26:11,       9 sec) DescentInit()        Surface pressure: -0.5dbars.
+(Jan 09 2023 13:26:16,      13 sec) PistonMoveAbsWTO()    219->074 218 217 216 215 214 213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 [983sec, 11.0Volts, 0.117Amps, CPT:983sec]
+(Jan 09 2023 13:42:48,    1006 sec) Descent()            Pressure: 68.9
+(Jan 09 2023 14:26:06,    3604 sec) Descent()            Pressure: 387.0
+(Jan 09 2023 15:26:06,    7204 sec) Descent()            Pressure: 732.8
+(Jan 09 2023 16:26:06,   10804 sec) Descent()            Pressure: 913.4
+(Jan 09 2023 17:26:06,   14404 sec) Descent()            Pressure: 985.2
+(Jan 09 2023 18:26:06,   18004 sec) Descent()            Pressure: 988.4
+(Jan 09 2023 18:26:06,   18004 sec) ParkInit()           
+(Jan 18 2023 21:26:27,  806425 sec) CtdPower()           [  999.15,  7.3582, 66.2479]
+(Jan 18 2023 21:26:28,  806425 sec) CtdPower()           CTD Power consumption [144VCnt 11ACnt]: 11.163Volts * 0.044Amps = 0.49Watts.
+(Jan 18 2023 21:26:28,  806426 sec) ParkTerminate()      Piston Position:74 Vacuum:80 Vq:146 Aq:6 Vsbe:144 Asbe:11
+(Jan 18 2023 21:26:55,  806453 sec) ParkTerminate()      PTS: 999.2dbars 7.3587C 66.2556PSU
+(Jan 18 2023 21:26:56,  806454 sec) GoDeepInit()         Moving piston.
+(Jan 18 2023 21:26:56,  806454 sec) PistonMoveAbsWTO()    074->026 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 [314sec, 11.1Volts, 0.052Amps, CPT:1297sec]
+(Jan 19 2023 01:31:06,  821104 sec) GoDeep()             Sequence point detected at 2000.5dbar.
+(Jan 19 2023 01:31:09,  821106 sec) ProfileInit()        PrfId:269  Pressure:2000.6dbar  pTable[0]:2000dbar
+(Jan 19 2023 01:31:46,  821144 sec) Profile()            Sample 0 initiated at 2000.6dbars for bin 0 [2000dbars].  PTS: 2000.8dbars 3.0536C 43.0673PSU
+(Jan 19 2023 01:31:47,  821145 sec) PistonMoveAbsWTO()    026->048 027 028 029 [30sec, 9.2Volts, 0.770Amps, CPT:1327sec]
+(Jan 19 2023 01:32:27,  821185 sec) PistonMoveAbsWTO()    029->048 030 031 [30sec, 9.3Volts, 0.766Amps, CPT:1357sec]
+(Jan 19 2023 01:33:08,  821226 sec) PistonMoveAbsWTO()    031->048 032 033 034 [30sec, 9.3Volts, 0.753Amps, CPT:1387sec]
+(Jan 19 2023 01:33:48,  821266 sec) PistonMoveAbsWTO()    034->048 035 036 [30sec, 9.3Volts, 0.745Amps, CPT:1417sec]
+
+
+(Jan 19 2023 01:34:29) LogSize()            Log file is 38951 bytes.  Limit is 40960 bytes.
+
+(Jan 19 2023 01:34:29,  821307 sec) PistonMoveAbsWTO()    036->048 037 038 039 [30sec, 9.3Volts, 0.758Amps, CPT:1447sec]
+(Jan 19 2023 01:35:09,  821347 sec) PistonMoveAbsWTO()    039->048 040 041 042 [30sec, 9.4Volts, 0.770Amps, CPT:1477sec]
+(Jan 19 2023 01:35:49,  821387 sec) PistonMoveAbsWTO()    042->048 043 044 [30sec, 9.4Volts, 0.749Amps, CPT:1507sec]
+(Jan 19 2023 01:36:30,  821428 sec) PistonMoveAbsWTO()    044->048 045 046 047 [30sec, 9.4Volts, 0.762Amps, CPT:1537sec]
+(Jan 19 2023 01:37:10,  821468 sec) PistonMoveAbsWTO()    047->048 048 [11sec, 9.4Volts, 0.786Amps, CPT:1548sec]
+(Jan 19 2023 01:42:18,  821776 sec) Profile()            Sample 1 initiated at 1950.5dbars for bin 1 [1950dbars].  PTS: 1947.9dbars 3.1038C 39.2434PSU
+(Jan 19 2023 01:50:28,  822266 sec) Profile()            Sample 2 initiated at 1900.9dbars for bin 2 [1900dbars].  PTS: 1898.5dbars 3.1319C 26.0786PSU
+(Jan 19 2023 01:59:20,  822798 sec) Profile()            Sample 3 initiated at 1850.9dbars for bin 3 [1850dbars].  PTS: 1848.6dbars 3.1580C 26.1861PSU
+(Jan 19 2023 02:08:52,  823370 sec) Profile()            Sample 4 initiated at 1800.4dbars for bin 4 [1800dbars].  PTS: 1798.2dbars 3.2281C 24.9983PSU
+(Jan 19 2023 02:18:44,  823962 sec) Profile()            Sample 5 initiated at 1750.9dbars for bin 5 [1750dbars].  PTS: 1748.9dbars 3.3665C 22.3749PSU
+(Jan 19 2023 02:26:19,  824417 sec) AscentControlAgent() Bouyancy nudge to 58 (v=0.075dbar/sec).
+(Jan 19 2023 02:26:20,  824418 sec) PistonMoveAbsWTO()    048->058 049 050 [30sec, 9.6Volts, 0.665Amps, CPT:1578sec]
+(Jan 19 2023 02:27:00,  824458 sec) PistonMoveAbsWTO()    050->058 051 052 053 [30sec, 9.7Volts, 0.689Amps, CPT:1608sec]
+
+<EOT>

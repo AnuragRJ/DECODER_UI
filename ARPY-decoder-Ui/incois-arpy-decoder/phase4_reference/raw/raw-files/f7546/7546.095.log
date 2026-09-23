@@ -1,0 +1,369 @@
+(Apr 04 2017 12:36:59,  415091 sec) TelemetryInit()      Profile 94. (Apf9i FwRev: 012811)
+(Apr 04 2017 12:43:48,  415500 sec) AirSystem()          Battery [189cnt, 14.7V]  Current [72cnt, 29.0mA]  Barometer [127cnt, 6.8"Hg]  Run-Time [45s]
+(Apr 04 2017 12:44:40,  415552 sec) GpsServices()        GPS almanac is current.
+(Apr 04 2017 12:44:40,  415552 sec) GpsServices()        Initiating GPS fix acquisition.
+(Apr 04 2017 12:44:53,  415565 sec) gga()                $GPGGA,124430,1032.5883,N,08240.9396,E,0,00,,,M,,M,,*50
+(Apr 04 2017 12:45:00,  415572 sec) gga()                $GPGGA,124440,1032.5883,N,08240.9396,E,0,00,,,M,,M,,*57
+(Apr 04 2017 12:45:10,  415582 sec) gga()                $GPGGA,124450,1032.5883,N,08240.9396,E,0,00,,,M,,M,,*56
+(Apr 04 2017 12:45:38,  415611 sec) gga()                $GPGGA,124500,1031.8107,N,08233.3449,E,1,09,0.9,-11.5,M,-92.2,M,,*71
+(Apr 04 2017 12:45:39,  415611 sec) GpsServices()        Profile 94 GPS fix obtained in 58 seconds.
+(Apr 04 2017 12:45:39,  415611 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Apr 04 2017 12:45:39,  415611 sec) GpsServices()        Fix:   82.556  10.530 04/04/2017 124500    9
+(Apr 04 2017 12:46:08,  415640 sec) gga()                $GPGGA,124530,1031.8143,N,08233.3387,E,1,09,0.9,-7.9,M,-92.2,M,,*4C
+(Apr 04 2017 12:46:14,  415646 sec) gga()                $GPGGA,124600,1031.8174,N,08233.3327,E,1,09,0.9,-8.5,M,-92.2,M,,*41
+(Apr 04 2017 12:46:14,  415646 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Apr 04 2017 12:46:14,  415646 sec) LogNmeaSentences()   58,41,17,39,353,45,19,44,322,42,28,41,042,41*7B
+(Apr 04 2017 12:46:15,  415647 sec) LogNmeaSentences()   $GPGSV,3,3,10,30,59,159,48,01,01,035,00*70
+(Apr 04 2017 12:46:15,  415647 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Apr 04 2017 12:46:24,  415656 sec) LogNmeaSentences()   $GPRMC,124610,A,1031.8186,N,08233.3311,E,000.9,314.0,040417,001.8,W*6A
+(Apr 04 2017 12:46:24,  415656 sec) LogNmeaSentences()   $GPGGA,124610,1031.8186,N,08233.3311,E,1,09,0.9,-7.4,M,-92.2,M,,*46
+(Apr 04 2017 12:46:24,  415657 sec) LogNmeaSentences()   $GPGSA,A,3,02,03,06,07,13,17,19,28,30,,,,1.2,0.9,0.8*35
+(Apr 04 2017 12:46:25,  415657 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,28,215,41,03,09,075,39,06,70,204,47,07,18,151,43*7B
+(Apr 04 2017 12:46:25,  415657 sec) LogNmeaSentences()   $GPGSV,3,2,10,13,21,258,39,17,39,353,45,19,44,322,42,28,41,043,44*70
+(Apr 04 2017 12:46:25,  415658 sec) LogNmeaSentences()   $GPGSV,3,3,10,30,58,159,48,01,01,035,00*71
+(Apr 04 2017 12:46:34,  415666 sec) LogNmeaSentences()   $GPRMC,124620,A,1031.8194,N,08233.3288,E,000.7,336.4,040417,001.8,W*61
+(Apr 04 2017 12:46:34,  415666 sec) LogNmeaSentences()   $GPGGA,124620,1031.8194,N,08233.3288,E,1,09,0.9,-8.3,M,-92.2,M,,*4F
+(Apr 04 2017 12:46:35,  415667 sec) LogNmeaSentences()   $GPGSA,A,3,,02,03,06,07,13,17,19,28,30,,,1.2,0.9,0.8*35
+(Apr 04 2017 12:46:35,  415667 sec) LogNmeaSentences()   $GPGSV,3,1,10,01,01,035,24,02,28,215,41,03,09,074,37,06,70,205,48*76
+(Apr 04 2017 12:46:35,  415667 sec) LogNmeaSentences()   $GPGSV,3,2,10,07,18,151,42,13,21,258,40,17,39,353,46,19,44,322,43*79
+(Apr 04 2017 12:46:36,  415668 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,41,043,43,30,58,159,47*77
+(Apr 04 2017 12:46:44,  415676 sec) LogNmeaSentences()   $GPRMC,124630,A,1031.8207,N,08233.3272,E,001.1,320.1,040417,001.8,W*69
+(Apr 04 2017 12:46:44,  415676 sec) LogNmeaSentences()   $GPGGA,124630,1031.8207,N,08233.3272,E,1,09,0.9,-7.9,M,-92.2,M,,*47
+(Apr 04 2017 12:46:45,  415677 sec) LogNmeaSentences()   $GPGSA,A,3,,02,03,06,07,13,17,19,28,30,,,1.2,0.9,0.8*35
+(Apr 04 2017 12:46:45,  415677 sec) GpsServices()        GPS services complete.
+(Apr 04 2017 12:47:33,  415725 sec) CLogin()             Connecting to primary host.
+(Apr 04 2017 12:48:04,  415756 sec) CLogin()             Connection 1 established in 31 seconds.
+(Apr 04 2017 12:48:15,  415767 sec) login()              Login successful.
+(Apr 04 2017 12:48:18,  415770 sec) CLogin()             Logged in to host.  [Login required 14 seconds]
+(Apr 04 2017 12:48:28,  415781 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Apr 04 2017 12:48:31,  415783 sec) Rx()                 Initiating transfer. [0x43]
+(Apr 04 2017 12:48:37,  415789 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 12:48:44,  415796 sec) RxStartByte()        Sync errors encountered: 967
+(Apr 04 2017 12:48:46,  415798 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Apr 04 2017 12:48:51,  415803 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 20 sec, 51.2 bps]
+(Apr 04 2017 12:48:51,  415803 sec) RxConfig()           Download successful.
+(Apr 04 2017 12:49:05,  415817 sec) WriteVitals()        Writing vitals to "7546.094.msg".
+(Apr 04 2017 12:49:13,  415825 sec) UpLoadFile()         Uploading "7546.094.msg" to host as "7546.094.msg".
+(Apr 04 2017 12:49:15,  415827 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Apr 04 2017 12:49:19,  415831 sec) TxPacket()           Invalid response [0x43] - resending packet. [PktNum=0x01]
+(Apr 04 2017 12:49:19,  415832 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Apr 04 2017 12:49:21,  415833 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Apr 04 2017 12:49:21,  415833 sec) TxPacket()           Packet xmit history: [11100011] (0:ok, 1:fail).
+(Apr 04 2017 12:49:47,  415859 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Apr 04 2017 12:49:47,  415859 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(Apr 04 2017 12:50:28,  415901 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Apr 04 2017 12:50:28,  415901 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Apr 04 2017 12:51:56,  415988 sec) Tx()                 Transmission completed successfully [25 packets, 24476 bytes, 160 sec, 154.4 bps]
+(Apr 04 2017 12:51:56,  415988 sec) UpLoadFile()         Upload successful.
+(Apr 04 2017 12:52:03,  415995 sec) UpLoadFile()         Uploading "7546.094.log" to host as "7546.094.log".
+(Apr 04 2017 12:52:07,  416000 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Apr 04 2017 12:52:10,  416002 sec) TxPacket()           Invalid response [0x78] - resending packet. [PktNum=0x01]
+(Apr 04 2017 12:52:10,  416002 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Apr 04 2017 12:52:49,  416041 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:52:49,  416041 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Apr 04 2017 12:52:54,  416046 sec) TxPacket()           Packet xmit history: [00000010] (0:ok, 1:fail).
+(Apr 04 2017 12:53:01,  416053 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:53:01,  416053 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Apr 04 2017 12:53:02,  416054 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:53:02,  416054 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Apr 04 2017 12:53:03,  416055 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:53:03,  416055 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Apr 04 2017 12:53:04,  416056 sec) TxPacket()           Invalid response [0x42] - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:53:04,  416056 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Apr 04 2017 12:53:05,  416057 sec) TxPacket()           Invalid response [0x28] - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:53:05,  416057 sec) TxPacket()           Packet xmit history: [01011111] (0:ok, 1:fail).
+(Apr 04 2017 12:53:06,  416058 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:53:06,  416058 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Apr 04 2017 12:53:07,  416059 sec) TxPacket()           Invalid response [0x2c] - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:53:07,  416059 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Apr 04 2017 12:53:07,  416060 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x0c]
+(Apr 04 2017 12:53:08,  416060 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Apr 04 2017 12:53:08,  416060 sec) TxPacket()           Exit status: -5
+(Apr 04 2017 12:53:08,  416060 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Apr 04 2017 12:53:19,  416071 sec) UpLoadFile()         Upload failed.
+(Apr 04 2017 12:53:32,  416085 sec) UpLoadFile()         Uploading "7546.094.log" to host as "7546.094.log".
+(Apr 04 2017 12:54:32,  416144 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Apr 04 2017 12:54:42,  416155 sec) UpLoadFile()         Upload failed.
+(Apr 04 2017 12:54:42,  416155 sec) UpLoad()             Files successfully uploaded: 1
+(Apr 04 2017 12:54:42,  416155 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Apr 04 2017 12:54:47,  416159 sec) logout()             Log-out successful.
+(Apr 04 2017 12:54:48,  416160 sec) Telemetry()          Telemetry cycle complete: PrfId=94 ConnectionAttempts=1  Connections=1
+(Apr 04 2017 13:10:03,  417075 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Apr 04 2017 13:10:36,  417108 sec) GpsServices()        GPS almanac is current.
+(Apr 04 2017 13:10:36,  417108 sec) GpsServices()        Initiating GPS fix acquisition.
+(Apr 04 2017 13:11:09,  417141 sec) gga()                $GPGGA,131030,1031.9804,N,08233.0739,E,1,09,0.9,-12.8,M,-92.2,M,,*71
+(Apr 04 2017 13:11:09,  417141 sec) GpsServices()        Profile 94 GPS fix obtained in 33 seconds.
+(Apr 04 2017 13:11:09,  417141 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Apr 04 2017 13:11:09,  417141 sec) GpsServices()        Fix:   82.551  10.533 04/04/2017 131030    9
+(Apr 04 2017 13:11:38,  417170 sec) gga()                $GPGGA,131100,1031.9839,N,08233.0683,E,1,09,0.9,-11.3,M,-92.2,M,,*75
+(Apr 04 2017 13:11:44,  417176 sec) gga()                $GPGGA,131130,1031.9869,N,08233.0633,E,1,09,0.9,-11.6,M,-92.2,M,,*7D
+(Apr 04 2017 13:11:44,  417176 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Apr 04 2017 13:11:44,  417177 sec) LogNmeaSentences()   6,40,17,34,005,46,19,40,338,45,24,04,320,36*73
+(Apr 04 2017 13:11:45,  417177 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,43,058,44,30,46,163,42*7B
+(Apr 04 2017 13:11:54,  417186 sec) LogNmeaSentences()   $GPRMC,131140,A,1031.9884,N,08233.0618,E,000.7,218.5,040417,001.8,W*6F
+(Apr 04 2017 13:11:54,  417186 sec) LogNmeaSentences()   $GPGGA,131140,1031.9884,N,08233.0618,E,1,09,0.9,-11.5,M,-92.2,M,,*73
+(Apr 04 2017 13:11:55,  417187 sec) LogNmeaSentences()   $GPGSA,A,3,02,03,06,07,13,17,19,,28,30,,,1.2,0.9,0.8*35
+(Apr 04 2017 13:11:55,  417187 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,38,222,43,03,07,064,37,06,81,235,48,07,08,152,40*7E
+(Apr 04 2017 13:11:55,  417187 sec) LogNmeaSentences()   $GPGSV,3,2,10,13,18,246,38,17,34,005,46,19,40,338,45,24,04,320,35*7F
+(Apr 04 2017 13:11:56,  417188 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,43,058,44,30,46,163,44*7D
+(Apr 04 2017 13:12:04,  417196 sec) LogNmeaSentences()   $GPRMC,131150,A,1031.9897,N,08233.0599,E,000.0,278.7,040417,001.8,W*65
+(Apr 04 2017 13:12:04,  417196 sec) LogNmeaSentences()   $GPGGA,131150,1031.9897,N,08233.0599,E,1,09,0.9,-11.5,M,-92.2,M,,*7A
+(Apr 04 2017 13:12:05,  417197 sec) LogNmeaSentences()   $GPGSA,A,3,02,03,06,07,13,17,19,,28,30,,,1.2,0.9,0.8*35
+(Apr 04 2017 13:12:05,  417197 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,38,222,44,03,07,064,35,06,82,237,48,07,08,152,42*78
+(Apr 04 2017 13:12:05,  417197 sec) LogNmeaSentences()   $GPGSV,3,2,10,13,18,246,40,17,34,005,45,19,40,338,44,24,04,320,34*73
+(Apr 04 2017 13:12:06,  417198 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,43,058,44,30,46,163,44*7D
+(Apr 04 2017 13:12:14,  417206 sec) LogNmeaSentences()   $GPRMC,131200,A,1031.9911,N,08233.0582,E,000.6,304.7,040417,001.8,W*6A
+(Apr 04 2017 13:12:14,  417206 sec) LogNmeaSentences()   $GPGGA,131200,1031.9911,N,08233.0582,E,1,09,0.9,-11.2,M,-92.2,M,,*7E
+(Apr 04 2017 13:12:15,  417207 sec) LogNmeaSentences()   $GPGSA,A,3,02,03,06,07,13,17,19,,28,30,,,1.2,0.9,0.8*35
+(Apr 04 2017 13:12:15,  417207 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,38,222,44,03,07,064,35,06,82,237,47,07,08,152,40*75
+(Apr 04 2017 13:12:15,  417208 sec) LogNmeaSentences()   $GPGSV,3,2,10,13,18,246,39,17,34,005,46,19,40,338,45,24,04,320,37*7C
+(Apr 04 2017 13:12:16,  417208 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,43,058,43,30,46,163,41*7F
+(Apr 04 2017 13:12:16,  417208 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Apr 04 2017 13:12:16,  417208 sec) GpsServices()        GPS services complete.
+(Apr 04 2017 13:13:04,  417256 sec) CLogin()             Connecting to primary host.
+(Apr 04 2017 13:13:16,  417268 sec) CLogin()             Connection 2 established in 12 seconds.
+(Apr 04 2017 13:13:24,  417277 sec) login()              Login successful.
+(Apr 04 2017 13:13:30,  417283 sec) CLogin()             Logged in to host.  [Login required 14 seconds]
+(Apr 04 2017 13:13:41,  417293 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Apr 04 2017 13:13:43,  417295 sec) Rx()                 Initiating transfer. [0x43]
+(Apr 04 2017 13:13:47,  417299 sec) RxStartByte()        Sync errors encountered: 607
+(Apr 04 2017 13:13:52,  417304 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:13:55,  417307 sec) RxStartByte()        Sync errors encountered: 657
+(Apr 04 2017 13:14:00,  417312 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:14:03,  417315 sec) RxStartByte()        Sync errors encountered: 566
+(Apr 04 2017 13:14:09,  417321 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:14:10,  417323 sec) RxStartByte()        Sync errors encountered: 349
+(Apr 04 2017 13:14:14,  417326 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:14:15,  417328 sec) RxStartByte()        Sync errors encountered: 750
+(Apr 04 2017 13:14:20,  417332 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:14:24,  417336 sec) RxStartByte()        Sync errors encountered: 535
+(Apr 04 2017 13:14:27,  417339 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:14:32,  417344 sec) RxStartByte()        Sync errors encountered: 595
+(Apr 04 2017 13:14:34,  417347 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Apr 04 2017 13:14:39,  417351 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 56 sec, 18.3 bps]
+(Apr 04 2017 13:14:39,  417351 sec) RxConfig()           Download successful.
+(Apr 04 2017 13:14:59,  417371 sec) UpLoadFile()         Uploading "7546.094.log" to host as "7546.094.log".
+(Apr 04 2017 13:15:01,  417373 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Apr 04 2017 13:15:09,  417381 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Apr 04 2017 13:15:09,  417381 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Apr 04 2017 13:15:23,  417395 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Apr 04 2017 13:15:23,  417395 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Apr 04 2017 13:16:51,  417483 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Apr 04 2017 13:16:51,  417483 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Apr 04 2017 13:16:58,  417490 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Apr 04 2017 13:16:58,  417490 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Apr 04 2017 13:17:00,  417492 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Apr 04 2017 13:17:00,  417493 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:17,  417509 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:17,  417510 sec) TxPacket()           Packet xmit history: [00111001] (0:ok, 1:fail).
+(Apr 04 2017 13:17:23,  417515 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:23,  417515 sec) TxPacket()           Packet xmit history: [01110011] (0:ok, 1:fail).
+(Apr 04 2017 13:17:24,  417516 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:24,  417516 sec) TxPacket()           Packet xmit history: [11100111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:25,  417517 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:25,  417517 sec) TxPacket()           Packet xmit history: [11001111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:26,  417518 sec) TxPacket()           Invalid response [0x42] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:26,  417518 sec) TxPacket()           Packet xmit history: [10011111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:28,  417520 sec) TxPacket()           Invalid response [0x68] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:28,  417521 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:29,  417521 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:29,  417522 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:31,  417524 sec) TxPacket()           Invalid response [0x46] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:32,  417524 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:33,  417525 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:33,  417525 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:34,  417526 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x14]
+(Apr 04 2017 13:17:34,  417526 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Apr 04 2017 13:17:34,  417526 sec) TxPacket()           Exit status: -5
+(Apr 04 2017 13:17:34,  417526 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Apr 04 2017 13:17:45,  417537 sec) UpLoadFile()         Upload failed.
+(Apr 04 2017 13:17:59,  417551 sec) UpLoadFile()         Uploading "7546.094.log" to host as "7546.094.log".
+(Apr 04 2017 13:18:59,  417611 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Apr 04 2017 13:19:09,  417622 sec) UpLoadFile()         Upload failed.
+(Apr 04 2017 13:19:09,  417622 sec) UpLoad()             Files successfully uploaded: 0
+(Apr 04 2017 13:19:09,  417622 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Apr 04 2017 13:19:13,  417626 sec) logout()             Log-out successful.
+(Apr 04 2017 13:19:15,  417627 sec) Telemetry()          Telemetry cycle complete: PrfId=94 ConnectionAttempts=2  Connections=2
+(Apr 04 2017 13:34:29,  418541 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Apr 04 2017 13:35:10,  418582 sec) GpsServices()        GPS almanac is current.
+(Apr 04 2017 13:35:10,  418582 sec) GpsServices()        Initiating GPS fix acquisition.
+(Apr 04 2017 13:35:39,  418611 sec) gga()                $GPGGA,133500,1032.1547,N,08232.8395,E,1,08,1.0,-24.6,M,-92.2,M,,*7D
+(Apr 04 2017 13:35:39,  418611 sec) GpsServices()        Profile 94 GPS fix obtained in 29 seconds.
+(Apr 04 2017 13:35:39,  418611 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Apr 04 2017 13:35:39,  418611 sec) GpsServices()        Fix:   82.547  10.536 04/04/2017 133500    8
+(Apr 04 2017 13:36:08,  418640 sec) gga()                $GPGGA,133530,1032.1613,N,08232.8344,E,1,08,1.0,-7.7,M,-92.2,M,,*40
+(Apr 04 2017 13:36:14,  418646 sec) gga()                $GPGGA,133600,1032.1645,N,08232.8297,E,1,09,0.9,-7.8,M,-92.2,M,,*4A
+(Apr 04 2017 13:36:14,  418646 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Apr 04 2017 13:36:14,  418647 sec) LogNmeaSentences()   5,39,17,30,015,45,19,36,351,44,24,11,315,41*7F
+(Apr 04 2017 13:36:15,  418647 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,44,074,43,30,35,163,40*73
+(Apr 04 2017 13:36:15,  418647 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Apr 04 2017 13:36:24,  418656 sec) LogNmeaSentences()   $GPRMC,133610,A,1032.1654,N,08232.8282,E,000.5,286.0,040417,001.8,W*69
+(Apr 04 2017 13:36:24,  418656 sec) LogNmeaSentences()   $GPGGA,133610,1032.1654,N,08232.8282,E,1,09,0.9,-7.5,M,-92.2,M,,*42
+(Apr 04 2017 13:36:25,  418657 sec) LogNmeaSentences()   $GPGSA,A,3,02,,05,06,13,17,19,24,28,30,,,1.2,0.9,0.8*32
+(Apr 04 2017 13:36:25,  418657 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,47,232,44,03,04,054,33,05,07,200,40,06,80,327,47*71
+(Apr 04 2017 13:36:25,  418657 sec) LogNmeaSentences()   $GPGSV,3,2,10,13,15,235,40,17,30,015,43,19,36,351,42,24,11,315,40*70
+(Apr 04 2017 13:36:26,  418658 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,44,075,44,30,34,163,44*70
+(Apr 04 2017 13:36:34,  418666 sec) LogNmeaSentences()   $GPRMC,133620,A,1032.1667,N,08232.8264,E,000.9,318.5,040417,001.8,W*6D
+(Apr 04 2017 13:36:34,  418666 sec) LogNmeaSentences()   $GPGGA,133620,1032.1667,N,08232.8264,E,1,09,0.9,-7.8,M,-92.2,M,,*44
+(Apr 04 2017 13:36:35,  418667 sec) LogNmeaSentences()   $GPGSA,A,3,02,,05,06,13,17,19,24,28,30,,,1.2,0.9,0.8*32
+(Apr 04 2017 13:36:35,  418667 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,47,233,42,03,04,054,35,05,07,200,41,06,80,328,48*71
+(Apr 04 2017 13:36:35,  418667 sec) LogNmeaSentences()   $GPGSV,3,2,10,13,15,235,38,17,30,015,46,19,36,351,44,24,11,315,41*7D
+(Apr 04 2017 13:36:36,  418668 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,44,075,44,30,34,163,43*77
+(Apr 04 2017 13:36:44,  418676 sec) LogNmeaSentences()   $GPRMC,133630,A,1032.1679,N,08232.8247,E,000.4,316.8,040417,001.8,W*6C
+(Apr 04 2017 13:36:44,  418676 sec) LogNmeaSentences()   $GPGGA,133630,1032.1679,N,08232.8247,E,1,09,0.9,-7.8,M,-92.2,M,,*4B
+(Apr 04 2017 13:36:45,  418677 sec) LogNmeaSentences()   $GPGSA,A,3,02,,05,06,13,17,19,24,28,30,,,1.2,0.9,0.8*32
+(Apr 04 2017 13:36:45,  418677 sec) GpsServices()        GPS services complete.
+(Apr 04 2017 13:37:33,  418725 sec) CLogin()             Connecting to primary host.
+(Apr 04 2017 13:37:45,  418737 sec) CLogin()             Connection 3 established in 12 seconds.
+(Apr 04 2017 13:37:55,  418748 sec) login()              Login successful.
+(Apr 04 2017 13:37:59,  418751 sec) CLogin()             Logged in to host.  [Login required 14 seconds]
+(Apr 04 2017 13:38:07,  418759 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Apr 04 2017 13:38:09,  418761 sec) Rx()                 Initiating transfer. [0x43]
+(Apr 04 2017 13:38:16,  418768 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:38:22,  418774 sec) RxStartByte()        Sync errors encountered: 383
+(Apr 04 2017 13:38:25,  418777 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:38:29,  418781 sec) RxStartByte()        Sync errors encountered: 316
+(Apr 04 2017 13:38:34,  418786 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:38:36,  418788 sec) RxStartByte()        Sync errors encountered: 905
+(Apr 04 2017 13:38:39,  418791 sec) Rx()                 Truncated packet received - retrying.
+(Apr 04 2017 13:38:45,  418797 sec) RxStartByte()        Sync errors encountered: 750
+(Apr 04 2017 13:38:47,  418800 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Apr 04 2017 13:38:52,  418804 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 43 sec, 23.8 bps]
+(Apr 04 2017 13:38:52,  418804 sec) RxConfig()           Download successful.
+(Apr 04 2017 13:39:12,  418824 sec) UpLoadFile()         Uploading "7546.094.log" to host as "7546.094.log".
+(Apr 04 2017 13:39:16,  418828 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Apr 04 2017 13:39:18,  418831 sec) TxPacket()           Invalid response [0x30] - resending packet. [PktNum=0x01]
+(Apr 04 2017 13:39:19,  418831 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Apr 04 2017 13:40:44,  418916 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Apr 04 2017 13:40:44,  418916 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Apr 04 2017 13:41:21,  418953 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Apr 04 2017 13:41:21,  418953 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Apr 04 2017 13:41:32,  418964 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Apr 04 2017 13:41:32,  418964 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Apr 04 2017 13:41:37,  418969 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Apr 04 2017 13:41:37,  418969 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Apr 04 2017 13:41:43,  418975 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Apr 04 2017 13:41:43,  418975 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Apr 04 2017 13:41:55,  418987 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Apr 04 2017 13:41:55,  418987 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Apr 04 2017 13:43:01,  419053 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Apr 04 2017 13:43:01,  419053 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Apr 04 2017 13:43:58,  419111 sec) TxPacket()           NAK received - resending packet. [PktNum=0x20]
+(Apr 04 2017 13:43:58,  419111 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Apr 04 2017 13:44:15,  419128 sec) TxPacket()           NAK received - resending packet. [PktNum=0x21]
+(Apr 04 2017 13:44:15,  419128 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Apr 04 2017 13:44:33,  419146 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(Apr 04 2017 13:44:33,  419146 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Apr 04 2017 13:44:49,  419161 sec) Tx()                 Transmission completed successfully [36 packets, 32344 bytes, 332 sec, 97.5 bps]
+(Apr 04 2017 13:44:49,  419161 sec) UpLoadFile()         Upload successful.
+(Apr 04 2017 13:44:55,  419167 sec) UpLoad()             Files successfully uploaded: 1
+(Apr 04 2017 13:44:55,  419167 sec) UpLoad()             Upload complete.
+(Apr 04 2017 13:44:59,  419171 sec) logout()             Log-out successful.
+(Apr 04 2017 13:45:00,  419172 sec) Telemetry()          Telemetry cycle complete: PrfId=94 ConnectionAttempts=3  Connections=3
+(Apr 04 2017 13:45:00,  419173 sec) TelemetryTerminate() Parsing new mission configuration.
+(Apr 04 2017 13:45:02,  419174 sec) configure()          Parsing configurators in "mission.cfg".
+(Apr 04 2017 13:45:06,  419178 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Apr 04 2017 13:45:06,  419178 sec) configure()          Configuration CRCs and syntax OK.
+(Apr 04 2017 13:45:06,  419178 sec) ConfigSupervisor()   Configuration accepted.
+(Apr 04 2017 13:45:06,  419179 sec) TelemetryTerminate() Reconditioning the file system.
+(Apr 04 2017 13:45:19,       6 sec) DescentInit()        Deep profile 95 initiated at mission-time 419185sec.
+(Apr 04 2017 13:45:22,       9 sec) DescentInit()        Surface pressure: -0.2dbars.
+(Apr 04 2017 13:45:27,      14 sec) PistonMoveAbsWTO()    187->050 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 [697sec, 14.3Volts, 0.165Amps, CPT:697sec]
+(Apr 04 2017 13:57:04,     711 sec) PistonMoveAbsWTO()    050->000 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 016 015 014 013 012 011 010 009 [209sec, 14.3Volts, 0.161Amps, CPT:906sec]
+(Apr 04 2017 14:00:43,     930 sec) Descent()            Pressure: 91.3
+(Apr 04 2017 14:45:17,    3604 sec) Descent()            Pressure: 395.3
+(Apr 04 2017 15:45:17,    7204 sec) Descent()            Pressure: 875.3
+(Apr 04 2017 15:45:17,    7204 sec) PistonMoveAbsWTO()    009->050 010 011 012 013 014 015 016 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032 033 034 035 036 037 038 039 040 041 042 043 044 045 046 047 048 049 050 [239sec, 13.6Volts, 0.423Amps, CPT:1145sec]
+(Apr 04 2017 16:45:17,   10804 sec) Descent()            Pressure: 887.2
+(Apr 04 2017 17:45:17,   14404 sec) Descent()            Pressure: 911.5
+(Apr 04 2017 18:45:17,   18004 sec) Descent()            Pressure: 927.5
+(Apr 04 2017 18:45:17,   18004 sec) ParkInit()           
+(Apr 04 2017 20:45:46,   25233 sec) Park()               ParkPOutOfBand[-3, 941.6 dbars]: retract piston.
+(Apr 04 2017 20:45:47,   25234 sec) PistonMoveAbsWTO()    050->049 049 [2sec, 13.8Volts, 0.133Amps, CPT:1147sec]
+(Apr 04 2017 23:45:46,   36033 sec) Park()               ParkPOutOfBand[-3, 971.0 dbars]: retract piston.
+(Apr 04 2017 23:45:47,   36034 sec) PistonMoveAbsWTO()    049->048 048 [5sec, 13.8Volts, 0.133Amps, CPT:1152sec]
+(Apr 05 2017 02:45:46,   46833 sec) Park()               ParkPOutOfBand[3, 1027.8 dbars]: extend piston.
+(Apr 05 2017 02:45:47,   46834 sec) PistonMoveAbsWTO()    048->049 049 [2sec, 13.6Volts, 0.475Amps, CPT:1154sec]
+(Apr 05 2017 05:45:46,   57633 sec) Park()               ParkPOutOfBand[3, 1033.0 dbars]: extend piston.
+(Apr 05 2017 05:45:47,   57634 sec) PistonMoveAbsWTO()    049->050 050 [7sec, 13.2Volts, 0.484Amps, CPT:1161sec]
+(Apr 05 2017 17:45:46,  100833 sec) Park()               ParkPOutOfBand[3, 1021.6 dbars]: extend piston.
+(Apr 05 2017 17:45:47,  100834 sec) PistonMoveAbsWTO()    050->051 051 [6sec, 12.9Volts, 0.484Amps, CPT:1167sec]
+(Apr 06 2017 16:45:47,  183634 sec) Park()               ParkPOutOfBand[3, 1014.2 dbars]: extend piston.
+(Apr 06 2017 16:45:47,  183634 sec) PistonMoveAbsWTO()    051->052 052 [7sec, 12.8Volts, 0.479Amps, CPT:1174sec]
+(Apr 06 2017 23:45:47,  208834 sec) Park()               ParkPOutOfBand[-3, 987.1 dbars]: retract piston.
+(Apr 06 2017 23:45:47,  208834 sec) PistonMoveAbsWTO()    052->051 051 [2sec, 13.7Volts, 0.125Amps, CPT:1176sec]
+(Apr 07 2017 15:45:47,  266434 sec) Park()               ParkPOutOfBand[3, 1012.2 dbars]: extend piston.
+(Apr 07 2017 15:45:47,  266434 sec) PistonMoveAbsWTO()    051->052 052 [2sec, 13.7Volts, 0.496Amps, CPT:1178sec]
+(Apr 08 2017 02:45:47,  306034 sec) Park()               ParkPOutOfBand[3, 1014.9 dbars]: extend piston.
+(Apr 08 2017 02:45:47,  306034 sec) PistonMoveAbsWTO()    052->053 053 [7sec, 12.8Volts, 0.488Amps, CPT:1185sec]
+(Apr 08 2017 21:45:38,  374425 sec) CtdPower()           [ 1000.74,  6.4626, 34.9474]
+(Apr 08 2017 21:45:38,  374425 sec) CtdPower()           CTD Power consumption [182VCnt 9ACnt]: 14.108Volts * 0.036Amps = 0.51Watts.
+(Apr 08 2017 21:45:39,  374426 sec) ParkTerminate()      Piston Position:53 Vacuum:80 Vq:195 Aq:4 Vsbe:182 Asbe:9
+(Apr 08 2017 21:46:06,  374453 sec) ParkTerminate()      PTS: 1000.4dbars 6.4623C 34.9460PSU
+(Apr 08 2017 21:46:07,  374454 sec) GoDeepInit()         Moving piston.
+(Apr 08 2017 21:46:07,  374454 sec) PistonMoveAbsWTO()    053->012 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 016 015 014 013 012 [214sec, 13.8Volts, 0.101Amps, CPT:1399sec]
+(Apr 09 2017 01:05:17,  386404 sec) GoDeep()             Sequence point detected at 2006.2dbar.
+(Apr 09 2017 01:05:19,  386406 sec) ProfileInit()        PrfId:095  Pressure:2006.3dbar  pTable[0]:2000dbar
+(Apr 09 2017 01:05:30,  386417 sec) PistonMoveAbsWTO()    012->034 013 014 015 016 [30sec, 12.8Volts, 0.838Amps, CPT:1429sec]
+(Apr 09 2017 01:06:10,  386457 sec) PistonMoveAbsWTO()    017->034 018 019 020 021 [30sec, 12.8Volts, 0.814Amps, CPT:1459sec]
+(Apr 09 2017 01:06:50,  386497 sec) PistonMoveAbsWTO()    021->034 022 023 024 025 [30sec, 12.6Volts, 0.806Amps, CPT:1489sec]
+(Apr 09 2017 01:07:30,  386537 sec) PistonMoveAbsWTO()    025->034 026 027 028 029 [30sec, 12.5Volts, 0.822Amps, CPT:1519sec]
+(Apr 09 2017 01:08:10,  386577 sec) PistonMoveAbsWTO()    029->034 030 031 032 033 [30sec, 12.4Volts, 0.822Amps, CPT:1549sec]
+(Apr 09 2017 01:10:17,  386704 sec) Sbe41cpStartCP()     Continuous profile started.
+(Apr 09 2017 01:10:17,  386704 sec) PistonMoveAbsWTO()    033->034 034 [4sec, 12.7Volts, 0.838Amps, CPT:1553sec]
+(Apr 09 2017 01:46:01,  388848 sec) AscentControlAgent() Bouyancy nudge to 44 (v=0.080dbar/sec).
+(Apr 09 2017 01:46:01,  388848 sec) PistonMoveAbsWTO()    034->044 035 036 037 038 [30sec, 13.1Volts, 0.741Amps, CPT:1583sec]
+(Apr 09 2017 01:46:41,  388888 sec) PistonMoveAbsWTO()    038->044 039 040 041 042 043 [30sec, 12.9Volts, 0.753Amps, CPT:1613sec]
+(Apr 09 2017 01:47:21,  388928 sec) PistonMoveAbsWTO()    043->044 044 [7sec, 12.9Volts, 0.758Amps, CPT:1620sec]
+(Apr 09 2017 02:33:23,  391690 sec) AscentControlAgent() Bouyancy nudge to 54 (v=0.076dbar/sec).
+(Apr 09 2017 02:33:23,  391690 sec) PistonMoveAbsWTO()    044->054 045 046 047 048 [30sec, 13.2Volts, 0.693Amps, CPT:1650sec]
+(Apr 09 2017 02:34:03,  391730 sec) PistonMoveAbsWTO()    048->054 049 050 051 052 053 [30sec, 13.0Volts, 0.685Amps, CPT:1680sec]
+(Apr 09 2017 02:34:43,  391770 sec) PistonMoveAbsWTO()    053->054 054 [6sec, 13.0Volts, 0.657Amps, CPT:1686sec]
+(Apr 09 2017 03:10:31,  393918 sec) AscentControlAgent() Bouyancy nudge to 64 (v=0.077dbar/sec).
+(Apr 09 2017 03:10:31,  393918 sec) PistonMoveAbsWTO()    054->064 055 056 057 058 [30sec, 13.3Volts, 0.608Amps, CPT:1716sec]
+(Apr 09 2017 03:11:11,  393958 sec) PistonMoveAbsWTO()    058->064 059 060 061 062 063 [30sec, 13.2Volts, 0.596Amps, CPT:1746sec]
+(Apr 09 2017 03:11:51,  393998 sec) PistonMoveAbsWTO()    063->064 064 [4sec, 13.1Volts, 0.600Amps, CPT:1750sec]
+(Apr 09 2017 04:08:01,  397368 sec) AscentControlAgent() Bouyancy nudge to 74 (v=0.079dbar/sec).
+(Apr 09 2017 04:08:01,  397368 sec) PistonMoveAbsWTO()    064->074 065 066 067 068 [30sec, 13.5Volts, 0.492Amps, CPT:1780sec]
+(Apr 09 2017 04:08:41,  397408 sec) PistonMoveAbsWTO()    069->074 070 071 072 073 [30sec, 13.3Volts, 0.492Amps, CPT:1810sec]
+(Apr 09 2017 04:09:21,  397448 sec) PistonMoveAbsWTO()    073->074 074 [1sec, 13.3Volts, 0.508Amps, CPT:1811sec]
+(Apr 09 2017 06:21:59,  405406 sec) AscentControlAgent() Bouyancy nudge to 84 (v=0.077dbar/sec).
+(Apr 09 2017 06:21:59,  405406 sec) PistonMoveAbsWTO()    074->084 075 076 077 078 079 [30sec, 13.9Volts, 0.230Amps, CPT:1841sec]
+(Apr 09 2017 06:22:39,  405446 sec) PistonMoveAbsWTO()    079->084 080 081 082 083 084 [26sec, 13.9Volts, 0.238Amps, CPT:1867sec]
+(Apr 09 2017 06:33:17,  406084 sec) AscentControlAgent() Bouyancy nudge to 94 (v=0.055dbar/sec).
+(Apr 09 2017 06:33:17,  406084 sec) PistonMoveAbsWTO()    084->094 085 086 087 088 089 [30sec, 14.0Volts, 0.222Amps, CPT:1897sec]
+(Apr 09 2017 06:33:57,  406124 sec) PistonMoveAbsWTO()    089->094 090 091 092 093 094 [25sec, 13.9Volts, 0.222Amps, CPT:1922sec]
+(Apr 09 2017 06:39:29,  406456 sec) AscentControlAgent() Bouyancy nudge to 104 (v=0.044dbar/sec).
+(Apr 09 2017 06:39:29,  406456 sec) PistonMoveAbsWTO()    094->104 095 096 097 098 099 [30sec, 14.0Volts, 0.218Amps, CPT:1952sec]
+(Apr 09 2017 06:40:09,  406496 sec) PistonMoveAbsWTO()    099->104 100 101 102 103 104 [26sec, 13.9Volts, 0.214Amps, CPT:1978sec]
+(Apr 09 2017 06:45:41,  406828 sec) AscentControlAgent() Bouyancy nudge to 114 (v=0.046dbar/sec).
+(Apr 09 2017 06:45:41,  406828 sec) PistonMoveAbsWTO()    104->114 105 106 107 108 109 [30sec, 14.0Volts, 0.210Amps, CPT:2008sec]
+(Apr 09 2017 06:46:21,  406868 sec) PistonMoveAbsWTO()    109->114 110 111 112 113 114 [25sec, 14.0Volts, 0.218Amps, CPT:2033sec]
+(Apr 09 2017 06:51:52,  407199 sec) AscentControlAgent() Bouyancy nudge to 124 (v=0.025dbar/sec).
+(Apr 09 2017 06:51:52,  407199 sec) PistonMoveAbsWTO()    114->124 115 116 117 118 119 [30sec, 14.0Volts, 0.214Amps, CPT:2063sec]
+(Apr 09 2017 06:52:32,  407239 sec) PistonMoveAbsWTO()    119->124 120 121 122 123 124 [25sec, 14.0Volts, 0.214Amps, CPT:2088sec]
+(Apr 09 2017 06:58:03,  407570 sec) AscentControlAgent() Bouyancy nudge to 134 (v=0.022dbar/sec).
+(Apr 09 2017 06:58:03,  407570 sec) PistonMoveAbsWTO()    124->134 125 126 127 128 129 [30sec, 14.0Volts, 0.205Amps, CPT:2118sec]
+(Apr 09 2017 06:58:43,  407610 sec) PistonMoveAbsWTO()    129->134 130 131 132 133 134 [25sec, 14.0Volts, 0.210Amps, CPT:2143sec]
+(Apr 09 2017 07:04:15,  407942 sec) AscentControlAgent() Bouyancy nudge to 144 (v=0.034dbar/sec).
+(Apr 09 2017 07:04:15,  407942 sec) PistonMoveAbsWTO()    134->144 135 136 137 138 139 [30sec, 14.0Volts, 0.210Amps, CPT:2173sec]
+(Apr 09 2017 07:04:55,  407982 sec) PistonMoveAbsWTO()    139->144 140 141 142 143 144 [24sec, 14.0Volts, 0.210Amps, CPT:2197sec]
+(Apr 09 2017 07:10:25,  408312 sec) AscentControlAgent() Bouyancy nudge to 154 (v=0.047dbar/sec).
+(Apr 09 2017 07:10:25,  408312 sec) PistonMoveAbsWTO()    144->154 145 146 147 148 149 [30sec, 14.1Volts, 0.205Amps, CPT:2227sec]
+(Apr 09 2017 07:11:05,  408352 sec) PistonMoveAbsWTO()    149->154 150 151 152 153 154 [24sec, 14.0Volts, 0.205Amps, CPT:2251sec]
+(Apr 09 2017 07:15:31,  408618 sec) AscentControlAgent() Bouyancy nudge to 164 (v=0.069dbar/sec).
+(Apr 09 2017 07:15:31,  408618 sec) PistonMoveAbsWTO()    154->164 155 156 157 158 159 [30sec, 14.1Volts, 0.201Amps, CPT:2281sec]
+(Apr 09 2017 07:16:11,  408658 sec) PistonMoveAbsWTO()    159->164 160 161 162 163 164 [25sec, 14.0Volts, 0.193Amps, CPT:2306sec]
+(Apr 09 2017 07:20:29,  408916 sec) SurfaceDetect()      SurfacePressure:-0.2dbars Pressure:3.8dbars PistonPosition:164
+
+
+(Apr 09 2017 07:20:30) LogSize()            Log file is 38950 bytes.  Limit is 40960 bytes.
+
+(Apr 09 2017 07:20:30,  408917 sec) Sbe41cpStopCP()      Continuous profile stopped.
+(Apr 09 2017 07:20:36,  408923 sec) PistonMoveAbsWTO()    164->186 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 [117sec, 14.1Volts, 0.165Amps, CPT:2423sec]
+(Apr 09 2017 07:22:43,  409050 sec) sbe41cp.c:chat()     Expected string [S>] not received.
+(Apr 09 2017 07:27:39,  409346 sec) Sbe41cpBinAverage()  Finished averaging 22244 samples in 292 seconds.
+(Apr 09 2017 07:27:44,  409351 sec) Sbe41cpUploadCP()    Sbe41cpSerNo[7258] NSample[22244] NBin[997]
+(Apr 09 2017 07:29:31,  409458 sec) Sbe41cpUploadCP()    Continuous profile uploaded [997 lines].
+
+<EOT>

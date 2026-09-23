@@ -60,7 +60,8 @@ def test_status_bands_follow_the_float_own_cycle():
     assert pc.status_for(10.0, 10.0) == "ACTIVE / RECENT PROFILE"
     assert pc.status_for(10.01, 10.0) == "PROFILE OVERDUE"
     assert pc.status_for(59.9, 10.0) == "PROFILE OVERDUE"
-    assert pc.status_for(60.0, 10.0) == "NO RECENT PROFILE DATA 60+ DAYS"
+    assert pc.status_for(79.9, 10.0) == "PROFILE OVERDUE"
+    assert pc.status_for(80.0, 10.0) == "NO RECENT PROFILE DATA 80+ DAYS"
     # 5-day float: overdue after five days, not after ten.
     assert pc.status_for(5.0, 5.0) == "ACTIVE / RECENT PROFILE"
     assert pc.status_for(6.0, 5.0) == "PROFILE OVERDUE"

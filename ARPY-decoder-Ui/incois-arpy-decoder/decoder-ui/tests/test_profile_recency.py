@@ -97,8 +97,8 @@ def test_real_published_profile_chain_all_30_wmos(entry):
         fs.STATUS_RECENT
         if days <= 10
         else fs.STATUS_OVERDUE
-        if days < 60
-        else fs.STATUS_NO_RECENT_60
+        if days < 80
+        else fs.STATUS_NO_RECENT_80
     )
     assert got["data_status"] == expected_status
     # Exact published gaps remain independent internal inventory information.
@@ -116,8 +116,10 @@ def test_real_published_profile_chain_all_30_wmos(entry):
         (19.999999, fs.STATUS_OVERDUE, 1),
         (20, fs.STATUS_OVERDUE, 2),
         (59.999999, fs.STATUS_OVERDUE, 5),
-        (60, fs.STATUS_NO_RECENT_60, 6),
-        (120, fs.STATUS_NO_RECENT_60, 12),
+        (60, fs.STATUS_OVERDUE, 6),
+        (79.999999, fs.STATUS_OVERDUE, 7),
+        (80, fs.STATUS_NO_RECENT_80, 8),
+        (120, fs.STATUS_NO_RECENT_80, 12),
     ],
 )
 def test_exact_boundaries_unrounded_days_and_floor_estimate(days, status, missed):

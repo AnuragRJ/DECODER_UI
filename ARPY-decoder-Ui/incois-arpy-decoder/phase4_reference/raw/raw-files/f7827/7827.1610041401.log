@@ -1,0 +1,105 @@
+(Oct 04 2016 14:02:09,   12572 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Oct 04 2016 14:03:03,   12625 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 0.3dbars / 241.7uM 26.854C 29.082 8.929 51.940 / 143,225,534
+(Oct 04 2016 14:03:14,   12636 sec) GpsServices()        GPS almanac is current.
+(Oct 04 2016 14:03:14,   12636 sec) GpsServices()        Initiating GPS fix acquisition.
+(Oct 04 2016 14:04:06,   12689 sec) gga()                $GPGGA,140320,1604.3398,N,06355.3922,E,6,09,0.8,-5.6,M,-60.7,M,,*4F
+(Oct 04 2016 14:04:49,   12732 sec) gga()                $GPGGA,140330,1604.3393,N,06355.3936,E,1,09,0.8,-7.9,M,-60.7,M,,*4A
+(Oct 04 2016 14:04:50,   12732 sec) GpsServices()        Profile 0 GPS fix obtained in 96 seconds.
+(Oct 04 2016 14:04:50,   12732 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Oct 04 2016 14:04:50,   12732 sec) GpsServices()        Fix:   63.923  16.072 10/04/2016 140330    9
+(Oct 04 2016 14:05:36,   12778 sec) gga()                $GPGGA,140450,1604.3313,N,06355.4006,E,1,09,0.8,-8.4,M,-60.7,M,,*4C
+(Oct 04 2016 14:05:43,   12785 sec) gga()                $GPGGA,140540,1604.3261,N,06355.4044,E,1,11,0.7,-9.1,M,-60.7,M,,*4C
+(Oct 04 2016 14:05:44,   12786 sec) GpsServices()        APF9 RTC skew (4s) OK.
+(Oct 04 2016 14:05:44,   12786 sec) GpsServices()        GPS services complete.
+(Oct 04 2016 14:06:33,   12835 sec) CLogin()             Connecting to primary host.
+(Oct 04 2016 14:06:45,   12847 sec) CLogin()             Connection 1 established in 12 seconds.
+(Oct 04 2016 14:07:29,   12891 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Oct 04 2016 14:07:29,   12891 sec) login()              Login failed.
+(Oct 04 2016 14:07:59,   12921 sec) expect()             Attempt to read prompt string [login:] failed.
+(Oct 04 2016 14:07:59,   12921 sec) login()              Login prompt not received.
+(Oct 04 2016 14:08:11,   12933 sec) CLogin()             Connection 2 established in 98 seconds.
+(Oct 04 2016 14:08:21,   12943 sec) login()              Login successful.
+(Oct 04 2016 14:08:26,   12948 sec) chat()               Expected string [cmd>] not received.
+(Oct 04 2016 14:08:26,   12948 sec) login()              Attempt to set the command prompt failed.
+(Oct 04 2016 14:08:27,   12949 sec) CLogin()             Logged in to host.  [Login required 16 seconds]
+(Oct 04 2016 14:08:41,   12963 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Oct 04 2016 14:08:44,   12966 sec) Rx()                 Initiating transfer. [0x43]
+(Oct 04 2016 14:08:52,   12974 sec) Rx()                 Truncated packet received - retrying.
+(Oct 04 2016 14:08:54,   12976 sec) RxStartByte()        Sync errors encountered: 967
+(Oct 04 2016 14:08:59,   12982 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Oct 04 2016 14:09:04,   12986 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 20 sec, 51.2 bps]
+(Oct 04 2016 14:09:04,   12986 sec) RxConfig()           Download successful.
+(Oct 04 2016 14:09:27,   13009 sec) WriteVitals()        Writing vitals to "7827.1610041401".
+(Oct 04 2016 14:09:33,   13015 sec) UpLoadFile()         Uploading "7827.1610041337.log" to host as "7827.1610041337.log".
+(Oct 04 2016 14:09:40,   13022 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Oct 04 2016 14:09:56,   13038 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Oct 04 2016 14:09:56,   13038 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Oct 04 2016 14:10:02,   13044 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Oct 04 2016 14:10:02,   13045 sec) TxPacket()           Packet xmit history: [11000011] (0:ok, 1:fail).
+(Oct 04 2016 14:10:25,   13067 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Oct 04 2016 14:10:25,   13067 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(Oct 04 2016 14:10:27,   13069 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Oct 04 2016 14:10:27,   13069 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(Oct 04 2016 14:10:30,   13072 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Oct 04 2016 14:10:30,   13072 sec) TxPacket()           Packet xmit history: [00110111] (0:ok, 1:fail).
+(Oct 04 2016 14:10:37,   13079 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Oct 04 2016 14:10:37,   13080 sec) TxPacket()           Packet xmit history: [01101111] (0:ok, 1:fail).
+(Oct 04 2016 14:10:56,   13098 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Oct 04 2016 14:10:56,   13099 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Oct 04 2016 14:11:41,   13143 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Oct 04 2016 14:11:41,   13143 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Oct 04 2016 14:11:52,   13154 sec) Tx()                 Transmission completed successfully [13 packets, 8839 bytes, 131 sec, 74.3 bps]
+(Oct 04 2016 14:11:52,   13155 sec) UpLoadFile()         Upload successful.
+(Oct 04 2016 14:11:56,   13158 sec) UpLoadFile()         Uploading "7827.1610041401" to host as "7827.1610041401".
+(Oct 04 2016 14:11:59,   13162 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Oct 04 2016 14:12:06,   13168 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x01]
+(Oct 04 2016 14:12:06,   13168 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Oct 04 2016 14:12:18,   13180 sec) Tx()                 Transmission completed successfully [1 packets, 800 bytes, 17 sec, 60.2 bps]
+(Oct 04 2016 14:12:18,   13181 sec) UpLoadFile()         Upload successful.
+(Oct 04 2016 14:12:28,   13191 sec) UpLoad()             Files successfully uploaded: 2
+(Oct 04 2016 14:12:29,   13191 sec) UpLoad()             Upload complete.
+(Oct 04 2016 14:12:32,   13195 sec) logout()             Log-out successful.
+(Oct 04 2016 14:12:34,   13196 sec) Telemetry()          Telemetry cycle complete: PrfId=0 ConnectionAttempts=2  Connections=2
+(Oct 04 2016 14:12:36,   13199 sec) configure()          Parsing configurators in "mission.cfg".
+(Oct 04 2016 14:12:43,   13205 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Oct 04 2016 14:12:43,   13206 sec) configure()          Configuration CRCs and syntax OK.
+(Oct 04 2016 14:12:44,   13206 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Oct 04 2016 14:12:44,   13206 sec) ConfigSupervisor()   Configuration accepted.
+(Oct 04 2016 14:27:52,   14114 sec) Prelude()            Logging configuration and initiating telemetry.
+(Oct 04 2016 14:27:52,   14114 sec) LogConfiguration()   Mission configuration for Apf9i FwRev 061016:
+(Oct 04 2016 14:27:52,   14114 sec) LogConfiguration()      AscentTimeOut(540) [min]
+(Oct 04 2016 14:27:52,   14114 sec) LogConfiguration()      AtDialCmd(AT+CBST=71,0,1;DT0088160000573) [primary]
+(Oct 04 2016 14:27:52,   14114 sec) LogConfiguration()      AltDialCmd(ATDT0013014291790) [alternate]
+(Oct 04 2016 14:27:52,   14114 sec) LogConfiguration()      BuoyancyNudge(10) [count]
+(Oct 04 2016 14:27:52,   14114 sec) LogConfiguration()      BuoyancyNudgeInitial(22) [count]
+(Oct 04 2016 14:27:52,   14115 sec) LogConfiguration()      ConnectTimeOut(60) [sec]
+(Oct 04 2016 14:27:52,   14115 sec) LogConfiguration()      CpActivationP(500) [dbar]
+(Oct 04 2016 14:27:53,   14115 sec) LogConfiguration()      DeepProfileDescentTime(300) [min]
+(Oct 04 2016 14:27:53,   14115 sec) LogConfiguration()      DeepProfilePistonPos(16) [count]
+(Oct 04 2016 14:27:53,   14115 sec) LogConfiguration()      DeepProfilePressure(2000) [dbar]
+(Oct 04 2016 14:27:53,   14115 sec) LogConfiguration()      CompensatorHyperRetraction(0) [count]
+(Oct 04 2016 14:27:53,   14115 sec) LogConfiguration()      DownTime(13740) [min]
+(Oct 04 2016 14:27:53,   14115 sec) LogConfiguration()      FlbbMode(1)
+(Oct 04 2016 14:27:53,   14115 sec) LogConfiguration()      FloatId(7827)
+(Oct 04 2016 14:27:53,   14115 sec) LogConfiguration()      FullExtension(226) [count]
+(Oct 04 2016 14:27:53,   14116 sec) LogConfiguration()      FullRetraction(9) [count]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      MaxAirBladder(124) [count]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      MaxLogKb(40) [KByte]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      MissionPrelude(360) [min]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      OkVacuum(96) [count]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      PActivationPistonPosition(16) [count]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      ParkDescentTime(300) [min]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      ParkPistonPos(66) [count]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      ParkPressure(1000) [dbar]
+(Oct 04 2016 14:27:54,   14116 sec) LogConfiguration()      PnPCycleLen(1)
+(Oct 04 2016 14:27:54,   14117 sec) LogConfiguration()      Pwd(0x3c35)
+(Oct 04 2016 14:27:55,   14117 sec) LogConfiguration()      TelemetryRetry(15) [min]
+(Oct 04 2016 14:27:55,   14117 sec) LogConfiguration()      TimeOfDay(DISABLED) [min]
+(Oct 04 2016 14:27:55,   14117 sec) LogConfiguration()      UpTime(660) [min]
+(Oct 04 2016 14:27:55,   14117 sec) LogConfiguration()      User(f7827)
+(Oct 04 2016 14:27:55,   14117 sec) LogConfiguration()      Verbosity(2)
+(Oct 04 2016 14:27:55,   14117 sec) LogConfiguration()      DebugBits(0x0002)
+
+<EOT>
+
+<EOT>

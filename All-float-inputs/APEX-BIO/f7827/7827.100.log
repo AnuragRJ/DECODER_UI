@@ -1,0 +1,392 @@
+(Jun 01 2018 20:49:52,  862207 sec) TelemetryInit()      Profile 99. (Apf9i FwRev: 061016)
+(Jun 01 2018 20:56:49,  862624 sec) AirSystem()          Battery [188cnt, 14.6V]  Current [76cnt, 306.2mA]  Barometer [127cnt, 6.8"Hg]  Run-Time [48s]
+(Jun 01 2018 20:57:27,  862661 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.6dbars / 220.6uM 29.709C 29.034 9.044 -38.807 / 60,135,530
+(Jun 01 2018 20:57:35,  862670 sec) GpsServices()        GPS almanac is current.
+(Jun 01 2018 20:57:35,  862670 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 01 2018 20:57:51,  862685 sec) gga()                $GPGGA,205730,1655.1770,N,06500.0011,E,0,00,,,M,,M,,*5B
+(Jun 01 2018 20:58:01,  862696 sec) gga()                $GPGGA,205740,1655.1770,N,06500.0011,E,0,00,,,M,,M,,*5C
+(Jun 01 2018 20:58:13,  862708 sec) gga()                $GPGGA,205800,1655.1770,N,06500.0011,E,0,00,,,M,,M,,*57
+(Jun 01 2018 20:58:24,  862719 sec) gga()                $GPGGA,205800,1655.1770,N,06500.0011,E,0,00,,,M,,M,,*57
+(Jun 01 2018 20:58:36,  862730 sec) gga()                $GPGGA,205810,1655.1770,N,06500.0011,E,0,00,,,M,,M,,*56
+(Jun 01 2018 20:58:39,  862733 sec) gga()                $GPGGA,205820,1655.1770,N,06500.0011,E,0,00,,,M,,M,,*55
+(Jun 01 2018 20:58:50,  862744 sec) gga()                $GPGGA,205830,1655.1770,N,06500.0011,E,0,00,,,M,,M,,*54
+(Jun 01 2018 20:59:02,  862756 sec) gga()                $GPGGA,205840,1655.1770,N,06500.0011,E,0,00,,,M,,M,,*53
+(Jun 01 2018 21:00:25,  862840 sec) gga()                $GPGGA,205940,1639.8203,N,06538.6652,E,1,11,0.6,4.4,M,-63.5,M,,*68
+(Jun 01 2018 21:00:26,  862840 sec) GpsServices()        Profile 99 GPS fix obtained in 171 seconds.
+(Jun 01 2018 21:00:26,  862841 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 01 2018 21:00:26,  862841 sec) GpsServices()        Fix:   65.644  16.664 06/01/2018 205940   11
+(Jun 01 2018 21:01:15,  862890 sec) gga()                $GPGGA,210030,1639.8253,N,06538.6702,E,1,11,0.6,2.2,M,-63.5,M,,*63
+(Jun 01 2018 21:01:23,  862898 sec) gga()                $GPGGA,210120,1639.8287,N,06538.6739,E,1,11,0.7,3.0,M,-63.5,M,,*60
+(Jun 01 2018 21:01:23,  862898 sec) GpsServices()        APF9 RTC skew (3s) OK.
+(Jun 01 2018 21:01:23,  862898 sec) GpsServices()        GPS services complete.
+(Jun 01 2018 21:01:49,  862924 sec) CLogin()             Connecting to primary host.
+(Jun 01 2018 21:02:50,  862984 sec) chat()               Expected string [CONNECT] not received.
+(Jun 01 2018 21:02:50,  862984 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Jun 01 2018 21:02:50,  862985 sec) connect()            Connection attempt failed.
+(Jun 01 2018 21:02:59,  862993 sec) CLogin()             Connection 1 established in 70 seconds.
+(Jun 01 2018 21:03:12,  863006 sec) login()              Login successful.
+(Jun 01 2018 21:03:15,  863010 sec) CLogin()             Logged in to host.  [Login required 16 seconds]
+(Jun 01 2018 21:03:32,  863027 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 01 2018 21:03:35,  863029 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 01 2018 21:03:43,  863038 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 01 2018 21:03:48,  863042 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 13 sec, 78.8 bps]
+(Jun 01 2018 21:03:48,  863042 sec) RxConfig()           Download successful.
+(Jun 01 2018 21:04:11,  863065 sec) WriteVitals()        Writing vitals to "7827.099.msg".
+(Jun 01 2018 21:04:32,  863086 sec) UpLoadFile()         Uploading "7827.099.msg" to host as "7827.099.msg".
+(Jun 01 2018 21:04:42,  863097 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 01 2018 21:05:03,  863117 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jun 01 2018 21:05:03,  863118 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jun 01 2018 21:06:22,  863197 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jun 01 2018 21:06:22,  863197 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 01 2018 21:06:41,  863215 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jun 01 2018 21:06:41,  863216 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jun 01 2018 21:07:02,  863236 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Jun 01 2018 21:07:02,  863237 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(Jun 01 2018 21:07:06,  863240 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Jun 01 2018 21:07:06,  863241 sec) TxPacket()           Packet xmit history: [01001011] (0:ok, 1:fail).
+(Jun 01 2018 21:07:21,  863256 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:21,  863256 sec) TxPacket()           Packet xmit history: [10110001] (0:ok, 1:fail).
+(Jun 01 2018 21:07:30,  863264 sec) TxPacket()           Packet xmit history: [01100010] (0:ok, 1:fail).
+(Jun 01 2018 21:07:34,  863268 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:34,  863269 sec) TxPacket()           Packet xmit history: [11000101] (0:ok, 1:fail).
+(Jun 01 2018 21:07:35,  863270 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:35,  863270 sec) TxPacket()           Packet xmit history: [10001011] (0:ok, 1:fail).
+(Jun 01 2018 21:07:37,  863272 sec) TxPacket()           Invalid response [0x32] - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:37,  863272 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Jun 01 2018 21:07:39,  863273 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:39,  863273 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Jun 01 2018 21:07:41,  863275 sec) TxPacket()           Invalid response [0x32] - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:41,  863276 sec) TxPacket()           Packet xmit history: [01011111] (0:ok, 1:fail).
+(Jun 01 2018 21:07:47,  863281 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:47,  863282 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jun 01 2018 21:07:50,  863285 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:51,  863285 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jun 01 2018 21:07:53,  863287 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x12]
+(Jun 01 2018 21:07:53,  863288 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 01 2018 21:07:53,  863288 sec) TxPacket()           Exit status: -5
+(Jun 01 2018 21:07:53,  863288 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 01 2018 21:08:06,  863301 sec) UpLoadFile()         Upload failed.
+(Jun 01 2018 21:08:23,  863318 sec) UpLoadFile()         Uploading "7827.099.log" to host as "7827.099.log".
+(Jun 01 2018 21:09:24,  863378 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Jun 01 2018 21:09:35,  863389 sec) UpLoadFile()         Upload failed.
+(Jun 01 2018 21:09:35,  863390 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 01 2018 21:09:35,  863390 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 01 2018 21:09:39,  863394 sec) logout()             Log-out successful.
+(Jun 01 2018 21:09:40,  863395 sec) Telemetry()          Telemetry cycle complete: PrfId=99 ConnectionAttempts=2  Connections=1
+(Jun 01 2018 21:24:55,  864309 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Jun 01 2018 21:25:32,  864346 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.5dbars / 221.1uM 29.691C 29.018 9.019 -38.222 / 58,127,530
+(Jun 01 2018 21:25:40,  864355 sec) GpsServices()        GPS almanac is current.
+(Jun 01 2018 21:25:40,  864355 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 01 2018 21:25:55,  864370 sec) gga()                $GPGGA,212540,1639.8230,N,06538.6676,E,0,00,,,M,,M,,*50
+(Jun 01 2018 21:26:38,  864413 sec) gga()                $GPGGA,212550,1639.9292,N,06538.8212,E,6,12,0.7,6.6,M,-63.5,M,,*61
+(Jun 01 2018 21:27:21,  864456 sec) gga()                $GPGGA,212600,1639.9287,N,06538.8222,E,1,12,0.7,4.6,M,-63.5,M,,*65
+(Jun 01 2018 21:27:21,  864456 sec) GpsServices()        Profile 99 GPS fix obtained in 101 seconds.
+(Jun 01 2018 21:27:22,  864456 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 01 2018 21:27:22,  864456 sec) GpsServices()        Fix:   65.647  16.665 06/01/2018 212600   12
+(Jun 01 2018 21:28:05,  864500 sec) gga()                $GPGGA,212720,1639.9346,N,06538.8306,E,1,12,0.7,1.6,M,-63.5,M,,*68
+(Jun 01 2018 21:28:13,  864508 sec) gga()                $GPGGA,212810,1639.9372,N,06538.8363,E,1,12,0.7,-0.5,M,-63.5,M,,*4F
+(Jun 01 2018 21:28:13,  864508 sec) GpsServices()        APF9 RTC skew (3s) OK.
+(Jun 01 2018 21:28:13,  864508 sec) GpsServices()        GPS services complete.
+(Jun 01 2018 21:28:39,  864534 sec) CLogin()             Connecting to primary host.
+(Jun 01 2018 21:28:51,  864545 sec) CLogin()             Connection 2 established in 12 seconds.
+(Jun 01 2018 21:29:26,  864580 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jun 01 2018 21:29:26,  864580 sec) login()              Login failed.
+(Jun 01 2018 21:29:56,  864610 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 01 2018 21:29:56,  864610 sec) login()              Login prompt not received.
+(Jun 01 2018 21:30:09,  864624 sec) CLogin()             Connection 3 established in 90 seconds.
+(Jun 01 2018 21:30:22,  864637 sec) login()              Login successful.
+(Jun 01 2018 21:30:26,  864640 sec) CLogin()             Logged in to host.  [Login required 17 seconds]
+(Jun 01 2018 21:30:40,  864655 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 01 2018 21:30:43,  864657 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 01 2018 21:30:49,  864664 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 01 2018 21:30:56,  864670 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 13 sec, 78.8 bps]
+(Jun 01 2018 21:30:56,  864670 sec) RxConfig()           Download successful.
+(Jun 01 2018 21:31:19,  864694 sec) WriteVitals()        Writing vitals to "7827.099.msg".
+(Jun 01 2018 21:31:37,  864712 sec) UpLoadFile()         Uploading "7827.099.msg" to host as "7827.099.msg".
+(Jun 01 2018 21:31:42,  864716 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 01 2018 21:31:57,  864731 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jun 01 2018 21:31:57,  864732 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jun 01 2018 21:32:18,  864752 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 01 2018 21:32:18,  864753 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jun 01 2018 21:32:23,  864758 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 01 2018 21:32:23,  864758 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Jun 01 2018 21:32:29,  864763 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 01 2018 21:32:29,  864764 sec) TxPacket()           Packet xmit history: [00100111] (0:ok, 1:fail).
+(Jun 01 2018 21:32:44,  864778 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jun 01 2018 21:32:44,  864779 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Jun 01 2018 21:32:50,  864785 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jun 01 2018 21:32:50,  864785 sec) TxPacket()           Packet xmit history: [11100011] (0:ok, 1:fail).
+(Jun 01 2018 21:33:12,  864806 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jun 01 2018 21:33:12,  864807 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(Jun 01 2018 21:33:18,  864812 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jun 01 2018 21:33:18,  864813 sec) TxPacket()           Packet xmit history: [01100011] (0:ok, 1:fail).
+(Jun 01 2018 21:33:30,  864824 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jun 01 2018 21:33:30,  864825 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Jun 01 2018 21:33:35,  864829 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jun 01 2018 21:33:35,  864830 sec) TxPacket()           Packet xmit history: [00110011] (0:ok, 1:fail).
+(Jun 01 2018 21:34:11,  864866 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 01 2018 21:34:12,  864866 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jun 01 2018 21:34:53,  864907 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(Jun 01 2018 21:34:53,  864908 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jun 01 2018 21:35:00,  864914 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(Jun 01 2018 21:35:00,  864915 sec) TxPacket()           Packet xmit history: [10000011] (0:ok, 1:fail).
+(Jun 01 2018 21:35:35,  864949 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jun 01 2018 21:35:35,  864950 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jun 01 2018 21:35:47,  864961 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(Jun 01 2018 21:35:47,  864962 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Jun 01 2018 21:36:00,  864974 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Jun 01 2018 21:36:00,  864975 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Jun 01 2018 21:36:12,  864987 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Jun 01 2018 21:36:12,  864987 sec) TxPacket()           Packet xmit history: [00101011] (0:ok, 1:fail).
+(Jun 01 2018 21:36:20,  864995 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Jun 01 2018 21:36:20,  864995 sec) TxPacket()           Packet xmit history: [01010111] (0:ok, 1:fail).
+(Jun 01 2018 21:36:22,  864996 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Jun 01 2018 21:36:22,  864997 sec) TxPacket()           Packet xmit history: [10101111] (0:ok, 1:fail).
+(Jun 01 2018 21:36:38,  865012 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:36:38,  865013 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 01 2018 21:36:43,  865017 sec) TxPacket()           Packet xmit history: [00000010] (0:ok, 1:fail).
+(Jun 01 2018 21:36:52,  865027 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:36:52,  865027 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Jun 01 2018 21:36:54,  865029 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:36:55,  865029 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Jun 01 2018 21:36:57,  865032 sec) TxPacket()           Invalid response [0x44] - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:36:57,  865032 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Jun 01 2018 21:37:00,  865035 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:37:01,  865036 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Jun 01 2018 21:37:02,  865037 sec) TxPacket()           Invalid response [0x6f] - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:37:02,  865037 sec) TxPacket()           Packet xmit history: [01011111] (0:ok, 1:fail).
+(Jun 01 2018 21:37:05,  865040 sec) TxPacket()           Invalid response [0x38] - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:37:05,  865040 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jun 01 2018 21:37:06,  865041 sec) TxPacket()           Invalid response [0x38] - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:37:06,  865041 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jun 01 2018 21:37:08,  865043 sec) TxPacket()           Invalid response [0x0d] - resending packet. [PktNum=0x23]
+(Jun 01 2018 21:37:08,  865043 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 01 2018 21:37:09,  865043 sec) TxPacket()           Exit status: -5
+(Jun 01 2018 21:37:09,  865044 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 01 2018 21:37:22,  865056 sec) UpLoadFile()         Upload failed.
+(Jun 01 2018 21:37:58,  865092 sec) chat()               Expected string [rx -c  7827.099.log] not received.
+(Jun 01 2018 21:37:58,  865092 sec) UpLoadFile()         Failed attempt to execute "rx -c  7827.099.log" on the host.
+(Jun 01 2018 21:37:58,  865093 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 01 2018 21:37:58,  865093 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 01 2018 21:38:04,  865098 sec) chat()               Expected string [logout] not received.
+(Jun 01 2018 21:38:04,  865098 sec) logout()             Attempt to log-out failed.
+(Jun 01 2018 21:38:04,  865099 sec) logout()             No carrier detected.
+(Jun 01 2018 21:38:04,  865099 sec) Telemetry()          Telemetry cycle complete: PrfId=99 ConnectionAttempts=4  Connections=3
+(Jun 01 2018 21:53:19,  866013 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Jun 01 2018 21:53:56,  866050 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.5dbars / 223.8uM 29.706C 28.879 9.012 -38.714 / 59,135,530
+(Jun 01 2018 21:54:04,  866059 sec) GpsServices()        GPS almanac is current.
+(Jun 01 2018 21:54:04,  866059 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 01 2018 21:54:56,  866110 sec) gga()                $GPGGA,215410,1640.0478,N,06539.0581,E,6,12,0.7,-1.2,M,-63.5,M,,*4C
+(Jun 01 2018 21:55:38,  866153 sec) gga()                $GPGGA,215430,1640.0496,N,06539.0612,E,1,12,0.7,-1.4,M,-63.5,M,,*46
+(Jun 01 2018 21:55:39,  866154 sec) GpsServices()        Profile 99 GPS fix obtained in 95 seconds.
+(Jun 01 2018 21:55:39,  866154 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 01 2018 21:55:39,  866154 sec) GpsServices()        Fix:   65.651  16.667 06/01/2018 215430   12
+(Jun 01 2018 21:56:25,  866200 sec) gga()                $GPGGA,215540,1640.0541,N,06539.0725,E,1,12,0.7,-5.0,M,-63.5,M,,*4E
+(Jun 01 2018 21:56:33,  866207 sec) gga()                $GPGGA,215630,1640.0574,N,06539.0800,E,1,12,0.7,-3.5,M,-63.5,M,,*47
+(Jun 01 2018 21:56:33,  866208 sec) GpsServices()        APF9 RTC skew (3s) OK.
+(Jun 01 2018 21:56:33,  866208 sec) GpsServices()        GPS services complete.
+(Jun 01 2018 21:56:59,  866234 sec) CLogin()             Connecting to primary host.
+(Jun 01 2018 21:57:09,  866244 sec) CLogin()             Connection 4 established in 10 seconds.
+(Jun 01 2018 21:57:17,  866252 sec) login()              Login successful.
+(Jun 01 2018 21:57:20,  866255 sec) CLogin()             Logged in to host.  [Login required 11 seconds]
+(Jun 01 2018 21:57:34,  866269 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 01 2018 21:57:37,  866272 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 01 2018 21:57:43,  866278 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 01 2018 21:57:48,  866282 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 11 sec, 93.1 bps]
+(Jun 01 2018 21:57:48,  866282 sec) RxConfig()           Download successful.
+(Jun 01 2018 21:58:11,  866306 sec) WriteVitals()        Writing vitals to "7827.099.msg".
+(Jun 01 2018 21:58:27,  866321 sec) UpLoadFile()         Uploading "7827.099.msg" to host as "7827.099.msg".
+(Jun 01 2018 21:58:30,  866325 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 01 2018 21:58:43,  866337 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jun 01 2018 21:58:43,  866338 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jun 01 2018 21:58:55,  866349 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jun 01 2018 21:58:55,  866350 sec) TxPacket()           Packet xmit history: [10000101] (0:ok, 1:fail).
+(Jun 01 2018 21:59:07,  866361 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 01 2018 21:59:07,  866362 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Jun 01 2018 22:00:41,  866455 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:00:41,  866456 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 01 2018 22:00:48,  866462 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:00:48,  866462 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jun 01 2018 22:00:52,  866467 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:00:52,  866467 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Jun 01 2018 22:00:57,  866472 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:00:57,  866472 sec) TxPacket()           Packet xmit history: [00001111] (0:ok, 1:fail).
+(Jun 01 2018 22:01:07,  866481 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:01:07,  866482 sec) TxPacket()           Packet xmit history: [00011111] (0:ok, 1:fail).
+(Jun 01 2018 22:01:09,  866483 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:01:09,  866484 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Jun 01 2018 22:02:11,  866545 sec) TxPacket()           Timeout - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:02:11,  866545 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jun 01 2018 22:03:13,  866607 sec) TxPacket()           Timeout - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:03:13,  866607 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 01 2018 22:04:15,  866669 sec) TxPacket()           Timeout - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:04:15,  866669 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 01 2018 22:05:17,  866731 sec) TxPacket()           Timeout - resending packet. [PktNum=0x13]
+(Jun 01 2018 22:05:17,  866731 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 01 2018 22:05:17,  866732 sec) TxPacket()           Exit status: 0
+(Jun 01 2018 22:05:17,  866732 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 01 2018 22:05:28,  866743 sec) UpLoadFile()         Upload failed.
+(Jun 01 2018 22:06:04,  866778 sec) chat()               Expected string [rx -c  7827.099.log] not received.
+(Jun 01 2018 22:06:04,  866778 sec) UpLoadFile()         Failed attempt to execute "rx -c  7827.099.log" on the host.
+(Jun 01 2018 22:06:04,  866779 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 01 2018 22:06:04,  866779 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 01 2018 22:06:09,  866783 sec) chat()               Expected string [cmd>] not received.
+(Jun 01 2018 22:06:09,  866783 sec) logout()             Can't get command prompt.
+(Jun 01 2018 22:06:14,  866788 sec) chat()               Expected string [logout] not received.
+(Jun 01 2018 22:06:14,  866788 sec) logout()             Attempt to log-out failed.
+(Jun 01 2018 22:06:19,  866793 sec) chat()               Expected string [cmd>] not received.
+(Jun 01 2018 22:06:19,  866793 sec) logout()             Can't get command prompt.
+(Jun 01 2018 22:06:24,  866798 sec) chat()               Expected string [logout] not received.
+(Jun 01 2018 22:06:24,  866798 sec) logout()             Attempt to log-out failed.
+(Jun 01 2018 22:06:29,  866803 sec) chat()               Expected string [cmd>] not received.
+(Jun 01 2018 22:06:29,  866803 sec) logout()             Can't get command prompt.
+(Jun 01 2018 22:06:34,  866808 sec) chat()               Expected string [logout] not received.
+(Jun 01 2018 22:06:34,  866808 sec) logout()             Attempt to log-out failed.
+(Jun 01 2018 22:06:34,  866809 sec) Telemetry()          Telemetry cycle complete: PrfId=99 ConnectionAttempts=5  Connections=4
+(Jun 01 2018 22:21:49,  867723 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Jun 01 2018 22:22:26,  867760 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 224.0uM 29.226C 29.042 9.008 -23.564 / 60,129,530
+(Jun 01 2018 22:22:34,  867769 sec) GpsServices()        GPS almanac is current.
+(Jun 01 2018 22:22:34,  867769 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 01 2018 22:23:26,  867820 sec) gga()                $GPGGA,222240,1640.2096,N,06539.3419,E,6,09,0.8,0.3,M,-63.5,M,,*66
+(Jun 01 2018 22:24:09,  867863 sec) gga()                $GPGGA,222250,1640.2100,N,06539.3433,E,6,10,0.8,-7.7,M,-63.5,M,,*47
+(Jun 01 2018 22:25:35,  867950 sec) gga()                $GPGGA,222450,1640.2209,N,06539.3636,E,1,10,0.8,-3.6,M,-63.5,M,,*4E
+(Jun 01 2018 22:25:36,  867950 sec) GpsServices()        Profile 99 GPS fix obtained in 182 seconds.
+(Jun 01 2018 22:25:36,  867951 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 01 2018 22:25:36,  867951 sec) GpsServices()        Fix:   65.656  16.670 06/01/2018 222450   10
+(Jun 01 2018 22:26:25,  868000 sec) gga()                $GPGGA,222540,1640.2246,N,06539.3742,E,1,10,0.8,-4.6,M,-63.5,M,,*40
+(Jun 01 2018 22:26:33,  868008 sec) gga()                $GPGGA,222630,1640.2287,N,06539.3843,E,1,10,0.8,-4.7,M,-63.5,M,,*46
+(Jun 01 2018 22:26:33,  868008 sec) GpsServices()        APF9 RTC skew (3s) OK.
+(Jun 01 2018 22:26:43,  868017 sec) LogNmeaSentences()   $GPRMC,222640,A,1640.2300,N,06539.3865,E,000.7,170.8,010618,000.5,W*65
+(Jun 01 2018 22:26:44,  868018 sec) LogNmeaSentences()   $GPGGA,222640,1640.2300,N,06539.3865,E,1,10,0.8,-6.6,M,-63.5,M,,*48
+(Jun 01 2018 22:26:44,  868019 sec) LogNmeaSentences()   $GPGSA,A,3,01,,10,11,14,16,18,22,23,26,,31,1.1,0.8,0.8*3E
+(Jun 01 2018 22:26:45,  868019 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,46,270,39,08,03,206,34,10,12,127,41,11,28,244,32*76
+(Jun 01 2018 22:26:45,  868020 sec) LogNmeaSentences()   $GPGSV,3,2,12,14,26,043,42,16,34,148,43,18,48,228,39,22,56,341,41*76
+(Jun 01 2018 22:26:46,  868021 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,21,297,36,26,43,109,47,27,03,172,31,31,35,031,47*7C
+(Jun 01 2018 22:26:53,  868027 sec) LogNmeaSentences()   $GPRMC,222650,A,1640.2306,N,06539.3877,E,000.0,277.1,010618,000.5,W*6B
+(Jun 01 2018 22:26:54,  868028 sec) LogNmeaSentences()   $GPGGA,222650,1640.2306,N,06539.3877,E,1,10,0.8,-6.3,M,-63.5,M,,*49
+(Jun 01 2018 22:26:54,  868029 sec) LogNmeaSentences()   $GPGSA,A,3,01,,10,11,14,16,18,22,23,26,,31,1.1,0.8,0.8*3E
+(Jun 01 2018 22:26:55,  868029 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,46,269,46,08,03,206,34,10,12,127,44,11,28,244,40*76
+(Jun 01 2018 22:26:55,  868030 sec) LogNmeaSentences()   $GPGSV,3,2,12,14,26,043,43,16,34,148,45,18,48,228,47,22,56,341,45*7C
+(Jun 01 2018 22:26:56,  868031 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,21,297,41,26,43,109,49,27,03,172,33,31,35,031,47*70
+(Jun 01 2018 22:27:03,  868037 sec) LogNmeaSentences()   $GPRMC,222700,A,1640.2316,N,06539.3891,E,001.2,051.9,010618,000.5,W*6B
+(Jun 01 2018 22:27:04,  868038 sec) LogNmeaSentences()   $GPGGA,222700,1640.2316,N,06539.3891,E,1,10,0.8,-6.7,M,-63.5,M,,*40
+(Jun 01 2018 22:27:04,  868039 sec) LogNmeaSentences()   $GPGSA,A,3,01,,10,11,14,16,18,22,23,26,,31,1.8,0.8,1.6*38
+(Jun 01 2018 22:27:05,  868039 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,46,269,47,08,03,206,29,10,12,127,42,11,28,243,41*7B
+(Jun 01 2018 22:27:05,  868040 sec) LogNmeaSentences()   $GPGSV,3,2,12,14,26,043,42,16,34,148,43,18,48,228,46,22,56,341,47*78
+(Jun 01 2018 22:27:06,  868041 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,21,297,43,26,43,109,47,27,03,172,30,31,35,031,47*7F
+(Jun 01 2018 22:27:07,  868041 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 4.00,,,,,,,,*73
+(Jun 01 2018 22:27:07,  868042 sec) GpsServices()        GPS services complete.
+(Jun 01 2018 22:27:32,  868067 sec) CLogin()             Connecting to primary host.
+(Jun 01 2018 22:27:49,  868084 sec) CLogin()             Connection 5 established in 17 seconds.
+(Jun 01 2018 22:27:58,  868092 sec) login()              Login successful.
+(Jun 01 2018 22:28:03,  868097 sec) chat()               Expected string [cmd>] not received.
+(Jun 01 2018 22:28:03,  868097 sec) login()              Attempt to set the command prompt failed.
+(Jun 01 2018 22:28:06,  868101 sec) CLogin()             Logged in to host.  [Login required 17 seconds]
+(Jun 01 2018 22:28:19,  868113 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 01 2018 22:28:21,  868116 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 01 2018 22:28:27,  868121 sec) RxStartByte()        Sync errors encountered: 320
+(Jun 01 2018 22:28:31,  868125 sec) Rx()                 Truncated packet received - retrying.
+(Jun 01 2018 22:28:35,  868129 sec) RxStartByte()        Sync errors encountered: 68
+(Jun 01 2018 22:28:38,  868132 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 01 2018 22:28:43,  868137 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 22 sec, 46.5 bps]
+(Jun 01 2018 22:28:43,  868137 sec) RxConfig()           Download successful.
+(Jun 01 2018 22:29:06,  868161 sec) WriteVitals()        Writing vitals to "7827.099.msg".
+(Jun 01 2018 22:29:25,  868179 sec) UpLoadFile()         Uploading "7827.099.msg" to host as "7827.099.msg".
+(Jun 01 2018 22:29:28,  868182 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 01 2018 22:30:32,  868247 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Jun 01 2018 22:30:33,  868247 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 01 2018 22:31:17,  868291 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Jun 01 2018 22:31:17,  868292 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Jun 01 2018 22:31:28,  868302 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jun 01 2018 22:31:28,  868303 sec) TxPacket()           Packet xmit history: [10000101] (0:ok, 1:fail).
+(Jun 01 2018 22:31:55,  868329 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 01 2018 22:31:55,  868330 sec) TxPacket()           Packet xmit history: [01010001] (0:ok, 1:fail).
+(Jun 01 2018 22:32:22,  868357 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(Jun 01 2018 22:32:22,  868357 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Jun 01 2018 22:33:10,  868405 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jun 01 2018 22:33:10,  868405 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 01 2018 22:33:46,  868441 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1f]
+(Jun 01 2018 22:33:46,  868441 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Jun 01 2018 22:33:59,  868454 sec) TxPacket()           NAK received - resending packet. [PktNum=0x20]
+(Jun 01 2018 22:33:59,  868454 sec) TxPacket()           Packet xmit history: [10000101] (0:ok, 1:fail).
+(Jun 01 2018 22:34:12,  868467 sec) TxPacket()           NAK received - resending packet. [PktNum=0x21]
+(Jun 01 2018 22:34:13,  868467 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Jun 01 2018 22:34:18,  868473 sec) TxPacket()           NAK received - resending packet. [PktNum=0x21]
+(Jun 01 2018 22:34:18,  868473 sec) TxPacket()           Packet xmit history: [00101011] (0:ok, 1:fail).
+(Jun 01 2018 22:34:30,  868485 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(Jun 01 2018 22:34:30,  868485 sec) TxPacket()           Packet xmit history: [10101101] (0:ok, 1:fail).
+(Jun 01 2018 22:34:43,  868498 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Jun 01 2018 22:34:43,  868498 sec) TxPacket()           Packet xmit history: [01101001] (0:ok, 1:fail).
+(Jun 01 2018 22:34:48,  868503 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Jun 01 2018 22:34:48,  868503 sec) TxPacket()           Packet xmit history: [11010011] (0:ok, 1:fail).
+(Jun 01 2018 22:35:01,  868516 sec) TxPacket()           NAK received - resending packet. [PktNum=0x26]
+(Jun 01 2018 22:35:01,  868516 sec) TxPacket()           Packet xmit history: [10011001] (0:ok, 1:fail).
+(Jun 01 2018 22:35:08,  868523 sec) TxPacket()           NAK received - resending packet. [PktNum=0x26]
+(Jun 01 2018 22:35:08,  868523 sec) TxPacket()           Packet xmit history: [00110011] (0:ok, 1:fail).
+(Jun 01 2018 22:35:54,  868569 sec) Tx()                 Transmission completed successfully [45 packets, 39864 bytes, 385 sec, 105.7 bps]
+(Jun 01 2018 22:35:54,  868569 sec) UpLoadFile()         Upload successful.
+(Jun 01 2018 22:36:04,  868579 sec) UpLoadFile()         Uploading "7827.099.log" to host as "7827.099.log".
+(Jun 01 2018 22:36:12,  868587 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 01 2018 22:36:20,  868595 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Jun 01 2018 22:36:20,  868595 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 01 2018 22:36:49,  868624 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Jun 01 2018 22:36:49,  868624 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Jun 01 2018 22:36:56,  868631 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Jun 01 2018 22:36:56,  868631 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(Jun 01 2018 22:37:06,  868641 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(Jun 01 2018 22:37:06,  868641 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(Jun 01 2018 22:37:25,  868660 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jun 01 2018 22:37:25,  868660 sec) TxPacket()           Packet xmit history: [01101001] (0:ok, 1:fail).
+(Jun 01 2018 22:37:32,  868667 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jun 01 2018 22:37:32,  868667 sec) TxPacket()           Packet xmit history: [11010011] (0:ok, 1:fail).
+(Jun 01 2018 22:37:46,  868681 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jun 01 2018 22:37:46,  868681 sec) TxPacket()           Packet xmit history: [10011001] (0:ok, 1:fail).
+(Jun 01 2018 22:38:07,  868702 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jun 01 2018 22:38:08,  868702 sec) TxPacket()           Packet xmit history: [11001001] (0:ok, 1:fail).
+(Jun 01 2018 22:38:12,  868707 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jun 01 2018 22:38:12,  868707 sec) TxPacket()           Packet xmit history: [10010011] (0:ok, 1:fail).
+(Jun 01 2018 22:39:23,  868778 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Jun 01 2018 22:39:23,  868778 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(Jun 01 2018 22:39:33,  868788 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Jun 01 2018 22:39:33,  868788 sec) TxPacket()           Packet xmit history: [11000101] (0:ok, 1:fail).
+(Jun 01 2018 22:39:39,  868794 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Jun 01 2018 22:39:39,  868794 sec) TxPacket()           Packet xmit history: [10001011] (0:ok, 1:fail).
+(Jun 01 2018 22:40:12,  868827 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Jun 01 2018 22:40:13,  868827 sec) TxPacket()           Packet xmit history: [01011001] (0:ok, 1:fail).
+(Jun 01 2018 22:40:21,  868836 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Jun 01 2018 22:40:21,  868836 sec) TxPacket()           Packet xmit history: [10110011] (0:ok, 1:fail).
+(Jun 01 2018 22:40:28,  868842 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Jun 01 2018 22:40:28,  868843 sec) TxPacket()           Packet xmit history: [01100111] (0:ok, 1:fail).
+(Jun 01 2018 22:40:34,  868848 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Jun 01 2018 22:40:34,  868849 sec) TxPacket()           Packet xmit history: [11001111] (0:ok, 1:fail).
+(Jun 01 2018 22:41:06,  868881 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Jun 01 2018 22:41:06,  868881 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 01 2018 22:41:29,  868903 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jun 01 2018 22:41:29,  868904 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jun 01 2018 22:41:36,  868911 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jun 01 2018 22:41:36,  868911 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Jun 01 2018 22:41:52,  868927 sec) Tx()                 Transmission completed successfully [27 packets, 22993 bytes, 338 sec, 68.5 bps]
+(Jun 01 2018 22:41:52,  868927 sec) UpLoadFile()         Upload successful.
+(Jun 01 2018 22:42:02,  868937 sec) UpLoad()             Files successfully uploaded: 2
+(Jun 01 2018 22:42:03,  868937 sec) UpLoad()             Upload complete.
+(Jun 01 2018 22:42:07,  868941 sec) logout()             Log-out successful.
+(Jun 01 2018 22:42:08,  868943 sec) Telemetry()          Telemetry cycle complete: PrfId=99 ConnectionAttempts=6  Connections=5
+
+
+(Jun 01 2018 22:42:09) LogSize()            Log file is 38924 bytes.  Limit is 40960 bytes.
+
+(Jun 01 2018 22:42:08,  868943 sec) TelemetryTerminate(  Parsing new mission configuration.
+(Jun 01 2018 22:42:11,  868946 sec) configure()          Parsing configurators in "mission.cfg".
+(Jun 01 2018 22:42:19,  868954 sec) configure()             TelemetryRetry(15)          [0x7BBC] [TelemetryRetry(15)].
+(Jun 01 2018 22:42:19,  868954 sec) configure()          Configuration CRCs and syntax OK.
+(Jun 01 2018 22:42:19,  868954 sec) ConfigSupervisor()   Configuration accepted.
+(Jun 01 2018 22:42:20,  868954 sec) TelemetryTerminate(  Reconditioning the file system.
+(Jun 01 2018 22:42:45,      11 sec) DescentInit()        Deep profile 100 initiated at mission-time 868968sec.
+(Jun 01 2018 22:42:47,      13 sec) DescentInit()        Surface pressure: -0.4dbars.
+(Jun 01 2018 22:42:52,      18 sec) PistonMoveAbsWTO()    206->075 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 [649sec, 14.4Volts, 0.161Amps, CPT:649sec]
+(Jun 01 2018 22:53:51,     677 sec) Descent()            Pressure: 52.5
+(Jun 01 2018 23:42:38,    3604 sec) Descent()            Pressure: 426.4
+(Jun 02 2018 00:42:38,    7204 sec) Descent()            Pressure: 746.1
+(Jun 02 2018 01:42:38,   10804 sec) Descent()            Pressure: 933.0
+
+<EOT>

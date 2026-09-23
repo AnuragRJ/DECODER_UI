@@ -2,8 +2,8 @@
 
 Contract under test (see decoder-ui/FLEET_STATUS.md):
 
-* Status rule boundaries: ACTIVE (<=10d), OVERDUE (10-60d),
-  NO COMMUNICATION 60+ DAYS (>=60d), NO DATA (no timestamp; never "dead").
+* Status rule boundaries: ACTIVE (<=10d), OVERDUE (10-80d),
+  NO PROFILE DATA 80+ DAYS (>=80d), NO DATA (no timestamp; never "dead").
 * JULD anchor math (days since 1950-01-01 UTC).
 * FTP LIST parsing (real captured line shapes) and listing fingerprints.
 * Profile summary from filenames only (Prof#, gaps, latest-file preference).
@@ -160,8 +160,10 @@ def test_status_boundaries():
     assert fs.profile_data_status(10.0) == "ACTIVE / RECENT PROFILE"
     assert fs.profile_data_status(10.001) == "PROFILE OVERDUE"
     assert fs.profile_data_status(59.999) == "PROFILE OVERDUE"
-    assert fs.profile_data_status(60.0) == "NO RECENT PROFILE DATA 60+ DAYS"
-    assert fs.profile_data_status(4000.0) == "NO RECENT PROFILE DATA 60+ DAYS"
+    assert fs.profile_data_status(60.0) == "PROFILE OVERDUE"
+    assert fs.profile_data_status(79.999) == "PROFILE OVERDUE"
+    assert fs.profile_data_status(80.0) == "NO RECENT PROFILE DATA 80+ DAYS"
+    assert fs.profile_data_status(4000.0) == "NO RECENT PROFILE DATA 80+ DAYS"
     assert "dead" not in fs.profile_data_status(4000.0).lower()
 
 

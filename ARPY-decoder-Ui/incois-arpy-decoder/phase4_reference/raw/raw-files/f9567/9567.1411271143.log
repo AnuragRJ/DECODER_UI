@@ -1,0 +1,94 @@
+(Nov 27 2014 11:44:01,     828 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Nov 27 2014 11:44:32,     859 sec) GpsServices()        GPS almanac is current.
+(Nov 27 2014 11:44:32,     859 sec) GpsServices()        Initiating GPS fix acquisition.
+(Nov 27 2014 11:45:05,     892 sec) gga()                $GPGGA,114440,1026.4461,N,08435.3203,E,1,08,0.9,21.1,M,-85.7,M,,*58
+(Nov 27 2014 11:45:06,     892 sec) GpsServices()        Profile 0 GPS fix obtained in 33 seconds.
+(Nov 27 2014 11:45:06,     892 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Nov 27 2014 11:45:06,     893 sec) GpsServices()        Fix:   84.589  10.441 11/27/2014 114440    8
+(Nov 27 2014 11:45:34,     921 sec) gga()                $GPGGA,114510,1026.3952,N,08435.3587,E,1,09,0.9,9.4,M,-85.7,M,,*63
+(Nov 27 2014 11:45:40,     927 sec) gga()                $GPGGA,114540,1026.3401,N,08435.3986,E,1,09,0.9,9.7,M,-85.7,M,,*63
+(Nov 27 2014 11:45:40,     927 sec) GpsServices()        APF9 RTC skew (0s) OK.
+(Nov 27 2014 11:45:41,     927 sec) LogNmeaSentences()   ,18,40,083,46,19,11,268,45,21,32,159,33,22,52,027,49*7A
+(Nov 27 2014 11:45:41,     928 sec) LogNmeaSentences()   $GPGSV,3,3,12,25,23,089,43,27,15,239,44,31,71,217,49,32,02,315,33*7A
+(Nov 27 2014 11:45:50,     937 sec) LogNmeaSentences()   $GPRMC,114550,A,1026.3222,N,08435.4121,E,007.9,142.9,271114,001.7,W*6E
+(Nov 27 2014 11:45:50,     937 sec) LogNmeaSentences()   $GPGGA,114550,1026.3222,N,08435.4121,E,1,09,0.9,10.1,M,-85.7,M,,*59
+(Nov 27 2014 11:45:51,     938 sec) LogNmeaSentences()   $GPGSA,A,3,04,,,14,18,19,21,22,25,27,31,,1.8,0.9,1.6*36
+(Nov 27 2014 11:45:51,     938 sec) LogNmeaSentences()   $GPGSV,3,1,12,04,18,316,42,11,03,311,33,12,02,059,31,14,38,356,47*75
+(Nov 27 2014 11:45:51,     938 sec) LogNmeaSentences()   $GPGSV,3,2,12,18,40,083,48,19,11,268,42,21,32,159,26,22,52,027,49*77
+(Nov 27 2014 11:45:52,     939 sec) LogNmeaSentences()   $GPGSV,3,3,12,25,23,089,42,27,15,239,44,31,71,217,49,32,02,315,30*78
+(Nov 27 2014 11:46:00,     947 sec) LogNmeaSentences()   $GPRMC,114600,A,1026.3047,N,08435.4246,E,007.7,143.8,271114,001.7,W*65
+(Nov 27 2014 11:46:00,     947 sec) LogNmeaSentences()   $GPGGA,114600,1026.3047,N,08435.4246,E,1,09,0.9,10.1,M,-85.7,M,,*5C
+(Nov 27 2014 11:46:01,     948 sec) LogNmeaSentences()   $GPGSA,A,3,04,,,14,18,19,21,22,25,27,31,,1.8,0.9,1.6*36
+(Nov 27 2014 11:46:01,     948 sec) LogNmeaSentences()   $GPGSV,3,1,12,04,18,316,42,11,03,311,31,12,02,058,31,14,37,356,47*79
+(Nov 27 2014 11:46:01,     948 sec) LogNmeaSentences()   $GPGSV,3,2,12,18,40,083,48,19,11,268,40,21,31,159,33,22,52,027,49*72
+(Nov 27 2014 11:46:02,     949 sec) LogNmeaSentences()   $GPGSV,3,3,12,25,23,089,42,27,15,239,44,31,71,217,49,32,02,315,20*79
+(Nov 27 2014 11:46:02,     949 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.80,,,,,,,,*7C
+(Nov 27 2014 11:46:10,     957 sec) LogNmeaSentences()   $GPRMC,114610,A,1026.2868,N,08435.4378,E,007.7,141.8,271114,001.7,W*6E
+(Nov 27 2014 11:46:10,     957 sec) LogNmeaSentences()   $GPGGA,114610,1026.2868,N,08435.4378,E,1,09,0.9,9.5,M,-85.7,M,,*69
+(Nov 27 2014 11:46:11,     958 sec) GpsServices()        GPS services complete.
+(Nov 27 2014 11:46:35,     982 sec) CLogin()             Connecting to primary host.
+(Nov 27 2014 11:47:37,    1043 sec) chat()               Expected string [CONNECT] not received.
+(Nov 27 2014 11:47:37,    1043 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Nov 27 2014 11:47:50,    1057 sec) CLogin()             Connection 1 established in 75 seconds.
+(Nov 27 2014 11:48:05,    1072 sec) login()              Login successful.
+(Nov 27 2014 11:48:10,    1076 sec) chat()               Expected string [cmd>] not received.
+(Nov 27 2014 11:48:10,    1076 sec) login()              Attempt to set the command prompt failed.
+(Nov 27 2014 11:48:14,    1081 sec) CLogin()             Logged in to host.  [Login required 24 seconds]
+(Nov 27 2014 11:48:22,    1089 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Nov 27 2014 11:48:25,    1091 sec) Rx()                 Initiating transfer. [0x43]
+(Nov 27 2014 11:48:33,    1099 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Nov 27 2014 11:48:37,    1103 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 12 sec, 85.3 bps]
+(Nov 27 2014 11:48:37,    1103 sec) RxConfig()           Download successful.
+(Nov 27 2014 11:48:51,    1117 sec) WriteVitals()        Writing vitals to "9567.1411271143".
+(Nov 27 2014 11:48:55,    1122 sec) UpLoadFile()         Uploading "9567.1411271130.log" to host as "9567.1411271130.log".
+(Nov 27 2014 11:48:57,    1124 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 27 2014 11:50:00,    1187 sec) Tx()                 Transmission completed successfully [11 packets, 10934 bytes, 62 sec, 181.7 bps]
+(Nov 27 2014 11:50:00,    1187 sec) UpLoadFile()         Upload successful.
+(Nov 27 2014 11:50:04,    1191 sec) UpLoadFile()         Uploading "9567.1411271143" to host as "9567.1411271143".
+(Nov 27 2014 11:50:06,    1193 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 27 2014 11:50:16,    1203 sec) Tx()                 Transmission completed successfully [1 packets, 696 bytes, 9 sec, 113.8 bps]
+(Nov 27 2014 11:50:16,    1203 sec) UpLoadFile()         Upload successful.
+(Nov 27 2014 11:50:22,    1209 sec) UpLoad()             Files successfully uploaded: 2
+(Nov 27 2014 11:50:23,    1209 sec) UpLoad()             Upload complete.
+(Nov 27 2014 11:50:27,    1213 sec) logout()             Log-out successful.
+(Nov 27 2014 11:50:28,    1214 sec) Telemetry()          Telemetry cycle complete: PrfId=0 ConnectionAttempts=2  Connections=1
+(Nov 27 2014 11:50:29,    1216 sec) configure()          Parsing configurators in "mission.cfg".
+(Nov 27 2014 11:50:33,    1220 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Nov 27 2014 11:50:34,    1220 sec) configure()          Configuration CRCs and syntax OK.
+(Nov 27 2014 11:50:34,    1220 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Nov 27 2014 11:50:34,    1221 sec) ConfigSupervisor()   Configuration accepted.
+(Nov 27 2014 12:05:42,    2129 sec) Prelude()            Logging configuration and initiating telemetry.
+(Nov 27 2014 12:05:42,    2129 sec) LogConfiguration()   Mission configuration for Apf9i FwRev 012811:
+(Nov 27 2014 12:05:42,    2129 sec) LogConfiguration()      AscentTimeOut(540) [min]
+(Nov 27 2014 12:05:42,    2129 sec) LogConfiguration()      AtDialCmd(AT+CBST=71,0,1;DT0088160000573) [primary]
+(Nov 27 2014 12:05:42,    2129 sec) LogConfiguration()      AltDialCmd(AT+CBST=7,0,1;DT0013016366303) [alternate]
+(Nov 27 2014 12:05:42,    2129 sec) LogConfiguration()      BuoyancyNudge(10) [count]
+(Nov 27 2014 12:05:42,    2129 sec) LogConfiguration()      BuoyancyNudgeInitial(22) [count]
+(Nov 27 2014 12:05:43,    2129 sec) LogConfiguration()      ConnectTimeOut(60) [sec]
+(Nov 27 2014 12:05:43,    2129 sec) LogConfiguration()      CpActivationP(500) [dbar]
+(Nov 27 2014 12:05:43,    2130 sec) LogConfiguration()      DeepProfileDescentTime(300) [min]
+(Nov 27 2014 12:05:43,    2130 sec) LogConfiguration()      DeepProfilePistonPos(16) [count]
+(Nov 27 2014 12:05:43,    2130 sec) LogConfiguration()      DeepProfilePressure(2000) [dbar]
+(Nov 27 2014 12:05:43,    2130 sec) LogConfiguration()      CompensatorHyperRetraction(254) [count]
+(Nov 27 2014 12:05:43,    2130 sec) LogConfiguration()      DownTime(13740) [min]
+(Nov 27 2014 12:05:43,    2130 sec) LogConfiguration()      FloatId(9567)
+(Nov 27 2014 12:05:43,    2130 sec) LogConfiguration()      FullExtension(227) [count]
+(Nov 27 2014 12:05:43,    2130 sec) LogConfiguration()      FullRetraction(9) [count]
+(Nov 27 2014 12:05:44,    2130 sec) LogConfiguration()      MaxAirBladder(124) [count]
+(Nov 27 2014 12:05:44,    2130 sec) LogConfiguration()      MaxLogKb(40) [KByte]
+(Nov 27 2014 12:05:44,    2131 sec) LogConfiguration()      MissionPrelude(360) [min]
+(Nov 27 2014 12:05:44,    2131 sec) LogConfiguration()      OkVacuum(96) [count]
+(Nov 27 2014 12:05:44,    2131 sec) LogConfiguration()      PActivationPistonPosition(16) [count]
+(Nov 27 2014 12:05:44,    2131 sec) LogConfiguration()      ParkDescentTime(300) [min]
+(Nov 27 2014 12:05:44,    2131 sec) LogConfiguration()      ParkPistonPos(66) [count]
+(Nov 27 2014 12:05:44,    2131 sec) LogConfiguration()      ParkPressure(1000) [dbar]
+(Nov 27 2014 12:05:44,    2131 sec) LogConfiguration()      PnPCycleLen(1)
+(Nov 27 2014 12:05:44,    2131 sec) LogConfiguration()      Pwd(0x3c35)
+(Nov 27 2014 12:05:45,    2131 sec) LogConfiguration()      TelemetryRetry(15) [min]
+(Nov 27 2014 12:05:45,    2131 sec) LogConfiguration()      TimeOfDay(DISABLED) [min]
+(Nov 27 2014 12:05:45,    2132 sec) LogConfiguration()      UpTime(660) [min]
+(Nov 27 2014 12:05:45,    2132 sec) LogConfiguration()      User(f9567)
+(Nov 27 2014 12:05:45,    2132 sec) LogConfiguration()      Verbosity(2)
+(Nov 27 2014 12:05:45,    2132 sec) LogConfiguration()      DebugBits(0x0002)
+
+<EOT>

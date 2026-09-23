@@ -14,7 +14,7 @@ export interface FleetFilters {
 
 /** Default (operational) ordering: least recent profile state first. */
 const STATUS_RANK: Record<FleetDataStatus, number> = {
-  "NO RECENT PROFILE DATA 60+ DAYS": 0,
+  "NO RECENT PROFILE DATA 80+ DAYS": 0,
   "PROFILE OVERDUE": 1,
   "NO DATA": 2,
   "ACTIVE / RECENT PROFILE": 3,
@@ -139,7 +139,7 @@ export const FLEET_STATUS_META: Record<
     pill: "bg-amber-50 text-amber-900 border-amber-300",
     dot: "bg-amber-500",
   },
-  "NO RECENT PROFILE DATA 60+ DAYS": {
+  "NO RECENT PROFILE DATA 80+ DAYS": {
     pill: "bg-rose-50 text-rose-800 border-rose-300",
     dot: "bg-rose-500",
   },

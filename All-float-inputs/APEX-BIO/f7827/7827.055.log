@@ -1,0 +1,402 @@
+(Jan 24 2018 18:21:09,   85406 sec) TelemetryInit()      Profile 54. (Apf9i FwRev: 061016)
+(Jan 24 2018 18:28:11,   85828 sec) AirSystem()          Battery [187cnt, 14.5V]  Current [77cnt, 310.3mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [50s]
+(Jan 24 2018 18:28:48,   85865 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 248.1uM 23.647C 30.037 8.938 155.629 / 195,183,538
+(Jan 24 2018 18:28:52,   85869 sec) GpsServices()        GPS almanac is current.
+(Jan 24 2018 18:28:52,   85869 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 24 2018 18:29:16,   85893 sec) gga()                $GPGGA,182850,1545.7464,N,06427.5201,E,0,00,,,M,,M,,*5E
+(Jan 24 2018 18:29:27,   85903 sec) gga()                $GPGGA,182900,1545.7464,N,06427.5201,E,0,00,,,M,,M,,*5A
+(Jan 24 2018 18:29:37,   85914 sec) gga()                $GPGGA,182900,1545.7464,N,06427.5201,E,0,00,,,M,,M,,*5A
+(Jan 24 2018 18:29:48,   85925 sec) gga()                $GPGGA,182910,1545.7464,N,06427.5201,E,0,00,,,M,,M,,*5B
+(Jan 24 2018 18:30:31,   85968 sec) gga()                $GPGGA,182920,1544.8743,N,06426.3146,E,1,10,0.8,-0.2,M,-62.7,M,,*40
+(Jan 24 2018 18:30:32,   85969 sec) GpsServices()        Profile 54 GPS fix obtained in 100 seconds.
+(Jan 24 2018 18:30:32,   85969 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 24 2018 18:30:32,   85969 sec) GpsServices()        Fix:   64.439  15.748 01/24/2018 182920   10
+(Jan 24 2018 18:31:16,   86013 sec) gga()                $GPGGA,183020,1544.8665,N,06426.3185,E,1,10,0.8,-1.2,M,-62.7,M,,*43
+(Jan 24 2018 18:31:24,   86021 sec) gga()                $GPGGA,183110,1544.8599,N,06426.3221,E,1,10,0.8,-2.7,M,-62.7,M,,*4A
+(Jan 24 2018 18:31:24,   86021 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Jan 24 2018 18:31:24,   86021 sec) GpsServices()        GPS services complete.
+(Jan 24 2018 18:31:50,   86047 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 18:32:01,   86058 sec) CLogin()             Connection 1 established in 11 seconds.
+(Jan 24 2018 18:32:31,   86087 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:32:31,   86088 sec) login()              Login prompt not received.
+(Jan 24 2018 18:33:01,   86117 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:33:01,   86118 sec) login()              Login prompt not received.
+(Jan 24 2018 18:33:15,   86132 sec) CLogin()             Connection 2 established in 85 seconds.
+(Jan 24 2018 18:33:45,   86161 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:33:45,   86162 sec) login()              Login prompt not received.
+(Jan 24 2018 18:34:15,   86191 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:34:15,   86192 sec) login()              Login prompt not received.
+(Jan 24 2018 18:34:15,   86192 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 18:34:36,   86213 sec) CLogin()             Connection 3 established in 166 seconds.
+(Jan 24 2018 18:35:06,   86242 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:35:06,   86243 sec) login()              Login prompt not received.
+(Jan 24 2018 18:35:36,   86272 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:35:36,   86273 sec) login()              Login prompt not received.
+(Jan 24 2018 18:36:37,   86333 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 18:36:37,   86334 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 18:36:37,   86334 sec) connect()            Connection attempt failed.
+(Jan 24 2018 18:36:37,   86334 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 18:36:38,   86334 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 24 2018 18:36:44,   86341 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 18:37:45,   86401 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 18:37:45,   86402 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Jan 24 2018 18:37:45,   86402 sec) connect()            Connection attempt failed.
+(Jan 24 2018 18:37:53,   86410 sec) CLogin()             Connection 4 established in 70 seconds.
+(Jan 24 2018 18:38:23,   86439 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:38:23,   86440 sec) login()              Login prompt not received.
+(Jan 24 2018 18:38:53,   86469 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:38:53,   86470 sec) login()              Login prompt not received.
+(Jan 24 2018 18:38:53,   86470 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 18:39:33,   86509 sec) CLogin()             Connection 5 established in 170 seconds.
+(Jan 24 2018 18:40:03,   86539 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:40:03,   86540 sec) login()              Login prompt not received.
+(Jan 24 2018 18:40:33,   86569 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:40:33,   86570 sec) login()              Login prompt not received.
+(Jan 24 2018 18:41:26,   86623 sec) CLogin()             Connection 6 established in 283 seconds.
+(Jan 24 2018 18:41:56,   86652 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:41:56,   86653 sec) login()              Login prompt not received.
+(Jan 24 2018 18:42:53,   86709 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Jan 24 2018 18:42:53,   86710 sec) login()              Password prompt not received.
+(Jan 24 2018 18:42:53,   86710 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 18:42:53,   86710 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 24 2018 18:42:54,   86711 sec) DownLoadMissionCfg(  Aborting download: Retry limit [2] exceeded.
+(Jan 24 2018 18:42:54,   86711 sec) WriteVitals()        Writing vitals to "7827.054.msg".
+(Jan 24 2018 18:42:57,   86714 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 18:43:19,   86736 sec) CLogin()             Connection 7 established in 22 seconds.
+(Jan 24 2018 18:43:50,   86766 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:43:50,   86767 sec) login()              Login prompt not received.
+(Jan 24 2018 18:44:20,   86796 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:44:20,   86797 sec) login()              Login prompt not received.
+(Jan 24 2018 18:44:58,   86835 sec) CLogin()             Connection 8 established in 121 seconds.
+(Jan 24 2018 18:45:28,   86864 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:45:28,   86865 sec) login()              Login prompt not received.
+(Jan 24 2018 18:45:58,   86894 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:45:58,   86895 sec) login()              Login prompt not received.
+(Jan 24 2018 18:45:58,   86895 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 18:46:59,   86955 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 18:46:59,   86956 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 18:46:59,   86956 sec) connect()            Connection attempt failed.
+(Jan 24 2018 18:48:00,   87016 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 18:48:00,   87017 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 18:48:00,   87017 sec) connect()            Connection attempt failed.
+(Jan 24 2018 18:48:00,   87017 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 18:48:01,   87018 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 18:48:18,   87035 sec) CLogin()             Connection 9 established in 17 seconds.
+(Jan 24 2018 18:48:48,   87064 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:48:48,   87065 sec) login()              Login prompt not received.
+(Jan 24 2018 18:49:18,   87094 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:49:18,   87095 sec) login()              Login prompt not received.
+(Jan 24 2018 18:49:31,   87108 sec) CLogin()             Connection 10 established in 90 seconds.
+(Jan 24 2018 18:50:02,   87138 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:50:02,   87139 sec) login()              Login prompt not received.
+(Jan 24 2018 18:50:32,   87168 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:50:32,   87169 sec) login()              Login prompt not received.
+(Jan 24 2018 18:50:32,   87169 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 18:51:28,   87225 sec) CLogin()             Connection 11 established in 207 seconds.
+(Jan 24 2018 18:51:58,   87254 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:51:58,   87255 sec) login()              Login prompt not received.
+(Jan 24 2018 18:52:28,   87284 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:52:28,   87285 sec) login()              Login prompt not received.
+(Jan 24 2018 18:53:06,   87322 sec) CLogin()             Connection 12 established in 305 seconds.
+(Jan 24 2018 18:53:36,   87352 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:53:36,   87353 sec) login()              Login prompt not received.
+(Jan 24 2018 18:54:06,   87382 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 18:54:06,   87383 sec) login()              Login prompt not received.
+(Jan 24 2018 18:54:06,   87383 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 18:54:06,   87383 sec) UpLoad()             Files successfully uploaded: 0
+(Jan 24 2018 18:54:07,   87383 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jan 24 2018 18:54:07,   87384 sec) logout()             No carrier detected.
+(Jan 24 2018 18:54:07,   87384 sec) Telemetry()          Telemetry cycle complete: PrfId=54 ConnectionAttempts=16  Connections=12
+(Jan 24 2018 19:09:22,   88298 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Jan 24 2018 19:09:59,   88336 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 252.4uM 22.988C 30.109 8.895 177.079 / 200,172,538
+(Jan 24 2018 19:10:03,   88340 sec) GpsServices()        GPS almanac is current.
+(Jan 24 2018 19:10:03,   88340 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 24 2018 19:10:57,   88393 sec) gga()                $GPGGA,191000,1544.5186,N,06426.4948,E,6,10,0.8,4.5,M,-62.7,M,,*63
+(Jan 24 2018 19:11:40,   88436 sec) gga()                $GPGGA,191010,1544.5167,N,06426.4956,E,1,09,0.8,2.2,M,-62.7,M,,*6C
+(Jan 24 2018 19:11:40,   88437 sec) GpsServices()        Profile 54 GPS fix obtained in 97 seconds.
+(Jan 24 2018 19:11:40,   88437 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 24 2018 19:11:40,   88437 sec) GpsServices()        Fix:   64.442  15.742 01/24/2018 191010    9
+(Jan 24 2018 19:12:26,   88483 sec) gga()                $GPGGA,191130,1544.5057,N,06426.5031,E,1,10,0.8,-1.6,M,-62.7,M,,*46
+(Jan 24 2018 19:12:34,   88491 sec) gga()                $GPGGA,191220,1544.4985,N,06426.5077,E,1,10,0.8,-3.4,M,-62.7,M,,*41
+(Jan 24 2018 19:12:34,   88491 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Jan 24 2018 19:12:35,   88491 sec) GpsServices()        GPS services complete.
+(Jan 24 2018 19:13:00,   88517 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 19:13:20,   88537 sec) CLogin()             Connection 13 established in 20 seconds.
+(Jan 24 2018 19:13:50,   88566 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:13:50,   88567 sec) login()              Login prompt not received.
+(Jan 24 2018 19:13:50,   88567 sec) login()              No carrier detected.
+(Jan 24 2018 19:13:59,   88576 sec) CLogin()             Connection 14 established in 59 seconds.
+(Jan 24 2018 19:14:30,   88606 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:14:30,   88607 sec) login()              Login prompt not received.
+(Jan 24 2018 19:15:00,   88636 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:15:00,   88637 sec) login()              Login prompt not received.
+(Jan 24 2018 19:15:00,   88637 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 19:16:01,   88697 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 19:16:01,   88698 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 19:16:01,   88698 sec) connect()            Connection attempt failed.
+(Jan 24 2018 19:17:02,   88758 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 19:17:02,   88759 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 19:17:02,   88759 sec) connect()            Connection attempt failed.
+(Jan 24 2018 19:17:02,   88759 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 19:17:03,   88759 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 24 2018 19:17:09,   88766 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 19:17:19,   88776 sec) CLogin()             Connection 15 established in 11 seconds.
+(Jan 24 2018 19:17:49,   88805 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:17:49,   88806 sec) login()              Login prompt not received.
+(Jan 24 2018 19:18:19,   88835 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:18:19,   88836 sec) login()              Login prompt not received.
+(Jan 24 2018 19:18:34,   88851 sec) CLogin()             Connection 16 established in 86 seconds.
+(Jan 24 2018 19:19:04,   88880 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:19:04,   88881 sec) login()              Login prompt not received.
+(Jan 24 2018 19:19:34,   88910 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:19:34,   88911 sec) login()              Login prompt not received.
+(Jan 24 2018 19:19:34,   88911 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 19:20:35,   88971 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 19:20:35,   88972 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 19:20:35,   88972 sec) connect()            Connection attempt failed.
+(Jan 24 2018 19:21:36,   89032 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 19:21:36,   89033 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 19:21:36,   89033 sec) connect()            Connection attempt failed.
+(Jan 24 2018 19:21:36,   89033 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 19:21:37,   89033 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 24 2018 19:21:37,   89034 sec) DownLoadMissionCfg(  Aborting download: Retry limit [2] exceeded.
+(Jan 24 2018 19:21:37,   89034 sec) WriteVitals()        Writing vitals to "7827.054.msg".
+(Jan 24 2018 19:21:40,   89037 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 19:21:50,   89047 sec) CLogin()             Connection 17 established in 10 seconds.
+(Jan 24 2018 19:22:20,   89076 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:22:20,   89077 sec) login()              Login prompt not received.
+(Jan 24 2018 19:22:50,   89106 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:22:50,   89107 sec) login()              Login prompt not received.
+(Jan 24 2018 19:23:04,   89121 sec) CLogin()             Connection 18 established in 84 seconds.
+(Jan 24 2018 19:23:34,   89150 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:23:34,   89151 sec) login()              Login prompt not received.
+(Jan 24 2018 19:24:04,   89180 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:24:04,   89181 sec) login()              Login prompt not received.
+(Jan 24 2018 19:24:04,   89181 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 19:24:54,   89231 sec) CLogin()             Connection 19 established in 194 seconds.
+(Jan 24 2018 19:25:25,   89261 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:25:25,   89262 sec) login()              Login prompt not received.
+(Jan 24 2018 19:25:55,   89291 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:25:55,   89292 sec) login()              Login prompt not received.
+(Jan 24 2018 19:26:14,   89311 sec) CLogin()             Connection 20 established in 274 seconds.
+(Jan 24 2018 19:26:45,   89341 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:26:45,   89342 sec) login()              Login prompt not received.
+(Jan 24 2018 19:27:15,   89371 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:27:15,   89372 sec) login()              Login prompt not received.
+(Jan 24 2018 19:27:15,   89372 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 19:27:16,   89373 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 19:27:35,   89392 sec) CLogin()             Connection 21 established in 19 seconds.
+(Jan 24 2018 19:28:05,   89421 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:28:05,   89422 sec) login()              Login prompt not received.
+(Jan 24 2018 19:28:35,   89451 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:28:35,   89452 sec) login()              Login prompt not received.
+(Jan 24 2018 19:28:49,   89465 sec) CLogin()             Connection 22 established in 93 seconds.
+(Jan 24 2018 19:29:19,   89495 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:29:19,   89496 sec) login()              Login prompt not received.
+(Jan 24 2018 19:29:19,   89496 sec) login()              No carrier detected.
+(Jan 24 2018 19:29:19,   89496 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 19:30:20,   89556 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 19:30:20,   89557 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 19:30:20,   89557 sec) connect()            Connection attempt failed.
+(Jan 24 2018 19:31:21,   89617 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 19:31:21,   89618 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 19:31:21,   89618 sec) connect()            Connection attempt failed.
+(Jan 24 2018 19:31:21,   89618 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 19:31:22,   89618 sec) UpLoad()             Files successfully uploaded: 0
+(Jan 24 2018 19:31:22,   89619 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jan 24 2018 19:31:22,   89619 sec) logout()             No carrier detected.
+(Jan 24 2018 19:31:22,   89619 sec) Telemetry()          Telemetry cycle complete: PrfId=54 ConnectionAttempts=32  Connections=22
+(Jan 24 2018 19:46:38,   90534 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [125cnt, 6.2"Hg].
+(Jan 24 2018 19:47:23,   90580 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 246.9uM 23.805C 30.027 8.892 150.487 / 188,170,538
+(Jan 24 2018 19:47:27,   90584 sec) GpsServices()        GPS almanac is current.
+(Jan 24 2018 19:47:27,   90584 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 24 2018 19:48:17,   90633 sec) gga()                $GPGGA,194720,1544.1946,N,06426.6947,E,6,08,0.9,-3.7,M,-62.7,M,,*4E
+(Jan 24 2018 19:48:59,   90676 sec) gga()                $GPGGA,194730,1544.1933,N,06426.6955,E,6,09,0.9,0.3,M,-62.7,M,,*65
+(Jan 24 2018 19:50:26,   90763 sec) gga()                $GPGGA,194930,1544.1751,N,06426.7082,E,1,10,0.8,0.1,M,-62.7,M,,*6F
+(Jan 24 2018 19:50:27,   90764 sec) GpsServices()        Profile 54 GPS fix obtained in 180 seconds.
+(Jan 24 2018 19:50:27,   90764 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 24 2018 19:50:27,   90764 sec) GpsServices()        Fix:   64.445  15.736 01/24/2018 194930   10
+(Jan 24 2018 19:51:16,   90813 sec) gga()                $GPGGA,195020,1544.1694,N,06426.7142,E,1,10,0.8,-1.4,M,-62.7,M,,*4A
+(Jan 24 2018 19:51:24,   90821 sec) gga()                $GPGGA,195110,1544.1623,N,06426.7197,E,1,10,0.8,-0.2,M,-62.7,M,,*4B
+(Jan 24 2018 19:51:24,   90821 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Jan 24 2018 19:51:34,   90831 sec) LogNmeaSentences()   $GPRMC,195120,A,1544.1612,N,06426.7208,E,001.0,139.0,240118,000.6,W*63
+(Jan 24 2018 19:51:35,   90831 sec) LogNmeaSentences()   $GPGGA,195120,1544.1612,N,06426.7208,E,1,10,0.8,-0.6,M,-62.7,M,,*4B
+(Jan 24 2018 19:51:35,   90832 sec) LogNmeaSentences()   $GPGSA,A,3,02,05,06,12,,15,,19,20,24,25,29,1.1,0.8,0.8*34
+(Jan 24 2018 19:51:36,   90833 sec) LogNmeaSentences()   $GPGSV,3,1,12,02,51,012,46,05,52,137,49,06,19,033,44,12,56,349,50*70
+(Jan 24 2018 19:51:36,   90833 sec) LogNmeaSentences()   $GPGSV,3,2,12,13,04,166,37,15,05,196,41,17,01,079,25,19,11,066,40*70
+(Jan 24 2018 19:51:37,   90834 sec) LogNmeaSentences()   $GPGSV,3,3,12,20,20,197,41,24,41,232,47,25,20,327,44,29,12,296,44*75
+(Jan 24 2018 19:51:44,   90841 sec) LogNmeaSentences()   $GPRMC,195130,A,1544.1598,N,06426.7219,E,000.0,154.2,240118,000.6,W*6B
+(Jan 24 2018 19:51:45,   90841 sec) LogNmeaSentences()   $GPGGA,195130,1544.1598,N,06426.7219,E,1,10,0.8,-0.8,M,-62.7,M,,*45
+(Jan 24 2018 19:51:45,   90842 sec) LogNmeaSentences()   $GPGSA,A,3,02,05,06,12,,15,,19,20,24,25,29,1.1,0.8,0.8*34
+(Jan 24 2018 19:51:46,   90843 sec) LogNmeaSentences()   $GPGSV,3,1,12,02,51,012,46,05,52,136,49,06,19,033,42,12,56,349,49*7F
+(Jan 24 2018 19:51:46,   90843 sec) LogNmeaSentences()   $GPGSV,3,2,12,13,04,166,35,15,05,196,41,17,01,079,24,19,11,066,39*7D
+(Jan 24 2018 19:51:47,   90844 sec) LogNmeaSentences()   $GPGSV,3,3,12,20,20,197,35,24,41,232,47,25,20,327,42,29,12,296,45*71
+(Jan 24 2018 19:51:54,   90851 sec) LogNmeaSentences()   $GPRMC,195140,A,1544.1583,N,06426.7229,E,001.3,199.5,240118,000.6,W*61
+(Jan 24 2018 19:51:55,   90851 sec) LogNmeaSentences()   $GPGGA,195140,1544.1583,N,06426.7229,E,1,10,0.8,0.5,M,-62.7,M,,*6B
+(Jan 24 2018 19:51:55,   90852 sec) LogNmeaSentences()   $GPGSA,A,3,02,05,06,12,,15,19,20,24,25,29,,1.1,0.8,0.8*34
+(Jan 24 2018 19:51:56,   90853 sec) LogNmeaSentences()   $GPGSV,3,1,12,02,51,012,46,05,52,136,49,06,19,033,37,12,56,349,50*75
+(Jan 24 2018 19:51:56,   90853 sec) LogNmeaSentences()   $GPGSV,3,2,12,13,04,166,39,15,05,196,43,19,11,066,40,20,20,197,42*7B
+(Jan 24 2018 19:51:57,   90854 sec) LogNmeaSentences()   $GPGSV,3,3,12,24,41,232,48,25,20,327,43,29,12,296,45,21,01,233,00*76
+(Jan 24 2018 19:52:04,   90861 sec) LogNmeaSentences()   $GPRMC,195150,A,1544.1570,N,06426.7240,E,000.8,140.1,240118,000.6,W*69
+(Jan 24 2018 19:52:05,   90861 sec) LogNmeaSentences()   $GPGGA,195150,1544.1570,N,06426.7240,E,1,10,0.8,0.3,M,-62.7,M,,*6F
+(Jan 24 2018 19:52:05,   90862 sec) LogNmeaSentences()   $GPGSA,A,3,02,05,06,12,,15,19,20,24,25,29,,1.1,0.8,0.8*34
+(Jan 24 2018 19:52:06,   90863 sec) LogNmeaSentences()   $GPGSV,3,1,11,02,51,012,46,05,52,136,48,06,19,033,42,12,56,349,49*7D
+(Jan 24 2018 19:52:06,   90863 sec) LogNmeaSentences()   $GPGSV,3,2,11,13,04,166,41,15,05,196,45,19,11,066,40,20,20,196,41*73
+(Jan 24 2018 19:52:07,   90864 sec) LogNmeaSentences()   $GPGSV,3,3,11,24,41,232,48,25,20,327,44,29,12,296,44*43
+(Jan 24 2018 19:52:14,   90871 sec) LogNmeaSentences()   $GPRMC,195200,A,1544.1555,N,06426.7254,E,001.0,174.4,240118,000.6,W*66
+(Jan 24 2018 19:52:15,   90871 sec) LogNmeaSentences()   $GPGGA,195200,1544.1555,N,06426.7254,E,1,10,0.8,-0.4,M,-62.7,M,,*41
+(Jan 24 2018 19:52:15,   90872 sec) LogNmeaSentences()   $GPGSA,A,3,02,05,06,12,,15,19,20,24,25,29,,1.1,0.8,0.8*34
+(Jan 24 2018 19:52:16,   90873 sec) LogNmeaSentences()   $GPGSV,3,1,11,02,51,012,44,05,52,136,48,06,19,033,35,12,56,349,48*7E
+(Jan 24 2018 19:52:16,   90873 sec) LogNmeaSentences()   $GPGSV,3,2,11,13,04,166,36,15,05,196,37,19,11,066,42,20,20,196,40*75
+(Jan 24 2018 19:52:17,   90874 sec) LogNmeaSentences()   $GPGSV,3,3,11,24,41,232,46,25,20,327,37,29,12,296,43*4E
+(Jan 24 2018 19:52:17,   90874 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 4.00,,,,,,,,*73
+(Jan 24 2018 19:52:18,   90875 sec) GpsServices()        GPS services complete.
+(Jan 24 2018 19:52:43,   90900 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 19:53:01,   90918 sec) CLogin()             Connection 23 established in 18 seconds.
+(Jan 24 2018 19:53:31,   90947 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:53:31,   90948 sec) login()              Login prompt not received.
+(Jan 24 2018 19:54:01,   90977 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:54:01,   90978 sec) login()              Login prompt not received.
+(Jan 24 2018 19:54:18,   90995 sec) CLogin()             Connection 24 established in 95 seconds.
+(Jan 24 2018 19:54:48,   91024 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:54:48,   91025 sec) login()              Login prompt not received.
+(Jan 24 2018 19:55:18,   91054 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:55:18,   91055 sec) login()              Login prompt not received.
+(Jan 24 2018 19:55:18,   91055 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 19:56:08,   91105 sec) CLogin()             Connection 25 established in 205 seconds.
+(Jan 24 2018 19:56:38,   91134 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:56:38,   91135 sec) login()              Login prompt not received.
+(Jan 24 2018 19:57:08,   91164 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:57:08,   91165 sec) login()              Login prompt not received.
+(Jan 24 2018 19:57:14,   91170 sec) chat()               Expected string [OK] not received.
+(Jan 24 2018 19:57:14,   91171 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jan 24 2018 19:57:14,   91171 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jan 24 2018 19:57:14,   91171 sec) modem_connect()      Modem configuration failed.
+(Jan 24 2018 19:57:14,   91171 sec) connect()            Connection attempt failed.
+(Jan 24 2018 19:57:14,   91171 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 19:57:15,   91172 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 24 2018 19:57:21,   91178 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 19:57:36,   91193 sec) CLogin()             Connection 26 established in 15 seconds.
+(Jan 24 2018 19:58:07,   91223 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:58:07,   91224 sec) login()              Login prompt not received.
+(Jan 24 2018 19:58:37,   91253 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:58:37,   91254 sec) login()              Login prompt not received.
+(Jan 24 2018 19:58:47,   91264 sec) CLogin()             Connection 27 established in 86 seconds.
+(Jan 24 2018 19:59:17,   91293 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:59:17,   91294 sec) login()              Login prompt not received.
+(Jan 24 2018 19:59:47,   91323 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 19:59:47,   91324 sec) login()              Login prompt not received.
+(Jan 24 2018 19:59:47,   91324 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 20:00:48,   91384 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 20:00:48,   91385 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 20:00:48,   91385 sec) connect()            Connection attempt failed.
+(Jan 24 2018 20:01:49,   91445 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 20:01:49,   91446 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 20:01:49,   91446 sec) connect()            Connection attempt failed.
+(Jan 24 2018 20:01:49,   91446 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 20:01:50,   91446 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jan 24 2018 20:01:50,   91447 sec) DownLoadMissionCfg(  Aborting download: Retry limit [2] exceeded.
+(Jan 24 2018 20:01:50,   91447 sec) WriteVitals()        Writing vitals to "7827.054.msg".
+(Jan 24 2018 20:01:54,   91450 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 20:02:04,   91461 sec) CLogin()             Connection 28 established in 11 seconds.
+(Jan 24 2018 20:02:34,   91490 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:02:34,   91491 sec) login()              Login prompt not received.
+(Jan 24 2018 20:03:04,   91520 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:03:04,   91521 sec) login()              Login prompt not received.
+(Jan 24 2018 20:03:13,   91530 sec) CLogin()             Connection 29 established in 80 seconds.
+(Jan 24 2018 20:03:43,   91559 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:03:43,   91560 sec) login()              Login prompt not received.
+(Jan 24 2018 20:04:13,   91589 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:04:13,   91590 sec) login()              Login prompt not received.
+(Jan 24 2018 20:04:13,   91590 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 20:04:38,   91615 sec) CLogin()             Connection 30 established in 165 seconds.
+(Jan 24 2018 20:05:34,   91670 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Jan 24 2018 20:05:34,   91671 sec) login()              Password prompt not received.
+(Jan 24 2018 20:05:34,   91671 sec) login()              No carrier detected.
+(Jan 24 2018 20:06:35,   91731 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 20:06:35,   91732 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 24 2018 20:06:35,   91732 sec) connect()            Connection attempt failed.
+(Jan 24 2018 20:06:35,   91732 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 20:06:36,   91733 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 20:07:38,   91794 sec) chat()               Expected string [CONNECT] not received.
+(Jan 24 2018 20:07:38,   91795 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Jan 24 2018 20:07:38,   91795 sec) connect()            Connection attempt failed.
+(Jan 24 2018 20:07:47,   91804 sec) CLogin()             Connection 31 established in 71 seconds.
+(Jan 24 2018 20:08:18,   91834 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:08:18,   91835 sec) login()              Login prompt not received.
+(Jan 24 2018 20:08:48,   91864 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:08:48,   91865 sec) login()              Login prompt not received.
+(Jan 24 2018 20:08:48,   91865 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 24 2018 20:09:17,   91894 sec) CLogin()             Connection 32 established in 161 seconds.
+(Jan 24 2018 20:09:47,   91923 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:09:47,   91924 sec) login()              Login prompt not received.
+(Jan 24 2018 20:10:17,   91953 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:10:17,   91954 sec) login()              Login prompt not received.
+(Jan 24 2018 20:11:10,   92007 sec) CLogin()             Connection 33 established in 274 seconds.
+(Jan 24 2018 20:11:41,   92037 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:11:41,   92038 sec) login()              Login prompt not received.
+(Jan 24 2018 20:12:11,   92067 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 24 2018 20:12:11,   92068 sec) login()              Login prompt not received.
+(Jan 24 2018 20:12:11,   92068 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 24 2018 20:12:11,   92068 sec) UpLoad()             Files successfully uploaded: 0
+(Jan 24 2018 20:12:12,   92068 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jan 24 2018 20:12:12,   92069 sec) logout()             No carrier detected.
+(Jan 24 2018 20:12:12,   92069 sec) Telemetry()          Telemetry cycle complete: PrfId=54 ConnectionAttempts=48  Connections=33
+(Jan 24 2018 20:27:27,   92983 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [125cnt, 6.2"Hg].
+(Jan 24 2018 20:28:04,   93021 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 242.3uM 24.469C 29.976 8.888 128.937 / 178,183,538
+(Jan 24 2018 20:28:08,   93025 sec) GpsServices()        GPS almanac is current.
+(Jan 24 2018 20:28:08,   93025 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 24 2018 20:28:57,   93074 sec) gga()                $GPGGA,202800,1543.8149,N,06426.9200,E,6,10,0.8,4.4,M,-62.7,M,,*60
+(Jan 24 2018 20:29:40,   93117 sec) gga()                $GPGGA,202810,1543.8135,N,06426.9211,E,1,11,0.8,-1.9,M,-62.7,M,,*49
+(Jan 24 2018 20:29:40,   93117 sec) GpsServices()        Profile 54 GPS fix obtained in 92 seconds.
+(Jan 24 2018 20:29:40,   93117 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 24 2018 20:29:41,   93117 sec) GpsServices()        Fix:   64.449  15.730 01/24/2018 202810   11
+(Jan 24 2018 20:30:26,   93163 sec) gga()                $GPGGA,202930,1543.8012,N,06426.9299,E,1,12,0.7,-1.2,M,-62.7,M,,*49
+(Jan 24 2018 20:30:34,   93171 sec) gga()                $GPGGA,203020,1543.7948,N,06426.9351,E,1,12,0.7,-1.7,M,-62.7,M,,*49
+(Jan 24 2018 20:30:34,   93171 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Jan 24 2018 20:30:35,   93171 sec) GpsServices()        GPS services complete.
+(Jan 24 2018 20:31:16,   93213 sec) CLogin()             Connecting to primary host.
+(Jan 24 2018 20:31:30,   93227 sec) CLogin()             Connection 34 established in 14 seconds.
+(Jan 24 2018 20:31:40,   93237 sec) login()              Login successful.
+(Jan 24 2018 20:31:43,   93240 sec) CLogin()             Logged in to host.  [Login required 13 seconds]
+(Jan 24 2018 20:31:55,   93252 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jan 24 2018 20:31:58,   93255 sec) Rx()                 Initiating transfer. [0x43]
+(Jan 24 2018 20:32:03,   93260 sec) RxStartByte()        Sync errors encountered: 91
+(Jan 24 2018 20:32:09,   93266 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jan 24 2018 20:32:14,   93270 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 16 sec, 64.0 bps]
+(Jan 24 2018 20:32:14,   93271 sec) RxConfig()           Download successful.
+(Jan 24 2018 20:32:37,   93294 sec) WriteVitals()        Writing vitals to "7827.054.msg".
+(Jan 24 2018 20:32:47,   93304 sec) UpLoadFile()         Uploading "7827.054.msg" to host as "7827.054.msg".
+(Jan 24 2018 20:32:51,   93307 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jan 24 2018 20:33:19,   93336 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:19,   93336 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jan 24 2018 20:33:24,   93341 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:24,   93341 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jan 24 2018 20:33:28,   93345 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:28,   93345 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Jan 24 2018 20:33:29,   93346 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:30,   93346 sec) TxPacket()           Packet xmit history: [00001111] (0:ok, 1:fail).
+(Jan 24 2018 20:33:33,   93350 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:33,   93350 sec) TxPacket()           Packet xmit history: [
+
+(Jan 24 2018 20:33:33) LogSize()            Log file is 38964 bytes.  Limit is 40960 bytes.
+
+00011111] (0:ok, 1:fail).
+(Jan 24 2018 20:33:36,   93353 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:36,   93353 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Jan 24 2018 20:33:39,   93356 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:40,   93356 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jan 24 2018 20:33:43,   93360 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:43,   93360 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jan 24 2018 20:33:45,   93362 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:45,   93362 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jan 24 2018 20:33:48,   93365 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 24 2018 20:33:49,   93365 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jan 24 2018 20:33:49,   93366 sec) TxPacket()           Exit status: -2
+(Jan 24 2018 20:33:49,   93366 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jan 24 2018 20:34:00,   93377 sec) UpLoadFile()         Upload failed.
+(Jan 24 2018 20:34:06,   93383 sec) UpLoadFile()         Uploading "7827.054.log" to host as "7827.054.log".
+(Jan 24 2018 20:34:07,   93384 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jan 24 2018 20:34:10,   93387 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x01]
+(Jan 24 2018 20:34:10,   93387 sec) TxPacket()           Packet xmit history: [
+<EOT>

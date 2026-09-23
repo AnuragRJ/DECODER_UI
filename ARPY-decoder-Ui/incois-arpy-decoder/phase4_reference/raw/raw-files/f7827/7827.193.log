@@ -1,0 +1,350 @@
+(Dec 18 2020 21:57:21,  858395 sec) TelemetryInit()      Profile 192. (Apf9i FwRev: 061016)
+(Dec 18 2020 22:04:25,  858819 sec) AirSystem()          Battery [188cnt, 14.6V]  Current [74cnt, 298.2mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [51s]
+(Dec 18 2020 22:05:10,  858864 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.5dbars / 242.8uM 24.402C 29.982 8.934 131.107 / 137,186,536
+(Dec 18 2020 22:05:18,  858873 sec) GpsServices()        GPS almanac is current.
+(Dec 18 2020 22:05:18,  858873 sec) GpsServices()        Initiating GPS fix acquisition.
+(Dec 18 2020 22:05:41,  858895 sec) gga()                $GPGGA,220500,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*5D
+(Dec 18 2020 22:05:52,  858906 sec) gga()                $GPGGA,220510,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*5C
+(Dec 18 2020 22:06:03,  858917 sec) gga()                $GPGGA,220520,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*5F
+(Dec 18 2020 22:06:14,  858928 sec) gga()                $GPGGA,220530,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*5E
+(Dec 18 2020 22:06:25,  858939 sec) gga()                $GPGGA,220540,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*59
+(Dec 18 2020 22:06:36,  858950 sec) gga()                $GPGGA,220550,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*58
+(Dec 18 2020 22:06:46,  858961 sec) gga()                $GPGGA,220600,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*5E
+(Dec 18 2020 22:06:58,  858972 sec) gga()                $GPGGA,220610,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*5F
+(Dec 18 2020 22:07:08,  858983 sec) gga()                $GPGGA,220620,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*5C
+(Dec 18 2020 22:07:19,  858994 sec) gga()                $GPGGA,220630,1754.7541,N,06531.1445,E,0,00,,,M,,M,,*5D
+(Dec 18 2020 22:08:06,  859040 sec) gga()                $GPGGA,220700,1752.1974,N,06525.0892,E,1,08,1.0,-6.3,M,-60.2,M,,*40
+(Dec 18 2020 22:08:06,  859041 sec) GpsServices()        Profile 192 GPS fix obtained in 167 seconds.
+(Dec 18 2020 22:08:06,  859041 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Dec 18 2020 22:08:07,  859041 sec) GpsServices()        Fix:   65.418  17.870 12/18/2020 220700    8
+(Dec 18 2020 22:08:56,  859090 sec) gga()                $GPGGA,220750,1752.1974,N,06525.0854,E,1,09,1.0,-4.8,M,-60.2,M,,*47
+(Dec 18 2020 22:09:03,  859098 sec) gga()                $GPGGA,220840,1752.1990,N,06525.0806,E,1,09,1.0,-7.7,M,-60.2,M,,*48
+(Dec 18 2020 22:09:04,  859098 sec) GpsServices()        APF9 RTC skew (24s) OK.
+(Dec 18 2020 22:09:04,  859099 sec) GpsServices()        GPS services complete.
+(Dec 18 2020 22:09:46,  859141 sec) CLogin()             Connecting to primary host.
+(Dec 18 2020 22:10:03,  859157 sec) CLogin()             Connection 1 established in 17 seconds.
+(Dec 18 2020 22:10:21,  859176 sec) login()              Login successful.
+(Dec 18 2020 22:10:25,  859179 sec) CLogin()             Logged in to host.  [Login required 22 seconds]
+(Dec 18 2020 22:10:40,  859194 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Dec 18 2020 22:10:42,  859197 sec) Rx()                 Initiating transfer. [0x43]
+(Dec 18 2020 22:10:50,  859204 sec) RxStartByte()        Sync errors encountered: 702
+(Dec 18 2020 22:10:53,  859207 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Dec 18 2020 22:11:00,  859214 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 18 sec, 56.9 bps]
+(Dec 18 2020 22:11:00,  859214 sec) RxConfig()           Download successful.
+(Dec 18 2020 22:11:23,  859237 sec) WriteVitals()        Writing vitals to "7827.192.msg".
+(Dec 18 2020 22:11:39,  859253 sec) UpLoadFile()         Uploading "7827.192.msg" to host as "7827.192.msg".
+(Dec 18 2020 22:11:42,  859256 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Dec 18 2020 22:11:51,  859265 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Dec 18 2020 22:11:51,  859265 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Dec 18 2020 22:11:58,  859272 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Dec 18 2020 22:11:58,  859272 sec) TxPacket()           Packet xmit history: [11100011] (0:ok, 1:fail).
+(Dec 18 2020 22:12:14,  859289 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Dec 18 2020 22:12:14,  859289 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Dec 18 2020 22:12:21,  859295 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Dec 18 2020 22:12:21,  859295 sec) TxPacket()           Packet xmit history: [00110011] (0:ok, 1:fail).
+(Dec 18 2020 22:12:28,  859302 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Dec 18 2020 22:12:28,  859302 sec) TxPacket()           Packet xmit history: [01100111] (0:ok, 1:fail).
+(Dec 18 2020 22:13:21,  859356 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Dec 18 2020 22:13:21,  859356 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Dec 18 2020 22:13:29,  859363 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Dec 18 2020 22:13:29,  859364 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Dec 18 2020 22:13:48,  859382 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:13:48,  859382 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Dec 18 2020 22:13:50,  859384 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:13:50,  859385 sec) TxPacket()           Packet xmit history: [00110011] (0:ok, 1:fail).
+(Dec 18 2020 22:13:53,  859387 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:13:53,  859388 sec) TxPacket()           Packet xmit history: [01100111] (0:ok, 1:fail).
+(Dec 18 2020 22:13:59,  859393 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:13:59,  859393 sec) TxPacket()           Packet xmit history: [11001111] (0:ok, 1:fail).
+(Dec 18 2020 22:14:01,  859395 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:14:01,  859395 sec) TxPacket()           Packet xmit history: [10011111] (0:ok, 1:fail).
+(Dec 18 2020 22:14:04,  859398 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:14:04,  859399 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Dec 18 2020 22:14:07,  859402 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:14:07,  859402 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Dec 18 2020 22:14:21,  859415 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:14:21,  859416 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Dec 18 2020 22:14:23,  859417 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Dec 18 2020 22:14:23,  859417 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Dec 18 2020 22:14:33,  859428 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Dec 18 2020 22:14:33,  859428 sec) TxPacket()           Packet xmit history: [11111101] (0:ok, 1:fail).
+(Dec 18 2020 22:14:36,  859431 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Dec 18 2020 22:14:37,  859431 sec) TxPacket()           Packet xmit history: [11111011] (0:ok, 1:fail).
+(Dec 18 2020 22:15:04,  859458 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Dec 18 2020 22:15:04,  859458 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Dec 18 2020 22:15:29,  859483 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Dec 18 2020 22:15:29,  859483 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Dec 18 2020 22:15:37,  859491 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Dec 18 2020 22:15:37,  859492 sec) TxPacket()           Packet xmit history: [00100011] (0:ok, 1:fail).
+(Dec 18 2020 22:15:44,  859498 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Dec 18 2020 22:15:44,  859498 sec) TxPacket()           Packet xmit history: [01000111] (0:ok, 1:fail).
+(Dec 18 2020 22:15:49,  859503 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Dec 18 2020 22:15:49,  859503 sec) TxPacket()           Packet xmit history: [10001111] (0:ok, 1:fail).
+(Dec 18 2020 22:16:33,  859547 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(Dec 18 2020 22:16:33,  859547 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Dec 18 2020 22:16:40,  859554 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(Dec 18 2020 22:16:40,  859554 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Dec 18 2020 22:16:47,  859561 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(Dec 18 2020 22:16:47,  859561 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Dec 18 2020 22:16:56,  859571 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(Dec 18 2020 22:16:56,  859571 sec) TxPacket()           Packet xmit history: [00001111] (0:ok, 1:fail).
+(Dec 18 2020 22:17:36,  859610 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(Dec 18 2020 22:17:36,  859610 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Dec 18 2020 22:17:51,  859625 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Dec 18 2020 22:17:51,  859625 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Dec 18 2020 22:18:10,  859644 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Dec 18 2020 22:18:10,  859645 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Dec 18 2020 22:18:19,  859653 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Dec 18 2020 22:18:19,  859654 sec) TxPacket()           Packet xmit history: [00101011] (0:ok, 1:fail).
+(Dec 18 2020 22:18:37,  859671 sec) TxPacket()           NAK received - resending packet. [PktNum=0x27]
+(Dec 18 2020 22:18:37,  859671 sec) TxPacket()           Packet xmit history: [10110001] (0:ok, 1:fail).
+(Dec 18 2020 22:18:41,  859676 sec) TxPacket()           NAK received - resending packet. [PktNum=0x27]
+(Dec 18 2020 22:18:42,  859676 sec) TxPacket()           Packet xmit history: [01100011] (0:ok, 1:fail).
+(Dec 18 2020 22:18:48,  859682 sec) TxPacket()           NAK received - resending packet. [PktNum=0x27]
+(Dec 18 2020 22:18:48,  859682 sec) TxPacket()           Packet xmit history: [11000111] (0:ok, 1:fail).
+(Dec 18 2020 22:19:15,  859709 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2a]
+(Dec 18 2020 22:19:15,  859709 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Dec 18 2020 22:19:30,  859724 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2c]
+(Dec 18 2020 22:19:30,  859724 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Dec 18 2020 22:19:44,  859739 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2d]
+(Dec 18 2020 22:19:45,  859739 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(Dec 18 2020 22:19:56,  859750 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2e]
+(Dec 18 2020 22:19:56,  859750 sec) TxPacket()           Packet xmit history: [10010101] (0:ok, 1:fail).
+(Dec 18 2020 22:20:06,  859760 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2e]
+(Dec 18 2020 22:20:06,  859761 sec) TxPacket()           Packet xmit history: [00101011] (0:ok, 1:fail).
+(Dec 18 2020 22:20:18,  859772 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2f]
+(Dec 18 2020 22:20:18,  859772 sec) TxPacket()           Packet xmit history: [10101101] (0:ok, 1:fail).
+(Dec 18 2020 22:20:54,  859809 sec) TxPacket()           NAK received - resending packet. [PktNum=0x35]
+(Dec 18 2020 22:20:55,  859809 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Dec 18 2020 22:21:00,  859814 sec) TxPacket()           NAK received - resending packet. [PktNum=0x35]
+(Dec 18 2020 22:21:00,  859814 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Dec 18 2020 22:21:05,  859820 sec) TxPacket()           NAK received - resending packet. [PktNum=0x35]
+(Dec 18 2020 22:21:06,  859820 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Dec 18 2020 22:21:20,  859834 sec) TxPacket()           NAK received - resending packet. [PktNum=0x36]
+(Dec 18 2020 22:21:20,  859834 sec) TxPacket()           Packet xmit history: [00011101] (0:ok, 1:fail).
+(Dec 18 2020 22:21:44,  859858 sec) Tx()                 Transmission completed successfully [58 packets, 36863 bytes, 601 sec, 61.6 bps]
+(Dec 18 2020 22:21:44,  859858 sec) UpLoadFile()         Upload successful.
+(Dec 18 2020 22:21:53,  859867 sec) UpLoadFile()         Uploading "7827.192.log" to host as "7827.192.log".
+(Dec 18 2020 22:21:58,  859872 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Dec 18 2020 22:22:22,  859896 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Dec 18 2020 22:22:22,  859896 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Dec 18 2020 22:22:58,  859932 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Dec 18 2020 22:22:58,  859932 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Dec 18 2020 22:23:17,  859951 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Dec 18 2020 22:23:17,  859951 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Dec 18 2020 22:24:09,  860003 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Dec 18 2020 22:24:09,  860003 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Dec 18 2020 22:24:23,  860017 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Dec 18 2020 22:24:23,  860018 sec) TxPacket()           Packet xmit history: [01001101] (0:ok, 1:fail).
+(Dec 18 2020 22:24:46,  860040 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Dec 18 2020 22:24:46,  860040 sec) TxPacket()           Packet xmit history: [11010001] (0:ok, 1:fail).
+(Dec 18 2020 22:25:06,  860060 sec) TxPacket()           No carrier detected.
+(Dec 18 2020 22:25:06,  860060 sec) TxPacket()           Exit status: -5
+(Dec 18 2020 22:25:06,  860061 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Dec 18 2020 22:25:17,  860072 sec) UpLoadFile()         Upload failed.
+(Dec 18 2020 22:25:28,  860083 sec) CLogin()             Connecting to primary host.
+(Dec 18 2020 22:25:34,  860088 sec) chat()               Expected string [OK] not received.
+(Dec 18 2020 22:25:34,  860088 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Dec 18 2020 22:25:34,  860088 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Dec 18 2020 22:25:34,  860089 sec) modem_connect()      Modem configuration failed.
+(Dec 18 2020 22:25:34,  860089 sec) connect()            Connection attempt failed.
+(Dec 18 2020 22:25:40,  860094 sec) chat()               Expected string [OK] not received.
+(Dec 18 2020 22:25:40,  860094 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Dec 18 2020 22:25:40,  860094 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Dec 18 2020 22:25:40,  860095 sec) modem_connect()      Modem configuration failed.
+(Dec 18 2020 22:25:40,  860095 sec) connect()            Connection attempt failed.
+(Dec 18 2020 22:25:40,  860095 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Dec 18 2020 22:25:46,  860100 sec) chat()               Expected string [OK] not received.
+(Dec 18 2020 22:25:46,  860100 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Dec 18 2020 22:25:46,  860100 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Dec 18 2020 22:25:46,  860101 sec) modem_connect()      Modem configuration failed.
+(Dec 18 2020 22:25:46,  860101 sec) connect()            Connection attempt failed.
+(Dec 18 2020 22:25:52,  860106 sec) chat()               Expected string [OK] not received.
+(Dec 18 2020 22:25:52,  860106 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Dec 18 2020 22:25:52,  860106 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Dec 18 2020 22:25:52,  860107 sec) modem_connect()      Modem configuration failed.
+(Dec 18 2020 22:25:52,  860107 sec) connect()            Connection attempt failed.
+(Dec 18 2020 22:25:52,  860107 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Dec 18 2020 22:25:53,  860107 sec) UpLoad()             Files successfully uploaded: 1
+(Dec 18 2020 22:25:53,  860108 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Dec 18 2020 22:25:53,  860108 sec) logout()             No carrier detected.
+(Dec 18 2020 22:25:54,  860108 sec) Telemetry()          Telemetry cycle complete: PrfId=192 ConnectionAttempts=5  Connections=1
+(Dec 18 2020 22:41:09,  861023 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Dec 18 2020 22:42:34,  861108 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 236.5uM 25.188C 29.968 8.845 105.631 / 132,202,536
+(Dec 18 2020 22:42:35,  861109 sec) GpsServices()        GPS almanac is current.
+(Dec 18 2020 22:42:35,  861109 sec) GpsServices()        Initiating GPS fix acquisition.
+(Dec 18 2020 22:43:27,  861161 sec) gga()                $GPGGA,224220,1752.2134,N,06524.9463,E,1,08,1.1,-5.5,M,-60.2,M,,*42
+(Dec 18 2020 22:43:27,  861161 sec) GpsServices()        Profile 192 GPS fix obtained in 52 seconds.
+(Dec 18 2020 22:43:27,  861161 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Dec 18 2020 22:43:27,  861162 sec) GpsServices()        Fix:   65.416  17.870 12/18/2020 224220    8
+(Dec 18 2020 22:44:16,  861210 sec) gga()                $GPGGA,224310,1752.2162,N,06524.9424,E,1,08,1.1,-0.2,M,-60.2,M,,*42
+(Dec 18 2020 22:44:24,  861218 sec) gga()                $GPGGA,224400,1752.2171,N,06524.9388,E,1,09,1.0,3.1,M,-60.2,M,,*6A
+(Dec 18 2020 22:44:24,  861218 sec) GpsServices()        APF9 RTC skew (24s) OK.
+(Dec 18 2020 22:44:24,  861219 sec) GpsServices()        GPS services complete.
+(Dec 18 2020 22:45:06,  861261 sec) CLogin()             Connecting to primary host.
+(Dec 18 2020 22:45:17,  861271 sec) CLogin()             Connection 2 established in 11 seconds.
+(Dec 18 2020 22:45:31,  861285 sec) login()              Login successful.
+(Dec 18 2020 22:45:36,  861291 sec) CLogin()             Logged in to host.  [Login required 19 seconds]
+(Dec 18 2020 22:45:51,  861305 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Dec 18 2020 22:45:53,  861308 sec) Rx()                 Initiating transfer. [0x43]
+(Dec 18 2020 22:46:00,  861314 sec) Rx()                 Truncated packet received - retrying.
+(Dec 18 2020 22:46:01,  861316 sec) RxStartByte()        Sync errors encountered: 456
+(Dec 18 2020 22:46:05,  861319 sec) Rx()                 Truncated packet received - retrying.
+(Dec 18 2020 22:46:09,  861324 sec) RxStartByte()        Sync errors encountered: 781
+(Dec 18 2020 22:46:11,  861326 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Dec 18 2020 22:46:16,  861330 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 23 sec, 44.5 bps]
+(Dec 18 2020 22:46:16,  861330 sec) RxConfig()           Download successful.
+(Dec 18 2020 22:46:47,  861361 sec) UpLoadFile()         Uploading "7827.192.log" to host as "7827.192.log".
+(Dec 18 2020 22:47:03,  861377 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Dec 18 2020 22:47:37,  861412 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Dec 18 2020 22:47:38,  861412 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Dec 18 2020 22:47:44,  861419 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Dec 18 2020 22:47:45,  861419 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Dec 18 2020 22:48:02,  861437 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(Dec 18 2020 22:48:03,  861437 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Dec 18 2020 22:48:18,  861453 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Dec 18 2020 22:48:19,  861453 sec) TxPacket()           Packet xmit history: [01100101] (0:ok, 1:fail).
+(Dec 18 2020 22:48:28,  861462 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Dec 18 2020 22:48:28,  861462 sec) TxPacket()           Packet xmit history: [10010101] (0:ok, 1:fail).
+(Dec 18 2020 22:48:44,  861478 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Dec 18 2020 22:48:44,  861478 sec) TxPacket()           Packet xmit history: [10101001] (0:ok, 1:fail).
+(Dec 18 2020 22:49:06,  861501 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Dec 18 2020 22:49:07,  861501 sec) TxPacket()           Packet xmit history: [10010001] (0:ok, 1:fail).
+(Dec 18 2020 22:49:28,  861522 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Dec 18 2020 22:49:28,  861522 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Dec 18 2020 22:49:43,  861537 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Dec 18 2020 22:49:43,  861538 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(Dec 18 2020 22:49:44,  861539 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Dec 18 2020 22:49:44,  861539 sec) TxPacket()           Packet xmit history: [01001011] (0:ok, 1:fail).
+(Dec 18 2020 22:49:53,  861547 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Dec 18 2020 22:49:53,  861548 sec) TxPacket()           Packet xmit history: [00101101] (0:ok, 1:fail).
+(Dec 18 2020 22:49:56,  861550 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Dec 18 2020 22:49:56,  861550 sec) TxPacket()           Packet xmit history: [01011011] (0:ok, 1:fail).
+(Dec 18 2020 22:50:12,  861566 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Dec 18 2020 22:50:12,  861567 sec) TxPacket()           Packet xmit history: [01100001] (0:ok, 1:fail).
+(Dec 18 2020 22:50:47,  861602 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Dec 18 2020 22:50:48,  861602 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Dec 18 2020 22:50:56,  861611 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Dec 18 2020 22:50:57,  861611 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(Dec 18 2020 22:51:09,  861623 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Dec 18 2020 22:51:09,  861623 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(Dec 18 2020 22:51:18,  861633 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Dec 18 2020 22:51:19,  861633 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(Dec 18 2020 22:51:55,  861670 sec) TxPacket()           NAK received - resending packet. [PktNum=0x20]
+(Dec 18 2020 22:51:55,  861670 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Dec 18 2020 22:52:19,  861694 sec) Tx()                 Transmission completed successfully [34 packets, 27083 bytes, 315 sec, 87.8 bps]
+(Dec 18 2020 22:52:20,  861694 sec) UpLoadFile()         Upload successful.
+(Dec 18 2020 22:52:30,  861704 sec) UpLoad()             Files successfully uploaded: 1
+(Dec 18 2020 22:52:30,  861705 sec) UpLoad()             Upload complete.
+(Dec 18 2020 22:52:34,  861708 sec) logout()             Log-out successful.
+(Dec 18 2020 22:52:35,  861710 sec) Telemetry()          Telemetry cycle complete: PrfId=192 ConnectionAttempts=6  Connections=2
+(Dec 18 2020 22:52:36,  861710 sec) TelemetryTerminate(  Parsing new mission configuration.
+(Dec 18 2020 22:52:38,  861712 sec) configure()          Parsing configurators in "mission.cfg".
+(Dec 18 2020 22:52:46,  861720 sec) configure()             TelemetryRetry(15)          [0x7BBC] [TelemetryRetry(15)].
+(Dec 18 2020 22:52:46,  861721 sec) configure()          Configuration CRCs and syntax OK.
+(Dec 18 2020 22:52:46,  861721 sec) ConfigSupervisor()   Configuration accepted.
+(Dec 18 2020 22:52:47,  861721 sec) TelemetryTerminate(  Reconditioning the file system.
+(Dec 18 2020 22:53:08,      12 sec) DescentInit()        Deep profile 193 initiated at mission-time 861731sec.
+(Dec 18 2020 22:53:11,      14 sec) DescentInit()        Surface pressure: -0.5dbars.
+(Dec 18 2020 22:53:15,      19 sec) PistonMoveAbsWTO()    190->076 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 [579sec, 14.2Volts, 0.157Amps, CPT:579sec]
+(Dec 18 2020 23:03:04,     608 sec) Descent()            Pressure: 38.7
+(Dec 18 2020 23:53:00,    3604 sec) Descent()            Pressure: 437.3
+(Dec 19 2020 00:53:00,    7204 sec) Descent()            Pressure: 764.8
+(Dec 19 2020 01:53:00,   10804 sec) Descent()            Pressure: 938.3
+(Dec 19 2020 02:53:00,   14404 sec) Descent()            Pressure: 987.0
+(Dec 19 2020 03:53:00,   18004 sec) Descent()            Pressure: 999.5
+(Dec 19 2020 03:53:00,   18004 sec) ParkInit()           
+(Dec 28 2020 11:30:18,  823042 sec) CtdPower()           [ 1009.15,  8.6193, 35.5916]
+(Dec 28 2020 11:30:19,  823042 sec) CtdPower()           CTD Power consumption [176VCnt 9ACnt]: 13.643Volts * 0.036Amps = 0.49Watts.
+(Dec 28 2020 11:30:20,  823043 sec) ParkTerminate()      Piston Position:76 Vacuum:79 Vq:193 Aq:5 Vsbe:176 Asbe:9 Vflbb:174 Aflbb:12
+(Dec 28 2020 11:30:56,  823080 sec) ParkTerminate()      PTS/O2,T2,TPhase,RawTemp: 1009.0dbars 8.6203C 35.5911PSU / 7.6uM 8.639C 60.666 8.227 635.657
+(Dec 28 2020 11:30:56,  823080 sec) ParkTerminate()      FLBB FSig, BbSig, TSig: 57, 114, 564
+(Dec 28 2020 11:30:57,  823081 sec) GoDeepInit()         Moving piston.
+(Dec 28 2020 11:30:57,  823081 sec) PistonMoveAbsWTO()    076->029 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 [243sec, 13.9Volts, 0.097Amps, CPT:822sec]
+(Dec 28 2020 16:29:58,  841022 sec) ProfileInit()        PrfId:193  Pressure:1985.2dbar  pTable[1]:1900dbar
+(Dec 28 2020 16:31:24,  841108 sec) Sbe41cpStartCP()     Continuous profile started.
+(Dec 28 2020 16:31:25,  841109 sec) PistonMoveAbsWTO()    029->051 030 031 032 033 [30sec, 12.5Volts, 0.798Amps, CPT:852sec]
+(Dec 28 2020 16:32:05,  841148 sec) PistonMoveAbsWTO()    033->051 034 035 036 037 038 [30sec, 12.7Volts, 0.810Amps, CPT:882sec]
+(Dec 28 2020 16:32:45,  841188 sec) PistonMoveAbsWTO()    038->051 039 040 041 042 [30sec, 12.6Volts, 0.814Amps, CPT:912sec]
+(Dec 28 2020 16:33:25,  841228 sec) PistonMoveAbsWTO()    042->051 043 044 045 046 [30sec, 12.5Volts, 0.810Amps, CPT:942sec]
+(Dec 28 2020 16:34:05,  841268 sec) PistonMoveAbsWTO()    046->051 047 048 049 050 [30sec, 12.4Volts, 0.794Amps, CPT:972sec]
+(Dec 28 2020 16:34:45,  841308 sec) PistonMoveAbsWTO()    050->051 051 [4sec, 12.2Volts, 0.806Amps, CPT:976sec]
+(Dec 28 2020 16:46:06,  841990 sec) Profile()            Sample 0 initiated at 1901.5dbars for bin 1 [1900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1901.1dbars 3.4454C 35.0972PSU / 91.0uM 3.456C 50.940 8.294 788.454 /   56  109  573
+(Dec 28 2020 17:04:08,  843072 sec) Profile()            Sample 1 initiated at 1801.5dbars for bin 2 [1800dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1801.3dbars 3.8408C 35.1311PSU / 80.1uM 3.851C 51.881 8.305 777.162 /   57  110  572
+(Dec 28 2020 17:20:26,  844050 sec) AscentControlAgent(  Bouyancy nudge to 61 (v=0.078dbar/sec).
+(Dec 28 2020 17:20:27,  844050 sec) PistonMoveAbsWTO()    051->061 052 053 054 055 [30sec, 13.3Volts, 0.733Amps, CPT:1006sec]
+(Dec 28 2020 17:21:07,  844090 sec) PistonMoveAbsWTO()    055->061 056 057 058 059 060 [30sec, 13.0Volts, 0.697Amps, CPT:1036sec]
+(Dec 28 2020 17:21:47,  844130 sec) PistonMoveAbsWTO()    060->061 061 [6sec, 12.9Volts, 0.689Amps, CPT:1042sec]
+(Dec 28 2020 17:23:58,  844261 sec) Profile()            Sample 2 initiated at 1701.4dbars for bin 3 [1700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1701.0dbars 4.2441C 35.1663PSU / 70.6uM 4.255C 52.748 8.309 765.538 /   57  112  572
+(Dec 28 2020 17:41:42,  845325 sec) Profile()            Sample 3 initiated at 1601.8dbars for bin 4 [1600dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1601.6dbars 4.7695C 35.2136PSU / 59.1uM 4.781C 53.881 8.317 750.305 /   59  111  571
+(Dec 28 2020 17:45:44,  845568 sec) AscentControlAgent(  Bouyancy nudge to 71 (v=0.074dbar/sec).
+(Dec 28 2020 17:45:45,  845568 sec) PistonMoveAbsWTO()    061->071 062 063 064 065 [30sec, 13.3Volts, 0.661Amps, CPT:1072sec]
+(Dec 28 2020 17:46:25,  845608 sec) PistonMoveAbsWTO()    065->071 066 067 068 069 070 [30sec, 13.0Volts, 0.657Amps, CPT:1102sec]
+(Dec 28 2020 17:47:05,  845648 sec) PistonMoveAbsWTO()    070->071 071 [4sec, 12.9Volts, 0.681Amps, CPT:1106sec]
+(Dec 28 2020 18:00:48,  846471 sec) Profile()            Sample 4 initiated at 1501.7dbars for bin 5 [1500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1501.4dbars 5.4794C 35.2774PSU / 44.5uM 5.493C 55.499 8.327 729.547 /   58  114  570
+(Dec 28 2020 18:19:22,  847585 sec) Profile()            Sample 5 initiated at 1401.2dbars for bin 6 [1400dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1400.9dbars 6.1821C 35.3450PSU / 31.6uM 6.196C 57.118 8.334 708.875 /   59  117  569
+(Dec 28 2020 18:28:52,  848155 sec) Profile()            Sample 6 initiated at 1351.8dbars for bin 7 [1350dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1351.6dbars 6.4624C 35.3713PSU / 28.1uM 6.476C 57.570 8.335 700.583 /   59  112  568
+(Dec 28 2020 18:36:26,  848610 sec) AscentControlAgent(  Bouyancy nudge to 81 (v=0.076dbar/sec).
+(Dec 28 2020 18:36:27,  848610 sec) PistonMoveAbsWTO()    071->081 072 073 074 075 [30sec, 13.4Volts, 0.568Amps, CPT:1136sec]
+(Dec 28 2020 18:37:06,  848650 sec) PistonMoveAbsWTO()    075->081 076 077 078 079 080 [30sec, 13.2Volts, 0.584Amps, CPT:1166sec]
+(Dec 28 2020 18:37:46,  848690 sec) PistonMoveAbsWTO()    080->081 081 [3sec, 13.1Volts, 0.576Amps, CPT:1169sec]
+(Dec 28 2020 18:39:05,  848768 sec) Profile()            Sample 7 initiated at 1302.0dbars for bin 8 [1300dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1301.6dbars 6.7528C 35.3997PSU / 25.3uM 6.768C 57.939 8.333 691.903 /   58  116  568
+(Dec 28 2020 18:47:45,  849288 sec) Profile()            Sample 8 initiated at 1251.5dbars for bin 9 [1250dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1251.3dbars 7.0289C 35.4264PSU / 22.2uM 7.044C 58.371 8.335 683.672 /   60  117  567
+(Dec 28 2020 18:57:15,  849858 sec) Profile()            Sample 9 initiated at 1201.6dbars for bin 10 [1200dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1201.3dbars 7.3294C 35.4577PSU / 17.8uM 7.346C 59.048 8.332 674.654 /   59  116  567
+(Dec 28 2020 19:07:15,  850458 sec) Profile()            Sample 10 initiated at 1151.3dbars for bin 11 [1150dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1151.1dbars 7.6623C 35.4918PSU / 15.4uM 7.680C 59.395 8.333 664.644 /   57  118  567
+(Dec 28 2020 19:17:24,  851068 sec) Profile()            Sample 11 initiated at 1101.4dbars for bin 12 [1100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1101.1dbars 7.9446C 35.5205PSU / 12.3uM 7.964C 59.889 8.333 656.097 /   58  115  566
+(Dec 28 2020 19:22:07,  851351 sec) AscentControlAgent(  Bouyancy nudge to 91 (v=0.075dbar/sec).
+(Dec 28 2020 19:22:07,  851351 sec) PistonMoveAbsWTO()    081->091 082 083 084 085 086 [30sec, 13.5Volts, 0.492Amps, CPT:1199sec]
+(Dec 28 2020 19:22:47,  851391 sec) PistonMoveAbsWTO()    086->091 087 088 089 090 [30sec, 13.3Volts, 0.492Amps, CPT:1229sec]
+(Dec 28 2020 19:23:37,  851441 sec) PistonMoveAbsWTO()    090->091 091 [1sec, 13.3Volts, 0.500Amps, CPT:1230sec]
+(Dec 28 2020 19:27:13,  851657 sec) Profile()            Sample 12 initiated at 1051.1dbars for bin 13 [1050dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1050.8dbars 8.2450C 35.5516PSU / 10.2uM 8.264C 60.232 8.333 647.012 /   58  119  565
+(Dec 28 2020 19:36:13,  852197 sec) Profile()            Sample 13 initiated at 1001.2dbars for bin 14 [1000dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1001.0dbars 8.6270C 35.5928PSU / 8.2uM 8.649C 60.564 8.336 635.341 /   58  124  565
+(Dec 28 2020 19:52:37,  853181 sec) AscentControlAgent(  Bouyancy nudge to 101 (v=0.079dbar/sec).
+(Dec 28 2020 19:52:37,  853181 sec) PistonMoveAbsWTO()    091->101 092 093 094 095 096 [30sec, 13.6Volts, 0.439Amps, CPT:1260sec]
+(Dec 28 2020 19:53:17,  853221 sec) PistonMoveAbsWTO()    096->101 097 098 099 100 101 [29sec, 13.4Volts, 0.451Amps, CPT:1289sec]
+(Dec 28 2020 19:56:01,  853385 sec) Profile()            Sample 15 initiated at 901.2dbars for bin 16 [900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 900.9dbars 9.3360C 35.6654PSU / 3.9uM 9.362C 61.326 8.345 613.591 /   57  119  564
+(Dec 28 2020 20:28:11,  855315 sec) AscentControlAgent(  Bouyancy nudge to 111 (v=0.077dbar/sec).
+(Dec 28 2020 20:28:11,  855315 sec) PistonMoveAbsWTO()    101->111 102 103 104 105 106 [30sec, 13.6Volts, 0.399Amps, CPT:1319sec]
+(Dec 28 2020 20:28:51,  855355 sec) PistonMoveAbsWTO()    106->111 107 108 109 110 111 [28sec, 13.5Volts, 0.395Amps, CPT:1347sec]
+(Dec 28 2020 20:33:24,  855628 sec) Profile()            Sample 19 initiated at 701.5dbars for bin 20 [700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 701.2dbars 10.6753C 35.7730PSU / 1.6uM 10.702C 61.689 8.402 572.319 /   58  108  562
+(Dec 28 2020 21:03:54,  857458 sec) AscentControlAgent(  Bouyancy nudge to 121 (v=0.068dbar/sec).
+(Dec 28 2020 21:03:54,  857458 sec) PistonMoveAbsWTO()    111->121 112 113 114 115 116 [30sec, 13.7Volts, 0.330Amps, CPT:1377sec]
+(Dec 28 2020 21:04:34,  857498 sec) PistonMoveAbsWTO()    116->121 117 118 119 120 121 [28sec, 13.6Volts, 0.322Amps, CPT:1405sec]
+(Dec 28 2020 21:12:19,  857963 sec) Profile()            Sample 23 initiated at 502.0dbars for bin 24 [500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 501.7dbars 12.6175C 35.9672PSU / 1.1uM 12.654C 61.637 8.455 511.249 /   57  118  559
+(Dec 28 2020 21:39:18,  859582 sec) AscentControlAgent(  Bouyancy nudge to 131 (v=0.078dbar/sec).
+(Dec 28 2020 21:39:18,  859582 sec) PistonMoveAbsWTO()    121->131 122 123 124 125 126 [30sec, 13.8Volts, 0.270Amps, CPT:1435sec]
+(Dec 28 2020 21:39:59,  859623 sec) PistonMoveAbsWTO()    126->131 127 128 129 130 131 [26sec, 13.7Volts, 0.266Amps, CPT:1461sec]
+(Dec 28 2020 21:44:20,  859884 sec) Profile()            Sample 27 initiated at 331.1dbars for bin 28 [330dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 330.8dbars 14.1463C 36.0901PSU / 0.9uM 14.180C 61.561 8.531 462.839 /   58  132  556
+(Dec 28 2020 22:01:47,  860931 sec) Profile()            Sample 31 initiated at 241.8dbars for bin 32 [240dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 241.5dbars 15.9409C 36.2368PSU / 0.9uM 15.968C 61.446 8.673 405.490 /   58  153  554
+(Dec 28 2020 22:04:46,  861109 sec) AscentControlAgent(  Bouyancy nudge to 141 (v=0.072dbar/sec).
+(Dec 28 2020 22:04:46,  861110 sec) PistonMoveAbsWTO()    131->141 132 133 134 135 136 [30sec, 13.9Volts, 0.222Amps, CPT:1491sec]
+(Dec 28 2020 22:05:28,  861152 sec) PistonMoveAbsWTO()    136->141 137 138 139 140 141 [23sec, 13.9Volts, 0.226Amps, CPT:1514sec]
+(Dec 28 2020 22:09:49,  861412 sec) AscentControlAgent(  Bouyancy nudge to 151 (v=0.080dbar/sec).
+(Dec 28 2020 22:09:49,  861413 sec) PistonMoveAbsWTO()    141->151 142 143 144 145 146 [30sec, 13.9Volts, 0.226Amps, CPT:1544sec]
+(Dec 28 2020 22:10:46,  861470 sec) PistonMoveAbsWTO()    146->151 147 148 149 150 151 [25sec, 13.9Volts, 0.218Amps, CPT:1569sec]
+(Dec 28 2020 22:13:31,  861635 sec) Profile()            Sample 35 initiated at 181.3dbars for bin 36 [180dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 180.9dbars 18.2624C 36.4115PSU / 3.4uM 18.296C 60.553 8.763 330.103 /   58  116  551
+(Dec 28 2020 22:21:02,  862086 sec) Profile()            Sample 39 initiated at 141.4dbars for bin 40 [140dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 141.3dbars 19.7403C 36.2952PSU / 1.2uM 19.746C 61.050 8.813 282.872 /   56  114  549
+(Dec 28 2020 22:25:22,  862345 sec) AscentControlAgent(  Bouyancy nudge to 161 (v=0.068dbar/sec).
+(Dec 28 2020 22:25:22,  862346 sec) PistonMoveAbsWTO()    151->161 152 153 154 155 156 [30sec, 14.0Volts, 0.197Amps, CPT:1599sec]
+(Dec 28 2020 22:26:19,  862403 sec) PistonMoveAbsWTO()    156->161 157 158 159 160 161 [23sec, 14.0Volts, 0.193Amps, CPT:1622sec]
+(Dec 28 2020 22:29:57,  862621 sec) Profile()            Sample 43 initiated at 101.2dbars for bin 44 [100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 101.0dbars 22.7175C 36.6084PSU / 67.2uM 22.737C 45.812 8.897 185.279 /   67  119  546
+(Dec 28 2020 22:43:10,  863414 sec) Profile()            Sample 47 initiated at 61.9dbars for bin 48 [60dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 61.8dbars 25.9509C 36.9490PSU / 207.0uM 25.962C 31.188 8.976 80.647 /  115  150  540
+(Dec 28 2020 22:45:36,  863559 sec) AscentControlAgent(  Bouyancy nudge to 166 (v=0.034dbar/sec).
+(Dec 28 2020 22:45:36,  863560 sec) PistonMoveAbsWTO()    161->166 162 163 164 165 166 [26sec, 14.0Volts, 0.181Amps, CPT:1648sec]
+(Dec 28 2020 22:51:49,  863933 sec) Profile()            Sample 51 initiated at 36.7dbars for bin 52 [35dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 36.6dbars 26.1865C 36.7542PSU / 223.8uM 26.191C 30.201 8.963 73.259 /  148  165  538
+
+
+(Dec 28 2020 22:55:47) LogSize()            Log file is 38956 bytes.  Limit is 40960 bytes.
+
+(Dec 28 2020 22:55:47,  864170 sec) AscentControlAgent(  Bouyancy nudge to 171 (v=0.029dbar/sec).
+(Dec 28 2020 22:55:47,  864171 sec) PistonMoveAbsWTO()    166->171 167 168 169 170 171 [26sec, 14.0Volts, 0.177Amps, CPT:1674sec]
+(Dec 28 2020 22:59:55,  864419 sec) Profile()            Sample 55 initiated at 17.0dbars for bin 56 [15dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 16.7dbars 26.2241C 36.6751PSU / 229.7uM 26.240C 29.885 8.959 71.692 /  153  172  537
+(Dec 28 2020 23:01:18,  864502 sec) Profile()            Sample 56 initiated at 11.7dbars for bin 57 [10dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 11.5dbars 26.2284C 36.6744PSU / 230.3uM 26.244C 29.853 8.958 71.557 /  150  168  536
+(Dec 28 2020 23:03:13,  864617 sec) Profile()            Sample 57 initiated at 5.8dbars for bin 58 [4dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 5.6dbars 26.2248C 36.6748PSU / 230.5uM 26.240C 29.846 8.957 71.675 /  152  179  536
+(Dec 28 2020 23:03:40,  864644 sec) Profile()            Sample 58 initiated at 4.6dbars for bin 58 [4dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 4.5dbars 26.2238C 36.6756PSU / 230.5uM 26.241C 29.848 8.955 71.656 /  162  164  536
+(Dec 28 2020 23:03:55,  864659 sec) SurfaceDetect()      SurfacePressure:-0.5dbars Pressure:3.4dbars PistonPosition:171
+(Dec 28 2020 23:03:56,  864659 sec) Sbe41cpStopCP()      Continuous profile stopped.
+(Dec 28 2020 23:04:03,  864666 sec) PistonMoveAbsWTO()    171->193 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 [116sec, 14.1Volts, 0.149Amps, CPT:1790sec]
+(Dec 28 2020 23:06:16,  864799 sec) sbe41cp.c:chat()     Expected string [S>] not received.
+
+<EOT>

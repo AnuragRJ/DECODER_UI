@@ -40,6 +40,12 @@ export const App: React.FC = () => {
   const { fetchPresets, initWebSocket, activeView, viewRun } = useDecoderStore();
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      (window as unknown as { useDecoderStore: typeof useDecoderStore }).useDecoderStore = useDecoderStore;
+    }
+  }, []);
+
+  useEffect(() => {
     fetchPresets().then(() => {
       if (typeof window !== "undefined") {
         const params = new URLSearchParams(window.location.search);

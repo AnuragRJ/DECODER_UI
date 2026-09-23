@@ -1,0 +1,392 @@
+(Dec 01 2022 01:46:18,  843942 sec) TelemetryInit()      Profile 264. (Apf9i FwRev: 012811)
+(Dec 01 2022 01:53:51,  844396 sec) AirSystem()          Battery [143cnt, 11.1V]  Current [67cnt, 27.0mA]  Barometer [127cnt, 6.8"Hg]  Run-Time [64s]
+(Dec 01 2022 01:54:20,  844424 sec) GpsServices()        GPS almanac is current.
+(Dec 01 2022 01:54:20,  844424 sec) GpsServices()        Initiating GPS fix acquisition.
+(Dec 01 2022 01:54:38,  844442 sec) gga()                $GPGGA,015400,0203.4132,N,04955.6944,E,0,00,,,M,,M,,*5A
+(Dec 01 2022 01:54:49,  844453 sec) gga()                $GPGGA,015420,0203.4132,N,04955.6944,E,0,00,,,M,,M,,*58
+(Dec 01 2022 01:54:59,  844463 sec) gga()                $GPGGA,015430,0203.4132,N,04955.6944,E,0,00,,,M,,M,,*59
+(Dec 01 2022 01:55:27,  844492 sec) gga()                $GPGGA,015440,0137.5832,N,05025.6840,E,1,04,2.6,2.0,M,-52.5,M,,*6A
+(Dec 01 2022 01:55:27,  844492 sec) GpsServices()        Profile 264 GPS fix obtained in 67 seconds.
+(Dec 01 2022 01:55:27,  844492 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Dec 01 2022 01:55:27,  844492 sec) GpsServices()        Fix:   50.428   1.626 12/01/2022 015440    4
+(Dec 01 2022 01:55:57,  844522 sec) gga()                $GPGGA,015510,0137.5827,N,05025.6774,E,1,04,2.6,3.6,M,-52.5,M,,*65
+(Dec 01 2022 01:56:03,  844527 sec) gga()                $GPGGA,015540,0137.5829,N,05025.6675,E,1,07,1.4,4.5,M,-52.5,M,,*68
+(Dec 01 2022 01:56:03,  844528 sec) GpsServices()        APF9 RTC skew (23s) OK.
+(Dec 01 2022 01:56:03,  844528 sec) LogNmeaSentences()   45,31,32,168,43,32,67,017,49,03,31,320,00*7B
+(Dec 01 2022 01:56:04,  844528 sec) LogNmeaSentences()   $GPGSV,3,3,12,14,75,216,00,20,13,038,00,21,36,000,00,24,10,065,00*71
+(Dec 01 2022 01:56:13,  844537 sec) LogNmeaSentences()   $GPRMC,015550,A,0137.5829,N,05025.6653,E,000.7,287.9,011222,001.6,W*61
+(Dec 01 2022 01:56:13,  844538 sec) LogNmeaSentences()   $GPGGA,015550,0137.5829,N,05025.6653,E,1,07,1.4,5.1,M,-52.5,M,,*68
+(Dec 01 2022 01:56:13,  844538 sec) LogNmeaSentences()   $GPGSA,A,3,10,22,23,26,27,31,32,,,,,,1.7,1.4,0.8*3B
+(Dec 01 2022 01:56:14,  844538 sec) LogNmeaSentences()   $GPGSV,3,1,12,10,22,009,42,22,79,226,45,23,07,037,32,26,26,206,43*7F
+(Dec 01 2022 01:56:14,  844539 sec) LogNmeaSentences()   $GPGSV,3,2,12,27,51,312,44,31,32,168,45,32,67,017,48,03,31,320,00*7D
+(Dec 01 2022 01:56:14,  844539 sec) LogNmeaSentences()   $GPGSV,3,3,12,14,75,216,00,20,12,038,00,21,36,000,00,24,10,065,00*70
+(Dec 01 2022 01:56:23,  844547 sec) LogNmeaSentences()   $GPRMC,015600,A,0137.5830,N,05025.6627,E,001.2,260.3,011222,001.6,W*6B
+(Dec 01 2022 01:56:23,  844548 sec) LogNmeaSentences()   $GPGGA,015600,0137.5830,N,05025.6627,E,1,07,1.4,4.6,M,-52.5,M,,*63
+(Dec 01 2022 01:56:24,  844548 sec) LogNmeaSentences()   $GPGSA,A,3,10,22,23,26,27,31,32,,,,,,1.7,1.4,0.8*3B
+(Dec 01 2022 01:56:24,  844548 sec) LogNmeaSentences()   $GPGSV,3,1,12,10,22,009,42,22,79,226,45,23,07,037,40,26,26,206,41*78
+(Dec 01 2022 01:56:24,  844549 sec) LogNmeaSentences()   $GPGSV,3,2,12,27,51,312,46,31,32,168,42,32,67,017,50,03,31,320,00*71
+(Dec 01 2022 01:56:25,  844549 sec) LogNmeaSentences()   $GPGSV,3,3,12,14,75,216,00,20,12,038,00,21,36,000,00,24,10,065,00*70
+(Dec 01 2022 01:56:25,  844549 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Dec 01 2022 01:56:33,  844557 sec) LogNmeaSentences()   $GPRMC,015610,A,0137.5826,N,05025.6606,E,001.9,260.1,011222,001.6,W*67
+(Dec 01 2022 01:56:33,  844558 sec) LogNmeaSentences()   $GPGGA,015610,0137.5826,N,05025.6606,E,1,07,1.4,4.7,M,-52.5,M,,*67
+(Dec 01 2022 01:56:33,  844558 sec) LogNmeaSentences()   $GPGSA,A,3,10,22,23,26,27,31,32,,,,,,1.7,1.4,0.8*3B
+(Dec 01 2022 01:56:34,  844558 sec) GpsServices()        GPS services complete.
+(Dec 01 2022 01:56:58,  844583 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 01:57:10,  844595 sec) CLogin()             Connection 1 established in 12 seconds.
+(Dec 01 2022 01:57:42,  844626 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 01:57:42,  844626 sec) login()              Login failed.
+(Dec 01 2022 01:58:12,  844656 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 01:58:12,  844656 sec) login()              Login prompt not received.
+(Dec 01 2022 01:58:12,  844656 sec) login()              No carrier detected.
+(Dec 01 2022 01:58:12,  844656 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 01:58:12,  844656 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 01:58:17,  844662 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 01:58:29,  844674 sec) CLogin()             Connection 2 established in 12 seconds.
+(Dec 01 2022 01:59:03,  844707 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 01:59:03,  844707 sec) login()              Login failed.
+(Dec 01 2022 02:00:01,  844765 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 02:00:01,  844765 sec) login()              Password prompt not received.
+(Dec 01 2022 02:00:01,  844765 sec) login()              No carrier detected.
+(Dec 01 2022 02:00:01,  844765 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:00:01,  844765 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 02:00:01,  844766 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Dec 01 2022 02:00:01,  844766 sec) WriteVitals()        Writing vitals to "7521.264.msg".
+(Dec 01 2022 02:00:04,  844768 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:00:21,  844786 sec) CLogin()             Connection 3 established in 17 seconds.
+(Dec 01 2022 02:00:53,  844817 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:00:53,  844817 sec) login()              Login failed.
+(Dec 01 2022 02:01:52,  844876 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 02:01:52,  844876 sec) login()              Password prompt not received.
+(Dec 01 2022 02:01:52,  844876 sec) login()              No carrier detected.
+(Dec 01 2022 02:01:52,  844876 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:01:52,  844877 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:02:02,  844886 sec) CLogin()             Connection 4 established in 10 seconds.
+(Dec 01 2022 02:02:33,  844917 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:02:33,  844917 sec) login()              Login failed.
+(Dec 01 2022 02:03:03,  844947 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:03:03,  844947 sec) login()              Login prompt not received.
+(Dec 01 2022 02:03:33,  844977 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 02:03:33,  844977 sec) login()              Password prompt not received.
+(Dec 01 2022 02:03:33,  844977 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:03:33,  844977 sec) UpLoad()             Files successfully uploaded: 0
+(Dec 01 2022 02:03:33,  844978 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Dec 01 2022 02:03:33,  844978 sec) logout()             No carrier detected.
+(Dec 01 2022 02:03:33,  844978 sec) Telemetry()          Telemetry cycle complete: PrfId=264 ConnectionAttempts=4  Connections=4
+(Dec 01 2022 02:18:48,  845893 sec) AirSystem()          Battery [143cnt, 11.1V]  Current [67cnt, 27.0mA]  Barometer [128cnt, 7.1"Hg]  Run-Time [3s]
+(Dec 01 2022 02:19:48,  845952 sec) GpsServices()        GPS almanac is current.
+(Dec 01 2022 02:19:48,  845952 sec) GpsServices()        Initiating GPS fix acquisition.
+(Dec 01 2022 02:20:17,  845982 sec) gga()                $GPGGA,021930,0137.5417,N,05025.3296,E,6,06,1.6,7.6,M,-52.5,M,,*6D
+(Dec 01 2022 02:20:42,  846007 sec) gga()                $GPGGA,021940,0137.5418,N,05025.3282,E,1,06,1.6,6.4,M,-52.5,M,,*64
+(Dec 01 2022 02:20:42,  846007 sec) GpsServices()        Profile 264 GPS fix obtained in 54 seconds.
+(Dec 01 2022 02:20:42,  846007 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Dec 01 2022 02:20:42,  846007 sec) GpsServices()        Fix:   50.422   1.626 12/01/2022 021940    6
+(Dec 01 2022 02:21:17,  846042 sec) gga()                $GPGGA,022030,0137.5401,N,05025.3167,E,1,06,1.6,7.6,M,-52.5,M,,*6A
+(Dec 01 2022 02:21:23,  846047 sec) gga()                $GPGGA,022100,0137.5389,N,05025.3101,E,1,06,1.6,8.3,M,-52.5,M,,*65
+(Dec 01 2022 02:21:23,  846048 sec) GpsServices()        APF9 RTC skew (23s) OK.
+(Dec 01 2022 02:21:23,  846048 sec) LogNmeaSentences()   ,26,24,195,42,27,59,295,47,31,39,157,46*73
+(Dec 01 2022 02:21:23,  846048 sec) LogNmeaSentences()   $GPGSV,3,3,12,32,54,015,47,03,28,333,00,14,82,282,00,21,44,007,00*74
+(Dec 01 2022 02:21:24,  846048 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Dec 01 2022 02:21:33,  846057 sec) LogNmeaSentences()   $GPRMC,022110,A,0137.5386,N,05025.3074,E,001.1,282.6,011222,001.6,W*60
+(Dec 01 2022 02:21:33,  846058 sec) LogNmeaSentences()   $GPGGA,022110,0137.5386,N,05025.3074,E,1,06,1.6,7.0,M,-52.5,M,,*64
+(Dec 01 2022 02:21:33,  846058 sec) LogNmeaSentences()   $GPGSA,A,3,,10,22,,26,27,31,32,,,,,1.9,1.6,0.9*37
+(Dec 01 2022 02:21:34,  846058 sec) LogNmeaSentences()   $GPGSV,3,1,12,02,02,126,24,10,18,019,39,22,81,311,44,23,04,047,25*7A
+(Dec 01 2022 02:21:34,  846059 sec) LogNmeaSentences()   $GPGSV,3,2,12,26,24,195,42,27,59,294,47,31,39,157,45,32,54,015,48*75
+(Dec 01 2022 02:21:34,  846059 sec) LogNmeaSentences()   $GPGSV,3,3,12,03,28,333,00,14,82,282,00,20,10,048,00,21,44,007,00*7C
+(Dec 01 2022 02:21:43,  846067 sec) LogNmeaSentences()   $GPRMC,022120,A,0137.5385,N,05025.3051,E,001.4,313.6,011222,001.6,W*6B
+(Dec 01 2022 02:21:43,  846068 sec) LogNmeaSentences()   $GPGGA,022120,0137.5385,N,05025.3051,E,1,06,1.6,7.0,M,-52.5,M,,*63
+(Dec 01 2022 02:21:43,  846068 sec) LogNmeaSentences()   $GPGSA,A,3,,10,22,,26,27,31,32,,,,,1.9,1.6,0.9*37
+(Dec 01 2022 02:21:44,  846068 sec) LogNmeaSentences()   $GPGSV,3,1,12,02,02,127,28,10,18,019,41,22,81,311,44,23,04,047,40*7B
+(Dec 01 2022 02:21:44,  846069 sec) LogNmeaSentences()   $GPGSV,3,2,12,26,24,195,40,27,59,294,48,31,39,157,45,32,54,015,48*78
+(Dec 01 2022 02:21:44,  846069 sec) LogNmeaSentences()   $GPGSV,3,3,12,03,28,333,00,14,82,282,00,20,10,048,00,21,45,008,00*72
+(Dec 01 2022 02:21:53,  846077 sec) LogNmeaSentences()   $GPRMC,022130,A,0137.5382,N,05025.3031,E,001.2,189.9,011222,001.6,W*63
+(Dec 01 2022 02:21:53,  846078 sec) LogNmeaSentences()   $GPGGA,022130,0137.5382,N,05025.3031,E,1,06,1.6,6.5,M,-52.5,M,,*67
+(Dec 01 2022 02:21:53,  846078 sec) LogNmeaSentences()   $GPGSA,A,3,,10,22,,26,27,31,32,,,,,1.9,1.6,0.9*37
+(Dec 01 2022 02:21:54,  846078 sec) GpsServices()        GPS services complete.
+(Dec 01 2022 02:22:18,  846103 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:22:32,  846116 sec) CLogin()             Connection 5 established in 14 seconds.
+(Dec 01 2022 02:23:03,  846147 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:23:03,  846147 sec) login()              Login failed.
+(Dec 01 2022 02:24:02,  846206 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 02:24:02,  846206 sec) login()              Password prompt not received.
+(Dec 01 2022 02:24:02,  846206 sec) login()              No carrier detected.
+(Dec 01 2022 02:24:02,  846206 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:24:02,  846206 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 02:24:07,  846212 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:24:19,  846223 sec) CLogin()             Connection 6 established in 12 seconds.
+(Dec 01 2022 02:24:50,  846254 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:24:50,  846254 sec) login()              Login failed.
+(Dec 01 2022 02:25:20,  846284 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:25:20,  846284 sec) login()              Login prompt not received.
+(Dec 01 2022 02:25:50,  846314 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:25:50,  846314 sec) login()              Login prompt not received.
+(Dec 01 2022 02:25:50,  846314 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:25:50,  846314 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 02:25:50,  846315 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Dec 01 2022 02:25:50,  846315 sec) WriteVitals()        Writing vitals to "7521.264.msg".
+(Dec 01 2022 02:25:53,  846317 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:26:08,  846333 sec) CLogin()             Connection 7 established in 15 seconds.
+(Dec 01 2022 02:26:42,  846366 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:26:42,  846366 sec) login()              Login failed.
+(Dec 01 2022 02:27:12,  846396 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:27:12,  846396 sec) login()              Login prompt not received.
+(Dec 01 2022 02:27:12,  846396 sec) login()              No carrier detected.
+(Dec 01 2022 02:27:12,  846396 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:27:12,  846397 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:27:24,  846409 sec) CLogin()             Connection 8 established in 12 seconds.
+(Dec 01 2022 02:27:57,  846441 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:27:57,  846441 sec) login()              Login failed.
+(Dec 01 2022 02:28:27,  846471 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:28:27,  846471 sec) login()              Login prompt not received.
+(Dec 01 2022 02:28:27,  846471 sec) login()              No carrier detected.
+(Dec 01 2022 02:28:27,  846471 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:28:27,  846472 sec) UpLoad()             Files successfully uploaded: 0
+(Dec 01 2022 02:28:27,  846472 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Dec 01 2022 02:28:27,  846472 sec) logout()             No carrier detected.
+(Dec 01 2022 02:28:27,  846472 sec) Telemetry()          Telemetry cycle complete: PrfId=264 ConnectionAttempts=8  Connections=8
+(Dec 01 2022 02:43:42,  847386 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [128cnt, 7.1"Hg].
+(Dec 01 2022 02:44:10,  847414 sec) GpsServices()        GPS almanac is current.
+(Dec 01 2022 02:44:10,  847414 sec) GpsServices()        Initiating GPS fix acquisition.
+(Dec 01 2022 02:44:20,  847424 sec) gga()                $GPGGA,024350,0137.5400,N,05025.3167,E,0,00,,,M,,M,,*58
+(Dec 01 2022 02:44:47,  847452 sec) gga()                $GPGGA,024400,0137.5102,N,05025.0290,E,6,06,1.5,8.2,M,-52.5,M,,*6A
+(Dec 01 2022 02:45:12,  847477 sec) gga()                $GPGGA,024410,0137.5101,N,05025.0270,E,1,06,1.5,7.7,M,-52.5,M,,*6B
+(Dec 01 2022 02:45:12,  847477 sec) GpsServices()        Profile 264 GPS fix obtained in 62 seconds.
+(Dec 01 2022 02:45:12,  847477 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Dec 01 2022 02:45:12,  847477 sec) GpsServices()        Fix:   50.417   1.625 12/01/2022 024410    6
+(Dec 01 2022 02:45:15,  847479 sec) gga()                $GPGGA,024450,0137.5083,N,05025.0180,E,1,08,1.1,6.2,M,-52.5,M,,*66
+(Dec 01 2022 02:45:53,  847517 sec) gga()                $GPGGA,024530,0137.5069,N,05025.0086,E,1,08,1.1,1.8,M,-52.5,M,,*6F
+(Dec 01 2022 02:45:53,  847518 sec) GpsServices()        APF9 RTC skew (23s) OK.
+(Dec 01 2022 02:45:53,  847518 sec) LogNmeaSentences()   ,25,26,22,185,39,27,62,269,47,31,46,145,46*70
+(Dec 01 2022 02:45:53,  847518 sec) LogNmeaSentences()   $GPGSV,3,3,11,32,43,015,47,14,74,337,00,20,08,058,00*4E
+(Dec 01 2022 02:46:03,  847527 sec) LogNmeaSentences()   $GPRMC,024540,A,0137.5063,N,05025.0066,E,001.7,211.0,011222,001.6,W*65
+(Dec 01 2022 02:46:03,  847528 sec) LogNmeaSentences()   $GPGGA,024540,0137.5063,N,05025.0066,E,1,08,1.1,2.1,M,-52.5,M,,*66
+(Dec 01 2022 02:46:03,  847528 sec) LogNmeaSentences()   $GPGSA,A,3,08,10,21,22,,26,27,31,32,,,,1.3,1.1,0.8*30
+(Dec 01 2022 02:46:04,  847528 sec) LogNmeaSentences()   $GPGSV,3,1,11,08,33,304,43,10,16,029,41,21,06,329,38,22,71,344,45*79
+(Dec 01 2022 02:46:04,  847529 sec) LogNmeaSentences()   $GPGSV,3,2,11,23,02,056,33,26,22,185,40,27,62,269,47,31,46,144,45*7B
+(Dec 01 2022 02:46:05,  847529 sec) LogNmeaSentences()   $GPGSV,3,3,11,32,43,015,47,14,74,337,00,20,08,058,00*4E
+(Dec 01 2022 02:46:13,  847537 sec) LogNmeaSentences()   $GPRMC,024550,A,0137.5059,N,05025.0050,E,000.0,244.7,011222,001.6,W*69
+(Dec 01 2022 02:46:13,  847538 sec) LogNmeaSentences()   $GPGGA,024550,0137.5059,N,05025.0050,E,1,08,1.1,1.8,M,-52.5,M,,*61
+(Dec 01 2022 02:46:13,  847538 sec) LogNmeaSentences()   $GPGSA,A,3,08,10,21,22,,26,27,31,32,,,,1.3,1.1,0.8*30
+(Dec 01 2022 02:46:14,  847538 sec) LogNmeaSentences()   $GPGSV,3,1,11,08,33,304,42,10,16,029,40,21,06,329,35,22,71,344,44*75
+(Dec 01 2022 02:46:14,  847539 sec) LogNmeaSentences()   $GPGSV,3,2,11,23,02,056,28,26,22,185,42,27,62,269,48,31,46,144,48*71
+(Dec 01 2022 02:46:14,  847539 sec) LogNmeaSentences()   $GPGSV,3,3,11,32,43,015,46,14,74,337,00,20,08,058,00*4F
+(Dec 01 2022 02:46:23,  847547 sec) LogNmeaSentences()   $GPRMC,024600,A,0137.5060,N,05025.0032,E,001.0,210.5,011222,001.6,W*63
+(Dec 01 2022 02:46:23,  847548 sec) LogNmeaSentences()   $GPGGA,024600,0137.5060,N,05025.0032,E,1,08,1.1,2.3,M,-52.5,M,,*61
+(Dec 01 2022 02:46:23,  847548 sec) LogNmeaSentences()   $GPGSA,A,3,08,10,21,22,,26,27,31,32,,,,1.3,1.1,0.8*30
+(Dec 01 2022 02:46:24,  847548 sec) LogNmeaSentences()   $GPGSV,3,1,11,08,33,304,44,10,16,029,42,21,06,330,38,22,70,345,47*77
+(Dec 01 2022 02:46:24,  847549 sec) LogNmeaSentences()   $GPGSV,3,2,11,23,02,057,27,26,22,185,41,27,62,269,49,31,46,144,44*71
+(Dec 01 2022 02:46:24,  847549 sec) LogNmeaSentences()   $GPGSV,3,3,11,32,43,015,46,14,74,337,00,20,08,058,00*4F
+(Dec 01 2022 02:46:25,  847549 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Dec 01 2022 02:46:25,  847550 sec) GpsServices()        GPS services complete.
+(Dec 01 2022 02:46:57,  847582 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:47:08,  847593 sec) CLogin()             Connection 9 established in 11 seconds.
+(Dec 01 2022 02:47:40,  847624 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:47:40,  847624 sec) login()              Login failed.
+(Dec 01 2022 02:48:10,  847654 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:48:10,  847654 sec) login()              Login prompt not received.
+(Dec 01 2022 02:48:40,  847684 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:48:40,  847684 sec) login()              Login prompt not received.
+(Dec 01 2022 02:48:40,  847684 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:48:40,  847684 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 02:48:45,  847690 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:49:47,  847751 sec) chat()               Expected string [CONNECT] not received.
+(Dec 01 2022 02:49:47,  847751 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Dec 01 2022 02:50:03,  847768 sec) CLogin()             Connection 10 established in 78 seconds.
+(Dec 01 2022 02:50:35,  847799 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:50:35,  847799 sec) login()              Login failed.
+(Dec 01 2022 02:51:05,  847829 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:51:05,  847829 sec) login()              Login prompt not received.
+(Dec 01 2022 02:51:35,  847859 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 02:51:35,  847859 sec) login()              Login prompt not received.
+(Dec 01 2022 02:51:35,  847859 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:51:35,  847859 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 02:51:35,  847860 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Dec 01 2022 02:51:35,  847860 sec) WriteVitals()        Writing vitals to "7521.264.msg".
+(Dec 01 2022 02:51:38,  847862 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:51:53,  847878 sec) CLogin()             Connection 11 established in 15 seconds.
+(Dec 01 2022 02:52:25,  847909 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:52:25,  847909 sec) login()              Login failed.
+(Dec 01 2022 02:53:24,  847968 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 02:53:24,  847968 sec) login()              Password prompt not received.
+(Dec 01 2022 02:53:24,  847968 sec) login()              No carrier detected.
+(Dec 01 2022 02:53:24,  847968 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:53:24,  847969 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 02:53:46,  847991 sec) CLogin()             Connection 12 established in 22 seconds.
+(Dec 01 2022 02:54:18,  848022 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 02:54:18,  848022 sec) login()              Login failed.
+(Dec 01 2022 02:55:17,  848081 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 02:55:17,  848081 sec) login()              Password prompt not received.
+(Dec 01 2022 02:55:17,  848081 sec) login()              No carrier detected.
+(Dec 01 2022 02:55:17,  848081 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 02:55:17,  848082 sec) UpLoad()             Files successfully uploaded: 0
+(Dec 01 2022 02:55:17,  848082 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Dec 01 2022 02:55:17,  848082 sec) logout()             No carrier detected.
+(Dec 01 2022 02:55:17,  848082 sec) Telemetry()          Telemetry cycle complete: PrfId=264 ConnectionAttempts=13  Connections=12
+(Dec 01 2022 03:10:32,  848996 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Dec 01 2022 03:11:00,  849024 sec) GpsServices()        GPS almanac is current.
+(Dec 01 2022 03:11:00,  849024 sec) GpsServices()        Initiating GPS fix acquisition.
+(Dec 01 2022 03:11:10,  849034 sec) gga()                $GPGGA,031040,0137.5063,N,05025.0062,E,0,00,,,M,,M,,*58
+(Dec 01 2022 03:11:47,  849072 sec) gga()                $GPGGA,031100,0137.4939,N,05024.7279,E,1,08,1.0,6.8,M,-52.5,M,,*63
+(Dec 01 2022 03:11:47,  849072 sec) GpsServices()        Profile 264 GPS fix obtained in 47 seconds.
+(Dec 01 2022 03:11:47,  849072 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Dec 01 2022 03:11:47,  849072 sec) GpsServices()        Fix:   50.412   1.625 12/01/2022 031100    8
+(Dec 01 2022 03:12:17,  849102 sec) gga()                $GPGGA,031130,0137.4931,N,05024.7211,E,1,08,1.0,6.4,M,-52.5,M,,*6A
+(Dec 01 2022 03:12:23,  849107 sec) gga()                $GPGGA,031200,0137.4923,N,05024.7155,E,1,08,1.0,6.5,M,-52.5,M,,*6B
+(Dec 01 2022 03:12:23,  849108 sec) GpsServices()        APF9 RTC skew (23s) OK.
+(Dec 01 2022 03:12:23,  849108 sec) LogNmeaSentences()   28,26,22,174,41,27,60,241,49,31,53,127,47*79
+(Dec 01 2022 03:12:24,  849108 sec) LogNmeaSentences()   $GPGSV,3,3,12,32,31,018,46,03,24,356,00,11,01,323,00,14,62,353,00*70
+(Dec 01 2022 03:12:24,  849108 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Dec 01 2022 03:12:33,  849117 sec) LogNmeaSentences()   $GPRMC,031210,A,0137.4919,N,05024.7133,E,000.0,357.7,011222,001.6,W*63
+(Dec 01 2022 03:12:33,  849118 sec) LogNmeaSentences()   $GPGGA,031210,0137.4919,N,05024.7133,E,1,08,1.0,5.4,M,-52.5,M,,*61
+(Dec 01 2022 03:12:33,  849118 sec) LogNmeaSentences()   $GPGSA,A,3,08,10,21,22,,26,27,31,32,,,,1.9,1.0,1.6*34
+(Dec 01 2022 03:12:34,  849118 sec) LogNmeaSentences()   $GPGSV,3,1,12,08,39,290,26,10,14,040,23,21,15,333,24,22,58,355,27*7D
+(Dec 01 2022 03:12:34,  849119 sec) LogNmeaSentences()   $GPGSV,3,2,12,23,01,067,18,26,22,174,23,27,60,241,27,31,53,127,27*70
+(Dec 01 2022 03:12:35,  849119 sec) LogNmeaSentences()   $GPGSV,3,3,12,32,31,018,26,03,24,356,00,11,01,323,00,14,62,353,00*76
+(Dec 01 2022 03:12:43,  849127 sec) LogNmeaSentences()   $GPRMC,031220,A,0137.4914,N,05024.7112,E,001.0,242.4,011222,001.6,W*69
+(Dec 01 2022 03:12:43,  849128 sec) LogNmeaSentences()   $GPGGA,031220,0137.4914,N,05024.7112,E,1,08,1.0,5.2,M,-52.5,M,,*6A
+(Dec 01 2022 03:12:43,  849128 sec) LogNmeaSentences()   $GPGSA,A,3,08,10,21,22,,26,27,31,32,,,,1.3,1.0,0.8*31
+(Dec 01 2022 03:12:44,  849128 sec) LogNmeaSentences()   $GPGSV,3,1,12,08,39,290,44,10,14,040,42,21,15,333,40,22,58,355,45*78
+(Dec 01 2022 03:12:44,  849129 sec) LogNmeaSentences()   $GPGSV,3,2,12,23,01,067,24,26,22,173,42,27,60,241,47,31,53,127,46*7E
+(Dec 01 2022 03:12:44,  849129 sec) LogNmeaSentences()   $GPGSV,3,3,12,32,31,018,45,03,24,356,00,11,01,323,00,14,62,353,00*73
+(Dec 01 2022 03:12:53,  849137 sec) LogNmeaSentences()   $GPRMC,031230,A,0137.4915,N,05024.7097,E,000.7,216.5,011222,001.6,W*63
+(Dec 01 2022 03:12:53,  849138 sec) LogNmeaSentences()   $GPGGA,031230,0137.4915,N,05024.7097,E,1,08,1.0,6.0,M,-52.5,M,,*67
+(Dec 01 2022 03:12:53,  849138 sec) LogNmeaSentences()   $GPGSA,A,3,08,10,21,22,,26,27,31,32,,,,1.3,1.0,0.8*31
+(Dec 01 2022 03:12:54,  849138 sec) GpsServices()        GPS services complete.
+(Dec 01 2022 03:13:18,  849163 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 03:13:36,  849181 sec) CLogin()             Connection 13 established in 18 seconds.
+(Dec 01 2022 03:14:08,  849212 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 03:14:08,  849212 sec) login()              Login failed.
+(Dec 01 2022 03:15:07,  849271 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 03:15:07,  849271 sec) login()              Password prompt not received.
+(Dec 01 2022 03:15:07,  849271 sec) login()              No carrier detected.
+(Dec 01 2022 03:15:07,  849271 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 03:15:07,  849271 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 03:15:12,  849277 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 03:15:28,  849292 sec) CLogin()             Connection 14 established in 16 seconds.
+(Dec 01 2022 03:15:59,  849323 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 03:15:59,  849323 sec) login()              Login failed.
+(Dec 01 2022 03:16:29,  849353 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 03:16:29,  849353 sec) login()              Login prompt not received.
+(Dec 01 2022 03:16:29,  849353 sec) login()              No carrier detected.
+(Dec 01 2022 03:16:29,  849353 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 03:16:29,  849353 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 03:16:29,  849354 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Dec 01 2022 03:16:29,  849354 sec) WriteVitals()        Writing vitals to "7521.264.msg".
+(Dec 01 2022 03:16:32,  849356 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 03:16:49,  849374 sec) CLogin()             Connection 15 established in 17 seconds.
+(Dec 01 2022 03:17:21,  849405 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 03:17:21,  849405 sec) login()              Login failed.
+(Dec 01 2022 03:17:51,  849435 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 03:17:51,  849435 sec) login()              Login prompt not received.
+(Dec 01 2022 03:18:21,  849465 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 03:18:21,  849465 sec) login()              Login prompt not received.
+(Dec 01 2022 03:18:21,  849465 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 03:18:21,  849466 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 03:18:31,  849476 sec) CLogin()             Connection 16 established in 10 seconds.
+(Dec 01 2022 03:19:05,  849509 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 03:19:05,  849509 sec) login()              Login failed.
+(Dec 01 2022 03:20:03,  849567 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 03:20:03,  849567 sec) login()              Password prompt not received.
+(Dec 01 2022 03:20:03,  849567 sec) login()              No carrier detected.
+(Dec 01 2022 03:20:03,  849567 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 03:20:03,  849568 sec) UpLoad()             Files successfully uploaded: 0
+(Dec 01 2022 03:20:03,  849568 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Dec 01 2022 03:20:03,  849568 sec) logout()             No carrier detected.
+(Dec 01 2022 03:20:03,  849568 sec) Telemetry()          Telemetry cycle complete: PrfId=264 ConnectionAttempts=17  Connections=16
+(Dec 01 2022 03:35:18,  850482 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [128cnt, 7.1"Hg].
+(Dec 01 2022 03:36:02,  850526 sec) GpsServices()        GPS almanac is current.
+(Dec 01 2022 03:36:02,  850526 sec) GpsServices()        Initiating GPS fix acquisition.
+(Dec 01 2022 03:36:37,  850562 sec) gga()                $GPGGA,033550,0137.4860,N,05024.4231,E,6,08,1.0,11.1,M,-52.4,M,,*5B
+(Dec 01 2022 03:37:02,  850587 sec) gga()                $GPGGA,033600,0137.4857,N,05024.4210,E,1,08,1.0,9.1,M,-52.4,M,,*64
+(Dec 01 2022 03:37:02,  850587 sec) GpsServices()        Profile 264 GPS fix obtained in 60 seconds.
+(Dec 01 2022 03:37:02,  850587 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Dec 01 2022 03:37:03,  850587 sec) GpsServices()        Fix:   50.407   1.625 12/01/2022 033600    8
+(Dec 01 2022 03:37:37,  850622 sec) gga()                $GPGGA,033650,0137.4853,N,05024.4104,E,1,08,1.0,11.4,M,-52.4,M,,*5F
+(Dec 01 2022 03:37:43,  850627 sec) gga()                $GPGGA,033720,0137.4850,N,05024.4045,E,1,09,0.9,11.3,M,-52.4,M,,*50
+(Dec 01 2022 03:37:43,  850628 sec) GpsServices()        APF9 RTC skew (23s) OK.
+(Dec 01 2022 03:37:43,  850628 sec) LogNmeaSentences()   5,40,22,47,002,45,26,22,163,40,27,53,221,47*7A
+(Dec 01 2022 03:37:44,  850628 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,57,105,46,32,22,021,42,07,05,210,00,11,10,322,00*7B
+(Dec 01 2022 03:37:53,  850637 sec) LogNmeaSentences()   $GPRMC,033730,A,0137.4850,N,05024.4025,E,000.5,298.3,011222,001.6,W*6C
+(Dec 01 2022 03:37:53,  850638 sec) LogNmeaSentences()   $GPGGA,033730,0137.4850,N,05024.4025,E,1,09,0.9,10.4,M,-52.4,M,,*51
+(Dec 01 2022 03:37:53,  850638 sec) LogNmeaSentences()   $GPGSA,A,3,,04,08,10,21,22,26,27,31,32,,,1.2,0.9,0.8*3C
+(Dec 01 2022 03:37:54,  850638 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,09,332,28,04,18,236,40,08,42,275,45,10,13,051,42*78
+(Dec 01 2022 03:37:54,  850639 sec) LogNmeaSentences()   $GPGSV,3,2,12,21,24,335,42,22,47,002,47,26,22,163,38,27,53,221,44*76
+(Dec 01 2022 03:37:55,  850639 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,57,104,47,32,21,021,44,07,05,210,00,11,10,322,00*7E
+(Dec 01 2022 03:38:03,  850647 sec) LogNmeaSentences()   $GPRMC,033740,A,0137.4845,N,05024.4002,E,000.5,294.7,011222,001.6,W*62
+(Dec 01 2022 03:38:03,  850648 sec) LogNmeaSentences()   $GPGGA,033740,0137.4845,N,05024.4002,E,1,10,0.8,10.4,M,-52.4,M,,*5E
+(Dec 01 2022 03:38:04,  850648 sec) LogNmeaSentences()   $GPGSA,A,3,01,04,08,10,21,22,26,27,31,32,,,1.1,0.8,0.8*3F
+(Dec 01 2022 03:38:04,  850648 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,09,332,28,04,18,236,40,08,42,274,44,10,13,051,41*7B
+(Dec 01 2022 03:38:04,  850649 sec) LogNmeaSentences()   $GPGSV,3,2,12,21,24,335,36,22,47,002,44,26,22,163,41,27,53,221,48*74
+(Dec 01 2022 03:38:05,  850649 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,57,104,47,32,21,021,35,07,05,210,00,11,10,322,00*78
+(Dec 01 2022 03:38:13,  850657 sec) LogNmeaSentences()   $GPRMC,033750,A,0137.4849,N,05024.3986,E,000.4,017.0,011222,001.6,W*62
+(Dec 01 2022 03:38:13,  850658 sec) LogNmeaSentences()   $GPGGA,033750,0137.4849,N,05024.3986,E,1,10,0.8,9.5,M,-52.4,M,,*68
+(Dec 01 2022 03:38:14,  850658 sec) LogNmeaSentences()   $GPGSA,A,3,01,04,08,10,21,22,26,27,31,32,,,1.1,0.8,0.8*3F
+(Dec 01 2022 03:38:14,  850658 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,09,332,23,04,18,236,36,08,42,274,43,10,13,051,41*76
+(Dec 01 2022 03:38:14,  850659 sec) LogNmeaSentences()   $GPGSV,3,2,12,21,24,336,42,22,47,002,45,26,22,163,41,27,53,221,46*7B
+(Dec 01 2022 03:38:15,  850659 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,57,104,47,32,21,021,44,07,05,210,00,11,10,322,00*7E
+(Dec 01 2022 03:38:23,  850667 sec) LogNmeaSentences()   $GPRMC,033800,A,0137.4847,N,05024.3963,E,001.5,282.8,011222,001.6,W*6B
+(Dec 01 2022 03:38:23,  850668 sec) LogNmeaSentences()   $GPGGA,033800,0137.4847,N,05024.3963,E,1,10,0.8,9.6,M,-52.4,M,,*64
+(Dec 01 2022 03:38:24,  850668 sec) LogNmeaSentences()   $GPGSA,A,3,01,04,08,10,21,22,26,27,31,32,,,1.1,0.8,0.8*3F
+(Dec 01 2022 03:38:24,  850668 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,09,332,32,04,18,236,40,08,42,274,44,10,13,051,43*72
+(Dec 01 2022 03:38:24,  850669 sec) LogNmeaSentences()   $GPGSV,3,2,12,21,24,336,42,22,47,002,46,26,22,162,39,27,53,220,47*76
+(Dec 01 2022 03:38:25,  850669 sec) LogNmeaSentences()   $GPGSV,3,3,12,31,57,103,46,32,21,021,44,07,05,210,00,11,10,322,00*78
+(Dec 01 2022 03:38:25,  850669 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Dec 01 2022 03:38:25,  850670 sec) GpsServices()        GPS services complete.
+(Dec 01 2022 03:38:49,  850694 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 03:38:59,  850704 sec) CLogin()             Connection 17 established in 10 seconds.
+(Dec 01 2022 03:39:31,  850735 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 03:39:31,  850735 sec) login()              Login failed.
+(Dec 01 2022 03:40:30,  850794 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 03:40:30,  850794 sec) login()              Password prompt not received.
+(Dec 01 2022 03:40:30,  850794 sec) login()              No carrier detected.
+(Dec 01 2022 03:40:30,  850794 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 03:40:30,  850794 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 03:40:35,  850800 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 03:40:45,  850810 sec) CLogin()             Connection 18 established in 10 seconds.
+(Dec 01 2022 03:41:17,  850841 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 03:41:17,  850841 sec) login()              Login failed.
+(Dec 01 2022 03:41:47,  850871 sec) expect()             Attempt to read prompt string [login:] failed.
+(Dec 01 2022 03:41:47,  850871 sec) login()              Login prompt not received.
+(Dec 01 2022 03:42:17,  850901 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Dec 01 2022 03:42:17,  850901 sec) login()              Password prompt not received.
+(Dec 01 2022 03:42:17,  850901 sec) CLogin()             Attempt to login to host failed.
+(Dec 01 2022 03:42:17,  850901 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(Dec 01 2022 03:42:17,  850902 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(Dec 01 2022 03:42:17,  850902 sec) WriteVitals()        Writing vitals to "7521.264.msg".
+(Dec 01 2022 03:42:20,  850904 sec) CLogin()             Connecting to primary host.
+(Dec 01 2022 03:42:34,  850919 sec) CLogin()             Connection 19 established in 14 seconds.
+(Dec 01 2022 03:43:08,  850952 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Dec 01 2022 03:43:08,  850952 sec) login()              Login failed.
+(Dec 01 2022 03:43:15,  850960 sec) login()              Login successful.
+(Dec 01 2022 03:43:18,  850962 sec) CLogin()             Logged in to host.  [Login required 44 seconds]
+(Dec 01 2022 03:43:22,  850967 sec) UpLoadFile()         Uploading "7521.264.msg" to host as "7521.264.msg".
+(Dec 01 2022 03:43:25,  850969 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Dec 01 2022 03:43:27,  850972 sec) TxPacket()           Invalid response [0x69] - resending packet. [PktNum=0x01]
+(Dec 01 2022 03:43:27,  850972 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Dec 01 2022 03:43:34,  850978 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Dec 01 2022 03:43:34,  850979 sec) TxPacket()           Packet xmit history: [11000101] (0:ok, 1:fail).
+(Dec 01 2022 03:43:42,  850986 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Dec 01 2022 03:43:42,  850987 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Dec 01 2022 03:43:52,  850996 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Dec 01 2022 03:43:52,  850997 sec) TxPacket()           Packet xmit history: [01010101] (0:ok, 1:fail).
+(Dec 01 2022 03:44:07,  851012 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(Dec 01 2022 03:44:07,  851012 sec) TxPacket()           Packet xmit history: [10101001] (0:ok, 1:fail).
+(Dec 01 2022 03:45:56,  851120 sec) Tx()                 Transmission completed successfully [25 packets, 23578 bytes, 150 sec, 158.7 bps]
+(Dec 01 2022 03:45:56,  851121 sec) UpLoadFile()         Upload successful.
+
+
+(Dec 01 2022 03:46:03) LogSize()            Log file is 38915 bytes.  Limit is 40960 bytes.
+
+(Dec 01 2022 03:46:03,  851128 sec) UpLoadFile()         Uploading "7521.264.log" to host as "7521.264.log".
+(Dec 01 2022 03:46:06,  851130 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Dec 01 2022 03:49:41,  851345 sec) Tx()                 Transmission completed successfully [40 packets, 40790 bytes, 214 sec, 191.4 bps]
+(Dec 01 2022 03:49:41,  851346 sec) UpLoadFile()         Upload successful.
+(Dec 01 2022 03:49:47,  851351 sec) UpLoad()             Files successfully uploaded: 2
+(Dec 01 2022 03:49:47,  851352 sec) UpLoad()             Upload complete.
+(Dec 01 2022 03:49:50,  851355 sec) logout()             Log-out successful.
+(Dec 01 2022 03:49:51,  851356 sec) Telemetry()          Telemetry cycle complete: PrfId=264 ConnectionAttempts=20  Connections=19
+(Dec 01 2022 03:49:52,  851356 sec) TelemetryTerminate() By-passing mission configuration.
+(Dec 01 2022 03:49:52,  851356 sec) TelemetryTerminate() Reconditioning the file system.
+(Dec 01 2022 03:50:07,       6 sec) DescentInit()        Deep profile 265 initiated at mission-time 851364sec.
+(Dec 01 2022 03:50:09,       9 sec) DescentInit()        Surface pressure: -0.4dbars.
+(Dec 01 2022 03:50:14,      14 sec) PistonMoveAbsWTO()    219->074 218 217 216 215 214 213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104
+<EOT>

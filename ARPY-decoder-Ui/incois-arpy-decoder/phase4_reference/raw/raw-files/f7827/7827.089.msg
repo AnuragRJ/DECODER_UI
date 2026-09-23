@@ -1,0 +1,683 @@
+$ Mission configuration for Apf9i(7827) FwRev 061016:
+$ AscentTimeOut(540) [min]
+$ AtDialCmd(AT+CBST=71,0,1;DT0088160000573) [primary]
+$ AltDialCmd(ATDT0013014291790) [alternate]
+$ BuoyancyNudge(10) [count]
+$ BuoyancyNudgeInitial(22) [count]
+$ ConnectTimeOut(60) [sec]
+$ CpActivationP(985) [dbar]
+$ DeepProfileDescentTime(45) [min]
+$ DeepProfilePistonPos(100) [count]
+$ DeepProfilePressure(500) [dbar]
+$ CompensatorHyperRetraction(0) [count]
+$ DownTime(1200) [min]
+$ FlbbMode(1)
+$ FloatId(7827)
+$ FullExtension(226) [count]
+$ FullRetraction(9) [count]
+$ MaxAirBladder(124) [count]
+$ MaxLogKb(40) [KByte]
+$ MissionPrelude(360) [min]
+$ OkVacuum(96) [count]
+$ PActivationPistonPosition(16) [count]
+$ ParkDescentTime(100) [min]
+$ ParkPistonPos(107) [count]
+$ ParkPressure(400) [dbar]
+$ PnPCycleLen(1)
+$ TelemetryRetry(15) [min]
+$ TimeOfDay(990) [min]
+$ UpTime(660) [min]
+$ Verbosity(2)
+$ DebugBits(0x0002)
+$
+ParkPt:    Feb 28 2018 20:15:26  1519848926    6018  348.72 12.9483
+ParkPt:    Feb 28 2018 20:35:18  1519850118    7210  374.61 12.7691
+ParkPt:    Feb 28 2018 21:35:18  1519853718   10810  389.78 12.5498
+ParkPt:    Feb 28 2018 22:35:18  1519857318   14410  411.83 12.4224
+ParkPt:    Feb 28 2018 23:35:18  1519860918   18010  414.95 12.4421
+ParkPt:    Mar 01 2018 00:35:18  1519864518   21610  420.25 12.5360
+ParkPt:    Mar 01 2018 01:35:18  1519868118   25210  415.60 12.6117
+ParkPt:    Mar 01 2018 02:35:18  1519871718   28810  417.09 12.6476
+ParkPt:    Mar 01 2018 03:35:18  1519875318   32410  411.62 12.6142
+ParkPt:    Mar 01 2018 04:35:18  1519878918   36010  396.37 12.7945
+ParkPt:    Mar 01 2018 05:35:18  1519882518   39610  393.29 12.6983
+ParkPt:    Mar 01 2018 06:35:18  1519886118   43210  394.81 12.5650
+ParkPt:    Mar 01 2018 07:35:18  1519889718   46810  390.41 12.5631
+ParkPt:    Mar 01 2018 08:35:18  1519893318   50410  398.34 12.6485
+ParkPt:    Mar 01 2018 09:35:18  1519896918   54010  398.05 12.7015
+ParkPt:    Mar 01 2018 10:35:18  1519900518   57610  398.23 12.7073
+ParkPt:    Mar 01 2018 11:35:18  1519904118   61210  399.15 12.7775
+ParkPt:    Mar 01 2018 12:35:18  1519907718   64810  401.48 12.7790
+ParkPt:    Mar 01 2018 13:35:18  1519911318   68410  397.34 12.7815
+ParkPt:    Mar 01 2018 14:35:18  1519914918   72010  398.30 12.7930
+ParkPt:    Mar 01 2018 15:35:18  1519918518   75610  399.26 12.8282
+$ Profile 7827.089 terminated: Thu Mar  1 18:24:55 2018
+$ Discrete samples: 36
+$       p        t        s      Topt    TPhase    RPhase  FSig  BbSig  TSig
+   395.36  12.8133  35.6167    12.855    61.618     8.392    58    116   558 (Park Sample)
+   450.73  12.2941  35.5797    12.321    61.555     8.456    58    117   558
+   401.07  12.7024  35.6066    12.736    61.619     8.401    59    121   558
+   361.25  12.9798  35.6132    13.015    61.607     8.406    57    125   558
+   331.23  13.1809  35.6256    13.217    61.597     8.409    57    131   558
+   301.45  13.6022  35.6644    13.645    61.569     8.428    59    144   557
+   281.62  13.8870  35.6619    13.913    61.550     8.444    57    144   557
+   261.09  14.2752  35.7055    14.306    61.526     8.463    58    154   556
+   241.32  15.0351  35.8346    15.048    61.481     8.494    58    143   556
+   221.72  15.9131  35.9600    15.943    61.414     8.619    59    155   555
+   201.33  16.7218  35.9696    16.746    61.365     8.671    59    145   554
+   191.07  17.1755  35.9549    17.197    61.336     8.695    57    146   553
+   180.78  17.7512  35.9906    17.773    61.296     8.721    59    146   552
+   171.42  18.0164  35.9588    18.045    61.280     8.741    58    134   552
+   161.48  18.3118  35.9211    18.345    61.261     8.754    57    129   551
+   151.44  18.6122  35.9102    18.641    61.237     8.770    56    122   550
+   141.48  19.0399  35.9072    19.048    61.213     8.784    56    121   550
+   131.11  19.6380  35.9653    19.651    61.115     8.808    55    112   549
+   121.64  19.4675  35.6856    19.503    60.990     8.816    53    110   549
+   111.63  19.9252  35.7395    19.945    60.246     8.823    54    109   548
+   101.58  22.0008  36.1511    21.912    55.044     8.810    55    109   547
+    91.64  22.6318  36.1689    22.620    49.807     8.910    58    129   545
+    81.82  23.9462  36.4255    23.938    41.775     8.931    62    115   544
+    71.59  24.8826  36.5468    24.881    32.921     8.904    90    126   542
+    61.40  25.0987  36.5294    25.109    30.773     8.905   149    144   540
+    51.50  25.2454  36.5390    25.260    29.979     8.909   178    153   540
+    46.04  25.2623  36.5150    25.280    29.709     8.964   190    178   539
+    41.59  25.2945  36.5151    25.312    29.884     8.965   189    171   538
+    36.68  25.3774  36.5056    25.386    29.813     8.965   219    168   539
+    31.64  25.6904  36.5063    25.681    29.487     8.965   259    177   538
+    26.66  25.8592  36.5169    25.870    29.023     8.973   274    192   538
+    21.66  25.9669  36.5217    25.976    28.838     8.973   304    200   538
+    16.16  26.0971  36.5235    26.111    28.667     8.976   289    208   537
+    11.50  26.2780  36.5354    26.278    28.578     8.976   293    241   537
+     5.67  26.3873  36.5462    26.398    28.504     8.978   238    204   537
+     4.30  26.4255  36.5453    26.439    28.477     8.984   275    207   536
+# Mar 01 2018 18:26:58 Sbe41cpSerNo[08355] NSample[6716] NBin[247]
+00000000000000[2]
+0028673C8EC32D
+003C67098EC228
+005066DE8EC128
+006466C28EBE27
+0078667C8EBA24
+008C66148EB323
+00A065F88EB122
+00B465D78EAF24
+00C9659F8EA432
+00DC65688EA93D
+00F0653E8EA63E
+0104651E8EA541
+011864ED8EA343
+012C64A78E9E3F
+013F643D8E9834
+0154635D8E8427
+0168631B8E9125
+017C630D8EA321
+019062DA8EA421
+01A462CC8EA320
+01B862BB8EA21F
+01CC62B58EA71F
+01E062C08EB81F
+01F462B18EBB1E
+0208628E8EB81E
+021C62658EB61D
+023062518EB41D
+024462438EB31F
+025862248EB51E
+026C620A8EB221
+028161F08EAD25
+0294619F8EA73B
+02A8616E8E9D43
+02BC610E8E8F41
+02D061348EC242
+02E4608E8E9F3C
+02F85FCF8E7C34
+030C5F698E9E2F
+03205EDC8E8A2F
+03345D9C8E4529
+03485BEE8DFC26
+035C5AAC8DA925
+037159778D792E
+038458E08D5D39
+039858508D4636
+03AC57AC8D3036
+03C057288D1B33
+03D4561F8CF22F
+03E855AC8D052F
+03FC553F8D1C2F
+040F53528CB327
+042450788C1E22
+04384FC88BF426
+044C4EBF8BCA23
+04604DD38B9C24
+04744D9A8B9324
+04884D148B8322
+049C4C868B7222
+04B04C298B6621
+04C44C0F8B661E
+04D84C028BB91B
+04EC4C698C0B1A
+05004CE38C7619
+05144CD18C8018
+05284C9D8C7E17
+053C4C278C7E17
+05504BB68C7419
+05644B7C8C691B
+05784AB48C4E21
+058C4A408C431F
+05A049938C401E
+05B449708C3D1F
+05C849568C3C1D
+05DC48FD8C441C
+05F048AD8C451A
+0604488E8C471A
+061848598C5019
+062C48368C5418
+064047F28C5618
+0654476D8C5518
+0668471B8C5B18
+067C47038C5E17
+069046BB8C6917
+06A446808C7117
+06B846508C7916
+06CC46378C7D17
+06E046238C8016
+06F445D58C8E16
+070845638C9616
+071C454A8C9517
+0730450F8C9417
+0744446E8C8E16
+075843BC8C8116
+076C43218C7216
+0780432A8C8916
+079442CF8C9917
+07A8427B8C9216
+07BC42318C9216
+07D041878C8617
+07E441258C8516
+07F840D98C8816
+080C40AD8C8B16
+082040738C9216
+083440678CAC16
+084840718CC417
+085C40268CC61A
+08703FB08CB21E
+08843F688CA61F
+08983EA28C8D1F
+08AC3E238C771E
+08C03E018C6E1F
+08D43DB98C621E
+08E83CF68C4A1D
+08FC3C4F8C361A
+09103BE38C251A
+09243BC18C1F19
+09383B538C1218
+094C3AF78C0717
+09603AC78BFC17
+09743A988BF416
+09883A168BDE15
+099C39738BC215
+09B039318BB215
+09C438B38B9B14
+09D838888B9314
+09EC38188B8614
+0A0037D78B7D14
+0A1437C88B7A14
+0A2837C58B7A14
+0A3C37CE8B7E13
+0A5037A28B8414
+0A6437498B7714
+0A7837118B6C13
+0A8C36F98B6C14
+0AA036CA8B6414
+0AB436BE8B6114
+0AC8368F8B5D14
+0ADC366B8B5814
+0AF036468B5114
+0B0436348B4D15
+0B1835F88B4414
+0B2C35D18B4115
+0B4035E58B4D14
+0B5435E88B5D14
+0B6835B58B5815
+0B7C35B78B5D15
+0B9035BD8B6215
+0BA4358B8B5E14
+0BB835458B5215
+0BCC35148B5014
+0BE034FF8B4E15
+0BF435228B6113
+0C0835068B5E14
+0C1C34B38B5314
+0C3034938B4B14
+0C44348B8B4D14
+0C5834838B4C14
+0C6C345C8B4813
+0C8034408B4314
+0C94342D8B4213
+0CA7341E8B4213
+0CBC33F58B3D14
+0CD033AE8B3213
+0CE433908B2C13
+0CF833688B2813
+0D0C334E8B2413
+0D2033478B2413
+0D3433408B2313
+0D4833358B2214
+0D5C33378B2813
+0D7033398B2B13
+0D8433368B2B13
+0D9833188B2813
+0DAC33058B2413
+0DC032F58B2314
+0DD532E18B2014
+0DE932CB8B1C16
+0DFD32BB8B1A18
+0E1032B18B191A
+0E2432BA8B201B
+0E3832B78B241A
+0E4C32A58B251A
+0E60328F8B231A
+0E7432748B1F1A
+0E8832628B1D19
+0E9C32538B1B19
+0EB0324A8B1B18
+0EC432388B191A
+0ED832228B1818
+0EEC32338B1F18
+0F0032298B1F17
+0F14321C8B1E18
+0F2832138B1E16
+0F3C320C8B1E17
+0F5031F28B1C17
+0F6431E88B1B15
+0F7831E08B1B16
+0F8C31C48B1C15
+0FA031A68B1915
+0FB4319A8B1615
+0FC8318E8B1314
+0FDC31788B1315
+0FF031538B1114
+100431408B0F14
+101831298B0C14
+102C31178B0A14
+104031058B0C14
+105430FE8B0B13
+106830FE8B0D14
+107C31058B1314
+109030F28B1314
+10A430CC8B0F13
+10B830B68B0C14
+10CC309E8B0913
+10E030758B0314
+10F430638B0013
+110830448AFD14
+111C30338AFA13
+113030298AF814
+114430208AF813
+1158301C8AF814
+116C30168AF913
+1180300A8AF913
+119430008AF914
+11A830068AFD13
+11BC2FFD8AFD14
+11D02FEC8AFD13
+11E42FF28AFF14
+11F830278B1213
+120C30518B2714
+122030498B2813
+1234304E8B2913
+1248305F8B3113
+125C30488B2D13
+1270303C8B2A13
+1284301A8B2313
+1298300E8B2113
+12AC300C8B2112
+12C0303B8B2E12
+12D430538B3713
+12E830558B3914
+12FC30568B3916
+131030688B421A
+1329306B8B4465
+132E306B8B450D
+# GPS fix obtained in 88 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.651  16.277 03/01/2018 183530   10
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=126
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=88
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.5dbar, nan, nan / 25.854 29.486C 8.984 / 326, 339, 535}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+# GPS fix obtained in 58 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.650  16.275 03/01/2018 191410   10
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=126
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=58
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.4dbar, nan, nan / 24.935 29.776C 8.862 / 349, 299, 535}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+# GPS fix obtained in 53 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.649  16.274 03/01/2018 194900   10
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=125
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=53
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.4dbar, nan, nan / 25.107 29.781C 8.854 / 325, 328, 535}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+# GPS fix obtained in 55 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.648  16.272 03/01/2018 202640    8
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=125
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=55
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.4dbar, nan, nan / 25.004 29.772C 8.846 / 401, 276, 535}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+# GPS fix obtained in 49 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.648  16.271 03/01/2018 205850    9
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=127
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=49
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.4dbar, nan, nan / 25.227 29.746C 8.844 / 303, 276, 535}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+# GPS fix obtained in 93 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.648  16.270 03/01/2018 213630    9
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=128
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=93
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.4dbar, nan, nan / 25.221 29.734C 8.843 / 281, 285, 535}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+# GPS fix obtained in 91 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.647  16.269 03/01/2018 221610   11
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=127
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=91
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.3dbar, nan, nan / 25.070 29.764C 8.839 / 298, 318, 535}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+# GPS fix obtained in 52 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.648  16.269 03/01/2018 225400    9
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=127
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=52
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.4dbar, nan, nan / 25.239 29.748C 8.840 / 305, 262, 536}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+# GPS fix obtained in 94 seconds.
+#         lon     lat mm/dd/yyyy hhmmss nsat
+Fix:   64.647  16.270 03/01/2018 233200   11
+Apf9iFwRev=061016
+ActiveBallastAdjustments=3
+AirBladderPressure=127
+AirPumpAmps=62
+AirPumpVolts=189
+BuoyancyPumpOnTime=931
+BuoyancyPumpAmps=78
+BuoyancyPumpVolts=179
+CurrentPistonPosition=189
+DeepProfilePistonPosition=99
+GpsFixTime=94
+FlashErrorsCorrectable=0
+FlashErrorsUncorrectable=0
+FloatId=7827
+ParkDescentPCnt=3
+ParkDescentP[0]=2
+ParkDescentP[1]=26
+ParkDescentP[2]=35
+ParkPistonPosition=108
+ParkObs={ 395.4dbar, 12.813C, 35.6167PSU / 12.855 61.618C 8.392 / 58, 116, 558}
+ProfileId=089
+ObsIndex=35
+QuiescentAmps=6
+QuiescentVolts=194
+RtcSkew=21
+Sbe41cpAmps=10
+Sbe41cpVolts=189
+Sbe41cpStatus=0x00000000
+status=0x00000021
+SurfaceObs={ -0.4dbar, nan, nan / 25.401 29.680C 8.904 / 420, 500, 536}
+SurfacePistonPosition=167
+SurfacePressure=-0.44
+Vacuum=81
+
+<EOT>
+
+<EOT>

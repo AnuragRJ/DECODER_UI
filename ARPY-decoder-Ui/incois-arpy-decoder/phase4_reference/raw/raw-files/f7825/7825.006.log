@@ -1,0 +1,244 @@
+(Jan 13 2017 20:26:03,  411044 sec) TelemetryInit()      Profile 5. (Apf9i FwRev: 061016)
+(Jan 13 2017 20:32:47,  411448 sec) AirSystem()          Battery [190cnt, 14.7V]  Current [66cnt, 265.9mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [43s]
+(Jan 13 2017 20:33:33,  411494 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 0.1dbars / 242.3uM 25.576C 29.994 8.799 -86.903 / 63,130,531
+(Jan 13 2017 20:33:38,  411499 sec) GpsServices()        GPS almanac is current.
+(Jan 13 2017 20:33:39,  411500 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 13 2017 20:34:00,  411521 sec) gga()                $GPGGA,203340,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*56
+(Jan 13 2017 20:34:11,  411532 sec) gga()                $GPGGA,203350,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*57
+(Jan 13 2017 20:34:22,  411543 sec) gga()                $GPGGA,203400,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*55
+(Jan 13 2017 20:34:33,  411553 sec) gga()                $GPGGA,203400,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*55
+(Jan 13 2017 20:34:44,  411565 sec) gga()                $GPGGA,203410,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*54
+(Jan 13 2017 20:34:54,  411575 sec) gga()                $GPGGA,203420,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*57
+(Jan 13 2017 20:35:06,  411587 sec) gga()                $GPGGA,203430,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*56
+(Jan 13 2017 20:35:17,  411597 sec) gga()                $GPGGA,203430,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*56
+(Jan 13 2017 20:35:19,  411600 sec) gga()                $GPGGA,203440,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*51
+(Jan 13 2017 20:35:30,  411611 sec) gga()                $GPGGA,203450,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*50
+(Jan 13 2017 20:35:35,  411616 sec) gga()                $GPGGA,203510,1814.9806,N,08932.8925,E,0,00,,,M,,M,,*55
+(Jan 13 2017 20:36:27,  411668 sec) gga()                $GPGGA,203540,1810.0057,N,08930.3647,E,1,08,0.9,2.5,M,-67.7,M,,*61
+(Jan 13 2017 20:36:27,  411668 sec) GpsServices()        Profile 5 GPS fix obtained in 168 seconds.
+(Jan 13 2017 20:36:28,  411668 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 13 2017 20:36:28,  411669 sec) GpsServices()        Fix:   89.506  18.167 01/13/2017 203540    8
+(Jan 13 2017 20:37:17,  411718 sec) gga()                $GPGGA,203630,1810.0003,N,08930.3585,E,1,08,0.9,1.3,M,-67.7,M,,*6C
+(Jan 13 2017 20:37:25,  411726 sec) gga()                $GPGGA,203720,1809.9944,N,08930.3504,E,1,08,0.9,2.2,M,-67.7,M,,*6C
+(Jan 13 2017 20:37:25,  411726 sec) GpsServices()        APF9 RTC skew (5s) OK.
+(Jan 13 2017 20:37:25,  411726 sec) GpsServices()        GPS services complete.
+(Jan 13 2017 20:38:07,  411768 sec) CLogin()             Connecting to primary host.
+(Jan 13 2017 20:38:19,  411780 sec) CLogin()             Connection 1 established in 12 seconds.
+(Jan 13 2017 20:38:31,  411791 sec) login()              Login successful.
+(Jan 13 2017 20:38:36,  411796 sec) chat()               Expected string [cmd>] not received.
+(Jan 13 2017 20:38:36,  411797 sec) login()              Attempt to set the command prompt failed.
+(Jan 13 2017 20:38:38,  411799 sec) CLogin()             Logged in to host.  [Login required 19 seconds]
+(Jan 13 2017 20:38:53,  411814 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jan 13 2017 20:38:56,  411816 sec) Rx()                 Initiating transfer. [0x43]
+(Jan 13 2017 20:39:06,  411827 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jan 13 2017 20:39:13,  411833 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 17 sec, 60.2 bps]
+(Jan 13 2017 20:39:13,  411834 sec) RxConfig()           Download successful.
+(Jan 13 2017 20:39:36,  411857 sec) WriteVitals()        Writing vitals to "7825.005.msg".
+(Jan 13 2017 20:39:53,  411874 sec) UpLoadFile()         Uploading "7825.005.log" to host as "7825.005.log".
+(Jan 13 2017 20:39:59,  411880 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jan 13 2017 20:40:24,  411905 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jan 13 2017 20:40:24,  411905 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jan 13 2017 20:40:30,  411911 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jan 13 2017 20:40:30,  411911 sec) TxPacket()           Packet xmit history: [10000011] (0:ok, 1:fail).
+(Jan 13 2017 20:40:46,  411927 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jan 13 2017 20:40:46,  411927 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(Jan 13 2017 20:41:29,  411970 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jan 13 2017 20:41:29,  411970 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(Jan 13 2017 20:41:42,  411983 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Jan 13 2017 20:41:42,  411983 sec) TxPacket()           Packet xmit history: [10000101] (0:ok, 1:fail).
+(Jan 13 2017 20:41:55,  411996 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jan 13 2017 20:41:55,  411996 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Jan 13 2017 20:42:13,  412014 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Jan 13 2017 20:42:13,  412014 sec) TxPacket()           Packet xmit history: [01010101] (0:ok, 1:fail).
+(Jan 13 2017 20:42:19,  412020 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Jan 13 2017 20:42:19,  412020 sec) TxPacket()           Packet xmit history: [10101011] (0:ok, 1:fail).
+(Jan 13 2017 20:42:41,  412042 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jan 13 2017 20:42:41,  412042 sec) TxPacket()           Packet xmit history: [10110001] (0:ok, 1:fail).
+(Jan 13 2017 20:42:59,  412060 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Jan 13 2017 20:42:59,  412060 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Jan 13 2017 20:43:11,  412072 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jan 13 2017 20:43:11,  412072 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(Jan 13 2017 20:43:18,  412079 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jan 13 2017 20:43:18,  412079 sec) TxPacket()           Packet xmit history: [01001011] (0:ok, 1:fail).
+(Jan 13 2017 20:43:27,  412088 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Jan 13 2017 20:43:27,  412088 sec) TxPacket()           Packet xmit history: [00101101] (0:ok, 1:fail).
+(Jan 13 2017 20:43:43,  412104 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Jan 13 2017 20:43:43,  412104 sec) TxPacket()           Packet xmit history: [11010001] (0:ok, 1:fail).
+(Jan 13 2017 20:44:15,  412136 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jan 13 2017 20:44:15,  412136 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Jan 13 2017 20:44:21,  412142 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jan 13 2017 20:44:21,  412142 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(Jan 13 2017 20:44:34,  412155 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jan 13 2017 20:44:34,  412155 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(Jan 13 2017 20:44:57,  412178 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Jan 13 2017 20:44:57,  412178 sec) TxPacket()           Packet xmit history: [11010001] (0:ok, 1:fail).
+(Jan 13 2017 20:45:03,  412184 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Jan 13 2017 20:45:03,  412184 sec) TxPacket()           Packet xmit history: [10100011] (0:ok, 1:fail).
+(Jan 13 2017 20:45:14,  412195 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+(Jan 13 2017 20:45:14,  412195 sec) TxPacket()           Packet xmit history: [10001101] (0:ok, 1:fail).
+(Jan 13 2017 20:45:40,  412221 sec) TxPacket()           NAK received - resending packet. [PktNum=0x21]
+(Jan 13 2017 20:45:40,  412221 sec) TxPacket()           Packet xmit history: [11010001] (0:ok, 1:fail).
+(Jan 13 2017 20:45:45,  412226 sec) TxPacket()           NAK received - resending packet. [PktNum=0x21]
+(Jan 13 2017 20:45:45,  412226 sec) TxPacket()           Packet xmit history: [10100011] (0:ok, 1:fail).
+(Jan 13 2017 20:46:06,  412247 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Jan 13 2017 20:46:06,  412247 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Jan 13 2017 20:46:14,  412255 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Jan 13 2017 20:46:14,  412255 sec) TxPacket()           Packet xmit history: [00110011] (0:ok, 1:fail).
+(Jan 13 2017 20:46:37,  412278 sec) TxPacket()           NAK received - resending packet. [PktNum=0x26]
+(Jan 13 2017 20:46:37,  412278 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(Jan 13 2017 20:47:03,  412304 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Jan 13 2017 20:47:03,  412304 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Jan 13 2017 20:47:10,  412311 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Jan 13 2017 20:47:10,  412311 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Jan 13 2017 20:47:22,  412323 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Jan 13 2017 20:47:22,  412323 sec) TxPacket()           Packet xmit history: [00100111] (0:ok, 1:fail).
+(Jan 13 2017 20:47:35,  412336 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Jan 13 2017 20:47:35,  412336 sec) TxPacket()           Packet xmit history: [01001111] (0:ok, 1:fail).
+(Jan 13 2017 20:47:48,  412349 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Jan 13 2017 20:47:48,  412349 sec) TxPacket()           Packet xmit history: [10011111] (0:ok, 1:fail).
+(Jan 13 2017 20:48:07,  412368 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Jan 13 2017 20:48:08,  412369 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Jan 13 2017 20:48:51,  412411 sec) TxPacket()           No carrier detected.
+(Jan 13 2017 20:48:51,  412412 sec) TxPacket()           Exit status: -5
+(Jan 13 2017 20:48:51,  412412 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jan 13 2017 20:49:02,  412423 sec) UpLoadFile()         Upload failed.
+(Jan 13 2017 20:49:03,  412424 sec) CLogin()             Connecting to primary host.
+(Jan 13 2017 20:49:09,  412429 sec) chat()               Expected string [OK] not received.
+(Jan 13 2017 20:49:09,  412430 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jan 13 2017 20:49:09,  412430 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jan 13 2017 20:49:09,  412430 sec) modem_connect()      Modem configuration failed.
+(Jan 13 2017 20:49:09,  412430 sec) connect()            Connection attempt failed.
+(Jan 13 2017 20:50:10,  412490 sec) chat()               Expected string [CONNECT] not received.
+(Jan 13 2017 20:50:10,  412491 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Jan 13 2017 20:50:10,  412491 sec) connect()            Connection attempt failed.
+(Jan 13 2017 20:50:10,  412491 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jan 13 2017 20:51:11,  412551 sec) chat()               Expected string [CONNECT] not received.
+(Jan 13 2017 20:51:11,  412552 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 13 2017 20:51:11,  412552 sec) connect()            Connection attempt failed.
+(Jan 13 2017 20:52:12,  412612 sec) chat()               Expected string [CONNECT] not received.
+(Jan 13 2017 20:52:12,  412613 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jan 13 2017 20:52:12,  412613 sec) connect()            Connection attempt failed.
+(Jan 13 2017 20:52:12,  412613 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jan 13 2017 20:52:13,  412614 sec) UpLoad()             Files successfully uploaded: 0
+(Jan 13 2017 20:52:13,  412614 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jan 13 2017 20:52:13,  412614 sec) logout()             No carrier detected.
+(Jan 13 2017 20:52:13,  412614 sec) Telemetry()          Telemetry cycle complete: PrfId=5 ConnectionAttempts=5  Connections=1
+(Jan 13 2017 21:07:32,  413533 sec) AirSystem()          Battery [194cnt, 15.0V]  Current [69cnt, 278.0mA]  Barometer [127cnt, 6.8"Hg]  Run-Time [3s]
+(Jan 13 2017 21:08:18,  413579 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 0.2dbars / 247.5uM 23.768C 30.471 8.704 -29.511 / 62,131,531
+(Jan 13 2017 21:08:23,  413584 sec) GpsServices()        GPS almanac is current.
+(Jan 13 2017 21:08:24,  413585 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 13 2017 21:09:18,  413639 sec) gga()                $GPGGA,210830,1809.7667,N,08930.0859,E,6,08,0.9,8.4,M,-67.7,M,,*6D
+(Jan 13 2017 21:10:01,  413682 sec) gga()                $GPGGA,210840,1809.7663,N,08930.0841,E,1,08,0.9,10.2,M,-67.7,M,,*5F
+(Jan 13 2017 21:10:01,  413682 sec) GpsServices()        Profile 5 GPS fix obtained in 97 seconds.
+(Jan 13 2017 21:10:02,  413682 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 13 2017 21:10:02,  413683 sec) GpsServices()        Fix:   89.501  18.163 01/13/2017 210840    8
+(Jan 13 2017 21:10:47,  413728 sec) gga()                $GPGGA,211000,1809.7551,N,08930.0733,E,1,09,0.9,6.5,M,-67.7,M,,*6B
+(Jan 13 2017 21:10:55,  413736 sec) gga()                $GPGGA,211050,1809.7490,N,08930.0670,E,1,09,0.9,1.5,M,-67.7,M,,*63
+(Jan 13 2017 21:10:55,  413736 sec) GpsServices()        APF9 RTC skew (5s) OK.
+(Jan 13 2017 21:10:55,  413736 sec) GpsServices()        GPS services complete.
+(Jan 13 2017 21:11:45,  413786 sec) CLogin()             Connecting to primary host.
+(Jan 13 2017 21:12:46,  413846 sec) chat()               Expected string [CONNECT] not received.
+(Jan 13 2017 21:12:46,  413847 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Jan 13 2017 21:12:46,  413847 sec) connect()            Connection attempt failed.
+(Jan 13 2017 21:12:57,  413858 sec) CLogin()             Connection 2 established in 72 seconds.
+(Jan 13 2017 21:13:11,  413872 sec) login()              Login successful.
+(Jan 13 2017 21:13:16,  413876 sec) chat()               Expected string [cmd>] not received.
+(Jan 13 2017 21:13:16,  413877 sec) login()              Attempt to set the command prompt failed.
+(Jan 13 2017 21:13:19,  413880 sec) CLogin()             Logged in to host.  [Login required 22 seconds]
+(Jan 13 2017 21:13:31,  413892 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jan 13 2017 21:13:34,  413895 sec) Rx()                 Initiating transfer. [0x43]
+(Jan 13 2017 21:13:36,  413897 sec) RxStartByte()        Sync errors encountered: 429
+(Jan 13 2017 21:13:40,  413900 sec) Rx()                 Truncated packet received - retrying.
+(Jan 13 2017 21:13:51,  413911 sec) Rx()                 Re-initiating transfer. [0x43]
+(Jan 13 2017 21:13:56,  413917 sec) RxStartByte()        Sync errors encountered: 928
+(Jan 13 2017 21:14:00,  413920 sec) Rx()                 Truncated packet received - retrying.
+(Jan 13 2017 21:14:05,  413925 sec) RxStartByte()        Sync errors encountered: 204
+(Jan 13 2017 21:14:08,  413928 sec) Rx()                 Truncated packet received - retrying.
+(Jan 13 2017 21:14:10,  413930 sec) RxStartByte()        Sync errors encountered: 873
+(Jan 13 2017 21:14:14,  413934 sec) Rx()                 Truncated packet received - retrying.
+(Jan 13 2017 21:14:16,  413937 sec) RxStartByte()        Sync errors encountered: 130
+(Jan 13 2017 21:14:19,  413940 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jan 13 2017 21:14:22,  413942 sec) Rx()                 Previous packet received again - resyncing.
+(Jan 13 2017 21:14:25,  413945 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 34 sec, 30.1 bps]
+(Jan 13 2017 21:14:25,  413946 sec) RxConfig()           Download successful.
+(Jan 13 2017 21:14:48,  413969 sec) WriteVitals()        Writing vitals to "7825.005.msg".
+(Jan 13 2017 21:15:03,  413984 sec) UpLoadFile()         Uploading "7825.005.log" to host as "7825.005.log".
+(Jan 13 2017 21:16:04,  414044 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Jan 13 2017 21:16:15,  414056 sec) UpLoadFile()         Upload failed.
+(Jan 13 2017 21:16:24,  414065 sec) UpLoadFile()         Uploading "7825.005.msg" to host as "7825.005.msg".
+(Jan 13 2017 21:17:25,  414125 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Jan 13 2017 21:17:36,  414137 sec) UpLoadFile()         Upload failed.
+(Jan 13 2017 21:17:36,  414137 sec) UpLoad()             Files successfully uploaded: 0
+(Jan 13 2017 21:17:36,  414137 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jan 13 2017 21:17:41,  414141 sec) logout()             Log-out successful.
+(Jan 13 2017 21:17:42,  414143 sec) Telemetry()          Telemetry cycle complete: PrfId=5 ConnectionAttempts=7  Connections=2
+(Jan 13 2017 21:32:57,  415057 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Jan 13 2017 21:33:42,  415103 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 0.0dbars / 251.7uM 23.336C 30.452 8.697 -15.692 / 63,128,531
+(Jan 13 2017 21:33:47,  415108 sec) GpsServices()        GPS almanac is current.
+(Jan 13 2017 21:33:48,  415109 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jan 13 2017 21:34:38,  415159 sec) gga()                $GPGGA,213350,1809.5540,N,08929.8714,E,6,08,1.1,8.1,M,-67.7,M,,*6D
+(Jan 13 2017 21:35:21,  415202 sec) gga()                $GPGGA,213400,1809.5526,N,08929.8701,E,6,09,0.9,7.2,M,-67.7,M,,*6F
+(Jan 13 2017 21:36:47,  415288 sec) gga()                $GPGGA,213600,1809.5352,N,08929.8542,E,1,12,0.7,5.8,M,-67.7,M,,*66
+(Jan 13 2017 21:36:48,  415289 sec) GpsServices()        Profile 5 GPS fix obtained in 179 seconds.
+(Jan 13 2017 21:36:48,  415289 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jan 13 2017 21:36:48,  415289 sec) GpsServices()        Fix:   89.498  18.159 01/13/2017 213600   12
+(Jan 13 2017 21:37:37,  415338 sec) gga()                $GPGGA,213650,1809.5285,N,08929.8482,E,1,11,0.7,2.3,M,-67.7,M,,*6A
+(Jan 13 2017 21:37:45,  415346 sec) gga()                $GPGGA,213740,1809.5211,N,08929.8406,E,1,11,0.7,4.9,M,-67.7,M,,*67
+(Jan 13 2017 21:37:45,  415346 sec) GpsServices()        APF9 RTC skew (5s) OK.
+(Jan 13 2017 21:37:45,  415346 sec) GpsServices()        GPS services complete.
+(Jan 13 2017 21:38:51,  415412 sec) CLogin()             Connecting to primary host.
+(Jan 13 2017 21:39:18,  415439 sec) CLogin()             Connection 3 established in 27 seconds.
+(Jan 13 2017 21:39:48,  415468 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jan 13 2017 21:39:48,  415469 sec) login()              Login prompt not received.
+(Jan 13 2017 21:39:57,  415478 sec) login()              Login successful.
+(Jan 13 2017 21:40:00,  415481 sec) CLogin()             Logged in to host.  [Login required 42 seconds]
+(Jan 13 2017 21:40:15,  415496 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jan 13 2017 21:40:17,  415498 sec) Rx()                 Initiating transfer. [0x43]
+(Jan 13 2017 21:40:25,  415506 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jan 13 2017 21:40:30,  415510 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 13 sec, 78.8 bps]
+(Jan 13 2017 21:40:30,  415511 sec) RxConfig()           Download successful.
+(Jan 13 2017 21:40:53,  415534 sec) WriteVitals()        Writing vitals to "7825.005.msg".
+(Jan 13 2017 21:41:08,  415549 sec) UpLoadFile()         Uploading "7825.005.log" to host as "7825.005.log".
+(Jan 13 2017 21:41:13,  415554 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jan 13 2017 21:41:32,  415573 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jan 13 2017 21:41:32,  415573 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jan 13 2017 21:42:08,  415609 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Jan 13 2017 21:42:08,  415609 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Jan 13 2017 21:42:27,  415628 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jan 13 2017 21:42:27,  415628 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Jan 13 2017 21:42:33,  415634 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jan 13 2017 21:42:33,  415634 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Jan 13 2017 21:43:41,  415702 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jan 13 2017 21:43:41,  415702 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jan 13 2017 21:44:45,  415766 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jan 13 2017 21:44:45,  415766 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jan 13 2017 21:44:56,  415776 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jan 13 2017 21:44:56,  415777 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jan 13 2017 21:45:00,  415781 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jan 13 2017 21:45:00,  415781 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Jan 13 2017 21:45:11,  415792 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jan 13 2017 21:45:11,  415792 sec) TxPacket()           Packet xmit history: [00011101] (0:ok, 1:fail).
+(Jan 13 2017 21:45:17,  415798 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jan 13 2017 21:45:17,  415798 sec) TxPacket()           Packet xmit history: [00111011] (0:ok, 1:fail).
+(Jan 13 2017 21:45:22,  415802 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jan 13 2017 21:45:22,  415803 sec) TxPacket()           Packet xmit history: [01110111] (0:ok, 1:fail).
+(Jan 13 2017 21:45:24,  415805 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jan 13 2017 21:45:24,  415805 sec) TxPacket()           Packet xmit history: [11101111] (0:ok, 1:fail).
+(Jan 13 2017 21:45:38,  415819 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+(Jan 13 2017 21:45:38,  415819 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jan 13 2017 21:45:47,  415827 sec) TxPacket()           Packet xmit history: [11000010] (0:ok, 1:fail).
+(Jan 13 2017 21:45:54,  415834 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x1e]
+(Jan 13 2017 21:45:54,  415835 sec) TxPacket()           Packet xmit history: [10000101] (0:ok, 1:fail).
+(Jan 13 2017 21:45:56,  415837 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x1e]
+(Jan 13 2017 21:45:56,  415837 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Jan 13 2017 21:45:56,  415837 sec) TxPacket()           Invalid response [0x41] - resending packet. [PktNum=0x1e]
+(Jan 13 2017 21:45:56,  415837 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Jan 13 2017 21:45:57,  415838 sec) TxPacket()           Invalid response [0x6e] - resending packet. [PktNum=0x1e]
+(Jan 13 2017 21:45:57,  415838 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Jan 13 2017 21:45:58,  415839 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x1e]
+(Jan 13 2017 21:45:58,  415839 sec) TxPacket()           Packet xmit history: [01011111] (0:ok, 1:fail).
+(Jan 13 2017 21:45:58,  415839 sec) TxPacket()           Invalid response [0x41] - resending packet. [PktNum=0x1e]
+(Jan 13 2017 21:45:59,  415839 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jan 13 2017 21:45:59,  415840 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x1e]
+(Jan 13 2017 21:45:59,  415840 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jan 13 2017 21:46:00,  415841 sec) TxPacket()           Invalid respo

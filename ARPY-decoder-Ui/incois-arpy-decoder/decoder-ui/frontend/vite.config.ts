@@ -6,16 +6,16 @@ export default defineConfig({
   plugins: [tailwindcss(), react()],
   server: {
     host: "0.0.0.0",
-    port: 3000,
+    port: 3001,
     strictPort: true,
     allowedHosts: true,
     proxy: {
       "/api": {
-        target: "http://127.0.0.1:8000",
+        target: "http://127.0.0.1:8001",
         changeOrigin: true,
       },
       "/ws": {
-        target: "ws://127.0.0.1:8000",
+        target: "ws://127.0.0.1:8001",
         ws: true,
       },
     },

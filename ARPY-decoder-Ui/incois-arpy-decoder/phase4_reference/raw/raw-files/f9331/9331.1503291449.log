@@ -1,0 +1,134 @@
+(Mar 29 2015 14:52:18,    5653 sec) AirSystem()          Battery [185cnt, 14.3V]  Current [86cnt, 346.5mA]  Barometer [125cnt, 6.2"Hg]  Run-Time [62s]
+(Mar 29 2015 14:53:11,    5706 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 394.2uM 1.112C 35.184 8.147 645.498 / 108,159,576
+(Mar 29 2015 14:53:22,    5717 sec) GpsServices()        Replacing aged (184 days) almanac.
+(Mar 29 2015 14:53:22,    5717 sec) UpLoadGpsAlmanac()   Pausing for 15 minutes to upload GPS almanac.
+(Mar 29 2015 15:08:23,    6618 sec) UpLoadGpsAlmanac()   Pause complete.
+(Mar 29 2015 15:08:23,    6618 sec) GpsServices()        New almanac acquired.
+(Mar 29 2015 15:08:23,    6618 sec) GpsServices()        Initiating GPS fix acquisition.
+(Mar 29 2015 15:09:06,    6661 sec) gga()                $GPGGA,150810,5400.6428,S,01800.0978,E,1,00,1.0,-7.3,M,29.6,M,,*71
+(Mar 29 2015 15:09:49,    6704 sec) gga()                $GPGGA,150820,5400.6421,S,01800.0983,E,1,10,0.9,-0.4,M,29.6,M,,*76
+(Mar 29 2015 15:09:49,    6704 sec) GpsServices()        Profile 0 GPS fix obtained in 86 seconds.
+(Mar 29 2015 15:09:49,    6704 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Mar 29 2015 15:09:49,    6705 sec) GpsServices()        Fix:   18.002 -54.011 03/29/2015 150820   10
+(Mar 29 2015 15:10:36,    6752 sec) gga()                $GPGGA,150940,5400.6516,S,01800.1091,E,1,11,0.8,-7.5,M,29.6,M,,*79
+(Mar 29 2015 15:10:44,    6760 sec) gga()                $GPGGA,151030,5400.6585,S,01800.1168,E,1,11,0.8,1.1,M,29.6,M,,*54
+(Mar 29 2015 15:10:45,    6760 sec) GpsServices()        APF9 RTC skew (15s) OK.
+(Mar 29 2015 15:10:45,    6760 sec) GpsServices()        GPS services complete.
+(Mar 29 2015 15:11:43,    6818 sec) CLogin()             Connecting to primary host.
+(Mar 29 2015 15:11:54,    6829 sec) CLogin()             Connection 1 established in 11 seconds.
+(Mar 29 2015 15:12:24,    6859 sec) expect()             Attempt to read prompt string [login:] failed.
+(Mar 29 2015 15:12:24,    6859 sec) login()              Login prompt not received.
+(Mar 29 2015 15:12:24,    6859 sec) login()              No carrier detected.
+(Mar 29 2015 15:13:25,    6920 sec) chat()               Expected string [CONNECT] not received.
+(Mar 29 2015 15:13:25,    6920 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Mar 29 2015 15:13:25,    6920 sec) connect()            Connection attempt failed.
+(Mar 29 2015 15:13:25,    6920 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Mar 29 2015 15:13:48,    6943 sec) CLogin()             Connection 2 established in 125 seconds.
+(Mar 29 2015 15:14:30,    6985 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Mar 29 2015 15:14:30,    6985 sec) login()              Password prompt not received.
+(Mar 29 2015 15:14:30,    6985 sec) login()              No carrier detected.
+(Mar 29 2015 15:14:53,    7008 sec) CLogin()             Connection 3 established in 190 seconds.
+(Mar 29 2015 15:15:37,    7052 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Mar 29 2015 15:15:37,    7052 sec) login()              Password prompt not received.
+(Mar 29 2015 15:15:37,    7052 sec) login()              No carrier detected.
+(Mar 29 2015 15:15:37,    7052 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Mar 29 2015 15:15:38,    7053 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Mar 29 2015 15:15:44,    7059 sec) CLogin()             Connecting to primary host.
+(Mar 29 2015 15:15:59,    7074 sec) CLogin()             Connection 4 established in 16 seconds.
+(Mar 29 2015 15:16:29,    7104 sec) expect()             Attempt to read prompt string [login:] failed.
+(Mar 29 2015 15:16:29,    7104 sec) login()              Login prompt not received.
+(Mar 29 2015 15:16:29,    7104 sec) login()              No carrier detected.
+(Mar 29 2015 15:16:44,    7120 sec) CLogin()             Connection 5 established in 61 seconds.
+(Mar 29 2015 15:17:15,    7150 sec) expect()             Attempt to read prompt string [login:] failed.
+(Mar 29 2015 15:17:15,    7150 sec) login()              Login prompt not received.
+(Mar 29 2015 15:17:15,    7150 sec) login()              No carrier detected.
+(Mar 29 2015 15:17:15,    7150 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Mar 29 2015 15:17:51,    7186 sec) CLogin()             Connection 6 established in 128 seconds.
+(Mar 29 2015 15:18:31,    7226 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Mar 29 2015 15:18:31,    7226 sec) login()              Password prompt not received.
+(Mar 29 2015 15:18:31,    7226 sec) login()              No carrier detected.
+(Mar 29 2015 15:19:11,    7266 sec) CLogin()             Connection 7 established in 208 seconds.
+(Mar 29 2015 15:19:36,    7291 sec) login()              Login successful.
+(Mar 29 2015 15:19:38,    7294 sec) CLogin()             Logged in to host.  [Login required 27 seconds]
+(Mar 29 2015 15:19:55,    7311 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Mar 29 2015 15:19:58,    7313 sec) Rx()                 Initiating transfer. [0x43]
+(Mar 29 2015 15:20:06,    7321 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Mar 29 2015 15:20:10,    7325 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 12 sec, 85.3 bps]
+(Mar 29 2015 15:20:10,    7325 sec) RxConfig()           Download successful.
+(Mar 29 2015 15:20:20,    7335 sec) RxConfig()           Attempt to delete "mission.cfg" failed [errno=2].
+(Mar 29 2015 15:20:43,    7358 sec) WriteVitals()        Writing vitals to "9331.1503291449".
+(Mar 29 2015 15:20:48,    7363 sec) UpLoadFile()         Uploading "9331.1503291339.log" to host as "9331.1503291339.log".
+(Mar 29 2015 15:20:51,    7366 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Mar 29 2015 15:21:31,    7406 sec) Tx()                 Transmission completed successfully [4 packets, 3339 bytes, 39 sec, 105.0 bps]
+(Mar 29 2015 15:21:31,    7406 sec) UpLoadFile()         Upload successful.
+(Mar 29 2015 15:21:35,    7410 sec) UpLoadFile()         Uploading "9331.1503291357.log" to host as "9331.1503291357.log".
+(Mar 29 2015 15:21:41,    7416 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Mar 29 2015 15:22:18,    7454 sec) Tx()                 Transmission completed successfully [4 packets, 3308 bytes, 36 sec, 113.8 bps]
+(Mar 29 2015 15:22:19,    7454 sec) UpLoadFile()         Upload successful.
+(Mar 29 2015 15:22:25,    7460 sec) UpLoadFile()         Uploading "9331.1503291414.log" to host as "9331.1503291414.log".
+(Mar 29 2015 15:22:37,    7472 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Mar 29 2015 15:23:17,    7513 sec) Tx()                 Transmission completed successfully [4 packets, 3308 bytes, 39 sec, 105.0 bps]
+(Mar 29 2015 15:23:18,    7513 sec) UpLoadFile()         Upload successful.
+(Mar 29 2015 15:23:24,    7519 sec) UpLoadFile()         Uploading "9331.1503291432.log" to host as "9331.1503291432.log".
+(Mar 29 2015 15:23:28,    7523 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Mar 29 2015 15:24:09,    7564 sec) Tx()                 Transmission completed successfully [4 packets, 3308 bytes, 40 sec, 102.4 bps]
+(Mar 29 2015 15:24:10,    7565 sec) UpLoadFile()         Upload successful.
+(Mar 29 2015 15:24:16,    7571 sec) UpLoadFile()         Uploading "9331.000.log" to host as "9331.000.log".
+(Mar 29 2015 15:24:19,    7574 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Mar 29 2015 15:25:52,    7668 sec) Tx()                 Transmission completed successfully [12 packets, 12149 bytes, 92 sec, 133.6 bps]
+(Mar 29 2015 15:25:53,    7668 sec) UpLoadFile()         Upload successful.
+(Mar 29 2015 15:25:57,    7672 sec) UpLoadFile()         Uploading "9331.1503291449" to host as "9331.1503291449".
+(Mar 29 2015 15:26:01,    7676 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Mar 29 2015 15:26:13,    7688 sec) Tx()                 Transmission completed successfully [1 packets, 801 bytes, 11 sec, 93.1 bps]
+(Mar 29 2015 15:26:14,    7689 sec) UpLoadFile()         Upload successful.
+(Mar 29 2015 15:26:24,    7699 sec) UpLoad()             Files successfully uploaded: 6
+(Mar 29 2015 15:26:24,    7699 sec) UpLoad()             Upload complete.
+(Mar 29 2015 15:26:29,    7704 sec) chat()               Expected string [cmd>] not received.
+(Mar 29 2015 15:26:29,    7704 sec) logout()             Can't get command prompt.
+(Mar 29 2015 15:26:34,    7709 sec) chat()               Expected string [logout] not received.
+(Mar 29 2015 15:26:34,    7709 sec) logout()             Attempt to log-out failed.
+(Mar 29 2015 15:26:34,    7709 sec) logout()             No carrier detected.
+(Mar 29 2015 15:26:34,    7709 sec) Telemetry()          Telemetry cycle complete: PrfId=0 ConnectionAttempts=8  Connections=7
+(Mar 29 2015 15:26:37,    7712 sec) configure()          Parsing configurators in "mission.cfg".
+(Mar 29 2015 15:26:44,    7719 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Mar 29 2015 15:26:44,    7719 sec) configure()          Configuration CRCs and syntax OK.
+(Mar 29 2015 15:26:44,    7719 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Mar 29 2015 15:26:44,    7719 sec) ConfigSupervisor()   Configuration accepted.
+(Mar 29 2015 15:41:53,    8628 sec) Prelude()            Logging configuration and initiating telemetry.
+(Mar 29 2015 15:41:53,    8628 sec) LogConfiguration()   Mission configuration for Apf9i FwRev 092813:
+(Mar 29 2015 15:41:53,    8628 sec) LogConfiguration()      AscentTimeOut(540) [min]
+(Mar 29 2015 15:41:53,    8628 sec) LogConfiguration()      AtDialCmd(AT+CBST=71,0,1;DT0088160000573) [primary]
+(Mar 29 2015 15:41:53,    8628 sec) LogConfiguration()      AltDialCmd(AT+CBST=7,0,1;DT0013016366303) [alternate]
+(Mar 29 2015 15:41:53,    8628 sec) LogConfiguration()      BuoyancyNudge(10) [count]
+(Mar 29 2015 15:41:53,    8628 sec) LogConfiguration()      BuoyancyNudgeInitial(22) [count]
+(Mar 29 2015 15:41:53,    8629 sec) LogConfiguration()      ConnectTimeOut(60) [sec]
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      CpActivationP(500) [dbar]
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      DeepProfileDescentTime(300) [min]
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      DeepProfilePistonPos(16) [count]
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      DeepProfilePressure(2000) [dbar]
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      CompensatorHyperRetraction(0) [count]
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      DownTime(13740) [min]
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      FlbbMode(1)
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      FloatId(9331)
+(Mar 29 2015 15:41:54,    8629 sec) LogConfiguration()      FullExtension(227) [count]
+(Mar 29 2015 15:41:54,    8630 sec) LogConfiguration()      FullRetraction(9) [count]
+(Mar 29 2015 15:41:55,    8630 sec) LogConfiguration()      MaxAirBladder(124) [count]
+(Mar 29 2015 15:41:55,    8630 sec) LogConfiguration()      MaxLogKb(40) [KByte]
+(Mar 29 2015 15:41:55,    8630 sec) LogConfiguration()      MissionPrelude(360) [min]
+(Mar 29 2015 15:41:55,    8630 sec) LogConfiguration()      OkVacuum(96) [count]
+(Mar 29 2015 15:41:55,    8630 sec) LogConfiguration()      PActivationPistonPosition(16) [count]
+(Mar 29 2015 15:41:55,    8630 sec) LogConfiguration()      ParkDescentTime(300) [min]
+(Mar 29 2015 15:41:55,    8630 sec) LogConfiguration()      ParkPistonPos(66) [count]
+(Mar 29 2015 15:41:55,    8630 sec) LogConfiguration()      ParkPressure(1000) [dbar]
+(Mar 29 2015 15:41:55,    8631 sec) LogConfiguration()      PnPCycleLen(1)
+(Mar 29 2015 15:41:55,    8631 sec) LogConfiguration()      Pwd(0x3c35)
+(Mar 29 2015 15:41:56,    8631 sec) LogConfiguration()      TelemetryRetry(15) [min]
+(Mar 29 2015 15:41:56,    8631 sec) LogConfiguration()      TimeOfDay(DISABLED) [min]
+(Mar 29 2015 15:41:56,    8631 sec) LogConfiguration()      UpTime(660) [min]
+(Mar 29 2015 15:41:56,    8631 sec) LogConfiguration()      User(f9331)
+(Mar 29 2015 15:41:56,    8631 sec) LogConfiguration()      Verbosity(2)
+(Mar 29 2015 15:41:56,    8631 sec) LogConfiguration()      DebugBits(0x0002)
+
+<EOT>
+
+<EOT>

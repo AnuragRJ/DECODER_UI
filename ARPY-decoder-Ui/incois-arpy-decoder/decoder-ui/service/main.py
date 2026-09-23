@@ -3,9 +3,15 @@
 from __future__ import annotations
 
 import asyncio
+import sys
 from pathlib import Path
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 # Ensure sys.path includes src before any decoder imports
 import path_resolver
@@ -34,11 +40,11 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     # thread (first cycle starts at once via the poll loop). Cache-first
     # serving means the page never blocks on FTP.
     fleet_sync.start()
-    print("🚀 Argo Decoder Live Service started on FastAPI")
+    print("[START] Argo Decoder Live Service started on FastAPI")
     yield
     await fleet_sync.stop()
     await ingestion.stop()
-    print("🛑 Argo Decoder Live Service shutting down")
+    print("[STOP] Argo Decoder Live Service shutting down")
 
 
 def _initial_ingestion_scan() -> None:
@@ -88,5 +94,7 @@ if frontend_dist.exists():
 
 
 if __name__ == "__main__":
+    import os
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
+    port = int(os.environ.get("PORT", "8001"))
+    uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")

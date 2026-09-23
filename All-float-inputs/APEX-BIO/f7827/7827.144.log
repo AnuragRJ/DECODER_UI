@@ -1,0 +1,225 @@
+(Aug 16 2019 22:50:54,  859335 sec) TelemetryInit()      Profile 143. (Apf9i FwRev: 061016)
+(Aug 16 2019 22:57:56,  859757 sec) AirSystem()          Battery [188cnt, 14.6V]  Current [74cnt, 298.2mA]  Barometer [125cnt, 6.2"Hg]  Run-Time [50s]
+(Aug 16 2019 22:58:33,  859794 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.6dbars / 231.5uM 26.848C 29.563 8.913 52.126 / 229,235,535
+(Aug 16 2019 22:58:41,  859802 sec) GpsServices()        GPS almanac is current.
+(Aug 16 2019 22:58:41,  859802 sec) GpsServices()        Initiating GPS fix acquisition.
+(Aug 16 2019 22:59:05,  859826 sec) gga()                $GPGGA,225840,1716.7242,N,06624.7510,E,0,00,,,M,,M,,*53
+(Aug 16 2019 22:59:16,  859837 sec) gga()                $GPGGA,225840,1716.7242,N,06624.7510,E,0,00,,,M,,M,,*53
+(Aug 16 2019 22:59:27,  859848 sec) gga()                $GPGGA,225850,1716.7242,N,06624.7510,E,0,00,,,M,,M,,*52
+(Aug 16 2019 22:59:38,  859859 sec) gga()                $GPGGA,225900,1716.7242,N,06624.7510,E,0,00,,,M,,M,,*56
+(Aug 16 2019 22:59:41,  859862 sec) gga()                $GPGGA,225910,1716.7242,N,06624.7510,E,0,00,,,M,,M,,*57
+(Aug 16 2019 22:59:54,  859875 sec) gga()                $GPGGA,225930,1716.7242,N,06624.7510,E,0,00,,,M,,M,,*55
+(Aug 16 2019 22:59:57,  859878 sec) gga()                $GPGGA,225940,1716.7242,N,06624.7510,E,0,00,,,M,,M,,*52
+(Aug 16 2019 23:00:08,  859889 sec) gga()                $GPGGA,225950,1716.7242,N,06624.7510,E,0,00,,,M,,M,,*53
+(Aug 16 2019 23:01:40,  859981 sec) gga()                $GPGGA,230050,1654.2840,N,06649.2185,E,1,10,0.8,-4.5,M,-65.6,M,,*40
+(Aug 16 2019 23:01:40,  859981 sec) GpsServices()        Profile 143 GPS fix obtained in 178 seconds.
+(Aug 16 2019 23:01:41,  859982 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Aug 16 2019 23:01:41,  859982 sec) GpsServices()        Fix:   66.820  16.905 08/16/2019 230050   10
+(Aug 16 2019 23:02:30,  860031 sec) gga()                $GPGGA,230140,1654.2848,N,06649.2244,E,1,10,0.8,-4.8,M,-65.6,M,,*4B
+(Aug 16 2019 23:02:38,  860038 sec) gga()                $GPGGA,230230,1654.2831,N,06649.2269,E,1,11,0.8,-2.7,M,-65.6,M,,*46
+(Aug 16 2019 23:02:38,  860039 sec) GpsServices()        APF9 RTC skew (8s) OK.
+(Aug 16 2019 23:02:38,  860039 sec) GpsServices()        GPS services complete.
+(Aug 16 2019 23:03:12,  860073 sec) CLogin()             Connecting to primary host.
+(Aug 16 2019 23:03:22,  860083 sec) CLogin()             Connection 1 established in 10 seconds.
+(Aug 16 2019 23:03:35,  860095 sec) login()              Login successful.
+(Aug 16 2019 23:03:40,  860101 sec) CLogin()             Logged in to host.  [Login required 18 seconds]
+(Aug 16 2019 23:03:52,  860113 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Aug 16 2019 23:03:55,  860116 sec) Rx()                 Initiating transfer. [0x43]
+(Aug 16 2019 23:04:00,  860121 sec) RxStartByte()        Sync errors encountered: 20
+(Aug 16 2019 23:04:06,  860127 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Aug 16 2019 23:04:11,  860131 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 16 sec, 64.0 bps]
+(Aug 16 2019 23:04:11,  860132 sec) RxConfig()           Download successful.
+(Aug 16 2019 23:04:34,  860155 sec) WriteVitals()        Writing vitals to "7827.143.msg".
+(Aug 16 2019 23:04:50,  860171 sec) UpLoadFile()         Uploading "7827.143.msg" to host as "7827.143.msg".
+(Aug 16 2019 23:04:53,  860174 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Aug 16 2019 23:04:56,  860177 sec) TxPacket()           Invalid response [0x43] - resending packet. [PktNum=0x01]
+(Aug 16 2019 23:04:57,  860178 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Aug 16 2019 23:05:11,  860191 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Aug 16 2019 23:05:11,  860192 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Aug 16 2019 23:05:31,  860211 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Aug 16 2019 23:05:31,  860212 sec) TxPacket()           Packet xmit history: [01001001] (0:ok, 1:fail).
+(Aug 16 2019 23:05:39,  860219 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Aug 16 2019 23:05:39,  860220 sec) TxPacket()           Packet xmit history: [10010011] (0:ok, 1:fail).
+(Aug 16 2019 23:05:46,  860226 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Aug 16 2019 23:05:46,  860227 sec) TxPacket()           Packet xmit history: [00100111] (0:ok, 1:fail).
+(Aug 16 2019 23:05:53,  860234 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Aug 16 2019 23:05:54,  860235 sec) TxPacket()           Packet xmit history: [01001111] (0:ok, 1:fail).
+(Aug 16 2019 23:06:00,  860241 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Aug 16 2019 23:06:01,  860242 sec) TxPacket()           Packet xmit history: [10011111] (0:ok, 1:fail).
+(Aug 16 2019 23:06:15,  860255 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Aug 16 2019 23:06:15,  860256 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Aug 16 2019 23:06:29,  860269 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Aug 16 2019 23:06:29,  860270 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Aug 16 2019 23:06:56,  860297 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Aug 16 2019 23:06:56,  860297 sec) TxPacket()           Packet xmit history: [10010001] (0:ok, 1:fail).
+(Aug 16 2019 23:07:22,  860323 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Aug 16 2019 23:07:23,  860324 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Aug 16 2019 23:07:54,  860354 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Aug 16 2019 23:07:54,  860355 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Aug 16 2019 23:07:59,  860360 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Aug 16 2019 23:08:00,  860361 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(Aug 16 2019 23:08:06,  860366 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Aug 16 2019 23:08:06,  860367 sec) TxPacket()           Packet xmit history: [10000111] (0:ok, 1:fail).
+(Aug 16 2019 23:10:02,  860482 sec) TxPacket()           NAK received - resending packet. [PktNum=0x25]
+(Aug 16 2019 23:10:02,  860483 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Aug 16 2019 23:10:30,  860510 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Aug 16 2019 23:10:30,  860511 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Aug 16 2019 23:10:47,  860527 sec) Tx()                 Transmission completed successfully [41 packets, 36862 bytes, 353 sec, 106.2 bps]
+(Aug 16 2019 23:10:47,  860528 sec) UpLoadFile()         Upload successful.
+(Aug 16 2019 23:10:57,  860538 sec) UpLoadFile()         Uploading "7827.143.log" to host as "7827.143.log".
+(Aug 16 2019 23:11:00,  860541 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Aug 16 2019 23:11:50,  860590 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Aug 16 2019 23:11:50,  860591 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Aug 16 2019 23:12:25,  860625 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Aug 16 2019 23:12:25,  860626 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Aug 16 2019 23:13:25,  860685 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(Aug 16 2019 23:13:25,  860686 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Aug 16 2019 23:13:43,  860703 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(Aug 16 2019 23:13:43,  860704 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Aug 16 2019 23:14:03,  860724 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Aug 16 2019 23:14:04,  860724 sec) TxPacket()           Packet xmit history: [01001001] (0:ok, 1:fail).
+(Aug 16 2019 23:14:08,  860729 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Aug 16 2019 23:14:09,  860730 sec) TxPacket()           Packet xmit history: [10010011] (0:ok, 1:fail).
+(Aug 16 2019 23:14:25,  860746 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Aug 16 2019 23:14:25,  860746 sec) TxPacket()           Packet xmit history: [01001101] (0:ok, 1:fail).
+(Aug 16 2019 23:14:30,  860750 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Aug 16 2019 23:14:30,  860751 sec) TxPacket()           Packet xmit history: [10011011] (0:ok, 1:fail).
+(Aug 16 2019 23:14:52,  860772 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Aug 16 2019 23:14:52,  860773 sec) TxPacket()           Packet xmit history: [01100001] (0:ok, 1:fail).
+(Aug 16 2019 23:15:14,  860794 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1f]
+(Aug 16 2019 23:15:14,  860795 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Aug 16 2019 23:15:56,  860837 sec) TxPacket()           NAK received - resending packet. [PktNum=0x25]
+(Aug 16 2019 23:15:57,  860838 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Aug 16 2019 23:16:19,  860859 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Aug 16 2019 23:16:19,  860860 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Aug 16 2019 23:16:26,  860866 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Aug 16 2019 23:16:26,  860867 sec) TxPacket()           Packet xmit history: [00100011] (0:ok, 1:fail).
+(Aug 16 2019 23:16:30,  860871 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Aug 16 2019 23:16:31,  860872 sec) TxPacket()           Packet xmit history: [01000111] (0:ok, 1:fail).
+(Aug 16 2019 23:16:38,  860878 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Aug 16 2019 23:16:38,  860879 sec) TxPacket()           Packet xmit history: [10001111] (0:ok, 1:fail).
+(Aug 16 2019 23:16:56,  860897 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2d]
+(Aug 16 2019 23:16:57,  860898 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Aug 16 2019 23:17:05,  860905 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2d]
+(Aug 16 2019 23:17:05,  860906 sec) TxPacket()           Packet xmit history: [10000011] (0:ok, 1:fail).
+(Aug 16 2019 23:17:20,  860920 sec) Tx()                 Transmission completed successfully [46 packets, 40177 bytes, 379 sec, 107.7 bps]
+(Aug 16 2019 23:17:20,  860921 sec) UpLoadFile()         Upload successful.
+(Aug 16 2019 23:17:30,  860931 sec) UpLoad()             Files successfully uploaded: 2
+(Aug 16 2019 23:17:30,  860931 sec) UpLoad()             Upload complete.
+(Aug 16 2019 23:17:35,  860935 sec) chat()               Expected string [cmd>] not received.
+(Aug 16 2019 23:17:35,  860936 sec) logout()             Can't get command prompt.
+(Aug 16 2019 23:17:37,  860938 sec) logout()             Log-out successful.
+(Aug 16 2019 23:17:39,  860939 sec) Telemetry()          Telemetry cycle complete: PrfId=143 ConnectionAttempts=1  Connections=1
+(Aug 16 2019 23:17:39,  860940 sec) TelemetryTerminate(  Parsing new mission configuration.
+(Aug 16 2019 23:17:42,  860942 sec) configure()          Parsing configurators in "mission.cfg".
+(Aug 16 2019 23:17:50,  860950 sec) configure()             TelemetryRetry(15)          [0x7BBC] [TelemetryRetry(15)].
+(Aug 16 2019 23:17:50,  860951 sec) configure()          Configuration CRCs and syntax OK.
+(Aug 16 2019 23:17:50,  860951 sec) ConfigSupervisor()   Configuration accepted.
+(Aug 16 2019 23:17:50,  860951 sec) TelemetryTerminate(  Reconditioning the file system.
+(Aug 16 2019 23:18:07,      11 sec) DescentInit()        Deep profile 144 initiated at mission-time 860957sec.
+(Aug 16 2019 23:18:10,      13 sec) DescentInit()        Surface pressure: -0.6dbars.
+(Aug 16 2019 23:18:15,      18 sec) PistonMoveAbsWTO()    196->075 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 [613sec, 14.2Volts, 0.161Amps, CPT:613sec]
+(Aug 16 2019 23:28:37,     641 sec) Descent()            Pressure: 52.9
+(Aug 17 2019 00:18:00,    3604 sec) Descent()            Pressure: 432.7
+(Aug 17 2019 01:18:00,    7204 sec) Descent()            Pressure: 752.0
+(Aug 17 2019 02:18:00,   10804 sec) Descent()            Pressure: 929.9
+(Aug 17 2019 03:18:00,   14404 sec) Descent()            Pressure: 989.4
+(Aug 17 2019 04:18:00,   18004 sec) Descent()            Pressure: 994.4
+(Aug 17 2019 04:18:01,   18004 sec) ParkInit()           
+(Aug 26 2019 11:30:20,  821543 sec) CtdPower()           [ 1005.96,  8.5786, 35.4335]
+(Aug 26 2019 11:30:20,  821543 sec) CtdPower()           CTD Power consumption [180VCnt 9ACnt]: 13.953Volts * 0.036Amps = 0.51Watts.
+(Aug 26 2019 11:30:21,  821544 sec) ParkTerminate()      Piston Position:75 Vacuum:79 Vq:194 Aq:6 Vsbe:180 Asbe:9 Vflbb:174 Aflbb:12
+(Aug 26 2019 11:30:57,  821581 sec) ParkTerminate()      PTS/O2,T2,TPhase,RawTemp: 1005.8dbars 8.5777C 35.4333PSU / 8.0uM 8.598C 60.603 8.239 636.910
+(Aug 26 2019 11:30:57,  821581 sec) ParkTerminate()      FLBB FSig, BbSig, TSig: 58, 116, 565
+(Aug 26 2019 11:30:58,  821582 sec) GoDeepInit()         Moving piston.
+(Aug 26 2019 11:30:58,  821582 sec) PistonMoveAbsWTO()    075->028 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 [245sec, 13.8Volts, 0.109Amps, CPT:858sec]
+(Aug 26 2019 16:29:59,  839523 sec) ProfileInit()        PrfId:144  Pressure:1984.0dbar  pTable[1]:1900dbar
+(Aug 26 2019 16:31:25,  839609 sec) Sbe41cpStartCP()     Continuous profile started.
+(Aug 26 2019 16:31:26,  839610 sec) PistonMoveAbsWTO()    028->050 029 030 031 032 [30sec, 12.5Volts, 0.790Amps, CPT:888sec]
+(Aug 26 2019 16:32:07,  839650 sec) PistonMoveAbsWTO()    032->050 033 034 035 036 037 [30sec, 12.3Volts, 0.786Amps, CPT:918sec]
+(Aug 26 2019 16:32:47,  839690 sec) PistonMoveAbsWTO()    037->050 038 039 040 041 [30sec, 12.2Volts, 0.798Amps, CPT:948sec]
+(Aug 26 2019 16:33:27,  839730 sec) PistonMoveAbsWTO()    041->050 042 043 044 045 [30sec, 12.2Volts, 0.806Amps, CPT:978sec]
+(Aug 26 2019 16:34:07,  839770 sec) PistonMoveAbsWTO()    045->050 046 047 048 049 [30sec, 12.2Volts, 0.782Amps, CPT:1008sec]
+(Aug 26 2019 16:34:47,  839810 sec) PistonMoveAbsWTO()    049->050 050 [6sec, 12.1Volts, 0.778Amps, CPT:1014sec]
+(Aug 26 2019 16:45:30,  840454 sec) Profile()            Sample 0 initiated at 1901.3dbars for bin 1 [1900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1901.0dbars 3.3355C 34.9326PSU / 98.3uM 3.347C 50.285 8.300 791.566 /   57  109  573
+(Aug 26 2019 17:02:52,  841495 sec) Profile()            Sample 1 initiated at 1801.6dbars for bin 2 [1800dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1801.3dbars 3.6002C 34.9540PSU / 91.9uM 3.611C 50.784 8.309 784.043 /   58  114  573
+(Aug 26 2019 17:10:26,  841950 sec) AscentControlAgent(  Bouyancy nudge to 60 (v=0.076dbar/sec).
+(Aug 26 2019 17:10:27,  841950 sec) PistonMoveAbsWTO()    050->060 051 052 053 054 [30sec, 13.0Volts, 0.749Amps, CPT:1044sec]
+(Aug 26 2019 17:11:07,  841990 sec) PistonMoveAbsWTO()    054->060 055 056 057 058 059 [30sec, 12.8Volts, 0.737Amps, CPT:1074sec]
+(Aug 26 2019 17:11:47,  842030 sec) PistonMoveAbsWTO()    059->060 060 [8sec, 12.8Volts, 0.705Amps, CPT:1082sec]
+(Aug 26 2019 17:21:44,  842627 sec) Profile()            Sample 2 initiated at 1701.8dbars for bin 3 [1700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1701.5dbars 3.9860C 34.9877PSU / 80.7uM 3.994C 51.758 8.312 773.044 /   59  109  572
+(Aug 26 2019 17:41:18,  843801 sec) Profile()            Sample 3 initiated at 1601.3dbars for bin 4 [1600dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1601.0dbars 4.4908C 35.0335PSU / 67.2uM 4.502C 53.036 8.319 758.399 /   58  110  571
+(Aug 26 2019 17:55:54,  844678 sec) AscentControlAgent(  Bouyancy nudge to 70 (v=0.077dbar/sec).
+(Aug 26 2019 17:55:55,  844678 sec) PistonMoveAbsWTO()    060->070 061 062 063 064 [30sec, 13.2Volts, 0.649Amps, CPT:1112sec]
+(Aug 26 2019 17:56:35,  844718 sec) PistonMoveAbsWTO()    064->070 065 066 067 068 069 [30sec, 13.0Volts, 0.633Amps, CPT:1142sec]
+(Aug 26 2019 17:57:15,  844758 sec) PistonMoveAbsWTO()    069->070 070 [5sec, 13.0Volts, 0.661Amps, CPT:1147sec]
+(Aug 26 2019 18:00:55,  844978 sec) Profile()            Sample 4 initiated at 1501.6dbars for bin 5 [1500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1501.3dbars 5.1115C 35.0904PSU / 52.7uM 5.123C 54.553 8.328 740.350 /   58  113  570
+(Aug 26 2019 18:18:59,  846062 sec) Profile()            Sample 5 initiated at 1401.6dbars for bin 6 [1400dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1401.3dbars 5.7243C 35.1572PSU / 38.5uM 5.740C 56.243 8.336 722.309 /   59  111  569
+(Aug 26 2019 18:21:11,  846195 sec) AscentControlAgent(  Bouyancy nudge to 80 (v=0.079dbar/sec).
+(Aug 26 2019 18:21:12,  846195 sec) PistonMoveAbsWTO()    070->080 071 072 073 074 [30sec, 13.3Volts, 0.608Amps, CPT:1177sec]
+(Aug 26 2019 18:21:52,  846235 sec) PistonMoveAbsWTO()    074->080 075 076 077 078 079 [30sec, 13.2Volts, 0.592Amps, CPT:1207sec]
+(Aug 26 2019 18:22:32,  846275 sec) PistonMoveAbsWTO()    079->080 080 [3sec, 13.1Volts, 0.588Amps, CPT:1210sec]
+(Aug 26 2019 18:27:53,  846596 sec) Profile()            Sample 6 initiated at 1351.0dbars for bin 7 [1350dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1350.7dbars 6.0383C 35.1825PSU / 34.0uM 6.051C 56.802 8.342 713.142 /   59  113  569
+(Aug 26 2019 18:35:51,  847074 sec) Profile()            Sample 7 initiated at 1301.3dbars for bin 8 [1300dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1301.0dbars 6.3183C 35.2058PSU / 31.1uM 6.332C 57.148 8.342 704.835 /   59  114  568
+(Aug 26 2019 18:44:01,  847564 sec) Profile()            Sample 8 initiated at 1251.4dbars for bin 9 [1250dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1251.1dbars 6.5771C 35.2313PSU / 28.0uM 6.590C 57.556 8.344 697.199 /   58  120  568
+(Aug 26 2019 18:53:31,  848134 sec) Profile()            Sample 9 initiated at 1201.3dbars for bin 10 [1200dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1201.0dbars 6.9222C 35.2669PSU / 23.2uM 6.937C 58.228 8.345 686.863 /   58  117  568
+(Aug 26 2019 18:56:53,  848337 sec) AscentControlAgent(  Bouyancy nudge to 90 (v=0.079dbar/sec).
+(Aug 26 2019 18:56:54,  848337 sec) PistonMoveAbsWTO()    080->090 081 082 083 084 [30sec, 13.4Volts, 0.524Amps, CPT:1240sec]
+(Aug 26 2019 18:57:34,  848377 sec) PistonMoveAbsWTO()    084->090 085 086 087 088 089 [30sec, 13.3Volts, 0.532Amps, CPT:1270sec]
+(Aug 26 2019 18:58:14,  848417 sec) PistonMoveAbsWTO()    089->090 090 [3sec, 13.2Volts, 0.536Amps, CPT:1273sec]
+(Aug 26 2019 19:02:34,  848677 sec) Profile()            Sample 10 initiated at 1151.1dbars for bin 11 [1150dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1150.8dbars 7.2723C 35.2999PSU / 19.4uM 7.291C 58.790 8.345 676.291 /   58  137  567
+(Aug 26 2019 19:10:22,  849145 sec) Profile()            Sample 11 initiated at 1101.7dbars for bin 12 [1100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1101.4dbars 7.6067C 35.3355PSU / 16.0uM 7.623C 59.300 8.347 666.356 /   60  112  567
+(Aug 26 2019 19:18:22,  849625 sec) Profile()            Sample 12 initiated at 1051.9dbars for bin 13 [1050dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1051.6dbars 7.9520C 35.3751PSU / 13.2uM 7.971C 59.735 8.345 655.864 /   57  115  566
+(Aug 26 2019 19:27:52,  850195 sec) Profile()            Sample 13 initiated at 1001.3dbars for bin 14 [1000dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1001.1dbars 8.3289C 35.4082PSU / 10.3uM 8.350C 60.208 8.347 644.414 /   58  139  566
+(Aug 26 2019 19:32:34,  850478 sec) AscentControlAgent(  Bouyancy nudge to 100 (v=0.075dbar/sec).
+(Aug 26 2019 19:32:35,  850478 sec) PistonMoveAbsWTO()    090->100 091 092 093 094 095 [30sec, 13.5Volts, 0.459Amps, CPT:1303sec]
+(Aug 26 2019 19:33:14,  850518 sec) PistonMoveAbsWTO()    095->100 096 097 098 099 100 [30sec, 13.4Volts, 0.467Amps, CPT:1333sec]
+(Aug 26 2019 19:46:10,  851293 sec) Profile()            Sample 15 initiated at 901.5dbars for bin 16 [900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 901.2dbars 9.1990C 35.4977PSU / 4.6uM 9.223C 61.192 8.361 617.861 /   59  114  564
+(Aug 26 2019 20:08:10,  852614 sec) AscentControlAgent(  Bouyancy nudge to 110 (v=0.069dbar/sec).
+(Aug 26 2019 20:08:10,  852614 sec) PistonMoveAbsWTO()    100->110 101 102 103 104 105 [30sec, 13.6Volts, 0.407Amps, CPT:1363sec]
+(Aug 26 2019 20:08:50,  852654 sec) PistonMoveAbsWTO()    105->110 106 107 108 109 110 [28sec, 13.5Volts, 0.399Amps, CPT:1391sec]
+(Aug 26 2019 20:23:23,  853527 sec) Profile()            Sample 19 initiated at 701.6dbars for bin 20 [700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 701.3dbars 10.9242C 35.6586PSU / 1.6uM 10.952C 61.656 8.434 564.539 /   57  107  561
+(Aug 26 2019 20:48:46,  855050 sec) AscentControlAgent(  Bouyancy nudge to 120 (v=0.076dbar/sec).
+(Aug 26 2019 20:48:46,  855050 sec) PistonMoveAbsWTO()    110->120 111 112 113 114 115 [30sec, 13.7Volts, 0.330Amps, CPT:1421sec]
+(Aug 26 2019 20:49:26,  855090 sec) PistonMoveAbsWTO()    115->120 116 117 118 119 120 [27sec, 13.7Volts, 0.322Amps, CPT:1448sec]
+(Aug 26 2019 20:59:37,  855701 sec) Profile()            Sample 23 initiated at 501.5dbars for bin 24 [500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 501.2dbars 12.2964C 35.7724PSU / 1.1uM 12.328C 61.658 8.507 521.521 /   59  121  559
+(Aug 26 2019 21:19:17,  856881 sec) AscentControlAgent(  Bouyancy nudge to 130 (v=0.074dbar/sec).
+(Aug 26 2019 21:19:17,  856881 sec) PistonMoveAbsWTO()    120->130 121 122 123 124 125 [30sec, 13.9Volts, 0.286Amps, CPT:1478sec]
+(Aug 26 2019 21:19:58,  856922 sec) PistonMoveAbsWTO()    125->130 126 127 128 129 130 [26sec, 13.8Volts, 0.278Amps, CPT:1504sec]
+(Aug 26 2019 21:30:51,  857575 sec) Profile()            Sample 27 initiated at 331.7dbars for bin 28 [330dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 331.4dbars 13.8125C 35.8512PSU / 1.0uM 13.847C 61.571 8.531 473.452 /   57  130  557
+(Aug 26 2019 21:48:17,  858621 sec) Profile()            Sample 31 initiated at 241.6dbars for bin 32 [240dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 241.5dbars 15.6497C 35.9799PSU / 0.9uM 15.679C 61.457 8.618 414.792 /   59  149  554
+(Aug 26 2019 21:49:48,  858711 sec) AscentControlAgent(  Bouyancy nudge to 140 (v=0.064dbar/sec).
+(Aug 26 2019 21:49:48,  858712 sec) PistonMoveAbsWTO()    130->140 131 132 133 134 135 [30sec, 14.0Volts, 0.230Amps, CPT:1534sec]
+(Aug 26 2019 21:50:30,  858754 sec) PistonMoveAbsWTO()    135->140 136 137 138 139 140 [24sec, 13.9Volts, 0.234Amps, CPT:1558sec]
+(Aug 26 2019 21:59:58,  859321 sec) AscentControlAgent(  Bouyancy nudge to 150 (v=0.078dbar/sec).
+(Aug 26 2019 21:59:58,  859322 sec) PistonMoveAbsWTO()    140->150 141 142 143 144 145 [30sec, 14.0Volts, 0.218Amps, CPT:1588sec]
+(Aug 26 2019 22:00:55,  859379 sec) Profile()            Sample 35 initiated at 181.7dbars for bin 36 [180dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 181.4dbars 17.5223C 35.9147PSU / 0.8uM 17.539C 61.335 8.748 354.692 /   58  140  551
+(Aug 26 2019 22:00:56,  859380 sec) PistonMoveAbsWTO()    145->150 146 147 148 149 150 [23sec, 14.0Volts, 0.218Amps, CPT:1611sec]
+(Aug 26 2019 22:08:47,  859851 sec) Profile()            Sample 39 initiated at 141.8dbars for bin 40 [140dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 141.6dbars 20.0589C 36.0474PSU / 7.6uM 20.051C 59.181 8.834 272.896 /   53  110  549
+(Aug 26 2019 22:10:07,  859930 sec) AscentControlAgent(  Bouyancy nudge to 160 (v=0.068dbar/sec).
+(Aug 26 2019 22:10:07,  859931 sec) PistonMoveAbsWTO()    150->160 151 152 153 154 155 [30sec, 14.0Volts, 0.201Amps, CPT:1641sec]
+(Aug 26 2019 22:10:49,  859973 sec) PistonMoveAbsWTO()    155->160 156 157 158 159 160 [23sec, 14.0Volts, 0.197Amps, CPT:1664sec]
+(Aug 26 2019 22:17:56,  860400 sec) Profile()            Sample 43 initiated at 101.6dbars for bin 44 [100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 101.5dbars 23.7046C 36.4817PSU / 95.9uM 23.678C 41.424 8.925 154.625 /   54  129  545
+(Aug 26 2019 22:30:32,  861155 sec) AscentControlAgent(  Bouyancy nudge to 165 (v=0.021dbar/sec).
+(Aug 26 2019 22:30:32,  861156 sec) PistonMoveAbsWTO()    160->165 161 162 163 164 165 [26sec, 14.1Volts, 0.185Amps, CPT:1690sec]
+(Aug 26 2019 22:35:35,  861458 sec) AscentControlAgent(  Bouyancy nudge to 170 (v=0.016dbar/sec).
+(Aug 26 2019 22:35:35,  861459 sec) PistonMoveAbsWTO()    165->170 166 167 168 169 170 [26sec, 14.1Volts, 0.185Amps, CPT:1716sec]
+(Aug 26 2019 22:37:55,  861599 sec) Profile()            Sample 47 initiated at 61.8dbars for bin 48 [60dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 61.7dbars 27.1428C 36.7113PSU / 204.1uM 27.156C 30.876 9.001 42.278 /   72  145  538
+(Aug 26 2019 22:40:43,  861766 sec) AscentControlAgent(  Bouyancy nudge to 175 (v=0.037dbar/sec).
+(Aug 26 2019 22:40:43,  861767 sec) PistonMoveAbsWTO()    170->175 171 172 173 174 175 [26sec, 14.1Volts, 0.181Amps, CPT:1742sec]
+(Aug 26 2019 22:45:05,  862029 sec) Profile()            Sample 51 initiated at 36.5dbars for bin 52 [35dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 36.3dbars 27.6147C 36.7552PSU / 225.1uM 27.624C 29.585 8.940 27.311 /  177  229  536
+(Aug 26 2019 22:50:20,  862344 sec) Profile()            Sample 55 initiated at 16.9dbars for bin 56 [15dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 16.7dbars 27.6441C 36.7643PSU / 232.4uM 27.662C 29.216 8.940 26.076 /  142  240  534
+(Aug 26 2019 22:51:54,  862438 sec) Profile()            Sample 56 initiated at 11.4dbars for bin 57 [10dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 11.2dbars 27.6443C 36.7630PSU / 232.8uM 27.661C 29.194 8.939 26.133 /  141  318  534
+(Aug 26 2019 22:53:49,  862553 sec) Profile()            Sample 57 initiated at 5.9dbars for bin 58 [4dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 5.8dbars 27.6403C 36.7641PSU / 233.6uM 27.657C 29.159 8.933 26.247 /  168  249  534
+(Aug 26 2019 22:54:16,  862580 sec) Profile()            Sample 58 initiated at 4.8dbars for bin 58 [4dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 4.7dbars 27.6381C 36.7431PSU / 233.3uM 27.656C 29.175 8.933 26.289 /  154  207  534
+(Aug 26 2019 22:54:31,  862595 sec) SurfaceDetect()      SurfacePressure:-0.6dbars Pressure:3.6dbars PistonPosition:175
+(Aug 26 2019 22:54:32,  862595 sec) Sbe41cpStopCP()      Continuous profile stopped.
+(Aug 26 2019 22:54:39,  862602 sec) PistonMoveAbsWTO()    175->197 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 [115sec, 14.2Volts, 0.153Amps, CPT:1857sec]
+(Aug 26 2019 22:56:51,  862734 sec) sbe41cp.c:chat()     Expected string [S>] not received.
+(Aug 26 2019 23:00:07,  862930 sec) Sbe41cpBinAverage()  Finished averaging 23015 samples in 191 seconds.
+(Aug 26 2019 23:00:12,  862935 sec) Sbe41cpUploadCP()    Sbe41cpSerNo[08355] NSample[23015] NBin[993]
+(Aug 26 2019 23:02:11,  863055 sec) Sbe41cpUploadCP()    Continuous profile uploaded [993 lines].
+
+<EOT>
+
+<EOT>

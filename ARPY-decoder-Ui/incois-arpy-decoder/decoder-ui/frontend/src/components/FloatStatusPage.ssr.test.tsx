@@ -33,7 +33,7 @@ const sample: FleetStatusRow = {
 function payload(row = sample): FleetStatusPayload {
   return {
     generated_at: "2026-09-21T12:00:00Z", floats: [row],
-    summary: { total: 1, recent_profile: 0, profile_overdue: 1, no_recent_profile_60: 0,
+    summary: { total: 1, recent_profile: 0, profile_overdue: 1, no_recent_profile_80: 0, no_recent_profile_60: 0,
       no_data: 0, approx_profiles_missed_total: 1, profile_dates_known: 1, total_profiles: 24 },
     source: { host: "ftp.ifremer.fr", port: 21, root: "/ifremer/argo", dac: "incois",
       monitoring: "profile-recency", product: "dac/incois/<wmo>/<wmo>_prof.nc",

@@ -1,0 +1,384 @@
+(May 26 2016 08:14:47,  415296 sec) TelemetryInit()      Profile 29. (Apf9i FwRev: 012811)
+(May 26 2016 08:21:29,  415698 sec) AirSystem()          Battery [190cnt, 14.7V]  Current [72cnt, 29.0mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [42s]
+(May 26 2016 08:21:58,  415727 sec) GpsServices()        GPS almanac is current.
+(May 26 2016 08:21:58,  415727 sec) GpsServices()        Initiating GPS fix acquisition.
+(May 26 2016 08:22:13,  415742 sec) gga()                $GPGGA,082150,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*56
+(May 26 2016 08:22:19,  415748 sec) gga()                $GPGGA,082200,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*50
+(May 26 2016 08:22:29,  415758 sec) gga()                $GPGGA,082210,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*51
+(May 26 2016 08:22:40,  415769 sec) gga()                $GPGGA,082220,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*52
+(May 26 2016 08:22:50,  415779 sec) gga()                $GPGGA,082230,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*53
+(May 26 2016 08:23:00,  415789 sec) gga()                $GPGGA,082240,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*54
+(May 26 2016 08:23:10,  415799 sec) gga()                $GPGGA,082250,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*55
+(May 26 2016 08:23:20,  415809 sec) gga()                $GPGGA,082300,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*51
+(May 26 2016 08:23:29,  415818 sec) gga()                $GPGGA,082310,1335.1667,N,08621.3977,E,0,00,,,M,,M,,*50
+(May 26 2016 08:23:58,  415847 sec) gga()                $GPGGA,082320,1319.3230,N,08613.9697,E,1,05,1.5,-1.4,M,-77.0,M,,*48
+(May 26 2016 08:23:58,  415847 sec) GpsServices()        Profile 29 GPS fix obtained in 120 seconds.
+(May 26 2016 08:23:58,  415848 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(May 26 2016 08:23:59,  415848 sec) GpsServices()        Fix:   86.233  13.322 05/26/2016 082320    5
+(May 26 2016 08:24:28,  415877 sec) gga()                $GPGGA,082350,1319.3169,N,08613.9659,E,1,05,1.5,-2.2,M,-77.0,M,,*47
+(May 26 2016 08:24:34,  415883 sec) gga()                $GPGGA,082420,1319.3076,N,08613.9605,E,1,05,1.5,-1.4,M,-77.0,M,,*44
+(May 26 2016 08:24:34,  415883 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(May 26 2016 08:24:34,  415883 sec) LogNmeaSentences()   ,31,045,44,13,14,306,43,17,54,275,48*75
+(May 26 2016 08:24:34,  415883 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,31,244,45,22,01,100,20,28,32,340,46,30,70,003,48*74
+(May 26 2016 08:24:43,  415893 sec) LogNmeaSentences()   $GPRMC,082430,A,1319.3046,N,08613.9588,E,001.8,162.8,260516,001.4,W*65
+(May 26 2016 08:24:44,  415893 sec) LogNmeaSentences()   $GPGGA,082430,1319.3046,N,08613.9588,E,1,07,1.1,-4.7,M,-77.0,M,,*40
+(May 26 2016 08:24:44,  415893 sec) LogNmeaSentences()   $GPGSA,A,3,,,06,07,09,11,,17,19,,28,,1.4,1.1,0.9*32
+(May 26 2016 08:24:45,  415894 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,40,064,46,03,06,124,36,06,16,198,37,07,69,109,46*7D
+(May 26 2016 08:24:45,  415894 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,20,179,39,11,31,045,45,13,14,306,34,17,54,275,47*76
+(May 26 2016 08:24:45,  415894 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,31,244,42,22,01,100,20,28,32,340,43,30,71,003,48*77
+(May 26 2016 08:24:53,  415903 sec) LogNmeaSentences()   $GPRMC,082440,A,1319.3012,N,08613.9577,E,001.1,207.4,260516,001.4,W*66
+(May 26 2016 08:24:54,  415903 sec) LogNmeaSentences()   $GPGGA,082440,1319.3012,N,08613.9577,E,1,07,1.1,-4.0,M,-77.0,M,,*41
+(May 26 2016 08:24:54,  415903 sec) LogNmeaSentences()   $GPGSA,A,3,,06,07,09,11,,17,19,,28,,,1.4,1.1,0.9*32
+(May 26 2016 08:24:55,  415904 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,40,064,25,06,17,198,22,07,69,110,24,09,20,179,23*73
+(May 26 2016 08:24:55,  415904 sec) LogNmeaSentences()   $GPGSV,3,2,12,11,31,045,25,13,14,306,23,17,54,275,24,19,31,244,24*73
+(May 26 2016 08:24:55,  415904 sec) LogNmeaSentences()   $GPGSV,3,3,12,22,01,100,23,28,32,340,23,30,71,003,24,03,06,124,00*74
+(May 26 2016 08:25:03,  415913 sec) LogNmeaSentences()   $GPRMC,082450,A,1319.2964,N,08613.9570,E,001.3,134.2,260516,001.4,W*6E
+(May 26 2016 08:25:04,  415913 sec) LogNmeaSentences()   $GPGGA,082450,1319.2964,N,08613.9570,E,1,07,1.1,-6.1,M,-77.0,M,,*4D
+(May 26 2016 08:25:04,  415913 sec) LogNmeaSentences()   $GPGSA,A,3,,,06,07,09,11,,17,19,,28,,1.4,1.1,0.9*32
+(May 26 2016 08:25:05,  415914 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,40,064,45,03,06,124,27,06,17,198,27,07,69,110,46*76
+(May 26 2016 08:25:05,  415914 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,20,179,28,11,31,044,43,13,14,305,38,17,54,275,46*7F
+(May 26 2016 08:25:05,  415914 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,31,244,36,22,01,100,30,28,32,340,42,30,71,003,49*75
+(May 26 2016 08:25:13,  415923 sec) LogNmeaSentences()   $GPRMC,082500,A,1319.2927,N,08613.9563,E,001.4,196.1,260516,001.4,W*63
+(May 26 2016 08:25:14,  415923 sec) LogNmeaSentences()   $GPGGA,082500,1319.2927,N,08613.9563,E,1,09,0.9,-8.4,M,-77.0,M,,*40
+(May 26 2016 08:25:14,  415923 sec) LogNmeaSentences()   $GPGSA,A,3,01,,06,07,09,11,,17,19,,28,30,1.2,0.9,0.8*3E
+(May 26 2016 08:25:15,  415924 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,40,064,46,03,06,124,37,06,17,198,41,07,69,110,46*74
+(May 26 2016 08:25:15,  415924 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,20,179,41,11,31,044,45,13,14,305,39,17,54,275,48*79
+(May 26 2016 08:25:15,  415924 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,31,244,43,22,01,099,37,28,32,340,45,30,71,003,48*77
+(May 26 2016 08:25:16,  415925 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(May 26 2016 08:25:16,  415925 sec) GpsServices()        GPS services complete.
+(May 26 2016 08:25:40,  415949 sec) CLogin()             Connecting to primary host.
+(May 26 2016 08:25:53,  415962 sec) CLogin()             Connection 1 established in 13 seconds.
+(May 26 2016 08:26:02,  415971 sec) login()              Login successful.
+(May 26 2016 08:26:07,  415976 sec) chat()               Expected string [cmd>] not received.
+(May 26 2016 08:26:07,  415976 sec) login()              Attempt to set the command prompt failed.
+(May 26 2016 08:26:08,  415977 sec) CLogin()             Logged in to host.  [Login required 15 seconds]
+(May 26 2016 08:26:16,  415985 sec) RxConfig()           Downloading "mission.cfg" from host.
+(May 26 2016 08:26:18,  415987 sec) Rx()                 Initiating transfer. [0x43]
+(May 26 2016 08:26:25,  415995 sec) RxStartByte()        Sync errors encountered: 640
+(May 26 2016 08:26:31,  416000 sec) Rx()                 Truncated packet received - retrying.
+(May 26 2016 08:26:32,  416002 sec) RxStartByte()        Sync errors encountered: 238
+(May 26 2016 08:26:38,  416007 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(May 26 2016 08:26:43,  416012 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 25 sec, 41.0 bps]
+(May 26 2016 08:26:43,  416012 sec) RxConfig()           Download successful.
+(May 26 2016 08:26:57,  416026 sec) WriteVitals()        Writing vitals to "7546.029.msg".
+(May 26 2016 08:27:07,  416036 sec) UpLoadFile()         Uploading "7546.029.msg" to host as "7546.029.msg".
+(May 26 2016 08:27:09,  416039 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(May 26 2016 08:27:17,  416046 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:17,  416046 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(May 26 2016 08:27:22,  416051 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:22,  416051 sec) TxPacket()           Packet xmit history: [11100011] (0:ok, 1:fail).
+(May 26 2016 08:27:24,  416053 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:24,  416054 sec) TxPacket()           Packet xmit history: [11000111] (0:ok, 1:fail).
+(May 26 2016 08:27:27,  416056 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:27,  416056 sec) TxPacket()           Packet xmit history: [10001111] (0:ok, 1:fail).
+(May 26 2016 08:27:32,  416061 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:32,  416062 sec) TxPacket()           Packet xmit history: [00011111] (0:ok, 1:fail).
+(May 26 2016 08:27:36,  416065 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:36,  416065 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(May 26 2016 08:27:38,  416067 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:38,  416067 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(May 26 2016 08:27:41,  416070 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:41,  416070 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(May 26 2016 08:27:48,  416077 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:48,  416077 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(May 26 2016 08:27:52,  416081 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:27:52,  416081 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(May 26 2016 08:27:52,  416081 sec) TxPacket()           Exit status: -2
+(May 26 2016 08:27:52,  416081 sec) Tx()                 Packet transmission failed - aborting transfer.
+(May 26 2016 08:28:03,  416092 sec) UpLoadFile()         Upload failed.
+(May 26 2016 08:28:13,  416102 sec) UpLoadFile()         Uploading "7546.029.log" to host as "7546.029.log".
+(May 26 2016 08:29:13,  416162 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(May 26 2016 08:29:23,  416172 sec) UpLoadFile()         Upload failed.
+(May 26 2016 08:29:23,  416172 sec) UpLoad()             Files successfully uploaded: 0
+(May 26 2016 08:29:23,  416173 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(May 26 2016 08:29:29,  416178 sec) chat()               Expected string [cmd>] not received.
+(May 26 2016 08:29:29,  416178 sec) logout()             Can't get command prompt.
+(May 26 2016 08:29:31,  416180 sec) logout()             Log-out successful.
+(May 26 2016 08:29:32,  416181 sec) Telemetry()          Telemetry cycle complete: PrfId=29 ConnectionAttempts=1  Connections=1
+(May 26 2016 08:44:46,  417095 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(May 26 2016 08:45:15,  417124 sec) GpsServices()        GPS almanac is current.
+(May 26 2016 08:45:15,  417124 sec) GpsServices()        Initiating GPS fix acquisition.
+(May 26 2016 08:45:48,  417157 sec) gga()                $GPGGA,084510,1318.9665,N,08613.7785,E,1,09,0.9,-23.1,M,-77.0,M,,*7C
+(May 26 2016 08:45:48,  417157 sec) GpsServices()        Profile 29 GPS fix obtained in 33 seconds.
+(May 26 2016 08:45:48,  417158 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(May 26 2016 08:45:49,  417158 sec) GpsServices()        Fix:   86.230  13.316 05/26/2016 084510    9
+(May 26 2016 08:46:18,  417187 sec) gga()                $GPGGA,084540,1318.9600,N,08613.7741,E,1,09,0.9,-20.3,M,-77.0,M,,*73
+(May 26 2016 08:46:24,  417193 sec) gga()                $GPGGA,084610,1318.9538,N,08613.7704,E,1,09,0.9,-20.0,M,-77.0,M,,*7F
+(May 26 2016 08:46:24,  417193 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(May 26 2016 08:46:24,  417193 sec) LogNmeaSentences()   ,19,11,23,041,23,17,55,294,20,19,36,255,20*7E
+(May 26 2016 08:46:24,  417193 sec) LogNmeaSentences()   $GPGSV,3,3,12,22,02,091,17,28,34,351,20,30,81,024,20,13,17,297,00*78
+(May 26 2016 08:46:33,  417203 sec) LogNmeaSentences()   $GPRMC,084620,A,1318.9510,N,08613.7694,E,000.9,295.7,260516,001.4,W*69
+(May 26 2016 08:46:34,  417203 sec) LogNmeaSentences()   $GPGGA,084620,1318.9510,N,08613.7694,E,1,09,0.9,-19.9,M,-77.0,M,,*7D
+(May 26 2016 08:46:34,  417203 sec) LogNmeaSentences()   $GPGSA,A,3,01,,06,07,09,11,,17,19,,28,30,1.2,0.9,0.8*3E
+(May 26 2016 08:46:35,  417204 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,34,053,45,03,09,115,41,06,26,197,44,07,62,131,47*7D
+(May 26 2016 08:46:35,  417204 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,13,173,41,11,23,041,42,13,17,296,38,17,55,294,46*7B
+(May 26 2016 08:46:35,  417204 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,36,255,45,22,02,091,25,28,34,351,43,30,81,024,47*7B
+(May 26 2016 08:46:43,  417213 sec) LogNmeaSentences()   $GPRMC,084630,A,1318.9482,N,08613.7681,E,003.0,206.0,260516,001.4,W*61
+(May 26 2016 08:46:44,  417213 sec) LogNmeaSentences()   $GPGGA,084630,1318.9482,N,08613.7681,E,1,09,0.9,-21.0,M,-77.0,M,,*70
+(May 26 2016 08:46:44,  417213 sec) LogNmeaSentences()   $GPGSA,A,3,01,,06,07,09,11,,17,19,,28,30,1.2,0.9,0.8*3E
+(May 26 2016 08:46:45,  417214 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,34,053,43,03,09,115,41,06,26,197,44,07,62,132,48*77
+(May 26 2016 08:46:45,  417214 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,13,173,42,11,23,041,40,13,17,296,40,17,55,294,48*7B
+(May 26 2016 08:46:45,  417214 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,36,255,45,22,02,091,33,28,34,351,44,30,81,024,48*74
+(May 26 2016 08:46:53,  417223 sec) LogNmeaSentences()   $GPRMC,084640,A,1318.9455,N,08613.7659,E,001.4,248.4,260516,001.4,W*61
+(May 26 2016 08:46:54,  417223 sec) LogNmeaSentences()   $GPGGA,084640,1318.9455,N,08613.7659,E,1,09,0.9,-20.7,M,-77.0,M,,*7E
+(May 26 2016 08:46:54,  417223 sec) LogNmeaSentences()   $GPGSA,A,3,01,,06,07,09,11,,17,19,,28,30,1.2,0.9,0.8*3E
+(May 26 2016 08:46:55,  417224 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,34,053,44,03,09,115,43,06,26,197,42,07,62,132,47*7B
+(May 26 2016 08:46:55,  417224 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,13,173,42,11,23,041,43,13,17,296,43,17,55,294,46*75
+(May 26 2016 08:46:55,  417224 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,36,255,42,22,02,090,35,28,34,351,45,30,81,024,48*75
+(May 26 2016 08:47:03,  417233 sec) LogNmeaSentences()   $GPRMC,084650,A,1318.9432,N,08613.7643,E,000.6,157.7,260516,001.4,W*67
+(May 26 2016 08:47:04,  417233 sec) LogNmeaSentences()   $GPGGA,084650,1318.9432,N,08613.7643,E,1,09,0.9,-21.1,M,-77.0,M,,*72
+(May 26 2016 08:47:04,  417233 sec) LogNmeaSentences()   $GPGSA,A,3,01,,06,07,09,11,,17,19,,28,30,1.2,0.9,0.8*3E
+(May 26 2016 08:47:05,  417234 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,34,053,43,03,09,115,39,06,26,197,44,07,62,132,46*76
+(May 26 2016 08:47:05,  417234 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,13,173,42,11,23,041,43,13,17,296,40,17,55,294,47*77
+(May 26 2016 08:47:05,  417234 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,36,255,44,22,02,090,37,28,35,351,45,30,81,025,48*71
+(May 26 2016 08:47:13,  417243 sec) LogNmeaSentences()   $GPRMC,084700,A,1318.9403,N,08613.7635,E,000.0,220.6,260516,001.4,W*64
+(May 26 2016 08:47:14,  417243 sec) LogNmeaSentences()   $GPGGA,084700,1318.9403,N,08613.7635,E,1,10,0.8,-21.4,M,-77.0,M,,*79
+(May 26 2016 08:47:14,  417243 sec) LogNmeaSentences()   $GPGSA,A,3,01,,06,07,09,11,13,17,19,,28,30,1.1,0.8,0.8*3E
+(May 26 2016 08:47:15,  417244 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,34,053,37,03,09,115,37,06,26,197,43,07,61,132,45*7C
+(May 26 2016 08:47:15,  417244 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,13,173,41,11,22,041,41,13,17,296,42,17,55,294,48*7A
+(May 26 2016 08:47:15,  417244 sec) LogNmeaSentences()   $GPGSV,3,3,12,19,36,255,46,22,02,090,35,28,35,351,44,30,81,025,49*71
+(May 26 2016 08:47:16,  417245 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(May 26 2016 08:47:16,  417245 sec) GpsServices()        GPS services complete.
+(May 26 2016 08:48:04,  417293 sec) CLogin()             Connecting to primary host.
+(May 26 2016 08:49:06,  417355 sec) chat()               Expected string [CONNECT] not received.
+(May 26 2016 08:49:06,  417355 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(May 26 2016 08:50:07,  417416 sec) chat()               Expected string [CONNECT] not received.
+(May 26 2016 08:50:07,  417416 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(May 26 2016 08:50:07,  417416 sec) connect()            Aborted after 2 failed attempts.
+(May 26 2016 08:50:07,  417416 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(May 26 2016 08:51:08,  417477 sec) chat()               Expected string [CONNECT] not received.
+(May 26 2016 08:51:08,  417477 sec) modem_connect()      Modem command [AT+CBST=7.0,1;DT0013016366303] failed.
+(May 26 2016 08:52:09,  417538 sec) chat()               Expected string [CONNECT] not received.
+(May 26 2016 08:52:09,  417538 sec) modem_connect()      Modem command [AT+CBST=7.0,1;DT0013016366303] failed.
+(May 26 2016 08:52:09,  417538 sec) connect()            Aborted after 2 failed attempts.
+(May 26 2016 08:52:09,  417538 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(May 26 2016 08:52:09,  417538 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(May 26 2016 08:52:15,  417544 sec) CLogin()             Connecting to primary host.
+(May 26 2016 08:53:16,  417605 sec) chat()               Expected string [CONNECT] not received.
+(May 26 2016 08:53:16,  417605 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(May 26 2016 08:54:17,  417666 sec) chat()               Expected string [CONNECT] not received.
+(May 26 2016 08:54:17,  417666 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(May 26 2016 08:54:17,  417666 sec) connect()            Aborted after 2 failed attempts.
+(May 26 2016 08:54:17,  417666 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(May 26 2016 08:55:18,  417727 sec) chat()               Expected string [CONNECT] not received.
+(May 26 2016 08:55:18,  417727 sec) modem_connect()      Modem command [AT+CBST=7.0,1;DT0013016366303] failed.
+(May 26 2016 08:56:19,  417788 sec) chat()               Expected string [CONNECT] not received.
+(May 26 2016 08:56:19,  417788 sec) modem_connect()      Modem command [AT+CBST=7.0,1;DT0013016366303] failed.
+(May 26 2016 08:56:19,  417788 sec) connect()            Aborted after 2 failed attempts.
+(May 26 2016 08:56:19,  417788 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(May 26 2016 08:56:19,  417788 sec) DownLoadMissionCfg() Connect/login failed.  Mission configuration not downloaded from remote host.
+(May 26 2016 08:56:19,  417788 sec) DownLoadMissionCfg() Aborting download: Retry limit [2] exceeded.
+(May 26 2016 08:56:19,  417789 sec) WriteVitals()        Writing vitals to "7546.029.msg".
+(May 26 2016 08:56:22,  417792 sec) CLogin()             Connecting to primary host.
+(May 26 2016 08:56:36,  417805 sec) CLogin()             Connection 2 established in 14 seconds.
+(May 26 2016 08:56:48,  417817 sec) login()              Login successful.
+(May 26 2016 08:56:53,  417822 sec) chat()               Expected string [cmd>] not received.
+(May 26 2016 08:56:53,  417822 sec) login()              Attempt to set the command prompt failed.
+(May 26 2016 08:56:56,  417825 sec) CLogin()             Logged in to host.  [Login required 20 seconds]
+(May 26 2016 08:57:01,  417831 sec) UpLoadFile()         Uploading "7546.029.msg" to host as "7546.029.msg".
+(May 26 2016 08:57:05,  417834 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(May 26 2016 08:57:16,  417845 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:57:16,  417845 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(May 26 2016 08:57:16,  417846 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 08:57:17,  417846 sec) TxPacket()           Packet xmit history: [11100011] (0:ok, 1:fail).
+(May 26 2016 08:57:27,  417856 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(May 26 2016 08:57:27,  417856 sec) TxPacket()           Packet xmit history: [10001101] (0:ok, 1:fail).
+(May 26 2016 08:57:28,  417857 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(May 26 2016 08:57:28,  417857 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(May 26 2016 08:57:41,  417870 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(May 26 2016 08:57:41,  417871 sec) TxPacket()           Packet xmit history: [11011001] (0:ok, 1:fail).
+(May 26 2016 08:57:54,  417883 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(May 26 2016 08:57:54,  417883 sec) TxPacket()           Packet xmit history: [11001001] (0:ok, 1:fail).
+(May 26 2016 08:58:05,  417894 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(May 26 2016 08:58:05,  417894 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(May 26 2016 08:58:22,  417911 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(May 26 2016 08:58:22,  417911 sec) TxPacket()           Packet xmit history: [10010101] (0:ok, 1:fail).
+(May 26 2016 08:58:55,  417944 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(May 26 2016 08:58:55,  417944 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(May 26 2016 08:59:04,  417953 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(May 26 2016 08:59:04,  417953 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(May 26 2016 08:59:17,  417966 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(May 26 2016 08:59:17,  417966 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(May 26 2016 08:59:28,  417977 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(May 26 2016 08:59:28,  417978 sec) TxPacket()           Packet xmit history: [00110101] (0:ok, 1:fail).
+(May 26 2016 08:59:40,  417989 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(May 26 2016 08:59:40,  417989 sec) TxPacket()           Packet xmit history: [10101001] (0:ok, 1:fail).
+(May 26 2016 08:59:44,  417993 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(May 26 2016 08:59:44,  417993 sec) TxPacket()           Packet xmit history: [01010011] (0:ok, 1:fail).
+(May 26 2016 08:59:48,  417997 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(May 26 2016 08:59:48,  417997 sec) TxPacket()           Packet xmit history: [10100111] (0:ok, 1:fail).
+(May 26 2016 08:59:52,  418001 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(May 26 2016 08:59:52,  418001 sec) TxPacket()           Packet xmit history: [01001111] (0:ok, 1:fail).
+(May 26 2016 09:00:08,  418017 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(May 26 2016 09:00:08,  418017 sec) TxPacket()           Packet xmit history: [11110001] (0:ok, 1:fail).
+(May 26 2016 09:00:42,  418051 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(May 26 2016 09:00:42,  418051 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(May 26 2016 09:00:50,  418059 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(May 26 2016 09:00:50,  418059 sec) TxPacket()           Packet xmit history: [00100011] (0:ok, 1:fail).
+(May 26 2016 09:01:00,  418069 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(May 26 2016 09:01:00,  418069 sec) TxPacket()           Packet xmit history: [10001101] (0:ok, 1:fail).
+(May 26 2016 09:01:13,  418082 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(May 26 2016 09:01:13,  418082 sec) TxPacket()           Packet xmit history: [00110101] (0:ok, 1:fail).
+(May 26 2016 09:01:42,  418111 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(May 26 2016 09:01:42,  418111 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(May 26 2016 09:01:46,  418115 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(May 26 2016 09:01:46,  418115 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(May 26 2016 09:01:53,  418122 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(May 26 2016 09:01:53,  418123 sec) TxPacket()           Packet xmit history: [10000111] (0:ok, 1:fail).
+(May 26 2016 09:01:58,  418127 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(May 26 2016 09:01:58,  418127 sec) TxPacket()           Packet xmit history: [00001111] (0:ok, 1:fail).
+(May 26 2016 09:02:13,  418142 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(May 26 2016 09:02:13,  418143 sec) TxPacket()           Packet xmit history: [00111101] (0:ok, 1:fail).
+(May 26 2016 09:02:53,  418182 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(May 26 2016 09:02:53,  418183 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(May 26 2016 09:03:06,  418195 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(May 26 2016 09:03:06,  418196 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(May 26 2016 09:03:12,  418201 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(May 26 2016 09:03:12,  418202 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(May 26 2016 09:03:24,  418213 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(May 26 2016 09:03:24,  418213 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(May 26 2016 09:03:35,  418224 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(May 26 2016 09:03:35,  418225 sec) TxPacket()           Packet xmit history: [01011101] (0:ok, 1:fail).
+(May 26 2016 09:04:46,  418296 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(May 26 2016 09:04:47,  418296 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(May 26 2016 09:04:50,  418300 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(May 26 2016 09:04:51,  418300 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(May 26 2016 09:05:01,  418310 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(May 26 2016 09:05:01,  418310 sec) TxPacket()           Packet xmit history: [10000111] (0:ok, 1:fail).
+(May 26 2016 09:05:28,  418338 sec) Tx()                 Transmission completed successfully [43 packets, 25277 bytes, 502 sec, 52.0 bps]
+(May 26 2016 09:05:29,  418338 sec) UpLoadFile()         Upload successful.
+(May 26 2016 09:05:36,  418345 sec) UpLoadFile()         Uploading "7546.029.log" to host as "7546.029.log".
+(May 26 2016 09:05:38,  418347 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(May 26 2016 09:05:58,  418368 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(May 26 2016 09:05:59,  418368 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(May 26 2016 09:06:11,  418380 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(May 26 2016 09:06:11,  418380 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(May 26 2016 09:06:39,  418408 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(May 26 2016 09:06:39,  418409 sec) TxPacket()           Packet xmit history: [01010001] (0:ok, 1:fail).
+(May 26 2016 09:06:47,  418416 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(May 26 2016 09:06:47,  418416 sec) TxPacket()           Packet xmit history: [10100011] (0:ok, 1:fail).
+(May 26 2016 09:06:53,  418423 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(May 26 2016 09:06:54,  418423 sec) TxPacket()           Packet xmit history: [01000111] (0:ok, 1:fail).
+(May 26 2016 09:06:59,  418429 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(May 26 2016 09:07:00,  418429 sec) TxPacket()           Packet xmit history: [10001111] (0:ok, 1:fail).
+(May 26 2016 09:07:09,  418438 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(May 26 2016 09:07:09,  418438 sec) TxPacket()           Packet xmit history: [00011111] (0:ok, 1:fail).
+(May 26 2016 09:07:28,  418457 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(May 26 2016 09:07:28,  418457 sec) TxPacket()           Packet xmit history: [11110001] (0:ok, 1:fail).
+(May 26 2016 09:08:11,  418501 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(May 26 2016 09:08:12,  418501 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(May 26 2016 09:08:21,  418511 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(May 26 2016 09:08:22,  418511 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(May 26 2016 09:08:27,  418516 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(May 26 2016 09:08:27,  418516 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(May 26 2016 09:08:31,  418520 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(May 26 2016 09:08:31,  418520 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(May 26 2016 09:08:51,  418540 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(May 26 2016 09:08:51,  418540 sec) TxPacket()           Packet xmit history: [10111001] (0:ok, 1:fail).
+(May 26 2016 09:09:05,  418554 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(May 26 2016 09:09:05,  418554 sec) TxPacket()           Packet xmit history: [10010001] (0:ok, 1:fail).
+(May 26 2016 09:09:28,  418577 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(May 26 2016 09:09:28,  418577 sec) TxPacket()           Packet xmit history: [01000101] (0:ok, 1:fail).
+(May 26 2016 09:10:00,  418609 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(May 26 2016 09:10:00,  418609 sec) TxPacket()           Packet xmit history: [01010001] (0:ok, 1:fail).
+(May 26 2016 09:10:16,  418625 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(May 26 2016 09:10:16,  418625 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(May 26 2016 09:10:30,  418639 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(May 26 2016 09:10:30,  418639 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(May 26 2016 09:10:44,  418653 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+(May 26 2016 09:10:44,  418653 sec) TxPacket()           Packet xmit history: [10010101] (0:ok, 1:fail).
+(May 26 2016 09:10:53,  418662 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+(May 26 2016 09:10:53,  418662 sec) TxPacket()           Packet xmit history: [00101011] (0:ok, 1:fail).
+(May 26 2016 09:11:08,  418677 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1f]
+(May 26 2016 09:11:08,  418677 sec) TxPacket()           Packet xmit history: [10101101] (0:ok, 1:fail).
+(May 26 2016 09:11:34,  418703 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(May 26 2016 09:11:34,  418703 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(May 26 2016 09:11:37,  418706 sec) TxPacket()           No carrier detected.
+(May 26 2016 09:11:37,  418706 sec) TxPacket()           Exit status: -5
+(May 26 2016 09:11:37,  418706 sec) Tx()                 Packet transmission failed - aborting transfer.
+(May 26 2016 09:11:48,  418717 sec) UpLoadFile()         Upload failed.
+(May 26 2016 09:11:54,  418723 sec) CLogin()             Connecting to primary host.
+(May 26 2016 09:12:00,  418729 sec) chat()               Expected string [OK] not received.
+(May 26 2016 09:12:00,  418729 sec) modem_restore_factor Modem command [AT&F0] failed.
+(May 26 2016 09:12:00,  418729 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(May 26 2016 09:12:00,  418729 sec) modem_connect()      Modem configuration failed.
+(May 26 2016 09:12:19,  418748 sec) CLogin()             Connection 3 established in 25 seconds.
+(May 26 2016 09:12:43,  418772 sec) login()              Login successful.
+(May 26 2016 09:12:46,  418775 sec) CLogin()             Logged in to host.  [Login required 27 seconds]
+(May 26 2016 09:13:08,  418797 sec) UpLoadFile()         Uploading "7546.029.log" to host as "7546.029.log".
+(May 26 2016 09:13:19,  418808 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(May 26 2016 09:13:28,  418817 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(May 26 2016 09:13:28,  418817 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(May 26 2016 09:13:38,  418827 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(May 26 2016 09:13:38,  418827 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(May 26 2016 09:14:03,  418852 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(May 26 2016 09:14:03,  418852 sec) TxPacket()           Packet xmit history: [11010001] (0:ok, 1:fail).
+(May 26 2016 09:14:09,  418858 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(May 26 2016 09:14:09,  418858 sec) TxPacket()           Packet xmit history: [10100011] (0:ok, 1:fail).
+(May 26 2016 09:14:23,  418872 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(May 26 2016 09:14:23,  418872 sec) TxPacket()           Packet xmit history: [10001101] (0:ok, 1:fail).
+(May 26 2016 09:14:29,  418878 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(May 26 2016 09:14:29,  418878 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(May 26 2016 09:14:46,  418895 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(May 26 2016 09:14:46,  418895 sec) TxPacket()           Packet xmit history: [11011001] (0:ok, 1:fail).
+(May 26 2016 09:14:50,  418899 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(May 26 2016 09:14:50,  418899 sec) TxPacket()           Packet xmit history: [10110011] (0:ok, 1:fail).
+(May 26 2016 09:15:23,  418932 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(May 26 2016 09:15:23,  418932 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(May 26 2016 09:15:53,  418962 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(May 26 2016 09:15:53,  418962 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(May 26 2016 09:15:59,  418968 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(May 26 2016 09:15:59,  418968 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(May 26 2016 09:16:20,  418989 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(May 26 2016 09:16:20,  418989 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(May 26 2016 09:16:44,  419013 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(May 26 2016 09:16:44,  419014 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(May 26 2016 09:16:49,  419018 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(May 26 2016 09:16:49,  419018 sec) TxPacket()           Packet xmit history: [00100011] (0:ok, 1:fail).
+(May 26 2016 09:17:07,  419036 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(May 26 2016 09:17:07,  419036 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(May 26 2016 09:17:29,  419058 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(May 26 2016 09:17:29,  419058 sec) TxPacket()           Packet xmit history: [01100101] (0:ok, 1:fail).
+(May 26 2016 09:18:22,  419111 sec) TxPacket()           NAK received - resending packet. [PktNum=0x21]
+(May 26 2016 09:18:22,  419111 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(May 26 2016 09:19:03,  419152 sec) TxPacket()           NAK received - resending packet. [PktNum=0x27]
+(May 26 2016 09:19:03,  419152 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(May 26 2016 09:19:14,  419163 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(May 26 2016 09:19:14,  419163 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(May 26 2016 09:19:37,  419186 sec) TxPacket()           NAK received - resending packet. [PktNum=0x29]
+(May 26 2016 09:19:37,  419186 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(May 26 2016 09:19:42,  419191 sec) TxPacket()           NAK received - resending packet. [PktNum=0x29]
+(May 26 2016 09:19:42,  419191 sec) TxPacket()           Packet xmit history: [00101011] (0:ok, 1:fail).
+(May 26 2016 09:19:49,  419198 sec) TxPacket()           NAK received - resending packet. [PktNum=0x29]
+(May 26 2016 09:19:49,  419198 sec) TxPacket()           Packet xmit history: [01010111] (0:ok, 1:fail).
+(May 26 2016 09:19:58,  419207 sec) TxPacket()           NAK received - resending packet. [PktNum=0x29]
+(May 26 2016 09:19:58,  419207 sec) TxPacket()           Packet xmit history: [10101111] (0:ok, 1:fail).
+(May 26 2016 09:20:27,  419236 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2d]
+(May 26 2016 09:20:27,  419236 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(May 26 2016 09:20:50,  419260 sec) TxPacket()           NAK received - resending packet. [PktNum=0x30]
+(May 26 2016 09:20:51,  419260 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(May 26 2016 09:21:00,  419269 sec) Tx()                 Transmission completed successfully [48 packets, 40804 bytes, 460 sec, 89.3 bps]
+(May 26 2016 09:21:00,  419269 sec) UpLoadFile()         Upload successful.
+(May 26 2016 09:21:06,  419275 sec) UpLoad()             Files successfully uploaded: 2
+(May 26 2016 09:21:06,  419275 sec) UpLoad()             Upload complete.
+(May 26 2016 09:21:11,  419280 sec) chat()               Expected string [cmd>] not received.
+(May 26 2016 09:21:11,  419280 sec) logout()             Can't get command prompt.
+(May 26 2016 09:21:16,  419285 sec) chat()               Expected string [logout] not received.
+(May 26 2016 09:21:16,  419285 sec) logout()             Attempt to log-out failed.
+(May 26 2016 09:21:16,  419285 sec) logout()             No carrier detected.
+
+
+(May 26 2016 09:21:16) LogSize()            Log file is 38980 bytes.  Limit is 40960 bytes.
+
+(May 26 2016 09:21:16,  419285 sec) Telemetry()          Telemetry cycle complete: PrfId=29 ConnectionAttempts=4  Connections=3
+(May 26 2016 09:21:16,  419285 sec) TelemetryTerminate() Parsing new mission configuration.
+(May 26 2016 09:21:18,  419287 sec) configure()          Parsing configurators in "mission.cfg".
+(May 26 2016 09:21:22,  419291 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(May 26 2016 09:21:22,  419291 sec) configure()          Configuration CRCs and syntax OK.
+(May 26 2016 09:21:22,  419291 sec) ConfigSupervisor()   Configuration accepted.
+(May 26 2016 09:21:22,  419291 sec) TelemetryTerminate() Reconditioning the file system.
+(May 26 2016 09:21:37,       7 sec) DescentInit()        Deep profile 30 initiated at mission-time 419299sec.
+(May 26 2016 09:21:39,      10 sec) DescentInit()        Surface pressure: -0.1dbars.
+(May 26 2016 09:21:44,      15 sec) PistonMoveAbsWTO()    196->049 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 [740sec, 14.7Volts, 0.137Amps, CPT:740sec]
+(May 26 2016 09:34:05,     755 sec) PistonMoveAbsWTO()    049->000
+<EOT>

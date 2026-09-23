@@ -567,7 +567,7 @@ def test_fleet_status_payload_carries_a_prediction_for_every_float(tmp_path, mon
     assert rows[2900200]["data_status"] in {
         "ACTIVE / RECENT PROFILE",
         "PROFILE OVERDUE",
-        "NO RECENT PROFILE DATA 60+ DAYS",
+        "NO RECENT PROFILE DATA 80+ DAYS",
         "NO DATA",
     }
 

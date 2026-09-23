@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 import {
   ArrowLeft,
@@ -11,6 +11,9 @@ import {
   Satellite,
   ChevronRight,
   ShieldCheck,
+  ShieldX,
+  ShieldQuestion,
+  Loader2,
   Copy,
   Check,
   AlertTriangle,
@@ -30,8 +33,12 @@ import {
   CycleRecord,
   NodeStatus,
   RunSummary,
+  FormatCheckerSummary,
+  FormatCheckerStatus,
+  FormatCheckerDetail,
 } from "../types";
 import FleetOceanMap, { EezMapOverlays, FleetMapFloat, FleetMapTrajectoryPoint } from "./FleetOceanMap";
+import FormatCheckerDrawer from "./FormatCheckerDrawer";
 import NewArrivalsPanel from "./NewArrivalsPanel";
 import ScientificProfileChart, { CtdRecord, ProfileSample, decimalsForSpan, qcLabel } from "./ScientificProfileChart";
 
@@ -93,6 +100,98 @@ function fmtBytes(bytes: number): string {
   return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
 }
 
+export const MIN_EXPANDED_PANEL_HEIGHT = 180;
+export const MIN_EXPANDED_MAP_HEIGHT = 160;
+
+export function calculateClampedPanelHeight(
+  startHeight: number,
+  deltaY: number,
+  containerHeight: number
+): number {
+  const newHeight = startHeight - deltaY; // Dragging UP (deltaY < 0) expands the panel upward
+  const minH = MIN_EXPANDED_PANEL_HEIGHT; // Enough for filter bar + table header + visible rows
+  const maxH = Math.max(minH, containerHeight - MIN_EXPANDED_MAP_HEIGHT); // Leaves room for map + controls
+  return Math.min(Math.max(newHeight, minH), maxH);
+}
+
+export function shouldUpdateFormatCheckerSummary(
+  current: FormatCheckerSummary | undefined,
+  next: FormatCheckerSummary
+): boolean {
+  if (!current) return true;
+  return !(
+    current.status === next.status &&
+    current.total_files === next.total_files &&
+    current.accepted_files === next.accepted_files &&
+    current.rejected_files === next.rejected_files &&
+    current.total_errors === next.total_errors &&
+    current.total_warnings === next.total_warnings &&
+    current.checked_at === next.checked_at
+  );
+}
+
+export interface CycleCoordinates {
+  lat: number;
+  lon: number;
+}
+
+export function formatHeaderCoord(coord: number | null | undefined, kind: "lat" | "lon"): string {
+  if (coord == null || !Number.isFinite(coord) || Math.abs(coord) > (kind === "lat" ? 90 : 180)) {
+    return "—";
+  }
+  const hemi = kind === "lat" ? (coord < 0 ? "S" : "N") : coord < 0 ? "W" : "E";
+  return `${Math.abs(coord).toFixed(3)}°${hemi}`;
+}
+
+export function resolveCycleCoordinates(
+  cycle: CycleRecord | null | undefined,
+  trajectory?: readonly FleetMapTrajectoryPoint[] | null,
+  allCycles?: readonly CycleRecord[] | null
+): CycleCoordinates | null {
+  if (!cycle) return null;
+  const cNum = cycle.cycle_number;
+
+  // 1. Direct from cycle record
+  let lat = cycle.latitude;
+  let lon = cycle.longitude;
+
+  // 2. Trajectory points matching cycle
+  if (
+    (lat == null || lon == null || !Number.isFinite(lat) || !Number.isFinite(lon)) &&
+    trajectory
+  ) {
+    const pt = trajectory.find((p) => p.cycle === cNum);
+    if (pt && Number.isFinite(pt.lat) && Number.isFinite(pt.lon)) {
+      lat = pt.lat;
+      lon = pt.lon;
+    }
+  }
+
+  // 3. allCycles collection matching cycle
+  if (
+    (lat == null || lon == null || !Number.isFinite(lat) || !Number.isFinite(lon)) &&
+    allCycles
+  ) {
+    const match = allCycles.find((c) => c.cycle_number === cNum);
+    if (match && Number.isFinite(match.latitude) && Number.isFinite(match.longitude)) {
+      lat = match.latitude;
+      lon = match.longitude;
+    }
+  }
+
+  if (
+    typeof lat === "number" &&
+    typeof lon === "number" &&
+    Number.isFinite(lat) &&
+    Number.isFinite(lon) &&
+    Math.abs(lat) <= 90 &&
+    Math.abs(lon) <= 180
+  ) {
+    return { lat, lon };
+  }
+  return null;
+}
+
 export const ResultsWorkspace: React.FC = () => {
   const {
     currentBatch,
@@ -129,6 +228,69 @@ export const ResultsWorkspace: React.FC = () => {
   const [showPoints, setShowPoints] = useState(true);
   const [showGrid, setShowGrid] = useState(true);
 
+  // ---------------------------------------------------------------------------
+  // Format Checker — per-WMO format check results and drawer state
+  // ---------------------------------------------------------------------------
+  const [fcResults, setFcResults] = useState<Record<number, FormatCheckerSummary>>({});
+  const [fcDrawerWmo, setFcDrawerWmo] = useState<number | null>(null);
+
+  const handleCloseFcDrawer = useCallback(() => {
+    setFcDrawerWmo(null);
+  }, []);
+
+  const handleFcDrawerResultChange = useCallback((detail: FormatCheckerDetail) => {
+    if (!detail?.wmo) return;
+    setFcResults((prev) => {
+      const cur = prev[detail.wmo];
+      if (!shouldUpdateFormatCheckerSummary(cur, detail)) {
+        return prev;
+      }
+      return { ...prev, [detail.wmo]: detail };
+    });
+  }, []);
+
+  const handleRunFormatCheck = useCallback(async (wmo: number, runId?: string) => {
+    // Mark as checking immediately
+    setFcResults((prev) => ({
+      ...prev,
+      [wmo]: { status: "checking", accepted_files: 0, rejected_files: 0, total_files: 0, total_errors: 0, total_warnings: 0, checked_at: null },
+    }));
+    try {
+      const url = runId
+        ? `/api/floats/${wmo}/format-check/run?run_id=${encodeURIComponent(runId)}`
+        : `/api/floats/${wmo}/format-check/run`;
+      const res = await fetch(url, { method: "POST" });
+      const data = await res.json();
+      if (data.status === "no_files") {
+        setFcResults((prev) => ({
+          ...prev,
+          [wmo]: { status: "incomplete" as FormatCheckerStatus, accepted_files: 0, rejected_files: 0, total_files: 0, total_errors: 0, total_warnings: 0, checked_at: null },
+        }));
+        return;
+      }
+      // Poll for result (the check runs in the background)
+      const poll = async () => {
+        for (let i = 0; i < 60; i++) {
+          await new Promise((r) => setTimeout(r, 1500));
+          try {
+            const pr = await fetch(`/api/floats/${wmo}/format-check`);
+            const pd = await pr.json();
+            if (pd.status && pd.status !== "checking" && pd.status !== "not_checked") {
+              setFcResults((prev) => ({ ...prev, [wmo]: pd }));
+              return;
+            }
+          } catch { /* retry */ }
+        }
+      };
+      poll();
+    } catch {
+      setFcResults((prev) => ({
+        ...prev,
+        [wmo]: { status: "checker_error" as FormatCheckerStatus, accepted_files: 0, rejected_files: 0, total_files: 0, total_errors: 0, total_warnings: 0, checked_at: null },
+      }));
+    }
+  }, []);
+
   // SHARED fleet-map instance: one FleetOceanMap is kept mounted for the
   // whole Results session and only RE-PARKED between the normal page slot
   // and the full-screen slot via a React portal. Opening "Expand Fleet"
@@ -137,9 +299,97 @@ export const ResultsWorkspace: React.FC = () => {
   const [normalMapSlot, setNormalMapSlot] = useState<HTMLDivElement | null>(null);
   const [fullMapSlot, setFullMapSlot] = useState<HTMLDivElement | null>(null);
 
+  // Floating fleet-info panel dragging in "Expand Fleet" mode
+  const [expandedPanelHeight, setExpandedPanelHeight] = useState<number>(340);
+  const [, setIsDraggingPanel] = useState<boolean>(false);
+  const fleetContainerRef = useRef<HTMLDivElement>(null);
+
+  // Keep height constrained inside the viewport on window resize
+  useEffect(() => {
+    if (!fleetFullScreen) return;
+    const handleResize = () => {
+      const containerH = fleetContainerRef.current
+        ? fleetContainerRef.current.clientHeight
+        : window.innerHeight - 64;
+      setExpandedPanelHeight((prev) => calculateClampedPanelHeight(prev, 0, containerH));
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [fleetFullScreen]);
+
+  const handleDragStart = useCallback(
+    (e: React.PointerEvent) => {
+      if (!fleetFullScreen) return;
+      // Do not initiate drag when clicking buttons, inputs, links or select elements
+      if ((e.target as HTMLElement).closest("button, input, select, a")) {
+        return;
+      }
+      e.preventDefault();
+      setIsDraggingPanel(true);
+
+      const startY = e.clientY;
+      const startH = expandedPanelHeight;
+      const containerEl = fleetContainerRef.current;
+
+      const handlePointerMove = (moveEv: PointerEvent) => {
+        const deltaY = moveEv.clientY - startY;
+        const containerH = containerEl ? containerEl.clientHeight : window.innerHeight - 64;
+        const clamped = calculateClampedPanelHeight(startH, deltaY, containerH);
+        setExpandedPanelHeight(clamped);
+      };
+
+      const handlePointerUp = () => {
+        setIsDraggingPanel(false);
+        window.removeEventListener("pointermove", handlePointerMove);
+        window.removeEventListener("pointerup", handlePointerUp);
+        window.removeEventListener("pointercancel", handlePointerUp);
+        document.body.style.cursor = "";
+        document.body.style.userSelect = "";
+      };
+
+      document.body.style.cursor = "ns-resize";
+      document.body.style.userSelect = "none";
+      window.addEventListener("pointermove", handlePointerMove);
+      window.addEventListener("pointerup", handlePointerUp);
+      window.addEventListener("pointercancel", handlePointerUp);
+    },
+    [fleetFullScreen, expandedPanelHeight]
+  );
+
   const batch = currentBatch;
   const items = batch?.items || [];
   const hasBatch = batch !== null && items.length > 0;
+
+  // Preload cached format checker results for all floats in batch
+  useEffect(() => {
+    if (!items.length) return;
+    items.forEach(async (item) => {
+      try {
+        const res = await fetch(`/api/floats/${item.wmo}/format-check`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.status && data.status !== "not_checked") {
+            setFcResults((prev) => {
+              const cur = prev[item.wmo];
+              if (
+                cur &&
+                cur.status === data.status &&
+                cur.total_files === data.total_files &&
+                cur.accepted_files === data.accepted_files &&
+                cur.rejected_files === data.rejected_files &&
+                cur.total_errors === data.total_errors &&
+                cur.total_warnings === data.total_warnings &&
+                cur.checked_at === data.checked_at
+              ) {
+                return prev;
+              }
+              return { ...prev, [item.wmo]: data };
+            });
+          }
+        }
+      } catch { /* ignore */ }
+    });
+  }, [items]);
 
   // ------------------------------------------------------------------
   // INDIAN EEZ geographic monitoring — the verified reference geometry is
@@ -190,7 +440,7 @@ export const ResultsWorkspace: React.FC = () => {
           .then((data) => {
             if (data) useDecoderStore.getState().updateRunSummary(data);
           })
-          .catch(() => {});
+          .catch(() => { });
       }
     }
   }, [activeWmo, activeRun, items, allRuns]);
@@ -407,6 +657,13 @@ export const ResultsWorkspace: React.FC = () => {
     return pts;
   }, [activeCycles]);
 
+  // Dynamically resolve coordinates for the selected cycle/profile from
+  // the matching cycle or trajectory fix.
+  const selectedCycleCoords = useMemo(
+    () => resolveCycleCoordinates(currentCycle, trajectoryPoints, activeCycles),
+    [currentCycle, trajectoryPoints, activeCycles]
+  );
+
   // ------------------------------------------------------------------
   // EEZ derivation (separate dimension): classify the real decoded cycle
   // positions of every fleet float — idempotent across every re-render,
@@ -543,7 +800,7 @@ export const ResultsWorkspace: React.FC = () => {
         .then((data) => {
           if (data) useDecoderStore.getState().updateRunSummary(data);
         })
-        .catch(() => {});
+        .catch(() => { });
     }
     // NOTE: runsCache is deliberately NOT a dep. The per-run `seen` guard
     // above already fetches each run_id once; re-running on every cache
@@ -618,11 +875,11 @@ export const ResultsWorkspace: React.FC = () => {
     : 0;
   const stoppedFloats = hasBatch
     ? batch?.stopped_floats ||
-      items.filter((i) => isTerminalStopped(String(i.status))).length
+    items.filter((i) => isTerminalStopped(String(i.status))).length
     : 0;
   const totalProfilesGen = hasBatch
     ? batch?.total_profiles_generated ||
-      items.reduce((acc, i) => acc + (i.profiles_count || 0), 0)
+    items.reduce((acc, i) => acc + (i.profiles_count || 0), 0)
     : 0;
   const totalOutputs = hasBatch
     ? batch?.total_output_files || items.reduce((acc, i) => acc + (i.outputs_count || 0), 0)
@@ -866,47 +1123,47 @@ export const ResultsWorkspace: React.FC = () => {
               Fleet mode is a pure geographic workspace: header + real-world
               map + controls + legend + fleet table. */}
           {!fleetFullScreen && (
-          <section
-            className="bg-[#f5f8fb] border-b border-slate-200 px-4 sm:px-8 lg:px-10 py-5 shrink-0"
-            data-testid="fleet-status-panel"
-          >
-            <div className="flex items-stretch w-full font-mono">
-              <StatusMetric
-                label="TOTAL FLOATS"
-                value={String(totalFloats)}
-                valueClass="text-[#163857]"
-                barClass="bg-[#163857]/60"
-              />
-              <StatusDivider />
-              <StatusMetric
-                label={batch?.cached_floats ? `SUCCESSFUL (${batch.cached_floats} CACHED)` : "SUCCESSFUL"}
-                value={String(successFloats)}
-                valueClass="text-emerald-600"
-                barClass="bg-emerald-500/60"
-              />
-              <StatusDivider />
-              <StatusMetric
-                label="FAILED"
-                value={String(failedFloats)}
-                valueClass="text-rose-600"
-                barClass="bg-rose-500/60"
-              />
-              <StatusDivider />
-              <StatusMetric
-                label="PROFILES GENERATED"
-                value={String(totalProfilesGen)}
-                valueClass="text-[#276095]"
-                barClass="bg-[#276095]/60"
-              />
-              <StatusDivider />
-              <StatusMetric
-                label="NETCDF OUTPUTS"
-                value={String(totalOutputs)}
-                valueClass="text-[#1d547d]"
-                barClass="bg-[#1d547d]/60"
-              />
-            </div>
-          </section>
+            <section
+              className="bg-[#f5f8fb] border-b border-slate-200 px-4 sm:px-8 lg:px-10 py-5 shrink-0"
+              data-testid="fleet-status-panel"
+            >
+              <div className="flex items-stretch w-full font-mono">
+                <StatusMetric
+                  label="TOTAL FLOATS"
+                  value={String(totalFloats)}
+                  valueClass="text-[#163857]"
+                  barClass="bg-[#163857]/60"
+                />
+                <StatusDivider />
+                <StatusMetric
+                  label={batch?.cached_floats ? `SUCCESSFUL (${batch.cached_floats} CACHED)` : "SUCCESSFUL"}
+                  value={String(successFloats)}
+                  valueClass="text-emerald-600"
+                  barClass="bg-emerald-500/60"
+                />
+                <StatusDivider />
+                <StatusMetric
+                  label="FAILED"
+                  value={String(failedFloats)}
+                  valueClass="text-rose-600"
+                  barClass="bg-rose-500/60"
+                />
+                <StatusDivider />
+                <StatusMetric
+                  label="PROFILES GENERATED"
+                  value={String(totalProfilesGen)}
+                  valueClass="text-[#276095]"
+                  barClass="bg-[#276095]/60"
+                />
+                <StatusDivider />
+                <StatusMetric
+                  label="NETCDF OUTPUTS"
+                  value={String(totalOutputs)}
+                  valueClass="text-[#1d547d]"
+                  barClass="bg-[#1d547d]/60"
+                />
+              </div>
+            </section>
           )}
 
           {/* ===================== Workspace split ===================== */}
@@ -918,11 +1175,11 @@ export const ResultsWorkspace: React.FC = () => {
                  panel hidden) and the real world map grows to fill the
                  space above the table. */}
             <div
-              className={`flex flex-col bg-white overflow-hidden ${
-                fleetFullScreen
-                  ? "flex-1 min-w-0"
-                  : "w-[46%] border-r border-slate-200 shrink-0 min-w-[420px]"
-              }`}
+              ref={fleetContainerRef}
+              className={`flex flex-col bg-white overflow-hidden relative ${fleetFullScreen
+                ? "flex-1 min-w-0"
+                : "w-[46%] border-r border-slate-200 shrink-0 min-w-[420px]"
+                }`}
             >
               {/* Real geographic world map. A SINGLE map instance serves
                   both modes (it is parked in whichever slot is active via a
@@ -931,7 +1188,7 @@ export const ResultsWorkspace: React.FC = () => {
                   re-parks the SAME map in the full-screen slot — selection,
                   trajectory and the decoded basemap are preserved. */}
               {fleetFullScreen && (
-                <div className="flex flex-col flex-[5] min-h-[260px]">
+                <div className="flex flex-col flex-1 min-h-[160px] overflow-hidden">
                   <div ref={setFullMapSlot} className="flex-1 min-h-0 flex flex-col" />
                 </div>
               )}
@@ -945,191 +1202,289 @@ export const ResultsWorkspace: React.FC = () => {
                 </div>
               )}
 
-              {/* Filter & search */}
-              <div className="p-3 bg-slate-50 border-y border-slate-200 flex items-center justify-between gap-2 shrink-0 font-mono text-[13px]">
-                <div className="flex items-center space-x-1">
-                  {(
-                    [
-                      { id: "all", label: `ALL (${items.length})` },
-                      { id: "completed", label: `SUCCESS (${items.filter((i) => i.status === "completed").length})` },
-                      { id: "error", label: `FAILED (${items.filter((i) => i.status === "error").length})` },
-                      { id: "stopped", label: `STOPPED (${items.filter((i) => isTerminalStopped(String(i.status))).length})` },
-                    ] as const
-                  ).map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setStatusFilter(tab.id)}
-                      className={`px-3 py-1.5 rounded text-[12px] font-bold transition border cursor-pointer ${
-                        statusFilter === tab.id
+              {/* Floating fleet-info window/panel: in full-screen mode it is
+                  vertically draggable via its top handle/header area so the
+                  operator can reveal more float rows at once while keeping
+                  scrolling and stable positioning; in normal mode it sits
+                  below the framed map as the standard left-column list. */}
+              <div
+                data-testid="fleet-info-panel"
+                style={fleetFullScreen ? { height: `${expandedPanelHeight}px` } : undefined}
+                className={
+                  fleetFullScreen
+                    ? "flex flex-col shrink-0 bg-white border-t border-slate-300 shadow-md relative z-10"
+                    : "flex-1 flex flex-col min-h-0 overflow-hidden"
+                }
+              >
+                {/* Drag Handle (Full Screen mode only): clear grab affordance with subtle cursor change */}
+                {fleetFullScreen && (
+                  <div
+                    data-testid="fleet-panel-drag-handle"
+                    onPointerDown={handleDragStart}
+                    className="w-full py-1.5 bg-slate-100 hover:bg-slate-200/90 border-b border-slate-200 cursor-ns-resize flex items-center justify-center select-none group transition-colors shrink-0"
+                    title="Drag vertically to adjust fleet panel size"
+                    role="separator"
+                    aria-orientation="horizontal"
+                    aria-label="Resize fleet panel"
+                  >
+                    <div className="w-12 h-1 rounded-full bg-slate-300 group-hover:bg-[#276095] transition-colors" />
+                  </div>
+                )}
+
+                {/* Filter & search */}
+                <div
+                  onPointerDown={fleetFullScreen ? handleDragStart : undefined}
+                  className={`p-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between gap-2 shrink-0 font-mono text-[13px] ${fleetFullScreen ? "cursor-ns-resize select-none" : ""
+                    }`}
+                >
+                  <div className="flex items-center space-x-1">
+                    {(
+                      [
+                        { id: "all", label: `ALL (${items.length})` },
+                        { id: "completed", label: `SUCCESS (${items.filter((i) => i.status === "completed").length})` },
+                        { id: "error", label: `FAILED (${items.filter((i) => i.status === "error").length})` },
+                        { id: "stopped", label: `STOPPED (${items.filter((i) => isTerminalStopped(String(i.status))).length})` },
+                      ] as const
+                    ).map((tab) => (
+                      <button
+                        key={tab.id}
+                        onClick={() => setStatusFilter(tab.id)}
+                        className={`px-3 py-1.5 rounded text-[12px] font-bold transition border cursor-pointer ${statusFilter === tab.id
                           ? "bg-[#276095] text-white border-[#276095] shadow-2xs"
                           : "bg-white text-slate-600 border-slate-200 hover:bg-slate-100"
-                      }`}
-                    >
-                      {tab.label}
-                    </button>
-                  ))}
-                </div>
-                <div className="relative w-52">
-                  <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
-                  <input
-                    type="text"
-                    placeholder="Search WMO / platform..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-8 pr-2.5 py-1.5 bg-white border border-slate-300 rounded text-[13px] font-mono text-slate-900 focus:outline-none focus:ring-1 focus:ring-[#276095]"
-                  />
-                </div>
-              </div>
-
-              {/* Fleet table — primary fleet overview. On the normal
-                  Results page it fills the full width and vertical space
-                  of the left Fleet section (no small map above it); in
-                  full-screen it keeps its own scrolling/filters/search
-                  beneath the world map. */}
-              <div
-                className={`overflow-y-auto p-2.5 select-text font-mono text-[13px] ${
-                  fleetFullScreen ? "flex-[3] min-h-[160px]" : "flex-1"
-                }`}
-              >
-                {filteredItems.length === 0 ? (
-                  <div className="p-8 text-center text-slate-400 space-y-2">
-                    <Layers className="w-7 h-7 mx-auto text-slate-300" />
-                    <p>No float records match current filters</p>
+                          }`}
+                      >
+                        {tab.label}
+                      </button>
+                    ))}
                   </div>
-                ) : (
-                  <table className="w-full text-left border border-slate-200 rounded overflow-hidden">
-                    <thead className="bg-slate-100 text-slate-600 font-bold text-[12px] uppercase tracking-wider border-b border-slate-200">
-                      <tr>
-                        <th className="py-2.5 px-2.5">WMO</th>
-                        <th className="py-2.5 px-2">Platform</th>
-                        <th className="py-2.5 px-2">Status</th>
-                        <th className="py-2.5 px-2 text-center">Cycles</th>
-                        <th className="py-2.5 px-2 text-center">Profiles</th>
-                        <th className="py-2.5 px-2 text-center">Outputs</th>
-                        <th className="py-2.5 px-2 text-right">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-100 bg-white">
-                      {filteredItems.map((item) => {
-                        const isSelected = item.wmo === activeWmo;
-                        const isSucc = item.status === "completed";
-                        const isFail = item.status === "error";
-                        const isStop = isTerminalStopped(String(item.status));
-                        // Primary error = latest meaningful error + "(+N more)"
-                        // (unified with the banners and the investigation view).
-                        // Each row resolves its OWN run by exact run_id: activeRun
-                        // belongs to the selected float, not to this row.
-                        const itemRun = item.run_id
-                          ? runsCache[item.run_id] ??
+                  <div className="relative w-52">
+                    <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
+                    <input
+                      type="text"
+                      placeholder="Search WMO / platform..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-8 pr-2.5 py-1.5 bg-white border border-slate-300 rounded text-[13px] font-mono text-slate-900 focus:outline-none focus:ring-1 focus:ring-[#276095]"
+                    />
+                  </div>
+                </div>
+
+                {/* Fleet table — primary fleet overview. On the normal
+                    Results page it fills the full width and vertical space
+                    of the left Fleet section (no small map above it); in
+                    full-screen it keeps its own scrolling/filters/search
+                    beneath the world map. */}
+                <div
+                  className="flex-1 overflow-y-auto p-2.5 select-text font-mono text-[13px]"
+                >
+                  {filteredItems.length === 0 ? (
+                    <div className="p-8 text-center text-slate-400 space-y-2">
+                      <Layers className="w-7 h-7 mx-auto text-slate-300" />
+                      <p>No float records match current filters</p>
+                    </div>
+                  ) : (
+                    <table className="w-full text-left border border-slate-200 rounded overflow-hidden">
+                      <thead className="bg-slate-100 text-slate-600 font-bold text-[12px] uppercase tracking-wider border-b border-slate-200">
+                        <tr>
+                          <th className="py-2.5 px-2.5">WMO</th>
+                          <th className="py-2.5 px-2">Platform</th>
+                          <th className="py-2.5 px-2">Status</th>
+                          <th className="py-2.5 px-2 text-center">Cycles</th>
+                          <th className="py-2.5 px-2 text-center">Profiles</th>
+                          <th className="py-2.5 px-2 text-center">Outputs</th>
+                          <th className="py-2.5 px-2">Format Checker</th>
+                          <th className="py-2.5 px-2 text-right">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100 bg-white">
+                        {filteredItems.map((item) => {
+                          const isSelected = item.wmo === activeWmo;
+                          const isSucc = item.status === "completed";
+                          const isFail = item.status === "error";
+                          const isStop = isTerminalStopped(String(item.status));
+                          // Primary error = latest meaningful error + "(+N more)"
+                          // (unified with the banners and the investigation view).
+                          // Each row resolves its OWN run by exact run_id: activeRun
+                          // belongs to the selected float, not to this row.
+                          const itemRun = item.run_id
+                            ? runsCache[item.run_id] ??
                             allRuns.find((r) => r.run_id === item.run_id) ??
                             null
-                          : null;
-                        const runPrimary =
-                          isFail && itemRun && itemRun.wmo === item.wmo
-                            ? primaryError(itemRun.errors)
                             : null;
-                        const reasonText = item.error_message || runPrimary?.text || "";
-                        const reasonExtra = Math.max(
-                          runPrimary?.extra ?? 0,
-                          (item.error_count ?? 1) - 1,
-                        );
-                        const reason = reasonText ? reasonText + primaryErrorSuffix(reasonExtra) : "";
-                        return (
-                          <tr
-                            key={item.wmo}
-                            onClick={() => setSelectedResultWmo(item.wmo)}
-                            className={`cursor-pointer transition-colors ${
-                              isSelected
+                          const runPrimary =
+                            isFail && itemRun && itemRun.wmo === item.wmo
+                              ? primaryError(itemRun.errors)
+                              : null;
+                          const reasonText = item.error_message || runPrimary?.text || "";
+                          const reasonExtra = Math.max(
+                            runPrimary?.extra ?? 0,
+                            (item.error_count ?? 1) - 1,
+                          );
+                          const reason = reasonText ? reasonText + primaryErrorSuffix(reasonExtra) : "";
+                          return (
+                            <tr
+                              key={item.wmo}
+                              onClick={() => setSelectedResultWmo(item.wmo)}
+                              className={`cursor-pointer transition-colors ${isSelected
                                 ? "bg-amber-50/90 border-l-4 border-l-amber-500"
                                 : "hover:bg-slate-50"
-                            }`}
-                          >
-                            <td className="py-2.5 px-2.5 font-bold text-[#276095]">{item.wmo}</td>
-                            <td className="py-2.5 px-2 text-slate-600 text-[12.5px]">{item.platform_type || "APEX"}</td>
-                            <td className="py-2 px-2">
-                              {isSucc && item.cached && (
-                                <span
-                                  className="px-2 py-1 bg-sky-50 text-sky-800 border border-sky-300 rounded text-[11px] font-bold"
-                                  title={`Already successfully decoded today — this batch reused run ${item.run_id} without re-decoding`}
-                                >
-                                  ✓ CACHED
-                                </span>
-                              )}
-                              {isSucc && !item.cached && (
-                                <span className="px-2 py-1 bg-emerald-50 text-emerald-800 border border-emerald-300 rounded text-[11px] font-bold">
-                                  ✓ SUCCESS
-                                </span>
-                              )}
-                              {isFail && (
-                                <span className="px-2 py-1 bg-rose-50 text-rose-800 border border-rose-300 rounded text-[11px] font-bold">
-                                  ✕ FAILED
-                                </span>
-                              )}
-                              {isStop && (
-                                <span className="px-2 py-1 bg-amber-50 text-amber-900 border border-amber-300 rounded text-[11px] font-bold">
-                                  ⊘ STOPPED
-                                </span>
-                              )}
-                              {!isSucc && !isFail && !isStop && (
-                                <span className="px-2 py-1 bg-slate-100 text-slate-500 rounded text-[11px]">
-                                  {item.status === "active" ? "● RUNNING" : String(item.status || "PENDING").toUpperCase()}
-                                </span>
-                              )}
-                              {isFail && reason && (
-                                <span
-                                  className="block text-[11px] text-rose-700/80 mt-0.5 max-w-[200px] truncate"
-                                  title={reason}
-                                >
-                                  {reason}
-                                </span>
-                              )}
-                              {newDataWmos.has(item.wmo) && (
-                                <span
-                                  data-testid="row-new-data-badge"
-                                  className="inline-block mt-1 px-1.5 py-0.5 rounded bg-amber-100 border border-amber-300 text-amber-800 text-[10px] font-bold tracking-wide"
-                                  title="New incoming source data detected for this float (see Incoming data arrivals panel)"
-                                >
-                                  🟡 NEW DATA
-                                </span>
-                              )}
-                            </td>
-                            <td className="py-2.5 px-2 text-center text-slate-700 font-semibold">{item.cycles_count}</td>
-                            <td className="py-2.5 px-2 text-center font-bold text-sky-800">{item.profiles_count}</td>
-                            <td className="py-2.5 px-2 text-center font-bold text-indigo-700">{item.outputs_count}</td>
-                            <td className="py-2.5 px-2 text-right">
-                              {isSucc && item.run_id ? (
-                                <button
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleNavigateToRun(item.run_id!, false, item.error_message ?? null);
-                                  }}
-                                  className="px-2.5 py-1.5 bg-white hover:bg-[#276095] hover:text-white text-[#276095] border border-slate-300 hover:border-[#276095] rounded text-[11.5px] font-bold transition flex items-center space-x-0.5 ml-auto cursor-pointer shadow-2xs"
-                                  title="Open historical decoder run and full logs"
-                                >
-                                  <span>[ VIEW RUN ]</span>
-                                  <ChevronRight className="w-3 h-3" />
-                                </button>
-                              ) : isFail && item.run_id ? (
-                                <button
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleNavigateToRun(item.run_id!, true, item.error_message ?? null);
-                                  }}
-                                  className="px-2.5 py-1.5 bg-rose-50 hover:bg-rose-600 hover:text-white text-rose-800 border border-rose-300 hover:border-rose-600 rounded text-[11.5px] font-bold transition ml-auto cursor-pointer shadow-2xs"
-                                  title="Return to decoder page, restore logs and focus the error event"
-                                >
-                                  [ INVESTIGATE ERROR ]
-                                </button>
-                              ) : (
-                                <span className="text-slate-300 text-[11px]">—</span>
-                              )}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                )}
+                                }`}
+                            >
+                              <td className="py-2.5 px-2.5 font-bold text-[#276095]">{item.wmo}</td>
+                              <td className="py-2.5 px-2 text-slate-600 text-[12.5px]">{item.platform_type || "APEX"}</td>
+                              <td className="py-2 px-2">
+                                {isSucc && item.cached && (
+                                  <span
+                                    className="px-2 py-1 bg-sky-50 text-sky-800 border border-sky-300 rounded text-[11px] font-bold"
+                                    title={`Already successfully decoded today — this batch reused run ${item.run_id} without re-decoding`}
+                                  >
+                                    ✓ CACHED
+                                  </span>
+                                )}
+                                {isSucc && !item.cached && (
+                                  <span className="px-2 py-1 bg-emerald-50 text-emerald-800 border border-emerald-300 rounded text-[11px] font-bold">
+                                    ✓ SUCCESS
+                                  </span>
+                                )}
+                                {isFail && (
+                                  <span className="px-2 py-1 bg-rose-50 text-rose-800 border border-rose-300 rounded text-[11px] font-bold">
+                                    ✕ FAILED
+                                  </span>
+                                )}
+                                {isStop && (
+                                  <span className="px-2 py-1 bg-amber-50 text-amber-900 border border-amber-300 rounded text-[11px] font-bold">
+                                    ⊘ STOPPED
+                                  </span>
+                                )}
+                                {!isSucc && !isFail && !isStop && (
+                                  <span className="px-2 py-1 bg-slate-100 text-slate-500 rounded text-[11px]">
+                                    {item.status === "active" ? "● RUNNING" : String(item.status || "PENDING").toUpperCase()}
+                                  </span>
+                                )}
+                                {isFail && reason && (
+                                  <span
+                                    className="block text-[11px] text-rose-700/80 mt-0.5 max-w-[200px] truncate"
+                                    title={reason}
+                                  >
+                                    {reason}
+                                  </span>
+                                )}
+                                {newDataWmos.has(item.wmo) && (
+                                  <span
+                                    data-testid="row-new-data-badge"
+                                    className="inline-block mt-1 px-1.5 py-0.5 rounded bg-amber-100 border border-amber-300 text-amber-800 text-[10px] font-bold tracking-wide"
+                                    title="New incoming source data detected for this float (see Incoming data arrivals panel)"
+                                  >
+                                    🟡 NEW DATA
+                                  </span>
+                                )}
+                              </td>
+                              <td className="py-2.5 px-2 text-center text-slate-700 font-semibold">{item.cycles_count}</td>
+                              <td className="py-2.5 px-2 text-center font-bold text-sky-800">{item.profiles_count}</td>
+                              <td className="py-2.5 px-2 text-center font-bold text-indigo-700">{item.outputs_count}</td>
+                              <td className="py-2 px-2" data-field="format_checker">
+                                {(() => {
+                                  const fc = fcResults[item.wmo];
+                                  const st = fc?.status ?? "not_checked";
+                                  if (st === "accepted") return (
+                                    <div className="space-y-0.5">
+                                      <span className="inline-flex items-center gap-1 text-emerald-700 text-[11px] font-bold">
+                                        <ShieldCheck className="w-3.5 h-3.5" /> ACCEPTED
+                                        {(fc?.accepted_files ?? 0) > 0 && <span className="font-normal text-slate-500 text-[10px]">({fc!.accepted_files})</span>}
+                                      </span>
+                                      <div className="flex items-center gap-1.5">
+                                        <button type="button" onClick={(e) => { e.stopPropagation(); setFcDrawerWmo(item.wmo); }} className="text-[10px] text-blue-600 hover:text-blue-800 underline cursor-pointer">View result</button>
+                                        <span className="text-slate-300 text-[9px]">·</span>
+                                        <button type="button" onClick={(e) => { e.stopPropagation(); handleRunFormatCheck(item.wmo, item.run_id ?? undefined); }} className="text-[10px] text-slate-500 hover:text-slate-700 underline cursor-pointer">Re-check</button>
+                                      </div>
+                                    </div>
+                                  );
+                                  if (st === "rejected") return (
+                                    <div className="space-y-0.5">
+                                      <span className="inline-flex items-center gap-1 text-red-700 text-[11px] font-bold">
+                                        <ShieldX className="w-3.5 h-3.5" /> REJECTED
+                                        {(fc?.rejected_files ?? 0) > 0 && <span className="font-normal text-red-600 text-[10px]">({fc!.rejected_files} fail)</span>}
+                                      </span>
+                                      <div className="flex items-center gap-1.5">
+                                        <button type="button" onClick={(e) => { e.stopPropagation(); setFcDrawerWmo(item.wmo); }} className="text-[10px] text-blue-600 hover:text-blue-800 underline cursor-pointer">View result</button>
+                                        <span className="text-slate-300 text-[9px]">·</span>
+                                        <button type="button" onClick={(e) => { e.stopPropagation(); handleRunFormatCheck(item.wmo, item.run_id ?? undefined); }} className="text-[10px] text-slate-500 hover:text-slate-700 underline cursor-pointer">Re-check</button>
+                                      </div>
+                                    </div>
+                                  );
+                                  if (st === "checking") return (
+                                    <div className="space-y-0.5">
+                                      <span className="inline-flex items-center gap-1 text-blue-600 text-[11px] font-bold">
+                                        <Loader2 className="w-3.5 h-3.5 animate-spin" /> CHECKING…
+                                      </span>
+                                      <button type="button" onClick={(e) => { e.stopPropagation(); setFcDrawerWmo(item.wmo); }} className="block text-[10px] text-blue-600 hover:text-blue-800 underline cursor-pointer">View progress</button>
+                                    </div>
+                                  );
+                                  if (st === "checker_error" || st === "incomplete") return (
+                                    <div className="space-y-0.5">
+                                      <span className={`inline-flex items-center gap-1 text-[11px] font-bold ${st === "checker_error" ? "text-red-600" : "text-amber-600"}`}>
+                                        <AlertTriangle className="w-3.5 h-3.5" /> {st === "checker_error" ? "ERROR" : "INCOMPLETE"}
+                                      </span>
+                                      <div className="flex items-center gap-1.5">
+                                        <button type="button" onClick={(e) => { e.stopPropagation(); setFcDrawerWmo(item.wmo); }} className="text-[10px] text-blue-600 hover:text-blue-800 underline cursor-pointer">View result</button>
+                                        <span className="text-slate-300 text-[9px]">·</span>
+                                        <button type="button" onClick={(e) => { e.stopPropagation(); handleRunFormatCheck(item.wmo, item.run_id ?? undefined); }} className="text-[10px] text-slate-500 hover:text-slate-700 underline cursor-pointer">Retry</button>
+                                      </div>
+                                    </div>
+                                  );
+                                  // not_checked — show Run check for successfully decoded floats
+                                  return isSucc ? (
+                                    <div className="space-y-0.5">
+                                      <span className="text-slate-400 text-[11px] font-semibold inline-flex items-center gap-1">
+                                        <ShieldQuestion className="w-3.5 h-3.5" /> NOT CHECKED
+                                      </span>
+                                      <div className="flex items-center gap-1.5">
+                                        <button type="button" onClick={(e) => { e.stopPropagation(); handleRunFormatCheck(item.wmo, item.run_id ?? undefined); }} className="text-[10px] text-blue-600 hover:text-blue-800 underline cursor-pointer font-semibold">Run check</button>
+                                        <span className="text-slate-300 text-[9px]">·</span>
+                                        <button type="button" onClick={(e) => { e.stopPropagation(); setFcDrawerWmo(item.wmo); }} className="text-[10px] text-slate-500 hover:text-slate-700 underline cursor-pointer">View</button>
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <span className="text-slate-300 text-[11px]">—</span>
+                                  );
+                                })()}
+                              </td>
+                              <td className="py-2.5 px-2 text-right">
+                                {isSucc && item.run_id ? (
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleNavigateToRun(item.run_id!, false, item.error_message ?? null);
+                                    }}
+                                    className="px-2.5 py-1.5 bg-white hover:bg-[#276095] hover:text-white text-[#276095] border border-slate-300 hover:border-[#276095] rounded text-[11.5px] font-bold transition flex items-center space-x-0.5 ml-auto cursor-pointer shadow-2xs"
+                                    title="Open historical decoder run and full logs"
+                                  >
+                                    <span>[ VIEW RUN ]</span>
+                                    <ChevronRight className="w-3 h-3" />
+                                  </button>
+                                ) : isFail && item.run_id ? (
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleNavigateToRun(item.run_id!, true, item.error_message ?? null);
+                                    }}
+                                    className="px-2.5 py-1.5 bg-rose-50 hover:bg-rose-600 hover:text-white text-rose-800 border border-rose-300 hover:border-rose-600 rounded text-[11.5px] font-bold transition ml-auto cursor-pointer shadow-2xs"
+                                    title="Return to decoder page, restore logs and focus the error event"
+                                  >
+                                    [ INVESTIGATE ERROR ]
+                                  </button>
+                                ) : (
+                                  <span className="text-slate-300 text-[11px]">—</span>
+                                )}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -1137,592 +1492,541 @@ export const ResultsWorkspace: React.FC = () => {
                  Hidden in fleet full-screen mode (only the fleet section
                  is expanded; the profile/detail panel is excluded). */}
             {!fleetFullScreen && (
-            <div className="flex-1 flex flex-col bg-[#F4F7F9] overflow-hidden">
-              <div className="flex-1 overflow-y-auto">
-                <div className="p-4 space-y-4">
-                  {/* ---------- Selected float header ---------- */}
-                  <div className="p-3 bg-white border border-slate-200 rounded flex items-center justify-between shrink-0 font-mono">
-                    <div className="flex items-center space-x-3 min-w-0">
-                      <div className="w-10 h-10 rounded bg-[#276095] flex items-center justify-center text-white font-bold text-sm shadow-2xs shrink-0">
-                        {(activeRun?.float_type || activeItem?.platform_type || "FL").slice(0, 2)}
-                      </div>
-                      <div className="min-w-0">
-                        <div className="flex items-center space-x-2 flex-wrap">
-                          <span className="text-lg font-black text-slate-900">WMO {activeWmo}</span>
-                          <span className="px-2.5 py-1 bg-sky-50 text-sky-800 border border-sky-200 rounded text-[12px] font-bold">
-                            {activeRun?.float_type || activeItem?.platform_type || "APEX"} /{" "}
-                            {activeRun?.transmission_type || activeItem?.transmission_type || "ARGOS"}
-                          </span>
-                          <RunStatusBadge status={(activeRun?.status || activeItem?.status) as NodeStatus} />
+              <div className="flex-1 flex flex-col bg-[#F4F7F9] overflow-hidden">
+                <div className="flex-1 overflow-y-auto">
+                  <div className="p-4 space-y-4">
+                    {/* ---------- Selected float header ---------- */}
+                    <div className="p-3 bg-white border border-slate-200 rounded flex items-center justify-between shrink-0 font-mono">
+                      <div className="flex items-center space-x-3 min-w-0">
+                        <div className="w-10 h-10 rounded bg-[#276095] flex items-center justify-center text-white font-bold text-sm shadow-2xs shrink-0">
+                          {(activeRun?.float_type || activeItem?.platform_type || "FL").slice(0, 2)}
                         </div>
-                        <p className="text-[13px] text-slate-500 font-sans mt-0.5 truncate">
-                          {eezGeometryReady && activeEezStatus ? (
-                            <span
-                              className="font-mono text-[11.5px] mr-2 text-teal-700"
-                              data-testid="eez-float-status"
-                              data-eez={activeEezStatus}
-                            >
-                              EEZ: {activeEezStatus === "INDIAN_EEZ" ? "Indian EEZ" : "Outside Indian EEZ"} ·
+                        <div className="min-w-0">
+                          <div className="flex items-center space-x-2 flex-wrap">
+                            <span className="text-lg font-black text-slate-900">WMO {activeWmo}</span>
+                            <span className="px-2.5 py-1 bg-sky-50 text-sky-800 border border-sky-200 rounded text-[12px] font-bold">
+                              {activeRun?.float_type || activeItem?.platform_type || "APEX"} /{" "}
+                              {activeRun?.transmission_type || activeItem?.transmission_type || "ARGOS"}
                             </span>
-                          ) : null}
-                          {activeRun?.run_id ? (
-                            <>
-                              Run ID: <span className="font-mono">{activeRun.run_id}</span> ·{" "}
-                            </>
-                          ) : (
-                            "Run pending · "
-                          )}
-                          Duration:{" "}
-                          {activeRun?.duration_seconds !== undefined ? activeRun.duration_seconds.toFixed(2) : activeItem?.duration_seconds?.toFixed(2) || "—"}
-                          s · {activeCycles.length} Cycles Decoded
-                        </p>
-                      </div>
-                    </div>
-                    {activeRun?.run_id && (
-                      <button
-                        onClick={() => handleNavigateToRun(activeRun.run_id!, false, activeItem?.error_message ?? null)}
-                        className="px-4 py-2 bg-[#276095] hover:bg-[#1f4e7a] text-white rounded font-bold text-[13px] transition flex items-center space-x-1.5 shadow-2xs cursor-pointer shrink-0"
-                        title="Navigate back to live decoder workstation for this run"
-                      >
-                        <FileCode className="w-3.5 h-3.5 text-sky-200" />
-                        <span>[ VIEW DECODER RUN ]</span>
-                      </button>
-                    )}
-                  </div>
-
-                  {/* ---------- Processing history (real run stage states) ---------- */}
-                  <div className="px-3.5 py-2.5 bg-white border border-slate-200 rounded flex items-center justify-between gap-2">
-                    <span className="font-mono text-[11px] font-bold text-slate-500 uppercase tracking-wider shrink-0">
-                      Processing history
-                    </span>
-                    <div className="flex items-center gap-1.5 font-mono text-[11px] overflow-x-auto">
-                      {STAGE_CHAIN.map((st, idx) => {
-                        const status = activeRun?.stages?.[st.stageId]?.status;
-                        return (
-                          <React.Fragment key={st.label}>
-                            {idx > 0 && <span className="text-slate-300 text-[10px]">→</span>}
-                            <StageChip label={st.label} status={status || null} />
-                          </React.Fragment>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* ---------- Error banner (failed float, real error) ---------- */}
-                  {activeItem?.status === "error" && (
-                    <div className="bg-rose-50 border border-rose-300 rounded p-3 flex items-start justify-between font-mono text-xs text-rose-950 gap-3">
-                      <div className="flex items-start space-x-2 min-w-0">
-                        <AlertTriangle className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
-                        <div className="space-y-0.5 min-w-0">
-                          <span className="font-bold block">Execution Notice — WMO {activeWmo}</span>
-                          <p className="text-rose-900 font-sans text-xs break-words">
-                            {(() => {
-                              const runPrimary =
-                                activeRun?.wmo === activeItem.wmo ? primaryError(activeRun.errors) : null;
-                              const text = activeItem.error_message || runPrimary?.text || "";
-                              const extra = Math.max(
-                                runPrimary?.extra ?? 0,
-                                (activeItem.error_count ?? 1) - 1,
-                              );
-                              return text
-                                ? text + primaryErrorSuffix(extra)
-                                : "Run recorded an error (see logs).";
-                            })()}
+                            <RunStatusBadge status={(activeRun?.status || activeItem?.status) as NodeStatus} />
+                          </div>
+                          <p className="text-[13px] text-slate-500 font-sans mt-0.5 truncate">
+                            {eezGeometryReady && activeEezStatus ? (
+                              <span
+                                className="font-mono text-[11.5px] mr-2 text-teal-700"
+                                data-testid="eez-float-status"
+                                data-eez={activeEezStatus}
+                              >
+                                EEZ: {activeEezStatus === "INDIAN_EEZ" ? "Indian EEZ" : "Outside Indian EEZ"} ·
+                              </span>
+                            ) : null}
+                            {activeRun?.run_id ? (
+                              <>
+                                Run ID: <span className="font-mono">{activeRun.run_id}</span> ·{" "}
+                              </>
+                            ) : (
+                              "Run pending · "
+                            )}
+                            Duration:{" "}
+                            {activeRun?.duration_seconds !== undefined ? activeRun.duration_seconds.toFixed(2) : activeItem?.duration_seconds?.toFixed(2) || "—"}
+                            s · {activeCycles.length} Cycles Decoded
                           </p>
                         </div>
                       </div>
                       {activeRun?.run_id && (
                         <button
-                          onClick={() => handleNavigateToRun(activeRun.run_id!, true, activeItem?.error_message ?? null)}
-                          className="px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white rounded text-[11px] font-bold shrink-0 cursor-pointer shadow-2xs"
+                          onClick={() => handleNavigateToRun(activeRun.run_id!, false, activeItem?.error_message ?? null)}
+                          className="px-4 py-2 bg-[#276095] hover:bg-[#1f4e7a] text-white rounded font-bold text-[13px] transition flex items-center space-x-1.5 shadow-2xs cursor-pointer shrink-0"
+                          title="Navigate back to live decoder workstation for this run"
                         >
-                          [ INVESTIGATE ERROR ]
+                          <FileCode className="w-3.5 h-3.5 text-sky-200" />
+                          <span>[ VIEW DECODER RUN ]</span>
                         </button>
                       )}
                     </div>
-                  )}
 
-                  {/* ---------- Cycle selector (real cycles) ---------- */}
-                  {activeCycles.length > 0 ? (
-                    <div className="p-2 bg-white border border-slate-200 rounded flex items-center justify-between gap-2 font-mono text-xs">
-                      <div className="flex items-center space-x-2 min-w-0">
-                        <span className="font-bold text-slate-600 text-[12.5px] uppercase shrink-0">Profile cycle:</span>
-                        <div className="flex items-center space-x-1 overflow-x-auto">
-                          {activeCycles.map((c, idx) => (
-                            <button
-                              key={`${c.cycle_number}-${idx}`}
-                              onClick={() => {
-                                setSelectedCycleIndex(idx);
-                                setHoveredLevel(null);
-                              }}
-                              className={`px-2.5 py-1 rounded text-[12.5px] font-bold transition border cursor-pointer shrink-0 ${
-                                selectedCycleIndex === idx
+                    {/* ---------- Processing history (real run stage states) ---------- */}
+                    <div className="px-3.5 py-2.5 bg-white border border-slate-200 rounded flex items-center justify-between gap-2">
+                      <span className="font-mono text-[11px] font-bold text-slate-500 uppercase tracking-wider shrink-0">
+                        Processing history
+                      </span>
+                      <div className="flex items-center gap-1.5 font-mono text-[11px] overflow-x-auto">
+                        {STAGE_CHAIN.map((st, idx) => {
+                          const status = activeRun?.stages?.[st.stageId]?.status;
+                          return (
+                            <React.Fragment key={st.label}>
+                              {idx > 0 && <span className="text-slate-300 text-[10px]">→</span>}
+                              <StageChip label={st.label} status={status || null} />
+                            </React.Fragment>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* ---------- Error banner (failed float, real error) ---------- */}
+                    {activeItem?.status === "error" && (
+                      <div className="bg-rose-50 border border-rose-300 rounded p-3 flex items-start justify-between font-mono text-xs text-rose-950 gap-3">
+                        <div className="flex items-start space-x-2 min-w-0">
+                          <AlertTriangle className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
+                          <div className="space-y-0.5 min-w-0">
+                            <span className="font-bold block">Execution Notice — WMO {activeWmo}</span>
+                            <p className="text-rose-900 font-sans text-xs break-words">
+                              {(() => {
+                                const runPrimary =
+                                  activeRun?.wmo === activeItem.wmo ? primaryError(activeRun.errors) : null;
+                                const text = activeItem.error_message || runPrimary?.text || "";
+                                const extra = Math.max(
+                                  runPrimary?.extra ?? 0,
+                                  (activeItem.error_count ?? 1) - 1,
+                                );
+                                return text
+                                  ? text + primaryErrorSuffix(extra)
+                                  : "Run recorded an error (see logs).";
+                              })()}
+                            </p>
+                          </div>
+                        </div>
+                        {activeRun?.run_id && (
+                          <button
+                            onClick={() => handleNavigateToRun(activeRun.run_id!, true, activeItem?.error_message ?? null)}
+                            className="px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white rounded text-[11px] font-bold shrink-0 cursor-pointer shadow-2xs"
+                          >
+                            [ INVESTIGATE ERROR ]
+                          </button>
+                        )}
+                      </div>
+                    )}
+
+                    {/* ---------- Cycle selector (real cycles) ---------- */}
+                    {activeCycles.length > 0 ? (
+                      <div className="p-2 bg-white border border-slate-200 rounded flex items-center justify-between gap-2 font-mono text-xs">
+                        <div className="flex items-center space-x-2 min-w-0">
+                          <span className="font-bold text-slate-600 text-[12.5px] uppercase shrink-0">Profile cycle:</span>
+                          <div className="flex items-center space-x-1 overflow-x-auto">
+                            {activeCycles.map((c, idx) => (
+                              <button
+                                key={`${c.cycle_number}-${idx}`}
+                                onClick={() => {
+                                  setSelectedCycleIndex(idx);
+                                  setHoveredLevel(null);
+                                }}
+                                className={`px-2.5 py-1 rounded text-[12.5px] font-bold transition border cursor-pointer shrink-0 ${selectedCycleIndex === idx
                                   ? "bg-[#276095] text-white border-[#276095] shadow-2xs"
                                   : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
-                              }`}
-                              title={
-                                (c.juld_formatted || `Cycle ${c.cycle_number}`) +
-                                (c.has_core === false ? " · BGC-only (no core R profile)" : "") +
-                                (c.matches_g2_signature ? " · BGC sensor data absent (flagged)" : "")
-                              }
-                            >
-                              C{c.cycle_number}
-                              {c.has_core === false && (
-                                <span className="ml-1 px-1 py-px rounded text-[9.5px] bg-amber-100 text-amber-900 border border-amber-300 align-middle">
-                                  BGC
-                                </span>
-                              )}
-                            </button>
-                          ))}
+                                  }`}
+                                title={
+                                  (c.juld_formatted || `Cycle ${c.cycle_number}`) +
+                                  (c.has_core === false ? " · BGC-only (no core R profile)" : "") +
+                                  (c.matches_g2_signature ? " · BGC sensor data absent (flagged)" : "")
+                                }
+                              >
+                                C{c.cycle_number}
+                                {c.has_core === false && (
+                                  <span className="ml-1 px-1 py-px rounded text-[9.5px] bg-amber-100 text-amber-900 border border-amber-300 align-middle">
+                                    BGC
+                                  </span>
+                                )}
+                              </button>
+                            ))}
+                          </div>
                         </div>
+                        {currentCycle && (
+                          <span className="text-slate-500 text-[12.5px] font-medium shrink-0">
+                            {currentCycle.levels_count} levels ·{" "}
+                            {currentCycle.juld_formatted || `Julian day ${currentCycle.juld ?? "—"}`}
+                          </span>
+                        )}
                       </div>
-                      {currentCycle && (
-                        <span className="text-slate-500 text-[12.5px] font-medium shrink-0">
-                          {currentCycle.levels_count} levels ·{" "}
-                          {currentCycle.juld_formatted || `Julian day ${currentCycle.juld ?? "—"}`}
-                        </span>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="p-2 bg-white border border-slate-200 rounded text-center font-mono text-[11px] text-slate-400">
-                      {activeRun ? "No decoded cycles for this float in run history" : "Select a float to load its cycles"}
-                    </div>
-                  )}
+                    ) : (
+                      <div className="p-2 bg-white border border-slate-200 rounded text-center font-mono text-[11px] text-slate-400">
+                        {activeRun ? "No decoded cycles for this float in run history" : "Select a float to load its cycles"}
+                      </div>
+                    )}
 
-                  {/* ---------- Scientific profile plots ---------- */}
-                  {ctdSamples.length > 0 ? (
-                    <>
-                      <div className="flex items-center justify-between gap-2 font-mono text-[13px] text-slate-500">
-                        <span className="text-slate-600 font-bold uppercase text-[11.5px] tracking-wider">
-                          Oceanographic profiles — real decoded measurements
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <button
-                            onClick={() => setShowPoints(!showPoints)}
-                            className={`px-2.5 py-1 rounded border text-[11px] font-bold transition cursor-pointer ${
-                              showPoints
+                    {/* ---------- Scientific profile plots ---------- */}
+                    {ctdSamples.length > 0 ? (
+                      <>
+                        <div className="flex items-center justify-between gap-2 font-mono text-[13px] text-slate-500">
+                          <span className="text-slate-600 font-bold uppercase text-[11.5px] tracking-wider">
+                            Oceanographic profiles — real decoded measurements
+                          </span>
+                          <span className="flex items-center gap-1.5">
+                            <button
+                              onClick={() => setShowPoints(!showPoints)}
+                              className={`px-2.5 py-1 rounded border text-[11px] font-bold transition cursor-pointer ${showPoints
                                 ? "bg-white text-slate-700 border-slate-300"
                                 : "bg-slate-100 text-slate-400 border-slate-200"
-                            }`}
-                          >
-                            ◉ points
-                          </button>
-                          <button
-                            onClick={() => setShowGrid(!showGrid)}
-                            className={`px-2.5 py-1 rounded border text-[11px] font-bold transition cursor-pointer ${
-                              showGrid
+                                }`}
+                            >
+                              ◉ points
+                            </button>
+                            <button
+                              onClick={() => setShowGrid(!showGrid)}
+                              className={`px-2.5 py-1 rounded border text-[11px] font-bold transition cursor-pointer ${showGrid
                                 ? "bg-white text-slate-700 border-slate-300"
                                 : "bg-slate-100 text-slate-400 border-slate-200"
-                            }`}
-                          >
-                            # grid
-                          </button>
-                        </span>
+                                }`}
+                            >
+                              # grid
+                            </button>
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
+                          <ScientificProfileChart
+                            paramKey="TEMP"
+                            title="PF / Sea temperature"
+                            axisLabel="Sea temperature — degree_Celsius"
+                            unitShort="°C"
+                            unitLong="degree_Celsius"
+                            samples={ctdSamples}
+                            data={tempData}
+                            hoveredLevel={hoveredLevel}
+                            onHover={setHoveredLevel}
+                            showPoints={showPoints}
+                            showGrid={showGrid}
+                          />
+                          <ScientificProfileChart
+                            paramKey="PSAL"
+                            title="PF / Practical salinity"
+                            axisLabel="Practical salinity — psu"
+                            unitShort="psu"
+                            unitLong="psu"
+                            samples={ctdSamples}
+                            data={psalData}
+                            hoveredLevel={hoveredLevel}
+                            onHover={setHoveredLevel}
+                            showPoints={showPoints}
+                            showGrid={showGrid}
+                          />
+                        </div>
+                      </>
+                    ) : (
+                      <div className="p-10 text-center text-slate-400 bg-white border border-slate-200 rounded font-mono">
+                        <Waves className="w-8 h-8 mx-auto text-slate-300 mb-2" />
+                        <p className="text-xs">
+                          {activeRun
+                            ? "No CTD physical samples recorded for this float (engineering telemetry only)"
+                            : "No profile data yet — run the decoder to produce profiles"}
+                        </p>
                       </div>
-                      <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
-                        <ScientificProfileChart
-                          paramKey="TEMP"
-                          title="PF / Sea temperature"
-                          axisLabel="Sea temperature — degree_Celsius"
-                          unitShort="°C"
-                          unitLong="degree_Celsius"
-                          samples={ctdSamples}
-                          data={tempData}
-                          hoveredLevel={hoveredLevel}
-                          onHover={setHoveredLevel}
-                          showPoints={showPoints}
-                          showGrid={showGrid}
-                        />
-                        <ScientificProfileChart
-                          paramKey="PSAL"
-                          title="PF / Practical salinity"
-                          axisLabel="Practical salinity — psu"
-                          unitShort="psu"
-                          unitLong="psu"
-                          samples={ctdSamples}
-                          data={psalData}
-                          hoveredLevel={hoveredLevel}
-                          onHover={setHoveredLevel}
-                          showPoints={showPoints}
-                          showGrid={showGrid}
-                        />
-                      </div>
-                    </>
-                  ) : (
-                    <div className="p-10 text-center text-slate-400 bg-white border border-slate-200 rounded font-mono">
-                      <Waves className="w-8 h-8 mx-auto text-slate-300 mb-2" />
-                      <p className="text-xs">
-                        {activeRun
-                          ? "No CTD physical samples recorded for this float (engineering telemetry only)"
-                          : "No profile data yet — run the decoder to produce profiles"}
-                      </p>
-                    </div>
-                  )}
+                    )}
 
-                  {/* ---------- BGC profiles (real BR series, 301 floats only) ----
+                    {/* ---------- BGC profiles (real BR series, 301 floats only) ----
                       Cards are data-driven: one per sensor parameter that
                       actually carries measurements in this cycle's BR file,
                       labeled with the file's own long names and units.
                       All-fill channels are reported as missing, never
                       plotted as fake data. */}
-                  {(bgcCards.length > 0 ||
-                    bgcMissingProfiles.length > 0 ||
-                    currentCycle?.bgc_source_file) && (
-                    <>
-                      <div className="flex items-center justify-between gap-2 font-mono text-[13px] text-slate-500">
-                        <span className="text-slate-600 font-bold uppercase text-[11.5px] tracking-wider">
-                          BGC profiles — {currentCycle?.bgc_source_file || "BR file"}
-                          {currentCycle?.bgc_n_prof != null
-                            ? ` · N_PROF ${currentCycle.bgc_n_prof}`
-                            : ""}
-                        </span>
-                        {currentCycle && currentCycle.has_core === false && (
-                          <span className="px-2 py-0.5 bg-amber-50 text-amber-900 border border-amber-300 rounded text-[11px] font-bold shrink-0">
-                            BGC-ONLY CYCLE — NO CORE R PROFILE
-                          </span>
-                        )}
-                      </div>
-                      {currentCycle?.matches_g2_signature && (
-                        <div className="bg-amber-50 border border-amber-300 rounded p-3 font-mono text-xs text-amber-950">
-                          <span className="font-bold">
-                            ⚠ BGC sensor data absent in {currentCycle.bgc_source_file || "this BR file"}
-                          </span>
-                          <span className="font-sans">
-                            {" "}— the labeled sensor channels are entirely fill under a
-                            non-standard N_PROF {currentCycle.bgc_n_prof} layout, so no BGC
-                            series is plotted. Flagged as a suspected 301 writer
-                            artifact for review.
-                            {currentCycle.has_core === false
-                              ? " No core R profile exists for this cycle either (position/time only)."
-                              : " Core CTD data is unaffected."}
-                          </span>
-                        </div>
-                      )}
-                      {bgcMissingProfiles.map((p) => (
-                        <div
-                          key={p.profile_index}
-                          className="px-3 py-2 bg-slate-50 border border-slate-200 rounded font-mono text-[11.5px] text-slate-500"
-                        >
-                          Profile {p.profile_index} (
-                          {(p.station_parameters || [])
-                            .filter((s) => s && !CORE_PARAM_SET.has(s))
-                            .join(", ") || "no sensor channels"}
-                          ): no measurements in file — not plotted.
-                        </div>
-                      ))}
-                      {bgcCards.length > 0 && (
-                        <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
-                          {bgcCards.map((card) => (
-                            <ScientificProfileChart
-                              key={card.param}
-                              paramKey={card.param}
-                              title={`BR / ${card.label}`}
-                              axisLabel={`${card.param} — ${card.units || "units not published"}`}
-                              unitShort={card.units || ""}
-                              unitLong={card.units || "units not published"}
-                              samples={[]}
-                              data={card.data}
-                              hoveredLevel={hoveredLevel}
-                              onHover={setHoveredLevel}
-                              showPoints={showPoints}
-                              showGrid={showGrid}
-                              genericParam={{ key: card.param, label: card.param }}
-                            />
-                          ))}
-                        </div>
-                      )}
-                      {bgcTables.length > 0 && (
-                        <div className="bg-white border border-slate-200 rounded p-3 font-mono text-xs">
-                          <div className="flex items-center space-x-1.5 pb-2 border-b border-slate-100 mb-2">
-                            <Activity className="w-4 h-4 text-[#276095]" />
-                            <span className="font-bold text-slate-900 text-xs uppercase">
-                              BGC measurement records
-                              {currentCycle ? ` — cycle C${currentCycle.cycle_number}` : ""}
+                    {(bgcCards.length > 0 ||
+                      bgcMissingProfiles.length > 0 ||
+                      currentCycle?.bgc_source_file) && (
+                        <>
+                          <div className="flex items-center justify-between gap-2 font-mono text-[13px] text-slate-500">
+                            <span className="text-slate-600 font-bold uppercase text-[11.5px] tracking-wider">
+                              BGC profiles — {currentCycle?.bgc_source_file || "BR file"}
+                              {currentCycle?.bgc_n_prof != null
+                                ? ` · N_PROF ${currentCycle.bgc_n_prof}`
+                                : ""}
                             </span>
-                            <span className="text-[11.5px] text-slate-400 ml-auto">
-                              {bgcTables.length} profile(s)
-                            </span>
+                            {currentCycle && currentCycle.has_core === false && (
+                              <span className="px-2 py-0.5 bg-amber-50 text-amber-900 border border-amber-300 rounded text-[11px] font-bold shrink-0">
+                                BGC-ONLY CYCLE — NO CORE R PROFILE
+                              </span>
+                            )}
                           </div>
-                          {bgcTables.map((t) => (
-                            <div key={t.profileIndex} className="mb-3 last:mb-0">
-                              <div className="text-[11.5px] font-bold text-slate-500 uppercase mb-1">
-                                Profile {t.profileIndex} — {t.params.join(", ")} ·{" "}
-                                {t.rows.length} levels
-                              </div>
-                              <div className="max-h-64 overflow-auto select-text border border-slate-100 rounded">
-                                <table className="w-full text-left">
-                                  <thead className="bg-slate-100 text-slate-700 font-bold text-[10.5px] uppercase border-b border-slate-200 sticky top-0">
-                                    <tr>
-                                      <th className="py-1.5 px-2.5">Level</th>
-                                      <th className="py-1.5 px-2.5">PRES (dbar)</th>
-                                      {t.params.map((p) => (
-                                        <th key={p} className="py-1.5 px-2.5">
-                                          {p}
-                                          {t.units[p] ? ` (${t.units[p]})` : ""}
-                                        </th>
-                                      ))}
-                                      {t.params.map((p) => (
-                                        <th key={`${p}_QC`} className="py-1.5 px-2.5 text-center">
-                                          {p} QC
-                                        </th>
-                                      ))}
-                                    </tr>
-                                  </thead>
-                                  <tbody className="divide-y divide-slate-100">
-                                    {t.rows.map((s) => {
-                                      const lvl = Number(s.level || 0);
-                                      const cid = t.profileIndex * 100000 + lvl;
-                                      const pres = s.PRES;
-                                      return (
-                                        <tr
-                                          key={lvl}
-                                          className={`hover:bg-slate-50 ${cid === hoveredLevel ? "bg-sky-50/70" : ""}`}
-                                          onMouseEnter={() => setHoveredLevel(cid)}
-                                          onMouseLeave={() => setHoveredLevel(null)}
-                                        >
-                                          <td className="py-1.5 px-2.5 text-slate-400 font-bold">{lvl}</td>
-                                          <td className="py-1.5 px-2.5 text-sky-800 font-bold">
-                                            {typeof pres === "number" ? pres.toFixed(2) : "—"}
-                                          </td>
-                                          {t.params.map((p) => (
-                                            <td key={p} className="py-1.5 px-2.5 text-slate-700 font-medium">
-                                              {typeof s[p] === "number"
-                                                ? (s[p] as number).toFixed(t.decimals[p])
-                                                : "—"}
-                                            </td>
-                                          ))}
-                                          {t.params.map((p) => (
-                                            <td key={`${p}_QC`} className="py-1.5 px-2.5 text-center">
-                                              <QcChip value={s[`${p}_QC`] as string | number | null | undefined} />
-                                            </td>
-                                          ))}
-                                        </tr>
-                                      );
-                                    })}
-                                  </tbody>
-                                </table>
-                              </div>
+                          {currentCycle?.matches_g2_signature && (
+                            <div className="bg-amber-50 border border-amber-300 rounded p-3 font-mono text-xs text-amber-950">
+                              <span className="font-bold">
+                                ⚠ BGC sensor data absent in {currentCycle.bgc_source_file || "this BR file"}
+                              </span>
+                              <span className="font-sans">
+                                {" "}— the labeled sensor channels are entirely fill under a
+                                non-standard N_PROF {currentCycle.bgc_n_prof} layout, so no BGC
+                                series is plotted. Flagged as a suspected 301 writer
+                                artifact for review.
+                                {currentCycle.has_core === false
+                                  ? " No core R profile exists for this cycle either (position/time only)."
+                                  : " Core CTD data is unaffected."}
+                              </span>
+                            </div>
+                          )}
+                          {bgcMissingProfiles.map((p) => (
+                            <div
+                              key={p.profile_index}
+                              className="px-3 py-2 bg-slate-50 border border-slate-200 rounded font-mono text-[11.5px] text-slate-500"
+                            >
+                              Profile {p.profile_index} (
+                              {(p.station_parameters || [])
+                                .filter((s) => s && !CORE_PARAM_SET.has(s))
+                                .join(", ") || "no sensor channels"}
+                              ): no measurements in file — not plotted.
                             </div>
                           ))}
-                        </div>
-                      )}
-                    </>
-                  )}
-
-                  {/* ---------- RTQC summary (real rtqc_summary records) ---------- */}
-                  <div className="bg-white border border-slate-200 rounded p-3 font-mono text-xs">
-                    <div className="flex items-center justify-between pb-2 border-b border-slate-100 mb-2">
-                      <div className="flex items-center space-x-1.5">
-                        <ShieldCheck className="w-4 h-4 text-[#276095]" />
-                        <span className="font-bold text-slate-900 text-xs uppercase">
-                          RTQC — Argo Table 11 summary
-                        </span>
-                      </div>
-                      <span className="text-[10px] text-slate-400">
-                        {rtqc.qcpHex ? `QCP ${rtqc.qcpHex}` : ""}
-                        {rtqc.qcpHex && rtqc.qcfHex ? " · " : ""}
-                        {rtqc.qcfHex ? `QCF ${rtqc.qcfHex}` : ""}
-                      </span>
-                    </div>
-                    {rtqc.hasRecords ? (
-                      <>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                          <RqcMetric label="APPLICABLE TESTS" value={String(rtqc.applicableCount)} note="run-wide suite" />
-                          <RqcMetric label="EXECUTED TESTS" value={String(rtqc.executedCount)} note="this cycle" />
-                          <RqcMetric label="FAILED TESTS" value={String(rtqc.failedCount)} tone={rtqc.failedCount > 0 ? "rose" : "slate"} note="this cycle" />
-                          <RqcMetric label="FLAGGED MEASUREMENTS" value={String(rtqc.flaggedCount)} note={`${rtqc.flaggedAll} run-wide`} />
-                        </div>
-                        {rtqc.executedCount > 0 && (
-                          <div className="mt-2 pt-2 border-t border-slate-100">
-                            <div className="text-[11.5px] font-bold text-slate-500 uppercase mb-1">
-                              Tests on cycle C{currentCycle?.cycle_number ?? "—"}
-                            </div>
-                            <div className="flex flex-wrap gap-1">
-                              {rtqc.doneList.map((t) => (
-                                <span
-                                  key={t}
-                                  className={`px-2 py-1 rounded text-[11px] border ${
-                                    rtqc.failedList.includes(t)
-                                      ? "bg-rose-50 text-rose-800 border-rose-200"
-                                      : "bg-emerald-50 text-emerald-800 border-emerald-200"
-                                  }`}
-                                  title={TABLE11[t] || `Table 11 test #${t}`}
-                                >
-                                  {rtqc.failedList.includes(t) ? "✕" : "✓"} T{t} {TABLE11[t] || ""}
-                                </span>
+                          {bgcCards.length > 0 && (
+                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
+                              {bgcCards.map((card) => (
+                                <ScientificProfileChart
+                                  key={card.param}
+                                  paramKey={card.param}
+                                  title={`BR / ${card.label}`}
+                                  axisLabel={`${card.param} — ${card.units || "units not published"}`}
+                                  unitShort={card.units || ""}
+                                  unitLong={card.units || "units not published"}
+                                  samples={[]}
+                                  data={card.data}
+                                  hoveredLevel={hoveredLevel}
+                                  onHover={setHoveredLevel}
+                                  showPoints={showPoints}
+                                  showGrid={showGrid}
+                                  genericParam={{ key: card.param, label: card.param }}
+                                />
                               ))}
                             </div>
+                          )}
+                          {bgcTables.length > 0 && (
+                            <div className="bg-white border border-slate-200 rounded p-3 font-mono text-xs">
+                              <div className="flex items-center space-x-1.5 pb-2 border-b border-slate-100 mb-2">
+                                <Activity className="w-4 h-4 text-[#276095]" />
+                                <span className="font-bold text-slate-900 text-xs uppercase">
+                                  BGC measurement records
+                                  {currentCycle ? ` — cycle C${currentCycle.cycle_number}` : ""}
+                                </span>
+                                <span className="text-[11.5px] text-slate-400 ml-auto">
+                                  {bgcTables.length} profile(s)
+                                </span>
+                              </div>
+                              {bgcTables.map((t) => (
+                                <div key={t.profileIndex} className="mb-3 last:mb-0">
+                                  <div className="text-[11.5px] font-bold text-slate-500 uppercase mb-1">
+                                    Profile {t.profileIndex} — {t.params.join(", ")} ·{" "}
+                                    {t.rows.length} levels
+                                  </div>
+                                  <div className="max-h-64 overflow-auto select-text border border-slate-100 rounded">
+                                    <table className="w-full text-left">
+                                      <thead className="bg-slate-100 text-slate-700 font-bold text-[10.5px] uppercase border-b border-slate-200 sticky top-0">
+                                        <tr>
+                                          <th className="py-1.5 px-2.5">Level</th>
+                                          <th className="py-1.5 px-2.5">PRES (dbar)</th>
+                                          {t.params.map((p) => (
+                                            <th key={p} className="py-1.5 px-2.5">
+                                              {p}
+                                              {t.units[p] ? ` (${t.units[p]})` : ""}
+                                            </th>
+                                          ))}
+                                          {t.params.map((p) => (
+                                            <th key={`${p}_QC`} className="py-1.5 px-2.5 text-center">
+                                              {p} QC
+                                            </th>
+                                          ))}
+                                        </tr>
+                                      </thead>
+                                      <tbody className="divide-y divide-slate-100">
+                                        {t.rows.map((s) => {
+                                          const lvl = Number(s.level || 0);
+                                          const cid = t.profileIndex * 100000 + lvl;
+                                          const pres = s.PRES;
+                                          return (
+                                            <tr
+                                              key={lvl}
+                                              className={`hover:bg-slate-50 ${cid === hoveredLevel ? "bg-sky-50/70" : ""}`}
+                                              onMouseEnter={() => setHoveredLevel(cid)}
+                                              onMouseLeave={() => setHoveredLevel(null)}
+                                            >
+                                              <td className="py-1.5 px-2.5 text-slate-400 font-bold">{lvl}</td>
+                                              <td className="py-1.5 px-2.5 text-sky-800 font-bold">
+                                                {typeof pres === "number" ? pres.toFixed(2) : "—"}
+                                              </td>
+                                              {t.params.map((p) => (
+                                                <td key={p} className="py-1.5 px-2.5 text-slate-700 font-medium">
+                                                  {typeof s[p] === "number"
+                                                    ? (s[p] as number).toFixed(t.decimals[p])
+                                                    : "—"}
+                                                </td>
+                                              ))}
+                                              {t.params.map((p) => (
+                                                <td key={`${p}_QC`} className="py-1.5 px-2.5 text-center">
+                                                  <QcChip value={s[`${p}_QC`] as string | number | null | undefined} />
+                                                </td>
+                                              ))}
+                                            </tr>
+                                          );
+                                        })}
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      )}
+
+                    {/* ---------- RTQC summary (real rtqc_summary records) ---------- */}
+                    <div className="bg-white border border-slate-200 rounded p-3 font-mono text-xs">
+                      <div className="flex items-center justify-between pb-2 border-b border-slate-100 mb-2">
+                        <div className="flex items-center space-x-1.5">
+                          <ShieldCheck className="w-4 h-4 text-[#276095]" />
+                          <span className="font-bold text-slate-900 text-xs uppercase">
+                            RTQC — Argo Table 11 summary
+                          </span>
+                        </div>
+                        <span className="text-[10px] text-slate-400">
+                          {rtqc.qcpHex ? `QCP ${rtqc.qcpHex}` : ""}
+                          {rtqc.qcpHex && rtqc.qcfHex ? " · " : ""}
+                          {rtqc.qcfHex ? `QCF ${rtqc.qcfHex}` : ""}
+                        </span>
+                      </div>
+                      {rtqc.hasRecords ? (
+                        <>
+                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                            <RqcMetric label="APPLICABLE TESTS" value={String(rtqc.applicableCount)} note="run-wide suite" />
+                            <RqcMetric label="EXECUTED TESTS" value={String(rtqc.executedCount)} note="this cycle" />
+                            <RqcMetric label="FAILED TESTS" value={String(rtqc.failedCount)} tone={rtqc.failedCount > 0 ? "rose" : "slate"} note="this cycle" />
+                            <RqcMetric label="FLAGGED MEASUREMENTS" value={String(rtqc.flaggedCount)} note={`${rtqc.flaggedAll} run-wide`} />
                           </div>
-                        )}
-                      </>
-                    ) : (
-                      <p className="text-slate-400 text-[12.5px]">
-                        No RTQC records in this run's data for the selected cycle.
-                      </p>
-                    )}
-                  </div>
-
-                  {/* ---------- CTD measurement records ---------- */}
-                  <div className="bg-white border border-slate-200 rounded p-3 font-mono text-xs">
-                    <div className="flex items-center space-x-1.5 pb-2 border-b border-slate-100 mb-2">
-                      <Activity className="w-4 h-4 text-[#276095]" />
-                      <span className="font-bold text-slate-900 text-xs uppercase">
-                        CTD measurement records
-                        {currentCycle ? ` — cycle C${currentCycle.cycle_number}` : ""}
-                      </span>
-                      <span className="text-[11.5px] text-slate-400 ml-auto">{ctdSamples.length} levels</span>
-                    </div>
-                    {ctdSamples.length === 0 ? (
-                      <p className="text-slate-400 text-[12.5px]">No profile measurements recorded.</p>
-                    ) : (
-                      <div className="max-h-64 overflow-y-auto select-text">
-                        <table className="w-full text-left">
-                          <thead className="bg-slate-100 text-slate-700 font-bold text-[10.5px] uppercase border-b border-slate-200 sticky top-0">
-                            <tr>
-                              <th className="py-1.5 px-2.5">Level</th>
-                              <th className="py-1.5 px-2.5">PRES (dbar)</th>
-                              <th className="py-1.5 px-2.5">TEMP (°C)</th>
-                              <th className="py-1.5 px-2.5">PSAL (psu)</th>
-                              <th className="py-1.5 px-2.5">CNDC (S/m)</th>
-                              <th className="py-1.5 px-2.5 text-center">PRES QC</th>
-                              <th className="py-1.5 px-2.5 text-center">TEMP QC</th>
-                              <th className="py-1.5 px-2.5 text-center">PSAL QC</th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y divide-slate-100">
-                            {ctdSamples.map((s) => (
-                              <tr
-                                key={s.level}
-                                className={`hover:bg-slate-50 ${s.level === hoveredLevel ? "bg-sky-50/70" : ""}`}
-                                onMouseEnter={() => setHoveredLevel(s.level)}
-                                onMouseLeave={() => setHoveredLevel(null)}
-                              >
-                                <td className="py-1.5 px-2.5 text-slate-400 font-bold">{s.level}</td>
-                                <td className="py-1.5 px-2.5 text-sky-800 font-bold">
-                                  {s.PRES !== null ? s.PRES.toFixed(2) : "—"}
-                                </td>
-                                <td className="py-1.5 px-2.5 text-rose-800 font-medium">
-                                  {s.TEMP !== null ? s.TEMP.toFixed(3) : "—"}
-                                </td>
-                                <td className="py-1.5 px-2.5 text-cyan-800 font-medium">
-                                  {s.PSAL !== null ? s.PSAL.toFixed(3) : "—"}
-                                </td>
-                                <td className="py-1.5 px-2.5 text-indigo-800">
-                                  {s.CNDC !== null ? s.CNDC.toFixed(3) : "—"}
-                                </td>
-                                <td className="py-1.5 px-2.5 text-center">
-                                  <QcChip value={s.PRES_QC} />
-                                </td>
-                                <td className="py-1.5 px-2.5 text-center">
-                                  <QcChip value={s.TEMP_QC} />
-                                </td>
-                                <td className="py-1.5 px-2.5 text-center">
-                                  <QcChip value={s.PSAL_QC} />
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* ---------- Deliverables ---------- */}
-                  <div className="bg-white border border-slate-200 rounded p-3 font-mono text-xs">
-                    <div className="flex items-center space-x-1.5 pb-2 border-b border-slate-100 mb-2">
-                      <Database className="w-4 h-4 text-[#276095]" />
-                      <span className="font-bold text-slate-900 text-xs uppercase">
-                        Generated deliverables
-                      </span>
-                      <span className="text-[10px] text-slate-400 ml-auto">
-                        {activeRun?.output_files?.length || 0} files
-                      </span>
-                    </div>
-                    {!activeRun?.output_files || activeRun.output_files.length === 0 ? (
-                      <p className="text-slate-400 text-[12.5px]">
-                        No output deliverables generated yet for this float.
-                      </p>
-                    ) : (
-                      <div className="overflow-x-auto select-text">
-                        <table className="w-full text-left">
-                          <thead className="bg-slate-100 text-slate-700 font-bold text-[10.5px] uppercase border-b border-slate-200">
-                            <tr>
-                              <th className="py-2 px-2.5">File</th>
-                              <th className="py-2 px-2">Type</th>
-                              <th className="py-2.5 px-2">Status</th>
-                              <th className="py-2 px-2 text-right">Size</th>
-                              <th className="py-2 px-2">Dimensions</th>
-                              <th className="py-2 px-2 text-center">Variables</th>
-                              <th className="py-2 px-2.5">SHA-256</th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y divide-slate-100">
-                            {activeRun.output_files.map((file) => (
-                              <tr key={file.filename} className="hover:bg-slate-50">
-                                <td className="py-2 px-2.5 font-bold text-sky-800 truncate max-w-[220px]" title={file.filepath}>
-                                  {file.filename}
-                                </td>
-                                <td className="py-2 px-2">
-                                  <span className="px-2 py-0.5 uppercase bg-slate-100 text-slate-700 border border-slate-200 rounded text-[11px]">
-                                    {file.category}
+                          {rtqc.executedCount > 0 && (
+                            <div className="mt-2 pt-2 border-t border-slate-100">
+                              <div className="text-[11.5px] font-bold text-slate-500 uppercase mb-1">
+                                Tests on cycle C{currentCycle?.cycle_number ?? "—"}
+                              </div>
+                              <div className="flex flex-wrap gap-1">
+                                {rtqc.doneList.map((t) => (
+                                  <span
+                                    key={t}
+                                    className={`px-2 py-1 rounded text-[11px] border ${rtqc.failedList.includes(t)
+                                      ? "bg-rose-50 text-rose-800 border-rose-200"
+                                      : "bg-emerald-50 text-emerald-800 border-emerald-200"
+                                      }`}
+                                    title={TABLE11[t] || `Table 11 test #${t}`}
+                                  >
+                                    {rtqc.failedList.includes(t) ? "✕" : "✓"} T{t} {TABLE11[t] || ""}
                                   </span>
-                                </td>
-                                <td className="py-2 px-2">
-                                  <span className="text-emerald-700 font-bold text-[10px]">✓ generated</span>
-                                </td>
-                                <td className="py-2 px-2 text-right text-slate-600 font-medium whitespace-nowrap">
-                                  {fmtBytes(file.filesize_bytes)}
-                                </td>
-                                <td
-                                  className="py-2 px-2 text-[11.5px] text-slate-500 max-w-[200px] truncate"
-                                  title={Object.entries(file.dimensions || {})
-                                    .map(([k, v]) => `${k}=${v}`)
-                                    .join(", ")}
-                                >
-                                  {Object.entries(file.dimensions || {})
-                                    .sort((a, b) => (b[1] as number) - (a[1] as number))
-                                    .slice(0, 3)
-                                    .map(([k, v]) => `${k}:${v}`)
-                                    .join(" · ")}
-                                  {Object.keys(file.dimensions || {}).length > 3
-                                    ? ` +${Object.keys(file.dimensions || {}).length - 3}`
-                                    : ""}
-                                </td>
-                                <td className="py-2 px-2 text-center text-indigo-700 font-bold">
-                                  {Array.isArray(file.variables) ? file.variables.length : 0}
-                                </td>
-                                <td className="py-2 px-2.5 flex items-center gap-1">
-                                  <code className="text-[11.5px] text-emerald-700">
-                                    {file.checksum_sha256 ? `${file.checksum_sha256.slice(0, 12)}…` : "—"}
-                                  </code>
-                                  {file.checksum_sha256 && (
-                                    <button
-                                      onClick={() => handleCopyHash(file.checksum_sha256!)}
-                                      className="p-1 hover:bg-slate-200 text-slate-400 hover:text-slate-800 rounded cursor-pointer"
-                                      title="Copy full SHA-256"
-                                    >
-                                      {copiedHash === file.checksum_sha256 ? (
-                                        <Check className="w-3 h-3 text-emerald-600" />
-                                      ) : (
-                                        <Copy className="w-3 h-3" />
-                                      )}
-                                    </button>
-                                  )}
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <p className="text-slate-400 text-[12.5px]">
+                          No RTQC records in this run's data for the selected cycle.
+                        </p>
+                      )}
+                    </div>
+
+                    {/* ---------- CTD measurement records ---------- */}
+                    <CtdMeasurementRecordsPanel
+                      currentCycle={currentCycle}
+                      coordinates={selectedCycleCoords}
+                      samples={ctdSamples}
+                      hoveredLevel={hoveredLevel}
+                      onHoverLevel={setHoveredLevel}
+                    />
+
+                    {/* ---------- Deliverables ---------- */}
+                    <div className="bg-white border border-slate-200 rounded p-3 font-mono text-xs">
+                      <div className="flex items-center space-x-1.5 pb-2 border-b border-slate-100 mb-2">
+                        <Database className="w-4 h-4 text-[#276095]" />
+                        <span className="font-bold text-slate-900 text-xs uppercase">
+                          Generated deliverables
+                        </span>
+                        <span className="text-[10px] text-slate-400 ml-auto">
+                          {activeRun?.output_files?.length || 0} files
+                        </span>
                       </div>
-                    )}
+                      {!activeRun?.output_files || activeRun.output_files.length === 0 ? (
+                        <p className="text-slate-400 text-[12.5px]">
+                          No output deliverables generated yet for this float.
+                        </p>
+                      ) : (
+                        <div className="overflow-x-auto select-text">
+                          <table className="w-full text-left">
+                            <thead className="bg-slate-100 text-slate-700 font-bold text-[10.5px] uppercase border-b border-slate-200">
+                              <tr>
+                                <th className="py-2 px-2.5">File</th>
+                                <th className="py-2 px-2">Type</th>
+                                <th className="py-2.5 px-2">Status</th>
+                                <th className="py-2 px-2 text-right">Size</th>
+                                <th className="py-2 px-2">Dimensions</th>
+                                <th className="py-2 px-2 text-center">Variables</th>
+                                <th className="py-2 px-2.5">SHA-256</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                              {activeRun.output_files.map((file) => (
+                                <tr key={file.filename} className="hover:bg-slate-50">
+                                  <td className="py-2 px-2.5 font-bold text-sky-800 truncate max-w-[220px]" title={file.filepath}>
+                                    {file.filename}
+                                  </td>
+                                  <td className="py-2 px-2">
+                                    <span className="px-2 py-0.5 uppercase bg-slate-100 text-slate-700 border border-slate-200 rounded text-[11px]">
+                                      {file.category}
+                                    </span>
+                                  </td>
+                                  <td className="py-2 px-2">
+                                    <span className="text-emerald-700 font-bold text-[10px]">✓ generated</span>
+                                  </td>
+                                  <td className="py-2 px-2 text-right text-slate-600 font-medium whitespace-nowrap">
+                                    {fmtBytes(file.filesize_bytes)}
+                                  </td>
+                                  <td
+                                    className="py-2 px-2 text-[11.5px] text-slate-500 max-w-[200px] truncate"
+                                    title={Object.entries(file.dimensions || {})
+                                      .map(([k, v]) => `${k}=${v}`)
+                                      .join(", ")}
+                                  >
+                                    {Object.entries(file.dimensions || {})
+                                      .sort((a, b) => (b[1] as number) - (a[1] as number))
+                                      .slice(0, 3)
+                                      .map(([k, v]) => `${k}:${v}`)
+                                      .join(" · ")}
+                                    {Object.keys(file.dimensions || {}).length > 3
+                                      ? ` +${Object.keys(file.dimensions || {}).length - 3}`
+                                      : ""}
+                                  </td>
+                                  <td className="py-2 px-2 text-center text-indigo-700 font-bold">
+                                    {Array.isArray(file.variables) ? file.variables.length : 0}
+                                  </td>
+                                  <td className="py-2 px-2.5 flex items-center gap-1">
+                                    <code className="text-[11.5px] text-emerald-700">
+                                      {file.checksum_sha256 ? `${file.checksum_sha256.slice(0, 12)}…` : "—"}
+                                    </code>
+                                    {file.checksum_sha256 && (
+                                      <button
+                                        onClick={() => handleCopyHash(file.checksum_sha256!)}
+                                        className="p-1 hover:bg-slate-200 text-slate-400 hover:text-slate-800 rounded cursor-pointer"
+                                        title="Copy full SHA-256"
+                                      >
+                                        {copiedHash === file.checksum_sha256 ? (
+                                          <Check className="w-3 h-3 text-emerald-600" />
+                                        ) : (
+                                          <Copy className="w-3 h-3" />
+                                        )}
+                                      </button>
+                                    )}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             )}
           </div>
         </>
       )}
+
+      {/* ===================== Format Checker drawer ===================== */}
+      <FormatCheckerDrawer
+        wmo={fcDrawerWmo ?? 0}
+        runId={fcDrawerWmo ? filteredItems.find((i) => i.wmo === fcDrawerWmo)?.run_id ?? null : null}
+        open={fcDrawerWmo !== null}
+        onClose={handleCloseFcDrawer}
+        onResultChange={handleFcDrawerResultChange}
+      />
     </div>
   );
 };
@@ -1863,16 +2167,122 @@ function QcChip({ value }: { value: string | number | null | undefined }) {
   const bad = s === "3" || s === "4";
   return (
     <span
-      className={`px-2 py-1 rounded text-[11px] font-bold border whitespace-nowrap inline-block ${
-        bad
-          ? "bg-amber-50 text-amber-800 border-amber-300"
-          : good
+      className={`px-2 py-1 rounded text-[11px] font-bold border whitespace-nowrap inline-block ${bad
+        ? "bg-amber-50 text-amber-800 border-amber-300"
+        : good
           ? "bg-emerald-50 text-emerald-800 border-emerald-200"
           : "bg-slate-50 text-slate-500 border-slate-200"
-      }`}
+        }`}
       title={label}
     >
       {label}
     </span>
   );
 }
+
+export interface CtdMeasurementRecordsPanelProps {
+  currentCycle: CycleRecord | null;
+  coordinates: CycleCoordinates | null;
+  samples: CtdRecord[];
+  hoveredLevel?: number | null;
+  onHoverLevel?: (level: number | null) => void;
+}
+
+export const CtdMeasurementRecordsPanel: React.FC<CtdMeasurementRecordsPanelProps> = ({
+  currentCycle,
+  coordinates,
+  samples,
+  hoveredLevel = null,
+  onHoverLevel = () => undefined,
+}) => {
+  return (
+    <div className="bg-white border border-slate-200 rounded p-3 font-mono text-xs" data-testid="ctd-measurement-records-panel">
+      <div className="flex items-center space-x-1.5 pb-2 border-b border-slate-100 mb-2">
+        <Activity className="w-4 h-4 text-[#276095]" />
+        <div className="flex items-center gap-2 flex-wrap min-w-0">
+          <span className="font-bold text-slate-900 text-xs uppercase">
+            CTD measurement records
+            {currentCycle ? ` — cycle C${currentCycle.cycle_number}` : ""}
+          </span>
+          {currentCycle && (
+            coordinates ? (
+              <span
+                className="px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-mono tracking-tight font-medium inline-flex items-center gap-1.5"
+                data-testid="ctd-cycle-coordinates"
+                title={`Latitude: ${coordinates.lat.toFixed(4)}°, Longitude: ${coordinates.lon.toFixed(4)}°`}
+              >
+                <span className="text-slate-500 font-medium">Latitude:</span>
+                <span className="font-semibold text-slate-800">{formatHeaderCoord(coordinates.lat, "lat")}</span>
+                <span className="text-slate-300">·</span>
+                <span className="text-slate-500 font-medium">Longitude:</span>
+                <span className="font-semibold text-slate-800">{formatHeaderCoord(coordinates.lon, "lon")}</span>
+              </span>
+            ) : (
+              <span
+                className="px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-slate-400 text-[11px] font-mono tracking-tight font-normal inline-flex items-center gap-1.5"
+                data-testid="ctd-cycle-coordinates"
+              >
+                <span className="text-slate-400 font-medium">Latitude:</span>
+                <span className="text-slate-400">—</span>
+                <span className="text-slate-300">·</span>
+                <span className="text-slate-400 font-medium">Longitude:</span>
+                <span className="text-slate-400">—</span>
+              </span>
+            )
+          )}
+        </div>
+        <span className="text-[11.5px] text-slate-400 ml-auto">{samples.length} levels</span>
+      </div>
+      {samples.length === 0 ? (
+        <p className="text-slate-400 text-[12.5px]">No profile measurements recorded.</p>
+      ) : (
+        <div className="max-h-64 overflow-y-auto select-text">
+          <table className="w-full text-left" data-testid="ctd-measurements-table">
+            <thead className="bg-slate-100 text-slate-700 font-bold text-[10.5px] uppercase border-b border-slate-200 sticky top-0">
+              <tr>
+                <th className="py-1.5 px-2.5">Level</th>
+                <th className="py-1.5 px-2.5">PRES (dbar)</th>
+                <th className="py-1.5 px-2.5">TEMP (°C)</th>
+                <th className="py-1.5 px-2.5">PSAL (psu)</th>
+                <th className="py-1.5 px-2.5 text-center">PRES QC</th>
+                <th className="py-1.5 px-2.5 text-center">TEMP QC</th>
+                <th className="py-1.5 px-2.5 text-center">PSAL QC</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {samples.map((s) => (
+                <tr
+                  key={s.level}
+                  className={`hover:bg-slate-50 ${s.level === hoveredLevel ? "bg-sky-50/70" : ""}`}
+                  onMouseEnter={() => onHoverLevel(s.level)}
+                  onMouseLeave={() => onHoverLevel(null)}
+                >
+                  <td className="py-1.5 px-2.5 text-slate-400 font-bold">{s.level}</td>
+                  <td className="py-1.5 px-2.5 text-sky-800 font-bold">
+                    {s.PRES !== null ? s.PRES.toFixed(2) : "—"}
+                  </td>
+                  <td className="py-1.5 px-2.5 text-rose-800 font-medium">
+                    {s.TEMP !== null ? s.TEMP.toFixed(3) : "—"}
+                  </td>
+                  <td className="py-1.5 px-2.5 text-cyan-800 font-medium">
+                    {s.PSAL !== null ? s.PSAL.toFixed(3) : "—"}
+                  </td>
+                  <td className="py-1.5 px-2.5 text-center">
+                    <QcChip value={s.PRES_QC} />
+                  </td>
+                  <td className="py-1.5 px-2.5 text-center">
+                    <QcChip value={s.TEMP_QC} />
+                  </td>
+                  <td className="py-1.5 px-2.5 text-center">
+                    <QcChip value={s.PSAL_QC} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+};
+

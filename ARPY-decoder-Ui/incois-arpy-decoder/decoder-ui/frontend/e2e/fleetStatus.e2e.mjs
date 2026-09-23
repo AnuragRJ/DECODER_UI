@@ -53,7 +53,7 @@ const statusAt = (profileDate, asOf, intervalDays) => {
   if (!profileDate) return 'NO DATA';
   const days = (Date.parse(asOf) - Date.parse(profileDate)) / 86400000;
   const interval = Number.isFinite(intervalDays) && intervalDays > 0 ? intervalDays : 10;
-  return days <= interval ? 'ACTIVE / RECENT PROFILE' : days < 60 ? 'PROFILE OVERDUE' : 'NO RECENT PROFILE DATA 60+ DAYS';
+  return days <= interval ? 'ACTIVE / RECENT PROFILE' : days < 80 ? 'PROFILE OVERDUE' : 'NO RECENT PROFILE DATA 80+ DAYS';
 };
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const browser = await chromium.launch();
@@ -500,7 +500,7 @@ try {
     check(`float-type filter ${type}`, JSON.stringify(shown.sort()) === JSON.stringify(expected));
   }
   await clear();
-  for (const status of ['ACTIVE / RECENT PROFILE', 'PROFILE OVERDUE', 'NO RECENT PROFILE DATA 60+ DAYS', 'NO DATA']) {
+  for (const status of ['ACTIVE / RECENT PROFILE', 'PROFILE OVERDUE', 'NO RECENT PROFILE DATA 80+ DAYS', 'NO DATA']) {
     await page.getByTitle('Filter by data status', { exact: true }).selectOption(status);
     const shown = await collectPages();
     const expected = payload.floats.filter(r => r.data_status === status).map(r => r.wmo).sort();

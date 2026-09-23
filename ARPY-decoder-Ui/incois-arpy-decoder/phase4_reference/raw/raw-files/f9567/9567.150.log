@@ -1,0 +1,378 @@
+(Nov 21 2018 15:22:40,  846765 sec) TelemetryInit()      Profile 149. (Apf9i FwRev: 012811)
+(Nov 21 2018 15:30:43,  847247 sec) AirSystem()          Battery [137cnt, 10.6V]  Current [73cnt, 29.4mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [76s]
+(Nov 21 2018 15:31:11,  847275 sec) GpsServices()        GPS almanac is current.
+(Nov 21 2018 15:31:11,  847275 sec) GpsServices()        Initiating GPS fix acquisition.
+(Nov 21 2018 15:31:20,  847285 sec) gga()                $GPGGA,153120,1354.5243,N,08533.8155,E,0,00,,,M,,M,,*5E
+(Nov 21 2018 15:31:30,  847295 sec) gga()                $GPGGA,153130,1354.5243,N,08533.8155,E,0,00,,,M,,M,,*5F
+(Nov 21 2018 15:31:37,  847301 sec) gga()                $GPGGA,153120,1354.5243,N,08533.8155,E,0,00,,,M,,M,,*5E
+(Nov 21 2018 15:31:45,  847309 sec) gga()                $GPGGA,153130,1354.5243,N,08533.8155,E,0,00,,,M,,M,,*5F
+(Nov 21 2018 15:32:13,  847337 sec) gga()                $GPGGA,153140,1415.1867,N,08505.9531,E,1,10,0.9,-3.5,M,-78.4,M,,*4A
+(Nov 21 2018 15:32:13,  847338 sec) GpsServices()        Profile 149 GPS fix obtained in 62 seconds.
+(Nov 21 2018 15:32:13,  847338 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Nov 21 2018 15:32:13,  847338 sec) GpsServices()        Fix:   85.099  14.253 11/21/2018 153140   10
+(Nov 21 2018 15:32:43,  847367 sec) gga()                $GPGGA,153210,1415.1965,N,08505.9444,E,1,10,0.9,2.1,M,-78.4,M,,*64
+(Nov 21 2018 15:32:49,  847373 sec) gga()                $GPGGA,153240,1415.2025,N,08505.9381,E,1,10,0.9,0.7,M,-78.4,M,,*65
+(Nov 21 2018 15:32:49,  847373 sec) GpsServices()        APF9 RTC skew (9s) OK.
+(Nov 21 2018 15:32:49,  847374 sec) LogNmeaSentences()   ,287,49,11,41,146,46,17,02,209,33,23,69,176,48*7F
+(Nov 21 2018 15:32:49,  847374 sec) LogNmeaSentences()   $GPGSV,3,3,12,27,27,040,43,28,24,262,42,30,11,314,39,18,23,128,00*79
+(Nov 21 2018 15:32:58,  847383 sec) LogNmeaSentences()   $GPRMC,153250,A,1415.2057,N,08505.9364,E,001.8,334.3,211118,001.3,W*63
+(Nov 21 2018 15:32:59,  847383 sec) LogNmeaSentences()   $GPGGA,153250,1415.2057,N,08505.9364,E,1,10,0.9,-0.9,M,-78.4,M,,*49
+(Nov 21 2018 15:32:59,  847384 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,09,11,,23,27,28,30,,1.2,0.9,0.8*39
+(Nov 21 2018 15:33:00,  847384 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,17,156,42,03,13,184,39,07,33,339,44,08,58,051,49*7F
+(Nov 21 2018 15:33:00,  847385 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,73,287,50,11,41,146,47,17,02,209,23,23,69,176,44*7B
+(Nov 21 2018 15:33:00,  847385 sec) LogNmeaSentences()   $GPGSV,3,3,12,27,27,040,46,28,24,262,38,30,11,314,42,18,23,128,00*7D
+(Nov 21 2018 15:33:08,  847393 sec) LogNmeaSentences()   $GPRMC,153300,A,1415.2089,N,08505.9337,E,001.0,347.9,211118,001.3,W*64
+(Nov 21 2018 15:33:09,  847393 sec) LogNmeaSentences()   $GPGGA,153300,1415.2089,N,08505.9337,E,1,10,0.9,-1.9,M,-78.4,M,,*49
+(Nov 21 2018 15:33:09,  847394 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,09,11,,23,27,28,30,,1.2,0.9,0.8*39
+(Nov 21 2018 15:33:10,  847394 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,17,156,40,03,13,184,36,07,33,339,46,08,58,051,47*7E
+(Nov 21 2018 15:33:10,  847395 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,73,287,51,11,41,146,44,17,02,209,30,23,69,176,48*77
+(Nov 21 2018 15:33:10,  847395 sec) LogNmeaSentences()   $GPGSV,3,3,12,27,26,040,42,28,25,263,44,30,12,314,43,18,23,128,00*71
+(Nov 21 2018 15:33:11,  847395 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.80,,,,,,,,*7C
+(Nov 21 2018 15:33:18,  847403 sec) LogNmeaSentences()   $GPRMC,153310,A,1415.2111,N,08505.9313,E,000.8,339.4,211118,001.3,W*6E
+(Nov 21 2018 15:33:19,  847403 sec) LogNmeaSentences()   $GPGGA,153310,1415.2111,N,08505.9313,E,1,10,0.9,-1.2,M,-78.4,M,,*45
+(Nov 21 2018 15:33:19,  847404 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,09,11,,23,27,28,30,,1.2,0.9,0.8*39
+(Nov 21 2018 15:33:20,  847404 sec) GpsServices()        GPS services complete.
+(Nov 21 2018 15:33:44,  847429 sec) CLogin()             Connecting to primary host.
+(Nov 21 2018 15:33:55,  847439 sec) CLogin()             Connection 1 established in 11 seconds.
+(Nov 21 2018 15:34:03,  847447 sec) login()              Login successful.
+(Nov 21 2018 15:34:06,  847451 sec) CLogin()             Logged in to host.  [Login required 11 seconds]
+(Nov 21 2018 15:34:14,  847459 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Nov 21 2018 15:34:16,  847461 sec) Rx()                 Initiating transfer. [0x43]
+(Nov 21 2018 15:34:21,  847466 sec) RxStartByte()        Sync errors encountered: 205
+(Nov 21 2018 15:34:25,  847469 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Nov 21 2018 15:34:29,  847473 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 13 sec, 78.8 bps]
+(Nov 21 2018 15:34:29,  847473 sec) RxConfig()           Download successful.
+(Nov 21 2018 15:34:43,  847487 sec) WriteVitals()        Writing vitals to "9567.149.msg".
+(Nov 21 2018 15:34:50,  847494 sec) UpLoadFile()         Uploading "9567.149.msg" to host as "9567.149.msg".
+(Nov 21 2018 15:34:57,  847501 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 21 2018 15:35:11,  847516 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Nov 21 2018 15:35:11,  847516 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Nov 21 2018 15:35:15,  847520 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Nov 21 2018 15:35:15,  847520 sec) TxPacket()           Packet xmit history: [11000011] (0:ok, 1:fail).
+(Nov 21 2018 15:36:06,  847571 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Nov 21 2018 15:36:06,  847571 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2018 15:36:37,  847602 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Nov 21 2018 15:36:37,  847602 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Nov 21 2018 15:36:48,  847613 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Nov 21 2018 15:36:48,  847613 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Nov 21 2018 15:36:58,  847623 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Nov 21 2018 15:36:58,  847623 sec) TxPacket()           Packet xmit history: [00010101] (0:ok, 1:fail).
+(Nov 21 2018 15:37:16,  847641 sec) TxPacket()           No carrier detected.
+(Nov 21 2018 15:37:17,  847641 sec) TxPacket()           Exit status: -5
+(Nov 21 2018 15:37:17,  847641 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Nov 21 2018 15:37:27,  847652 sec) UpLoadFile()         Upload failed.
+(Nov 21 2018 15:37:28,  847652 sec) CLogin()             Connecting to primary host.
+(Nov 21 2018 15:37:34,  847658 sec) chat()               Expected string [OK] not received.
+(Nov 21 2018 15:37:34,  847658 sec) modem_restore_factor Modem command [AT&F0] failed.
+(Nov 21 2018 15:37:34,  847658 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Nov 21 2018 15:37:34,  847658 sec) modem_connect()      Modem configuration failed.
+(Nov 21 2018 15:37:45,  847669 sec) CLogin()             Connection 2 established in 17 seconds.
+(Nov 21 2018 15:38:17,  847701 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Nov 21 2018 15:38:17,  847701 sec) login()              Login failed.
+(Nov 21 2018 15:38:47,  847731 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2018 15:38:47,  847731 sec) login()              Login prompt not received.
+(Nov 21 2018 15:39:17,  847761 sec) expect()             Attempt to read prompt string [login:] failed.
+(Nov 21 2018 15:39:17,  847761 sec) login()              Login prompt not received.
+(Nov 21 2018 15:39:17,  847761 sec) CLogin()             Attempt to login to host failed.
+(Nov 21 2018 15:39:17,  847761 sec) UpLoad()             Files successfully uploaded: 0
+(Nov 21 2018 15:39:17,  847762 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Nov 21 2018 15:39:17,  847762 sec) logout()             No carrier detected.
+(Nov 21 2018 15:39:17,  847762 sec) Telemetry()          Telemetry cycle complete: PrfId=149 ConnectionAttempts=3  Connections=2
+(Nov 21 2018 15:54:32,  848676 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Nov 21 2018 15:55:00,  848704 sec) GpsServices()        GPS almanac is current.
+(Nov 21 2018 15:55:00,  848704 sec) GpsServices()        Initiating GPS fix acquisition.
+(Nov 21 2018 15:55:33,  848738 sec) gga()                $GPGGA,155500,1415.5780,N,08505.6208,E,1,11,0.8,-10.8,M,-78.4,M,,*73
+(Nov 21 2018 15:55:33,  848738 sec) GpsServices()        Profile 149 GPS fix obtained in 33 seconds.
+(Nov 21 2018 15:55:33,  848738 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Nov 21 2018 15:55:34,  848738 sec) GpsServices()        Fix:   85.094  14.260 11/21/2018 155500   11
+(Nov 21 2018 15:56:03,  848767 sec) gga()                $GPGGA,155530,1415.5854,N,08505.6134,E,1,11,0.9,-8.6,M,-78.4,M,,*4C
+(Nov 21 2018 15:56:09,  848773 sec) gga()                $GPGGA,155600,1415.5945,N,08505.6059,E,1,11,0.9,-5.4,M,-78.4,M,,*48
+(Nov 21 2018 15:56:09,  848773 sec) GpsServices()        APF9 RTC skew (9s) OK.
+(Nov 21 2018 15:56:09,  848774 sec) LogNmeaSentences()   ,73,244,50,11,48,135,44,17,11,210,42,23,57,175,47*7A
+(Nov 21 2018 15:56:09,  848774 sec) LogNmeaSentences()   $GPGSV,3,3,12,27,18,036,40,28,28,274,42,30,17,321,42,18,27,118,00*77
+(Nov 21 2018 15:56:10,  848774 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.80,,,,,,,,*7C
+(Nov 21 2018 15:56:18,  848783 sec) LogNmeaSentences()   $GPRMC,155610,A,1415.5967,N,08505.6041,E,001.1,009.0,211118,001.3,W*64
+(Nov 21 2018 15:56:19,  848784 sec) LogNmeaSentences()   $GPGGA,155610,1415.5967,N,08505.6041,E,1,11,0.8,-5.3,M,-78.4,M,,*46
+(Nov 21 2018 15:56:19,  848784 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,09,11,17,23,27,28,30,,1.1,0.8,0.8*3D
+(Nov 21 2018 15:56:20,  848784 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,23,147,36,03,08,176,27,07,39,348,49,08,48,040,47*7D
+(Nov 21 2018 15:56:20,  848785 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,73,243,50,11,48,134,44,17,11,210,42,23,57,175,46*7D
+(Nov 21 2018 15:56:20,  848785 sec) LogNmeaSentences()   $GPGSV,3,3,12,27,18,036,42,28,28,274,43,30,17,321,45,18,27,118,00*73
+(Nov 21 2018 15:56:28,  848793 sec) LogNmeaSentences()   $GPRMC,155620,A,1415.5997,N,08505.6014,E,002.1,324.8,211118,001.3,W*6F
+(Nov 21 2018 15:56:29,  848793 sec) LogNmeaSentences()   $GPGGA,155620,1415.5997,N,08505.6014,E,1,02,0.8,-4.4,M,-78.4,M,,*4E
+(Nov 21 2018 15:56:29,  848794 sec) LogNmeaSentences()   $GPGSA,A,3,01,11,,,,,,,,,,,1.1,0.8,0.8*33
+(Nov 21 2018 15:56:29,  848794 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,23,147,39,11,48,134,45,03,08,176,00,07,39,348,00*72
+(Nov 21 2018 15:56:30,  848794 sec) LogNmeaSentences()   $GPGSV,3,2,12,08,49,040,00,09,73,245,00,17,11,211,00,18,27,118,00*74
+(Nov 21 2018 15:56:30,  848795 sec) LogNmeaSentences()   $GPGSV,3,3,12,22,03,158,00,27,18,036,00,28,28,274,00,30,17,321,00*78
+(Nov 21 2018 15:56:38,  848803 sec) LogNmeaSentences()   $GPRMC,155630,A,1415.6020,N,08505.5996,E,001.7,297.7,211118,001.3,W*6B
+(Nov 21 2018 15:56:39,  848804 sec) LogNmeaSentences()   $GPGGA,155630,1415.6020,N,08505.5996,E,1,11,0.9,-4.9,M,-78.4,M,,*47
+(Nov 21 2018 15:56:39,  848804 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,07,08,09,11,17,23,27,28,30,,1.2,0.9,0.8*3F
+(Nov 21 2018 15:56:40,  848804 sec) GpsServices()        GPS services complete.
+(Nov 21 2018 15:57:20,  848845 sec) CLogin()             Connecting to primary host.
+(Nov 21 2018 15:57:30,  848855 sec) CLogin()             Connection 3 established in 10 seconds.
+(Nov 21 2018 15:57:39,  848863 sec) login()              Login successful.
+(Nov 21 2018 15:57:42,  848867 sec) CLogin()             Logged in to host.  [Login required 12 seconds]
+(Nov 21 2018 15:57:50,  848874 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Nov 21 2018 15:57:52,  848877 sec) Rx()                 Initiating transfer. [0x43]
+(Nov 21 2018 15:57:58,  848882 sec) Rx()                 Truncated packet received - retrying.
+(Nov 21 2018 15:58:03,  848887 sec) RxStartByte()        Sync errors encountered: 905
+(Nov 21 2018 15:58:06,  848890 sec) Rx()                 Truncated packet received - retrying.
+(Nov 21 2018 15:58:10,  848894 sec) RxStartByte()        Sync errors encountered: 626
+(Nov 21 2018 15:58:13,  848898 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Nov 21 2018 15:58:18,  848902 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 26 sec, 39.4 bps]
+(Nov 21 2018 15:58:18,  848902 sec) RxConfig()           Download successful.
+(Nov 21 2018 15:58:32,  848916 sec) WriteVitals()        Writing vitals to "9567.149.msg".
+(Nov 21 2018 15:58:39,  848923 sec) UpLoadFile()         Uploading "9567.149.msg" to host as "9567.149.msg".
+(Nov 21 2018 15:58:42,  848927 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 21 2018 15:58:57,  848942 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Nov 21 2018 15:58:57,  848942 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Nov 21 2018 15:59:13,  848958 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Nov 21 2018 15:59:13,  848958 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Nov 21 2018 15:59:29,  848974 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(Nov 21 2018 15:59:29,  848974 sec) TxPacket()           Packet xmit history: [01001001] (0:ok, 1:fail).
+(Nov 21 2018 16:00:01,  849005 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Nov 21 2018 16:00:01,  849005 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Nov 21 2018 16:00:06,  849011 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Nov 21 2018 16:00:06,  849011 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(Nov 21 2018 16:00:21,  849025 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Nov 21 2018 16:00:21,  849025 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(Nov 21 2018 16:00:26,  849031 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Nov 21 2018 16:00:26,  849031 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(Nov 21 2018 16:00:31,  849036 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Nov 21 2018 16:00:31,  849036 sec) TxPacket()           Packet xmit history: [00110111] (0:ok, 1:fail).
+(Nov 21 2018 16:00:40,  849045 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Nov 21 2018 16:00:40,  849045 sec) TxPacket()           Packet xmit history: [01101111] (0:ok, 1:fail).
+(Nov 21 2018 16:01:18,  849083 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Nov 21 2018 16:01:18,  849083 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2018 16:01:29,  849093 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Nov 21 2018 16:01:29,  849093 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Nov 21 2018 16:02:00,  849124 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Nov 21 2018 16:02:00,  849124 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(Nov 21 2018 16:02:11,  849135 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Nov 21 2018 16:02:11,  849135 sec) TxPacket()           Packet xmit history: [01100011] (0:ok, 1:fail).
+(Nov 21 2018 16:02:20,  849145 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Nov 21 2018 16:02:20,  849145 sec) TxPacket()           Packet xmit history: [11000111] (0:ok, 1:fail).
+(Nov 21 2018 16:02:28,  849152 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Nov 21 2018 16:02:28,  849152 sec) TxPacket()           Packet xmit history: [10001111] (0:ok, 1:fail).
+(Nov 21 2018 16:02:42,  849167 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Nov 21 2018 16:02:42,  849167 sec) TxPacket()           Packet xmit history: [00011111] (0:ok, 1:fail).
+(Nov 21 2018 16:02:55,  849180 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Nov 21 2018 16:02:55,  849180 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Nov 21 2018 16:03:02,  849187 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Nov 21 2018 16:03:02,  849187 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Nov 21 2018 16:03:16,  849201 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Nov 21 2018 16:03:16,  849201 sec) TxPacket()           Packet xmit history: [11110001] (0:ok, 1:fail).
+(Nov 21 2018 16:03:24,  849208 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Nov 21 2018 16:03:24,  849208 sec) TxPacket()           Packet xmit history: [11100011] (0:ok, 1:fail).
+(Nov 21 2018 16:04:05,  849250 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+(Nov 21 2018 16:04:05,  849250 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Nov 21 2018 16:04:22,  849267 sec) Tx()                 Transmission completed successfully [31 packets, 23999 bytes, 338 sec, 72.7 bps]
+(Nov 21 2018 16:04:22,  849267 sec) UpLoadFile()         Upload successful.
+(Nov 21 2018 16:04:30,  849274 sec) UpLoadFile()         Uploading "9567.149.log" to host as "9567.149.log".
+(Nov 21 2018 16:04:32,  849276 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 21 2018 16:04:36,  849281 sec) TxPacket()           Invalid response [0x30] - resending packet. [PktNum=0x01]
+(Nov 21 2018 16:04:36,  849281 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Nov 21 2018 16:04:37,  849282 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x01]
+(Nov 21 2018 16:04:37,  849282 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Nov 21 2018 16:04:42,  849286 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Nov 21 2018 16:04:42,  849286 sec) TxPacket()           Packet xmit history: [00100111] (0:ok, 1:fail).
+(Nov 21 2018 16:04:57,  849302 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:04:57,  849302 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Nov 21 2018 16:05:04,  849308 sec) TxPacket()           Packet xmit history: [11000010] (0:ok, 1:fail).
+(Nov 21 2018 16:05:13,  849317 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:05:13,  849317 sec) TxPacket()           Packet xmit history: [10000101] (0:ok, 1:fail).
+(Nov 21 2018 16:05:13,  849318 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:05:14,  849318 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Nov 21 2018 16:05:17,  849322 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:05:17,  849322 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Nov 21 2018 16:05:18,  849323 sec) TxPacket()           Invalid response [0x73] - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:05:18,  849323 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Nov 21 2018 16:05:19,  849323 sec) TxPacket()           Invalid response [0x28] - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:05:19,  849324 sec) TxPacket()           Packet xmit history: [01011111] (0:ok, 1:fail).
+(Nov 21 2018 16:05:21,  849326 sec) TxPacket()           Invalid response [0x30] - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:05:21,  849326 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Nov 21 2018 16:05:22,  849327 sec) TxPacket()           Invalid response [0x2a] - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:05:22,  849327 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Nov 21 2018 16:05:24,  849329 sec) TxPacket()           Invalid response [0x30] - resending packet. [PktNum=0x05]
+(Nov 21 2018 16:05:25,  849329 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Nov 21 2018 16:05:25,  849330 sec) TxPacket()           Exit status: -5
+(Nov 21 2018 16:05:25,  849330 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Nov 21 2018 16:05:36,  849341 sec) UpLoadFile()         Upload failed.
+(Nov 21 2018 16:05:53,  849357 sec) UpLoadFile()         Uploading "9567.149.log" to host as "9567.149.log".
+(Nov 21 2018 16:06:53,  849417 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Nov 21 2018 16:07:03,  849428 sec) UpLoadFile()         Upload failed.
+(Nov 21 2018 16:07:03,  849428 sec) UpLoad()             Files successfully uploaded: 1
+(Nov 21 2018 16:07:03,  849428 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Nov 21 2018 16:07:07,  849432 sec) logout()             Log-out successful.
+(Nov 21 2018 16:07:09,  849433 sec) Telemetry()          Telemetry cycle complete: PrfId=149 ConnectionAttempts=4  Connections=3
+(Nov 21 2018 16:22:24,  850348 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Nov 21 2018 16:22:49,  850374 sec) GpsServices()        GPS almanac is current.
+(Nov 21 2018 16:22:49,  850374 sec) GpsServices()        Initiating GPS fix acquisition.
+(Nov 21 2018 16:23:23,  850408 sec) gga()                $GPGGA,162250,1416.0424,N,08505.2267,E,1,10,0.8,-8.9,M,-78.4,M,,*4A
+(Nov 21 2018 16:23:23,  850408 sec) GpsServices()        Profile 149 GPS fix obtained in 34 seconds.
+(Nov 21 2018 16:23:24,  850408 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Nov 21 2018 16:23:24,  850408 sec) GpsServices()        Fix:   85.087  14.267 11/21/2018 162250   10
+(Nov 21 2018 16:23:53,  850437 sec) gga()                $GPGGA,162320,1416.0511,N,08505.2203,E,1,02,0.8,-8.5,M,-78.4,M,,*46
+(Nov 21 2018 16:24:17,  850462 sec) gga()                $GPGGA,162330,1416.0539,N,08505.2162,E,1,10,0.8,-8.1,M,-78.4,M,,*4E
+(Nov 21 2018 16:24:28,  850473 sec) GpsServices()        Apf9 RTC skew check aborted.
+(Nov 21 2018 16:24:28,  850473 sec) LogNmeaSentences()   *45
+(Nov 21 2018 16:24:29,  850473 sec) LogNmeaSentences()   $GPGSA,A,3,,,,,,,,,,,,,1.2,0.8,0.8*31
+(Nov 21 2018 16:24:29,  850473 sec) LogNmeaSentences()   $GPGSV,3,1,11,30,26,329,26,01,30,135,00,03,04,166,00,07,48,000,00*78
+(Nov 21 2018 16:24:29,  850474 sec) LogNmeaSentences()   $GPGSV,3,2,11,08,37,034,00,09,64,213,00,11,55,115,00,17,23,215,00*7C
+(Nov 21 2018 16:24:30,  850474 sec) LogNmeaSentences()   $GPGSV,3,3,11,18,31,102,00,27,07,035,00,28,30,289,00*4F
+(Nov 21 2018 16:24:38,  850483 sec) LogNmeaSentences()   $GPRMC,162430,A,1416.0703,N,08505.2038,E,001.6,328.6,211118,001.3,W*61
+(Nov 21 2018 16:24:39,  850483 sec) LogNmeaSentences()   $GPGGA,162430,1416.0703,N,08505.2038,E,1,10,0.8,-8.9,M,-78.4,M,,*44
+(Nov 21 2018 16:24:39,  850484 sec) LogNmeaSentences()   $GPGSA,A,3,01,,07,08,09,11,17,23,27,28,30,,1.2,0.8,0.8*3D
+(Nov 21 2018 16:24:40,  850484 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,30,135,43,03,04,166,35,07,48,000,47,08,36,034,46*7A
+(Nov 21 2018 16:24:40,  850485 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,63,211,50,11,55,115,45,17,23,214,46,23,42,173,46*76
+(Nov 21 2018 16:24:40,  850485 sec) LogNmeaSentences()   $GPGSV,3,3,12,27,07,035,36,28,30,289,43,30,26,329,46,18,31,102,00*73
+(Nov 21 2018 16:24:48,  850493 sec) LogNmeaSentences()   $GPRMC,162440,A,1416.0725,N,08505.2013,E,000.9,315.0,211118,001.3,W*6D
+(Nov 21 2018 16:24:49,  850493 sec) LogNmeaSentences()   $GPGGA,162440,1416.0725,N,08505.2013,E,1,08,1.0,-9.4,M,-78.4,M,,*42
+(Nov 21 2018 16:24:49,  850494 sec) LogNmeaSentences()   $GPGSA,A,3,01,,07,08,09,11,23,27,28,,,,1.3,1.0,0.9*31
+(Nov 21 2018 16:24:50,  850494 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,30,135,41,03,04,166,34,07,48,000,48,08,36,034,43*73
+(Nov 21 2018 16:24:50,  850495 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,63,211,51,11,55,115,45,23,42,173,44,27,07,035,31*71
+(Nov 21 2018 16:24:50,  850495 sec) LogNmeaSentences()   $GPGSV,3,3,12,28,30,289,45,17,23,215,00,18,31,102,00,30,25,329,00*74
+(Nov 21 2018 16:24:58,  850503 sec) LogNmeaSentences()   $GPRMC,162450,A,1416.0740,N,08505.2020,E,001.2,131.3,211118,001.3,W*62
+(Nov 21 2018 16:24:59,  850503 sec) LogNmeaSentences()   $GPGGA,162450,1416.0740,N,08505.2020,E,1,10,0.8,-8.7,M,-78.4,M,,*42
+(Nov 21 2018 16:24:59,  850504 sec) LogNmeaSentences()   $GPGSA,A,3,01,,07,08,09,11,17,23,27,28,30,,1.2,0.8,0.8*3D
+(Nov 21 2018 16:25:00,  850504 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,30,135,43,03,04,166,36,07,48,000,47,08,36,034,47*78
+(Nov 21 2018 16:25:00,  850505 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,63,211,47,11,55,115,46,17,23,214,44,23,42,173,46*71
+(Nov 21 2018 16:25:00,  850505 sec) LogNmeaSentences()   $GPGSV,3,3,12,27,06,035,36,28,30,290,39,30,26,330,39,18,31,102,00*77
+(Nov 21 2018 16:25:08,  850513 sec) LogNmeaSentences()   $GPRMC,162500,A,1416.0796,N,08505.1972,E,001.4,131.3,211118,001.3,W*66
+(Nov 21 2018 16:25:09,  850513 sec) LogNmeaSentences()   $GPGGA,162500,1416.0796,N,08505.1972,E,1,10,0.8,-6.2,M,-78.4,M,,*4B
+(Nov 21 2018 16:25:09,  850514 sec) LogNmeaSentences()   $GPGSA,A,3,01,,07,08,09,11,17,23,27,28,30,,1.2,0.8,0.8*3D
+(Nov 21 2018 16:25:10,  850514 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,30,135,42,03,04,166,28,07,48,000,48,08,36,034,46*78
+(Nov 21 2018 16:25:10,  850515 sec) LogNmeaSentences()   $GPGSV,3,2,12,09,63,211,51,11,55,115,46,17,23,214,44,23,42,173,44*74
+(Nov 21 2018 16:25:10,  850515 sec) LogNmeaSentences()   $GPGSV,3,3,12,27,06,035,30,28,30,290,43,30,26,330,46,18,31,102,00*74
+(Nov 21 2018 16:25:11,  850515 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.80,,,,,,,,*7C
+(Nov 21 2018 16:25:11,  850516 sec) GpsServices()        GPS services complete.
+(Nov 21 2018 16:25:35,  850540 sec) CLogin()             Connecting to primary host.
+(Nov 21 2018 16:25:44,  850549 sec) CLogin()             Connection 4 established in 9 seconds.
+(Nov 21 2018 16:25:53,  850557 sec) login()              Login successful.
+(Nov 21 2018 16:25:58,  850562 sec) chat()               Expected string [cmd>] not received.
+(Nov 21 2018 16:25:58,  850562 sec) login()              Attempt to set the command prompt failed.
+(Nov 21 2018 16:26:00,  850565 sec) CLogin()             Logged in to host.  [Login required 16 seconds]
+(Nov 21 2018 16:26:10,  850575 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Nov 21 2018 16:26:13,  850577 sec) Rx()                 Initiating transfer. [0x43]
+(Nov 21 2018 16:26:20,  850584 sec) Rx()                 Truncated packet received - retrying.
+(Nov 21 2018 16:26:24,  850588 sec) RxStartByte()        Sync errors encountered: 409
+(Nov 21 2018 16:26:28,  850592 sec) Rx()                 Truncated packet received - retrying.
+(Nov 21 2018 16:26:29,  850594 sec) RxStartByte()        Sync errors encountered: 498
+(Nov 21 2018 16:26:32,  850597 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Nov 21 2018 16:26:37,  850601 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 24 sec, 42.7 bps]
+(Nov 21 2018 16:26:37,  850601 sec) RxConfig()           Download successful.
+(Nov 21 2018 16:26:57,  850622 sec) UpLoadFile()         Uploading "9567.149.log" to host as "9567.149.log".
+(Nov 21 2018 16:27:00,  850624 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Nov 21 2018 16:27:02,  850627 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x01]
+(Nov 21 2018 16:27:02,  850627 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Nov 21 2018 16:27:50,  850674 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Nov 21 2018 16:27:50,  850674 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2018 16:28:04,  850688 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Nov 21 2018 16:28:04,  850688 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Nov 21 2018 16:28:12,  850697 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Nov 21 2018 16:28:12,  850697 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Nov 21 2018 16:29:02,  850747 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Nov 21 2018 16:29:02,  850747 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2018 16:29:09,  850754 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Nov 21 2018 16:29:09,  850754 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Nov 21 2018 16:29:58,  850803 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Nov 21 2018 16:29:58,  850803 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2018 16:30:15,  850820 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Nov 21 2018 16:30:15,  850820 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Nov 21 2018 16:30:34,  850839 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(Nov 21 2018 16:30:34,  850839 sec) TxPacket()           Packet xmit history: [00101001] (0:ok, 1:fail).
+(Nov 21 2018 16:30:41,  850846 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(Nov 21 2018 16:30:41,  850846 sec) TxPacket()           Packet xmit history: [01010011] (0:ok, 1:fail).
+(Nov 21 2018 16:31:37,  850902 sec) TxPacket()           NAK received - resending packet. [PktNum=0x25]
+(Nov 21 2018 16:31:37,  850902 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Nov 21 2018 16:31:45,  850910 sec) TxPacket()           NAK received - resending packet. [PktNum=0x25]
+(Nov 21 2018 16:31:45,  850910 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Nov 21 2018 16:32:01,  850926 sec) TxPacket()           NAK received - resending packet. [PktNum=0x27]
+(Nov 21 2018 16:32:01,  850926 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Nov 21 2018 16:32:12,  850937 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Nov 21 2018 16:32:12,  850937 sec) TxPacket()           Packet xmit history: [01100101] (0:ok, 1:fail).
+(Nov 21 2018 16:32:35,  850960 sec) Tx()                 Transmission completed successfully [43 packets, 40720 bytes, 334 sec, 123.8 bps]
+(Nov 21 2018 16:32:35,  850960 sec) UpLoadFile()         Upload successful.
+(Nov 21 2018 16:32:41,  850966 sec) UpLoad()             Files successfully uploaded: 1
+(Nov 21 2018 16:32:42,  850966 sec) UpLoad()             Upload complete.
+(Nov 21 2018 16:32:47,  850971 sec) chat()               Expected string [cmd>] not received.
+(Nov 21 2018 16:32:47,  850971 sec) logout()             Can't get command prompt.
+(Nov 21 2018 16:32:52,  850976 sec) chat()               Expected string [logout] not received.
+(Nov 21 2018 16:32:52,  850976 sec) logout()             Attempt to log-out failed.
+(Nov 21 2018 16:32:57,  850982 sec) logout()             Log-out successful.
+(Nov 21 2018 16:32:59,  850983 sec) Telemetry()          Telemetry cycle complete: PrfId=149 ConnectionAttempts=5  Connections=4
+(Nov 21 2018 16:32:59,  850984 sec) TelemetryTerminate() Parsing new mission configuration.
+(Nov 21 2018 16:33:00,  850985 sec) configure()          Parsing configurators in "mission.cfg".
+(Nov 21 2018 16:33:04,  850989 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Nov 21 2018 16:33:04,  850989 sec) configure()          Configuration CRCs and syntax OK.
+(Nov 21 2018 16:33:04,  850989 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Nov 21 2018 16:33:05,  850989 sec) ConfigSupervisor()   Configuration accepted.
+(Nov 21 2018 16:33:05,  850989 sec) TelemetryTerminate() Reconditioning the file system.
+(Nov 21 2018 16:33:19,       6 sec) DescentInit()        Deep profile 150 initiated at mission-time 850997sec.
+(Nov 21 2018 16:33:21,       9 sec) DescentInit()        Surface pressure: -0.0dbars.
+(Nov 21 2018 16:33:26,      14 sec) PistonMoveAbsWTO()    182->056 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 [945sec, 9.7Volts, 0.157Amps, CPT:945sec]
+(Nov 21 2018 16:49:12,     960 sec) PistonMoveAbsWTO()    056->000 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 016 015 014 013 012 011 010 009 [350sec, 9.7Volts, 0.157Amps, CPT:1295sec]
+(Nov 21 2018 16:55:12,    1320 sec) Descent()            Pressure: 119.3
+(Nov 21 2018 17:33:16,    3604 sec) Descent()            Pressure: 390.6
+(Nov 21 2018 18:33:16,    7204 sec) Descent()            Pressure: 894.8
+(Nov 21 2018 18:33:17,    7204 sec) PistonMoveAbsWTO()    009->056 010 011 012 013 014 015 016 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032 033 034 035 036 037 038 039 040 041 042 043 044 045 046 047 048 049 050 051 052 053 054 055 056 [461sec, 8.3Volts, 0.459Amps, CPT:1756sec]
+(Nov 21 2018 19:33:16,   10804 sec) Descent()            Pressure: 875.2
+(Nov 21 2018 20:33:16,   14404 sec) Descent()            Pressure: 889.9
+(Nov 21 2018 21:33:17,   18004 sec) Descent()            Pressure: 901.0
+(Nov 21 2018 21:33:17,   18004 sec) ParkInit()           
+(Nov 21 2018 23:33:46,   25233 sec) Park()               ParkPOutOfBand[-3, 911.0 dbars]: retract piston.
+(Nov 21 2018 23:33:46,   25234 sec) PistonMoveAbsWTO()    056->055 055 [1sec, 10.3Volts, 0.101Amps, CPT:1757sec]
+(Nov 22 2018 02:33:46,   36033 sec) Park()               ParkPOutOfBand[-3, 936.7 dbars]: retract piston.
+(Nov 22 2018 02:33:46,   36034 sec) PistonMoveAbsWTO()    055->054 054 [8sec, 10.1Volts, 0.089Amps, CPT:1765sec]
+(Nov 22 2018 05:33:46,   46833 sec) Park()               ParkPOutOfBand[-3, 982.5 dbars]: retract piston.
+(Nov 22 2018 05:33:46,   46834 sec) PistonMoveAbsWTO()    054->053 053 [7sec, 10.1Volts, 0.101Amps, CPT:1772sec]
+(Nov 22 2018 08:33:46,   57633 sec) Park()               ParkPOutOfBand[3, 1021.1 dbars]: extend piston.
+(Nov 22 2018 08:33:46,   57634 sec) PistonMoveAbsWTO()    053->054 054 [4sec, 9.5Volts, 0.484Amps, CPT:1776sec]
+(Nov 22 2018 11:33:46,   68433 sec) Park()               ParkPOutOfBand[3, 1015.6 dbars]: extend piston.
+(Nov 22 2018 11:33:46,   68434 sec) PistonMoveAbsWTO()    054->055 055 [10sec, 8.3Volts, 0.479Amps, CPT:1786sec]
+(Nov 23 2018 21:33:46,  190834 sec) Park()               ParkPOutOfBand[3, 1010.4 dbars]: extend piston.
+(Nov 23 2018 21:33:47,  190834 sec) PistonMoveAbsWTO()    055->056 056 [10sec, 8.4Volts, 0.488Amps, CPT:1796sec]
+(Nov 24 2018 00:33:46,  201634 sec) Park()               ParkPOutOfBand[-3, 986.6 dbars]: retract piston.
+(Nov 24 2018 00:33:47,  201634 sec) PistonMoveAbsWTO()    056->055 055 [3sec, 10.2Volts, 0.089Amps, CPT:1799sec]
+(Nov 29 2018 10:33:49,  669637 sec) Park()               ParkPOutOfBand[3, 1013.3 dbars]: extend piston.
+(Nov 29 2018 10:33:50,  669637 sec) PistonMoveAbsWTO()    055->056 056 [3sec, 9.8Volts, 0.475Amps, CPT:1802sec]
+(Dec 01 2018 00:33:38,  806425 sec) CtdPower()           [ 1002.80,  6.8029, 34.9536]
+(Dec 01 2018 00:33:38,  806425 sec) CtdPower()           CTD Power consumption [140VCnt 11ACnt]: 10.852Volts * 0.044Amps = 0.48Watts.
+(Dec 01 2018 00:33:38,  806426 sec) ParkTerminate()      Piston Position:56 Vacuum:81 Vq:146 Aq:6 Vsbe:140 Asbe:11
+(Dec 01 2018 00:34:06,  806453 sec) ParkTerminate()      PTS: 1002.7dbars 6.8029C 34.9531PSU
+(Dec 01 2018 00:34:06,  806454 sec) GoDeepInit()         Moving piston.
+(Dec 01 2018 00:34:07,  806454 sec) PistonMoveAbsWTO()    056->017 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 [272sec, 10.1Volts, 0.089Amps, CPT:2074sec]
+(Dec 01 2018 04:33:16,  820804 sec) GoDeep()             Sequence point detected at 2000.0dbar.
+(Dec 01 2018 04:33:19,  820806 sec) ProfileInit()        PrfId:150  Pressure:2000.0dbar  pTable[0]:2000dbar
+(Dec 01 2018 04:33:57,  820844 sec) Profile()            Sample 0 initiated at 2000.1dbars for bin 0 [2000dbars].  PTS: 2000.2dbars 2.8022C 34.7951PSU
+(Dec 01 2018 04:33:57,  820845 sec) PistonMoveAbsWTO()    017->039 018 019 [30sec, 7.4Volts, 0.810Amps, CPT:2104sec]
+(Dec 01 2018 04:34:38,  820885 sec) PistonMoveAbsWTO()    019->039 020 021 022 [30sec, 7.3Volts, 0.822Amps, CPT:2134sec]
+(Dec 01 2018 04:35:18,  820925 sec) PistonMoveAbsWTO()    022->039 023 024 [30sec, 7.2Volts, 0.818Amps, CPT:2164sec]
+(Dec 01 2018 04:35:58,  820965 sec) PistonMoveAbsWTO()    024->039 025 026 [30sec, 7.2Volts, 0.814Amps, CPT:2194sec]
+(Dec 01 2018 04:36:38,  821005 sec) PistonMoveAbsWTO()    026->039 027 028 [30sec, 7.1Volts, 0.798Amps, CPT:2224sec]
+(Dec 01 2018 04:37:18,  821045 sec) PistonMoveAbsWTO()    028->039 029 030 [30sec, 7.1Volts, 0.846Amps, CPT:2254sec]
+(Dec 01 2018 04:37:58,  821085 sec) PistonMoveAbsWTO()    030->039 031 032 [30sec, 7.1Volts, 0.822Amps, CPT:2284sec]
+(Dec 01 2018 04:38:38,  821125 sec) PistonMoveAbsWTO()    032->039 033 034 [30sec, 7.1Volts, 0.810Amps, CPT:2314sec]
+(Dec 01 2018 04:39:18,  821165 sec) PistonMoveAbsWTO()    034->039 035 036 [30sec, 7.0Volts, 0.822Amps, CPT:2344sec]
+(Dec 01 2018 04:39:58,  821205 sec) PistonMoveAbsWTO()    036->039 037 038 [30sec, 7.0Volts, 0.834Amps, CPT:2374sec]
+(Dec 01 2018 04:40:38,  821245 sec) PistonMoveAbsWTO()    038->039 039 [12sec, 7.0Volts, 0.814Amps, CPT:2386sec]
+(Dec 01 2018 04:51:49,  821916 sec) Profile()            Sample 1 initiated at 1900.1dbars for bin 1 [1900dbars].  PTS: 1897.5dbars 2.9872C 34.8027PSU
+(Dec 01 2018 05:08:53,  822940 sec) Profile()            Sample 2 initiated at 1800.8dbars for bin 2 [1800dbars].  PTS: 1798.5dbars 3.2436C 34.8136PSU
+
+
+(Dec 01 2018 05:28:49) LogSize()            Log file is 38946 bytes.  Limit is 40960 bytes.
+
+(Dec 01 2018 05:28:49,  824136 sec) Profile()            Sample 3 initiated at 1700.7dbars for bin 3 [1700dbars].  PTS: 1698.9dbars 3.6239C 34.8291PSU
+(Dec 01 2018 05:29:02,  824149 sec) AscentControlAgent() Bouyancy nudge to 49 (v=0.075dbar/sec).
+(Dec 01 2018 05:29:02,  824150 sec) PistonMoveAbsWTO()    039->049 040 041 [30sec, 7.4Volts, 0.721Amps, CPT:2416sec]
+(Dec 01 2018 05:29:43,  824190 sec) PistonMoveAbsWTO()    041->049 042 043 [30sec, 7.4Volts, 0.733Amps, CPT:2446sec]
+(Dec 01 2018 05:30:23,  824230 sec) PistonMoveAbsWTO()    043->049 044 045 [30sec, 7.3Volts, 0.741Amps, CPT:2476sec]
+(Dec 01 2018 05:31:03,  824270 sec) PistonMoveAbsWTO()    045->049 046 047 [30sec, 7.3Volts, 0.717Amps, CPT:2506sec]
+(Dec 01 2018 05:31:43,  824310 sec) PistonMoveAbsWTO()    047->049 048 049 [18sec, 7.3Volts, 0.737Amps, CPT:2524sec]
+(Dec 01 2018 05:46:04,  825171 sec) Profile()            Sample 4 initiated at 1600.5dbars for bin 4 [1600dbars].  PTS: 1598.0dbars 4.0526C 34.8467PSU
+(Dec 01 2018 06:04:38,  826285 sec) Profile()            Sample 5 initiated at 1500.9dbars for bin 5 [1500dbars].  PTS: 1498.7dbars 4.5128C 34.8653PSU
+(Dec 01 2018 06:14:45,  826892 sec) AscentControlAgent() Bouyancy nudge to 59 (v=0.078dbar/sec).
+(Dec 01 2018 06:14:45,  826893 sec) PistonMoveAbsWTO()    049->059 050 051 [30sec, 7.6Volts, 0.649Amps, CPT:2554sec]
+(Dec 01 2018 06:15:26,  826933 sec) PistonMoveAbsWTO()    051->059 052 053 054 [30sec, 7.6Volts, 0.633Amps, CPT:2584sec]
+(Dec 01 2018 06:16:06,  826973 sec) PistonMoveAbsWTO()    054->059 055 056 [30sec, 7.5Volts, 0.653Amps, CPT:2614sec]
+(Dec 01 2018 06:16:46,  827013 sec) PistonMoveAbsWTO()    056->059 057 058 059
+<EOT>

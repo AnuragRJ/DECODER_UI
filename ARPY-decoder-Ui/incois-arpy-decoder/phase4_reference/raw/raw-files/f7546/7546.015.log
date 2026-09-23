@@ -1,0 +1,183 @@
+(Mar 15 2016 06:03:33,  412554 sec) TelemetryInit()      Profile 14. (Apf9i FwRev: 012811)
+(Mar 15 2016 06:10:12,  412953 sec) AirSystem()          Battery [190cnt, 14.7V]  Current [73cnt, 29.4mA]  Barometer [127cnt, 6.8"Hg]  Run-Time [41s]
+(Mar 15 2016 06:10:40,  412981 sec) GpsServices()        GPS almanac is current.
+(Mar 15 2016 06:10:40,  412981 sec) GpsServices()        Initiating GPS fix acquisition.
+(Mar 15 2016 06:11:00,  413001 sec) gga()                $GPGGA,061020,1309.5696,N,08458.7636,E,0,00,,,M,,M,,*5A
+(Mar 15 2016 06:11:06,  413008 sec) gga()                $GPGGA,061030,1309.5696,N,08458.7636,E,0,00,,,M,,M,,*5B
+(Mar 15 2016 06:11:16,  413018 sec) gga()                $GPGGA,061040,1309.5696,N,08458.7636,E,0,00,,,M,,M,,*5C
+(Mar 15 2016 06:11:55,  413056 sec) gga()                $GPGGA,061100,1310.4298,N,08503.0070,E,1,10,0.8,-15.8,M,-80.1,M,,*75
+(Mar 15 2016 06:11:55,  413056 sec) GpsServices()        Profile 14 GPS fix obtained in 75 seconds.
+(Mar 15 2016 06:11:55,  413056 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Mar 15 2016 06:11:55,  413056 sec) GpsServices()        Fix:   85.050  13.174 03/15/2016 061100   10
+(Mar 15 2016 06:12:25,  413086 sec) gga()                $GPGGA,061130,1310.4238,N,08503.0007,E,1,10,0.8,-18.6,M,-80.1,M,,*7F
+(Mar 15 2016 06:12:30,  413092 sec) gga()                $GPGGA,061200,1310.4181,N,08502.9951,E,1,10,0.8,-19.8,M,-80.1,M,,*73
+(Mar 15 2016 06:12:31,  413092 sec) GpsServices()        Excessive RTC skew (31s) detected.  Resetting Apf9's RTC to Tue Mar 15 06:12:00 2016
+(Mar 15 2016 06:12:00,  413092 sec) GpsServices()        Apf9's RTC now reads Tue Mar 15 06:12:00 2016
+(Mar 15 2016 06:12:00,  413092 sec) LogNmeaSentences()   RMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Mar 15 2016 06:12:09,  413102 sec) LogNmeaSentences()   $GPRMC,061210,A,1310.4161,N,08502.9935,E,001.1,205.9,150316,001.4,W*63
+(Mar 15 2016 06:12:09,  413102 sec) LogNmeaSentences()   $GPGGA,061210,1310.4161,N,08502.9935,E,1,10,0.8,-19.8,M,-80.1,M,,*7E
+(Mar 15 2016 06:12:10,  413102 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,,10,11,14,16,22,,26,27,31,1.1,0.8,0.8*30
+(Mar 15 2016 06:12:10,  413103 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,23,262,41,03,28,323,41,08,01,202,30,10,20,146,43*78
+(Mar 15 2016 06:12:10,  413103 sec) LogNmeaSentences()   $GPGSV,3,2,12,11,12,241,42,14,21,076,42,16,58,171,48,22,81,294,48*73
+(Mar 15 2016 06:12:11,  413103 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,04,306,36,26,70,093,48,27,11,176,43,31,31,021,45*7A
+(Mar 15 2016 06:12:19,  413112 sec) LogNmeaSentences()   $GPRMC,061220,A,1310.4147,N,08502.9916,E,001.4,238.0,150316,001.4,W*67
+(Mar 15 2016 06:12:19,  413112 sec) LogNmeaSentences()   $GPGGA,061220,1310.4147,N,08502.9916,E,1,10,0.8,-20.1,M,-80.1,M,,*7B
+(Mar 15 2016 06:12:20,  413112 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,,10,11,14,16,22,,26,27,31,1.1,0.8,0.8*30
+(Mar 15 2016 06:12:20,  413113 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,23,262,42,03,28,323,46,08,01,202,31,10,20,146,43*7D
+(Mar 15 2016 06:12:21,  413113 sec) LogNmeaSentences()   $GPGSV,3,2,12,11,12,241,42,14,21,076,41,16,58,171,46,22,81,293,49*78
+(Mar 15 2016 06:12:21,  413113 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,04,307,39,26,70,092,48,27,11,176,42,31,31,021,46*77
+(Mar 15 2016 06:12:29,  413122 sec) LogNmeaSentences()   $GPRMC,061230,A,1310.4126,N,08502.9898,E,001.1,208.5,150316,001.4,W*65
+(Mar 15 2016 06:12:29,  413122 sec) LogNmeaSentences()   $GPGGA,061230,1310.4126,N,08502.9898,E,1,10,0.8,-19.8,M,-80.1,M,,*79
+(Mar 15 2016 06:12:30,  413122 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,,10,11,14,16,22,,26,27,31,1.1,0.8,0.8*30
+(Mar 15 2016 06:12:30,  413123 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,23,262,42,03,28,323,44,08,01,202,30,10,20,146,42*7F
+(Mar 15 2016 06:12:30,  413123 sec) LogNmeaSentences()   $GPGSV,3,2,12,11,12,241,43,14,21,076,40,16,58,171,48,22,81,293,48*77
+(Mar 15 2016 06:12:31,  413123 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,04,307,39,26,70,092,48,27,11,176,42,31,31,021,46*77
+(Mar 15 2016 06:12:39,  413132 sec) LogNmeaSentences()   $GPRMC,061240,A,1310.4107,N,08502.9880,E,001.3,214.3,150316,001.4,W*61
+(Mar 15 2016 06:12:39,  413132 sec) LogNmeaSentences()   $GPGGA,061240,1310.4107,N,08502.9880,E,1,10,0.8,-20.5,M,-80.1,M,,*73
+(Mar 15 2016 06:12:40,  413132 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,,10,11,14,16,22,,26,27,31,1.1,0.8,0.8*30
+(Mar 15 2016 06:12:40,  413133 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,23,262,43,03,28,323,44,08,01,202,28,10,19,146,43*7C
+(Mar 15 2016 06:12:41,  413133 sec) LogNmeaSentences()   $GPGSV,3,2,12,11,11,241,43,14,21,076,42,16,58,171,47,22,81,293,48*79
+(Mar 15 2016 06:12:41,  413133 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,04,307,40,26,70,092,47,27,11,176,41,31,31,021,45*76
+(Mar 15 2016 06:12:49,  413142 sec) LogNmeaSentences()   $GPRMC,061250,A,1310.4091,N,08502.9864,E,001.0,200.1,150316,001.4,W*60
+(Mar 15 2016 06:12:49,  413142 sec) LogNmeaSentences()   $GPGGA,061250,1310.4091,N,08502.9864,E,1,10,0.8,-20.4,M,-80.1,M,,*77
+(Mar 15 2016 06:12:50,  413142 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,,10,11,14,16,22,,26,27,31,1.1,0.8,0.8*30
+(Mar 15 2016 06:12:50,  413143 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,23,262,35,03,28,323,41,08,01,202,30,10,19,146,42*70
+(Mar 15 2016 06:12:50,  413143 sec) LogNmeaSentences()   $GPGSV,3,2,12,11,11,241,43,14,21,076,40,16,58,171,47,22,81,293,49*7A
+(Mar 15 2016 06:12:51,  413143 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,04,307,38,26,70,092,50,27,11,176,42,31,31,021,45*7C
+(Mar 15 2016 06:12:59,  413151 sec) LogNmeaSentences()   $GPRMC,061300,A,1310.4070,N,08502.9845,E,000.7,237.6,150316,001.4,W*6D
+(Mar 15 2016 06:12:59,  413152 sec) LogNmeaSentences()   $GPGGA,061300,1310.4070,N,08502.9845,E,1,10,0.8,-20.3,M,-80.1,M,,*78
+(Mar 15 2016 06:13:00,  413152 sec) LogNmeaSentences()   $GPGSA,A,3,01,03,,10,11,14,16,22,,26,27,31,1.1,0.8,0.8*30
+(Mar 15 2016 06:13:00,  413153 sec) LogNmeaSentences()   $GPGSV,3,1,12,01,23,262,42,03,28,323,41,08,01,202,26,10,19,146,44*71
+(Mar 15 2016 06:13:00,  413153 sec) LogNmeaSentences()   $GPGSV,3,2,12,11,11,241,43,14,21,076,41,16,58,171,47,22,81,291,48*78
+(Mar 15 2016 06:13:01,  413153 sec) LogNmeaSentences()   $GPGSV,3,3,12,23,04,307,36,26,70,091,47,27,11,175,42,31,31,022,42*70
+(Mar 15 2016 06:13:01,  413154 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.90,,,,,,,,*7D
+(Mar 15 2016 06:13:01,  413154 sec) GpsServices()        GPS services complete.
+(Mar 15 2016 06:13:26,  413179 sec) CLogin()             Connecting to primary host.
+(Mar 15 2016 06:13:38,  413190 sec) CLogin()             Connection 1 established in 12 seconds.
+(Mar 15 2016 06:13:50,  413203 sec) login()              Login successful.
+(Mar 15 2016 06:13:54,  413207 sec) CLogin()             Logged in to host.  [Login required 16 seconds]
+(Mar 15 2016 06:14:02,  413214 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Mar 15 2016 06:14:04,  413217 sec) Rx()                 Initiating transfer. [0x43]
+(Mar 15 2016 06:14:10,  413223 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Mar 15 2016 06:14:15,  413227 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 11 sec, 93.1 bps]
+(Mar 15 2016 06:14:15,  413227 sec) RxConfig()           Download successful.
+(Mar 15 2016 06:14:29,  413241 sec) WriteVitals()        Writing vitals to "7546.014.msg".
+(Mar 15 2016 06:14:37,  413249 sec) UpLoadFile()         Uploading "7546.014.msg" to host as "7546.014.msg".
+(Mar 15 2016 06:14:39,  413252 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Mar 15 2016 06:16:55,  413387 sec) Tx()                 Transmission completed successfully [24 packets, 24565 bytes, 135 sec, 182.0 bps]
+(Mar 15 2016 06:16:55,  413388 sec) UpLoadFile()         Upload successful.
+(Mar 15 2016 06:17:00,  413392 sec) UpLoadFile()         Uploading "7546.014.log" to host as "7546.014.log".
+(Mar 15 2016 06:17:02,  413395 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Mar 15 2016 06:17:11,  413403 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Mar 15 2016 06:17:11,  413403 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Mar 15 2016 06:18:40,  413492 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Mar 15 2016 06:18:40,  413492 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Mar 15 2016 06:19:04,  413516 sec) Tx()                 Transmission completed successfully [20 packets, 19744 bytes, 121 sec, 169.3 bps]
+(Mar 15 2016 06:19:04,  413517 sec) UpLoadFile()         Upload successful.
+(Mar 15 2016 06:19:10,  413523 sec) UpLoad()             Files successfully uploaded: 2
+(Mar 15 2016 06:19:10,  413523 sec) UpLoad()             Upload complete.
+(Mar 15 2016 06:19:14,  413527 sec) logout()             Log-out successful.
+(Mar 15 2016 06:19:15,  413528 sec) Telemetry()          Telemetry cycle complete: PrfId=14 ConnectionAttempts=1  Connections=1
+(Mar 15 2016 06:19:16,  413528 sec) TelemetryTerminate() Parsing new mission configuration.
+(Mar 15 2016 06:19:17,  413530 sec) configure()          Parsing configurators in "mission.cfg".
+(Mar 15 2016 06:19:21,  413534 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Mar 15 2016 06:19:21,  413534 sec) configure()          Configuration CRCs and syntax OK.
+(Mar 15 2016 06:19:21,  413534 sec) ConfigSupervisor()   Configuration accepted.
+(Mar 15 2016 06:19:21,  413534 sec) TelemetryTerminate() Reconditioning the file system.
+(Mar 15 2016 06:19:31,       6 sec) DescentInit()        Deep profile 15 initiated at mission-time 413537sec.
+(Mar 15 2016 06:19:34,       9 sec) DescentInit()        Surface pressure: 0.0dbars.
+(Mar 15 2016 06:19:39,      14 sec) PistonMoveAbsWTO()    193->049 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 [734sec, 14.7Volts, 0.129Amps, CPT:734sec]
+(Mar 15 2016 06:31:53,     748 sec) PistonMoveAbsWTO()    049->000 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 016 015 014 013 012 011 010 009 [202sec, 14.7Volts, 0.125Amps, CPT:936sec]
+(Mar 15 2016 06:35:25,     960 sec) Descent()            Pressure: 102.0
+(Mar 15 2016 07:19:29,    3604 sec) Descent()            Pressure: 416.7
+(Mar 15 2016 08:19:29,    7204 sec) Descent()            Pressure: 887.3
+(Mar 15 2016 08:19:29,    7204 sec) PistonMoveAbsWTO()    009->049 010 011 012 013 014 015 016 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032 033 034 035 036 037 038 039 040 041 042 043 044 045 046 047 048 049 [220sec, 14.1Volts, 0.407Amps, CPT:1156sec]
+(Mar 15 2016 09:19:29,   10804 sec) Descent()            Pressure: 891.1
+(Mar 15 2016 10:19:29,   14404 sec) Descent()            Pressure: 904.9
+(Mar 15 2016 11:19:29,   18004 sec) Descent()            Pressure: 922.5
+(Mar 15 2016 11:19:29,   18004 sec) ParkInit()           
+(Mar 15 2016 13:19:58,   25233 sec) Park()               ParkPOutOfBand[-3, 940.0 dbars]: retract piston.
+(Mar 15 2016 13:19:58,   25234 sec) PistonMoveAbsWTO()    049->048 048 [1sec, 15.0Volts, 0.093Amps, CPT:1157sec]
+(Mar 15 2016 16:19:58,   36033 sec) Park()               ParkPOutOfBand[-3, 969.4 dbars]: retract piston.
+(Mar 15 2016 16:19:58,   36034 sec) PistonMoveAbsWTO()    048->047 047 [5sec, 15.0Volts, 0.089Amps, CPT:1162sec]
+(Mar 15 2016 20:19:58,   50433 sec) Park()               ParkPOutOfBand[3, 1015.2 dbars]: extend piston.
+(Mar 15 2016 20:19:59,   50434 sec) PistonMoveAbsWTO()    047->048 048 [2sec, 14.6Volts, 0.484Amps, CPT:1164sec]
+(Mar 16 2016 04:19:58,   79233 sec) Park()               ParkPOutOfBand[3, 1014.6 dbars]: extend piston.
+(Mar 16 2016 04:19:59,   79234 sec) PistonMoveAbsWTO()    048->049 049 [5sec, 14.6Volts, 0.463Amps, CPT:1169sec]
+(Mar 17 2016 22:19:59,  230434 sec) Park()               ParkPOutOfBand[3, 1013.7 dbars]: extend piston.
+(Mar 17 2016 22:19:59,  230434 sec) PistonMoveAbsWTO()    049->050 050 [7sec, 14.5Volts, 0.443Amps, CPT:1176sec]
+(Mar 18 2016 01:19:59,  241234 sec) Park()               ParkPOutOfBand[-3, 976.2 dbars]: retract piston.
+(Mar 18 2016 01:19:59,  241234 sec) PistonMoveAbsWTO()    050->049 049 [3sec, 14.8Volts, 0.097Amps, CPT:1179sec]
+(Mar 18 2016 04:19:59,  252034 sec) Park()               ParkPOutOfBand[-3, 984.8 dbars]: retract piston.
+(Mar 18 2016 04:19:59,  252034 sec) PistonMoveAbsWTO()    049->048 048 [5sec, 14.9Volts, 0.093Amps, CPT:1184sec]
+(Mar 18 2016 07:19:59,  262834 sec) Park()               ParkPOutOfBand[3, 1018.5 dbars]: extend piston.
+(Mar 18 2016 07:19:59,  262834 sec) PistonMoveAbsWTO()    048->049 049 [3sec, 14.6Volts, 0.488Amps, CPT:1187sec]
+(Mar 18 2016 21:19:59,  313234 sec) Park()               ParkPOutOfBand[3, 1012.0 dbars]: extend piston.
+(Mar 18 2016 21:19:59,  313234 sec) PistonMoveAbsWTO()    049->050 050 [6sec, 14.6Volts, 0.459Amps, CPT:1193sec]
+(Mar 19 2016 03:20:00,  334836 sec) Park()               ParkPOutOfBand[-3, 980.2 dbars]: retract piston.
+(Mar 19 2016 03:20:01,  334836 sec) PistonMoveAbsWTO()    050->049 049 [2sec, 14.8Volts, 0.097Amps, CPT:1195sec]
+(Mar 19 2016 14:19:50,  374425 sec) CtdPower()           [  990.78,  6.7155, 34.9421]
+(Mar 19 2016 14:19:50,  374425 sec) CtdPower()           CTD Power consumption [194VCnt 10ACnt]: 15.038Volts * 0.040Amps = 0.61Watts.
+(Mar 19 2016 14:19:50,  374426 sec) ParkTerminate()      Piston Position:49 Vacuum:80 Vq:197 Aq:6 Vsbe:194 Asbe:10
+(Mar 19 2016 14:20:18,  374453 sec) ParkTerminate()      PTS: 991.0dbars 6.7158C 34.9395PSU
+(Mar 19 2016 14:20:18,  374454 sec) GoDeepInit()         Moving piston.
+(Mar 19 2016 14:20:19,  374454 sec) PistonMoveAbsWTO()    049->012 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 016 015 014 013 012 [185sec, 14.7Volts, 0.068Amps, CPT:1380sec]
+(Mar 19 2016 19:19:29,  392404 sec) ProfileInit()        PrfId:015  Pressure:1973.3dbar  pTable[1]:1950dbar
+(Mar 19 2016 19:20:58,  392493 sec) Sbe41cpStartCP()     Continuous profile started.
+(Mar 19 2016 19:20:59,  392494 sec) PistonMoveAbsWTO()    012->034 013 014 015 016 017 [30sec, 14.0Volts, 0.810Amps, CPT:1410sec]
+(Mar 19 2016 19:21:40,  392535 sec) PistonMoveAbsWTO()    017->034 018 019 020 021 022 [30sec, 13.7Volts, 0.798Amps, CPT:1440sec]
+(Mar 19 2016 19:22:20,  392575 sec) PistonMoveAbsWTO()    022->034 023 024 025 026 [30sec, 13.6Volts, 0.778Amps, CPT:1470sec]
+(Mar 19 2016 19:23:01,  392616 sec) PistonMoveAbsWTO()    026->034 027 028 029 030 031 [30sec, 13.5Volts, 0.762Amps, CPT:1500sec]
+(Mar 19 2016 19:23:41,  392656 sec) PistonMoveAbsWTO()    031->034 032 033 034 [17sec, 13.5Volts, 0.762Amps, CPT:1517sec]
+(Mar 19 2016 20:25:07,  396342 sec) AscentControlAgent() Bouyancy nudge to 44 (v=0.073dbar/sec).
+(Mar 19 2016 20:25:07,  396342 sec) PistonMoveAbsWTO()    034->044 035 036 037 038 039 [30sec, 13.9Volts, 0.677Amps, CPT:1547sec]
+(Mar 19 2016 20:25:47,  396382 sec) PistonMoveAbsWTO()    039->044 040 041 042 043 [30sec, 13.6Volts, 0.697Amps, CPT:1577sec]
+(Mar 19 2016 20:26:28,  396423 sec) PistonMoveAbsWTO()    043->044 044 [2sec, 13.7Volts, 0.657Amps, CPT:1579sec]
+(Mar 19 2016 21:02:12,  398567 sec) AscentControlAgent() Bouyancy nudge to 54 (v=0.077dbar/sec).
+(Mar 19 2016 21:02:12,  398567 sec) PistonMoveAbsWTO()    044->054 045 046 047 048 049 [30sec, 14.0Volts, 0.604Amps, CPT:1609sec]
+(Mar 19 2016 21:02:52,  398607 sec) PistonMoveAbsWTO()    049->054 050 051 052 053 [30sec, 13.7Volts, 0.612Amps, CPT:1639sec]
+(Mar 19 2016 21:03:33,  398648 sec) PistonMoveAbsWTO()    053->054 054 [1sec, 13.7Volts, 0.608Amps, CPT:1640sec]
+(Mar 19 2016 21:54:34,  401709 sec) AscentControlAgent() Bouyancy nudge to 64 (v=0.074dbar/sec).
+(Mar 19 2016 21:54:34,  401709 sec) PistonMoveAbsWTO()    054->064 055 056 057 058 059 [30sec, 14.0Volts, 0.528Amps, CPT:1670sec]
+(Mar 19 2016 21:55:14,  401749 sec) PistonMoveAbsWTO()    059->064 060 061 062 063 064 [29sec, 13.9Volts, 0.488Amps, CPT:1699sec]
+(Mar 19 2016 22:51:49,  405144 sec) AscentControlAgent() Bouyancy nudge to 74 (v=0.073dbar/sec).
+(Mar 19 2016 22:51:49,  405144 sec) PistonMoveAbsWTO()    064->074 065 066 067 068 069 [30sec, 14.1Volts, 0.419Amps, CPT:1729sec]
+(Mar 19 2016 22:52:29,  405184 sec) PistonMoveAbsWTO()    069->074 070 071 072 073 074 [27sec, 14.0Volts, 0.431Amps, CPT:1756sec]
+(Mar 20 2016 00:34:56,  411331 sec) AscentControlAgent() Bouyancy nudge to 84 (v=0.071dbar/sec).
+(Mar 20 2016 00:34:56,  411331 sec) PistonMoveAbsWTO()    074->084 075 076 077 078 079 [30sec, 14.5Volts, 0.210Amps, CPT:1786sec]
+(Mar 20 2016 00:35:36,  411371 sec) PistonMoveAbsWTO()    079->084 080 081 082 083 084 [23sec, 14.4Volts, 0.210Amps, CPT:1809sec]
+(Mar 20 2016 00:41:05,  411700 sec) AscentControlAgent() Bouyancy nudge to 94 (v=0.067dbar/sec).
+(Mar 20 2016 00:41:05,  411700 sec) PistonMoveAbsWTO()    084->094 085 086 087 088 089 [30sec, 14.4Volts, 0.210Amps, CPT:1839sec]
+(Mar 20 2016 00:41:45,  411740 sec) PistonMoveAbsWTO()    089->094 090 091 092 093 094 [24sec, 14.3Volts, 0.205Amps, CPT:1863sec]
+(Mar 20 2016 00:47:15,  412070 sec) AscentControlAgent() Bouyancy nudge to 104 (v=0.063dbar/sec).
+(Mar 20 2016 00:47:15,  412070 sec) PistonMoveAbsWTO()    094->104 095 096 097 098 099 [30sec, 14.4Volts, 0.197Amps, CPT:1893sec]
+(Mar 20 2016 00:47:55,  412110 sec) PistonMoveAbsWTO()    099->104 100 101 102 103 104 [24sec, 14.3Volts, 0.193Amps, CPT:1917sec]
+(Mar 20 2016 00:53:25,  412440 sec) AscentControlAgent() Bouyancy nudge to 114 (v=0.043dbar/sec).
+(Mar 20 2016 00:53:25,  412440 sec) PistonMoveAbsWTO()    104->114 105 106 107 108 109 [30sec, 14.4Volts, 0.193Amps, CPT:1947sec]
+(Mar 20 2016 00:54:05,  412480 sec) PistonMoveAbsWTO()    109->114 110 111 112 113 114 [22sec, 14.4Volts, 0.193Amps, CPT:1969sec]
+(Mar 20 2016 00:59:34,  412809 sec) AscentControlAgent() Bouyancy nudge to 124 (v=0.039dbar/sec).
+(Mar 20 2016 00:59:34,  412809 sec) PistonMoveAbsWTO()    114->124 115 116 117 118 119 [30sec, 14.5Volts, 0.193Amps, CPT:1999sec]
+(Mar 20 2016 01:00:14,  412849 sec) PistonMoveAbsWTO()    119->124 120 121 122 123 124 [22sec, 14.4Volts, 0.193Amps, CPT:2021sec]
+(Mar 20 2016 01:05:43,  413178 sec) AscentControlAgent() Bouyancy nudge to 134 (v=0.020dbar/sec).
+(Mar 20 2016 01:05:43,  413178 sec) PistonMoveAbsWTO()    124->134 125 126 127 128 129 [30sec, 14.5Volts, 0.185Amps, CPT:2051sec]
+(Mar 20 2016 01:06:23,  413218 sec) PistonMoveAbsWTO()    129->134 130 131 132 133 134 [23sec, 14.5Volts, 0.185Amps, CPT:2074sec]
+(Mar 20 2016 01:11:52,  413547 sec) AscentControlAgent() Bouyancy nudge to 144 (v=0.046dbar/sec).
+(Mar 20 2016 01:11:52,  413547 sec) PistonMoveAbsWTO()    134->144 135 136 137 138 139 140 [30sec, 14.6Volts, 0.173Amps, CPT:2104sec]
+(Mar 20 2016 01:12:32,  413587 sec) PistonMoveAbsWTO()    140->144 141 142 143 144 [22sec, 14.5Volts, 0.177Amps, CPT:2126sec]
+(Mar 20 2016 01:18:00,  413915 sec) AscentControlAgent() Bouyancy nudge to 154 (v=0.065dbar/sec).
+(Mar 20 2016 01:18:00,  413915 sec) PistonMoveAbsWTO()    144->154 145 146 147 148 149 [30sec, 14.6Volts, 0.169Amps, CPT:2156sec]
+(Mar 20 2016 01:18:40,  413955 sec) PistonMoveAbsWTO()    149->154 150 151 152 153 154 [22sec, 14.6Volts, 0.173Amps, CPT:2178sec]
+(Mar 20 2016 01:28:06,  414521 sec) AscentControlAgent() Bouyancy nudge to 164 (v=0.057dbar/sec).
+(Mar 20 2016 01:28:06,  414521 sec) PistonMoveAbsWTO()    154->164 155 156 [15sec, 14.7Volts, 0.161Amps, CPT:2193sec]
+(Mar 20 2016 01:28:31,  414546 sec) PistonMoveAbsWTO()    156->164 157 158 159 [15sec, 14.7Volts, 0.161Amps, CPT:2208sec]
+(Mar 20 2016 01:28:56,  414571 sec) PistonMoveAbsWTO()    159->164 160 161 162 [15sec, 14.7Volts, 0.157Amps, CPT:2223sec]
+(Mar 20 2016 01:29:21,  414596 sec) PistonMoveAbsWTO()    162->164 163 164 [8sec, 14.7Volts, 0.157Amps, CPT:2231sec]
+(Mar 20 2016 01:29:52,  414627 sec) SurfaceDetect()      SurfacePressure:0.0dbars Pressure:3.7dbars PistonPosition:164
+(Mar 20 2016 01:29:53,  414628 sec) Sbe41cpStopCP()      Continuous profile stopped.
+(Mar 20 2016 01:29:59,  414634 sec) PistonMoveAbsWTO()    164->186 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 [113sec, 14.6Volts, 0.141Amps, CPT:2344sec]
+(Mar 20 2016 01:32:02,  414757 sec) sbe41cp.c:chat()     Expected string [S>] not received.
+(Mar 20 2016 01:36:55,  415050 sec) Sbe41cpBinAverage()  Finished averaging 22165 samples in 289 seconds.
+(Mar 20 2016 01:37:00,  415055 sec) Sbe41cpUploadCP()    Sbe41cpSerNo[7258] NSample[22165] NBin[988]
+(Mar 20 2016 01:38:47,  415162 sec) Sbe41cpUploadCP()    Continuous profile uploaded [988 lines].
+
+<EOT>

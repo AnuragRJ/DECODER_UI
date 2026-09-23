@@ -88,13 +88,13 @@ Status wordings are unchanged; only the first boundary is now the float's own
 interval:
 
 - **ACTIVE / RECENT PROFILE:** `0 <= days <= i`.
-- **PROFILE OVERDUE:** `i < days < 60`.
-- **NO RECENT PROFILE DATA 60+ DAYS:** `days >= 60`.
+- **PROFILE OVERDUE:** `i < days < 80`.
+- **NO RECENT PROFILE DATA 80+ DAYS:** `days >= 80`.
 - **NO DATA:** no valid profile JULD from the configured history product.
 
 At exactly `i` days the inclusive status is still ACTIVE / RECENT PROFILE and
-the estimate is already `floor(i / i) = 1`. At exactly 60 days the status is
-NO RECENT PROFILE DATA 60+ DAYS. These outcomes follow the requested formulas;
+the estimate is already `floor(i / i) = 1`. At exactly 80 days the status is
+NO RECENT PROFILE DATA 80+ DAYS. These outcomes follow the requested formulas;
 no independent rounding is applied first. For a float whose measured interval is
 exactly 10 days the behaviour is identical to the previous fixed-10-day rule.
 

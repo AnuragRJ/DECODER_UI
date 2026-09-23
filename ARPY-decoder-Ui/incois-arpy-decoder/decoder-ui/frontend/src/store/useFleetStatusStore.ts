@@ -16,6 +16,26 @@ interface FleetStatusState {
 }
 
 let pollTimer: number | null = null;
+let activeSyncPollTimer: number | null = null;
+
+function ensureActiveSyncPolling(): void {
+  if (typeof window === "undefined") return;
+  if (activeSyncPollTimer !== null) return;
+  activeSyncPollTimer = window.setInterval(async () => {
+    await useFleetStatusStore.getState().fetchFleetStatus();
+    const current = useFleetStatusStore.getState().payload;
+    if (!current?.sync?.running) {
+      stopActiveSyncPolling();
+    }
+  }, 1500);
+}
+
+function stopActiveSyncPolling(): void {
+  if (activeSyncPollTimer !== null) {
+    window.clearInterval(activeSyncPollTimer);
+    activeSyncPollTimer = null;
+  }
+}
 
 export const useFleetStatusStore = create<FleetStatusState>()((set, get) => ({
   payload: null,
@@ -35,6 +55,11 @@ export const useFleetStatusStore = create<FleetStatusState>()((set, get) => ({
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data: FleetStatusPayload = await res.json();
       set({ payload: data, fetchError: null });
+      if (data?.sync?.running) {
+        ensureActiveSyncPolling();
+      } else {
+        stopActiveSyncPolling();
+      }
     } catch (err) {
       set({
         fetchError:
@@ -56,6 +81,9 @@ export const useFleetStatusStore = create<FleetStatusState>()((set, get) => ({
       // Refresh at once so the SYNCING progress shows without waiting for
       // the next poll tick.
       await get().fetchFleetStatus();
+      if (get().payload?.sync?.running) {
+        ensureActiveSyncPolling();
+      }
       return typeof data?.status === "string" ? data.status : "started";
     } catch (err) {
       set({
@@ -83,4 +111,5 @@ export function stopFleetStatusPolling(): void {
     window.clearInterval(pollTimer);
     pollTimer = null;
   }
+  stopActiveSyncPolling();
 }

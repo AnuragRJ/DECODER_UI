@@ -18,6 +18,12 @@ from email.mime.text import MIMEText
 from typing import Any
 
 from event_bus import bus
+from india_eez import (
+    EEZ_SOURCE,
+    POSITION_BASIS,
+    get_batch_floats_inside_eez,
+    get_monitored_floats_inside_eez,
+)
 from models import BatchFloatItem, BatchSummary, LiveEvent, NodeStatus, RunSummary
 
 # ---------------------------------------------------------------------------
@@ -168,6 +174,7 @@ def build_batch_email_content(
     pdf_available: bool = False,
     pdf_error: str | None = None,
     app_base_url: str | None = None,
+    monitored_floats: list[dict[str, Any]] | None = None,
 ) -> tuple[str, str]:
     """Generates (plain_text, html_body) for the consolidated batch email.
 
@@ -280,6 +287,37 @@ def build_batch_email_content(
         text_lines.append("Attachment:     The complete INCOIS ARPY Daily Fleet Decoding Report PDF is attached to this email")
     elif pdf_error:
         text_lines.append(f"Note:           PDF report generation failed ({pdf_error[:120]}); no PDF attachment in this email.")
+    text_lines.append("")
+
+    # Indian EEZ membership section (canonical geometry; latest verified positions)
+    if batch is not None:
+        inside_floats, total_monitored, snapshot_ts = get_batch_floats_inside_eez(batch, monitored_floats)
+    else:
+        inside_floats, total_monitored, snapshot_ts = get_monitored_floats_inside_eez(monitored_floats)
+    eez_text_lines = [
+        "",
+        "--- FLOATS CURRENTLY INSIDE INDIAN EEZ ---",
+        f"Count inside / total monitored: {len(inside_floats)} / {total_monitored}",
+        f"Snapshot timestamp:             {snapshot_ts}",
+        f"EEZ source:                     {EEZ_SOURCE}",
+        f"Position basis:                 {POSITION_BASIS}",
+    ]
+    if inside_floats:
+        eez_text_lines.append("")
+        eez_text_lines.append(
+            f"{'WMO':<10} | {'Float Type':<12} | {'Lat':<8} | {'Lon':<8} | {'Last Profile Date':<23} | {'Data Status'}"
+        )
+        eez_text_lines.append("-" * 88)
+        for ef in inside_floats:
+            lat_str = f"{ef['lat']:.4f}"
+            lon_str = f"{ef['lon']:.4f}"
+            eez_text_lines.append(
+                f"{ef['wmo']:<10} | {str(ef['float_type']):<12} | {lat_str:<8} | {lon_str:<8} | "
+                f"{str(ef['last_profile_date']):<23} | {str(ef['data_status'])}"
+            )
+    else:
+        eez_text_lines.append("Count: 0")
+    text_lines.extend(eez_text_lines)
     text_lines.append("")
 
     if failed_details:
@@ -410,6 +448,55 @@ def build_batch_email_content(
         </div>
         """
 
+    # Indian EEZ membership HTML block
+    if inside_floats:
+        eez_table_rows = ""
+        for ef in inside_floats:
+            eez_table_rows += f"""
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 8px 12px; font-weight: bold; color: #1e293b;">{ef['wmo']}</td>
+              <td style="padding: 8px 12px; color: #475569;">{html.escape(str(ef['float_type']))}</td>
+              <td style="padding: 8px 12px; color: #334155;">{ef['lat']:.4f}</td>
+              <td style="padding: 8px 12px; color: #334155;">{ef['lon']:.4f}</td>
+              <td style="padding: 8px 12px; color: #475569;">{html.escape(str(ef['last_profile_date']))}</td>
+              <td style="padding: 8px 12px; color: #0369a1; font-weight: 600;">{html.escape(str(ef['data_status']))}</td>
+            </tr>
+            """
+        eez_content_html = f"""
+        <table style="width: 100%; border-collapse: collapse; font-size: 12px; font-family: monospace; margin-top: 10px; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background-color: #f1f5f9; color: #475569; text-align: left; font-size: 11px; text-transform: uppercase;">
+              <th style="padding: 8px 12px; border-bottom: 1px solid #cbd5e1;">WMO</th>
+              <th style="padding: 8px 12px; border-bottom: 1px solid #cbd5e1;">Float Type</th>
+              <th style="padding: 8px 12px; border-bottom: 1px solid #cbd5e1;">Lat</th>
+              <th style="padding: 8px 12px; border-bottom: 1px solid #cbd5e1;">Lon</th>
+              <th style="padding: 8px 12px; border-bottom: 1px solid #cbd5e1;">Last Profile Date</th>
+              <th style="padding: 8px 12px; border-bottom: 1px solid #cbd5e1;">Data Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {eez_table_rows}
+          </tbody>
+        </table>
+        """
+    else:
+        eez_content_html = '<div style="font-size: 12px; color: #64748b; font-family: monospace; margin-top: 6px;">Count: 0</div>'
+
+    eez_section_html = f"""
+        <div style="margin-top: 24px;">
+          <h3 style="color: #1e293b; font-size: 13px; text-transform: uppercase; margin-bottom: 8px; font-family: monospace;">
+            FLOATS CURRENTLY INSIDE INDIAN EEZ
+          </h3>
+          <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; font-size: 11.5px; font-family: monospace; color: #334155; line-height: 1.6;">
+            <div>Count inside / total monitored: <strong>{len(inside_floats)} / {total_monitored}</strong></div>
+            <div>Snapshot timestamp: <strong>{html.escape(snapshot_ts)}</strong></div>
+            <div>EEZ source: <span>{html.escape(EEZ_SOURCE)}</span></div>
+            <div>Position basis: <em>{html.escape(POSITION_BASIS)}</em></div>
+          </div>
+          {eez_content_html}
+        </div>
+        """
+
     html_body = f"""
     <!DOCTYPE html>
     <html>
@@ -484,6 +571,9 @@ def build_batch_email_content(
 
           <!-- Full PDF Report -->
           {pdf_report_html}
+
+          <!-- Floats Currently Inside Indian EEZ -->
+          {eez_section_html}
 
           <!-- Failed Section -->
           {failed_section_html}

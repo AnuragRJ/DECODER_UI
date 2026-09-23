@@ -11,7 +11,8 @@
     "test:gating": "node e2e/decodeAllGating.e2e.mjs",
     "test:eez": "node e2e/eezLayer.e2e.mjs",
     "test:fleet": "node e2e/fleetStatus.e2e.mjs",
-    "test:prediction-map": "node e2e/predictionMap.e2e.mjs"
+    "test:prediction-map": "node e2e/predictionMap.e2e.mjs",
+    "test:drag": "node e2e/fleetPanelDrag.e2e.mjs"
   },
   "dependencies": {
     "@arcgis/core": "^5.1.24",

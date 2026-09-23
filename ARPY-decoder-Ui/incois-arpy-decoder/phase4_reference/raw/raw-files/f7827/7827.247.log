@@ -1,0 +1,397 @@
+(Jun 11 2022 21:43:55,  855565 sec) TelemetryInit()      Profile 246. (Apf9i FwRev: 061016)
+(Jun 11 2022 21:51:32,  856021 sec) AirSystem()          Battery [142cnt, 11.0V]  Current [70cnt, 282.1mA]  Barometer [129cnt, 7.4"Hg]  Run-Time [65s]
+(Jun 11 2022 21:53:21,  856130 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.8dbars / 220.1uM 29.318C 29.204 8.951 -26.492 / 59,150,531
+(Jun 11 2022 21:53:29,  856138 sec) GpsServices()        GPS almanac is current.
+(Jun 11 2022 21:53:29,  856138 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 11 2022 21:53:45,  856154 sec) gga()                $GPGGA,215310,2020.3325,N,06101.8302,E,0,00,,,M,,M,,*51
+(Jun 11 2022 21:53:55,  856164 sec) gga()                $GPGGA,215320,2020.3325,N,06101.8302,E,0,00,,,M,,M,,*52
+(Jun 11 2022 21:54:07,  856176 sec) gga()                $GPGGA,215340,2020.3325,N,06101.8302,E,0,00,,,M,,M,,*54
+(Jun 11 2022 21:54:18,  856187 sec) gga()                $GPGGA,215350,2020.3325,N,06101.8302,E,0,00,,,M,,M,,*55
+(Jun 11 2022 21:54:29,  856198 sec) gga()                $GPGGA,215400,2020.3325,N,06101.8302,E,0,00,,,M,,M,,*57
+(Jun 11 2022 21:54:40,  856209 sec) gga()                $GPGGA,215400,2020.3325,N,06101.8302,E,0,00,,,M,,M,,*57
+(Jun 11 2022 21:54:43,  856212 sec) gga()                $GPGGA,215410,2020.3325,N,06101.8302,E,0,00,,,M,,M,,*56
+(Jun 11 2022 21:55:26,  856255 sec) gga()                $GPGGA,215420,2024.2583,N,06114.6956,E,1,09,0.8,1.3,M,-46.7,M,,*6F
+(Jun 11 2022 21:55:26,  856255 sec) GpsServices()        Profile 246 GPS fix obtained in 117 seconds.
+(Jun 11 2022 21:55:27,  856256 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 11 2022 21:55:27,  856256 sec) GpsServices()        Fix:   61.245  20.404 06/11/2022 215420    9
+(Jun 11 2022 21:56:19,  856308 sec) gga()                $GPGGA,215520,2024.2505,N,06114.7065,E,1,09,0.8,0.0,M,-46.7,M,,*6A
+(Jun 11 2022 21:56:26,  856315 sec) gga()                $GPGGA,215610,2024.2443,N,06114.7158,E,1,09,0.8,-0.7,M,-46.7,M,,*4C
+(Jun 11 2022 21:56:27,  856316 sec) GpsServices()        APF9 RTC skew (17s) OK.
+(Jun 11 2022 21:56:27,  856316 sec) GpsServices()        GPS services complete.
+(Jun 11 2022 21:57:00,  856349 sec) CLogin()             Connecting to primary host.
+(Jun 11 2022 21:57:17,  856366 sec) CLogin()             Connection 1 established in 17 seconds.
+(Jun 11 2022 21:57:47,  856396 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 11 2022 21:57:47,  856396 sec) login()              Login prompt not received.
+(Jun 11 2022 21:58:02,  856411 sec) login()              Login successful.
+(Jun 11 2022 21:58:07,  856416 sec) CLogin()             Logged in to host.  [Login required 49 seconds]
+(Jun 11 2022 21:58:19,  856428 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 11 2022 21:58:21,  856430 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 11 2022 21:58:31,  856440 sec) RxStartByte()        Sync errors encountered: 264
+(Jun 11 2022 21:58:36,  856445 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 11 2022 21:58:40,  856449 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 19 sec, 53.9 bps]
+(Jun 11 2022 21:58:40,  856449 sec) RxConfig()           Download successful.
+(Jun 11 2022 21:59:03,  856472 sec) WriteVitals()        Writing vitals to "7827.246.msg".
+(Jun 11 2022 21:59:21,  856490 sec) UpLoadFile()         Uploading "7827.246.msg" to host as "7827.246.msg".
+(Jun 11 2022 21:59:25,  856494 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 11 2022 21:59:51,  856520 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jun 11 2022 21:59:51,  856520 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jun 11 2022 21:59:57,  856526 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jun 11 2022 21:59:57,  856526 sec) TxPacket()           Packet xmit history: [11000011] (0:ok, 1:fail).
+(Jun 11 2022 22:00:27,  856556 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:00:27,  856556 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(Jun 11 2022 22:01:18,  856607 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:01:18,  856607 sec) TxPacket()           Packet xmit history: [01100011] (0:ok, 1:fail).
+(Jun 11 2022 22:01:22,  856611 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:01:23,  856612 sec) TxPacket()           Packet xmit history: [11000111] (0:ok, 1:fail).
+(Jun 11 2022 22:01:31,  856620 sec) TxPacket()           Packet xmit history: [10001110] (0:ok, 1:fail).
+(Jun 11 2022 22:01:42,  856631 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:01:42,  856632 sec) TxPacket()           Packet xmit history: [00011101] (0:ok, 1:fail).
+(Jun 11 2022 22:01:44,  856633 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:01:44,  856633 sec) TxPacket()           Packet xmit history: [00111011] (0:ok, 1:fail).
+(Jun 11 2022 22:01:45,  856634 sec) TxPacket()           Invalid response [0x42] - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:01:45,  856634 sec) TxPacket()           Packet xmit history: [01110111] (0:ok, 1:fail).
+(Jun 11 2022 22:01:50,  856639 sec) TxPacket()           Invalid response [0x72] - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:01:50,  856639 sec) TxPacket()           Packet xmit history: [11101111] (0:ok, 1:fail).
+(Jun 11 2022 22:01:55,  856644 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:01:55,  856644 sec) TxPacket()           Packet xmit history: [11011111] (0:ok, 1:fail).
+(Jun 11 2022 22:02:03,  856653 sec) TxPacket()           Invalid response [0x36] - resending packet. [PktNum=0x05]
+(Jun 11 2022 22:02:04,  856653 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jun 11 2022 22:02:04,  856653 sec) TxPacket()           Exit status: -5
+(Jun 11 2022 22:02:04,  856653 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 11 2022 22:02:17,  856666 sec) UpLoadFile()         Upload failed.
+(Jun 11 2022 22:02:41,  856691 sec) UpLoadFile()         Uploading "7827.246.log" to host as "7827.246.log".
+(Jun 11 2022 22:03:42,  856751 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Jun 11 2022 22:03:53,  856762 sec) UpLoadFile()         Upload failed.
+(Jun 11 2022 22:03:53,  856762 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 11 2022 22:03:53,  856762 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 11 2022 22:04:00,  856769 sec) chat()               Expected string [logout] not received.
+(Jun 11 2022 22:04:00,  856769 sec) logout()             Attempt to log-out failed.
+(Jun 11 2022 22:04:00,  856769 sec) logout()             No carrier detected.
+(Jun 11 2022 22:04:00,  856769 sec) Telemetry()          Telemetry cycle complete: PrfId=246 ConnectionAttempts=1  Connections=1
+(Jun 11 2022 22:19:15,  857684 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Jun 11 2022 22:20:01,  857730 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.7dbars / 218.3uM 29.422C 29.257 8.926 -29.773 / 63,151,531
+(Jun 11 2022 22:20:09,  857738 sec) GpsServices()        GPS almanac is current.
+(Jun 11 2022 22:20:09,  857738 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 11 2022 22:20:59,  857788 sec) gga()                $GPGGA,222000,2024.0592,N,06114.9561,E,6,08,0.9,-19.1,M,-46.7,M,,*79
+(Jun 11 2022 22:21:42,  857831 sec) gga()                $GPGGA,222010,2024.0559,N,06114.9539,E,6,08,0.9,-13.5,M,-46.7,M,,*7C
+(Jun 11 2022 22:23:09,  857918 sec) gga()                $GPGGA,222210,2024.0411,N,06114.9773,E,1,08,0.9,-2.3,M,-46.7,M,,*4E
+(Jun 11 2022 22:23:09,  857918 sec) GpsServices()        Profile 246 GPS fix obtained in 180 seconds.
+(Jun 11 2022 22:23:09,  857918 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 11 2022 22:23:10,  857919 sec) GpsServices()        Fix:   61.250  20.401 06/11/2022 222210    8
+(Jun 11 2022 22:23:59,  857968 sec) gga()                $GPGGA,222300,2024.0320,N,06114.9862,E,1,08,0.9,3.3,M,-46.7,M,,*68
+(Jun 11 2022 22:24:06,  857975 sec) gga()                $GPGGA,222350,2024.0253,N,06114.9956,E,1,08,0.9,-2.3,M,-46.7,M,,*42
+(Jun 11 2022 22:24:07,  857976 sec) GpsServices()        APF9 RTC skew (17s) OK.
+(Jun 11 2022 22:24:16,  857985 sec) LogNmeaSentences()   $GPRMC,222400,A,2024.0234,N,06114.9971,E,001.7,031.9,110622,000.4,E*7A
+(Jun 11 2022 22:24:17,  857986 sec) LogNmeaSentences()   $GPGGA,222400,2024.0234,N,06114.9971,E,1,08,0.9,-1.2,M,-46.7,M,,*46
+(Jun 11 2022 22:24:18,  857987 sec) LogNmeaSentences()   $GPGSA,A,3,03,04,07,08,09,14,27,30,,,,,1.2,0.9,0.8*32
+(Jun 11 2022 22:24:18,  857987 sec) LogNmeaSentences()   $GPGSV,3,1,11,03,10,170,37,04,45,117,44,07,45,340,45,08,40,088,45*74
+(Jun 11 2022 22:24:19,  857988 sec) LogNmeaSentences()   $GPGSV,3,2,11,09,75,072,48,14,36,232,42,27,16,053,39,30,31,306,41*70
+(Jun 11 2022 22:24:19,  857989 sec) LogNmeaSentences()   $GPGSV,3,3,11,05,17,305,00,11,16,138,00,23,26,127,00*40
+(Jun 11 2022 22:24:20,  857989 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 4.00,,,,,,,,*73
+(Jun 11 2022 22:24:26,  857995 sec) LogNmeaSentences()   $GPRMC,222410,A,2024.0223,N,06115.0006,E,001.7,051.3,110622,000.4,E*70
+(Jun 11 2022 22:24:27,  857996 sec) LogNmeaSentences()   $GPGGA,222410,2024.0223,N,06115.0006,E,1,08,0.9,-1.6,M,-46.7,M,,*44
+(Jun 11 2022 22:24:28,  857997 sec) LogNmeaSentences()   $GPGSA,A,3,03,04,07,08,09,14,27,30,,,,,1.2,0.9,0.8*32
+(Jun 11 2022 22:24:28,  857997 sec) LogNmeaSentences()   $GPGSV,3,1,11,03,10,170,34,04,45,117,45,07,45,340,47,08,40,088,44*75
+(Jun 11 2022 22:24:29,  857998 sec) LogNmeaSentences()   $GPGSV,3,2,11,09,75,072,47,14,36,232,43,27,16,053,42,30,31,306,40*73
+(Jun 11 2022 22:24:29,  857998 sec) LogNmeaSentences()   $GPGSV,3,3,11,05,17,305,00,11,16,138,00,23,26,127,00*40
+(Jun 11 2022 22:24:36,  858005 sec) LogNmeaSentences()   $GPRMC,222420,A,2024.0204,N,06115.0027,E,001.8,189.8,110622,000.4,E*75
+(Jun 11 2022 22:24:37,  858006 sec) LogNmeaSentences()   $GPGGA,222420,2024.0204,N,06115.0027,E,1,08,0.9,-5.0,M,-46.7,M,,*43
+(Jun 11 2022 22:24:38,  858007 sec) GpsServices()        GPS services complete.
+(Jun 11 2022 22:25:11,  858040 sec) CLogin()             Connecting to primary host.
+(Jun 11 2022 22:25:26,  858056 sec) CLogin()             Connection 2 established in 15 seconds.
+(Jun 11 2022 22:26:01,  858090 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jun 11 2022 22:26:01,  858090 sec) login()              Login failed.
+(Jun 11 2022 22:26:31,  858120 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 11 2022 22:26:31,  858120 sec) login()              Login prompt not received.
+(Jun 11 2022 22:26:45,  858134 sec) CLogin()             Connection 3 established in 94 seconds.
+(Jun 11 2022 22:27:19,  858168 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jun 11 2022 22:27:19,  858168 sec) login()              Login failed.
+(Jun 11 2022 22:27:26,  858175 sec) login()              Login successful.
+(Jun 11 2022 22:27:29,  858178 sec) CLogin()             Logged in to host.  [Login required 44 seconds]
+(Jun 11 2022 22:27:41,  858190 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 11 2022 22:27:44,  858193 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 11 2022 22:27:46,  858195 sec) RxStartByte()        Sync errors encountered: 109
+(Jun 11 2022 22:27:50,  858199 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 11 2022 22:27:54,  858203 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 10 sec, 102.4 bps]
+(Jun 11 2022 22:27:54,  858203 sec) RxConfig()           Download successful.
+(Jun 11 2022 22:28:17,  858226 sec) WriteVitals()        Writing vitals to "7827.246.msg".
+(Jun 11 2022 22:28:33,  858242 sec) UpLoadFile()         Uploading "7827.246.msg" to host as "7827.246.msg".
+(Jun 11 2022 22:28:37,  858246 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 11 2022 22:28:51,  858260 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jun 11 2022 22:28:51,  858260 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jun 11 2022 22:29:00,  858269 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jun 11 2022 22:29:00,  858269 sec) TxPacket()           Packet xmit history: [11000011] (0:ok, 1:fail).
+(Jun 11 2022 22:31:09,  858398 sec) TxPacket()           NAK received - resending packet. [PktNum=0x12]
+(Jun 11 2022 22:31:10,  858399 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 11 2022 22:31:22,  858412 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(Jun 11 2022 22:31:23,  858412 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Jun 11 2022 22:31:53,  858442 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Jun 11 2022 22:31:53,  858442 sec) TxPacket()           Packet xmit history: [00101001] (0:ok, 1:fail).
+(Jun 11 2022 22:32:07,  858456 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:07,  858456 sec) TxPacket()           Packet xmit history: [01001001] (0:ok, 1:fail).
+(Jun 11 2022 22:32:12,  858461 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:13,  858462 sec) TxPacket()           Packet xmit history: [10010011] (0:ok, 1:fail).
+(Jun 11 2022 22:32:20,  858469 sec) TxPacket()           Packet xmit history: [00100110] (0:ok, 1:fail).
+(Jun 11 2022 22:32:26,  858475 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:26,  858475 sec) TxPacket()           Packet xmit history: [01001101] (0:ok, 1:fail).
+(Jun 11 2022 22:32:28,  858477 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:28,  858477 sec) TxPacket()           Packet xmit history: [10011011] (0:ok, 1:fail).
+(Jun 11 2022 22:32:33,  858482 sec) TxPacket()           Invalid response [0x35] - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:34,  858483 sec) TxPacket()           Packet xmit history: [00110111] (0:ok, 1:fail).
+(Jun 11 2022 22:32:35,  858484 sec) TxPacket()           Invalid response [0x74] - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:35,  858484 sec) TxPacket()           Packet xmit history: [01101111] (0:ok, 1:fail).
+(Jun 11 2022 22:32:36,  858485 sec) TxPacket()           Invalid response [0x6e] - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:37,  858486 sec) TxPacket()           Packet xmit history: [11011111] (0:ok, 1:fail).
+(Jun 11 2022 22:32:38,  858487 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:38,  858487 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jun 11 2022 22:32:40,  858490 sec) TxPacket()           Invalid response [0x45] - resending packet. [PktNum=0x17]
+(Jun 11 2022 22:32:41,  858490 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jun 11 2022 22:32:41,  858490 sec) TxPacket()           Exit status: -5
+(Jun 11 2022 22:32:41,  858490 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 11 2022 22:32:53,  858502 sec) UpLoadFile()         Upload failed.
+(Jun 11 2022 22:33:32,  858541 sec) chat()               Expected string [rx -c  7827.246.log] not received.
+(Jun 11 2022 22:33:32,  858541 sec) UpLoadFile()         Failed attempt to execute "rx -c  7827.246.log" on the host.
+(Jun 11 2022 22:33:32,  858541 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 11 2022 22:33:32,  858541 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 11 2022 22:33:37,  858546 sec) chat()               Expected string [cmd>] not received.
+(Jun 11 2022 22:33:37,  858546 sec) logout()             Can't get command prompt.
+(Jun 11 2022 22:33:42,  858551 sec) chat()               Expected string [logout] not received.
+(Jun 11 2022 22:33:42,  858551 sec) logout()             Attempt to log-out failed.
+(Jun 11 2022 22:33:47,  858556 sec) chat()               Expected string [cmd>] not received.
+(Jun 11 2022 22:33:47,  858556 sec) logout()             Can't get command prompt.
+(Jun 11 2022 22:33:52,  858561 sec) chat()               Expected string [logout] not received.
+(Jun 11 2022 22:33:52,  858561 sec) logout()             Attempt to log-out failed.
+(Jun 11 2022 22:33:57,  858566 sec) chat()               Expected string [cmd>] not received.
+(Jun 11 2022 22:33:57,  858566 sec) logout()             Can't get command prompt.
+(Jun 11 2022 22:34:02,  858571 sec) chat()               Expected string [logout] not received.
+(Jun 11 2022 22:34:02,  858571 sec) logout()             Attempt to log-out failed.
+(Jun 11 2022 22:34:02,  858571 sec) Telemetry()          Telemetry cycle complete: PrfId=246 ConnectionAttempts=3  Connections=3
+(Jun 11 2022 22:49:16,  859485 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Jun 11 2022 22:50:26,  859555 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.7dbars / 218.9uM 29.498C 29.201 8.979 -32.139 / 68,140,531
+(Jun 11 2022 22:50:34,  859563 sec) GpsServices()        GPS almanac is current.
+(Jun 11 2022 22:50:34,  859563 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 11 2022 22:51:29,  859618 sec) gga()                $GPGGA,225030,2023.8079,N,06115.2718,E,6,07,1.1,4.3,M,-46.7,M,,*61
+(Jun 11 2022 22:52:12,  859661 sec) gga()                $GPGGA,225040,2023.8051,N,06115.2734,E,6,07,1.1,0.3,M,-46.7,M,,*66
+(Jun 11 2022 22:53:39,  859748 sec) gga()                $GPGGA,225240,2023.7891,N,06115.2974,E,1,07,1.1,0.6,M,-46.7,M,,*67
+(Jun 11 2022 22:53:39,  859748 sec) GpsServices()        Profile 246 GPS fix obtained in 185 seconds.
+(Jun 11 2022 22:53:39,  859748 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 11 2022 22:53:40,  859749 sec) GpsServices()        Fix:   61.255  20.396 06/11/2022 225240    7
+(Jun 11 2022 22:54:29,  859798 sec) gga()                $GPGGA,225330,2023.7807,N,06115.3055,E,1,07,1.1,-1.7,M,-46.7,M,,*48
+(Jun 11 2022 22:54:36,  859805 sec) gga()                $GPGGA,225420,2023.7753,N,06115.3132,E,1,07,1.1,0.2,M,-46.7,M,,*69
+(Jun 11 2022 22:54:37,  859806 sec) GpsServices()        APF9 RTC skew (17s) OK.
+(Jun 11 2022 22:54:46,  859815 sec) LogNmeaSentences()   $GPRMC,225430,A,2023.7723,N,06115.3153,E,000.0,199.2,110622,000.4,E*70
+(Jun 11 2022 22:54:47,  859816 sec) LogNmeaSentences()   $GPGGA,225430,2023.7723,N,06115.3153,E,1,07,1.1,-0.9,M,-46.7,M,,*4E
+(Jun 11 2022 22:54:48,  859817 sec) LogNmeaSentences()   $GPGSA,A,3,04,07,08,09,14,27,30,,,,,,1.4,1.1,0.9*3F
+(Jun 11 2022 22:54:48,  859817 sec) LogNmeaSentences()   $GPGSV,3,1,12,04,34,131,43,07,47,358,43,08,38,069,44,09,69,122,47*7A
+(Jun 11 2022 22:54:49,  859818 sec) LogNmeaSentences()   $GPGSV,3,2,12,14,46,247,45,27,09,043,38,30,36,320,42,05,21,291,00*71
+(Jun 11 2022 22:54:49,  859818 sec) LogNmeaSentences()   $GPGSV,3,3,12,06,01,169,00,11,22,126,00,16,46,025,00,18,03,135,00*79
+(Jun 11 2022 22:54:56,  859825 sec) LogNmeaSentences()   $GPRMC,225440,A,2023.7698,N,06115.3183,E,001.5,120.6,110622,000.4,E*79
+(Jun 11 2022 22:54:57,  859826 sec) LogNmeaSentences()   $GPGGA,225440,2023.7698,N,06115.3183,E,1,07,1.1,-3.3,M,-46.7,M,,*4C
+(Jun 11 2022 22:54:58,  859827 sec) LogNmeaSentences()   $GPGSA,A,3,04,07,08,09,14,27,30,,,,,,1.4,1.1,0.9*3F
+(Jun 11 2022 22:54:58,  859827 sec) LogNmeaSentences()   $GPGSV,3,1,12,04,34,131,44,07,47,359,46,08,38,069,45,09,69,123,48*76
+(Jun 11 2022 22:54:59,  859828 sec) LogNmeaSentences()   $GPGSV,3,2,12,14,46,247,43,27,09,043,38,30,36,320,40,05,21,291,00*75
+(Jun 11 2022 22:54:59,  859828 sec) LogNmeaSentences()   $GPGSV,3,3,12,06,01,169,00,11,22,126,00,16,46,025,00,18,04,134,00*7F
+(Jun 11 2022 22:55:06,  859835 sec) LogNmeaSentences()   $GPRMC,225450,A,2023.7688,N,06115.3191,E,000.8,109.5,110622,000.4,E*7E
+(Jun 11 2022 22:55:07,  859836 sec) LogNmeaSentences()   $GPGGA,225450,2023.7688,N,06115.3191,E,1,07,1.1,-3.3,M,-46.7,M,,*4F
+(Jun 11 2022 22:55:08,  859837 sec) LogNmeaSentences()   $GPGSA,A,3,04,07,08,09,14,27,30,,,,,,1.4,1.1,0.9*3F
+(Jun 11 2022 22:55:08,  859837 sec) LogNmeaSentences()   $GPGSV,3,1,12,04,34,131,42,07,47,359,47,08,38,069,44,09,69,123,46*7E
+(Jun 11 2022 22:55:09,  859838 sec) LogNmeaSentences()   $GPGSV,3,2,12,14,46,247,43,27,09,043,38,30,36,320,43,05,21,291,00*76
+(Jun 11 2022 22:55:09,  859838 sec) LogNmeaSentences()   $GPGSV,3,3,12,06,01,169,00,11,22,126,00,16,46,025,00,18,04,134,00*7F
+(Jun 11 2022 22:55:16,  859845 sec) LogNmeaSentences()   $GPRMC,225500,A,2023.7670,N,06115.3204,E,003.7,062.7,110622,000.4,E*70
+(Jun 11 2022 22:55:17,  859846 sec) LogNmeaSentences()   $GPGGA,225500,2023.7670,N,06115.3204,E,1,07,1.1,-3.9,M,-46.7,M,,*49
+(Jun 11 2022 22:55:18,  859847 sec) LogNmeaSentences()   $GPGSA,A,3,04,07,08,09,14,27,30,,,,,,1.4,1.1,0.9*3F
+(Jun 11 2022 22:55:18,  859847 sec) LogNmeaSentences()   $GPGSV,3,1,12,04,34,131,42,07,47,359,45,08,38,069,43,09,69,123,45*78
+(Jun 11 2022 22:55:19,  859848 sec) LogNmeaSentences()   $GPGSV,3,2,12,14,46,247,44,27,09,042,40,30,36,321,45,05,21,291,00*78
+(Jun 11 2022 22:55:19,  859849 sec) LogNmeaSentences()   $GPGSV,3,3,12,06,01,169,00,11,22,126,00,16,46,025,00,18,04,134,00*7F
+(Jun 11 2022 22:55:20,  859849 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 4.00,,,,,,,,*73
+(Jun 11 2022 22:55:20,  859850 sec) GpsServices()        GPS services complete.
+(Jun 11 2022 22:56:02,  859891 sec) CLogin()             Connecting to primary host.
+(Jun 11 2022 22:56:20,  859909 sec) CLogin()             Connection 4 established in 18 seconds.
+(Jun 11 2022 22:56:50,  859939 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 11 2022 22:56:50,  859939 sec) login()              Login prompt not received.
+(Jun 11 2022 22:57:00,  859949 sec) login()              Login successful.
+(Jun 11 2022 22:57:03,  859952 sec) CLogin()             Logged in to host.  [Login required 43 seconds]
+(Jun 11 2022 22:57:15,  859964 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 11 2022 22:57:18,  859967 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 11 2022 22:57:24,  859973 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 11 2022 22:57:28,  859977 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 10 sec, 102.4 bps]
+(Jun 11 2022 22:57:28,  859977 sec) RxConfig()           Download successful.
+(Jun 11 2022 22:57:51,  860000 sec) WriteVitals()        Writing vitals to "7827.246.msg".
+(Jun 11 2022 22:58:10,  860019 sec) UpLoadFile()         Uploading "7827.246.msg" to host as "7827.246.msg".
+(Jun 11 2022 22:58:17,  860026 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 11 2022 22:59:04,  860073 sec) TxPacket()           NAK received - resending packet. [PktNum=0x06]
+(Jun 11 2022 22:59:04,  860073 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 11 2022 23:00:04,  860133 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jun 11 2022 23:00:04,  860133 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Jun 11 2022 23:00:12,  860142 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jun 11 2022 23:00:13,  860142 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Jun 11 2022 23:00:19,  860149 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jun 11 2022 23:00:20,  860149 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Jun 11 2022 23:00:53,  860183 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Jun 11 2022 23:00:54,  860183 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 11 2022 23:01:26,  860215 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Jun 11 2022 23:01:26,  860215 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jun 11 2022 23:01:30,  860220 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Jun 11 2022 23:01:31,  860220 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Jun 11 2022 23:01:44,  860234 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Jun 11 2022 23:01:45,  860234 sec) TxPacket()           Packet xmit history: [01001101] (0:ok, 1:fail).
+(Jun 11 2022 23:03:06,  860316 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jun 11 2022 23:03:07,  860316 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 11 2022 23:03:56,  860366 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(Jun 11 2022 23:03:57,  860366 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 11 2022 23:04:14,  860383 sec) TxPacket()           No carrier detected.
+(Jun 11 2022 23:04:14,  860383 sec) TxPacket()           Exit status: -5
+(Jun 11 2022 23:04:14,  860383 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 11 2022 23:04:25,  860394 sec) UpLoadFile()         Upload failed.
+(Jun 11 2022 23:04:26,  860395 sec) CLogin()             Connecting to primary host.
+(Jun 11 2022 23:04:32,  860401 sec) chat()               Expected string [OK] not received.
+(Jun 11 2022 23:04:32,  860401 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jun 11 2022 23:04:32,  860401 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jun 11 2022 23:04:32,  860401 sec) modem_connect()      Modem configuration failed.
+(Jun 11 2022 23:04:32,  860401 sec) connect()            Connection attempt failed.
+(Jun 11 2022 23:04:42,  860411 sec) CLogin()             Connection 5 established in 16 seconds.
+(Jun 11 2022 23:05:14,  860443 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jun 11 2022 23:05:14,  860443 sec) login()              Login failed.
+(Jun 11 2022 23:06:13,  860502 sec) expect()             Attempt to read prompt string [Password:] failed.
+(Jun 11 2022 23:06:13,  860502 sec) login()              Password prompt not received.
+(Jun 11 2022 23:06:13,  860502 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 11 2022 23:07:14,  860563 sec) chat()               Expected string [CONNECT] not received.
+(Jun 11 2022 23:07:14,  860563 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jun 11 2022 23:07:14,  860563 sec) connect()            Connection attempt failed.
+(Jun 11 2022 23:08:15,  860624 sec) chat()               Expected string [CONNECT] not received.
+(Jun 11 2022 23:08:15,  860624 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jun 11 2022 23:08:15,  860624 sec) connect()            Connection attempt failed.
+(Jun 11 2022 23:08:15,  860624 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jun 11 2022 23:08:16,  860625 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 11 2022 23:08:16,  860625 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 11 2022 23:08:16,  860625 sec) logout()             No carrier detected.
+(Jun 11 2022 23:08:16,  860625 sec) Telemetry()          Telemetry cycle complete: PrfId=246 ConnectionAttempts=8  Connections=5
+(Jun 11 2022 23:23:31,  861540 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Jun 11 2022 23:24:41,  861610 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.7dbars / 223.3uM 29.023C 29.153 8.965 -17.147 / 60,148,531
+(Jun 11 2022 23:24:49,  861618 sec) GpsServices()        GPS almanac is current.
+(Jun 11 2022 23:24:49,  861618 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 11 2022 23:25:07,  861636 sec) gga()                $GPGGA,232440,2023.7933,N,06115.2892,E,0,00,,,M,,M,,*51
+(Jun 11 2022 23:25:50,  861679 sec) gga()                $GPGGA,232450,2023.5058,N,06115.6547,E,1,06,1.2,0.5,M,-46.8,M,,*6F
+(Jun 11 2022 23:25:50,  861679 sec) GpsServices()        Profile 246 GPS fix obtained in 61 seconds.
+(Jun 11 2022 23:25:50,  861679 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 11 2022 23:25:50,  861680 sec) GpsServices()        Fix:   61.261  20.392 06/11/2022 232450    6
+(Jun 11 2022 23:26:39,  861728 sec) gga()                $GPGGA,232540,2023.5051,N,06115.6550,E,1,06,1.2,2.2,M,-46.8,M,,*65
+(Jun 11 2022 23:26:46,  861735 sec) gga()                $GPGGA,232630,2023.4987,N,06115.6647,E,1,06,1.2,-1.1,M,-46.8,M,,*4A
+(Jun 11 2022 23:26:47,  861736 sec) GpsServices()        APF9 RTC skew (17s) OK.
+(Jun 11 2022 23:26:47,  861736 sec) GpsServices()        GPS services complete.
+(Jun 11 2022 23:28:40,  861849 sec) CLogin()             Connecting to primary host.
+(Jun 11 2022 23:28:55,  861864 sec) CLogin()             Connection 6 established in 15 seconds.
+(Jun 11 2022 23:29:06,  861875 sec) login()              Login successful.
+(Jun 11 2022 23:29:12,  861881 sec) chat()               Expected string [cmd>] not received.
+(Jun 11 2022 23:29:12,  861881 sec) login()              Attempt to set the command prompt failed.
+(Jun 11 2022 23:29:16,  861886 sec) CLogin()             Logged in to host.  [Login required 21 seconds]
+(Jun 11 2022 23:29:28,  861898 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 11 2022 23:29:31,  861900 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 11 2022 23:29:39,  861908 sec) Rx()                 Truncated packet received - retrying.
+(Jun 11 2022 23:29:41,  861910 sec) RxStartByte()        Sync errors encountered: 935
+(Jun 11 2022 23:29:46,  861915 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 11 2022 23:29:51,  861920 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 20 sec, 51.2 bps]
+(Jun 11 2022 23:29:51,  861920 sec) RxConfig()           Download successful.
+(Jun 11 2022 23:30:14,  861943 sec) WriteVitals()        Writing vitals to "7827.246.msg".
+(Jun 11 2022 23:30:30,  861959 sec) UpLoadFile()         Uploading "7827.246.msg" to host as "7827.246.msg".
+(Jun 11 2022 23:30:34,  861963 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 11 2022 23:30:47,  861977 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jun 11 2022 23:30:48,  861977 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jun 11 2022 23:31:38,  862028 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jun 11 2022 23:31:39,  862028 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jun 11 2022 23:31:51,  862041 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jun 11 2022 23:31:52,  862041 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Jun 11 2022 23:33:04,  862114 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Jun 11 2022 23:33:05,  862114 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 11 2022 23:33:53,  862163 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(Jun 11 2022 23:33:54,  862163 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 11 2022 23:34:51,  862221 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1c]
+(Jun 11 2022 23:34:52,  862221 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 11 2022 23:35:48,  862277 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(Jun 11 2022 23:35:49,  862278 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 11 2022 23:36:10,  862300 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Jun 11 2022 23:36:11,  862300 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jun 11 2022 23:36:17,  862307 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Jun 11 2022 23:36:18,  862307 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Jun 11 2022 23:36:40,  862330 sec) TxPacket()           NAK received - resending packet. [PktNum=0x26]
+(Jun 11 2022 23:36:41,  862330 sec) TxPacket()           Packet xmit history: [10011001] (0:ok, 1:fail).
+(Jun 11 2022 23:36:58,  862348 sec) Tx()                 Transmission completed successfully [39 packets, 39672 bytes, 383 sec, 104.3 bps]
+(Jun 11 2022 23:36:59,  862348 sec) UpLoadFile()         Upload successful.
+(Jun 11 2022 23:37:09,  862358 sec) UpLoadFile()         Uploading "7827.246.log" to host as "7827.246.log".
+(Jun 11 2022 23:37:25,  862374 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 11 2022 23:37:53,  862403 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jun 11 2022 23:37:54,  862403 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Jun 11 2022 23:37:59,  862408 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jun 11 2022 23:37:59,  862408 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(Jun 11 2022 23:38:11,  862421 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 11 2022 23:38:12,  862421 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(Jun 11 2022 23:38:22,  862431 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 11 2022 23:38:23,  862432 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(Jun 11 2022 23:38:57,  862466 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jun 11 2022 23:38:58,  862467 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 11 2022 23:39:04,  862474 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jun 11 2022 23:39:05,  862474 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jun 11 2022 23:39:35,  862505 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0d]
+(Jun 11 2022 23:39:36,  862505 sec) TxPacket()           Packet xmit history: [00110001] (0:ok, 1:fail).
+(Jun 11 2022 23:40:27,  862556 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jun 11 2022 23:40:28,  862557 sec) TxPacket()           Packet xmit history: [11000101] (0:ok, 1:fail).
+(Jun 11 2022 23:40:34,  862563 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jun 11 2022 23:40:34,  862563 sec) TxPacket()           Packet xmit history: [10001011] (0:ok, 1:fail).
+(Jun 11 2022 23:41:18,  862608 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(Jun 11 2022 23:41:19,  862608 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 11 2022 23:41:27,  862616 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(Jun 11 2022 23:41:27,  862616 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jun 11 2022 23:41:34,  862624 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(Jun 11 2022 23:41:35,  862624 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Jun 11 2022 23:42:52,  862701 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Jun 11 2022 23:42:53,  862702 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 11 2022 23:43:46,  862755 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(Jun 11 2022 23:43:46,  862755 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jun 11 2022 23:43:56,  862765 sec) TxPacket()           No carrier detected.
+(Jun 11 2022 23:43:56,  862765 sec) TxPacket()           Exit status: -5
+(Jun 11 2022 23:43:56,  862765 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 11 2022 23:44:07,  862776 sec) UpLoadFile()         Upload failed.
+(Jun 11 2022 23:44:18,  862787 sec) CLogin()             Connecting to primary host.
+(Jun 11 2022 23:44:24,  862793 sec) chat()               Expected string [OK] not received.
+(Jun 11 2022 23:44:24,  862793 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jun 11 2022 23:44:24,  862793 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jun 11 2022 23:44:24,  862793 sec) modem_connect()      Modem configuration failed.
+(Jun 11 2022 23:44:24,  862793 sec) connect()            Connection attempt failed.
+(Jun 11 2022 23:44:38,  862807 sec) CLogin()             Connection 7 established in 21 seconds.
+(Jun 11 2022 23:45:10,  862839 sec) expect()             Attempt to read prompt string [Last login:] failed.
+(Jun 11 2022 23:45:10,  862839 sec) login()              Login failed.
+(Jun 11 2022 23:45:40,  862869 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 11 2022 23:45:40,  862869 sec) login()              Login prompt not received.
+(Jun 11 2022 23:45:40,  862869 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 11 2022 23:46:41,  862930 sec) chat()               Expected string [CONNECT] not received.
+(Jun 11 2022 23:46:41,  862930 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jun 11 2022 23:46:41,  862930 sec) connect()            Connection attempt failed.
+(Jun 11 2022 23:47:42,  862991 sec) chat()               Expected string [CONNECT] not received.
+(Jun 11 2022 23:47:42,  862991 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jun 11 2022 23:47:42,  862991 sec) connect()            Connection attempt failed.
+(Jun 11 2022 23:47:42,  862991 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jun 11 2022 23:47:43,  862992 sec) UpLoad()             Files successfully uploaded: 1
+(Jun 11 2022 23:47:43,  862992 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 11 2022 23:47:43,  862992 sec) logout()             No carrier detected.
+
+
+(Jun 11 2022 23:47:43) LogSize()            Log file is 38969 bytes.  Limit is 40960 bytes.
+
+(Jun 11 2022 23:47:43,  862992 sec) Telemetry()          Telemetry cycle complete: PrfId=246 ConnectionAttempts=13  Connections=7
+(Jun 12 2022 00:02:58,  863907 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Jun 12 2022 00:03:52,  863961 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.6dbars / 221.2uM 28.887C 29.308 8.965 -12.875 / 61,154,531
+(Jun 12 2022 00:03:53,  863962 sec) GpsServices()        GPS almanac is current.
+(Jun 12 2022 00:03:53,  863962 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 12 2022 00:04:08,  863978 sec) gga()                $GPGGA,000340,2023.4987,N,06115.6647,E,0,00,,,M,,M,,*5B
+(Jun 12 2022 00:04:51,  864020 sec) gga()                $GPGGA,000350,2023.1982,N,06116.0637,E,1,06,1.4,14.6,M,-46.8,M,,*50
+(Jun 12 2022 00:04:52,  864021 sec) GpsServices()        Profile 246 GPS fix obtained in 59 seconds.
+(Jun 12 2022 00:04:52,  864021 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 12 2022 00:04:52,  864021 sec) GpsServices()        Fix:   61.268  20.387 06/12/2022 000350    6
+(Jun 12 2022 00:05:39,  864068 sec) gga()                $GPGGA,000440,2023.1927,N,06116.0721,E,1,06,1.4,5.4,M,-46.8,M,,*6D
+(Jun 12 2022 00:05:46,  864075 sec) gga()                $GPGGA,000530,2023.1866,N,06116.0776,E,1,09,0.9,3.8,M,-46.8,M,,*64
+(Jun 12 2022 00:05:47,  864076 sec) GpsServices()        APF9 RTC skew (17s) OK.
+(Jun 12 2022 00:05:47,  864076 sec) GpsServices()        GPS services complete.
+(Jun 12 2022 00:06:37,  864126 sec) CLogin()             Connecting to primary host.
+(Jun 12 2022 00:07:05,  864154 sec) CLogin()             Connection 8 established in 28 seconds.
+
+<EOT>

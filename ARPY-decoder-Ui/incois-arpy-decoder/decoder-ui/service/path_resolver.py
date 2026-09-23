@@ -10,11 +10,15 @@ from __future__ import annotations
 import csv
 import logging
 import os
+import re
 import sys
 import tempfile
 import threading
 from pathlib import Path
 from typing import Any
+
+#: ARVOR-I operator delivery pattern matching src/argo_decoder/io/rsync.py
+_ARVOR_EML_RE = re.compile(r"^redacted_imei_(?P<prefix>\d+)_(?P<momsn>\d+)\.eml$")
 
 
 def find_project_root() -> Path:
@@ -165,7 +169,24 @@ def find_registry_csv(root: Path | None = None) -> Path | None:
 def find_raw_input_directories(root: Path | None = None) -> list[Path]:
     """Find all potential raw float telemetry directories in priority order."""
     root = root or PROJECT_ROOT
-    candidates = [
+    candidates = []
+
+    # Check for consolidated All-float-inputs folder at workspace root or near root
+    workspace_candidates = [
+        root.parent.parent / "All-float-inputs",
+        root.parent / "All-float-inputs",
+        root / "All-float-inputs",
+        Path.cwd() / "All-float-inputs",
+        Path.cwd().parent / "All-float-inputs",
+    ]
+    for ac in workspace_candidates:
+        if ac.is_dir():
+            resolved_ac = ac.resolve()
+            if resolved_ac not in candidates:
+                candidates.append(resolved_ac)
+            break
+
+    candidates.extend([
         # ARVOR-I raw transmissions & dated operator drops
         root / "arvor_raw" / "ARVOR-I-raw-files" / "20260819",
         root / "arvor_raw" / "harness_bundle" / "more-raw-files-and-manuals",
@@ -185,7 +206,7 @@ def find_raw_input_directories(root: Path | None = None) -> list[Path]:
         root / "sample_data" / "uploads",
         root / "sample_data",
         root / "uploads",
-    ]
+    ])
 
     # Dynamically scan arvor_raw for any dated or nested subdirectories
     arvor_raw = root / "arvor_raw"
@@ -241,27 +262,38 @@ def count_raw_files_for_float(input_dir: Path, ptt: str, imei: str, wmo: int) ->
     # 1. Check direct subdirectories matching WMO / PTT / IMEI
     for item in input_dir.iterdir():
         if item.is_dir() and item.name in id_candidates:
-            # Count .eml files (ARVOR-I transmissions)
-            eml_files = [f for f in item.iterdir() if f.is_file() and f.name.endswith(".eml")]
+            # Count decodable .eml files (ARVOR-I transmissions matching decoder pattern)
+            eml_files = [
+                f for f in item.iterdir()
+                if f.is_file()
+                and f.suffix.lower() == ".eml"
+                and _ARVOR_EML_RE.match(f.name)
+            ]
             if eml_files:
                 return len(eml_files)
-            # Count .txt files (ARGOS cycle transmissions)
-            txt_files = [f for f in item.iterdir() if f.is_file() and f.name.endswith(".txt")]
+            # Count .txt files (ARGOS cycle transmissions or co_* files)
+            txt_files = [f for f in item.iterdir() if f.is_file() and f.suffix.lower() == ".txt"]
             if txt_files:
                 return len(txt_files)
             # Count .sbd files
-            sbd_files = [f for f in item.iterdir() if f.is_file() and f.name.endswith(".sbd")]
+            sbd_files = [f for f in item.iterdir() if f.is_file() and f.suffix.lower() == ".sbd"]
             if sbd_files:
                 return len(sbd_files)
-            # Fallback: all non-hidden regular files
-            files = [f for f in item.iterdir() if f.is_file() and not f.name.startswith(".")]
+            # Fallback: all non-hidden regular files EXCEPT unparseable .eml files
+            files = [
+                f for f in item.iterdir()
+                if f.is_file() and not f.name.startswith(".") and f.suffix.lower() != ".eml"
+            ]
             return len(files)
 
     # 2. Check flat files matching candidate IDs
     count = 0
     for f in input_dir.glob("*"):
         if f.is_file() and any(cand in f.name for cand in id_candidates):
-            if f.suffix in (".txt", ".eml", ".sbd") or not f.name.startswith("."):
+            if f.suffix.lower() == ".eml":
+                if _ARVOR_EML_RE.match(f.name):
+                    count += 1
+            elif f.suffix.lower() in (".txt", ".sbd") or not f.name.startswith("."):
                 count += 1
     if count > 0:
         return count
@@ -270,7 +302,12 @@ def count_raw_files_for_float(input_dir: Path, ptt: str, imei: str, wmo: int) ->
     for cand in id_candidates:
         cand_dir = input_dir / "archive" / "cycle" / cand
         if cand_dir.is_dir():
-            files = [f for f in cand_dir.iterdir() if f.is_file() and not f.name.startswith(".")]
+            files = [
+                f for f in cand_dir.iterdir()
+                if f.is_file()
+                and not f.name.startswith(".")
+                and (f.suffix.lower() != ".eml" or _ARVOR_EML_RE.match(f.name))
+            ]
             if files:
                 return len(files)
 
@@ -295,6 +332,9 @@ def build_dynamic_float_presets(root: Path | None = None) -> list[dict[str, Any]
 
     # Helper for picking default raw directory when no specific files are indexed
     def _default_raw_dir_for(platform_type: str, trans_name: str) -> Path | None:
+        for r in raw_dirs:
+            if "all-float-inputs" in str(r).lower():
+                return r
         if trans_name == "IRIDIUM_SBD" or "ARVOR" in platform_type.upper() or "PROVOR" in platform_type.upper():
             for r in raw_dirs:
                 if "arvor" in str(r).lower():
@@ -334,6 +374,10 @@ def build_dynamic_float_presets(root: Path | None = None) -> list[dict[str, Any]
                 best_count = 0
                 for rdir in raw_dirs:
                     cnt = count_raw_files_for_float(rdir, ptt, imei, wmo)
+                    if cnt > 0 and "all-float-inputs" in str(rdir).lower():
+                        best_count = cnt
+                        best_raw_dir = rdir
+                        break
                     if cnt > best_count:
                         best_count = cnt
                         best_raw_dir = rdir
@@ -417,6 +461,10 @@ def build_dynamic_float_presets(root: Path | None = None) -> list[dict[str, Any]
                     best_count = 0
                     for rdir in raw_dirs:
                         cnt = count_raw_files_for_float(rdir, ptt, imei, wmo)
+                        if cnt > 0 and "all-float-inputs" in str(rdir).lower():
+                            best_count = cnt
+                            best_raw_dir = rdir
+                            break
                         if cnt > best_count:
                             best_count = cnt
                             best_raw_dir = rdir
@@ -454,6 +502,7 @@ def build_dynamic_float_presets(root: Path | None = None) -> list[dict[str, Any]
     #    hardcoded WMOs). A failure here must never break legacy presets.
     try:
         _discover_cts4_presets(root, presets_map)
+        _discover_apf11_presets(root, presets_map)
     except Exception as e:
         logging.getLogger("path_resolver").error(
             "CTS4 preset discovery failed: %s (%s) — no 301 float presets "
@@ -532,52 +581,100 @@ def build_dynamic_float_presets(root: Path | None = None) -> list[dict[str, Any]
 #: Rooted at the repo: primary location first, repo-root fallback second.
 CTS4_DATA_CANDIDATES = (
     Path("decoder-ui") / "data" / "cts4",
+    Path("data") / "cts4",
     Path("cts4_raw"),
+    Path("cts4"),
 )
 
 
 def find_cts4_data_root(root: Path | None = None) -> Path | None:
     """Locate the staged CTS4 workstation-input tree, if present."""
-    root = root or PROJECT_ROOT
-    for cand in CTS4_DATA_CANDIDATES:
-        c = root / cand
-        if c.is_dir():
-            return c.resolve()
+    bases: list[Path] = []
+    if root is not None:
+        bases.append(Path(root))
+    bases.extend([
+        PROJECT_ROOT,
+        PROJECT_ROOT / "decoder-ui",
+        Path.cwd(),
+        Path.cwd() / "decoder-ui",
+        PROJECT_ROOT.parent,
+        PROJECT_ROOT.parent.parent,
+    ])
+    seen: set[Path] = set()
+    for base in bases:
+        base_resolved = base.resolve()
+        if base_resolved in seen:
+            continue
+        seen.add(base_resolved)
+        for cand in CTS4_DATA_CANDIDATES:
+            c = base_resolved / cand
+            if c.is_dir():
+                return c.resolve()
     return None
 
 
 def find_cts4_sbd_root(root: Path | None = None) -> Path | None:
     """Locate the directory whose immediate subdirectories are raw SBD groups."""
     base = find_cts4_data_root(root)
-    if base is None:
-        return None
-    direct = base / "SBD-BGC-raw"
-    if direct.is_dir():
-        return direct
-    # Tolerant layout: group directories directly under the data root.
-    try:
-        for child in base.iterdir():
-            if child.is_dir() and next(child.rglob("*.sbd"), None) is not None:
-                return base
-    except OSError:
-        pass
+    if base is not None:
+        direct = base / "SBD-BGC-raw"
+        if direct.is_dir():
+            return direct
+        # Tolerant layout: group directories directly under the data root.
+        try:
+            for child in base.iterdir():
+                if child.is_dir() and next(child.rglob("*.sbd"), None) is not None:
+                    return base
+        except OSError:
+            pass
+
+    # Fallback to All-float-inputs PROVOR directory if staged there
+    root_resolved = root or PROJECT_ROOT
+    for candidate_parent in (
+        root_resolved.parent.parent,
+        root_resolved.parent,
+        root_resolved,
+        Path.cwd(),
+        Path.cwd().parent,
+    ):
+        afi_cts4 = candidate_parent / "All-float-inputs" / "PROVOR-CTS4-Bio-(coriolis_does_them)"
+        if afi_cts4.is_dir():
+            return afi_cts4.resolve()
+
     return None
 
 
 def find_cts4_meta_dir(root: Path | None = None) -> Path | None:
     """Locate the directory holding ``incois_<wmo>_meta.nc`` files, if present."""
     base = find_cts4_data_root(root)
-    if base is None:
-        return None
-    direct = base / "ref" / "gdac_incois_301"
-    if direct.is_dir():
-        return direct
-    # Tolerant layout: meta.nc files directly under the data root.
-    try:
-        if next(base.glob("*_meta.nc"), None) is not None:
-            return base
-    except OSError:
-        pass
+    if base is not None:
+        direct = base / "ref" / "gdac_incois_301"
+        if direct.is_dir() and next(direct.glob("*_meta.nc"), None) is not None:
+            return direct
+        # Tolerant layout: meta.nc files directly under the data root.
+        try:
+            if next(base.glob("*_meta.nc"), None) is not None:
+                return base
+        except OSError:
+            pass
+
+    # Search in potential candidate directories across parent trees
+    root_resolved = root or PROJECT_ROOT
+    for candidate_parent in (
+        root_resolved,
+        root_resolved.parent,
+        root_resolved.parent.parent,
+        Path.cwd(),
+        Path.cwd().parent,
+    ):
+        for sub in (
+            candidate_parent / "decoder-ui" / "data" / "cts4" / "ref" / "gdac_incois_301",
+            candidate_parent / "data" / "cts4" / "ref" / "gdac_incois_301",
+            candidate_parent / "ref" / "gdac_incois_301",
+        ):
+            if sub.is_dir() and next(sub.glob("*_meta.nc"), None) is not None:
+                return sub.resolve()
+
     return None
 
 
@@ -736,6 +833,16 @@ def _discover_cts4_presets(root: Path, presets_map: dict[int, dict[str, Any]]) -
                 "Neither raw SBD group nor GDAC meta.nc staged — decode "
                 "unavailable."
             )
+        all_inputs_dir = None
+        for ac in (root.parent.parent / "All-float-inputs", root.parent / "All-float-inputs", root / "All-float-inputs"):
+            if ac.is_dir():
+                all_inputs_dir = ac
+                break
+        input_path_val = (
+            str(all_inputs_dir)
+            if (all_inputs_dir and (all_inputs_dir / str(wmo)).is_dir())
+            else (str(g["group_dir"]) if g else "")
+        )
         presets_map[wmo] = {
             "wmo": wmo,
             "name": f"WMO {wmo} (PROVOR_III / IRIDIUM_SBD)",
@@ -743,7 +850,7 @@ def _discover_cts4_presets(root: Path, presets_map: dict[int, dict[str, Any]]) -
             "transmission_type": "IRIDIUM_SBD",
             "decoder_id": 301,
             "decoder_version": dec_ver,
-            "input_path": str(g["group_dir"]) if g else "",
+            "input_path": input_path_val,
             "metadata_backend": "cts4",
             "registry_path": None,
             "info_dir": None,
@@ -755,4 +862,114 @@ def _discover_cts4_presets(root: Path, presets_map: dict[int, dict[str, Any]]) -
             "cts4": True,
             "cts4_group_dir": str(g["group_dir"]) if g else None,
             "cts4_meta_nc": str(meta_nc) if has_meta and meta_nc else None,
+        }
+
+
+# ---------------------------------------------------------------------------
+# APF11 Bio floats (frozen builder products) — staging discovery + presets.
+# ---------------------------------------------------------------------------
+APF11_DATA_CANDIDATES = (
+    "apf11_bio",
+    "../apf11_bio",
+    "../../apf11_bio",
+    "data/apf11_bio",
+    "../apf11-bio",
+)
+
+
+def find_apf11_data_root(root: Path | None = None) -> Path | None:
+    """APF11 Bio staging root (holds consolidated/ + source/ trees)."""
+    bases = []
+    if root is not None:
+        bases.append(Path(root))
+    bases.append(PROJECT_ROOT)
+    for base in bases:
+        for cand in APF11_DATA_CANDIDATES:
+            p = (base / cand).resolve()
+            if p.is_dir() and ((p / "consolidated").is_dir() or (p / "source").is_dir()):
+                return p
+    return None
+
+
+def find_apf11_consolidated_dir(root: Path | None = None) -> Path | None:
+    data_root = find_apf11_data_root(root)
+    p = data_root / "consolidated" if data_root else None
+    return p if p and p.is_dir() else None
+
+
+def find_apf11_raw_root(root: Path | None = None) -> Path | None:
+    data_root = find_apf11_data_root(root)
+    if not data_root:
+        return None
+    p = data_root / "source" / "APF-11-metadata-and-raw-files" / "raw-files"
+    return p if p.is_dir() else None
+
+
+def find_apf11_metadata_dir(root: Path | None = None) -> Path | None:
+    """config/metadata carrying sensor-info_apf11.csv + meta.csv."""
+    candidates = []
+    if root is not None:
+        candidates.append(Path(root))
+    candidates.append(PROJECT_ROOT / "config" / "metadata")
+    for p in candidates:
+        p = p.resolve()
+        if (p / "sensor-info_apf11.csv").is_file() and (p / "meta.csv").is_file():
+            return p
+    return None
+
+
+def scan_apf11_floats(meta_dir: Path | None = None) -> list[dict[str, Any]]:
+    """APF11 floats from sensor-info_apf11.csv (col2 WMO, col3 serial; prefix f+serial)."""
+    md = find_apf11_metadata_dir(meta_dir)
+    floats: list[dict[str, Any]] = []
+    if md is None:
+        return floats
+    import csv as _csv
+
+    with open(md / "sensor-info_apf11.csv", newline="", encoding="utf-8") as fh:
+        for row in _csv.reader(fh, delimiter=chr(9)):
+            if len(row) < 3 or not row[1].strip().isdigit() or not row[2].strip().isdigit():
+                continue
+            serial = row[2].strip()
+            floats.append({"wmo": int(row[1]), "serial": serial, "prefix": f"f{serial}"})
+    floats.sort(key=lambda f: f["wmo"])
+    return floats
+
+
+def _discover_apf11_presets(root: Path, presets_map: dict[int, dict[str, Any]]) -> None:
+    meta_dir = find_apf11_metadata_dir(root)
+    consolidated = find_apf11_consolidated_dir(root)
+    raw_root = find_apf11_raw_root(root)
+    if meta_dir is None:
+        return
+    for fl in scan_apf11_floats(meta_dir):
+        n_inputs = len(list(consolidated.glob(f'{fl["prefix"]}_*'))) if consolidated else 0
+        if n_inputs == 0 and raw_root and (raw_root / fl["prefix"]).is_dir():
+            n_inputs = len(list((raw_root / fl["prefix"]).iterdir()))
+        all_inputs_dir = None
+        for ac in (root.parent.parent / "All-float-inputs", root.parent / "All-float-inputs", root / "All-float-inputs"):
+            if ac.is_dir():
+                all_inputs_dir = ac
+                break
+        input_path_val = (
+            str(all_inputs_dir)
+            if (all_inputs_dir and ((all_inputs_dir / fl["prefix"]).is_dir() or (all_inputs_dir / str(fl["wmo"])).is_dir()))
+            else (str(raw_root) if raw_root else "")
+        )
+        presets_map[fl["wmo"]] = {
+            "wmo": fl["wmo"],
+            "name": f'{fl["prefix"]} / {fl["wmo"]} (APF11 Bio)',
+            "apf11": True,
+            "apf11_prefix": fl["prefix"],
+            "apf11_serial": fl["serial"],
+            "apf11_consolidated": str(consolidated) if consolidated else "",
+            "apf11_raw_root": str(raw_root) if raw_root else "",
+            "input_path": input_path_val,
+            "input_file_count": n_inputs,
+            "meta_dir": str(meta_dir),
+            "metadata_backend": "apf11",
+            "platform_type": "APEX APF11",
+            "float_type": "APEX",
+            "transmission_type": "IRIDIUM",
+            "decoder_id": None,
         }

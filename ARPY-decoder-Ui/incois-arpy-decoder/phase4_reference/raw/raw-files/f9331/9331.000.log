@@ -1,0 +1,113 @@
+(Oct 14 2014 09:14:26,   11100 sec) SelfTest()           Executing self-test for ApfId 9331.
+(Oct 14 2014 09:14:27,   11100 sec) PistonMoveAbsWTO()    227->223 226 225 224 223 [17sec, 15.1Volts, 0.153Amps, CPT:17sec]
+(Oct 14 2014 09:14:44,   11117 sec) PistonMoveAbsWTO()    223->227 224 225 226 227 [16sec, 15.1Volts, 0.141Amps, CPT:33sec]
+(Oct 14 2014 09:15:00,   11134 sec) SelfTest()           Passed: Timed piston movements from 227 to 223 counts and back.
+(Oct 14 2014 09:15:01,   11134 sec) SelfTest()           Passed: internal pressure [88, -4.5"Hg] less than threshold [96, -2.1"Hg].
+(Oct 14 2014 09:15:01,   11135 sec) SelfTest()           Passed: FLASH file system has been initialized.
+(Oct 14 2014 09:15:04,   11138 sec) SelfTest()           Passed: FLASH file system has been reformatted.
+(Oct 14 2014 09:15:06,   11140 sec) SelfTest()           Passed: Response received from SBE41cp.
+(Oct 14 2014 09:15:13,   11146 sec) SelfTest()           Passed: Sbe41cp SerNo: 5691
+(Oct 14 2014 09:15:27,   11161 sec) SelfTest()           Passed: SBE41cp (SerNo 5691) FwRev accepted: [2.0]
+(Oct 14 2014 09:15:36,   11170 sec) Sbe41cpConfig()      Configuration successful.
+(Oct 14 2014 09:15:48,   11181 sec) Sbe41cpEnablePts()   PTS output enabled during CP mode.
+(Oct 14 2014 09:15:57,   11190 sec) Sbe41cpTsWait()      Configuration successful.
+(Oct 14 2014 09:16:01,   11194 sec) SelfTest()           Passed: SBE41cp configuration was successful.
+(Oct 14 2014 09:16:04,   11197 sec) SelfTest()           Passed: LBT model: 9522B
+(Oct 14 2014 09:16:05,   11198 sec) SelfTest()           Passed: LBT firmware revision: ST10001
+(Oct 14 2014 09:16:06,   11199 sec) IrModemConfigure()   Modem configured for fixed (19200) baud rate.
+(Oct 14 2014 09:16:06,   11199 sec) IrModemConfigure()   Lbt9522b's GPS pass-thru disabled to save power.
+(Oct 14 2014 09:16:06,   11200 sec) IrModemConfigure()   Configuration saved to modem's NVRAM.
+(Oct 14 2014 09:16:07,   11200 sec) IrModemConfigure()   Modem configuration successful.
+(Oct 14 2014 09:16:07,   11200 sec) SelfTest()           Passed: LBT configuration was successful.
+(Oct 14 2014 09:16:08,   11201 sec) SelfTest()           Passed: LBT IMEI: 300025010045770
+(Oct 14 2014 09:16:14,   11207 sec) SelfTest()           Passed: SIM card ICCID: 8988169224001047969
+(Oct 14 2014 09:16:15,   11208 sec) ConfigGarmin15()     Garmin GPS15 configuration initiated.
+(Oct 14 2014 09:16:22,   11215 sec) ConfigGarmin15()     Garmin GPS15 successfully configured.
+(Oct 14 2014 09:16:27,   11220 sec) SelfTest()           Passed: Optode FwRev accepted: [4.4.8]
+(Oct 14 2014 09:16:31,   11224 sec) SelfTest()           Passed: Optode SerNo: 1617
+(Oct 14 2014 09:16:44,   11237 sec) OptodeConfig()       Configuration successful.
+(Oct 14 2014 09:16:44,   11238 sec) SelfTest()           Passed: Optode configuration was successful.
+(Oct 14 2014 09:16:48,   11241 sec) SelfTest()           Passed: FLBB SerNo: 3174
+(Oct 14 2014 09:16:51,   11244 sec) SelfTest()           Passed: FLBB FwRev accepted: [FLNTUAPX 4.04]
+(Oct 14 2014 09:16:54,   11247 sec) FlbbConfig()         FLBB configuration successful.
+(Oct 14 2014 09:16:54,   11248 sec) SelfTest()           Passed: FLBB configuration was successful.
+(Oct 14 2014 09:17:00,   11253 sec) SelfTest()           Passed: FLBB wavelengths: Fl[470] Bb[700].
+(Oct 14 2014 09:17:01,   11255 sec) PActivateInit()      Self-test passed - initiating six 4-second squawks.
+(Oct 14 2014 09:17:54,   11307 sec) PActivateInit()      Pressure activation mode initiated. [itime=11255]
+(Oct 14 2014 09:17:54,       1 sec) PistonMoveAbsWTO()    227->016 226 225 224 223 222 221 220 219 218 217 216 215 214 213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 016 [997sec, 15.0Volts, 0.145Amps, CPT:1030sec]
+(Oct 14 2014 09:34:48,    1015 sec) Apf9Init()           Asynchronous wake-up detected (ie., wake-up not initiated by alarm signal).
+(Oct 14 2014 09:34:55,    1022 sec) SelfTest()           Executing self-test for ApfId 9331.
+(Oct 14 2014 09:34:55,    1022 sec) PistonMoveAbsWTO()    016->020 017 018 019 020 [16sec, 15.0Volts, 0.137Amps, CPT:1046sec]
+(Oct 14 2014 09:35:12,    1038 sec) PistonMoveAbsWTO()    020->016 019 018 017 016 [17sec, 15.0Volts, 0.145Amps, CPT:1063sec]
+(Oct 14 2014 09:35:28,    1055 sec) SelfTest()           Passed: Timed piston movements from 16 to 20 counts and back.
+(Oct 14 2014 09:35:29,    1055 sec) SelfTest()           Passed: internal pressure [89, -4.2"Hg] less than threshold [96, -2.1"Hg].
+(Oct 14 2014 09:35:29,    1056 sec) SelfTest()           Passed: FLASH file system has been initialized.
+(Oct 14 2014 09:35:32,    1059 sec) SelfTest()           Passed: FLASH file system has been reformatted.
+(Oct 14 2014 09:35:34,    1061 sec) SelfTest()           Passed: Response received from SBE41cp.
+(Oct 14 2014 09:35:41,    1068 sec) SelfTest()           Passed: Sbe41cp SerNo: 5691
+(Oct 14 2014 09:35:55,    1082 sec) SelfTest()           Passed: SBE41cp (SerNo 5691) FwRev accepted: [2.0]
+(Oct 14 2014 09:36:05,    1091 sec) Sbe41cpConfig()      Configuration successful.
+(Oct 14 2014 09:36:16,    1103 sec) Sbe41cpEnablePts()   PTS output enabled during CP mode.
+(Oct 14 2014 09:36:25,    1111 sec) Sbe41cpTsWait()      Configuration successful.
+(Oct 14 2014 09:36:29,    1115 sec) SelfTest()           Passed: SBE41cp configuration was successful.
+(Oct 14 2014 09:36:32,    1119 sec) SelfTest()           Passed: LBT model: 9522B
+(Oct 14 2014 09:36:33,    1120 sec) SelfTest()           Passed: LBT firmware revision: ST10001
+(Oct 14 2014 09:36:34,    1121 sec) IrModemConfigure()   Modem configured for fixed (19200) baud rate.
+(Oct 14 2014 09:36:34,    1121 sec) IrModemConfigure()   Lbt9522b's GPS pass-thru disabled to save power.
+(Oct 14 2014 09:36:35,    1121 sec) IrModemConfigure()   Configuration saved to modem's NVRAM.
+(Oct 14 2014 09:36:35,    1121 sec) IrModemConfigure()   Modem configuration successful.
+(Oct 14 2014 09:36:35,    1122 sec) SelfTest()           Passed: LBT configuration was successful.
+(Oct 14 2014 09:36:36,    1122 sec) SelfTest()           Passed: LBT IMEI: 300025010045770
+(Oct 14 2014 09:36:42,    1128 sec) SelfTest()           Passed: SIM card ICCID: 8988169224001047969
+(Oct 14 2014 09:36:43,    1130 sec) ConfigGarmin15()     Garmin GPS15 configuration initiated.
+(Oct 14 2014 09:36:50,    1137 sec) ConfigGarmin15()     Garmin GPS15 successfully configured.
+(Oct 14 2014 09:36:55,    1142 sec) SelfTest()           Passed: Optode FwRev accepted: [4.4.8]
+(Oct 14 2014 09:36:59,    1145 sec) SelfTest()           Passed: Optode SerNo: 1617
+(Oct 14 2014 09:37:12,    1159 sec) OptodeConfig()       Configuration successful.
+(Oct 14 2014 09:37:13,    1159 sec) SelfTest()           Passed: Optode configuration was successful.
+(Oct 14 2014 09:37:16,    1163 sec) SelfTest()           Passed: FLBB SerNo: 3174
+(Oct 14 2014 09:37:19,    1165 sec) SelfTest()           Passed: FLBB FwRev accepted: [FLNTUAPX 4.04]
+(Oct 14 2014 09:37:22,    1169 sec) FlbbConfig()         FLBB configuration successful.
+(Oct 14 2014 09:37:23,    1169 sec) SelfTest()           Passed: FLBB configuration was successful.
+(Oct 14 2014 09:37:28,    1174 sec) SelfTest()           Passed: FLBB wavelengths: Fl[470] Bb[700].
+(Oct 14 2014 09:38:16,    1223 sec) Apf9Init()           Asynchronous wake-up detected (ie., wake-up not initiated by alarm signal).
+(Mar 29 2015 13:18:05,       1 sec) PreludeInit()        Mission restarted. [pid=0, itime=14356812]
+(Mar 29 2015 13:18:06,       1 sec) PistonMoveAbsWTO()    016->227 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032 033 034 035 036 037 038 039 040 041 042 043 044 045 046 047 048 049 050 051 052 053 054 055 056 057 058 059 060 061 062 063 064 065 066 067 068 069 070 071 072 073 074 075 076 077 078 079 080 081 082 083 084 085 086 087 088 089 090 091 092 093 094 095 096 097 098 099 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 [1294sec, 13.3Volts, 0.439Amps, CPT:1294sec]
+(Mar 29 2015 13:39:48,    1303 sec) Prelude()            Logging configuration and initiating telemetry.
+(Mar 29 2015 13:39:48,    1303 sec) LogConfiguration()   Mission configuration for Apf9i FwRev 092813:
+(Mar 29 2015 13:39:48,    1303 sec) LogConfiguration()      AscentTimeOut(540) [min]
+(Mar 29 2015 13:39:48,    1303 sec) LogConfiguration()      AtDialCmd(AT+CBST=71,0,1;DT0088160000573) [primary]
+(Mar 29 2015 13:39:48,    1303 sec) LogConfiguration()      AltDialCmd(AT+CBST=7,0,1;DT0013016366303) [alternate]
+(Mar 29 2015 13:39:48,    1303 sec) LogConfiguration()      BuoyancyNudge(10) [count]
+(Mar 29 2015 13:39:48,    1303 sec) LogConfiguration()      BuoyancyNudgeInitial(22) [count]
+(Mar 29 2015 13:39:48,    1304 sec) LogConfiguration()      ConnectTimeOut(60) [sec]
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      CpActivationP(500) [dbar]
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      DeepProfileDescentTime(300) [min]
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      DeepProfilePistonPos(16) [count]
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      DeepProfilePressure(2000) [dbar]
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      CompensatorHyperRetraction(0) [count]
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      DownTime(13740) [min]
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      FlbbMode(1)
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      FloatId(9331)
+(Mar 29 2015 13:39:49,    1304 sec) LogConfiguration()      FullExtension(227) [count]
+(Mar 29 2015 13:39:49,    1305 sec) LogConfiguration()      FullRetraction(9) [count]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      MaxAirBladder(124) [count]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      MaxLogKb(40) [KByte]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      MissionPrelude(360) [min]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      OkVacuum(96) [count]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      PActivationPistonPosition(16) [count]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      ParkDescentTime(300) [min]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      ParkPistonPos(66) [count]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      ParkPressure(1000) [dbar]
+(Mar 29 2015 13:39:50,    1305 sec) LogConfiguration()      PnPCycleLen(1)
+(Mar 29 2015 13:39:50,    1306 sec) LogConfiguration()      Pwd(0x3c35)
+(Mar 29 2015 13:39:51,    1306 sec) LogConfiguration()      TelemetryRetry(15) [min]
+(Mar 29 2015 13:39:51,    1306 sec) LogConfiguration()      TimeOfDay(DISABLED) [min]
+(Mar 29 2015 13:39:51,    1306 sec) LogConfiguration()      UpTime(660) [min]
+(Mar 29 2015 13:39:51,    1306 sec) LogConfiguration()      User(f9331)
+(Mar 29 2015 13:39:51,    1306 sec) LogConfiguration()      Verbosity(2)
+(Mar 29 2015 13:39:51,    1306 sec) LogConfiguration()      DebugBits(0x0002)
+
+<EOT>
+
+<EOT>

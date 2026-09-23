@@ -1,0 +1,1402 @@
+20240628T214501|0|Firmware|07/21/23 18:56:40 2.17.4 STD IRID Final
+20240628T214501|0|Username|f10469
+20240628T214501|5|LOG|archived: f10469.006.20240628T214458.science_log.bin.gz
+20240628T214501|5|LOG|archived: f10469.006.20240628T214500.vitals_log.bin.gz
+20240628T214501|5|LOG|archived: f10469.006.20240628T214500.suna_log.txt.gz
+20240628T214503|5|LOG|archived: f10469.006.20240628T214500.system_log.txt.gz
+20240628T214529|5|RMC|Set Clock: 06/28/2024 21:45:29
+20240628T214529|5|GPS|GPS TimeToFix: 18 secs
+20240628T214529|5|GPS|GPS Skew: 1 secs
+20240628T214529|5|GPS|GPS Fix: 06/28/2024 21:45:29,17.79469,67.76931,9
+20240628T214530|5|GPS|time and location set
+20240628T214600|5|COMMS|CSQ=4
+20240628T214648|5|get_upload_file_entries|There are 4 file(s) to be uploaded
+20240628T215035|5|COMMS|uploaded: f10469.006.20240628T214458.science_log.bin.gz, 28388 bytes in 221 secs
+20240628T215336|5|COMMS|uploaded: f10469.006.20240628T214500.system_log.txt.gz, 11739 bytes in 168 secs
+20240628T215422|5|COMMS|uploaded: f10469.006.20240628T214500.suna_log.txt.gz, 358 bytes in 42 secs
+20240628T215500|5|COMMS|uploaded: f10469.006.20240628T214500.vitals_log.bin.gz, 389 bytes in 21 secs
+20240628T215504|4|COMMS|logout unsuccessful, connection lost
+20240628T215715|5|GPS|<<''
+20240628T215715|3|GPS|read line invalid response
+20240628T215815|5|GPS|<<''
+20240628T215815|3|GPS|read line invalid response
+20240628T215915|5|GPS|<<''
+20240628T215915|3|GPS|read line invalid response
+20240628T220014|3|GPS|Timeout during update of time and location
+20240628T220017|5|BuoyEngine|adjusting from 3653 to 3702
+20240628T220034|5|BuoyEngine|destination 3700 reached after 00:15
+20240628T220046|5|RMC|Set Clock: 06/28/2024 22:00:46
+20240628T220046|5|GPS|GPS TimeToFix: 4 secs
+20240628T220046|5|GPS|GPS Skew: 1 secs
+20240628T220046|5|GPS|GPS Fix: 06/28/2024 22:00:46,17.79357,67.77068,11
+20240628T220047|5|GPS|time and location set
+20240628T220048|5|SURFACE|awake|count: 1, time: 1884, energy: 68.125000
+20240628T220048|5|SURFACE|sleep|count: 0, time: 0, energy: 0.000000
+20240628T220048|5|mission_state|SURFACE -> PARKDESCENT
+20240628T220050|5|PARKDESCENT|Starting Mission No.: 7
+20240628T220050|5|mission_cfg|ActivateRecoveryMode off
+20240628T220050|5|mission_cfg|AscentRate 0.08
+20240628T220050|5|mission_cfg|AscentStartTimes -1 -1 -1 -1
+20240628T220050|5|mission_cfg|AscentTimeout 521
+20240628T220050|5|mission_cfg|AscentTimerInterval 300
+20240628T220050|5|mission_cfg|BuoyancyNudge 100
+20240628T220050|5|mission_cfg|DeepDescentCount 342
+20240628T220050|5|mission_cfg|DeepDescentPressure 2000.00
+20240628T220050|5|mission_cfg|DeepDescentTimeout 334
+20240628T220050|5|mission_cfg|DeepDescentTimerInterval 300
+20240628T220050|5|mission_cfg|DeepProfileFirst on
+20240628T220050|5|mission_cfg|DownTime 13953
+20240628T220050|5|mission_cfg|EmergencyTimerInterval 3600
+20240628T220050|5|mission_cfg|HyperRetractCount 0
+20240628T220050|5|mission_cfg|HyperRetractPressure 850.00
+20240628T220050|5|mission_cfg|IceMonths 0000
+20240628T220050|5|mission_cfg|IdleTimerInterval 3600
+20240628T220050|5|mission_cfg|InitialBuoyancyNudge 300
+20240628T220050|5|mission_cfg|LeakDetect on
+20240628T220050|5|mission_cfg|LogVerbosity 5
+20240628T220050|5|mission_cfg|MActivationCount 262
+20240628T220050|5|mission_cfg|MActivationPressure 25.00
+20240628T220050|5|mission_cfg|MinBuoyancyCount 147
+20240628T220050|5|mission_cfg|MinVacuum 9.00
+20240628T220050|5|mission_cfg|ParkBuoyancyNudge 10
+20240628T220050|5|mission_cfg|ParkDeadBand 25.00
+20240628T220050|5|mission_cfg|ParkDescentCount 1254
+20240628T220050|5|mission_cfg|ParkDescentTimeout 334
+20240628T220050|5|mission_cfg|ParkDescentTimerInterval 3600
+20240628T220050|5|mission_cfg|ParkPressure 1000.00
+20240628T220050|5|mission_cfg|ParkTimerInterval 3600
+20240628T220050|5|mission_cfg|PnPCycleLen 1
+20240628T220050|5|mission_cfg|PreludeSelfTest on
+20240628T220050|5|mission_cfg|PreludeTime 120
+20240628T220050|5|mission_cfg|SurfacePressure 4.00
+20240628T220050|5|mission_cfg|TelemetryDays 0 0
+20240628T220050|5|mission_cfg|TelemetryInterval 900
+20240628T220050|5|mission_cfg|TelemetryTimeout 120
+20240628T220050|5|mission_cfg|UpTime 641
+20240628T220050|5|mission_cfg|VitalsMask 0007
+20240628T220050|5|mission_cfg|Checksum E4CC
+20240628T220050|5|sample_cfg|<PARK>
+20240628T220050|5|sample_cfg|SAMPLE PTSH 2000 4 0 DBAR 1
+20240628T220050|5|sample_cfg|<ASCENT>
+20240628T220050|5|sample_cfg|SAMPLE PTS 2000 1000 100 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE PTS 1000 100 50 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE PTS 100 50 10 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE PTS 50 5 1 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE NO3 2000 1000 100 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE NO3 1000 100 50 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE NO3 100 50 10 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE NO3 50 5 1 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE OPT 2000 1000 100 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE OPT 1000 100 50 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE OPT 100 50 10 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE OPT 50 5 1 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE FLBB 2000 1000 100 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE FLBB 1000 100 50 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE FLBB 100 50 10 DBAR 1
+20240628T220050|5|sample_cfg|SAMPLE FLBB 50 5 1 DBAR 1
+20240628T220050|5|sample_cfg|PROFILE CTD 2000 4 2 1 HZ #Regime:1
+20240628T220050|5|sample_cfg|PROFILE PH 2000 4 2
+20240628T220050|5|sample_cfg|<SURFACE>
+20240628T220050|5|sample_cfg|MEASURE OPT
+20240628T220053|5|PARKDESCENT|surface pressure offset updated from -0.15 to -0.31 dbar
+20240628T220105|5|AIR|deflated to 8.28 dbar after 2 attempts
+20240628T220105|5|PARKDESCENT|adjusting buoyancy to ParkDescentCount 1254
+20240628T220106|5|BuoyEngine|adjusting from 3701 to 1254
+20240628T221403|5|BuoyEngine|destination 1253 reached after 12:56
+20240628T221504|2|system_cfg|float_id not specified
+20240628T231507|2|system_cfg|float_id not specified
+20240629T001510|2|system_cfg|float_id not specified
+20240629T010922|2|system_cfg|float_id not specified
+20240629T015037|2|system_cfg|float_id not specified
+20240629T023333|2|system_cfg|float_id not specified
+20240629T023338|4|PARKDESCENT|slow descent rate 1: 0.0066 @ 965.56 dbar
+20240629T023436|2|system_cfg|float_id not specified
+20240629T023441|4|PARKDESCENT|slow descent rate 2: 0.0081 @ 966.07 dbar
+20240629T023539|2|system_cfg|float_id not specified
+20240629T023544|4|PARKDESCENT|slow descent rate 3: 0.0083 @ 966.59 dbar
+20240629T023546|5|PARKDESCENT|adjusting buoyancy by HitBottomNudge -16
+20240629T023548|5|BuoyEngine|adjusting from 1252 to 1237
+20240629T023555|5|BuoyEngine|destination 1236 reached after 00:05
+20240629T023559|5|mission_cfg|ParkDescentCount 1254 to 1237
+20240629T023655|2|system_cfg|float_id not specified
+20240629T023700|5|PARKDESCENT|descent rate: 0.0160 @ 967.71 dbar
+20240629T031246|2|system_cfg|float_id not specified
+20240629T032306|2|system_cfg|float_id not specified
+20240629T033446|2|system_cfg|float_id not specified
+20240629T033451|5|PARKDESCENT|ParkPressure reached @ 1001.71 dbar after 334 mins
+20240629T033451|5|PARKDESCENT|awake|count: 13, time: 899, energy: 38.125000
+20240629T033451|5|PARKDESCENT|sleep|count: 12, time: 19144, energy: 0.398833
+20240629T033451|5|mission_state|PARKDESCENT -> PARK
+20240629T043449|2|system_cfg|float_id not specified
+20240629T053514|2|system_cfg|float_id not specified
+20240629T063539|2|system_cfg|float_id not specified
+20240629T073604|2|system_cfg|float_id not specified
+20240629T083629|2|system_cfg|float_id not specified
+20240629T093654|2|system_cfg|float_id not specified
+20240629T103719|2|system_cfg|float_id not specified
+20240629T113744|2|system_cfg|float_id not specified
+20240629T123809|2|system_cfg|float_id not specified
+20240629T133834|2|system_cfg|float_id not specified
+20240629T143859|2|system_cfg|float_id not specified
+20240629T153924|2|system_cfg|float_id not specified
+20240629T163949|2|system_cfg|float_id not specified
+20240629T174014|2|system_cfg|float_id not specified
+20240629T184039|2|system_cfg|float_id not specified
+20240629T194104|2|system_cfg|float_id not specified
+20240629T204129|2|system_cfg|float_id not specified
+20240629T214154|2|system_cfg|float_id not specified
+20240629T224219|2|system_cfg|float_id not specified
+20240629T234244|2|system_cfg|float_id not specified
+20240630T004309|2|system_cfg|float_id not specified
+20240630T014334|2|system_cfg|float_id not specified
+20240630T024359|2|system_cfg|float_id not specified
+20240630T034424|2|system_cfg|float_id not specified
+20240630T044449|2|system_cfg|float_id not specified
+20240630T054514|2|system_cfg|float_id not specified
+20240630T064539|2|system_cfg|float_id not specified
+20240630T064607|4|PARK|deep 1 @ 1025.73 dbar
+20240630T074604|2|system_cfg|float_id not specified
+20240630T084629|2|system_cfg|float_id not specified
+20240630T084657|4|PARK|deep 1 @ 1026.20 dbar
+20240630T094654|2|system_cfg|float_id not specified
+20240630T094722|4|PARK|deep 2 @ 1025.33 dbar
+20240630T104719|2|system_cfg|float_id not specified
+20240630T104747|4|PARK|deep 3 @ 1026.16 dbar
+20240630T104749|5|BuoyEngine|adjusting from 1237 to 1247
+20240630T104756|5|BuoyEngine|destination 1249 reached after 00:05
+20240630T104756|5|mission_cfg|ParkDescentCount 1237 to 1249
+20240630T114744|2|system_cfg|float_id not specified
+20240630T124809|2|system_cfg|float_id not specified
+20240630T134834|2|system_cfg|float_id not specified
+20240630T144859|2|system_cfg|float_id not specified
+20240630T154924|2|system_cfg|float_id not specified
+20240630T164949|2|system_cfg|float_id not specified
+20240630T175014|2|system_cfg|float_id not specified
+20240630T185039|2|system_cfg|float_id not specified
+20240630T195104|2|system_cfg|float_id not specified
+20240630T205129|2|system_cfg|float_id not specified
+20240630T215154|2|system_cfg|float_id not specified
+20240630T225219|2|system_cfg|float_id not specified
+20240630T235244|2|system_cfg|float_id not specified
+20240701T005309|2|system_cfg|float_id not specified
+20240701T015334|2|system_cfg|float_id not specified
+20240701T025359|2|system_cfg|float_id not specified
+20240701T035424|2|system_cfg|float_id not specified
+20240701T045449|2|system_cfg|float_id not specified
+20240701T055514|2|system_cfg|float_id not specified
+20240701T065539|2|system_cfg|float_id not specified
+20240701T075604|2|system_cfg|float_id not specified
+20240701T085629|2|system_cfg|float_id not specified
+20240701T095654|2|system_cfg|float_id not specified
+20240701T105719|2|system_cfg|float_id not specified
+20240701T115744|2|system_cfg|float_id not specified
+20240701T125809|2|system_cfg|float_id not specified
+20240701T135834|2|system_cfg|float_id not specified
+20240701T145859|2|system_cfg|float_id not specified
+20240701T155924|2|system_cfg|float_id not specified
+20240701T165949|2|system_cfg|float_id not specified
+20240701T180014|2|system_cfg|float_id not specified
+20240701T190039|2|system_cfg|float_id not specified
+20240701T200104|2|system_cfg|float_id not specified
+20240701T210129|2|system_cfg|float_id not specified
+20240701T220154|2|system_cfg|float_id not specified
+20240701T230219|2|system_cfg|float_id not specified
+20240702T000244|2|system_cfg|float_id not specified
+20240702T010309|2|system_cfg|float_id not specified
+20240702T020334|2|system_cfg|float_id not specified
+20240702T030359|2|system_cfg|float_id not specified
+20240702T040424|2|system_cfg|float_id not specified
+20240702T050449|2|system_cfg|float_id not specified
+20240702T060514|2|system_cfg|float_id not specified
+20240702T070539|2|system_cfg|float_id not specified
+20240702T080604|2|system_cfg|float_id not specified
+20240702T090629|2|system_cfg|float_id not specified
+20240702T100654|2|system_cfg|float_id not specified
+20240702T110719|2|system_cfg|float_id not specified
+20240702T120744|2|system_cfg|float_id not specified
+20240702T130809|2|system_cfg|float_id not specified
+20240702T140834|2|system_cfg|float_id not specified
+20240702T150859|2|system_cfg|float_id not specified
+20240702T160924|2|system_cfg|float_id not specified
+20240702T170949|2|system_cfg|float_id not specified
+20240702T181014|2|system_cfg|float_id not specified
+20240702T191039|2|system_cfg|float_id not specified
+20240702T201104|2|system_cfg|float_id not specified
+20240702T211129|2|system_cfg|float_id not specified
+20240702T221154|2|system_cfg|float_id not specified
+20240702T231219|2|system_cfg|float_id not specified
+20240703T001244|2|system_cfg|float_id not specified
+20240703T011309|2|system_cfg|float_id not specified
+20240703T021334|2|system_cfg|float_id not specified
+20240703T031359|2|system_cfg|float_id not specified
+20240703T041424|2|system_cfg|float_id not specified
+20240703T051449|2|system_cfg|float_id not specified
+20240703T061514|2|system_cfg|float_id not specified
+20240703T071539|2|system_cfg|float_id not specified
+20240703T081604|2|system_cfg|float_id not specified
+20240703T091629|2|system_cfg|float_id not specified
+20240703T101654|2|system_cfg|float_id not specified
+20240703T111719|2|system_cfg|float_id not specified
+20240703T121744|2|system_cfg|float_id not specified
+20240703T131809|2|system_cfg|float_id not specified
+20240703T141834|2|system_cfg|float_id not specified
+20240703T151859|2|system_cfg|float_id not specified
+20240703T161924|2|system_cfg|float_id not specified
+20240703T171949|2|system_cfg|float_id not specified
+20240703T182014|2|system_cfg|float_id not specified
+20240703T192039|2|system_cfg|float_id not specified
+20240703T202104|2|system_cfg|float_id not specified
+20240703T212129|2|system_cfg|float_id not specified
+20240703T222154|2|system_cfg|float_id not specified
+20240703T232219|2|system_cfg|float_id not specified
+20240704T002244|2|system_cfg|float_id not specified
+20240704T012309|2|system_cfg|float_id not specified
+20240704T022334|2|system_cfg|float_id not specified
+20240704T032359|2|system_cfg|float_id not specified
+20240704T042424|2|system_cfg|float_id not specified
+20240704T052449|2|system_cfg|float_id not specified
+20240704T062514|2|system_cfg|float_id not specified
+20240704T072539|2|system_cfg|float_id not specified
+20240704T082604|2|system_cfg|float_id not specified
+20240704T092629|2|system_cfg|float_id not specified
+20240704T102654|2|system_cfg|float_id not specified
+20240704T112719|2|system_cfg|float_id not specified
+20240704T122744|2|system_cfg|float_id not specified
+20240704T132809|2|system_cfg|float_id not specified
+20240704T142834|2|system_cfg|float_id not specified
+20240704T152859|2|system_cfg|float_id not specified
+20240704T162924|2|system_cfg|float_id not specified
+20240704T172949|2|system_cfg|float_id not specified
+20240704T183014|2|system_cfg|float_id not specified
+20240704T193039|2|system_cfg|float_id not specified
+20240704T203104|2|system_cfg|float_id not specified
+20240704T213129|2|system_cfg|float_id not specified
+20240704T223154|2|system_cfg|float_id not specified
+20240704T233219|2|system_cfg|float_id not specified
+20240705T003244|2|system_cfg|float_id not specified
+20240705T013309|2|system_cfg|float_id not specified
+20240705T023334|2|system_cfg|float_id not specified
+20240705T033359|2|system_cfg|float_id not specified
+20240705T043424|2|system_cfg|float_id not specified
+20240705T053449|2|system_cfg|float_id not specified
+20240705T063514|2|system_cfg|float_id not specified
+20240705T073539|2|system_cfg|float_id not specified
+20240705T083604|2|system_cfg|float_id not specified
+20240705T093629|2|system_cfg|float_id not specified
+20240705T103654|2|system_cfg|float_id not specified
+20240705T113719|2|system_cfg|float_id not specified
+20240705T123744|2|system_cfg|float_id not specified
+20240705T133809|2|system_cfg|float_id not specified
+20240705T143834|2|system_cfg|float_id not specified
+20240705T153859|2|system_cfg|float_id not specified
+20240705T163924|2|system_cfg|float_id not specified
+20240705T173949|2|system_cfg|float_id not specified
+20240705T184014|2|system_cfg|float_id not specified
+20240705T194039|2|system_cfg|float_id not specified
+20240705T204104|2|system_cfg|float_id not specified
+20240705T214129|2|system_cfg|float_id not specified
+20240705T224154|2|system_cfg|float_id not specified
+20240705T234219|2|system_cfg|float_id not specified
+20240706T004244|2|system_cfg|float_id not specified
+20240706T014309|2|system_cfg|float_id not specified
+20240706T024334|2|system_cfg|float_id not specified
+20240706T034359|2|system_cfg|float_id not specified
+20240706T044424|2|system_cfg|float_id not specified
+20240706T054449|2|system_cfg|float_id not specified
+20240706T064514|2|system_cfg|float_id not specified
+20240706T074539|2|system_cfg|float_id not specified
+20240706T084604|2|system_cfg|float_id not specified
+20240706T094629|2|system_cfg|float_id not specified
+20240706T104654|2|system_cfg|float_id not specified
+20240706T114719|2|system_cfg|float_id not specified
+20240706T124744|2|system_cfg|float_id not specified
+20240706T134809|2|system_cfg|float_id not specified
+20240706T144834|2|system_cfg|float_id not specified
+20240706T154859|2|system_cfg|float_id not specified
+20240706T164924|2|system_cfg|float_id not specified
+20240706T174949|2|system_cfg|float_id not specified
+20240706T185014|2|system_cfg|float_id not specified
+20240706T195039|2|system_cfg|float_id not specified
+20240706T205104|2|system_cfg|float_id not specified
+20240706T215129|2|system_cfg|float_id not specified
+20240706T225154|2|system_cfg|float_id not specified
+20240706T235219|2|system_cfg|float_id not specified
+20240707T005244|2|system_cfg|float_id not specified
+20240707T015309|2|system_cfg|float_id not specified
+20240707T025334|2|system_cfg|float_id not specified
+20240707T035359|2|system_cfg|float_id not specified
+20240707T045424|2|system_cfg|float_id not specified
+20240707T055449|2|system_cfg|float_id not specified
+20240707T065514|2|system_cfg|float_id not specified
+20240707T075539|2|system_cfg|float_id not specified
+20240707T085604|2|system_cfg|float_id not specified
+20240707T095629|2|system_cfg|float_id not specified
+20240707T105654|2|system_cfg|float_id not specified
+20240707T115719|2|system_cfg|float_id not specified
+20240707T125744|2|system_cfg|float_id not specified
+20240707T135809|2|system_cfg|float_id not specified
+20240707T145834|2|system_cfg|float_id not specified
+20240707T155859|2|system_cfg|float_id not specified
+20240707T165924|2|system_cfg|float_id not specified
+20240707T175949|2|system_cfg|float_id not specified
+20240707T190014|2|system_cfg|float_id not specified
+20240707T200039|2|system_cfg|float_id not specified
+20240707T210104|2|system_cfg|float_id not specified
+20240707T220129|2|system_cfg|float_id not specified
+20240707T230154|2|system_cfg|float_id not specified
+20240708T000219|2|system_cfg|float_id not specified
+20240708T010244|2|system_cfg|float_id not specified
+20240708T020309|2|system_cfg|float_id not specified
+20240708T030334|2|system_cfg|float_id not specified
+20240708T040359|2|system_cfg|float_id not specified
+20240708T050424|2|system_cfg|float_id not specified
+20240708T060449|2|system_cfg|float_id not specified
+20240708T070514|2|system_cfg|float_id not specified
+20240708T080539|2|system_cfg|float_id not specified
+20240708T085945|2|system_cfg|float_id not specified
+20240708T090013|5|PARK|awake|count: 221, time: 6637, energy: 138.750000
+20240708T090013|5|PARK|sleep|count: 220, time: 790703, energy: 16.472979
+20240708T090013|5|mission_state|PARK -> DEEPDESCENT
+20240708T090018|5|DEEPDESCENT|adjusting buoyancy to DeepDescentCount 342
+20240708T090019|5|BuoyEngine|adjusting from 1248 to 342
+20240708T090508|5|BuoyEngine|destination 340 reached after 04:47
+20240708T090609|2|system_cfg|float_id not specified
+20240708T091112|2|system_cfg|float_id not specified
+20240708T091615|2|system_cfg|float_id not specified
+20240708T092118|2|system_cfg|float_id not specified
+20240708T092621|2|system_cfg|float_id not specified
+20240708T093124|2|system_cfg|float_id not specified
+20240708T093627|2|system_cfg|float_id not specified
+20240708T094130|2|system_cfg|float_id not specified
+20240708T094633|2|system_cfg|float_id not specified
+20240708T095136|2|system_cfg|float_id not specified
+20240708T095639|2|system_cfg|float_id not specified
+20240708T100142|2|system_cfg|float_id not specified
+20240708T100645|2|system_cfg|float_id not specified
+20240708T101148|2|system_cfg|float_id not specified
+20240708T101651|2|system_cfg|float_id not specified
+20240708T102154|2|system_cfg|float_id not specified
+20240708T102657|2|system_cfg|float_id not specified
+20240708T103200|2|system_cfg|float_id not specified
+20240708T103703|2|system_cfg|float_id not specified
+20240708T104206|2|system_cfg|float_id not specified
+20240708T104709|2|system_cfg|float_id not specified
+20240708T105212|2|system_cfg|float_id not specified
+20240708T105715|2|system_cfg|float_id not specified
+20240708T110218|2|system_cfg|float_id not specified
+20240708T110721|2|system_cfg|float_id not specified
+20240708T110726|5|DEEPDESCENT|DeepDescentPressure reached @ 2000.35 dbar after 127 mins
+20240708T110726|5|DEEPDESCENT|increasing DeepDescentCount by 16
+20240708T110726|5|mission_cfg|DeepDescentCount 342 to 358
+20240708T110727|5|DEEPDESCENT|awake|count: 26, time: 475, energy: 7.187500
+20240708T110727|5|DEEPDESCENT|sleep|count: 25, time: 7159, energy: 0.149146
+20240708T110727|5|mission_state|DEEPDESCENT -> ASCENT
+20240708T110734|5|BuoyEngine|adjusting from 339 to 640
+20240708T110929|5|BuoyEngine|destination 642 reached after 01:54
+20240708T111028|2|system_cfg|float_id not specified
+20240708T111033|5|ASCENT|slow ascent rate 1: 0.0382 dbar/sec @ 2013.02 dbar
+20240708T111034|5|BuoyEngine|adjusting from 642 to 742
+20240708T111114|5|BuoyEngine|destination 742 reached after 00:38
+20240708T111214|2|system_cfg|float_id not specified
+20240708T111219|5|ASCENT|slow ascent rate 2: -0.0225 dbar/sec @ 2012.60 dbar
+20240708T111220|5|BuoyEngine|adjusting from 742 to 842
+20240708T111300|5|BuoyEngine|destination 843 reached after 00:38
+20240708T111400|2|system_cfg|float_id not specified
+20240708T111405|5|ASCENT|slow ascent rate 3: -0.0738 dbar/sec @ 2005.90 dbar
+20240708T111406|5|BuoyEngine|adjusting from 842 to 943
+20240708T111445|5|BuoyEngine|destination 943 reached after 00:37
+20240708T111515|2|system_cfg|float_id not specified
+20240708T111523|5|CTD|start_profile|CP Started
+20240708T111556|5|CTD|start_profile|current: 21.726074 mA @ 14.700 V
+20240708T111609|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T111609|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T111609|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T111610|5|SUNA|send_ctd_data|>>'CTD,1720437360,3.1061,34.8349,1995.46'
+20240708T111610|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T111610|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T111610|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T111611|5|SUNA|sample_once|<<'07/08/2024 11:15:50, -12, CTD Command ACK Failure
+'
+20240708T111611|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T111611|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T111613|4|SUNA|sample|power cycling
+20240708T111624|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T111624|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T111624|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T111625|5|SUNA|send_ctd_data|>>'CTD,1720437360,3.1061,34.8349,1995.46'
+20240708T111625|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T111625|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T111625|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T111626|5|SUNA|sample_once|<<'07/08/2024 11:16:05, -12, CTD Command ACK Failure
+'
+20240708T111626|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T111626|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T111628|4|SUNA|sample|power cycling
+20240708T111639|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T111639|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T111639|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T111640|5|SUNA|send_ctd_data|>>'CTD,1720437360,3.1061,34.8349,1995.46'
+20240708T111640|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T111640|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T111640|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T111641|5|SUNA|sample_once|<<'07/08/2024 11:16:20, -12, CTD Command ACK Failure
+'
+20240708T111642|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T111642|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T111645|3|SUNA|sample|failed, error:-7
+20240708T111645|3|NO3|failed during update with error -7.
+20240708T111645|3|sensors|update_samplers|NO3 failed, errors: 124, error code: -7
+20240708T112151|2|system_cfg|float_id not specified
+20240708T112200|4|SUNA|sample_once|PTS NOT sent to sensor, 360 seconds old
+20240708T112208|5|NO3|Resetting consecutive error counter from 10 to 0
+20240708T112707|2|system_cfg|float_id not specified
+20240708T113209|2|system_cfg|float_id not specified
+20240708T113427|2|system_cfg|float_id not specified
+20240708T113447|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T113447|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T113447|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T113448|5|SUNA|send_ctd_data|>>'CTD,1720438477,3.4323,34.8612,1899.64'
+20240708T113448|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T113448|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T113448|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T113449|5|SUNA|sample_once|<<'07/08/2024 11:34:28, -12, CTD Command ACK Failure
+'
+20240708T113449|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T113449|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T113451|4|SUNA|sample|power cycling
+20240708T113502|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T113502|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T113502|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T113503|5|SUNA|send_ctd_data|>>'CTD,1720438477,3.4323,34.8612,1899.64'
+20240708T113503|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T113503|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T113503|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T113504|5|SUNA|sample_once|<<'07/08/2024 11:34:43, -12, CTD Command ACK Failure
+'
+20240708T113504|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T113504|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T113506|4|SUNA|sample|power cycling
+20240708T113517|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T113517|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T113517|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T113518|5|SUNA|send_ctd_data|>>'CTD,1720438477,3.4323,34.8612,1899.64'
+20240708T113518|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T113518|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T113518|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T113519|5|SUNA|sample_once|<<'07/08/2024 11:34:58, -12, CTD Command ACK Failure
+'
+20240708T113519|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T113519|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T113523|3|SUNA|sample|failed, error:-7
+20240708T113523|3|NO3|failed during update with error -7.
+20240708T113523|3|sensors|update_samplers|NO3 failed, errors: 125, error code: -7
+20240708T113711|2|system_cfg|float_id not specified
+20240708T114213|2|system_cfg|float_id not specified
+20240708T114715|2|system_cfg|float_id not specified
+20240708T114720|5|ASCENT|slow ascent rate 3: -0.0774 dbar/sec @ 1840.68 dbar
+20240708T114722|5|BuoyEngine|adjusting from 944 to 1043
+20240708T114759|5|BuoyEngine|destination 1043 reached after 00:36
+20240708T114859|2|system_cfg|float_id not specified
+20240708T115401|2|system_cfg|float_id not specified
+20240708T115412|2|system_cfg|float_id not specified
+20240708T115428|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T115428|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T115428|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T115429|5|SUNA|send_ctd_data|>>'CTD,1720439659,3.8410,34.8953,1799.70'
+20240708T115429|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T115429|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T115429|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T115430|5|SUNA|sample_once|<<'07/08/2024 11:54:09, -12, CTD Command ACK Failure
+'
+20240708T115430|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T115430|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T115432|4|SUNA|sample|power cycling
+20240708T115443|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T115443|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T115443|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T115444|5|SUNA|send_ctd_data|>>'CTD,1720439659,3.8410,34.8953,1799.70'
+20240708T115444|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T115444|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T115444|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T115445|5|SUNA|sample_once|<<'07/08/2024 11:54:24, -12, CTD Command ACK Failure
+'
+20240708T115445|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T115445|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T115447|4|SUNA|sample|power cycling
+20240708T115458|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T115458|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T115458|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T115459|5|SUNA|send_ctd_data|>>'CTD,1720439659,3.8410,34.8953,1799.70'
+20240708T115459|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T115459|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T115459|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T115501|5|SUNA|sample_once|<<'07/08/2024 11:54:39, -12, CTD Command ACK Failure
+'
+20240708T115501|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T115501|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T115504|3|SUNA|sample|failed, error:-7
+20240708T115504|3|NO3|failed during update with error -7.
+20240708T115504|3|sensors|update_samplers|NO3 failed, errors: 126, error code: -7
+20240708T115903|2|system_cfg|float_id not specified
+20240708T120405|2|system_cfg|float_id not specified
+20240708T120907|2|system_cfg|float_id not specified
+20240708T121126|2|system_cfg|float_id not specified
+20240708T121135|2|system_cfg|float_id not specified
+20240708T121151|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T121151|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T121151|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T121152|5|SUNA|send_ctd_data|>>'CTD,1720440701,4.2002,34.9276,1699.60'
+20240708T121152|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T121152|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T121152|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T121153|5|SUNA|sample_once|<<'07/08/2024 12:11:32, -12, CTD Command ACK Failure
+'
+20240708T121153|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T121153|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T121155|4|SUNA|sample|power cycling
+20240708T121206|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T121206|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T121206|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T121207|5|SUNA|send_ctd_data|>>'CTD,1720440701,4.2002,34.9276,1699.60'
+20240708T121207|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T121207|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T121207|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T121208|5|SUNA|sample_once|<<'07/08/2024 12:11:47, -12, CTD Command ACK Failure
+'
+20240708T121208|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T121208|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T121210|4|SUNA|sample|power cycling
+20240708T121221|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T121221|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T121221|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T121222|5|SUNA|send_ctd_data|>>'CTD,1720440701,4.2002,34.9276,1699.60'
+20240708T121222|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T121222|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T121222|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T121223|5|SUNA|sample_once|<<'07/08/2024 12:12:02, -12, CTD Command ACK Failure
+'
+20240708T121223|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T121223|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T121227|3|SUNA|sample|failed, error:-7
+20240708T121227|3|NO3|failed during update with error -7.
+20240708T121227|3|sensors|update_samplers|NO3 failed, errors: 127, error code: -7
+20240708T121410|2|system_cfg|float_id not specified
+20240708T121912|2|system_cfg|float_id not specified
+20240708T122414|2|system_cfg|float_id not specified
+20240708T122916|2|system_cfg|float_id not specified
+20240708T123334|2|system_cfg|float_id not specified
+20240708T123346|2|system_cfg|float_id not specified
+20240708T123402|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T123402|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T123402|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T123403|5|SUNA|send_ctd_data|>>'CTD,1720442033,4.6836,34.9715,1599.71'
+20240708T123403|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T123403|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T123403|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T123404|5|SUNA|sample_once|<<'07/08/2024 12:33:43, -12, CTD Command ACK Failure
+'
+20240708T123404|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T123404|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T123406|4|SUNA|sample|power cycling
+20240708T123417|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T123417|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T123417|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T123418|5|SUNA|send_ctd_data|>>'CTD,1720442033,4.6836,34.9715,1599.71'
+20240708T123418|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T123418|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T123418|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T123419|5|SUNA|sample_once|<<'07/08/2024 12:33:58, -12, CTD Command ACK Failure
+'
+20240708T123419|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T123419|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T123421|4|SUNA|sample|power cycling
+20240708T123432|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T123432|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T123432|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T123433|5|SUNA|send_ctd_data|>>'CTD,1720442033,4.6836,34.9715,1599.71'
+20240708T123433|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T123433|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T123433|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T123434|5|SUNA|sample_once|<<'07/08/2024 12:34:13, -12, CTD Command ACK Failure
+'
+20240708T123434|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T123434|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T123438|3|SUNA|sample|failed, error:-7
+20240708T123438|3|NO3|failed during update with error -7.
+20240708T123438|3|sensors|update_samplers|NO3 failed, errors: 128, error code: -7
+20240708T123447|5|ASCENT|slow ascent rate 3: -0.0657 dbar/sec @ 1596.14 dbar
+20240708T123448|5|BuoyEngine|adjusting from 1043 to 1143
+20240708T123527|5|BuoyEngine|destination 1145 reached after 00:37
+20240708T123627|2|system_cfg|float_id not specified
+20240708T124129|2|system_cfg|float_id not specified
+20240708T124631|2|system_cfg|float_id not specified
+20240708T125132|2|system_cfg|float_id not specified
+20240708T125259|2|system_cfg|float_id not specified
+20240708T125315|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T125315|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T125315|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T125316|5|SUNA|send_ctd_data|>>'CTD,1720443185,5.3457,35.0305,1499.83'
+20240708T125316|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T125316|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T125316|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T125317|5|SUNA|sample_once|<<'07/08/2024 12:52:56, -12, CTD Command ACK Failure
+'
+20240708T125317|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T125317|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T125319|4|SUNA|sample|power cycling
+20240708T125330|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T125330|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T125330|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T125331|5|SUNA|send_ctd_data|>>'CTD,1720443185,5.3457,35.0305,1499.83'
+20240708T125331|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T125331|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T125331|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T125332|5|SUNA|sample_once|<<'07/08/2024 12:53:11, -12, CTD Command ACK Failure
+'
+20240708T125332|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T125332|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T125334|4|SUNA|sample|power cycling
+20240708T125345|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T125345|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T125345|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T125346|5|SUNA|send_ctd_data|>>'CTD,1720443185,5.3457,35.0305,1499.83'
+20240708T125346|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T125346|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T125346|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T125347|5|SUNA|sample_once|<<'07/08/2024 12:53:26, -12, CTD Command ACK Failure
+'
+20240708T125347|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T125347|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T125351|3|SUNA|sample|failed, error:-7
+20240708T125351|3|NO3|failed during update with error -7.
+20240708T125351|3|sensors|update_samplers|NO3 failed, errors: 129, error code: -7
+20240708T125635|2|system_cfg|float_id not specified
+20240708T130137|2|system_cfg|float_id not specified
+20240708T130639|2|system_cfg|float_id not specified
+20240708T131141|2|system_cfg|float_id not specified
+20240708T131145|5|ASCENT|slow ascent rate 3: -0.0649 dbar/sec @ 1416.48 dbar
+20240708T131147|5|BuoyEngine|adjusting from 1143 to 1243
+20240708T131225|5|BuoyEngine|destination 1244 reached after 00:36
+20240708T131325|2|system_cfg|float_id not specified
+20240708T131513|2|system_cfg|float_id not specified
+20240708T131529|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T131529|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T131529|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T131530|5|SUNA|send_ctd_data|>>'CTD,1720444519,5.9223,35.0856,1399.68'
+20240708T131530|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T131530|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T131530|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T131531|5|SUNA|sample_once|<<'07/08/2024 13:15:10, -12, CTD Command ACK Failure
+'
+20240708T131531|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T131531|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T131533|4|SUNA|sample|power cycling
+20240708T131544|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T131544|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T131544|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T131545|5|SUNA|send_ctd_data|>>'CTD,1720444519,5.9223,35.0856,1399.68'
+20240708T131545|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T131545|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T131545|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T131546|5|SUNA|sample_once|<<'07/08/2024 13:15:25, -12, CTD Command ACK Failure
+'
+20240708T131546|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T131546|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T131548|4|SUNA|sample|power cycling
+20240708T131559|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T131559|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T131559|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T131600|5|SUNA|send_ctd_data|>>'CTD,1720444519,5.9223,35.0856,1399.68'
+20240708T131600|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T131600|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T131600|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T131601|5|SUNA|sample_once|<<'07/08/2024 13:15:40, -12, CTD Command ACK Failure
+'
+20240708T131601|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T131601|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T131605|3|SUNA|sample|failed, error:-7
+20240708T131605|3|NO3|failed during update with error -7.
+20240708T131605|3|sensors|update_samplers|NO3 failed, errors: 130, error code: -7
+20240708T131827|2|system_cfg|float_id not specified
+20240708T132329|2|system_cfg|float_id not specified
+20240708T132831|2|system_cfg|float_id not specified
+20240708T132835|5|ASCENT|slow ascent rate 3: -0.0742 dbar/sec @ 1339.94 dbar
+20240708T132837|5|BuoyEngine|adjusting from 1243 to 1344
+20240708T132914|5|BuoyEngine|destination 1343 reached after 00:34
+20240708T133015|2|system_cfg|float_id not specified
+20240708T133517|2|system_cfg|float_id not specified
+20240708T133526|2|system_cfg|float_id not specified
+20240708T133542|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T133542|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T133542|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T133543|5|SUNA|send_ctd_data|>>'CTD,1720445732,6.6265,35.1508,1299.55'
+20240708T133543|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T133543|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T133543|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T133544|5|SUNA|sample_once|<<'07/08/2024 13:35:23, -12, CTD Command ACK Failure
+'
+20240708T133544|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T133544|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T133546|4|SUNA|sample|power cycling
+20240708T133557|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T133557|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T133557|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T133558|5|SUNA|send_ctd_data|>>'CTD,1720445732,6.6265,35.1508,1299.55'
+20240708T133558|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T133558|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T133558|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T133559|5|SUNA|sample_once|<<'07/08/2024 13:35:38, -12, CTD Command ACK Failure
+'
+20240708T133559|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T133559|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T133601|4|SUNA|sample|power cycling
+20240708T133612|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T133612|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T133612|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T133613|5|SUNA|send_ctd_data|>>'CTD,1720445732,6.6265,35.1508,1299.55'
+20240708T133613|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T133613|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T133613|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T133614|5|SUNA|sample_once|<<'07/08/2024 13:35:53, -12, CTD Command ACK Failure
+'
+20240708T133614|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T133614|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T133618|3|SUNA|sample|failed, error:-7
+20240708T133618|3|NO3|failed during update with error -7.
+20240708T133618|3|sensors|update_samplers|NO3 failed, errors: 131, error code: -7
+20240708T134019|2|system_cfg|float_id not specified
+20240708T134521|2|system_cfg|float_id not specified
+20240708T135023|2|system_cfg|float_id not specified
+20240708T135232|2|system_cfg|float_id not specified
+20240708T135240|2|system_cfg|float_id not specified
+20240708T135256|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T135256|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T135256|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T135257|5|SUNA|send_ctd_data|>>'CTD,1720446766,7.1312,35.1981,1199.55'
+20240708T135257|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T135257|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T135257|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T135258|5|SUNA|sample_once|<<'07/08/2024 13:52:37, -12, CTD Command ACK Failure
+'
+20240708T135258|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T135258|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T135300|4|SUNA|sample|power cycling
+20240708T135311|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T135311|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T135311|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T135312|5|SUNA|send_ctd_data|>>'CTD,1720446766,7.1312,35.1981,1199.55'
+20240708T135312|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T135312|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T135312|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T135313|5|SUNA|sample_once|<<'07/08/2024 13:52:52, -12, CTD Command ACK Failure
+'
+20240708T135313|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T135313|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T135315|4|SUNA|sample|power cycling
+20240708T135326|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T135326|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T135326|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T135327|5|SUNA|send_ctd_data|>>'CTD,1720446766,7.1312,35.1981,1199.55'
+20240708T135327|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T135327|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T135327|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T135328|5|SUNA|sample_once|<<'07/08/2024 13:53:07, -12, CTD Command ACK Failure
+'
+20240708T135328|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T135328|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T135332|3|SUNA|sample|failed, error:-7
+20240708T135332|3|NO3|failed during update with error -7.
+20240708T135332|3|sensors|update_samplers|NO3 failed, errors: 132, error code: -7
+20240708T135525|2|system_cfg|float_id not specified
+20240708T140027|2|system_cfg|float_id not specified
+20240708T140529|2|system_cfg|float_id not specified
+20240708T141031|2|system_cfg|float_id not specified
+20240708T141448|2|system_cfg|float_id not specified
+20240708T141508|2|system_cfg|float_id not specified
+20240708T141524|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T141524|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T141524|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T141525|5|SUNA|send_ctd_data|>>'CTD,1720448114,7.7817,35.2670,1099.76'
+20240708T141525|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T141525|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T141525|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T141526|5|SUNA|sample_once|<<'07/08/2024 14:15:05, -12, CTD Command ACK Failure
+'
+20240708T141526|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T141526|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T141528|4|SUNA|sample|power cycling
+20240708T141539|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T141539|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T141539|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T141540|5|SUNA|send_ctd_data|>>'CTD,1720448114,7.7817,35.2670,1099.76'
+20240708T141540|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T141540|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T141540|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T141541|5|SUNA|sample_once|<<'07/08/2024 14:15:20, -12, CTD Command ACK Failure
+'
+20240708T141541|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T141541|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T141543|4|SUNA|sample|power cycling
+20240708T141554|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T141554|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T141554|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T141555|5|SUNA|send_ctd_data|>>'CTD,1720448114,7.7817,35.2670,1099.76'
+20240708T141555|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T141555|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T141555|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T141556|5|SUNA|sample_once|<<'07/08/2024 14:15:35, -12, CTD Command ACK Failure
+'
+20240708T141556|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T141556|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T141600|3|SUNA|sample|failed, error:-7
+20240708T141600|3|NO3|failed during update with error -7.
+20240708T141600|3|sensors|update_samplers|NO3 failed, errors: 133, error code: -7
+20240708T141607|5|ASCENT|slow ascent rate 3: -0.0607 dbar/sec @ 1096.56 dbar
+20240708T141609|5|BuoyEngine|adjusting from 1344 to 1445
+20240708T141646|5|BuoyEngine|destination 1445 reached after 00:35
+20240708T141746|2|system_cfg|float_id not specified
+20240708T142248|2|system_cfg|float_id not specified
+20240708T142750|2|system_cfg|float_id not specified
+20240708T143252|2|system_cfg|float_id not specified
+20240708T143624|2|system_cfg|float_id not specified
+20240708T143640|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T143640|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T143640|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T143641|5|SUNA|send_ctd_data|>>'CTD,1720449390,8.4770,35.3338,999.74'
+20240708T143641|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T143641|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T143641|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T143642|5|SUNA|sample_once|<<'07/08/2024 14:36:21, -12, CTD Command ACK Failure
+'
+20240708T143642|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T143642|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T143644|4|SUNA|sample|power cycling
+20240708T143655|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T143655|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T143655|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T143656|5|SUNA|send_ctd_data|>>'CTD,1720449390,8.4770,35.3338,999.74'
+20240708T143656|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T143656|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T143656|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T143657|5|SUNA|sample_once|<<'07/08/2024 14:36:36, -12, CTD Command ACK Failure
+'
+20240708T143657|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T143657|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T143659|4|SUNA|sample|power cycling
+20240708T143710|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T143710|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T143710|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T143711|5|SUNA|send_ctd_data|>>'CTD,1720449390,8.4770,35.3338,999.74'
+20240708T143711|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T143711|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T143711|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T143712|5|SUNA|sample_once|<<'07/08/2024 14:36:51, -12, CTD Command ACK Failure
+'
+20240708T143712|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T143712|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T143716|3|SUNA|sample|failed, error:-7
+20240708T143716|3|NO3|failed during update with error -7.
+20240708T143716|2|NO3|failed 17 consecutive times, disabling updater for rest of mission cycle
+20240708T143716|3|sensors|update_samplers|NO3 failed, errors: 134, error code: -7
+20240708T143754|2|system_cfg|float_id not specified
+20240708T143758|5|ASCENT|slow ascent rate 3: -0.0792 dbar/sec @ 992.78 dbar
+20240708T143800|5|BuoyEngine|adjusting from 1437 to 1545
+20240708T143838|5|BuoyEngine|destination 1547 reached after 00:36
+20240708T143939|2|system_cfg|float_id not specified
+20240708T144441|2|system_cfg|float_id not specified
+20240708T144458|2|system_cfg|float_id not specified
+20240708T144943|2|system_cfg|float_id not specified
+20240708T145306|2|system_cfg|float_id not specified
+20240708T145445|2|system_cfg|float_id not specified
+20240708T145947|2|system_cfg|float_id not specified
+20240708T150226|2|system_cfg|float_id not specified
+20240708T150237|2|system_cfg|float_id not specified
+20240708T150449|2|system_cfg|float_id not specified
+20240708T150951|2|system_cfg|float_id not specified
+20240708T151354|2|system_cfg|float_id not specified
+20240708T151408|2|system_cfg|float_id not specified
+20240708T151453|2|system_cfg|float_id not specified
+20240708T151457|5|ASCENT|slow ascent rate 3: -0.0691 dbar/sec @ 796.79 dbar
+20240708T151459|5|BuoyEngine|adjusting from 1540 to 1647
+20240708T151535|5|BuoyEngine|destination 1647 reached after 00:34
+20240708T151637|2|system_cfg|float_id not specified
+20240708T152139|2|system_cfg|float_id not specified
+20240708T152342|2|system_cfg|float_id not specified
+20240708T152641|2|system_cfg|float_id not specified
+20240708T153143|2|system_cfg|float_id not specified
+20240708T153317|2|system_cfg|float_id not specified
+20240708T153645|2|system_cfg|float_id not specified
+20240708T154147|2|system_cfg|float_id not specified
+20240708T154341|2|system_cfg|float_id not specified
+20240708T154349|2|system_cfg|float_id not specified
+20240708T154649|2|system_cfg|float_id not specified
+20240708T155151|2|system_cfg|float_id not specified
+20240708T155155|5|ASCENT|slow ascent rate 3: -0.0680 dbar/sec @ 616.32 dbar
+20240708T155157|5|BuoyEngine|adjusting from 1640 to 1747
+20240708T155233|5|BuoyEngine|destination 1749 reached after 00:34
+20240708T155333|2|system_cfg|float_id not specified
+20240708T155506|2|system_cfg|float_id not specified
+20240708T155835|2|system_cfg|float_id not specified
+20240708T160337|2|system_cfg|float_id not specified
+20240708T160440|2|system_cfg|float_id not specified
+20240708T160839|2|system_cfg|float_id not specified
+20240708T161341|2|system_cfg|float_id not specified
+20240708T161511|2|system_cfg|float_id not specified
+20240708T161843|2|system_cfg|float_id not specified
+20240708T162345|2|system_cfg|float_id not specified
+20240708T162349|5|ASCENT|slow ascent rate 3: -0.0625 dbar/sec @ 466.83 dbar
+20240708T162351|5|BuoyEngine|adjusting from 1743 to 1850
+20240708T162426|5|BuoyEngine|destination 1851 reached after 00:34
+20240708T162527|2|system_cfg|float_id not specified
+20240708T162723|2|system_cfg|float_id not specified
+20240708T163029|2|system_cfg|float_id not specified
+20240708T163531|2|system_cfg|float_id not specified
+20240708T163738|2|system_cfg|float_id not specified
+20240708T164033|2|system_cfg|float_id not specified
+20240708T164535|2|system_cfg|float_id not specified
+20240708T164827|2|system_cfg|float_id not specified
+20240708T164839|2|system_cfg|float_id not specified
+20240708T165038|2|system_cfg|float_id not specified
+20240708T165043|5|ASCENT|slow ascent rate 3: -0.0659 dbar/sec @ 341.97 dbar
+20240708T165045|5|BuoyEngine|adjusting from 1843 to 1950
+20240708T165120|5|BuoyEngine|destination 1949 reached after 00:34
+20240708T165221|2|system_cfg|float_id not specified
+20240708T165724|2|system_cfg|float_id not specified
+20240708T165905|2|system_cfg|float_id not specified
+20240708T170227|2|system_cfg|float_id not specified
+20240708T170730|2|system_cfg|float_id not specified
+20240708T171059|2|system_cfg|float_id not specified
+20240708T171108|2|system_cfg|float_id not specified
+20240708T171233|2|system_cfg|float_id not specified
+20240708T171238|5|ASCENT|slow ascent rate 3: -0.0621 dbar/sec @ 244.53 dbar
+20240708T171240|5|BuoyEngine|adjusting from 1942 to 2049
+20240708T171316|5|BuoyEngine|destination 2051 reached after 00:33
+20240708T171417|2|system_cfg|float_id not specified
+20240708T171920|2|system_cfg|float_id not specified
+20240708T172218|2|system_cfg|float_id not specified
+20240708T172315|2|system_cfg|float_id not specified
+20240708T172324|2|system_cfg|float_id not specified
+20240708T172423|2|system_cfg|float_id not specified
+20240708T172926|2|system_cfg|float_id not specified
+20240708T172931|5|ASCENT|slow ascent rate 3: -0.0407 dbar/sec @ 185.08 dbar
+20240708T172933|5|BuoyEngine|adjusting from 2043 to 2152
+20240708T173008|5|BuoyEngine|destination 2152 reached after 00:34
+20240708T173109|2|system_cfg|float_id not specified
+20240708T173114|5|ASCENT|slow ascent rate 4: -0.0592 dbar/sec @ 179.79 dbar
+20240708T173116|5|BuoyEngine|adjusting from 2152 to 2253
+20240708T173151|5|BuoyEngine|destination 2255 reached after 00:34
+20240708T173252|2|system_cfg|float_id not specified
+20240708T173257|5|ASCENT|slow ascent rate 5: -0.0759 dbar/sec @ 172.31 dbar
+20240708T173259|5|BuoyEngine|adjusting from 2255 to 2356
+20240708T173334|5|BuoyEngine|destination 2357 reached after 00:34
+20240708T173435|2|system_cfg|float_id not specified
+20240708T173701|2|system_cfg|float_id not specified
+20240708T173726|2|system_cfg|float_id not specified
+20240708T173938|2|system_cfg|float_id not specified
+20240708T174441|2|system_cfg|float_id not specified
+20240708T174944|2|system_cfg|float_id not specified
+20240708T174949|5|ASCENT|slow ascent rate 3: -0.0284 dbar/sec @ 118.43 dbar
+20240708T174951|5|BuoyEngine|adjusting from 2350 to 2456
+20240708T175024|5|BuoyEngine|destination 2455 reached after 00:32
+20240708T175125|2|system_cfg|float_id not specified
+20240708T175130|5|ASCENT|slow ascent rate 4: -0.0481 dbar/sec @ 114.56 dbar
+20240708T175132|5|BuoyEngine|adjusting from 2449 to 2555
+20240708T175207|5|BuoyEngine|destination 2556 reached after 00:34
+20240708T175308|2|system_cfg|float_id not specified
+20240708T175313|5|ASCENT|slow ascent rate 5: -0.0732 dbar/sec @ 107.58 dbar
+20240708T175315|5|BuoyEngine|adjusting from 2551 to 2657
+20240708T175349|5|BuoyEngine|destination 2658 reached after 00:33
+20240708T175449|2|system_cfg|float_id not specified
+20240708T175505|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175505|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175505|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175507|5|SUNA|send_ctd_data|>>'CTD,1720461296,22.7155,36.1105,98.95'
+20240708T175507|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175507|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175507|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175508|5|SUNA|sample_once|<<'07/08/2024 17:54:47, -12, CTD Command ACK Failure
+'
+20240708T175508|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175508|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175510|4|SUNA|sample|power cycling
+20240708T175521|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175521|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175521|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175522|5|SUNA|send_ctd_data|>>'CTD,1720461296,22.7155,36.1105,98.95'
+20240708T175522|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175522|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175522|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175523|5|SUNA|sample_once|<<'07/08/2024 17:55:02, -12, CTD Command ACK Failure
+'
+20240708T175523|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175523|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175525|4|SUNA|sample|power cycling
+20240708T175536|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175536|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175536|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175537|5|SUNA|send_ctd_data|>>'CTD,1720461296,22.7155,36.1105,98.95'
+20240708T175537|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175537|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175537|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175538|5|SUNA|sample_once|<<'07/08/2024 17:55:17, -12, CTD Command ACK Failure
+'
+20240708T175538|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175538|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175542|3|SUNA|sample|failed, error:-7
+20240708T175542|3|NO3|failed during update with error -7.
+20240708T175542|3|sensors|update_samplers|NO3 failed, errors: 135, error code: -7
+20240708T175639|2|system_cfg|float_id not specified
+20240708T175649|4|SUNA|sample_once|PTS NOT sent to sensor, 113 seconds old
+20240708T175656|5|NO3|Resetting consecutive error counter from 4 to 0
+20240708T175713|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175713|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175713|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175715|5|SUNA|send_ctd_data|>>'CTD,1720461424,23.4329,36.1649,88.65'
+20240708T175715|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175715|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175715|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175716|5|SUNA|sample_once|<<'07/08/2024 17:56:55, -12, CTD Command ACK Failure
+'
+20240708T175716|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175716|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175718|4|SUNA|sample|power cycling
+20240708T175729|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175729|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175729|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175730|5|SUNA|send_ctd_data|>>'CTD,1720461424,23.4329,36.1649,88.65'
+20240708T175730|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175730|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175730|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175731|5|SUNA|sample_once|<<'07/08/2024 17:57:10, -12, CTD Command ACK Failure
+'
+20240708T175731|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175731|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175733|4|SUNA|sample|power cycling
+20240708T175744|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175744|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175744|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175745|5|SUNA|send_ctd_data|>>'CTD,1720461424,23.4329,36.1649,88.65'
+20240708T175745|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175745|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175745|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175746|5|SUNA|sample_once|<<'07/08/2024 17:57:25, -12, CTD Command ACK Failure
+'
+20240708T175746|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175746|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175750|3|SUNA|sample|failed, error:-7
+20240708T175750|3|NO3|failed during update with error -7.
+20240708T175750|3|sensors|update_samplers|NO3 failed, errors: 136, error code: -7
+20240708T175849|2|system_cfg|float_id not specified
+20240708T175906|2|system_cfg|float_id not specified
+20240708T175922|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175922|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175922|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175923|5|SUNA|send_ctd_data|>>'CTD,1720461553,24.4083,36.3571,79.73'
+20240708T175923|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175923|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175923|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175925|5|SUNA|sample_once|<<'07/08/2024 17:59:03, -12, CTD Command ACK Failure
+'
+20240708T175925|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175925|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175927|4|SUNA|sample|power cycling
+20240708T175938|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175938|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175938|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175939|5|SUNA|send_ctd_data|>>'CTD,1720461553,24.4083,36.3571,79.73'
+20240708T175939|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175939|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175939|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175940|5|SUNA|sample_once|<<'07/08/2024 17:59:19, -12, CTD Command ACK Failure
+'
+20240708T175940|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175940|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175942|4|SUNA|sample|power cycling
+20240708T175953|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T175953|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T175953|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T175954|5|SUNA|send_ctd_data|>>'CTD,1720461553,24.4083,36.3571,79.73'
+20240708T175954|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T175954|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T175954|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T175955|5|SUNA|sample_once|<<'07/08/2024 17:59:34, -12, CTD Command ACK Failure
+'
+20240708T175955|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T175955|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T175959|3|SUNA|sample|failed, error:-7
+20240708T175959|3|NO3|failed during update with error -7.
+20240708T175959|3|sensors|update_samplers|NO3 failed, errors: 137, error code: -7
+20240708T180048|2|system_cfg|float_id not specified
+20240708T180153|2|system_cfg|float_id not specified
+20240708T180209|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T180209|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T180209|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T180211|5|SUNA|send_ctd_data|>>'CTD,1720461720,24.8326,36.3668,69.84'
+20240708T180211|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T180211|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T180211|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T180212|5|SUNA|sample_once|<<'07/08/2024 18:01:51, -12, CTD Command ACK Failure
+'
+20240708T180212|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T180212|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T180214|4|SUNA|sample|power cycling
+20240708T180225|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T180225|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T180225|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T180226|5|SUNA|send_ctd_data|>>'CTD,1720461720,24.8326,36.3668,69.84'
+20240708T180226|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T180226|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T180226|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T180227|5|SUNA|sample_once|<<'07/08/2024 18:02:06, -12, CTD Command ACK Failure
+'
+20240708T180227|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T180227|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T180229|4|SUNA|sample|power cycling
+20240708T180240|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T180240|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T180240|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T180241|5|SUNA|send_ctd_data|>>'CTD,1720461720,24.8326,36.3668,69.84'
+20240708T180241|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T180241|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T180241|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T180242|5|SUNA|sample_once|<<'07/08/2024 18:02:21, -12, CTD Command ACK Failure
+'
+20240708T180242|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T180242|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T180246|3|SUNA|sample|failed, error:-7
+20240708T180246|3|NO3|failed during update with error -7.
+20240708T180246|3|sensors|update_samplers|NO3 failed, errors: 138, error code: -7
+20240708T180449|2|system_cfg|float_id not specified
+20240708T180531|2|system_cfg|float_id not specified
+20240708T180551|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T180551|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T180551|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T180553|5|SUNA|send_ctd_data|>>'CTD,1720461942,25.3933,36.4189,59.94'
+20240708T180553|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T180553|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T180553|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T180554|5|SUNA|sample_once|<<'07/08/2024 18:05:32, -12, CTD Command ACK Failure
+'
+20240708T180554|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T180554|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T180556|4|SUNA|sample|power cycling
+20240708T180607|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T180607|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T180607|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T180608|5|SUNA|send_ctd_data|>>'CTD,1720461942,25.3933,36.4189,59.94'
+20240708T180608|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T180608|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T180608|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T180609|5|SUNA|sample_once|<<'07/08/2024 18:05:48, -12, CTD Command ACK Failure
+'
+20240708T180609|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T180609|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T180611|4|SUNA|sample|power cycling
+20240708T180622|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T180622|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T180622|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T180623|5|SUNA|send_ctd_data|>>'CTD,1720461942,25.3933,36.4189,59.94'
+20240708T180623|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T180623|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T180623|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T180624|5|SUNA|sample_once|<<'07/08/2024 18:06:03, -12, CTD Command ACK Failure
+'
+20240708T180624|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T180624|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T180628|3|SUNA|sample|failed, error:-7
+20240708T180628|3|NO3|failed during update with error -7.
+20240708T180628|3|sensors|update_samplers|NO3 failed, errors: 139, error code: -7
+20240708T180915|2|system_cfg|float_id not specified
+20240708T181133|2|system_cfg|float_id not specified
+20240708T181138|5|ASCENT|slow ascent rate 3: -0.0278 dbar/sec @ 50.02 dbar
+20240708T181140|5|BuoyEngine|adjusting from 2652 to 2758
+20240708T181152|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T181152|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T181152|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T181153|5|SUNA|send_ctd_data|>>'CTD,1720462303,25.9305,36.3853,49.92'
+20240708T181153|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T181153|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T181153|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T181155|5|SUNA|sample_once|<<'07/08/2024 18:11:33, -12, CTD Command ACK Failure
+'
+20240708T181155|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T181155|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T181157|4|SUNA|sample|power cycling
+20240708T181207|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T181207|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T181207|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T181209|5|SUNA|send_ctd_data|>>'CTD,1720462303,25.9305,36.3853,49.92'
+20240708T181209|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T181209|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T181209|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T181210|5|SUNA|sample_once|<<'07/08/2024 18:11:49, -12, CTD Command ACK Failure
+'
+20240708T181210|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T181210|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T181212|4|SUNA|sample|power cycling
+20240708T181214|5|BuoyEngine|destination 2758 reached after 00:33
+20240708T181223|5|SUNA|sample_once|<<'Alter: CAL File not suitable for TS-Correction.
+'
+20240708T181223|3|SUNA|sample_once|TS DAT ACK not received, error:-7
+20240708T181223|3|SUNA|sample|attempt 1/3 failed, error:-7
+20240708T181224|5|SUNA|send_ctd_data|>>'CTD,1720462303,25.9305,36.3853,49.92'
+20240708T181224|5|SUNA|send_ctd_data|<<'ACK,TS,DAT
+'
+20240708T181224|3|SUNA|send_ctd_data|ACK CTD data not received, error:-7
+20240708T181224|3|SUNA|sample|attempt 2/3 failed, error:-7
+20240708T181225|5|SUNA|sample_once|<<'07/08/2024 18:12:04, -12, CTD Command ACK Failure
+'
+20240708T181225|3|SUNA|sample_once|TS CMD ACK not received, error:-7
+20240708T181225|3|SUNA|sample|attempt 3/3 failed, error:-7
+20240708T181229|3|SUNA|sample|failed, error:-7
+20240708T181229|3|NO3|failed during update with error -7.
+20240708T181229|2|NO3|failed 17 consecutive times, disabling updater for rest of mission cycle
+20240708T181229|3|sensors|update_samplers|NO3 failed, errors: 140, error code: -7
+20240708T181342|2|system_cfg|float_id not specified
+20240708T181357|5|ASCENT|slow ascent rate 4: -0.0455 dbar/sec @ 44.55 dbar
+20240708T181359|5|BuoyEngine|adjusting from 2759 to 2858
+20240708T181432|5|BuoyEngine|destination 2857 reached after 00:32
+20240708T181531|5|ASCENT|slow ascent rate 5: -0.0521 dbar/sec @ 38.92 dbar
+20240708T181533|5|BuoyEngine|adjusting from 2855 to 2956
+20240708T181607|5|BuoyEngine|destination 2955 reached after 00:33
+20240708T181631|2|system_cfg|float_id not specified
+20240708T181701|2|system_cfg|float_id not specified
+20240708T181718|2|system_cfg|float_id not specified
+20240708T181723|5|ASCENT|slow ascent rate 6: -0.0148 dbar/sec @ 35.52 dbar
+20240708T181725|5|BuoyEngine|adjusting from 2948 to 3056
+20240708T181800|5|BuoyEngine|destination 3059 reached after 00:34
+20240708T181821|2|system_cfg|float_id not specified
+20240708T181843|2|system_cfg|float_id not specified
+20240708T181912|5|ASCENT|slow ascent rate 7: -0.0252 dbar/sec @ 31.33 dbar
+20240708T181914|5|BuoyEngine|adjusting from 3059 to 3160
+20240708T181948|5|BuoyEngine|destination 3160 reached after 00:33
+20240708T182101|5|ASCENT|slow ascent rate 8: -0.0669 dbar/sec @ 23.97 dbar
+20240708T182103|5|BuoyEngine|adjusting from 3161 to 3260
+20240708T182136|5|BuoyEngine|destination 3255 reached after 00:32
+20240708T182242|5|ASCENT|slow ascent rate 9: -0.0653 dbar/sec @ 16.46 dbar
+20240708T182244|5|BuoyEngine|adjusting from 3261 to 3361
+20240708T182318|5|BuoyEngine|destination 3362 reached after 00:33
+20240708T182450|2|system_cfg|float_id not specified
+20240708T182459|5|CTD|stop_profile|current: 19.718425 mA @ 14.990 V
+20240708T182459|5|CTD|stop_profile|CP Stopped
+20240708T182509|5|ASCENT|SurfacePressure reached @ 2.18 dbar after 438 mins
+20240708T182509|5|ASCENT|awake|count: 148, time: 3756, energy: 180.312500
+20240708T182509|5|ASCENT|sleep|count: 147, time: 22512, energy: 135.077661
+20240708T182509|5|mission_state|ASCENT -> SURFACE
+20240708T182514|5|measurement_sequence|starting
+20240708T182736|5|measurement_sequence|completed
+20240708T182738|5|BuoyEngine|adjusting from 3362 to 3661
+20240708T182914|5|BuoyEngine|destination 3661 reached after 01:35
+20240708T182915|5|AIR|starting inflation from 8.12 dbar
+20240708T183105|5|AIR|inflated to 12.03 dbar after 16 pulses (Time ON:80, OFF:16)
+20240708T183105|5|measurement_sequence|starting
+20240708T183325|5|measurement_sequence|completed
+20240708T183350|5|COMMS|found sky
+20240708T183748|5|CTD|bin_average|samples=25754 bins=1000 maxP=1998.62
+20240708T183921|4|CTD|download_profile|empty bin count: 3
+20240708T183924|5|SURFACE|Completing Mission No.: 7
+20240708T184104|5|RMC|Set Clock: 07/08/2024 18:41:04
+20240708T184104|5|GPS|GPS TimeToFix: 93 secs
+20240708T184104|5|GPS|GPS Skew: 0 secs
+20240708T184104|5|GPS|GPS Fix: 07/08/2024 18:41:04,17.84165,68.05936,4
+20240708T184105|5|GPS|time and location set

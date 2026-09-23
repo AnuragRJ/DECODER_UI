@@ -338,7 +338,7 @@ def test_fleet_status_payload_exposes_the_forward_test(tmp_path, monkeypatch):
     assert payload["floats"][0]["data_status"] in {
         "ACTIVE / RECENT PROFILE",
         "PROFILE OVERDUE",
-        "NO RECENT PROFILE DATA 60+ DAYS",
+        "NO RECENT PROFILE DATA 80+ DAYS",
         "NO DATA",
     }
     forward_test.reset_log_for_tests()
@@ -380,7 +380,7 @@ def test_a_broken_forward_log_cannot_break_the_status_payload(tmp_path, monkeypa
     assert payload["floats"][0]["data_status"] in {
         "ACTIVE / RECENT PROFILE",
         "PROFILE OVERDUE",
-        "NO RECENT PROFILE DATA 60+ DAYS",
+        "NO RECENT PROFILE DATA 80+ DAYS",
         "NO DATA",
     }
     forward_test.reset_log_for_tests()

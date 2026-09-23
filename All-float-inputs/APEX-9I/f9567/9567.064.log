@@ -1,0 +1,328 @@
+(Jul 29 2016 06:05:02,  846222 sec) TelemetryInit()      Profile 63. (Apf9i FwRev: 012811)
+(Jul 29 2016 06:12:05,  846645 sec) AirSystem()          Battery [187cnt, 14.5V]  Current [77cnt, 31.0mA]  Barometer [126cnt, 6.5"Hg]  Run-Time [51s]
+(Jul 29 2016 06:12:33,  846673 sec) GpsServices()        GPS almanac is current.
+(Jul 29 2016 06:12:33,  846673 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jul 29 2016 06:12:46,  846686 sec) gga()                $GPGGA,061230,1343.0323,N,08156.3849,E,0,00,,,M,,M,,*50
+(Jul 29 2016 06:13:01,  846701 sec) gga()                $GPGGA,061230,1343.0323,N,08156.3849,E,0,00,,,M,,M,,*50
+(Jul 29 2016 06:13:10,  846711 sec) gga()                $GPGGA,061240,1343.0323,N,08156.3849,E,0,00,,,M,,M,,*57
+(Jul 29 2016 06:13:20,  846721 sec) gga()                $GPGGA,061250,1343.0323,N,08156.3849,E,0,00,,,M,,M,,*56
+(Jul 29 2016 06:13:30,  846731 sec) gga()                $GPGGA,061300,1343.0323,N,08156.3849,E,0,00,,,M,,M,,*52
+(Jul 29 2016 06:13:40,  846741 sec) gga()                $GPGGA,061310,1343.0323,N,08156.3849,E,0,00,,,M,,M,,*53
+(Jul 29 2016 06:13:50,  846751 sec) gga()                $GPGGA,061320,1343.0323,N,08156.3849,E,0,00,,,M,,M,,*50
+(Jul 29 2016 06:14:00,  846761 sec) gga()                $GPGGA,061330,1343.0323,N,08156.3849,E,0,00,,,M,,M,,*51
+(Jul 29 2016 06:14:29,  846789 sec) gga()                $GPGGA,061340,1310.4294,N,08117.0222,E,1,04,2.1,-4.6,M,-89.6,M,,*45
+(Jul 29 2016 06:14:29,  846790 sec) GpsServices()        Profile 63 GPS fix obtained in 116 seconds.
+(Jul 29 2016 06:14:29,  846790 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jul 29 2016 06:14:30,  846790 sec) GpsServices()        Fix:   81.284  13.174 07/29/2016 061340    4
+(Jul 29 2016 06:14:59,  846820 sec) gga()                $GPGGA,061410,1310.4287,N,08117.0255,E,1,09,1.0,-0.6,M,-89.6,M,,*4E
+(Jul 29 2016 06:15:05,  846825 sec) gga()                $GPGGA,061440,1310.4289,N,08117.0308,E,1,09,1.0,-2.6,M,-89.6,M,,*4E
+(Jul 29 2016 06:15:05,  846825 sec) GpsServices()        APF9 RTC skew (25s) OK.
+(Jul 29 2016 06:15:05,  846826 sec) LogNmeaSentences()   270,20,17,37,006,41,19,44,333,44,24,11,319,33*7F
+(Jul 29 2016 06:15:06,  846826 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,45,058,46,30,36,159,44*77
+(Jul 29 2016 06:15:15,  846835 sec) LogNmeaSentences()   $GPRMC,061450,A,1310.4286,N,08117.0323,E,001.4,352.1,290716,001.5,W*6B
+(Jul 29 2016 06:15:15,  846836 sec) LogNmeaSentences()   $GPGGA,061450,1310.4286,N,08117.0323,E,1,09,1.0,-2.7,M,-89.6,M,,*48
+(Jul 29 2016 06:15:16,  846836 sec) LogNmeaSentences()   $GPGSA,A,3,02,03,06,07,,,17,19,24,28,30,,1.4,1.0,0.9*3E
+(Jul 29 2016 06:15:16,  846836 sec) LogNmeaSentences()   $GPGSV,3,1,11,02,37,219,45,03,08,065,38,06,80,214,47,07,10,153,40*7A
+(Jul 29 2016 06:15:16,  846837 sec) LogNmeaSentences()   $GPGSV,3,2,11,13,00,000,40,15,02,270,31,17,37,006,47,19,44,333,48*7F
+(Jul 29 2016 06:15:17,  846837 sec) LogNmeaSentences()   $GPGSV,3,3,11,24,11,319,41,28,45,058,48,30,36,159,45*41
+(Jul 29 2016 06:15:25,  846845 sec) LogNmeaSentences()   $GPRMC,061500,A,1310.4273,N,08117.0338,E,001.0,131.2,290716,001.5,W*6F
+(Jul 29 2016 06:15:25,  846846 sec) LogNmeaSentences()   $GPGGA,061500,1310.4273,N,08117.0338,E,1,09,0.9,-4.0,M,-89.6,M,,*45
+(Jul 29 2016 06:15:26,  846846 sec) LogNmeaSentences()   $GPGSA,A,3,02,03,06,07,,17,19,24,28,30,,,1.2,0.9,0.8*31
+(Jul 29 2016 06:15:26,  846846 sec) LogNmeaSentences()   $GPGSV,3,1,10,02,37,219,44,03,08,065,39,06,80,214,48,07,10,153,33*70
+(Jul 29 2016 06:15:26,  846847 sec) LogNmeaSentences()   $GPGSV,3,2,10,15,02,270,28,17,37,006,45,19,43,333,46,24,11,319,39*7C
+(Jul 29 2016 06:15:27,  846847 sec) LogNmeaSentences()   $GPGSV,3,3,10,28,45,058,47,30,36,159,44*76
+(Jul 29 2016 06:15:27,  846847 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.80,,,,,,,,*7C
+(Jul 29 2016 06:15:35,  846855 sec) LogNmeaSentences()   $GPRMC,061510,A,1310.4266,N,08117.0362,E,000.8,138.8,290716,001.5,W*6F
+(Jul 29 2016 06:15:35,  846856 sec) LogNmeaSentences()   $GPGGA,061510,1310.4266,N,08117.0362,E,1,09,1.0,-5.3,M,-89.6,M,,*45
+(Jul 29 2016 06:15:36,  846856 sec) GpsServices()        GPS services complete.
+(Jul 29 2016 06:16:00,  846881 sec) CLogin()             Connecting to primary host.
+(Jul 29 2016 06:16:14,  846894 sec) CLogin()             Connection 1 established in 14 seconds.
+(Jul 29 2016 06:16:28,  846908 sec) login()              Login successful.
+(Jul 29 2016 06:16:31,  846912 sec) CLogin()             Logged in to host.  [Login required 17 seconds]
+(Jul 29 2016 06:16:39,  846919 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jul 29 2016 06:16:41,  846922 sec) Rx()                 Initiating transfer. [0x43]
+(Jul 29 2016 06:16:44,  846925 sec) RxStartByte()        Sync errors encountered: 361
+(Jul 29 2016 06:16:47,  846927 sec) Rx()                 Truncated packet received - retrying.
+(Jul 29 2016 06:16:52,  846933 sec) RxStartByte()        Sync errors encountered: 1000
+(Jul 29 2016 06:16:57,  846937 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jul 29 2016 06:17:02,  846942 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 21 sec, 48.8 bps]
+(Jul 29 2016 06:17:02,  846942 sec) RxConfig()           Download successful.
+(Jul 29 2016 06:17:16,  846956 sec) WriteVitals()        Writing vitals to "9567.063.msg".
+(Jul 29 2016 06:17:30,  846970 sec) UpLoadFile()         Uploading "9567.063.msg" to host as "9567.063.msg".
+(Jul 29 2016 06:17:35,  846975 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jul 29 2016 06:18:11,  847012 sec) TxPacket()           NAK received - resending packet. [PktNum=0x05]
+(Jul 29 2016 06:18:11,  847012 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jul 29 2016 06:18:30,  847030 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jul 29 2016 06:18:30,  847030 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jul 29 2016 06:18:43,  847043 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jul 29 2016 06:18:43,  847043 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(Jul 29 2016 06:19:22,  847083 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Jul 29 2016 06:19:22,  847083 sec) TxPacket()           Packet xmit history: [01010001] (0:ok, 1:fail).
+(Jul 29 2016 06:19:32,  847092 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Jul 29 2016 06:19:32,  847092 sec) TxPacket()           Packet xmit history: [10100011] (0:ok, 1:fail).
+(Jul 29 2016 06:19:47,  847107 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jul 29 2016 06:19:47,  847107 sec) TxPacket()           Packet xmit history: [10001101] (0:ok, 1:fail).
+(Jul 29 2016 06:19:53,  847113 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jul 29 2016 06:19:53,  847113 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(Jul 29 2016 06:20:20,  847140 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jul 29 2016 06:20:20,  847140 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jul 29 2016 06:21:22,  847202 sec) Tx()                 Transmission completed successfully [26 packets, 23185 bytes, 226 sec, 105.9 bps]
+(Jul 29 2016 06:21:22,  847203 sec) UpLoadFile()         Upload successful.
+(Jul 29 2016 06:21:28,  847209 sec) UpLoadFile()         Uploading "9567.063.log" to host as "9567.063.log".
+(Jul 29 2016 06:21:30,  847211 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jul 29 2016 06:22:13,  847253 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jul 29 2016 06:22:13,  847253 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jul 29 2016 06:22:45,  847285 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jul 29 2016 06:22:45,  847285 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jul 29 2016 06:23:03,  847303 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jul 29 2016 06:23:03,  847303 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jul 29 2016 06:23:26,  847326 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jul 29 2016 06:23:26,  847326 sec) TxPacket()           Packet xmit history: [10010001] (0:ok, 1:fail).
+(Jul 29 2016 06:23:31,  847331 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jul 29 2016 06:23:31,  847331 sec) TxPacket()           Packet xmit history: [00100011] (0:ok, 1:fail).
+(Jul 29 2016 06:23:36,  847336 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:36,  847336 sec) TxPacket()           Packet xmit history: [10001101] (0:ok, 1:fail).
+(Jul 29 2016 06:23:37,  847337 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:37,  847337 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(Jul 29 2016 06:23:38,  847338 sec) TxPacket()           Invalid response [0x61] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:38,  847338 sec) TxPacket()           Packet xmit history: [00110111] (0:ok, 1:fail).
+(Jul 29 2016 06:23:39,  847339 sec) TxPacket()           Invalid response [0x4d] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:39,  847339 sec) TxPacket()           Packet xmit history: [01101111] (0:ok, 1:fail).
+(Jul 29 2016 06:23:40,  847340 sec) TxPacket()           Invalid response [0x42] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:40,  847340 sec) TxPacket()           Packet xmit history: [11011111] (0:ok, 1:fail).
+(Jul 29 2016 06:23:40,  847341 sec) TxPacket()           Invalid response [0x65] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:41,  847341 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jul 29 2016 06:23:41,  847342 sec) TxPacket()           Invalid response [0x44] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:42,  847342 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jul 29 2016 06:23:42,  847343 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:42,  847343 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jul 29 2016 06:23:43,  847344 sec) TxPacket()           Invalid response [0x37] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:43,  847344 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jul 29 2016 06:23:46,  847346 sec) TxPacket()           Invalid response [0x30] - resending packet. [PktNum=0x12]
+(Jul 29 2016 06:23:46,  847346 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jul 29 2016 06:23:46,  847347 sec) TxPacket()           Exit status: -5
+(Jul 29 2016 06:23:46,  847347 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jul 29 2016 06:23:57,  847358 sec) UpLoadFile()         Upload failed.
+(Jul 29 2016 06:24:11,  847371 sec) UpLoadFile()         Uploading "9567.063.log" to host as "9567.063.log".
+(Jul 29 2016 06:24:50,  847411 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jul 29 2016 06:25:53,  847473 sec) TxPacket()           No carrier detected.
+(Jul 29 2016 06:25:53,  847473 sec) TxPacket()           Exit status: 0
+(Jul 29 2016 06:25:53,  847473 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jul 29 2016 06:26:03,  847484 sec) UpLoadFile()         Upload failed.
+(Jul 29 2016 06:26:04,  847484 sec) UpLoad()             Files successfully uploaded: 1
+(Jul 29 2016 06:26:04,  847484 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jul 29 2016 06:26:04,  847484 sec) logout()             No carrier detected.
+(Jul 29 2016 06:26:04,  847484 sec) Telemetry()          Telemetry cycle complete: PrfId=63 ConnectionAttempts=1  Connections=1
+(Jul 29 2016 06:41:19,  848399 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Jul 29 2016 06:41:52,  848432 sec) GpsServices()        GPS almanac is current.
+(Jul 29 2016 06:41:52,  848432 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jul 29 2016 06:42:20,  848460 sec) gga()                $GPGGA,064130,1310.3593,N,08117.2413,E,1,05,1.4,0.7,M,-89.6,M,,*6B
+(Jul 29 2016 06:42:20,  848460 sec) GpsServices()        Profile 63 GPS fix obtained in 28 seconds.
+(Jul 29 2016 06:42:20,  848460 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jul 29 2016 06:42:20,  848460 sec) GpsServices()        Fix:   81.287  13.173 07/29/2016 064130    5
+(Jul 29 2016 06:42:49,  848489 sec) gga()                $GPGGA,064200,1310.3570,N,08117.2422,E,1,08,1.0,-1.5,M,-89.6,M,,*43
+(Jul 29 2016 06:42:55,  848495 sec) gga()                $GPGGA,064230,1310.3555,N,08117.2451,E,1,08,1.0,-0.5,M,-89.6,M,,*42
+(Jul 29 2016 06:42:55,  848495 sec) GpsServices()        APF9 RTC skew (25s) OK.
+(Jul 29 2016 06:42:55,  848496 sec) LogNmeaSentences()   44,19,40,349,45,24,19,312,40,28,45,077,46*7E
+(Jul 29 2016 06:42:56,  848496 sec) LogNmeaSentences()   $GPGSV,3,3,09,30,24,160,43*45
+(Jul 29 2016 06:43:05,  848505 sec) LogNmeaSentences()   $GPRMC,064240,A,1310.3539,N,08117.2483,E,000.7,170.8,290716,001.5,W*6B
+(Jul 29 2016 06:43:05,  848506 sec) LogNmeaSentences()   $GPGGA,064240,1310.3539,N,08117.2483,E,1,07,1.1,0.7,M,-89.6,M,,*61
+(Jul 29 2016 06:43:06,  848506 sec) LogNmeaSentences()   $GPGSA,A,3,02,,,06,17,19,24,28,30,,,,1.4,1.1,0.9*3B
+(Jul 29 2016 06:43:06,  848506 sec) LogNmeaSentences()   $GPGSV,3,1,09,02,48,230,45,03,04,054,40,05,03,201,30,06,82,332,49*7B
+(Jul 29 2016 06:43:06,  848507 sec) LogNmeaSentences()   $GPGSV,3,2,09,17,32,019,46,19,40,349,46,24,19,312,41,28,45,077,48*70
+(Jul 29 2016 06:43:06,  848507 sec) LogNmeaSentences()   $GPGSV,3,3,09,30,24,160,44*42
+(Jul 29 2016 06:43:15,  848515 sec) LogNmeaSentences()   $GPRMC,064250,A,1310.3534,N,08117.2506,E,002.6,083.6,290716,001.5,W*6B
+(Jul 29 2016 06:43:15,  848515 sec) LogNmeaSentences()   $GPGGA,064250,1310.3534,N,08117.2506,E,1,04,2.1,2.6,M,-89.6,M,,*62
+(Jul 29 2016 06:43:15,  848516 sec) LogNmeaSentences()   $GPGSA,A,3,,,06,17,28,30,,,,,,,2.3,2.1,0.9*30
+(Jul 29 2016 06:43:16,  848516 sec) LogNmeaSentences()   $GPGSV,3,1,09,03,04,054,36,05,03,201,27,06,82,332,48,17,32,019,46*7E
+(Jul 29 2016 06:43:16,  848516 sec) LogNmeaSentences()   $GPGSV,3,2,09,28,45,077,48,30,24,160,41,02,48,230,00,19,40,349,00*7C
+(Jul 29 2016 06:43:16,  848517 sec) LogNmeaSentences()   $GPGSV,3,3,09,24,19,313,00*4F
+(Jul 29 2016 06:43:25,  848525 sec) LogNmeaSentences()   $GPRMC,064300,A,1310.3530,N,08117.2525,E,001.0,336.7,290716,001.5,W*63
+(Jul 29 2016 06:43:25,  848526 sec) LogNmeaSentences()   $GPGGA,064300,1310.3530,N,08117.2525,E,1,06,1.1,-1.5,M,-89.6,M,,*4F
+(Jul 29 2016 06:43:26,  848526 sec) LogNmeaSentences()   $GPGSA,A,3,02,,,17,19,24,28,30,,,,,1.4,1.1,0.9*3D
+(Jul 29 2016 06:43:26,  848526 sec) LogNmeaSentences()   $GPGSV,3,1,09,02,48,230,37,03,04,054,26,05,03,201,18,17,32,019,47*7B
+(Jul 29 2016 06:43:26,  848527 sec) LogNmeaSentences()   $GPGSV,3,2,09,19,40,350,48,24,20,312,33,28,45,077,44,30,24,160,34*7D
+(Jul 29 2016 06:43:26,  848527 sec) LogNmeaSentences()   $GPGSV,3,3,09,06,83,332,00*4F
+(Jul 29 2016 06:43:27,  848527 sec) LogNmeaSentences()   $PGRMT,GPS 15x-L software ver. 3.80,,,,,,,,*7C
+(Jul 29 2016 06:43:27,  848527 sec) GpsServices()        GPS services complete.
+(Jul 29 2016 06:44:07,  848568 sec) CLogin()             Connecting to primary host.
+(Jul 29 2016 06:44:26,  848586 sec) CLogin()             Connection 2 established in 19 seconds.
+(Jul 29 2016 06:44:56,  848616 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jul 29 2016 06:44:56,  848616 sec) login()              Login prompt not received.
+(Jul 29 2016 06:45:09,  848629 sec) login()              Login successful.
+(Jul 29 2016 06:45:14,  848634 sec) chat()               Expected string [cmd>] not received.
+(Jul 29 2016 06:45:14,  848634 sec) login()              Attempt to set the command prompt failed.
+(Jul 29 2016 06:45:19,  848640 sec) CLogin()             Logged in to host.  [Login required 53 seconds]
+(Jul 29 2016 06:45:27,  848648 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jul 29 2016 06:45:29,  848650 sec) Rx()                 Initiating transfer. [0x43]
+(Jul 29 2016 06:45:32,  848652 sec) RxStartByte()        Sync errors encountered: 299
+(Jul 29 2016 06:45:37,  848657 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jul 29 2016 06:45:42,  848662 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 13 sec, 78.8 bps]
+(Jul 29 2016 06:45:42,  848662 sec) RxConfig()           Download successful.
+(Jul 29 2016 06:46:01,  848681 sec) UpLoadFile()         Uploading "9567.063.log" to host as "9567.063.log".
+(Jul 29 2016 06:46:05,  848685 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jul 29 2016 06:46:16,  848696 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jul 29 2016 06:46:16,  848696 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jul 29 2016 06:46:22,  848702 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jul 29 2016 06:46:22,  848702 sec) TxPacket()           Packet xmit history: [11000011] (0:ok, 1:fail).
+(Jul 29 2016 06:46:29,  848709 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jul 29 2016 06:46:29,  848709 sec) TxPacket()           Packet xmit history: [10000111] (0:ok, 1:fail).
+(Jul 29 2016 06:46:45,  848725 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jul 29 2016 06:46:45,  848725 sec) TxPacket()           Packet xmit history: [00011101] (0:ok, 1:fail).
+(Jul 29 2016 06:47:38,  848778 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jul 29 2016 06:47:38,  848778 sec) TxPacket()           Packet xmit history: [01110101] (0:ok, 1:fail).
+(Jul 29 2016 06:48:01,  848801 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jul 29 2016 06:48:01,  848801 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(Jul 29 2016 06:48:16,  848816 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jul 29 2016 06:48:16,  848816 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jul 29 2016 06:48:23,  848823 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jul 29 2016 06:48:23,  848823 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Jul 29 2016 06:49:00,  848860 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Jul 29 2016 06:49:00,  848860 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jul 29 2016 06:50:32,  848952 sec) TxPacket()           NAK received - resending packet. [PktNum=0x20]
+(Jul 29 2016 06:50:32,  848952 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jul 29 2016 06:50:53,  848973 sec) Tx()                 Transmission completed successfully [34 packets, 31157 bytes, 287 sec, 111.9 bps]
+(Jul 29 2016 06:50:53,  848973 sec) UpLoadFile()         Upload successful.
+(Jul 29 2016 06:50:59,  848979 sec) UpLoad()             Files successfully uploaded: 1
+(Jul 29 2016 06:50:59,  848980 sec) UpLoad()             Upload complete.
+(Jul 29 2016 06:51:05,  848985 sec) logout()             Log-out successful.
+(Jul 29 2016 06:51:06,  848987 sec) Telemetry()          Telemetry cycle complete: PrfId=63 ConnectionAttempts=2  Connections=2
+(Jul 29 2016 06:51:07,  848987 sec) TelemetryTerminate() Parsing new mission configuration.
+(Jul 29 2016 06:51:08,  848988 sec) configure()          Parsing configurators in "mission.cfg".
+(Jul 29 2016 06:51:12,  848992 sec) configure()             TelemetryRetry(15)      [0x7BBC] [TelemetryRetry(15)].
+(Jul 29 2016 06:51:12,  848992 sec) configure()          Configuration CRCs and syntax OK.
+(Jul 29 2016 06:51:12,  848992 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Jul 29 2016 06:51:12,  848993 sec) ConfigSupervisor()   Configuration accepted.
+(Jul 29 2016 06:51:12,  848993 sec) TelemetryTerminate() Reconditioning the file system.
+(Jul 29 2016 06:51:24,       7 sec) DescentInit()        Deep profile 64 initiated at mission-time 848997sec.
+(Jul 29 2016 06:51:26,      10 sec) DescentInit()        Surface pressure: -0.1dbars.
+(Jul 29 2016 06:51:31,      15 sec) PistonMoveAbsWTO()    192->054 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 [694sec, 14.3Volts, 0.161Amps, CPT:694sec]
+(Jul 29 2016 07:03:06,     710 sec) PistonMoveAbsWTO()    054->000 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 016 015 014 013 012 011 010 009 [226sec, 14.3Volts, 0.161Amps, CPT:920sec]
+(Jul 29 2016 07:07:02,     946 sec) Descent()            Pressure: 86.5
+(Jul 29 2016 07:51:20,    3604 sec) Descent()            Pressure: 399.0
+(Jul 29 2016 08:51:20,    7204 sec) Descent()            Pressure: 878.7
+(Jul 29 2016 08:51:21,    7204 sec) PistonMoveAbsWTO()    009->054 010 011 012 013 014 015 016 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032 033 034 035 036 037 038 039 040 041 042 043 044 045 046 047 048 049 050 051 052 053 054 [260sec, 13.5Volts, 0.431Amps, CPT:1180sec]
+(Jul 29 2016 09:51:20,   10804 sec) Descent()            Pressure: 857.6
+(Jul 29 2016 10:51:20,   14404 sec) Descent()            Pressure: 872.7
+(Jul 29 2016 11:51:20,   18004 sec) Descent()            Pressure: 879.9
+(Jul 29 2016 11:51:21,   18004 sec) ParkInit()           
+(Jul 29 2016 13:51:50,   25233 sec) Park()               ParkPOutOfBand[-3, 906.4 dbars]: retract piston.
+(Jul 29 2016 13:51:50,   25234 sec) PistonMoveAbsWTO()    054->053 053 [2sec, 14.0Volts, 0.109Amps, CPT:1182sec]
+(Jul 29 2016 16:51:50,   36033 sec) Park()               ParkPOutOfBand[-3, 932.2 dbars]: retract piston.
+(Jul 29 2016 16:51:50,   36034 sec) PistonMoveAbsWTO()    053->052 052 [6sec, 14.0Volts, 0.093Amps, CPT:1188sec]
+(Jul 29 2016 19:51:50,   46833 sec) Park()               ParkPOutOfBand[-3, 977.8 dbars]: retract piston.
+(Jul 29 2016 19:51:50,   46834 sec) PistonMoveAbsWTO()    052->051 051 [5sec, 14.0Volts, 0.085Amps, CPT:1193sec]
+(Jul 29 2016 22:51:50,   57633 sec) Park()               ParkPOutOfBand[3, 1018.4 dbars]: extend piston.
+(Jul 29 2016 22:51:50,   57634 sec) PistonMoveAbsWTO()    051->052 052 [2sec, 13.6Volts, 0.471Amps, CPT:1195sec]
+(Jul 30 2016 02:51:50,   72034 sec) Park()               ParkPOutOfBand[3, 1017.3 dbars]: extend piston.
+(Jul 30 2016 02:51:50,   72034 sec) PistonMoveAbsWTO()    052->053 053 [6sec, 13.3Volts, 0.467Amps, CPT:1201sec]
+(Jul 31 2016 09:51:50,  183634 sec) Park()               ParkPOutOfBand[3, 1014.8 dbars]: extend piston.
+(Jul 31 2016 09:51:51,  183634 sec) PistonMoveAbsWTO()    053->054 054 [7sec, 13.0Volts, 0.479Amps, CPT:1208sec]
+(Jul 31 2016 12:51:50,  194434 sec) Park()               ParkPOutOfBand[-3, 977.7 dbars]: retract piston.
+(Jul 31 2016 12:51:51,  194434 sec) PistonMoveAbsWTO()    054->053 053 [3sec, 13.9Volts, 0.105Amps, CPT:1211sec]
+(Aug 04 2016 06:51:53,  518436 sec) Park()               ParkPOutOfBand[3, 1010.3 dbars]: extend piston.
+(Aug 04 2016 06:51:53,  518437 sec) PistonMoveAbsWTO()    053->054 054 [2sec, 13.5Volts, 0.467Amps, CPT:1213sec]
+(Aug 06 2016 02:51:53,  676837 sec) Park()               ParkPOutOfBand[3, 1011.8 dbars]: extend piston.
+(Aug 06 2016 02:51:54,  676837 sec) PistonMoveAbsWTO()    054->055 055 [7sec, 12.9Volts, 0.467Amps, CPT:1220sec]
+(Aug 06 2016 05:51:53,  687637 sec) Park()               ParkPOutOfBand[-3, 975.4 dbars]: retract piston.
+(Aug 06 2016 05:51:54,  687637 sec) PistonMoveAbsWTO()    055->054 054 [2sec, 13.9Volts, 0.089Amps, CPT:1222sec]
+(Aug 06 2016 08:51:53,  698437 sec) Park()               ParkPOutOfBand[-3, 983.4 dbars]: retract piston.
+(Aug 06 2016 08:51:54,  698437 sec) PistonMoveAbsWTO()    054->053 053 [6sec, 13.9Volts, 0.101Amps, CPT:1228sec]
+(Aug 06 2016 11:51:53,  709237 sec) Park()               ParkPOutOfBand[3, 1019.7 dbars]: extend piston.
+(Aug 06 2016 11:51:54,  709237 sec) PistonMoveAbsWTO()    053->054 054 [3sec, 13.3Volts, 0.479Amps, CPT:1231sec]
+(Aug 07 2016 14:51:42,  806425 sec) CtdPower()           [ 1007.04,  6.8599, 34.9463]
+(Aug 07 2016 14:51:42,  806425 sec) CtdPower()           CTD Power consumption [180VCnt 11ACnt]: 13.953Volts * 0.044Amps = 0.62Watts.
+(Aug 07 2016 14:51:42,  806426 sec) ParkTerminate()      Piston Position:54 Vacuum:80 Vq:196 Aq:6 Vsbe:180 Asbe:11
+(Aug 07 2016 14:52:10,  806453 sec) ParkTerminate()      PTS: 1006.9dbars 6.8602C 34.9461PSU
+(Aug 07 2016 14:52:10,  806454 sec) GoDeepInit()         Moving piston.
+(Aug 07 2016 14:52:10,  806454 sec) PistonMoveAbsWTO()    054->015 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 025 024 023 022 021 020 019 018 017 016 015 [197sec, 13.9Volts, 0.089Amps, CPT:1428sec]
+(Aug 07 2016 18:41:20,  820204 sec) GoDeep()             Sequence point detected at 2001.7dbar.
+(Aug 07 2016 18:41:23,  820206 sec) ProfileInit()        PrfId:064  Pressure:2001.7dbar  pTable[0]:2000dbar
+(Aug 07 2016 18:41:34,  820217 sec) PistonMoveAbsWTO()    015->037 016 017 018 019 020 [30sec, 12.6Volts, 0.790Amps, CPT:1458sec]
+(Aug 07 2016 18:42:14,  820257 sec) PistonMoveAbsWTO()    020->037 021 022 023 024 [30sec, 12.6Volts, 0.790Amps, CPT:1488sec]
+(Aug 07 2016 18:43:21,  820324 sec) Profile()            Sample 0 initiated at 2000.6dbars for bin 0 [2000dbars].  PTS: 1999.0dbars 2.7612C 34.7830PSU
+(Aug 07 2016 18:43:21,  820325 sec) PistonMoveAbsWTO()    024->037 025 026 027 028 [30sec, 12.5Volts, 0.778Amps, CPT:1518sec]
+(Aug 07 2016 18:44:02,  820365 sec) PistonMoveAbsWTO()    028->037 029 030 031 032 [30sec, 12.2Volts, 0.798Amps, CPT:1548sec]
+(Aug 07 2016 18:44:42,  820405 sec) PistonMoveAbsWTO()    032->037 033 034 035 036 [30sec, 12.2Volts, 0.790Amps, CPT:1578sec]
+(Aug 07 2016 18:45:22,  820445 sec) PistonMoveAbsWTO()    036->037 037 [2sec, 12.9Volts, 0.786Amps, CPT:1580sec]
+(Aug 07 2016 18:59:23,  821286 sec) Profile()            Sample 1 initiated at 1900.3dbars for bin 1 [1900dbars].  PTS: 1897.8dbars 2.9521C 34.7916PSU
+(Aug 07 2016 19:16:57,  822340 sec) Profile()            Sample 2 initiated at 1800.2dbars for bin 2 [1800dbars].  PTS: 1798.0dbars 3.2663C 34.8049PSU
+(Aug 07 2016 19:32:06,  823249 sec) AscentControlAgent() Bouyancy nudge to 47 (v=0.075dbar/sec).
+(Aug 07 2016 19:32:06,  823250 sec) PistonMoveAbsWTO()    037->047 038 039 040 041 [30sec, 13.1Volts, 0.697Amps, CPT:1610sec]
+(Aug 07 2016 19:32:47,  823290 sec) PistonMoveAbsWTO()    041->047 042 043 044 045 046 [30sec, 12.9Volts, 0.697Amps, CPT:1640sec]
+(Aug 07 2016 19:33:27,  823330 sec) PistonMoveAbsWTO()    046->047 047 [7sec, 12.8Volts, 0.701Amps, CPT:1647sec]
+(Aug 07 2016 19:36:32,  823515 sec) Profile()            Sample 3 initiated at 1700.5dbars for bin 3 [1700dbars].  PTS: 1697.9dbars 3.5571C 34.8170PSU
+(Aug 07 2016 19:53:48,  824551 sec) Profile()            Sample 4 initiated at 1600.5dbars for bin 4 [1600dbars].  PTS: 1598.2dbars 3.9086C 34.8315PSU
+(Aug 07 2016 20:13:24,  825727 sec) Profile()            Sample 5 initiated at 1500.9dbars for bin 5 [1500dbars].  PTS: 1498.9dbars 4.6684C 34.8618PSU
+(Aug 07 2016 20:17:27,  825970 sec) AscentControlAgent() Bouyancy nudge to 57 (v=0.076dbar/sec).
+(Aug 07 2016 20:17:27,  825971 sec) PistonMoveAbsWTO()    047->057 048 049 050 051 052 [30sec, 13.2Volts, 0.629Amps, CPT:1677sec]
+(Aug 07 2016 20:18:08,  826011 sec) PistonMoveAbsWTO()    052->057 053 054 055 056 [30sec, 13.0Volts, 0.633Amps, CPT:1707sec]
+(Aug 07 2016 20:18:48,  826051 sec) PistonMoveAbsWTO()    056->057 057 [2sec, 13.4Volts, 0.621Amps, CPT:1709sec]
+(Aug 07 2016 20:31:21,  826804 sec) Profile()            Sample 6 initiated at 1400.6dbars for bin 6 [1400dbars].  PTS: 1398.2dbars 5.0712C 34.8768PSU
+(Aug 07 2016 20:40:33,  827356 sec) Profile()            Sample 7 initiated at 1350.7dbars for bin 7 [1350dbars].  PTS: 1348.5dbars 5.2677C 34.8846PSU
+(Aug 07 2016 20:50:25,  827948 sec) Profile()            Sample 8 initiated at 1300.6dbars for bin 8 [1300dbars].  PTS: 1298.5dbars 5.5737C 34.8953PSU
+(Aug 07 2016 21:00:47,  828570 sec) Profile()            Sample 9 initiated at 1250.4dbars for bin 9 [1250dbars].  PTS: 1248.4dbars 5.7797C 34.9037PSU
+(Aug 07 2016 21:02:40,  828683 sec) AscentControlAgent() Bouyancy nudge to 67 (v=0.079dbar/sec).
+(Aug 07 2016 21:02:40,  828684 sec) PistonMoveAbsWTO()    057->067 058 059 060 061 [30sec, 13.3Volts, 0.544Amps, CPT:1739sec]
+(Aug 07 2016 21:03:21,  828724 sec) PistonMoveAbsWTO()    062->067 063 064 065 066 [30sec, 13.2Volts, 0.536Amps, CPT:1769sec]
+(Aug 07 2016 21:04:01,  828764 sec) PistonMoveAbsWTO()    066->067 067 [2sec, 13.5Volts, 0.548Amps, CPT:1771sec]
+(Aug 07 2016 21:09:22,  829085 sec) Profile()            Sample 10 initiated at 1200.8dbars for bin 10 [1200dbars].  PTS: 1198.1dbars 6.0252C 34.9119PSU
+(Aug 07 2016 21:17:22,  829565 sec) Profile()            Sample 11 initiated at 1150.3dbars for bin 11 [1150dbars].  PTS: 1147.7dbars 6.2671C 34.9222PSU
+(Aug 07 2016 21:25:34,  830057 sec) Profile()            Sample 12 initiated at 1100.3dbars for bin 12 [1100dbars].  PTS: 1097.8dbars 6.3904C 34.9284PSU
+(Aug 07 2016 21:34:06,  830569 sec) Profile()            Sample 13 initiated at 1050.2dbars for bin 13 [1050dbars].  PTS: 1047.8dbars 6.6363C 34.9377PSU
+(Aug 07 2016 21:42:46,  831089 sec) Profile()            Sample 14 initiated at 1000.2dbars for bin 14 [1000dbars].  PTS: 997.9dbars 6.9410C 34.9483PSU
+(Aug 07 2016 21:52:08,  831651 sec) Profile()            Sample 15 initiated at 950.3dbars for bin 15 [950dbars].  PTS: 948.3dbars 7.2563C 34.9650PSU
+(Aug 07 2016 21:57:53,  831996 sec) AscentControlAgent() Bouyancy nudge to 77 (v=0.075dbar/sec).
+(Aug 07 2016 21:57:53,  831997 sec) PistonMoveAbsWTO()    067->077 068 069 070 071 072 [30sec, 13.5Volts, 0.459Amps, CPT:1801sec]
+(Aug 07 2016 21:58:34,  832037 sec) PistonMoveAbsWTO()    072->077 073 074 075 076 077 [29sec, 13.3Volts, 0.443Amps, CPT:1830sec]
+(Aug 07 2016 22:02:00,  832243 sec) Profile()            Sample 16 initiated at 900.4dbars for bin 16 [900dbars].  PTS: 897.8dbars 7.5304C 34.9758PSU
+(Aug 07 2016 22:10:02,  832725 sec) Profile()            Sample 17 initiated at 850.5dbars for bin 17 [850dbars].  PTS: 847.9dbars 7.8247C 34.9802PSU
+(Aug 07 2016 22:17:42,  833185 sec) Profile()            Sample 18 initiated at 800.8dbars for bin 18 [800dbars].  PTS: 798.0dbars 8.1722C 34.9967PSU
+(Aug 07 2016 22:25:14,  833637 sec) Profile()            Sample 19 initiated at 750.6dbars for bin 19 [750dbars].  PTS: 747.8dbars 8.4252C 35.0166PSU
+(Aug 07 2016 22:33:14,  834117 sec) Profile()            Sample 20 initiated at 700.4dbars for bin 20 [700dbars].  PTS: 698.0dbars 8.6458C 35.0062PSU
+(Aug 07 2016 22:42:16,  834659 sec) Profile()            Sample 21 initiated at 650.9dbars for bin 21 [650dbars].  PTS: 648.7dbars 9.0735C 35.0164PSU
+(Aug 07 2016 22:51:38,  835221 sec) Profile()            Sample 22 initiated at 600.3dbars for bin 22 [600dbars].  PTS: 597.9dbars 9.4547C 35.0332PSU
+(Aug 07 2016 22:59:30,  835693 sec) Profile()            Sample 23 initiated at 550.3dbars for bin 23 [550dbars].  PTS: 547.5dbars 9.6402C 35.0267PSU
+(Aug 07 2016 23:07:10,  836153 sec) Profile()            Sample 24 initiated at 500.3dbars for bin 24 [500dbars].  PTS: 497.7dbars 9.9582C 35.0320PSU
+(Aug 07 2016 23:08:47,  836251 sec) Sbe41cpStartCP()     Continuous profile started.
+(Aug 08 2016 00:04:55,  839619 sec) AscentControlAgent() Bouyancy nudge to 87 (v=0.069dbar/sec).
+(Aug 08 2016 00:04:56,  839619 sec) PistonMoveAbsWTO()    077->087 078 079 080 081 082 [30sec, 14.0Volts, 0.205Amps, CPT:1860sec]
+(Aug 08 2016 00:05:36,  839659 sec) PistonMoveAbsWTO()    082->087 083 084 085 086 087 [24sec, 13.9Volts, 0.201Amps, CPT:1884sec]
+(Aug 08 2016 00:11:05,  839989 sec) AscentControlAgent() Bouyancy nudge to 97 (v=0.061dbar/sec).
+(Aug 08 2016 00:11:06,  839989 sec) PistonMoveAbsWTO()    087->097 088 089 090 091 092 [30sec, 13.9Volts, 0.210Amps, CPT:1914sec]
+(Aug 08 2016 00:11:46,  840029 sec) PistonMoveAbsWTO()    092->097 093 094 095 096 097 [24sec, 13.9Volts, 0.205Amps, CPT:1938sec]
+(Aug 08 2016 00:17:15,  840359 sec) AscentControlAgent() Bouyancy nudge to 107 (v=0.062dbar/sec).
+(Aug 08 2016 00:17:16,  840359 sec) PistonMoveAbsWTO()    097->107 098 099 100 101 102 [30sec, 14.0Volts, 0.193Amps, CPT:1968sec]
+(Aug 08 2016 00:17:56,  840399 sec) PistonMoveAbsWTO()    102->107 103 104 105 106 107 [25sec, 13.9Volts, 0.193Amps, CPT:1993sec]
+(Aug 08 2016 00:23:26,  840730 sec) AscentControlAgent() Bouyancy nudge to 117 (v=0.028dbar/sec).
+(Aug 08 2016 00:23:27,  840730 sec) PistonMoveAbsWTO()    107->117 108 109 110 111 112 [30sec, 14.0Volts, 0.185Amps, CPT:2023sec]
+(Aug 08 2016 00:24:07,  840770 sec) PistonMoveAbsWTO()    112->117 113 114 115 116 117 [25sec, 14.0Volts, 0.185Amps, CPT:2048sec]
+(Aug 08 2016 00:28:33,  841037 sec) AscentControlAgent() Bouyancy nudge to 127 (v=0.018dbar/sec).
+(Aug 08 2016 00:28:34,  841037 sec) PistonMoveAbsWTO()    117->127 118 119 120 121 122 [30sec, 14.0Volts, 0.193Amps, CPT:2078sec]
+(Aug 08 2016 00:29:14,  841077 sec) PistonMoveAbsWTO()    122->127 123 124 125 126 127 [23sec, 14.0Volts, 0.189Amps, CPT:2101sec]
+(Aug 08 2016 00:33:38,  841342 sec) AscentControlAgent() Bouyancy nudge to 137 (v=0.025dbar/sec).
+(Aug 08 2016 00:33:39,  841342 sec) PistonMoveAbsWTO()    127->137 128 129 130 131 132 [30sec, 14.0Volts, 0.181Amps, CPT:2131sec]
+(Aug 08 2016 00:34:19,  841382 sec) PistonMoveAbsWTO()    132->137 133 134 135 136 137 [24sec, 14.0Volts, 0.181Amps, CPT:2155sec]
+(Aug 08 2016 00:38:44,  841648 sec) AscentControlAgent() Bouyancy nudge to 147 (v=0.007dbar/sec).
+(Aug 08 2016 00:38:45,  841648 sec) PistonMoveAbsWTO()    137->147 138 139 140 141 142 [30sec, 14.0Volts, 0.181Amps, CPT:2185sec]
+(Aug 08 2016 00:39:25,  841688 sec) PistonMoveAbsWTO()    142->147 143 144 145 146 147 [24sec, 14.0Volts, 0.185Amps, CPT:2209sec]
+(Aug 08 2016 00:43:50,  841954 sec) AscentControlAgent() Bouyancy nudge to 157 (v=0.006dbar/sec).
+(Aug 08 2016 00:43:51,  841954 sec) PistonMoveAbsWTO()    147->157 148 149 150 151 152 [30sec, 14.0Volts, 0.181Amps, CPT:2239sec]
+(Aug 08 2016 00:44:31,  841994 sec) PistonMoveAbsWTO()    152->157 153 154 155 156 157 [24sec, 14.0Volts, 0.177Amps, CPT:2263sec]
+(Aug 08 2016 00:48:56,  842260 sec) AscentControlAgent() Bouyancy nudge to 167 (v=-0.001dbar/sec).
+(Aug 08 2016 00:48:57,  842260 sec) PistonMoveAbsWTO()    157->167 158 159 160 161 162 [30sec, 14.0Volts, 0.185Amps, CPT:2293sec]
+(Aug 08 2016 00:49:37,  842300 sec) PistonMoveAbsWTO()    162->167 163 164 165 166 167 [23sec, 14.0Volts, 0.185Amps, CPT:2316sec]
+(Aug 08 2016 00:54:01,  842565 sec) AscentControlAgent() Bouyancy nudge to 177 (v=0.052dbar/sec).
+(Aug 08 2016 00:54:02,  842565 sec) PistonMoveAbsWTO()    167->177 168 169 [15sec, 14.1Volts, 0.177Amps, CPT:2331sec]
+(Aug 08 2016 00:54:27,  842590 sec) PistonMoveAbsWTO()    169->177 170 171 172 [15sec, 14.1Volts, 0.181Amps, CPT:2346sec]
+(Aug 08 2016 00:54:52,  842615 sec) PistonMoveAbsWTO()    172->177 173 174 175 [15sec, 14.0Volts, 0.177Amps, CPT:2361sec]
+(Aug 08 2016 00:55:17,  842640 sec) PistonMoveAbsWTO()    175->177 176 177 [10sec, 14.0Volts, 0.177Amps, CPT:2371sec]
+(Aug 08 2016 00:56:01,  842684 sec) SurfaceDetect()      SurfacePressure:-0.1dbars Pressure:3.0dbars PistonPosition:177
+(Aug 08 2016 00:56:01,  842685 sec) Sbe41cpStopCP()      Continuous profile stopped.
+(Aug 08 2016 00:56:08,  842691 sec) PistonMoveAbsWTO()    177->199 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 [114sec, 14.1Volts, 0.157Amps, CPT:2485sec]
+(Aug 08 2016 00:58:14,  842817 sec) sbe41cp.c:chat()     Expected string [S>] not received.
+(Aug 08 2016 01:00:03,  842927 sec) Sbe41cpBinAverage()  Finished averaging 6465 samples in 105 seconds.
+(Aug 08 2016 01:00:08,  842931 sec) Sbe41cpUploadCP()    Sbe41cpSerNo[5994] NSample[6465] NBin[246]
+(Aug 08 2016 01:00:49,  842972 sec) Sbe41cpUploadCP()    Continuous profile uploaded [246 lines].
+
+<EOT>

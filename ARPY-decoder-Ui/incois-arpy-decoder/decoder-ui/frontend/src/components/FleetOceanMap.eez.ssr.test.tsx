@@ -127,3 +127,49 @@ describe("EEZ history list", () => {
     expect(html).toContain("EEZ events (1)");
   });
 });
+
+describe("EEZ float-marker blinking", () => {
+  it("marks blinking on map view only when layer is ON and floats are inside EEZ", () => {
+    const on = render({ eez: { ...BASE_EEZ, layerOn: true } });
+    expect(on).toContain('data-eez-blinking="true"');
+    expect(on).toContain('data-eez-blinking-count="1"');
+    expect(on).toContain('data-eez-blinking-wmos="2901339"');
+    expect(on).not.toContain('data-eez-blinking-wmos="2902201"');
+
+    const off = render({ eez: { ...BASE_EEZ, layerOn: false } });
+    expect(off).toContain('data-eez-blinking="false"');
+    expect(off).toContain('data-eez-blinking-count="0"');
+    expect(off).toContain('data-eez-blinking-wmos=""');
+  });
+
+  it("remains static with 0 blinking floats when all floats are outside the Indian EEZ", () => {
+    const outsideOnlyPositions = [
+      { wmo: 2902201, platform: "APEX", status: "completed", lat: 22.82, lon: 60.781, cyclesCount: 361 },
+    ];
+    const on = render({
+      positions: outsideOnlyPositions,
+      eez: {
+        ...BASE_EEZ,
+        layerOn: true,
+        currentStatus: { 2902201: "OUTSIDE_INDIAN_EEZ" as const },
+      },
+    });
+    expect(on).toContain('data-eez-blinking="false"');
+    expect(on).toContain('data-eez-blinking-count="0"');
+    expect(on).toContain('data-eez-blinking-wmos=""');
+  });
+
+  it("dynamically evaluates canonical geometry fallback when currentStatus is empty", () => {
+    const on = render({
+      eez: {
+        ...BASE_EEZ,
+        layerOn: true,
+        currentStatus: {},
+      },
+    });
+    // 2901339 at (lon: 69.731, lat: 18.236) is inside canonical Indian EEZ geometry
+    expect(on).toContain('data-eez-blinking="true"');
+    expect(on).toContain('data-eez-blinking-wmos="2901339"');
+  });
+});
+

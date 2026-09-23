@@ -133,11 +133,11 @@ def approx_profiles_missed(days_elapsed: float, interval_days: float) -> int:
 def status_for(days_elapsed: float | None, interval_days: float) -> str:
     """Approved status bands, now driven by the float's own cycle interval.
 
-    Bands (unchanged wording and the fixed 60-day boundary):
+    Bands (unchanged wording and the fixed 80-day boundary):
       * ``ACTIVE / RECENT PROFILE`` — elapsed <= the float's observed interval
         (identical to the previous behaviour for every 10-day float),
-      * ``PROFILE OVERDUE``         — interval < elapsed < 60 days,
-      * ``NO RECENT PROFILE DATA 60+ DAYS`` — elapsed >= 60 days,
+      * ``PROFILE OVERDUE``         — interval < elapsed < 80 days,
+      * ``NO RECENT PROFILE DATA 80+ DAYS`` — elapsed >= 80 days,
       * ``NO DATA``                 — no usable published profile date at all.
     """
     if days_elapsed is None or not math.isfinite(days_elapsed) or days_elapsed < 0:
@@ -147,9 +147,9 @@ def status_for(days_elapsed: float | None, interval_days: float) -> str:
         interval = DEFAULT_INTERVAL_DAYS
     if days_elapsed <= interval:
         return "ACTIVE / RECENT PROFILE"
-    if days_elapsed < 60:
+    if days_elapsed < 80:
         return "PROFILE OVERDUE"
-    return "NO RECENT PROFILE DATA 60+ DAYS"
+    return "NO RECENT PROFILE DATA 80+ DAYS"
 
 
 def interval_note(interval_days: float, source: str, samples: int) -> str:

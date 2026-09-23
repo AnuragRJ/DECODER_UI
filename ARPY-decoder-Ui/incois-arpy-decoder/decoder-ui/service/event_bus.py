@@ -486,6 +486,10 @@ class EventBus:
     def get_all_runs(self) -> list[RunSummary]:
         return sorted(self._runs.values(), key=lambda r: r.start_time, reverse=True)
 
+    def list_runs(self) -> list[RunSummary]:
+        """Alias for get_all_runs()."""
+        return self.get_all_runs()
+
     def store_batch(self, batch: BatchSummary) -> None:
         existing = self._batches.get(batch.batch_id)
         if existing and existing.status == NodeStatus.STOPPED and batch.status != NodeStatus.STOPPED:

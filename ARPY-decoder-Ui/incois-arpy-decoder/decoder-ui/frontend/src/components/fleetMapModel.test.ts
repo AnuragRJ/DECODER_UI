@@ -121,6 +121,39 @@ describe("markers", () => {
     expect(off.find((m) => m.wmo === 2901339)!.title).not.toContain("inside Indian EEZ");
   });
 
+  it("EEZ marker blinking: only inside floats blink when toggle is ON; all static when OFF", () => {
+    const current = { 2901339: "INDIAN_EEZ" as const, 2902201: "OUTSIDE_INDIAN_EEZ" as const };
+    // Toggle ON -> only inside float has isBlinking true
+    const on = buildMarkerDescriptors(POSITIONS, null, current, true);
+    expect(on.find((m) => m.wmo === 2901339)!.isBlinking).toBe(true);
+    expect(on.find((m) => m.wmo === 2902201)!.isBlinking).toBe(false);
+    expect(on.filter((m) => m.isBlinking).map((m) => m.wmo)).toEqual([2901339]);
+
+    // Toggle OFF -> all markers must remain static (isBlinking is false for all)
+    const off = buildMarkerDescriptors(POSITIONS, null, current, false);
+    expect(off.every((m) => m.isBlinking === false)).toBe(true);
+    expect(off.find((m) => m.wmo === 2901339)!.isBlinking).toBe(false);
+  });
+
+  it("blinking updates automatically as float positions change", () => {
+    // Float initially outside Indian EEZ
+    const floatA = { wmo: 5900001, platform: "ARVOR", status: "completed", lat: 25.0, lon: 60.0, cyclesCount: 1 };
+    const initial = buildMarkerDescriptors([floatA], null, undefined, true, eezGeom);
+    expect(initial[0].insideEez).toBe(false);
+    expect(initial[0].isBlinking).toBe(false);
+
+    // Float reports new verified position inside Indian EEZ polygon
+    const floatAMoved = { ...floatA, lat: 18.236, lon: 69.731 };
+    const updated = buildMarkerDescriptors([floatAMoved], null, undefined, true, eezGeom);
+    expect(updated[0].insideEez).toBe(true);
+    expect(updated[0].isBlinking).toBe(true);
+
+    // Toggle switched OFF -> marker reverts to static immediately
+    const toggleOff = buildMarkerDescriptors([floatAMoved], null, undefined, false, eezGeom);
+    expect(toggleOff[0].insideEez).toBe(false);
+    expect(toggleOff[0].isBlinking).toBe(false);
+  });
+
   it("titles use the neutral status wording", () => {
     const markers = buildMarkerDescriptors(
       [{ wmo: 1, platform: "APEX", status: "completed", lat: 0, lon: 0, cyclesCount: 1 }],

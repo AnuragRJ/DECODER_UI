@@ -52,7 +52,7 @@ const STATUS_OPTIONS: Array<"" | FleetDataStatus> = [
   "",
   "ACTIVE / RECENT PROFILE",
   "PROFILE OVERDUE",
-  "NO RECENT PROFILE DATA 60+ DAYS",
+  "NO RECENT PROFILE DATA 80+ DAYS",
   "NO DATA",
 ];
 
@@ -317,7 +317,7 @@ export const FloatStatusPage: React.FC = () => {
           <ProfileDivider />
           <ProfileMetric label="PROFILE OVERDUE" value={String(summary?.profile_overdue ?? "—")} valueClass="text-amber-600" barClass="bg-amber-500/60" />
           <ProfileDivider />
-          <ProfileMetric label="NO RECENT 60+ DAYS" value={String(summary?.no_recent_profile_60 ?? "—")} valueClass="text-rose-600" barClass="bg-rose-500/60" />
+          <ProfileMetric label="NO RECENT 80+ DAYS" value={String(summary?.no_recent_profile_80 ?? summary?.no_recent_profile_60 ?? "—")} valueClass="text-rose-600" barClass="bg-rose-500/60" />
           <ProfileDivider />
           <ProfileMetric label="NO DATA" value={String(summary?.no_data ?? "—")} valueClass="text-slate-500" barClass="bg-slate-400/60" />
           <ProfileDivider />

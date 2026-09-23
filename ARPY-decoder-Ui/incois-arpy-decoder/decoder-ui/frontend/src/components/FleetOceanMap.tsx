@@ -135,8 +135,12 @@ export const FleetOceanMap: React.FC<Props> = ({
     [trajectory]
   );
   const markers: MarkerDescriptor[] = useMemo(
-    () => buildMarkerDescriptors(positions, selectedWmo, eez?.currentStatus, eez?.layerOn === true),
+    () => buildMarkerDescriptors(positions, selectedWmo, eez?.currentStatus, eez?.layerOn === true, eez?.geom),
     [positions, selectedWmo, eez]
+  );
+  const blinkingWmos = useMemo(
+    () => markers.filter((m) => m.isBlinking).map((m) => m.wmo),
+    [markers]
   );
   const traj: TrajectoryDescriptor | null = useMemo(
     () => buildTrajectoryDescriptor(orderedTrajectory, selectedWmo, eez?.classified ?? null),
@@ -405,6 +409,9 @@ export const FleetOceanMap: React.FC<Props> = ({
         <div
           ref={viewDivRef}
           data-testid="esri-map-view"
+          data-eez-blinking={blinkingWmos.length > 0 ? "true" : "false"}
+          data-eez-blinking-count={blinkingWmos.length}
+          data-eez-blinking-wmos={blinkingWmos.join(",")}
           className="absolute inset-0"
           role="img"
           aria-label="Fleet map over Esri satellite Earth imagery"
@@ -588,6 +595,7 @@ export const FleetOceanMap: React.FC<Props> = ({
             <>
               <span className="flex items-center gap-1.5" data-eez-legend-inside>
                 <span className="relative w-2.5 h-2.5 inline-flex items-center justify-center">
+                  <span className="absolute w-3.5 h-3.5 rounded-full border border-red-400/60 animate-ping opacity-75" />
                   <span className="absolute w-3 h-3 rounded-full border border-red-400/70" />
                   <span className="w-2 h-2 rounded-full border border-[#0d2a47] bg-[#fbbf24]" />
                 </span>

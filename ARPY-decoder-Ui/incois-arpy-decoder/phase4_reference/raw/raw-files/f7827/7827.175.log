@@ -1,0 +1,361 @@
+(Jun 21 2020 23:23:29,  866619 sec) TelemetryInit()      Profile 174. (Apf9i FwRev: 061016)
+(Jun 21 2020 23:30:28,  867037 sec) AirSystem()          Battery [189cnt, 14.7V]  Current [73cnt, 294.1mA]  Barometer [128cnt, 7.1"Hg]  Run-Time [49s]
+(Jun 21 2020 23:31:05,  867074 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.7dbars / 224.5uM 29.227C 29.018 9.024 -23.608 / 59,187,530
+(Jun 21 2020 23:31:13,  867083 sec) GpsServices()        Replacing aged (99 days) almanac.
+(Jun 21 2020 23:31:13,  867083 sec) UpLoadGpsAlmanac()   Pausing for 15 minutes to upload GPS almanac.
+(Jun 21 2020 23:46:13,  867982 sec) UpLoadGpsAlmanac()   Pause complete.
+(Jun 21 2020 23:46:13,  867982 sec) GpsServices()        New almanac acquired.
+(Jun 21 2020 23:46:13,  867982 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 21 2020 23:46:58,  868028 sec) gga()                $GPGGA,234550,1829.3715,N,06835.3654,E,1,09,0.9,-0.0,M,-65.0,M,,*4A
+(Jun 21 2020 23:46:59,  868028 sec) GpsServices()        Profile 174 GPS fix obtained in 46 seconds.
+(Jun 21 2020 23:46:59,  868029 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 21 2020 23:46:59,  868029 sec) GpsServices()        Fix:   68.589  18.490 06/21/2020 234550    9
+(Jun 21 2020 23:47:48,  868078 sec) gga()                $GPGGA,234640,1829.3752,N,06835.3732,E,1,09,0.9,-4.4,M,-65.0,M,,*4A
+(Jun 21 2020 23:47:56,  868085 sec) gga()                $GPGGA,234730,1829.3784,N,06835.3796,E,1,09,0.9,-2.8,M,-65.0,M,,*43
+(Jun 21 2020 23:47:56,  868086 sec) GpsServices()        APF9 RTC skew (26s) OK.
+(Jun 21 2020 23:47:57,  868086 sec) GpsServices()        GPS services complete.
+(Jun 21 2020 23:48:22,  868112 sec) CLogin()             Connecting to primary host.
+(Jun 21 2020 23:48:42,  868131 sec) CLogin()             Connection 1 established in 20 seconds.
+(Jun 21 2020 23:49:12,  868161 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 21 2020 23:49:12,  868161 sec) login()              Login prompt not received.
+(Jun 21 2020 23:49:42,  868191 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 21 2020 23:49:42,  868191 sec) login()              Login prompt not received.
+(Jun 21 2020 23:49:51,  868201 sec) CLogin()             Connection 2 established in 89 seconds.
+(Jun 21 2020 23:50:00,  868209 sec) login()              Login successful.
+(Jun 21 2020 23:50:03,  868213 sec) CLogin()             Logged in to host.  [Login required 12 seconds]
+(Jun 21 2020 23:50:18,  868227 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 21 2020 23:50:21,  868230 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 21 2020 23:50:26,  868235 sec) Rx()                 Truncated packet received - retrying.
+(Jun 21 2020 23:50:29,  868238 sec) RxStartByte()        Sync errors encountered: 981
+(Jun 21 2020 23:50:32,  868242 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 21 2020 23:50:39,  868248 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 18 sec, 56.9 bps]
+(Jun 21 2020 23:50:39,  868248 sec) RxConfig()           Download successful.
+(Jun 21 2020 23:51:02,  868271 sec) WriteVitals()        Writing vitals to "7827.174.msg".
+(Jun 21 2020 23:51:18,  868287 sec) UpLoadFile()         Uploading "7827.174.msg" to host as "7827.174.msg".
+(Jun 21 2020 23:51:21,  868291 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 21 2020 23:51:40,  868309 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jun 21 2020 23:51:40,  868310 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jun 21 2020 23:51:46,  868316 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jun 21 2020 23:51:46,  868316 sec) TxPacket()           Packet xmit history: [10000011] (0:ok, 1:fail).
+(Jun 21 2020 23:51:51,  868320 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Jun 21 2020 23:51:51,  868321 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Jun 21 2020 23:52:04,  868334 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 21 2020 23:52:04,  868334 sec) TxPacket()           Packet xmit history: [00011101] (0:ok, 1:fail).
+(Jun 21 2020 23:52:19,  868348 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jun 21 2020 23:52:19,  868349 sec) TxPacket()           Packet xmit history: [11010001] (0:ok, 1:fail).
+(Jun 21 2020 23:52:28,  868357 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jun 21 2020 23:52:28,  868358 sec) TxPacket()           Packet xmit history: [01000101] (0:ok, 1:fail).
+(Jun 21 2020 23:52:33,  868362 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jun 21 2020 23:52:33,  868363 sec) TxPacket()           Packet xmit history: [10001011] (0:ok, 1:fail).
+(Jun 21 2020 23:52:45,  868374 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Jun 21 2020 23:52:45,  868375 sec) TxPacket()           Packet xmit history: [00101101] (0:ok, 1:fail).
+(Jun 21 2020 23:52:50,  868380 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Jun 21 2020 23:52:50,  868380 sec) TxPacket()           Packet xmit history: [01011011] (0:ok, 1:fail).
+(Jun 21 2020 23:53:01,  868390 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Jun 21 2020 23:53:01,  868391 sec) TxPacket()           Packet xmit history: [10110111] (0:ok, 1:fail).
+(Jun 21 2020 23:53:06,  868396 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Jun 21 2020 23:53:06,  868396 sec) TxPacket()           Packet xmit history: [01101111] (0:ok, 1:fail).
+(Jun 21 2020 23:53:22,  868411 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jun 21 2020 23:53:22,  868412 sec) TxPacket()           Packet xmit history: [11110001] (0:ok, 1:fail).
+(Jun 21 2020 23:54:00,  868450 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 21 2020 23:54:00,  868450 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jun 21 2020 23:54:06,  868455 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 21 2020 23:54:06,  868456 sec) TxPacket()           Packet xmit history: [10000011] (0:ok, 1:fail).
+(Jun 21 2020 23:54:12,  868461 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 21 2020 23:54:12,  868462 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Jun 21 2020 23:54:20,  868470 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 21 2020 23:54:21,  868470 sec) TxPacket()           Packet xmit history: [00001111] (0:ok, 1:fail).
+(Jun 21 2020 23:54:26,  868475 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 21 2020 23:54:26,  868476 sec) TxPacket()           Packet xmit history: [00011111] (0:ok, 1:fail).
+(Jun 21 2020 23:54:38,  868487 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 21 2020 23:54:38,  868488 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Jun 21 2020 23:54:51,  868500 sec) TxPacket()           NAK received - resending packet. [PktNum=0x13]
+(Jun 21 2020 23:54:51,  868501 sec) TxPacket()           Packet xmit history: [11111001] (0:ok, 1:fail).
+(Jun 21 2020 23:55:27,  868536 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jun 21 2020 23:55:27,  868537 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 21 2020 23:55:36,  868546 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jun 21 2020 23:55:37,  868546 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jun 21 2020 23:56:49,  868619 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Jun 21 2020 23:56:50,  868619 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 21 2020 23:56:56,  868625 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Jun 21 2020 23:56:56,  868626 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jun 21 2020 23:57:14,  868644 sec) TxPacket()           NAK received - resending packet. [PktNum=0x26]
+(Jun 21 2020 23:57:15,  868644 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Jun 21 2020 23:57:25,  868654 sec) TxPacket()           NAK received - resending packet. [PktNum=0x26]
+(Jun 21 2020 23:57:25,  868654 sec) TxPacket()           Packet xmit history: [00110011] (0:ok, 1:fail).
+(Jun 21 2020 23:57:54,  868684 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2b]
+(Jun 21 2020 23:57:54,  868684 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jun 21 2020 23:58:07,  868696 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2c]
+(Jun 21 2020 23:58:07,  868697 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Jun 21 2020 23:58:34,  868723 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2f]
+(Jun 21 2020 23:58:34,  868724 sec) TxPacket()           Packet xmit history: [01010001] (0:ok, 1:fail).
+(Jun 21 2020 23:58:52,  868741 sec) Tx()                 Transmission completed successfully [48 packets, 36939 bytes, 450 sec, 83.3 bps]
+(Jun 21 2020 23:58:52,  868742 sec) UpLoadFile()         Upload successful.
+(Jun 21 2020 23:59:02,  868752 sec) UpLoadFile()         Uploading "7827.174.log" to host as "7827.174.log".
+(Jun 21 2020 23:59:05,  868755 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 21 2020 23:59:37,  868786 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 21 2020 23:59:37,  868787 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Jun 22 2020 00:00:28,  868838 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 22 2020 00:00:28,  868838 sec) TxPacket()           Packet xmit history: [10000011] (0:ok, 1:fail).
+(Jun 22 2020 00:01:06,  868875 sec) TxPacket()           NAK received - resending packet. [PktNum=0x08]
+(Jun 22 2020 00:01:06,  868876 sec) TxPacket()           Packet xmit history: [01100001] (0:ok, 1:fail).
+(Jun 22 2020 00:01:18,  868887 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Jun 22 2020 00:01:18,  868888 sec) TxPacket()           Packet xmit history: [10000101] (0:ok, 1:fail).
+(Jun 22 2020 00:02:29,  868959 sec) TxPacket()           NAK received - resending packet. [PktNum=0x10]
+(Jun 22 2020 00:02:30,  868959 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 22 2020 00:02:44,  868973 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:02:44,  868974 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Jun 22 2020 00:02:51,  868980 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:02:51,  868981 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Jun 22 2020 00:02:57,  868986 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:02:57,  868987 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Jun 22 2020 00:03:04,  868993 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:03:04,  868994 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Jun 22 2020 00:03:11,  869000 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:03:11,  869001 sec) TxPacket()           Packet xmit history: [01011111] (0:ok, 1:fail).
+(Jun 22 2020 00:04:12,  869061 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(Jun 22 2020 00:04:12,  869062 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 22 2020 00:04:21,  869070 sec) TxPacket()           NAK received - resending packet. [PktNum=0x17]
+(Jun 22 2020 00:04:21,  869071 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jun 22 2020 00:04:53,  869103 sec) TxPacket()           Invalid response [0x55] - resending packet. [PktNum=0x1c]
+(Jun 22 2020 00:04:54,  869103 sec) TxPacket()           Packet xmit history: [11000001] (0:ok, 1:fail).
+(Jun 22 2020 00:05:01,  869111 sec) TxPacket()           No carrier detected.
+(Jun 22 2020 00:05:01,  869111 sec) TxPacket()           Exit status: -5
+(Jun 22 2020 00:05:02,  869111 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 22 2020 00:05:13,  869122 sec) UpLoadFile()         Upload failed.
+(Jun 22 2020 00:05:23,  869133 sec) CLogin()             Connecting to primary host.
+(Jun 22 2020 00:05:29,  869138 sec) chat()               Expected string [OK] not received.
+(Jun 22 2020 00:05:29,  869138 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jun 22 2020 00:05:29,  869138 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jun 22 2020 00:05:29,  869139 sec) modem_connect()      Modem configuration failed.
+(Jun 22 2020 00:05:29,  869139 sec) connect()            Connection attempt failed.
+(Jun 22 2020 00:05:35,  869144 sec) chat()               Expected string [OK] not received.
+(Jun 22 2020 00:05:35,  869144 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jun 22 2020 00:05:35,  869144 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jun 22 2020 00:05:35,  869145 sec) modem_connect()      Modem configuration failed.
+(Jun 22 2020 00:05:35,  869145 sec) connect()            Connection attempt failed.
+(Jun 22 2020 00:05:35,  869145 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 22 2020 00:05:41,  869150 sec) chat()               Expected string [OK] not received.
+(Jun 22 2020 00:05:41,  869150 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jun 22 2020 00:05:41,  869150 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jun 22 2020 00:05:41,  869151 sec) modem_connect()      Modem configuration failed.
+(Jun 22 2020 00:05:41,  869151 sec) connect()            Connection attempt failed.
+(Jun 22 2020 00:05:47,  869156 sec) chat()               Expected string [OK] not received.
+(Jun 22 2020 00:05:47,  869156 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jun 22 2020 00:05:47,  869156 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jun 22 2020 00:05:47,  869157 sec) modem_connect()      Modem configuration failed.
+(Jun 22 2020 00:05:47,  869157 sec) connect()            Connection attempt failed.
+(Jun 22 2020 00:05:47,  869157 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jun 22 2020 00:05:48,  869157 sec) UpLoad()             Files successfully uploaded: 1
+(Jun 22 2020 00:05:48,  869158 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 22 2020 00:05:48,  869158 sec) logout()             No carrier detected.
+(Jun 22 2020 00:05:49,  869158 sec) Telemetry()          Telemetry cycle complete: PrfId=174 ConnectionAttempts=6  Connections=2
+(Jun 22 2020 00:21:04,  870073 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Jun 22 2020 00:21:41,  870110 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.5dbars / 221.2uM 29.046C 29.250 8.986 -17.887 / 60,138,530
+(Jun 22 2020 00:21:42,  870111 sec) GpsServices()        GPS almanac is current.
+(Jun 22 2020 00:21:42,  870111 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 22 2020 00:21:56,  870126 sec) gga()                $GPGGA,002120,1829.3776,N,06835.3767,E,0,00,,,M,,M,,*56
+(Jun 22 2020 00:22:39,  870169 sec) gga()                $GPGGA,002130,1829.5069,N,06835.6586,E,1,09,0.9,0.9,M,-65.0,M,,*68
+(Jun 22 2020 00:22:40,  870169 sec) GpsServices()        Profile 174 GPS fix obtained in 57 seconds.
+(Jun 22 2020 00:22:40,  870169 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 22 2020 00:22:40,  870169 sec) GpsServices()        Fix:   68.594  18.492 06/22/2020 002130    9
+(Jun 22 2020 00:23:28,  870218 sec) gga()                $GPGGA,002220,1829.5071,N,06835.6623,E,1,09,0.9,-2.0,M,-65.0,M,,*49
+(Jun 22 2020 00:23:36,  870225 sec) gga()                $GPGGA,002310,1829.5095,N,06835.6699,E,1,09,0.9,-0.4,M,-65.0,M,,*46
+(Jun 22 2020 00:23:36,  870226 sec) GpsServices()        APF9 RTC skew (26s) OK.
+(Jun 22 2020 00:23:37,  870226 sec) GpsServices()        GPS services complete.
+(Jun 22 2020 00:24:02,  870252 sec) CLogin()             Connecting to primary host.
+(Jun 22 2020 00:24:27,  870276 sec) CLogin()             Connection 3 established in 25 seconds.
+(Jun 22 2020 00:24:38,  870288 sec) login()              Login successful.
+(Jun 22 2020 00:24:44,  870294 sec) CLogin()             Logged in to host.  [Login required 17 seconds]
+(Jun 22 2020 00:24:56,  870305 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 22 2020 00:24:58,  870308 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 22 2020 00:25:01,  870310 sec) RxStartByte()        Sync errors encountered: 585
+(Jun 22 2020 00:25:06,  870315 sec) Rx()                 Truncated packet received - retrying.
+(Jun 22 2020 00:25:07,  870317 sec) RxStartByte()        Sync errors encountered: 254
+(Jun 22 2020 00:25:11,  870321 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 22 2020 00:25:16,  870325 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 18 sec, 56.9 bps]
+(Jun 22 2020 00:25:16,  870325 sec) RxConfig()           Download successful.
+(Jun 22 2020 00:25:48,  870358 sec) UpLoadFile()         Uploading "7827.174.log" to host as "7827.174.log".
+(Jun 22 2020 00:25:51,  870361 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 22 2020 00:26:22,  870391 sec) TxPacket()           NAK received - resending packet. [PktNum=0x04]
+(Jun 22 2020 00:26:22,  870392 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Jun 22 2020 00:26:47,  870416 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Jun 22 2020 00:26:47,  870417 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Jun 22 2020 00:27:12,  870441 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jun 22 2020 00:27:12,  870442 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Jun 22 2020 00:27:19,  870448 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jun 22 2020 00:27:19,  870449 sec) TxPacket()           Packet xmit history: [00100011] (0:ok, 1:fail).
+(Jun 22 2020 00:27:24,  870453 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Jun 22 2020 00:27:24,  870454 sec) TxPacket()           Packet xmit history: [01000111] (0:ok, 1:fail).
+(Jun 22 2020 00:27:49,  870479 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0c]
+(Jun 22 2020 00:27:50,  870479 sec) TxPacket()           Packet xmit history: [00111001] (0:ok, 1:fail).
+(Jun 22 2020 00:28:03,  870492 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0e]
+(Jun 22 2020 00:28:03,  870493 sec) TxPacket()           Packet xmit history: [11001001] (0:ok, 1:fail).
+(Jun 22 2020 00:28:20,  870509 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Jun 22 2020 00:28:20,  870509 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(Jun 22 2020 00:28:39,  870528 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:28:39,  870529 sec) TxPacket()           Packet xmit history: [00101001] (0:ok, 1:fail).
+(Jun 22 2020 00:28:44,  870533 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:28:44,  870534 sec) TxPacket()           Packet xmit history: [01010011] (0:ok, 1:fail).
+(Jun 22 2020 00:28:52,  870541 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:28:52,  870542 sec) TxPacket()           Packet xmit history: [10100111] (0:ok, 1:fail).
+(Jun 22 2020 00:28:59,  870548 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Jun 22 2020 00:28:59,  870549 sec) TxPacket()           Packet xmit history: [01001111] (0:ok, 1:fail).
+(Jun 22 2020 00:29:20,  870570 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(Jun 22 2020 00:29:20,  870570 sec) TxPacket()           Packet xmit history: [11110001] (0:ok, 1:fail).
+(Jun 22 2020 00:29:38,  870588 sec) TxPacket()           NAK received - resending packet. [PktNum=0x16]
+(Jun 22 2020 00:29:39,  870588 sec) TxPacket()           Packet xmit history: [10001001] (0:ok, 1:fail).
+(Jun 22 2020 00:30:02,  870611 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Jun 22 2020 00:30:02,  870612 sec) TxPacket()           Packet xmit history: [01001001] (0:ok, 1:fail).
+(Jun 22 2020 00:30:20,  870630 sec) TxPacket()           NAK received - resending packet. [PktNum=0x19]
+(Jun 22 2020 00:30:21,  870630 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(Jun 22 2020 00:30:37,  870646 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jun 22 2020 00:30:37,  870647 sec) TxPacket()           Packet xmit history: [10010101] (0:ok, 1:fail).
+(Jun 22 2020 00:31:17,  870686 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+(Jun 22 2020 00:31:17,  870686 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(Jun 22 2020 00:31:21,  870690 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+(Jun 22 2020 00:31:21,  870691 sec) TxPacket()           Packet xmit history: [01000011] (0:ok, 1:fail).
+(Jun 22 2020 00:31:41,  870710 sec) TxPacket()           NAK received - resending packet. [PktNum=0x20]
+(Jun 22 2020 00:31:41,  870711 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Jun 22 2020 00:32:15,  870744 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Jun 22 2020 00:32:15,  870744 sec) TxPacket()           Packet xmit history: [10010001] (0:ok, 1:fail).
+(Jun 22 2020 00:32:20,  870749 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Jun 22 2020 00:32:20,  870749 sec) TxPacket()           Packet xmit history: [00100011] (0:ok, 1:fail).
+(Jun 22 2020 00:32:27,  870756 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Jun 22 2020 00:32:27,  870757 sec) TxPacket()           Packet xmit history: [01000111] (0:ok, 1:fail).
+(Jun 22 2020 00:32:34,  870764 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Jun 22 2020 00:32:34,  870764 sec) TxPacket()           Packet xmit history: [10001111] (0:ok, 1:fail).
+(Jun 22 2020 00:32:40,  870769 sec) TxPacket()           NAK received - resending packet. [PktNum=0x23]
+(Jun 22 2020 00:32:40,  870770 sec) TxPacket()           Packet xmit history: [00011111] (0:ok, 1:fail).
+(Jun 22 2020 00:32:51,  870781 sec) TxPacket()           NAK received - resending packet. [PktNum=0x24]
+(Jun 22 2020 00:32:52,  870781 sec) TxPacket()           Packet xmit history: [01111101] (0:ok, 1:fail).
+(Jun 22 2020 00:33:13,  870802 sec) TxPacket()           NAK received - resending packet. [PktNum=0x28]
+(Jun 22 2020 00:33:13,  870803 sec) TxPacket()           Packet xmit history: [10100001] (0:ok, 1:fail).
+(Jun 22 2020 00:33:33,  870823 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2a]
+(Jun 22 2020 00:33:34,  870823 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jun 22 2020 00:33:38,  870827 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2a]
+(Jun 22 2020 00:33:38,  870828 sec) TxPacket()           Packet xmit history: [00010011] (0:ok, 1:fail).
+(Jun 22 2020 00:33:51,  870840 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:33:51,  870841 sec) TxPacket()           Packet xmit history: [01001101] (0:ok, 1:fail).
+(Jun 22 2020 00:33:56,  870845 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:33:56,  870845 sec) TxPacket()           Packet xmit history: [10011011] (0:ok, 1:fail).
+(Jun 22 2020 00:34:02,  870851 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:34:02,  870852 sec) TxPacket()           Packet xmit history: [00110111] (0:ok, 1:fail).
+(Jun 22 2020 00:34:09,  870859 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:34:10,  870859 sec) TxPacket()           Packet xmit history: [01101111] (0:ok, 1:fail).
+(Jun 22 2020 00:34:14,  870864 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:34:14,  870864 sec) TxPacket()           Packet xmit history: [11011111] (0:ok, 1:fail).
+(Jun 22 2020 00:34:22,  870871 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:34:22,  870872 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jun 22 2020 00:34:30,  870879 sec) TxPacket()           NAK received - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:34:30,  870879 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jun 22 2020 00:34:31,  870880 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:34:31,  870880 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 22 2020 00:34:32,  870881 sec) TxPacket()           Invalid response [0x5e] - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:34:32,  870882 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 22 2020 00:34:33,  870883 sec) TxPacket()           Invalid response [0x43] - resending packet. [PktNum=0x2b]
+(Jun 22 2020 00:34:34,  870883 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 22 2020 00:34:34,  870883 sec) TxPacket()           Exit status: -5
+(Jun 22 2020 00:34:34,  870884 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 22 2020 00:34:46,  870896 sec) UpLoadFile()         Upload failed.
+(Jun 22 2020 00:35:06,  870916 sec) UpLoadFile()         Uploading "7827.174.log" to host as "7827.174.log".
+(Jun 22 2020 00:36:06,  870975 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Jun 22 2020 00:36:17,  870986 sec) UpLoadFile()         Upload failed.
+(Jun 22 2020 00:36:17,  870986 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 22 2020 00:36:17,  870987 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 22 2020 00:36:22,  870991 sec) chat()               Expected string [cmd>] not received.
+(Jun 22 2020 00:36:22,  870991 sec) logout()             Can't get command prompt.
+(Jun 22 2020 00:36:23,  870993 sec) logout()             Log-out successful.
+(Jun 22 2020 00:36:25,  870994 sec) Telemetry()          Telemetry cycle complete: PrfId=174 ConnectionAttempts=7  Connections=3
+(Jun 22 2020 00:51:40,  871909 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [127cnt, 6.8"Hg].
+(Jun 22 2020 00:52:25,  871954 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.5dbars / 217.0uM 30.068C 29.088 8.987 -50.077 / 59,132,530
+(Jun 22 2020 00:52:26,  871955 sec) GpsServices()        GPS almanac is current.
+(Jun 22 2020 00:52:26,  871955 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 22 2020 00:53:18,  872008 sec) gga()                $GPGGA,005210,1829.6183,N,06835.8977,E,1,08,1.0,-7.3,M,-65.0,M,,*4D
+(Jun 22 2020 00:53:19,  872008 sec) GpsServices()        Profile 174 GPS fix obtained in 53 seconds.
+(Jun 22 2020 00:53:19,  872008 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 22 2020 00:53:19,  872009 sec) GpsServices()        Fix:   68.598  18.494 06/22/2020 005210    8
+(Jun 22 2020 00:54:08,  872058 sec) gga()                $GPGGA,005300,1829.6227,N,06835.9056,E,1,08,1.0,3.7,M,-65.0,M,,*66
+(Jun 22 2020 00:54:16,  872065 sec) gga()                $GPGGA,005350,1829.6256,N,06835.9104,E,1,08,1.0,1.6,M,-65.0,M,,*60
+(Jun 22 2020 00:54:16,  872066 sec) GpsServices()        APF9 RTC skew (26s) OK.
+(Jun 22 2020 00:54:17,  872066 sec) GpsServices()        GPS services complete.
+(Jun 22 2020 00:54:42,  872092 sec) CLogin()             Connecting to primary host.
+(Jun 22 2020 00:55:43,  872152 sec) chat()               Expected string [CONNECT] not received.
+(Jun 22 2020 00:55:43,  872152 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Jun 22 2020 00:55:43,  872152 sec) connect()            Connection attempt failed.
+(Jun 22 2020 00:55:56,  872166 sec) CLogin()             Connection 4 established in 74 seconds.
+(Jun 22 2020 00:56:10,  872179 sec) login()              Login successful.
+(Jun 22 2020 00:56:15,  872185 sec) CLogin()             Logged in to host.  [Login required 19 seconds]
+(Jun 22 2020 00:56:27,  872197 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 22 2020 00:56:30,  872199 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 22 2020 00:56:35,  872205 sec) RxStartByte()        Sync errors encountered: 387
+(Jun 22 2020 00:56:39,  872208 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 22 2020 00:56:44,  872213 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 14 sec, 73.1 bps]
+(Jun 22 2020 00:56:44,  872213 sec) RxConfig()           Download successful.
+(Jun 22 2020 00:57:16,  872246 sec) UpLoadFile()         Uploading "7827.174.log" to host as "7827.174.log".
+(Jun 22 2020 00:57:19,  872249 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 22 2020 00:57:35,  872265 sec) TxPacket()           NAK received - resending packet. [PktNum=0x02]
+(Jun 22 2020 00:57:36,  872265 sec) TxPacket()           Packet xmit history: [11100001] (0:ok, 1:fail).
+(Jun 22 2020 00:59:44,  872393 sec) TxPacket()           NAK received - resending packet. [PktNum=0x14]
+(Jun 22 2020 00:59:44,  872394 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 22 2020 01:00:14,  872423 sec) TxPacket()           NAK received - resending packet. [PktNum=0x18]
+(Jun 22 2020 01:00:14,  872424 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Jun 22 2020 01:00:32,  872441 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jun 22 2020 01:00:32,  872442 sec) TxPacket()           Packet xmit history: [00001001] (0:ok, 1:fail).
+(Jun 22 2020 01:00:45,  872454 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jun 22 2020 01:00:45,  872455 sec) TxPacket()           Packet xmit history: [00100101] (0:ok, 1:fail).
+(Jun 22 2020 01:00:50,  872459 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jun 22 2020 01:00:50,  872460 sec) TxPacket()           Packet xmit history: [01001011] (0:ok, 1:fail).
+(Jun 22 2020 01:00:55,  872464 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jun 22 2020 01:00:55,  872464 sec) TxPacket()           Packet xmit history: [10010111] (0:ok, 1:fail).
+(Jun 22 2020 01:00:57,  872466 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1b]
+(Jun 22 2020 01:00:57,  872467 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Jun 22 2020 01:01:16,  872486 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:17,  872486 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 22 2020 01:01:22,  872491 sec) TxPacket()           NAK received - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:22,  872491 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jun 22 2020 01:01:27,  872496 sec) TxPacket()           Packet xmit history: [00000110] (0:ok, 1:fail).
+(Jun 22 2020 01:01:36,  872506 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:36,  872506 sec) TxPacket()           Packet xmit history: [00001101] (0:ok, 1:fail).
+(Jun 22 2020 01:01:42,  872511 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:42,  872512 sec) TxPacket()           Packet xmit history: [00011011] (0:ok, 1:fail).
+(Jun 22 2020 01:01:43,  872513 sec) TxPacket()           Invalid response [0x3a] - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:44,  872513 sec) TxPacket()           Packet xmit history: [00110111] (0:ok, 1:fail).
+(Jun 22 2020 01:01:45,  872514 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:45,  872514 sec) TxPacket()           Packet xmit history: [01101111] (0:ok, 1:fail).
+(Jun 22 2020 01:01:46,  872516 sec) TxPacket()           Invalid response [0x65] - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:47,  872516 sec) TxPacket()           Packet xmit history: [11011111] (0:ok, 1:fail).
+(Jun 22 2020 01:01:50,  872520 sec) TxPacket()           Invalid response [0x6f] - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:51,  872520 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jun 22 2020 01:01:52,  872521 sec) TxPacket()           Invalid response [0x69] - resending packet. [PktNum=0x22]
+(Jun 22 2020 01:01:52,  872521 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jun 22 2020 01:01:52,  872522 sec) TxPacket()           Exit status: -5
+(Jun 22 2020 01:01:53,  872522 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 22 2020 01:02:05,  872534 sec) UpLoadFile()         Upload failed.
+(Jun 22 2020 01:02:26,  872555 sec) UpLoadFile()         Uploading "7827.174.log" to host as "7827.174.log".
+(Jun 22 2020 01:03:26,  872615 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Jun 22 2020 01:03:37,  872626 sec) UpLoadFile()         Upload failed.
+(Jun 22 2020 01:03:37,  872626 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 22 2020 01:03:37,  872627 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 22 2020 01:03:42,  872631 sec) chat()               Expected string [cmd>] not received.
+(Jun 22 2020 01:03:42,  872631 sec) logout()             Can't get command prompt.
+(Jun 22 2020 01:03:44,  872633 sec) logout()             Log-out successful.
+(Jun 22 2020 01:03:45,  872635 sec) Telemetry()          Telemetry cycle complete: PrfId=174 ConnectionAttempts=9  Connections=4
+(Jun 22 2020 01:19:00,  873549 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [128cnt, 7.1"Hg].
+(Jun 22 2020 01:19:53,  873602 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.3dbars / 219.5uM 29.646C 29.112 9.076 -36.805 / 61,142,530
+(Jun 22 2020 01:19:54,  873603 sec) GpsServices()        GPS almanac is current.
+(Jun 22 2020 01:19:54,  873603 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 22 2020 01:20:48,  873658 sec) gga()                $GPGGA,011940,1829.7406,N,06836.0656,E,1,08,1.0,3.8,M,-65.0,M,,*6A
+(Jun 22 2020 01:20:49,  873658 sec) GpsServices()        Profile 174 GPS fix obtained in 55 seconds.
+(Jun 22 2020 01:20:49,  873658 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 22 2020 01:20:49,  873659 sec) GpsServices()        Fix:   68.601  18.496 06/22/2020 011940    8
+(Jun 22 2020 01:21:38,  873708 sec) gga()                $GPGGA,012030,1829.7431,N,06836.0702,E,1,08,1.0,6.9,M,-65.0,M,,*67
+(Jun 22 2020 01:21:46,  873715 sec) gga()                $GPGGA,012120,1829.7465,N,06836.0776,E,1,08,1.0,5.3,M,-65.0,M,,*6C
+(Jun 22 2020 01:21:46,  873716 sec) GpsServices()        APF9 RTC skew (26s) OK.
+(Jun 22 2020 01:21:47,  873716 sec) GpsServices()        GPS services complete.
+(Jun 22 2020 01:22:12,  873742 sec) CLogin()             Connecting to primary host.
+(Jun 22 2020 01:22:26,  873756 sec) CLogin()             Connection 5 established in 14 seconds.
+(Jun 22 2020 01:22:56,  873785 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 22 2020 01:22:56,  873785 sec) login()              Login prompt not received.
+(Jun 22 2020 01:23:12,  873802 sec) login()              Login successful.
+(Jun 22 2020 01:23:16,  873805 sec) CLogin()            

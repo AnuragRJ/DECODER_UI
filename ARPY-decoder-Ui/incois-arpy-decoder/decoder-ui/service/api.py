@@ -801,7 +801,13 @@ async def start_batch_decode(req: BatchDecodeRequest, request: Request) -> dict[
     if req.wmos:
         selected_presets = [p for p in presets if p["wmo"] in req.wmos]
     else:
-        selected_presets = presets
+        # Fleet-wide "Decode All": omit floats that have no telemetry staged.
+        # Registered floats without raw telemetry files have nothing to ingest.
+        selected_presets = [
+            p for p in presets
+            if not (p.get("cts4") and not p.get("cts4_group_dir"))
+            and p.get("input_file_count") != 0
+        ]
 
     if not selected_presets:
         raise HTTPException(status_code=400, detail="No floats found for batch decoding")
@@ -1088,6 +1094,122 @@ async def trigger_fleet_sync(background: BackgroundTasks) -> dict[str, Any]:
         return {"status": "already-running", "sync": state}
     background.add_task(fleet_sync.run_cycle)
     return {"status": "started"}
+
+# ---------------------------------------------------------------------------
+# Argo Format Checker — official OneArgo ArgoFormatChecker integration.
+# Wraps file_checker_exec-3.0.6.jar; never reimplements validation rules.
+# See format_checker.py and format_checker_cache.py for the adapter layer.
+# Runs on LOCALLY DECODED files (decoder output), NOT FTP downloads.
+# ---------------------------------------------------------------------------
+from format_checker_cache import get_cache as _fc_cache
+from format_checker import run_check_local, ensure_checker, not_checked_result, CheckResult
+
+
+@router.get("/floats/{wmo}/format-check")
+async def get_format_check(wmo: int) -> dict[str, Any]:
+    """Complete cached format-check result for one WMO.
+
+    Returns the full per-file result including error/warning messages,
+    category breakdown, discovery info, and checker provenance.
+    """
+    cache = _fc_cache()
+    result = cache.get(wmo)
+    return result
+
+
+@router.post("/floats/{wmo}/format-check/run")
+async def trigger_format_check(
+    wmo: int,
+    background: BackgroundTasks,
+    run_id: str | None = Query(None, description="Decoder run_id to locate output files"),
+) -> dict[str, Any]:
+    """Run the official Argo Format Checker on decoded output files.
+
+    Finds the decoder output NetCDF files for the given WMO (from the
+    specified run_id or the latest successful run), copies them to a
+    temp directory, executes the checker JAR, and caches the result.
+    """
+    # Find the output files from the run
+    nc_paths: list[str] = []
+    source_run_id = run_id
+
+    if run_id:
+        # Look up the specific run
+        run = bus.get_run(run_id)
+        if run and run.output_files:
+            nc_paths = [f.filepath for f in run.output_files if f.filepath.endswith(".nc")]
+            source_run_id = run_id
+    
+    if not nc_paths:
+        # Fall back: scan the output directory for this WMO
+        import path_resolver
+        out_root = path_resolver.get_default_output_root(wmo)
+        if out_root.exists():
+            # Find the latest run directory
+            run_dirs = sorted(
+                [d for d in out_root.iterdir() if d.is_dir() and d.name.startswith("run_")],
+                reverse=True,
+            )
+            for rd in run_dirs:
+                nc_files = list(rd.rglob("*.nc"))
+                if nc_files:
+                    nc_paths = [str(f) for f in nc_files]
+                    source_run_id = rd.name
+                    break
+
+    if not nc_paths:
+        return {
+            "wmo": wmo,
+            "status": "no_files",
+            "error": f"No decoded NetCDF files found for WMO {wmo}. Decode the float first.",
+        }
+
+    # Run the checker in the background
+    async def _run_check():
+        try:
+            ensure_checker()
+        except Exception as exc:
+            cache = _fc_cache()
+            cache.put(wmo, CheckResult(
+                wmo=wmo,
+                status="checker_error",
+                checked_at=datetime.now(timezone.utc).isoformat(),
+                discovery={"files_found": 0, "files_not_found": 0,
+                           "discovery_errors": [f"Failed to download checker JAR: {exc}"]},
+            ))
+            return
+
+        result = await asyncio.to_thread(run_check_local, wmo, nc_paths)
+        cache = _fc_cache()
+        cache.put(wmo, result)
+
+    # Mark as checking in cache immediately
+    cache = _fc_cache()
+    existing = cache.get(wmo)
+    if existing.get("status") != "checking":
+        cache.put(wmo, CheckResult(
+            wmo=wmo,
+            status="checking",
+            checked_at=datetime.now(timezone.utc).isoformat(),
+            total_files=len(nc_paths),
+            discovery={"files_found": len(nc_paths), "files_not_found": 0, "discovery_errors": []},
+        ))
+        background.add_task(_run_check)
+
+    return {
+        "wmo": wmo,
+        "status": "started",
+        "files_found": len(nc_paths),
+        "source_run_id": source_run_id,
+    }
+
+
+@router.get("/format-checker/status")
+async def format_checker_status() -> dict[str, Any]:
+    """Overall format checker system status."""
+    cache = _fc_cache()
+    return cache.status()
+
 
 
 @router.get("/floats/{wmo}/next-location")

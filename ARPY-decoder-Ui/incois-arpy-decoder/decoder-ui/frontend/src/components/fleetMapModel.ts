@@ -15,6 +15,7 @@
  */
 
 import {
+  classifyPoint,
   findInteriorAnchor,
   type ClassifiedCycle,
   type EezStatus,
@@ -164,6 +165,9 @@ export interface MarkerDescriptor {
   /** True only while the EEZ layer is ON and this float's latest valid
    *  position is currently inside — a geographic state, never an event. */
   insideEez: boolean;
+  /** True only while the EEZ layer is ON and this float is inside the Indian EEZ.
+   *  Drives marker blinking/pulsing. When EEZ toggle is OFF, always false. */
+  isBlinking: boolean;
   label: string;
   title: string;
 }
@@ -174,15 +178,31 @@ export function buildMarkerDescriptors(
   positions: readonly FleetMapFloat[],
   selectedWmo: number | null,
   currentStatus: Record<number, EezStatus | undefined> | undefined,
-  eezLayerOn: boolean
+  eezLayerOn: boolean,
+  geom?: IndiaEez | null
 ): MarkerDescriptor[] {
   return positions.map((fp) => {
     const isSelected = fp.wmo === selectedWmo;
-    const insideEez = eezLayerOn === true && currentStatus?.[fp.wmo] === "INDIAN_EEZ";
+    const status =
+      currentStatus?.[fp.wmo] ??
+      (geom && Number.isFinite(fp.lon) && Number.isFinite(fp.lat)
+        ? classifyPoint(geom.geometry, fp.lon, fp.lat)
+        : undefined);
+    const insideEez = eezLayerOn === true && status === "INDIAN_EEZ";
+    const isBlinking = insideEez;
     const title =
       `WMO ${fp.wmo} · ${fp.platform} · ${STATUS_LABEL[fp.status] || fp.status.toUpperCase()}` +
       (insideEez ? " · currently inside Indian EEZ" : "");
-    return { wmo: fp.wmo, lon: fp.lon, lat: fp.lat, isSelected, insideEez, label: String(fp.wmo), title };
+    return {
+      wmo: fp.wmo,
+      lon: fp.lon,
+      lat: fp.lat,
+      isSelected,
+      insideEez,
+      isBlinking,
+      label: String(fp.wmo),
+      title,
+    };
   });
 }
 

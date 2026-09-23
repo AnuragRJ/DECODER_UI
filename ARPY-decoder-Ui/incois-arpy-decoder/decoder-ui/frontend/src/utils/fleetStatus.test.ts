@@ -60,7 +60,7 @@ describe("fleetStatus helpers", () => {
   it("default-sorts least recent profile state first", () => {
     const rows = [
       row({ wmo: 1, data_status: "ACTIVE / RECENT PROFILE", days_since_last_profile: 2 }),
-      row({ wmo: 2, data_status: "NO RECENT PROFILE DATA 60+ DAYS", days_since_last_profile: 200 }),
+      row({ wmo: 2, data_status: "NO RECENT PROFILE DATA 80+ DAYS", days_since_last_profile: 200 }),
       row({ wmo: 3, data_status: "PROFILE OVERDUE", days_since_last_profile: 30 }),
       row({ wmo: 4, data_status: "NO DATA" }),
     ];
@@ -133,7 +133,7 @@ describe("Float Status correctness guards", () => {
     generated_at: "2026-09-21T00:00:00Z",
     floats: [],
     source: { host: "ftp.ifremer.fr", port: 21, root: "/ifremer/argo", dac: "incois", product: "dac/incois/<wmo>/<wmo>_prof.nc", field: "JULD", monitoring: "profile-recency", expected_profile_interval_days: 10, approximation_note: "Approximate estimate based on the expected 10-day profile cycle.", interval_s: 21600 },
-    summary: { total: 0, recent_profile: 0, profile_overdue: 0, no_recent_profile_60: 0, no_data: 0, approx_profiles_missed_total: null, profile_dates_known: 0, total_profiles: 0 },
+    summary: { total: 0, recent_profile: 0, profile_overdue: 0, no_recent_profile_80: 0, no_recent_profile_60: 0, no_data: 0, approx_profiles_missed_total: null, profile_dates_known: 0, total_profiles: 0 },
     sync: { status: "ok", running: false, progress: { done: 0, total: 0 }, last_attempt_at: null,
       last_success_at: "2026-09-20T23:00:00Z", interval_s: 21600, error: null, counts: {}, ...over },
   });

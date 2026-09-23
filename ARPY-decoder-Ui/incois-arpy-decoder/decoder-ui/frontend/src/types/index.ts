@@ -306,7 +306,7 @@ export interface IngestionArrival {
 export type FleetDataStatus =
   | "ACTIVE / RECENT PROFILE"
   | "PROFILE OVERDUE"
-  | "NO RECENT PROFILE DATA 60+ DAYS"
+  | "NO RECENT PROFILE DATA 80+ DAYS"
   | "NO DATA";
 
 export interface FleetLatestProfile {
@@ -502,6 +502,72 @@ export interface FleetStatusRow {
   cache_age_seconds?: number | null;
 }
 
+// ---------------------------------------------------------------------------
+// Argo Format Checker — official OneArgo ArgoFormatChecker result types
+// ---------------------------------------------------------------------------
+export type FormatCheckerStatus =
+  | "not_checked"
+  | "checking"
+  | "accepted"
+  | "rejected"
+  | "checker_error"
+  | "incomplete";
+
+export interface FormatCheckerSummary {
+  status: FormatCheckerStatus;
+  accepted_files: number;
+  rejected_files: number;
+  total_files: number;
+  total_errors: number;
+  total_warnings: number;
+  checked_at: string | null;
+  stale?: boolean;
+}
+
+export interface FormatCheckerFileResult {
+  filename: string;
+  category: string;
+  cycle: number | null;
+  result: string;
+  phase: string | null;
+  errors_number: number;
+  warnings_number: number;
+  errors_messages: string[];
+  warnings_messages: string[];
+}
+
+export interface FormatCheckerCategorySummary {
+  accepted: number;
+  rejected: number;
+  errors: number;
+  warnings: number;
+  total: number;
+}
+
+export interface FormatCheckerDiscovery {
+  files_found: number;
+  files_not_found: number;
+  discovery_errors: string[];
+}
+
+export interface FormatCheckerDetail {
+  wmo: number;
+  status: FormatCheckerStatus;
+  checked_at: string | null;
+  checker_version: string;
+  checker_commit: string;
+  total_files: number;
+  accepted_files: number;
+  rejected_files: number;
+  checker_error_files: number;
+  total_errors: number;
+  total_warnings: number;
+  categories: Record<string, FormatCheckerCategorySummary>;
+  files: FormatCheckerFileResult[];
+  discovery: FormatCheckerDiscovery;
+  stale?: boolean;
+}
+
 export interface FleetSyncState {
   status: "ok" | "degraded" | "error" | "never-synced" | "disabled" | "running";
   running: boolean;
@@ -522,7 +588,8 @@ export interface FleetStatusSummary {
   total: number;
   recent_profile: number;
   profile_overdue: number;
-  no_recent_profile_60: number;
+  no_recent_profile_80: number;
+  no_recent_profile_60?: number;
   no_data: number;
   approx_profiles_missed_total: number | null;
   profile_dates_known: number;

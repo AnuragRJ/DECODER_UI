@@ -1,0 +1,252 @@
+(Sep 09 2020 23:16:02,  866026 sec) TelemetryInit()      Profile 182. (Apf9i FwRev: 061016)
+(Sep 09 2020 23:23:03,  866448 sec) AirSystem()          Battery [188cnt, 14.6V]  Current [74cnt, 298.2mA]  Barometer [127cnt, 6.8"Hg]  Run-Time [50s]
+(Sep 09 2020 23:24:05,  866509 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.6dbars / 223.4uM 28.199C 29.454 8.988 8.968 / 65,157,533
+(Sep 09 2020 23:24:13,  866517 sec) GpsServices()        GPS almanac is current.
+(Sep 09 2020 23:24:13,  866518 sec) GpsServices()        Initiating GPS fix acquisition.
+(Sep 09 2020 23:24:35,  866539 sec) gga()                $GPGGA,232410,1846.3350,N,06726.9488,E,0,00,,,M,,M,,*5D
+(Sep 09 2020 23:24:46,  866550 sec) gga()                $GPGGA,232420,1846.3350,N,06726.9488,E,0,00,,,M,,M,,*5E
+(Sep 09 2020 23:24:57,  866561 sec) gga()                $GPGGA,232430,1846.3350,N,06726.9488,E,0,00,,,M,,M,,*5F
+(Sep 09 2020 23:25:08,  866572 sec) gga()                $GPGGA,232430,1846.3350,N,06726.9488,E,0,00,,,M,,M,,*5F
+(Sep 09 2020 23:25:18,  866583 sec) gga()                $GPGGA,232440,1846.3350,N,06726.9488,E,0,00,,,M,,M,,*58
+(Sep 09 2020 23:26:01,  866626 sec) gga()                $GPGGA,232450,1856.8652,N,06725.0752,E,1,08,0.9,10.5,M,-61.5,M,,*5F
+(Sep 09 2020 23:26:02,  866626 sec) GpsServices()        Profile 182 GPS fix obtained in 108 seconds.
+(Sep 09 2020 23:26:02,  866626 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Sep 09 2020 23:26:02,  866626 sec) GpsServices()        Fix:   67.418  18.948 09/09/2020 232450    8
+(Sep 09 2020 23:26:49,  866674 sec) gga()                $GPGGA,232600,1856.8604,N,06725.0759,E,1,08,0.9,8.8,M,-61.5,M,,*64
+(Sep 09 2020 23:26:57,  866681 sec) gga()                $GPGGA,232650,1856.8558,N,06725.0759,E,1,08,0.9,8.3,M,-61.5,M,,*60
+(Sep 09 2020 23:26:57,  866682 sec) GpsServices()        APF9 RTC skew (7s) OK.
+(Sep 09 2020 23:26:57,  866682 sec) GpsServices()        GPS services complete.
+(Sep 09 2020 23:27:39,  866724 sec) CLogin()             Connecting to primary host.
+(Sep 09 2020 23:27:58,  866742 sec) CLogin()             Connection 1 established in 19 seconds.
+(Sep 09 2020 23:28:05,  866750 sec) login()              Login successful.
+(Sep 09 2020 23:28:09,  866754 sec) CLogin()             Logged in to host.  [Login required 11 seconds]
+(Sep 09 2020 23:28:21,  866765 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Sep 09 2020 23:28:23,  866768 sec) Rx()                 Initiating transfer. [0x43]
+(Sep 09 2020 23:28:29,  866773 sec) RxStartByte()        Sync errors encountered: 702
+(Sep 09 2020 23:28:32,  866776 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Sep 09 2020 23:28:39,  866783 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 16 sec, 64.0 bps]
+(Sep 09 2020 23:28:39,  866783 sec) RxConfig()           Download successful.
+(Sep 09 2020 23:29:02,  866806 sec) WriteVitals()        Writing vitals to "7827.182.msg".
+(Sep 09 2020 23:29:20,  866825 sec) UpLoadFile()         Uploading "7827.182.msg" to host as "7827.182.msg".
+(Sep 09 2020 23:29:23,  866828 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Sep 09 2020 23:29:27,  866831 sec) TxPacket()           Invalid response [0x43] - resending packet. [PktNum=0x01]
+(Sep 09 2020 23:29:27,  866832 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Sep 09 2020 23:30:26,  866890 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Sep 09 2020 23:30:26,  866891 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Sep 09 2020 23:30:41,  866905 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0b]
+(Sep 09 2020 23:30:41,  866906 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Sep 09 2020 23:31:28,  866952 sec) TxPacket()           Packet xmit history: [00000000] (0:ok, 1:fail).
+(Sep 09 2020 23:31:32,  866956 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:31:32,  866957 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Sep 09 2020 23:31:43,  866967 sec) TxPacket()           Invalid response [0x6d] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:31:43,  866967 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Sep 09 2020 23:31:47,  866971 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:31:47,  866971 sec) TxPacket()           Packet xmit history: [00000111] (0:ok, 1:fail).
+(Sep 09 2020 23:31:48,  866973 sec) TxPacket()           Invalid response [0x6e] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:31:49,  866973 sec) TxPacket()           Packet xmit history: [00001111] (0:ok, 1:fail).
+(Sep 09 2020 23:31:50,  866974 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:31:50,  866974 sec) TxPacket()           Packet xmit history: [00011111] (0:ok, 1:fail).
+(Sep 09 2020 23:31:52,  866976 sec) TxPacket()           Invalid response [0x38] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:31:52,  866976 sec) TxPacket()           Packet xmit history: [00111111] (0:ok, 1:fail).
+(Sep 09 2020 23:31:55,  866979 sec) TxPacket()           Invalid response [0x36] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:31:55,  866979 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Sep 09 2020 23:31:58,  866982 sec) TxPacket()           Invalid response [0x31] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:31:58,  866982 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Sep 09 2020 23:31:59,  866984 sec) TxPacket()           Invalid response [0x6f] - resending packet. [PktNum=0x14]
+(Sep 09 2020 23:32:00,  866984 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Sep 09 2020 23:32:00,  866984 sec) TxPacket()           Exit status: -5
+(Sep 09 2020 23:32:00,  866985 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Sep 09 2020 23:32:13,  866997 sec) UpLoadFile()         Upload failed.
+(Sep 09 2020 23:32:35,  867019 sec) UpLoadFile()         Uploading "7827.182.log" to host as "7827.182.log".
+(Sep 09 2020 23:33:35,  867079 sec) Tx()                 CRC negotiation failed - aborting transfer.
+(Sep 09 2020 23:33:46,  867090 sec) UpLoadFile()         Upload failed.
+(Sep 09 2020 23:33:46,  867090 sec) UpLoad()             Files successfully uploaded: 0
+(Sep 09 2020 23:33:46,  867091 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Sep 09 2020 23:33:50,  867095 sec) logout()             Log-out successful.
+(Sep 09 2020 23:33:52,  867096 sec) Telemetry()          Telemetry cycle complete: PrfId=182 ConnectionAttempts=1  Connections=1
+(Sep 09 2020 23:49:06,  868010 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Sep 09 2020 23:49:51,  868055 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.6dbars / 223.9uM 28.223C 29.418 8.964 8.204 / 63,161,533
+(Sep 09 2020 23:49:59,  868063 sec) GpsServices()        GPS almanac is current.
+(Sep 09 2020 23:49:59,  868064 sec) GpsServices()        Initiating GPS fix acquisition.
+(Sep 09 2020 23:50:50,  868114 sec) gga()                $GPGGA,235000,1856.7523,N,06725.0904,E,1,08,0.9,15.1,M,-61.5,M,,*5F
+(Sep 09 2020 23:50:50,  868115 sec) GpsServices()        Profile 182 GPS fix obtained in 51 seconds.
+(Sep 09 2020 23:50:51,  868115 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Sep 09 2020 23:50:51,  868115 sec) GpsServices()        Fix:   67.418  18.946 09/09/2020 235000    8
+(Sep 09 2020 23:51:39,  868164 sec) gga()                $GPGGA,235050,1856.7506,N,06725.0897,E,1,08,0.9,7.5,M,-61.5,M,,*61
+(Sep 09 2020 23:51:47,  868171 sec) gga()                $GPGGA,235140,1856.7467,N,06725.0897,E,1,08,0.9,7.1,M,-61.5,M,,*63
+(Sep 09 2020 23:51:47,  868172 sec) GpsServices()        APF9 RTC skew (7s) OK.
+(Sep 09 2020 23:51:48,  868172 sec) GpsServices()        GPS services complete.
+(Sep 09 2020 23:52:21,  868206 sec) CLogin()             Connecting to primary host.
+(Sep 09 2020 23:52:37,  868222 sec) CLogin()             Connection 2 established in 16 seconds.
+(Sep 09 2020 23:52:46,  868230 sec) login()              Login successful.
+(Sep 09 2020 23:52:49,  868234 sec) CLogin()             Logged in to host.  [Login required 12 seconds]
+(Sep 09 2020 23:53:01,  868246 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Sep 09 2020 23:53:04,  868249 sec) Rx()                 Initiating transfer. [0x43]
+(Sep 09 2020 23:53:11,  868255 sec) Rx()                 Truncated packet received - retrying.
+(Sep 09 2020 23:53:14,  868259 sec) RxStartByte()        Sync errors encountered: 411
+(Sep 09 2020 23:53:19,  868263 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Sep 09 2020 23:53:23,  868267 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 19 sec, 53.9 bps]
+(Sep 09 2020 23:53:23,  868267 sec) RxConfig()           Download successful.
+(Sep 09 2020 23:53:46,  868290 sec) WriteVitals()        Writing vitals to "7827.182.msg".
+(Sep 09 2020 23:54:07,  868311 sec) UpLoadFile()         Uploading "7827.182.msg" to host as "7827.182.msg".
+(Sep 09 2020 23:54:15,  868320 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Sep 09 2020 23:54:32,  868336 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Sep 09 2020 23:54:32,  868337 sec) TxPacket()           Packet xmit history: [01110001] (0:ok, 1:fail).
+(Sep 09 2020 23:54:37,  868341 sec) TxPacket()           NAK received - resending packet. [PktNum=0x01]
+(Sep 09 2020 23:54:37,  868342 sec) TxPacket()           Packet xmit history: [11100011] (0:ok, 1:fail).
+(Sep 09 2020 23:54:55,  868359 sec) TxPacket()           NAK received - resending packet. [PktNum=0x03]
+(Sep 09 2020 23:54:55,  868360 sec) TxPacket()           Packet xmit history: [00011001] (0:ok, 1:fail).
+(Sep 09 2020 23:55:28,  868392 sec) TxPacket()           NAK received - resending packet. [PktNum=0x07]
+(Sep 09 2020 23:55:28,  868393 sec) TxPacket()           Packet xmit history: [00100001] (0:ok, 1:fail).
+(Sep 09 2020 23:55:54,  868418 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0a]
+(Sep 09 2020 23:55:54,  868419 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Sep 09 2020 23:56:32,  868456 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Sep 09 2020 23:56:32,  868457 sec) TxPacket()           Packet xmit history: [01000001] (0:ok, 1:fail).
+(Sep 09 2020 23:57:15,  868499 sec) TxPacket()           NAK received - resending packet. [PktNum=0x15]
+(Sep 09 2020 23:57:15,  868500 sec) TxPacket()           Packet xmit history: [10000001] (0:ok, 1:fail).
+(Sep 09 2020 23:59:19,  868623 sec) Tx()                 Transmission completed successfully [38 packets, 37848 bytes, 302 sec, 125.9 bps]
+(Sep 09 2020 23:59:19,  868624 sec) UpLoadFile()         Upload successful.
+(Sep 09 2020 23:59:28,  868632 sec) UpLoadFile()         Uploading "7827.182.log" to host as "7827.182.log".
+(Sep 09 2020 23:59:31,  868635 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Sep 10 2020 00:00:30,  868694 sec) TxPacket()           NAK received - resending packet. [PktNum=0x09]
+(Sep 10 2020 00:00:30,  868695 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Sep 10 2020 00:01:24,  868748 sec) TxPacket()           NAK received - resending packet. [PktNum=0x11]
+(Sep 10 2020 00:01:24,  868749 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Sep 10 2020 00:03:29,  868873 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1d]
+(Sep 10 2020 00:03:29,  868874 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Sep 10 2020 00:03:56,  868900 sec) TxPacket()           NAK received - resending packet. [PktNum=0x20]
+(Sep 10 2020 00:03:56,  868901 sec) TxPacket()           Packet xmit history: [00010001] (0:ok, 1:fail).
+(Sep 10 2020 00:04:05,  868909 sec) Tx()                 Transmission completed successfully [32 packets, 32132 bytes, 273 sec, 120.0 bps]
+(Sep 10 2020 00:04:05,  868910 sec) UpLoadFile()         Upload successful.
+(Sep 10 2020 00:04:15,  868920 sec) UpLoad()             Files successfully uploaded: 2
+(Sep 10 2020 00:04:16,  868920 sec) UpLoad()             Upload complete.
+(Sep 10 2020 00:04:22,  868926 sec) chat()               Expected string [logout] not received.
+(Sep 10 2020 00:04:22,  868926 sec) logout()             Attempt to log-out failed.
+(Sep 10 2020 00:04:22,  868926 sec) logout()             No carrier detected.
+(Sep 10 2020 00:04:22,  868926 sec) Telemetry()          Telemetry cycle complete: PrfId=182 ConnectionAttempts=2  Connections=2
+(Sep 10 2020 00:04:23,  868927 sec) TelemetryTerminate(  Parsing new mission configuration.
+(Sep 10 2020 00:04:25,  868929 sec) configure()          Parsing configurators in "mission.cfg".
+(Sep 10 2020 00:04:33,  868937 sec) configure()             TelemetryRetry(15)          [0x7BBC] [TelemetryRetry(15)].
+(Sep 10 2020 00:04:33,  868937 sec) configure()          Configuration CRCs and syntax OK.
+(Sep 10 2020 00:04:33,  868938 sec) ConfigSupervisor()   Configuration accepted.
+(Sep 10 2020 00:04:34,  868938 sec) TelemetryTerminate(  Reconditioning the file system.
+(Sep 10 2020 00:04:50,      11 sec) DescentInit()        Deep profile 183 initiated at mission-time 868944sec.
+(Sep 10 2020 00:04:53,      13 sec) DescentInit()        Surface pressure: -0.5dbars.
+(Sep 10 2020 00:04:58,      18 sec) PistonMoveAbsWTO()    204->076 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 [646sec, 14.3Volts, 0.149Amps, CPT:646sec]
+(Sep 10 2020 00:15:54,     674 sec) Descent()            Pressure: 57.9
+(Sep 10 2020 01:04:44,    3604 sec) Descent()            Pressure: 435.1
+(Sep 10 2020 02:04:44,    7204 sec) Descent()            Pressure: 764.3
+(Sep 10 2020 03:04:44,   10804 sec) Descent()            Pressure: 944.6
+(Sep 10 2020 04:04:44,   14404 sec) Descent()            Pressure: 980.2
+(Sep 10 2020 05:04:44,   18004 sec) Descent()            Pressure: 983.7
+(Sep 10 2020 05:04:44,   18004 sec) ParkInit()           
+(Sep 10 2020 07:04:50,   25210 sec) Park()               ParkPOutOfBand[-3, 986.6 dbars]: retract piston.
+(Sep 10 2020 07:04:50,   25211 sec) PistonMoveAbsWTO()    076->075 075 [6sec, 13.3Volts, 0.093Amps, CPT:652sec]
+(Sep 10 2020 11:04:50,   39610 sec) Park()               ParkPOutOfBand[3, 1011.1 dbars]: extend piston.
+(Sep 10 2020 11:04:50,   39611 sec) PistonMoveAbsWTO()    075->076 076 [2sec, 13.1Volts, 0.455Amps, CPT:654sec]
+(Sep 14 2020 06:04:51,  367211 sec) Park()               ParkPOutOfBand[3, 1011.3 dbars]: extend piston.
+(Sep 14 2020 06:04:51,  367212 sec) PistonMoveAbsWTO()    076->077 077 [8sec, 12.6Volts, 0.455Amps, CPT:662sec]
+(Sep 14 2020 09:04:52,  378013 sec) Park()               ParkPOutOfBand[-3, 984.3 dbars]: retract piston.
+(Sep 14 2020 09:04:53,  378013 sec) PistonMoveAbsWTO()    077->076 076 [3sec, 12.9Volts, 0.085Amps, CPT:665sec]
+(Sep 19 2020 11:30:19,  818739 sec) CtdPower()           [  996.86,  8.9673, 35.5549]
+(Sep 19 2020 11:30:19,  818739 sec) CtdPower()           CTD Power consumption [178VCnt 9ACnt]: 13.798Volts * 0.036Amps = 0.50Watts.
+(Sep 19 2020 11:30:20,  818740 sec) ParkTerminate()      Piston Position:76 Vacuum:79 Vq:193 Aq:5 Vsbe:178 Asbe:9 Vflbb:172 Aflbb:12
+(Sep 19 2020 11:30:56,  818777 sec) ParkTerminate()      PTS/O2,T2,TPhase,RawTemp: 996.8dbars 8.9693C 35.5548PSU / 6.4uM 8.991C 60.855 8.242 624.955
+(Sep 19 2020 11:30:57,  818777 sec) ParkTerminate()      FLBB FSig, BbSig, TSig: 57, 113, 564
+(Sep 19 2020 11:30:57,  818778 sec) GoDeepInit()         Moving piston.
+(Sep 19 2020 11:30:57,  818778 sec) PistonMoveAbsWTO()    076->027 075 074 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 [255sec, 13.7Volts, 0.113Amps, CPT:920sec]
+(Sep 19 2020 14:59:44,  831304 sec) GoDeep()             Sequence point detected at 2001.4dbar.
+(Sep 19 2020 14:59:46,  831307 sec) ProfileInit()        PrfId:183  Pressure:2001.4dbar  pTable[0]:2000dbar
+(Sep 19 2020 15:00:33,  831353 sec) Profile()            Sample 0 initiated at 2001.6dbars for bin 0 [2000dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 2002.1dbars 3.3145C 35.0134PSU / 94.7uM 3.332C 50.636 8.329 791.999 /   59  110  573
+(Sep 19 2020 15:00:34,  831354 sec) PistonMoveAbsWTO()    027->049 028 029 030 031 032 [30sec, 12.7Volts, 0.758Amps, CPT:950sec]
+(Sep 19 2020 15:01:15,  831395 sec) PistonMoveAbsWTO()    032->049 033 034 035 036 [30sec, 12.8Volts, 0.786Amps, CPT:980sec]
+(Sep 19 2020 15:01:55,  831435 sec) PistonMoveAbsWTO()    036->049 037 038 039 040 [30sec, 12.6Volts, 0.778Amps, CPT:1010sec]
+(Sep 19 2020 15:03:58,  831558 sec) Sbe41cpStartCP()     Continuous profile started.
+(Sep 19 2020 15:03:58,  831559 sec) PistonMoveAbsWTO()    040->049 041 042 043 044 [30sec, 12.7Volts, 0.806Amps, CPT:1040sec]
+(Sep 19 2020 15:04:39,  831599 sec) PistonMoveAbsWTO()    045->049 046 047 048 049 [29sec, 12.6Volts, 0.790Amps, CPT:1069sec]
+(Sep 19 2020 15:14:49,  832210 sec) AscentControlAgent(  Bouyancy nudge to 59 (v=0.080dbar/sec).
+(Sep 19 2020 15:14:50,  832210 sec) PistonMoveAbsWTO()    049->059 050 051 052 053 [30sec, 13.0Volts, 0.770Amps, CPT:1099sec]
+(Sep 19 2020 15:15:30,  832250 sec) PistonMoveAbsWTO()    053->059 054 055 056 057 [30sec, 12.8Volts, 0.753Amps, CPT:1129sec]
+(Sep 19 2020 15:16:10,  832290 sec) PistonMoveAbsWTO()    057->059 058 059 [8sec, 12.7Volts, 0.790Amps, CPT:1137sec]
+(Sep 19 2020 15:19:13,  832473 sec) Profile()            Sample 1 initiated at 1901.1dbars for bin 1 [1900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1900.7dbars 3.6929C 35.0432PSU / 87.6uM 3.703C 51.172 8.335 781.399 /   58  113  572
+(Sep 19 2020 15:33:25,  833325 sec) Profile()            Sample 2 initiated at 1801.6dbars for bin 2 [1800dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1801.3dbars 4.1589C 35.0879PSU / 72.8uM 4.173C 52.538 8.334 767.900 /   57  140  572
+(Sep 19 2020 15:49:37,  834297 sec) Profile()            Sample 3 initiated at 1701.6dbars for bin 3 [1700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1701.3dbars 4.6136C 35.1304PSU / 60.9uM 4.624C 53.724 8.334 754.872 /   58  113  571
+(Sep 19 2020 16:05:25,  835246 sec) AscentControlAgent(  Bouyancy nudge to 69 (v=0.077dbar/sec).
+(Sep 19 2020 16:05:26,  835246 sec) PistonMoveAbsWTO()    059->069 060 061 062 063 [30sec, 13.2Volts, 0.681Amps, CPT:1167sec]
+(Sep 19 2020 16:06:06,  835286 sec) PistonMoveAbsWTO()    063->069 064 065 066 067 068 [30sec, 13.0Volts, 0.681Amps, CPT:1197sec]
+(Sep 19 2020 16:06:46,  835326 sec) PistonMoveAbsWTO()    068->069 069 [5sec, 12.9Volts, 0.709Amps, CPT:1202sec]
+(Sep 19 2020 16:09:06,  835466 sec) Profile()            Sample 4 initiated at 1601.1dbars for bin 4 [1600dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1600.8dbars 5.2751C 35.1908PSU / 48.0uM 5.284C 55.101 8.338 735.672 /   59  113  570
+(Sep 19 2020 16:25:28,  836448 sec) Profile()            Sample 5 initiated at 1501.7dbars for bin 5 [1500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1501.4dbars 5.8331C 35.2405PSU / 38.5uM 5.847C 56.208 8.343 719.150 /   58  117  569
+(Sep 19 2020 16:43:12,  837512 sec) Profile()            Sample 6 initiated at 1401.4dbars for bin 6 [1400dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1401.1dbars 6.3828C 35.2924PSU / 30.8uM 6.395C 57.175 8.341 702.990 /   59  116  568
+(Sep 19 2020 16:50:56,  837977 sec) AscentControlAgent(  Bouyancy nudge to 79 (v=0.076dbar/sec).
+(Sep 19 2020 16:50:57,  837977 sec) PistonMoveAbsWTO()    069->079 070 071 072 073 [30sec, 13.3Volts, 0.572Amps, CPT:1232sec]
+(Sep 19 2020 16:51:37,  838017 sec) PistonMoveAbsWTO()    073->079 074 075 076 077 078 [30sec, 13.1Volts, 0.584Amps, CPT:1262sec]
+(Sep 19 2020 16:52:17,  838057 sec) PistonMoveAbsWTO()    078->079 079 [3sec, 13.1Volts, 0.596Amps, CPT:1265sec]
+(Sep 19 2020 16:53:25,  838125 sec) Profile()            Sample 7 initiated at 1351.4dbars for bin 7 [1350dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1351.1dbars 6.6392C 35.3176PSU / 27.3uM 6.655C 57.658 8.342 695.264 /   57  117  568
+(Sep 19 2020 17:01:55,  838635 sec) Profile()            Sample 8 initiated at 1301.9dbars for bin 8 [1300dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1301.5dbars 6.9533C 35.3483PSU / 23.0uM 6.967C 58.253 8.342 685.977 /   59  113  568
+(Sep 19 2020 17:10:53,  839173 sec) Profile()            Sample 9 initiated at 1251.7dbars for bin 9 [1250dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1251.4dbars 7.2137C 35.3765PSU / 19.6uM 7.230C 58.762 8.341 678.128 /   59  115  567
+(Sep 19 2020 17:20:13,  839733 sec) Profile()            Sample 10 initiated at 1201.7dbars for bin 10 [1200dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1201.4dbars 7.5161C 35.4067PSU / 16.7uM 7.537C 59.194 8.339 668.934 /   58  115  567
+(Sep 19 2020 17:30:33,  840353 sec) Profile()            Sample 11 initiated at 1152.0dbars for bin 11 [1150dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1151.8dbars 7.8559C 35.4411PSU / 13.7uM 7.874C 59.657 8.336 658.808 /   58  120  566
+(Sep 19 2020 17:31:39,  840420 sec) AscentControlAgent(  Bouyancy nudge to 89 (v=0.075dbar/sec).
+(Sep 19 2020 17:31:40,  840420 sec) PistonMoveAbsWTO()    079->089 080 081 082 083 084 [30sec, 13.4Volts, 0.516Amps, CPT:1295sec]
+(Sep 19 2020 17:32:21,  840461 sec) PistonMoveAbsWTO()    084->089 085 086 087 088 [30sec, 13.3Volts, 0.516Amps, CPT:1325sec]
+(Sep 19 2020 17:39:45,  840905 sec) Profile()            Sample 12 initiated at 1101.2dbars for bin 12 [1100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1100.9dbars 8.1988C 35.4814PSU / 10.0uM 8.219C 60.283 8.336 648.393 /   59  120  566
+(Sep 19 2020 17:49:04,  841464 sec) Profile()            Sample 13 initiated at 1051.7dbars for bin 13 [1050dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1051.4dbars 8.5418C 35.5173PSU / 8.1uM 8.569C 60.593 8.336 637.785 /   58  119  565
+(Sep 19 2020 17:59:06,  842066 sec) Profile()            Sample 14 initiated at 1001.8dbars for bin 14 [1000dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1001.5dbars 8.9113C 35.5492PSU / 7.0uM 8.934C 60.755 8.338 626.666 /   58  120  565
+(Sep 19 2020 18:07:25,  842566 sec) AscentControlAgent(  Bouyancy nudge to 99 (v=0.077dbar/sec).
+(Sep 19 2020 18:07:26,  842566 sec) PistonMoveAbsWTO()    089->099 090 091 092 093 094 [30sec, 13.5Volts, 0.471Amps, CPT:1355sec]
+(Sep 19 2020 18:08:08,  842608 sec) PistonMoveAbsWTO()    094->099 095 096 097 098 099 [29sec, 13.4Volts, 0.451Amps, CPT:1384sec]
+(Sep 19 2020 18:17:46,  843186 sec) Profile()            Sample 16 initiated at 901.5dbars for bin 16 [900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 901.2dbars 9.6125C 35.6175PSU / 3.1uM 9.638C 61.459 8.351 605.139 /   58  114  563
+(Sep 19 2020 18:43:13,  844713 sec) AscentControlAgent(  Bouyancy nudge to 109 (v=0.079dbar/sec).
+(Sep 19 2020 18:43:13,  844714 sec) PistonMoveAbsWTO()    099->109 100 101 102 103 104 [30sec, 13.6Volts, 0.399Amps, CPT:1414sec]
+(Sep 19 2020 18:43:55,  844756 sec) PistonMoveAbsWTO()    104->109 105 106 107 108 109 [28sec, 13.5Volts, 0.399Amps, CPT:1442sec]
+(Sep 19 2020 18:54:51,  845412 sec) Profile()            Sample 20 initiated at 701.9dbars for bin 20 [700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 701.6dbars 10.9495C 35.7125PSU / 1.3uM 10.982C 61.727 8.411 563.627 /   58  108  561
+(Sep 19 2020 19:13:54,  846554 sec) AscentControlAgent(  Bouyancy nudge to 119 (v=0.077dbar/sec).
+(Sep 19 2020 19:13:54,  846555 sec) PistonMoveAbsWTO()    109->119 110 111 112 113 114 [30sec, 13.6Volts, 0.355Amps, CPT:1472sec]
+(Sep 19 2020 19:14:51,  846611 sec) PistonMoveAbsWTO()    114->119 115 116 117 118 119 [26sec, 13.6Volts, 0.338Amps, CPT:1498sec]
+(Sep 19 2020 19:32:09,  847650 sec) Profile()            Sample 24 initiated at 501.2dbars for bin 24 [500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 500.9dbars 12.5373C 35.8518PSU / 1.1uM 12.569C 61.654 8.499 513.931 /   59  113  559
+(Sep 19 2020 19:49:32,  848692 sec) AscentControlAgent(  Bouyancy nudge to 129 (v=0.076dbar/sec).
+(Sep 19 2020 19:49:32,  848693 sec) PistonMoveAbsWTO()    119->129 120 121 122 123 124 [30sec, 13.8Volts, 0.278Amps, CPT:1528sec]
+(Sep 19 2020 19:50:13,  848734 sec) PistonMoveAbsWTO()    124->129 125 126 127 128 129 [25sec, 13.7Volts, 0.294Amps, CPT:1553sec]
+(Sep 19 2020 20:05:07,  849628 sec) Profile()            Sample 28 initiated at 331.1dbars for bin 28 [330dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 330.8dbars 13.4654C 35.7897PSU / 1.0uM 13.497C 61.601 8.498 484.563 /   58  153  557
+(Sep 19 2020 20:09:50,  849910 sec) AscentControlAgent(  Bouyancy nudge to 139 (v=0.077dbar/sec).
+(Sep 19 2020 20:09:50,  849911 sec) PistonMoveAbsWTO()    129->139 130 131 132 133 134 [30sec, 13.9Volts, 0.246Amps, CPT:1583sec]
+(Sep 19 2020 20:10:31,  849952 sec) PistonMoveAbsWTO()    134->139 135 136 137 138 139 [25sec, 13.8Volts, 0.250Amps, CPT:1608sec]
+(Sep 19 2020 20:21:54,  850635 sec) Profile()            Sample 32 initiated at 241.1dbars for bin 32 [240dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 240.9dbars 14.6289C 35.7724PSU / 0.9uM 14.654C 61.539 8.547 447.679 /   58  147  556
+(Sep 19 2020 20:34:12,  851373 sec) Profile()            Sample 36 initiated at 181.9dbars for bin 36 [180dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 181.7dbars 17.0220C 35.9295PSU / 0.8uM 17.048C 61.378 8.715 370.595 /   58  160  553
+(Sep 19 2020 20:35:15,  851435 sec) AscentControlAgent(  Bouyancy nudge to 149 (v=0.064dbar/sec).
+(Sep 19 2020 20:35:15,  851436 sec) PistonMoveAbsWTO()    139->149 140 141 142 143 144 [30sec, 14.0Volts, 0.205Amps, CPT:1638sec]
+(Sep 19 2020 20:35:56,  851477 sec) PistonMoveAbsWTO()    144->149 145 146 147 148 149 [23sec, 13.9Volts, 0.210Amps, CPT:1661sec]
+(Sep 19 2020 20:42:45,  851886 sec) Profile()            Sample 40 initiated at 141.9dbars for bin 40 [140dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 141.6dbars 19.8986C 36.2379PSU / 7.4uM 19.928C 59.254 8.821 276.915 /   53  119  550
+(Sep 19 2020 20:45:44,  852064 sec) AscentControlAgent(  Bouyancy nudge to 159 (v=0.068dbar/sec).
+(Sep 19 2020 20:45:44,  852065 sec) PistonMoveAbsWTO()    149->159 150 151 152 153 154 [30sec, 14.0Volts, 0.197Amps, CPT:1691sec]
+(Sep 19 2020 20:46:25,  852106 sec) PistonMoveAbsWTO()    154->159 155 156 157 158 159 [23sec, 13.9Volts, 0.201Amps, CPT:1714sec]
+(Sep 19 2020 20:51:48,  852429 sec) Profile()            Sample 44 initiated at 101.8dbars for bin 44 [100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 101.5dbars 22.8671C 36.4740PSU / 73.4uM 22.861C 44.807 8.902 181.236 /   54  117  546
+(Sep 19 2020 21:01:05,  852985 sec) AscentControlAgent(  Bouyancy nudge to 164 (v=0.036dbar/sec).
+(Sep 19 2020 21:01:05,  852986 sec) PistonMoveAbsWTO()    159->164 160 161 162 163 164 [26sec, 14.0Volts, 0.185Amps, CPT:1740sec]
+(Sep 19 2020 21:06:10,  853290 sec) AscentControlAgent(  Bouyancy nudge to 169 (v=0.028dbar/sec).
+(Sep 19 2020 21:06:10,  853291 sec) PistonMoveAbsWTO()    164->169 165 166 167 168 169 [27sec, 14.0Volts, 0.181Amps, CPT:1767sec]
+(Sep 19 2020 21:11:10,  853590 sec) AscentControlAgent(  Bouyancy nudge to 174 (v=0.010dbar/sec).
+(Sep 19 2020 21:11:10,  853591 sec) PistonMoveAbsWTO()    169->174 170 171 172 173 174 [26sec, 14.0Volts, 0.177Amps, CPT:1793sec]
+(Sep 19 2020 21:12:52,  853693 sec) Profile()            Sample 48 initiated at 61.8dbars for bin 48 [60dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 61.7dbars 27.5666C 36.7562PSU / 198.3uM 27.566C 31.050 8.943 29.152 /  139  167  538
+(Sep 19 2020 21:22:00,  854241 sec) Profile()            Sample 52 initiated at 36.5dbars for bin 52 [35dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 36.4dbars 27.9724C 36.7193PSU / 228.3uM 27.993C 29.287 8.943 15.532 /   99  184  535
+(Sep 19 2020 21:26:39,  854519 sec) AscentControlAgent(  Bouyancy nudge to 179 (v=0.030dbar/sec).
+(Sep 19 2020 21:26:39,  854520 sec) PistonMoveAbsWTO()    174->179 175 176 177 178 179 [26sec, 14.1Volts, 0.173Amps, CPT:1819sec]
+(Sep 19 2020 21:31:33,  854814 sec) Profile()            Sample 56 initiated at 16.8dbars for bin 56 [15dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 16.7dbars 28.7620C 36.6171PSU / 225.3uM 28.774C 29.145 9.014 -9.278 /   74  171  534
+(Sep 19 2020 21:31:46,  854826 sec) AscentControlAgent(  Bouyancy nudge to 184 (v=0.038dbar/sec).
+(Sep 19 2020 21:31:46,  854827 sec) PistonMoveAbsWTO()    179->184 180 181 [15sec, 14.0Volts, 0.173Amps, CPT:1834sec]
+(Sep 19 2020 21:32:12,  854852 sec) PistonMoveAbsWTO()    182->184 183 184 [12sec, 14.1Volts, 0.169Amps, CPT:1846sec]
+(Sep 19 2020 21:33:49,  854950 sec) Profile()            Sample 57 initiated at 11.8dbars for bin 57 [10dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 11.6dbars 28.7653C 36.6099PSU / 224.9uM 28.786C 29.160 9.013 -9.656 /   76  171  533
+(Sep 19 2020 21:35:55,  855076 sec) Profile()            Sample 58 initiated at 5.8dbars for bin 58 [4dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 5.7dbars 28.7629C 36.6100PSU / 224.9uM 28.785C 29.160 9.014 -9.623 /   76  168  533
+(Sep 19 2020 21:36:21,  855102 sec) Profile()            Sample 59 initiated at 4.8dbars for bin 58 [4dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 4.6dbars 28.7608C 36.6104PSU / 224.8uM 28.782C 29.166 9.015 -9.545 /   74  240  532
+(Sep 19 2020 21:36:35,  855115 sec) SurfaceDetect()      SurfacePressure:-0.5dbars Pressure:3.6dbars PistonPosition:184
+(Sep 19 2020 21:36:36,  855116 sec) Sbe41cpStopCP()      Continuous profile stopped.
+(Sep 19 2020 21:36:43,  855123 sec) PistonMoveAbsWTO()    184->206 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 [114sec, 14.1Volts, 0.153Amps, CPT:1960sec]
+(Sep 19 2020 21:38:54,  855254 sec) sbe41cp.c:chat()     Expected string [S>] not received.
+(Sep 19 2020 21:42:13,  855453 sec) Sbe41cpBinAverage()  Finished averaging 23586 samples in 194 seconds.
+(Sep 19 2020 21:42:18,  855458 sec) Sbe41cpUploadCP()    Sbe41cpSerNo[08355] NSample[23586] NBin[1000]
+(Sep 19 2020 21:44:17,  855578 sec) Sbe41cpUploadCP()    Continuous profile uploaded [1000 lines].
+
+<EOT>
+
+<EOT>

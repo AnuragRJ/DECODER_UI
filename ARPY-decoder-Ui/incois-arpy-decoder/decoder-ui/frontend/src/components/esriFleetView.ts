@@ -246,6 +246,54 @@ export async function createFleetMapView(
   });
   view.container.addEventListener("pointerleave", clearHover);
 
+  let pulseRafId: number | null = null;
+  let pulseStartTime: number = performance.now();
+
+  const stopPulse = () => {
+    if (pulseRafId !== null) {
+      cancelAnimationFrame(pulseRafId);
+      pulseRafId = null;
+    }
+  };
+
+  const tickPulse = () => {
+    const elapsed = performance.now() - pulseStartTime;
+    const period = 1300;
+    const t = (elapsed % period) / period;
+
+    const haloAlpha = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(t * 2 * Math.PI));
+    const pulseSize = pt(MAP_SIZES.eezHaloDiameter + t * 13);
+    const pulseAlpha = Math.max(0.01, 0.8 * (1 - t));
+
+    markerLayer.graphics.forEach((g) => {
+      const kind = g.attributes?.kind;
+      if (kind === "eez-halo") {
+        const sym = g.symbol as SimpleMarkerSymbol;
+        if (sym) {
+          const next = sym.clone();
+          next.outline.color = [248, 113, 113, haloAlpha] as unknown as any;
+          g.symbol = next;
+        }
+      } else if (kind === "eez-pulse") {
+        const sym = g.symbol as SimpleMarkerSymbol;
+        if (sym) {
+          const next = sym.clone();
+          next.size = pulseSize;
+          next.outline.color = [248, 113, 113, pulseAlpha] as unknown as any;
+          g.symbol = next;
+        }
+      }
+    });
+
+    pulseRafId = requestAnimationFrame(tickPulse);
+  };
+
+  const startPulse = () => {
+    if (pulseRafId !== null) return;
+    pulseStartTime = performance.now();
+    pulseRafId = requestAnimationFrame(tickPulse);
+  };
+
   const update = (data: FleetViewData) => {
     current = data;
     (container as unknown as Record<string, unknown>).__fleetMapData = data;
@@ -489,7 +537,7 @@ export async function createFleetMapView(
           attributes: { kind: "hit", wmo: m.wmo },
         })
       );
-      if (m.insideEez) {
+      if (m.insideEez || m.isBlinking) {
         markerLayer.add(
           new Graphic({
             geometry: ptGeom,
@@ -500,6 +548,18 @@ export async function createFleetMapView(
               outline: { color: MAP_COLORS.eezHalo, width: 1.2 },
             }),
             attributes: { kind: "eez-halo", wmo: m.wmo },
+          })
+        );
+        markerLayer.add(
+          new Graphic({
+            geometry: ptGeom,
+            symbol: new SimpleMarkerSymbol({
+              style: "circle",
+              color: [0, 0, 0, 0],
+              size: pt(MAP_SIZES.eezHaloDiameter),
+              outline: { color: [248, 113, 113, 0.75], width: 1.4 },
+            }),
+            attributes: { kind: "eez-pulse", wmo: m.wmo },
           })
         );
       }
@@ -575,6 +635,13 @@ export async function createFleetMapView(
     });
 
     refreshCycleLabels();
+
+    const hasBlinking = data.markers.some((m) => m.insideEez || m.isBlinking);
+    if (hasBlinking) {
+      startPulse();
+    } else {
+      stopPulse();
+    }
   };
 
   const frameExtent = (ext: LonLatExtent | null, durationMs = 380) => {
@@ -616,6 +683,7 @@ export async function createFleetMapView(
     frameWorld,
     zoomBy,
     destroy: () => {
+      stopPulse();
       view.container.removeEventListener("pointerleave", clearHover);
       view.destroy();
     },

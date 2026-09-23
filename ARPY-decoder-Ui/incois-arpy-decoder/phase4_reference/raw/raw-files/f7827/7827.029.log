@@ -1,0 +1,371 @@
+(Jun 26 2017 16:57:53,  847274 sec) TelemetryInit()      Profile 28. (Apf9i FwRev: 061016)
+(Jun 26 2017 17:04:47,  847688 sec) AirSystem()          Battery [188cnt, 14.6V]  Current [79cnt, 318.3mA]  Barometer [125cnt, 6.2"Hg]  Run-Time [47s]
+(Jun 26 2017 17:05:40,  847741 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.5dbars / 222.1uM 28.790C 29.297 9.041 -9.801 / 92,167,532
+(Jun 26 2017 17:05:47,  847748 sec) GpsServices()        GPS almanac is current.
+(Jun 26 2017 17:05:47,  847748 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 26 2017 17:06:02,  847763 sec) gga()                $GPGGA,170530,1558.4693,N,06512.2922,E,0,00,,,M,,M,,*57
+(Jun 26 2017 17:06:12,  847773 sec) gga()                $GPGGA,170540,1558.4693,N,06512.2922,E,0,00,,,M,,M,,*50
+(Jun 26 2017 17:06:24,  847785 sec) gga()                $GPGGA,170600,1558.4693,N,06512.2922,E,0,00,,,M,,M,,*57
+(Jun 26 2017 17:06:35,  847796 sec) gga()                $GPGGA,170600,1558.4693,N,06512.2922,E,0,00,,,M,,M,,*57
+(Jun 26 2017 17:06:46,  847807 sec) gga()                $GPGGA,170610,1558.4693,N,06512.2922,E,0,00,,,M,,M,,*56
+(Jun 26 2017 17:06:49,  847810 sec) gga()                $GPGGA,170620,1558.4693,N,06512.2922,E,0,00,,,M,,M,,*55
+(Jun 26 2017 17:07:00,  847821 sec) gga()                $GPGGA,170630,1558.4693,N,06512.2922,E,0,00,,,M,,M,,*54
+(Jun 26 2017 17:07:45,  847866 sec) gga()                $GPGGA,170640,1609.1493,N,06543.9328,E,1,05,2.0,7.2,M,-64.9,M,,*67
+(Jun 26 2017 17:07:45,  847866 sec) GpsServices()        Profile 28 GPS fix obtained in 118 seconds.
+(Jun 26 2017 17:07:45,  847866 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 26 2017 17:07:46,  847867 sec) GpsServices()        Fix:   65.732  16.152 06/26/2017 170640    5
+(Jun 26 2017 17:08:36,  847917 sec) gga()                $GPGGA,170740,1609.1482,N,06543.9425,E,1,05,2.0,0.2,M,-64.9,M,,*6B
+(Jun 26 2017 17:08:44,  847925 sec) gga()                $GPGGA,170830,1609.1430,N,06543.9513,E,1,07,1.1,2.1,M,-64.9,M,,*6F
+(Jun 26 2017 17:08:44,  847925 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Jun 26 2017 17:08:44,  847925 sec) GpsServices()        GPS services complete.
+(Jun 26 2017 17:10:22,  848023 sec) CLogin()             Connecting to primary host.
+(Jun 26 2017 17:10:31,  848032 sec) CLogin()             Connection 1 established in 9 seconds.
+(Jun 26 2017 17:11:01,  848061 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:11:01,  848062 sec) login()              Login prompt not received.
+(Jun 26 2017 17:11:31,  848091 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:11:31,  848092 sec) login()              Login prompt not received.
+(Jun 26 2017 17:11:45,  848106 sec) CLogin()             Connection 2 established in 83 seconds.
+(Jun 26 2017 17:12:15,  848135 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:12:15,  848136 sec) login()              Login prompt not received.
+(Jun 26 2017 17:12:15,  848136 sec) login()              No carrier detected.
+(Jun 26 2017 17:12:15,  848136 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 26 2017 17:13:00,  848181 sec) CLogin()             Connection 3 established in 158 seconds.
+(Jun 26 2017 17:13:31,  848211 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:13:31,  848212 sec) login()              Login prompt not received.
+(Jun 26 2017 17:14:01,  848241 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:14:01,  848242 sec) login()              Login prompt not received.
+(Jun 26 2017 17:14:06,  848246 sec) chat()               Expected string [OK] not received.
+(Jun 26 2017 17:14:06,  848247 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jun 26 2017 17:14:06,  848247 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jun 26 2017 17:14:06,  848247 sec) modem_connect()      Modem configuration failed.
+(Jun 26 2017 17:14:06,  848247 sec) connect()            Connection attempt failed.
+(Jun 26 2017 17:14:06,  848247 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jun 26 2017 17:14:07,  848248 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jun 26 2017 17:14:13,  848254 sec) CLogin()             Connecting to primary host.
+(Jun 26 2017 17:14:35,  848276 sec) CLogin()             Connection 4 established in 22 seconds.
+(Jun 26 2017 17:15:05,  848305 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:15:05,  848306 sec) login()              Login prompt not received.
+(Jun 26 2017 17:15:35,  848335 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:15:35,  848336 sec) login()              Login prompt not received.
+(Jun 26 2017 17:15:50,  848351 sec) CLogin()             Connection 5 established in 97 seconds.
+(Jun 26 2017 17:16:21,  848381 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:16:21,  848382 sec) login()              Login prompt not received.
+(Jun 26 2017 17:16:51,  848411 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:16:51,  848412 sec) login()              Login prompt not received.
+(Jun 26 2017 17:16:51,  848412 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 26 2017 17:17:14,  848435 sec) CLogin()             Connection 6 established in 181 seconds.
+(Jun 26 2017 17:17:47,  848468 sec) login()              Login successful.
+(Jun 26 2017 17:17:50,  848471 sec) CLogin()             Logged in to host.  [Login required 36 seconds]
+(Jun 26 2017 17:18:03,  848484 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 26 2017 17:18:05,  848486 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 26 2017 17:18:18,  848498 sec) Rx()                 Truncated packet received - retrying.
+(Jun 26 2017 17:18:20,  848501 sec) RxStartByte()        Sync errors encountered: 271
+(Jun 26 2017 17:18:23,  848503 sec) Rx()                 Truncated packet received - retrying.
+(Jun 26 2017 17:18:32,  848513 sec) RxStartByte()        Sync errors encountered: 843
+(Jun 26 2017 17:18:36,  848517 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 26 2017 17:18:41,  848521 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 36 sec, 28.4 bps]
+(Jun 26 2017 17:18:41,  848522 sec) RxConfig()           Download successful.
+(Jun 26 2017 17:19:04,  848545 sec) WriteVitals()        Writing vitals to "7827.028.msg".
+(Jun 26 2017 17:19:29,  848570 sec) UpLoadFile()         Uploading "7827.028.msg" to host as "7827.028.msg".
+(Jun 26 2017 17:19:32,  848573 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 26 2017 17:23:17,  848798 sec) Tx()                 Transmission completed successfully [25 packets, 25236 bytes, 223 sec, 114.8 bps]
+(Jun 26 2017 17:23:17,  848798 sec) UpLoadFile()         Upload successful.
+(Jun 26 2017 17:23:26,  848807 sec) UpLoadFile()         Uploading "7827.028.log" to host as "7827.028.log".
+(Jun 26 2017 17:23:29,  848810 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 26 2017 17:23:38,  848819 sec) TxPacket()           Invalid response [0x74] - resending packet. [PktNum=0x01]
+(Jun 26 2017 17:23:38,  848819 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 26 2017 17:23:44,  848825 sec) TxPacket()           Invalid response [0x43] - resending packet. [PktNum=0x01]
+(Jun 26 2017 17:23:45,  848826 sec) TxPacket()           Packet xmit history: [00000011] (0:ok, 1:fail).
+(Jun 26 2017 17:25:10,  848911 sec) TxPacket()           NAK received - resending packet. [PktNum=0x0f]
+(Jun 26 2017 17:25:10,  848911 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 26 2017 17:26:49,  849010 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:26:49,  849010 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 26 2017 17:27:00,  849020 sec) TxPacket()           Packet xmit history: [00000010] (0:ok, 1:fail).
+(Jun 26 2017 17:27:05,  849026 sec) TxPacket()           Invalid response [0x63] - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:27:05,  849026 sec) TxPacket()           Packet xmit history: [00000101] (0:ok, 1:fail).
+(Jun 26 2017 17:27:06,  849027 sec) TxPacket()           Invalid response [0x28] - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:27:06,  849027 sec) TxPacket()           Packet xmit history: [00001011] (0:ok, 1:fail).
+(Jun 26 2017 17:27:08,  849029 sec) TxPacket()           Invalid response [0x2f] - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:27:08,  849029 sec) TxPacket()           Packet xmit history: [00010111] (0:ok, 1:fail).
+(Jun 26 2017 17:27:10,  849031 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:27:10,  849031 sec) TxPacket()           Packet xmit history: [00101111] (0:ok, 1:fail).
+(Jun 26 2017 17:27:12,  849033 sec) TxPacket()           Invalid response [0x0d] - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:27:13,  849033 sec) TxPacket()           Packet xmit history: [01011111] (0:ok, 1:fail).
+(Jun 26 2017 17:27:14,  849035 sec) TxPacket()           Invalid response [0x76] - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:27:14,  849035 sec) TxPacket()           Packet xmit history: [10111111] (0:ok, 1:fail).
+(Jun 26 2017 17:27:16,  849037 sec) TxPacket()           Invalid response [0x20] - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:27:16,  849037 sec) TxPacket()           Packet xmit history: [01111111] (0:ok, 1:fail).
+(Jun 26 2017 17:27:17,  849038 sec) TxPacket()           Invalid response [0x27] - resending packet. [PktNum=0x1a]
+(Jun 26 2017 17:27:18,  849039 sec) TxPacket()           Packet xmit history: [11111111] (0:ok, 1:fail).
+(Jun 26 2017 17:27:18,  849039 sec) TxPacket()           Exit status: -5
+(Jun 26 2017 17:27:18,  849039 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 26 2017 17:27:30,  849051 sec) UpLoadFile()         Upload failed.
+(Jun 26 2017 17:28:19,  849099 sec) chat()               Expected string [rx -c  7827.028.log] not received.
+(Jun 26 2017 17:28:19,  849100 sec) UpLoadFile()         Failed attempt to execute "rx -c  7827.028.log" on the host.
+(Jun 26 2017 17:28:19,  849100 sec) UpLoad()             Files successfully uploaded: 1
+(Jun 26 2017 17:28:19,  849100 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 26 2017 17:28:26,  849106 sec) chat()               Expected string [logout] not received.
+(Jun 26 2017 17:28:26,  849107 sec) logout()             Attempt to log-out failed.
+(Jun 26 2017 17:28:31,  849111 sec) chat()               Expected string [cmd>] not received.
+(Jun 26 2017 17:28:31,  849112 sec) logout()             Can't get command prompt.
+(Jun 26 2017 17:28:36,  849116 sec) chat()               Expected string [logout] not received.
+(Jun 26 2017 17:28:36,  849117 sec) logout()             Attempt to log-out failed.
+(Jun 26 2017 17:28:36,  849117 sec) logout()             No carrier detected.
+(Jun 26 2017 17:28:36,  849117 sec) Telemetry()          Telemetry cycle complete: PrfId=28 ConnectionAttempts=7  Connections=6
+(Jun 26 2017 17:43:51,  850032 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [126cnt, 6.5"Hg].
+(Jun 26 2017 17:44:45,  850086 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 225.3uM 28.424C 29.273 8.951 1.831 / 100,163,532
+(Jun 26 2017 17:44:46,  850087 sec) GpsServices()        GPS almanac is current.
+(Jun 26 2017 17:44:46,  850087 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 26 2017 17:45:36,  850137 sec) gga()                $GPGGA,174440,1609.0748,N,06544.1997,E,6,06,2.1,9.6,M,-65.0,M,,*63
+(Jun 26 2017 17:46:19,  850180 sec) gga()                $GPGGA,174500,1609.0718,N,06544.1973,E,1,06,1.6,8.7,M,-65.0,M,,*6A
+(Jun 26 2017 17:46:19,  850180 sec) GpsServices()        Profile 28 GPS fix obtained in 93 seconds.
+(Jun 26 2017 17:46:19,  850180 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 26 2017 17:46:20,  850181 sec) GpsServices()        Fix:   65.737  16.151 06/26/2017 174500    6
+(Jun 26 2017 17:47:06,  850227 sec) gga()                $GPGGA,174610,1609.0697,N,06544.2079,E,1,09,0.9,3.5,M,-65.0,M,,*66
+(Jun 26 2017 17:47:14,  850235 sec) gga()                $GPGGA,174700,1609.0686,N,06544.2118,E,1,09,0.9,1.8,M,-65.0,M,,*6F
+(Jun 26 2017 17:47:14,  850235 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Jun 26 2017 17:47:14,  850235 sec) GpsServices()        GPS services complete.
+(Jun 26 2017 17:47:48,  850269 sec) CLogin()             Connecting to primary host.
+(Jun 26 2017 17:48:05,  850286 sec) CLogin()             Connection 7 established in 17 seconds.
+(Jun 26 2017 17:48:35,  850315 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:48:35,  850316 sec) login()              Login prompt not received.
+(Jun 26 2017 17:49:05,  850345 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:49:05,  850346 sec) login()              Login prompt not received.
+(Jun 26 2017 17:49:15,  850356 sec) CLogin()             Connection 8 established in 87 seconds.
+(Jun 26 2017 17:49:45,  850385 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:49:45,  850386 sec) login()              Login prompt not received.
+(Jun 26 2017 17:50:15,  850415 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:50:15,  850416 sec) login()              Login prompt not received.
+(Jun 26 2017 17:50:15,  850416 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 26 2017 17:50:44,  850445 sec) CLogin()             Connection 9 established in 176 seconds.
+(Jun 26 2017 17:51:08,  850469 sec) login()              Login successful.
+(Jun 26 2017 17:51:11,  850472 sec) CLogin()             Logged in to host.  [Login required 27 seconds]
+(Jun 26 2017 17:51:24,  850484 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 26 2017 17:51:26,  850487 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 26 2017 17:51:32,  850492 sec) Rx()                 Truncated packet received - retrying.
+(Jun 26 2017 17:51:44,  850505 sec) RxStartByte()        Sync errors encountered: 967
+(Jun 26 2017 17:51:48,  850508 sec) Rx()                 Truncated packet received - retrying.
+(Jun 26 2017 17:51:52,  850513 sec) RxStartByte()        Sync errors encountered: 354
+(Jun 26 2017 17:51:55,  850515 sec) Rx()                 Truncated packet received - retrying.
+(Jun 26 2017 17:52:04,  850525 sec) RxStartByte()        Sync errors encountered: 998
+(Jun 26 2017 17:52:07,  850528 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 26 2017 17:52:12,  850532 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 46 sec, 22.3 bps]
+(Jun 26 2017 17:52:12,  850533 sec) RxConfig()           Download successful.
+(Jun 26 2017 17:53:11,  850591 sec) chat()               Expected string [rx -c  7827.028.log] not received.
+(Jun 26 2017 17:53:11,  850592 sec) UpLoadFile()         Failed attempt to execute "rx -c  7827.028.log" on the host.
+(Jun 26 2017 17:53:22,  850602 sec) CLogin()             Connecting to primary host.
+(Jun 26 2017 17:53:41,  850621 sec) CLogin()             Connection 10 established in 19 seconds.
+(Jun 26 2017 17:54:11,  850651 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:54:11,  850652 sec) login()              Login prompt not received.
+(Jun 26 2017 17:54:41,  850681 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:54:41,  850682 sec) login()              Login prompt not received.
+(Jun 26 2017 17:54:56,  850697 sec) CLogin()             Connection 11 established in 95 seconds.
+(Jun 26 2017 17:55:27,  850727 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:55:27,  850728 sec) login()              Login prompt not received.
+(Jun 26 2017 17:55:57,  850757 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:55:57,  850758 sec) login()              Login prompt not received.
+(Jun 26 2017 17:55:57,  850758 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 26 2017 17:56:16,  850777 sec) CLogin()             Connection 12 established in 175 seconds.
+(Jun 26 2017 17:56:47,  850807 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 17:56:47,  850808 sec) login()              Login prompt not received.
+(Jun 26 2017 17:56:47,  850808 sec) login()              No carrier detected.
+(Jun 26 2017 17:57:10,  850831 sec) CLogin()             Connection 13 established in 229 seconds.
+(Jun 26 2017 17:57:32,  850853 sec) login()              Login successful.
+(Jun 26 2017 17:57:35,  850856 sec) CLogin()             Logged in to host.  [Login required 25 seconds]
+(Jun 26 2017 17:57:44,  850865 sec) UpLoadFile()         Uploading "7827.028.log" to host as "7827.028.log".
+(Jun 26 2017 17:57:56,  850876 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 26 2017 17:58:10,  850890 sec) TxPacket()           No carrier detected.
+(Jun 26 2017 17:58:10,  850891 sec) TxPacket()           Exit status: -5
+(Jun 26 2017 17:58:10,  850891 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 26 2017 17:58:21,  850902 sec) UpLoadFile()         Upload failed.
+(Jun 26 2017 17:58:21,  850902 sec) UpLoad()             Files successfully uploaded: 0
+(Jun 26 2017 17:58:21,  850902 sec) UpLoad()             Aborting upload: Retry limit [2] exceeded. Upload incomplete.
+(Jun 26 2017 17:58:22,  850903 sec) logout()             No carrier detected.
+(Jun 26 2017 17:58:22,  850903 sec) Telemetry()          Telemetry cycle complete: PrfId=28 ConnectionAttempts=14  Connections=13
+(Jun 26 2017 18:13:36,  851817 sec) AirSystem()          Air-bladder inflation by-passed. Barometer: [129cnt, 7.4"Hg].
+(Jun 26 2017 18:14:22,  851863 sec) GetSurfaceObs()      P/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: -0.4dbars / 225.1uM 28.834C 29.132 9.002 -11.172 / 94,177,532
+(Jun 26 2017 18:14:23,  851864 sec) GpsServices()        GPS almanac is current.
+(Jun 26 2017 18:14:23,  851864 sec) GpsServices()        Initiating GPS fix acquisition.
+(Jun 26 2017 18:15:16,  851917 sec) gga()                $GPGGA,181420,1608.9918,N,06544.3737,E,1,09,0.9,8.9,M,-65.0,M,,*66
+(Jun 26 2017 18:15:17,  851918 sec) GpsServices()        Profile 28 GPS fix obtained in 54 seconds.
+(Jun 26 2017 18:15:17,  851918 sec) GpsServices()                  lon     lat mm/dd/yyyy hhmmss nsat
+(Jun 26 2017 18:15:17,  851918 sec) GpsServices()        Fix:   65.740  16.150 06/26/2017 181420    9
+(Jun 26 2017 18:16:06,  851967 sec) gga()                $GPGGA,181510,1608.9886,N,06544.3768,E,1,09,0.9,5.7,M,-65.0,M,,*6B
+(Jun 26 2017 18:16:14,  851975 sec) gga()                $GPGGA,181600,1608.9849,N,06544.3817,E,1,09,0.9,1.2,M,-65.0,M,,*6C
+(Jun 26 2017 18:16:14,  851975 sec) GpsServices()        APF9 RTC skew (14s) OK.
+(Jun 26 2017 18:16:14,  851975 sec) GpsServices()        GPS services complete.
+(Jun 26 2017 18:16:56,  852017 sec) CLogin()             Connecting to primary host.
+(Jun 26 2017 18:17:25,  852046 sec) CLogin()             Connection 14 established in 29 seconds.
+(Jun 26 2017 18:17:55,  852075 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 18:17:55,  852076 sec) login()              Login prompt not received.
+(Jun 26 2017 18:18:25,  852105 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 18:18:25,  852106 sec) login()              Login prompt not received.
+(Jun 26 2017 18:18:47,  852128 sec) CLogin()             Connection 15 established in 111 seconds.
+(Jun 26 2017 18:19:17,  852157 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 18:19:17,  852158 sec) login()              Login prompt not received.
+(Jun 26 2017 18:19:17,  852158 sec) login()              No carrier detected.
+(Jun 26 2017 18:19:17,  852158 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 26 2017 18:20:18,  852218 sec) chat()               Expected string [CONNECT] not received.
+(Jun 26 2017 18:20:18,  852219 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jun 26 2017 18:20:18,  852219 sec) connect()            Connection attempt failed.
+(Jun 26 2017 18:21:19,  852279 sec) chat()               Expected string [CONNECT] not received.
+(Jun 26 2017 18:21:19,  852280 sec) modem_connect()      Modem command [ATDT0013014291790] failed.
+(Jun 26 2017 18:21:19,  852280 sec) connect()            Connection attempt failed.
+(Jun 26 2017 18:21:19,  852280 sec) CLogin()             Attempt to connect to primary and alternate hosts failed - aborting.
+(Jun 26 2017 18:21:20,  852281 sec) DownLoadMissionCfg(  Connect/login failed.  Mission configuration not downloaded from remote host.
+(Jun 26 2017 18:21:26,  852287 sec) CLogin()             Connecting to primary host.
+(Jun 26 2017 18:21:45,  852306 sec) CLogin()             Connection 16 established in 20 seconds.
+(Jun 26 2017 18:22:16,  852336 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 18:22:16,  852337 sec) login()              Login prompt not received.
+(Jun 26 2017 18:22:46,  852366 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 18:22:46,  852367 sec) login()              Login prompt not received.
+(Jun 26 2017 18:23:47,  852427 sec) chat()               Expected string [CONNECT] not received.
+(Jun 26 2017 18:23:47,  852428 sec) modem_connect()      Modem command [AT+CBST=71,0,1;DT0088160000573] failed.
+(Jun 26 2017 18:23:47,  852428 sec) connect()            Connection attempt failed.
+(Jun 26 2017 18:23:47,  852428 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 26 2017 18:24:13,  852454 sec) CLogin()             Connection 17 established in 168 seconds.
+(Jun 26 2017 18:24:43,  852483 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 18:24:43,  852484 sec) login()              Login prompt not received.
+(Jun 26 2017 18:24:43,  852484 sec) login()              No carrier detected.
+(Jun 26 2017 18:25:03,  852504 sec) CLogin()             Connection 18 established in 218 seconds.
+(Jun 26 2017 18:25:26,  852527 sec) login()              Login successful.
+(Jun 26 2017 18:25:29,  852530 sec) CLogin()             Logged in to host.  [Login required 26 seconds]
+(Jun 26 2017 18:25:42,  852542 sec) RxConfig()           Downloading "mission.cfg" from host.
+(Jun 26 2017 18:25:44,  852545 sec) Rx()                 Initiating transfer. [0x43]
+(Jun 26 2017 18:25:47,  852548 sec) RxStartByte()        Sync errors encountered: 552
+(Jun 26 2017 18:25:50,  852551 sec) Rx()                 Truncated packet received - retrying.
+(Jun 26 2017 18:25:57,  852558 sec) RxStartByte()        Sync errors encountered: 997
+(Jun 26 2017 18:25:59,  852560 sec) Rx()                 Pad character [0x1a] found in ascii mode - truncating packet.
+(Jun 26 2017 18:26:05,  852565 sec) Rx()                 Received EOT - transfer complete. [1 packets, 1024 bytes, 21 sec, 48.8 bps]
+(Jun 26 2017 18:26:05,  852566 sec) RxConfig()           Download successful.
+(Jun 26 2017 18:26:36,  852597 sec) UpLoadFile()         Uploading "7827.028.log" to host as "7827.028.log".
+(Jun 26 2017 18:26:45,  852606 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 26 2017 18:29:30,  852771 sec) TxPacket()           No carrier detected.
+(Jun 26 2017 18:29:30,  852771 sec) TxPacket()           Exit status: -5
+(Jun 26 2017 18:29:31,  852771 sec) Tx()                 Packet transmission failed - aborting transfer.
+(Jun 26 2017 18:29:42,  852783 sec) UpLoadFile()         Upload failed.
+(Jun 26 2017 18:29:53,  852793 sec) CLogin()             Connecting to primary host.
+(Jun 26 2017 18:29:58,  852798 sec) chat()               Expected string [OK] not received.
+(Jun 26 2017 18:29:58,  852799 sec) modem_restore_facto  Modem command [AT&F0] failed.
+(Jun 26 2017 18:29:58,  852799 sec) modem_initialize()   Unable to restore modem's factory defaults.
+(Jun 26 2017 18:29:58,  852799 sec) modem_connect()      Modem configuration failed.
+(Jun 26 2017 18:29:58,  852799 sec) connect()            Connection attempt failed.
+(Jun 26 2017 18:30:19,  852820 sec) CLogin()             Connection 19 established in 27 seconds.
+(Jun 26 2017 18:30:50,  852850 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 18:30:50,  852851 sec) login()              Login prompt not received.
+(Jun 26 2017 18:31:20,  852880 sec) expect()             Attempt to read prompt string [login:] failed.
+(Jun 26 2017 18:31:20,  852881 sec) login()              Login prompt not received.
+(Jun 26 2017 18:31:20,  852881 sec) CLogin()             Attempt to connect to primary host failed after 2 tries.  Connecting to alternate host.
+(Jun 26 2017 18:31:45,  852906 sec) CLogin()             Connection 20 established in 113 seconds.
+(Jun 26 2017 18:32:11,  852932 sec) login()              Login successful.
+(Jun 26 2017 18:32:15,  852936 sec) CLogin()             Logged in to host.  [Login required 30 seconds]
+(Jun 26 2017 18:32:26,  852947 sec) UpLoadFile()         Uploading "7827.028.log" to host as "7827.028.log".
+(Jun 26 2017 18:32:29,  852950 sec) Tx()                 CRC negotiation successful. [16-bit CRC]
+(Jun 26 2017 18:37:16,  853237 sec) TxPacket()           NAK received - resending packet. [PktNum=0x1e]
+(Jun 26 2017 18:37:16,  853237 sec) TxPacket()           Packet xmit history: [00000001] (0:ok, 1:fail).
+(Jun 26 2017 18:37:39,  853260 sec) Tx()                 Transmission completed successfully [30 packets, 30675 bytes, 309 sec, 99.4 bps]
+(Jun 26 2017 18:37:39,  853260 sec) UpLoadFile()         Upload successful.
+(Jun 26 2017 18:37:49,  853270 sec) UpLoad()             Files successfully uploaded: 1
+(Jun 26 2017 18:37:49,  853270 sec) UpLoad()             Upload complete.
+(Jun 26 2017 18:37:54,  853274 sec) chat()               Expected string [cmd>] not received.
+(Jun 26 2017 18:37:54,  853275 sec) logout()             Can't get command prompt.
+(Jun 26 2017 18:37:59,  853279 sec) chat()               Expected string [logout] not received.
+(Jun 26 2017 18:37:59,  853280 sec) logout()             Attempt to log-out failed.
+(Jun 26 2017 18:38:04,  853284 sec) chat()               Expected string [cmd>] not received.
+(Jun 26 2017 18:38:04,  853285 sec) logout()             Can't get command prompt.
+(Jun 26 2017 18:38:09,  853289 sec) chat()               Expected string [logout] not received.
+(Jun 26 2017 18:38:09,  853290 sec) logout()             Attempt to log-out failed.
+(Jun 26 2017 18:38:09,  853290 sec) logout()             No carrier detected.
+(Jun 26 2017 18:38:09,  853290 sec) Telemetry()          Telemetry cycle complete: PrfId=28 ConnectionAttempts=25  Connections=20
+(Jun 26 2017 18:38:10,  853291 sec) TelemetryTerminate(  Parsing new mission configuration.
+(Jun 26 2017 18:38:12,  853293 sec) configure()          Parsing configurators in "mission.cfg".
+(Jun 26 2017 18:38:12,  853293 sec) configure()          Configuration CRCs and syntax OK.
+(Jun 26 2017 18:38:12,  853293 sec) ConfigSupervisor()   Sanity check violated: cfg->PressureCP >= 750
+(Jun 26 2017 18:38:12,  853293 sec) ConfigSupervisor()   Configuration accepted.
+(Jun 26 2017 18:38:13,  853294 sec) TelemetryTerminate(  Reconditioning the file system.
+(Jun 26 2017 18:38:35,      12 sec) DescentInit()        Deep profile 29 initiated at mission-time 853304sec.
+(Jun 26 2017 18:38:37,      14 sec) DescentInit()        Surface pressure: -0.4dbars.
+(Jun 26 2017 18:38:42,      19 sec) PistonMoveAbsWTO()    201->074 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 099 098 097 096 095 094 093 092 091 090 089 088 087 086 085 084 083 082 081 080 079 078 077 076 075 074 [626sec, 14.6Volts, 0.149Amps, CPT:626sec]
+(Jun 26 2017 18:49:18,     655 sec) Descent()            Pressure: 54.2
+(Jun 26 2017 19:38:27,    3604 sec) Descent()            Pressure: 441.0
+(Jun 26 2017 20:38:27,    7204 sec) Descent()            Pressure: 752.5
+(Jun 26 2017 21:38:27,   10804 sec) Descent()            Pressure: 935.3
+(Jun 26 2017 22:38:27,   14404 sec) Descent()            Pressure: 980.1
+(Jun 26 2017 23:38:27,   18004 sec) Descent()            Pressure: 983.7
+(Jun 26 2017 23:38:27,   18004 sec) ParkInit()           
+(Jul 06 2017 02:38:47,  806424 sec) CtdPower()           [  997.28,  8.7163, 35.3804]
+(Jul 06 2017 02:38:47,  806424 sec) CtdPower()           CTD Power consumption [189VCnt 10ACnt]: 14.651Volts * 0.040Amps = 0.59Watts.
+(Jul 06 2017 02:38:48,  806425 sec) ParkTerminate()      Piston Position:74 Vacuum:80 Vq:195 Aq:6 Vsbe:189 Asbe:10 Vflbb:186 Aflbb:12
+(Jul 06 2017 02:39:25,  806462 sec) ParkTerminate()      PTS/O2,T2,TPhase,RawTemp: 997.3dbars 8.7178C 35.3815PSU / 9.7uM 8.729C 60.262 8.288 632.916
+(Jul 06 2017 02:39:25,  806462 sec) ParkTerminate()      FLBB FSig, BbSig, TSig: 58, 113, 565
+(Jul 06 2017 02:39:25,  806463 sec) GoDeepInit()         Moving piston.
+(Jul 06 2017 02:39:26,  806463 sec) PistonMoveAbsWTO()    074->026 073 072 071 070 069 068 067 066 065 064 063 062 061 060 059 058 057 056 055 054 053 052 051 050 049 048 047 046 045 044 043 042 041 040 039 038 037 036 035 034 033 032 031 030 029 028 027 026 [240sec, 14.4Volts, 0.097Amps, CPT:866sec]
+(Jul 06 2017 06:38:27,  820804 sec) GoDeep()             Sequence point detected at 2000.7dbar.
+(Jul 06 2017 06:38:29,  820807 sec) ProfileInit()        PrfId:029  Pressure:2000.7dbar  pTable[0]:2000dbar
+(Jul 06 2017 06:39:16,  820853 sec) Profile()            Sample 0 initiated at 2000.7dbars for bin 0 [2000dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 2000.9dbars 3.0393C 34.8300PSU / 101.9uM 3.051C 50.080 8.358 799.976 /   57  106  573
+(Jul 06 2017 06:39:17,  820854 sec) PistonMoveAbsWTO()    026->048 027 028 029 030 031 [30sec, 13.5Volts, 0.786Amps, CPT:896sec]
+(Jul 06 2017 06:39:57,  820894 sec) PistonMoveAbsWTO()    031->048 032 033 034 035 [30sec, 13.3Volts, 0.766Amps, CPT:926sec]
+(Jul 06 2017 06:40:37,  820934 sec) PistonMoveAbsWTO()    035->048 036 037 038 039 040 [30sec, 13.3Volts, 0.778Amps, CPT:956sec]
+(Jul 06 2017 06:41:17,  820974 sec) PistonMoveAbsWTO()    040->048 041 042 043 044 [30sec, 13.2Volts, 0.782Amps, CPT:986sec]
+(Jul 06 2017 06:41:57,  821014 sec) PistonMoveAbsWTO()    044->048 045 046 047 048 [23sec, 13.2Volts, 0.766Amps, CPT:1009sec]
+(Jul 06 2017 06:58:38,  822015 sec) Profile()            Sample 1 initiated at 1901.4dbars for bin 1 [1900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1899.4dbars 3.3402C 34.8503PSU / 97.8uM 3.352C 50.333 8.367 791.426 /   57  113  573
+(Jul 06 2017 07:13:47,  822924 sec) AscentControlAgent(  Bouyancy nudge to 58 (v=0.076dbar/sec).
+(Jul 06 2017 07:13:47,  822925 sec) PistonMoveAbsWTO()    048->058 049 050 051 052 [30sec, 13.7Volts, 0.741Amps, CPT:1039sec]
+(Jul 06 2017 07:14:28,  822965 sec) PistonMoveAbsWTO()    052->058 053 054 055 056 057 [30sec, 13.5Volts, 0.705Amps, CPT:1069sec]
+(Jul 06 2017 07:15:08,  823005 sec) PistonMoveAbsWTO()    057->058 058 [3sec, 13.5Volts, 0.745Amps, CPT:1072sec]
+(Jul 06 2017 07:18:28,  823205 sec) Profile()            Sample 2 initiated at 1801.4dbars for bin 2 [1800dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1799.2dbars 3.7341C 34.8829PSU / 87.6uM 3.746C 51.161 8.367 780.173 /   58  111  572
+(Jul 06 2017 07:36:03,  824260 sec) Profile()            Sample 3 initiated at 1701.7dbars for bin 3 [1700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1699.8dbars 4.2375C 34.9264PSU / 73.8uM 4.248C 52.393 8.370 765.733 /   57  113  572
+(Jul 06 2017 07:55:38,  825435 sec) Profile()            Sample 4 initiated at 1601.6dbars for bin 4 [1600dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1599.7dbars 4.7843C 34.9778PSU / 60.0uM 4.794C 53.774 8.379 749.935 /   60  114  571
+(Jul 06 2017 08:04:23,  825960 sec) AscentControlAgent(  Bouyancy nudge to 68 (v=0.076dbar/sec).
+(Jul 06 2017 08:04:23,  825961 sec) PistonMoveAbsWTO()    058->068 059 060 061 062 063 [30sec, 13.9Volts, 0.665Amps, CPT:1102sec]
+(Jul 06 2017 08:05:04,  826001 sec) PistonMoveAbsWTO()    063->068 064 065 066 067 [30sec, 13.6Volts, 0.645Amps, CPT:1132sec]
+(Jul 06 2017 08:13:16,  826493 sec) PistonMoveAbsWTO()    068->068 [0sec, 0.0Volts, 0.000Amps, CPT:1132sec]
+(Jul 06 2017 08:14:33,  826570 sec) Profile()            Sample 5 initiated at 1501.6dbars for bin 5 [1500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1499.4dbars 5.3823C 35.0333PSU / 48.4uM 5.395C 55.015 8.384 732.424 /   57  111  570
+(Jul 06 2017 08:15:36,  826633 sec) PistonMoveAbsWTO()    068->068 [0sec, 0.0Volts, 0.000Amps, CPT:1132sec]
+(Jul 06 2017 08:24:41,  827178 sec) PistonMoveAbsWTO()    068->068 [1sec, 0.0Volts, 0.000Amps, CPT:1133sec]
+(Jul 06 2017 08:33:40,  827717 sec) Profile()            Sample 6 initiated at 1401.8dbars for bin 6 [1400dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1400.0dbars 6.0206C 35.0943PSU / 37.0uM 6.031C 56.375 8.391 713.731 /   58  114  569
+(Jul 06 2017 08:39:55,  828092 sec) AscentControlAgent(  Bouyancy nudge to 78 (v=0.076dbar/sec).
+(Jul 06 2017 08:39:55,  828093 sec) PistonMoveAbsWTO()    068->078 069 070 071 072 073 [30sec, 14.0Volts, 0.596Amps, CPT:1163sec]
+(Jul 06 2017 08:40:36,  828133 sec) PistonMoveAbsWTO()    073->078 074 075 076 077 078 [30sec, 13.7Volts, 0.584Amps, CPT:1193sec]
+(Jul 06 2017 08:43:42,  828319 sec) Profile()            Sample 7 initiated at 1351.4dbars for bin 7 [1350dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1349.2dbars 6.2640C 35.1184PSU / 33.8uM 6.284C 56.770 8.391 706.264 /   58  112  568
+(Jul 06 2017 08:51:53,  828810 sec) Profile()            Sample 8 initiated at 1301.8dbars for bin 8 [1300dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1299.6dbars 6.6427C 35.1549PSU / 28.9uM 6.658C 57.403 8.396 695.173 /   59  111  568
+(Jul 06 2017 09:00:54,  829351 sec) Profile()            Sample 9 initiated at 1251.5dbars for bin 9 [1250dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1249.5dbars 6.9550C 35.1865PSU / 25.4uM 6.970C 57.870 8.399 685.882 /   58  113  567
+(Jul 06 2017 09:10:19,  829916 sec) AscentControlAgent(  Bouyancy nudge to 88 (v=0.079dbar/sec).
+(Jul 06 2017 09:10:19,  829917 sec) PistonMoveAbsWTO()    078->088 079 080 081 082 083 [30sec, 14.0Volts, 0.544Amps, CPT:1223sec]
+(Jul 06 2017 09:11:36,  829993 sec) Profile()            Sample 10 initiated at 1198.8dbars for bin 10 [1200dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1196.8dbars 7.3235C 35.2238PSU / 21.3uM 7.341C 58.450 8.400 674.809 /   59  113  567
+(Jul 06 2017 09:11:37,  829994 sec) PistonMoveAbsWTO()    083->088 084 085 086 087 088 [28sec, 13.9Volts, 0.536Amps, CPT:1251sec]
+(Jul 06 2017 09:19:33,  830470 sec) Profile()            Sample 11 initiated at 1151.8dbars for bin 11 [1150dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1149.6dbars 7.6363C 35.2557PSU / 17.8uM 7.654C 58.982 8.401 665.428 /   57  113  566
+(Jul 06 2017 09:28:34,  831011 sec) Profile()            Sample 12 initiated at 1101.3dbars for bin 12 [1100dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1099.2dbars 8.0952C 35.3107PSU / 14.1uM 8.118C 59.540 8.403 651.431 /   59  112  566
+(Jul 06 2017 09:37:45,  831562 sec) Profile()            Sample 13 initiated at 1051.6dbars for bin 13 [1050dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 1049.7dbars 8.4155C 35.3480PSU / 12.1uM 8.446C 59.861 8.403 641.515 /   56  111  565
+(Jul 06 2017 09:47:36,  832153 sec) Profile()            Sample 14 initiated at 1001.6dbars for bin 14 [1000dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 999.7dbars 8.8263C 35.3914PSU / 9.8uM 8.848C 60.218 8.404 629.293 /   58  117  565
+(Jul 06 2017 09:56:11,  832668 sec) AscentControlAgent(  Bouyancy nudge to 98 (v=0.076dbar/sec).
+(Jul 06 2017 09:56:11,  832669 sec) PistonMoveAbsWTO()    088->098 089 090 091 092 093 [30sec, 14.2Volts, 0.463Amps, CPT:1281sec]
+(Jul 06 2017 09:56:52,  832709 sec) PistonMoveAbsWTO()    093->098 094 095 096 097 098 [27sec, 14.0Volts, 0.463Amps, CPT:1308sec]
+(Jul 06 2017 10:06:33,  833290 sec) Profile()            Sample 16 initiated at 901.7dbars for bin 16 [900dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 899.6dbars 9.5460C 35.4645PSU / 6.5uM 9.579C 60.771 8.418 606.959 /   58  114  563
+(Jul 06 2017 10:31:58,  834815 sec) AscentControlAgent(  Bouyancy nudge to 108 (v=0.074dbar/sec).
+(Jul 06 2017 10:31:58,  834816 sec) PistonMoveAbsWTO()    098->108 099 100 101 102 103 [30sec, 14.3Volts, 0.391Amps, CPT:1338sec]
+(Jul 06 2017 10:32:39,  834856 sec) PistonMoveAbsWTO()    103->108 104 105 106 107 108 [25sec, 14.1Volts, 0.391Amps, CPT:1363sec]
+(Jul 06 2017 10:44:21,  835558 sec) Profile()            Sample 20 initiated at 702.0dbars for bin 20 [700dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 699.8dbars 10.8953C 35.5603PSU / 2.5uM 10.929C 61.474 8.476 565.276 /   57  110  561
+(Jul 06 2017 11:07:34,  836951 sec) AscentControlAgent(  Bouyancy nudge to 118 (v=0.078dbar/sec).
+(Jul 06 2017 11:07:34,  836952 sec) PistonMoveAbsWTO()    108->118 109 110 111 112 113 [30sec, 14.3Volts, 0.326Amps, CPT:1393sec]
+(Jul 06 2017 11:08:15,  836992 sec) PistonMoveAbsWTO()    113->118 114 115 116 117 118 [25sec, 14.3Volts, 0.334Amps, CPT:1418sec]
+(Jul 06 2017 11:21:16,  837773 sec) Profile()            Sample 24 initiated at 501.8dbars for bin 24 [500dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 499.8dbars 12.4062C 35.6781PSU / 1.6uM 12.438C 61.551 8.551 518.066 /   58  113  559
+
+
+(Jul 06 2017 11:22:50) LogSize()            Log file is 38940 bytes.  Limit is 40960 bytes.
+
+(Jul 06 2017 11:22:50,  837867 sec) Sbe41cpStartCP()     Continuous profile started.
+(Jul 06 2017 11:38:15,  838792 sec) AscentControlAgent(  Bouyancy nudge to 128 (v=0.078dbar/sec).
+(Jul 06 2017 11:38:16,  838793 sec) PistonMoveAbsWTO()    118->128 119 120 121 122 123 [30sec, 14.3Volts, 0.290Amps, CPT:1448sec]
+(Jul 06 2017 11:38:58,  838835 sec) PistonMoveAbsWTO()    123->128 124 125 126 127 128 [23sec, 14.2Volts, 0.294Amps, CPT:1471sec]
+(Jul 06 2017 11:52:28,  839645 sec) Profile()            Sample 28 initiated at 331.1dbars for bin 28 [330dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 330.9dbars 14.3205C 35.8665PSU / 1.1uM 14.359C 61.499 8.587 457.129 /   57  140  556
+(Jul 06 2017 12:08:32,  840609 sec) AscentControlAgent(  Bouyancy nudge to 138 (v=0.068dbar/sec).
+(Jul 06 2017 12:08:33,  840610 sec) PistonMoveAbsWTO()    128->138 129 130 131 132 133 [30sec, 14.3Volts, 0.242Amps, CPT:1501sec]
+(Jul 06 2017 12:09:14,  840651 sec) PistonMoveAbsWTO()    133->138 134 135 136 137 138 [23sec, 14.3Volts, 0.246Amps, CPT:1524sec]
+(Jul 06 2017 12:11:09,  840766 sec) Profile()            Sample 32 initiated at 241.4dbars for bin 32 [240dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 241.1dbars 16.2855C 35.8853PSU / 1.1uM 16.320C 61.369 8.732 394.137 /   56  156  554
+(Jul 06 2017 12:18:35,  841212 sec) AscentControlAgent(  Bouyancy nudge to 148 (v=0.070dbar/sec).
+(Jul 06 2017 12:18:36,  841213 sec) PistonMoveAbsWTO()    138->148 139 140 141 142 143 [30sec, 14.3Volts, 0.230Amps, CPT:1554sec]
+(Jul 06 2017 12:19:17,  841254 sec) PistonMoveAbsWTO()    143->148 144 145 146 147 148 [22sec, 14.3Volts, 0.230Amps, CPT:1576sec]
+(Jul 06 2017 12:23:31,  841508 sec) Profile()            Sample 36 initiated at 182.0dbars for bin 36 [180dbars].  PTS/O2,T2,TPhase,RPhase,RawTemp/FSig,BbSig,TSig: 181.7dbars 18.7663C 35.8531PSU / 1.0uM 18.821C 61.199 8.823 313.018 /   56  137  551
+
+<EOT>
